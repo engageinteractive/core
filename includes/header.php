@@ -14,6 +14,7 @@
 
 	<!-- Stop phone numbers from becoming links -->
 	<meta name="format-detection" content="telephone=no">
+	<meta id="viewport-size" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!--[if lt IE 9]>
 	<script src="/assets/js/plugins/html5shiv.js"></script>
