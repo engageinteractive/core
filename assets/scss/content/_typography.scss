@@ -1,0 +1,17 @@
+body {
+	font-family: 'Open Sans';
+	font-weight: $n-regular;
+	font-size: $s-body-font-size;
+	color: $c-body-text;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: $n-light;
+}
+
+h1 {
+
+	+ p {
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,56 @@
+.cf {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	.lt-ie8 & {
+		zoom: 1;
+	}
+}
+
+%unlist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+%hardware {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	perspective: 1000;
+}
+
+%unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+%antialias {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+.hide-text {
+	text: {
+		indent: 200%;
+		align: left;
+	}
+	font-size: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}

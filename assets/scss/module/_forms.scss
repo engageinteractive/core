@@ -1,0 +1,46 @@
+.select {
+	@extend %unselectable;
+	position: relative;
+	display: block;
+	padding: 10px 12px;
+	border: solid 1px #ccc;
+
+	span {
+		display: block;
+		position: relative;
+		z-index: 0;
+		padding-right: 30px;
+		line-height: 15px;
+
+		&:after {
+			@include css-triangle(#CCC, down, $round: true);
+			top: 50%; right: 0;
+		}
+	}
+
+	select {
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		-webkit-appearance: textfield;
+	}
+
+	&.hover {
+		border-color: #333;
+
+		span:after {
+			border-top-color: #333;
+		}
+	}
+
+	&.focus {
+		border-color: #ff004c;
+
+		span:after {
+			border-top-color: #ff004c;
+		}
+	}
+}
