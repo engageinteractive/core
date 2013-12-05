@@ -11,19 +11,17 @@ The [Engage Interactive](http://www.engageinteractive.co.uk/) baseplate for desk
 
 ## Setup
 
-===========================
-
 Setup is pretty simple. Download all the files and place them into your project folder. If you are working with a framework like Laravel, place all the files into their logical locations and update all your paths accordingly.
 
 ## Included files
-
-===========================
 
 ### SCSS
 
 This styles for the baseplate all compile using site.scss. This file compiles all the core, content, layout and module styles into site.css. You probably wont need to change anything in the core category, but if you need to add any content, layout, page or module styles, you'll reference them in here.
 
 Site.scss also includes the foundation grid framework. We use a lightly customised version of foundation which only contains the grid and no other styles.
+
+===========================
 
 #### Core
 
@@ -49,9 +47,13 @@ These are some really generic mixins and extenders that we use on nearly every w
 
 This file should contain any `@font-face` rules or remote file URL's. By default we include Open Sans.
 
+===========================
+
 #### Content
 
 Files within the content category should be used to style blocks of generic content on a page that are used around the site. For example, buttons and typography.
+
+===========================
 
 #### Layout
 
@@ -59,9 +61,13 @@ The layout category should contains files that affect the structure of the site,
 
 The global file should be used to style any site-wide structures. In the baseplate, this is where we control the container. If your site doesn't need to be responsive, you could change this container to be a fixed width.
 
+===========================
+
 #### Modules
 
 The modules category should be used to style up site-wide self-contained elements. For example, forms, modal overlays, login forms, twitter includes.
+
+===========================
 
 #### Pages
 
