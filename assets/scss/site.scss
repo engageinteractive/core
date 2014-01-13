@@ -7,11 +7,9 @@
 			'core/extenders',
 			'core/normalise',
 			'core/animations',
-			'core/fonts';
-
-//	Content
-@import		'content/typography',
-			'content/buttons';
+			'core/fonts',
+			'core/typography',
+			'core/forms';
 
 //	Layout
 @import		'layout/foundation',
@@ -20,7 +18,7 @@
 			'layout/footer';
 
 //	Modules
-@import		'module/forms';
+@import		'module/buttons';
 
 //	Pages
-// @import		'page/page-name';
+// @import		'pages/page-name';
