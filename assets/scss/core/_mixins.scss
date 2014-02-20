@@ -4,13 +4,13 @@
 	position: $pos;
 }
 
-@mixin animation($val){
+@mixin animation($val...){
 	-webkit-animation: $val;
 	-moz-animation: $val;
 	animation: $val;
 }
 
-@mixin transform($val) {
+@mixin transform($val...) {
 	-webkit-transform: $val;
 	-moz-transform: $val;
 	-ms-transform: $val;
@@ -18,7 +18,7 @@
 	transform: $val;
 }
 
-@mixin transform-origin($val) {
+@mixin transform-origin($val...) {
 	-webkit-transform-origin: $val;
 	-moz-transform-origin: $val;
 	-ms-transform-origin: $val;
@@ -53,7 +53,7 @@
 	box-sizing: $val;
 }
 
-@mixin transition($val) {
+@mixin transition($val...) {
 	-webkit-transition: $val;
 	-moz-transition: $val;
 	-ms-transition: $val;
@@ -61,7 +61,7 @@
 	transition: $val;
 }
 
-@mixin transform-transition($val) {
+@mixin transform-transition($val...) {
 	-webkit-transition: -webkit-transform $val;
 	-moz-transition: -moz-transform $val;
 	-ms-transition: -ms-transform $val;
@@ -102,27 +102,30 @@
 	@include pseudo($pos: $position);
 	width: 0;
 	height: 0;
-	border: solid $size transparent;
 
 	@if $round {
 		border-radius: 3px;
 	}
 
 	@if $direction == down {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
 		margin-top: 0 - round( $size / 2.5 );
-		border-top-color: $color;
-		border-bottom-width: 0;
 	} @else if $direction == up {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
 		margin-bottom: 0 - round( $size / 2.5 );
-		border-bottom-color: $color;
-		border-top-width: 0;
 	} @else if $direction == right {
-		margin-top: -$size;
-		border-left-color: $color;
-		border-right-width: 0;
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+		margin-right: -$size;
 	} @else if  $direction == left {
-		margin-top: -$size;
-		border-right-color: $color;
-		border-left-width: 0;
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+		margin-left: -$size;
 	}
 }

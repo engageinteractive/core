@@ -425,11 +425,11 @@ h1 + p {
       position: absolute;
       width: 0;
       height: 0;
-      border: solid 6px transparent;
       border-radius: 3px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #cccccc;
       margin-top: -2px;
-      border-top-color: #cccccc;
-      border-bottom-width: 0;
       top: 50%;
       right: 0; }
   .select select {
