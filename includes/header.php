@@ -17,8 +17,8 @@
 	<meta id="viewport-size" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!--[if lt IE 9]>
-	<script src="/assets/js/plugins/html5shiv.js"></script>
-	<script src="/assets/js/plugins/respond.min.js"></script>
+	<script src="/assets/js/libs/html5shiv.js"></script>
+	<script src="/assets/js/libs/respond.min.js"></script>
 	<![endif]-->
 
 </head>

@@ -4,95 +4,6 @@
 	position: $pos;
 }
 
-@mixin animation($val){
-	-webkit-animation: $val;
-	-moz-animation: $val;
-	animation: $val;
-}
-
-@mixin transform($val) {
-	-webkit-transform: $val;
-	-moz-transform: $val;
-	-ms-transform: $val;
-	-o-transform: $val;
-	transform: $val;
-}
-
-@mixin transform-origin($val) {
-	-webkit-transform-origin: $val;
-	-moz-transform-origin: $val;
-	-ms-transform-origin: $val;
-	-o-transform-origin: $val;
-	transform-origin: $val;
-}
-
-@mixin transform-style($val: preserve-3d) {
-	-webkit-transform-style: $val;
-	-moz-transform-style: $val;
-	-ms-transform-style: $val;
-	transform-style: $val;
-}
-
-@mixin perspective($val: 800) {
-	-webkit-perspective: $val;
-	-moz-perspective: $val;
-	-ms-perspective: $val;
-	perspective: $val;
-}
-
-@mixin perspective-origin($val: 800) {
-	-webkit-perspective-origin: $val;
-	-moz-perspective-origin: $val;
-	-ms-perspective-origin: $val;
-	perspective-origin: $val;
-}
-
-@mixin box-sizing($val: border-box) {
-	-webkit-box-sizing: $val;
-	-moz-box-sizing: $val;
-	box-sizing: $val;
-}
-
-@mixin transition($val) {
-	-webkit-transition: $val;
-	-moz-transition: $val;
-	-ms-transition: $val;
-	-o-transition: $val;
-	transition: $val;
-}
-
-@mixin transform-transition($val) {
-	-webkit-transition: -webkit-transform $val;
-	-moz-transition: -moz-transform $val;
-	-ms-transition: -ms-transform $val;
-	-o-transition: -o-transform $val;
-	transition: transform $val;
-}
-
-@mixin transition-duration($val...){
-	-webkit-transition-duration: $val;
-	-moz-transition-duration: $val;
-	-ms-transition-duration: $val;
-	-o-transition-duration: $val;
-	transition-duration: $val;
-}
-
-@mixin transition-timing-function($val...){
-	-webkit-transition-timing-function: $val;
-	-moz-transition-timing-function: $val;
-	-ms-transition-timing-function: $val;
-	-o-transition-timing-function: $val;
-	transition-timing-function: $val;
-}
-
-@mixin linear-gradient($top, $bottom, $fallback) {
-	background: $fallback;
-	background: -webkit-linear-gradient($top, $bottom);
-	background: -moz-linear-gradient($top, $bottom);
-	background: -ms-linear-gradient($top, $bottom);
-	background: linear-gradient($top, $bottom);
-}
-
 @mixin background-rgba($rgb, $a){
 	background: $rgb;
 	background: rgba($rgb, $a);
@@ -102,27 +13,30 @@
 	@include pseudo($pos: $position);
 	width: 0;
 	height: 0;
-	border: solid $size transparent;
 
 	@if $round {
 		border-radius: 3px;
 	}
 
 	@if $direction == down {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
 		margin-top: 0 - round( $size / 2.5 );
-		border-top-color: $color;
-		border-bottom-width: 0;
 	} @else if $direction == up {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
 		margin-bottom: 0 - round( $size / 2.5 );
-		border-bottom-color: $color;
-		border-top-width: 0;
 	} @else if $direction == right {
-		margin-top: -$size;
-		border-left-color: $color;
-		border-right-width: 0;
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+		margin-right: -$size;
 	} @else if  $direction == left {
-		margin-top: -$size;
-		border-right-color: $color;
-		border-left-width: 0;
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+		margin-left: -$size;
 	}
 }
