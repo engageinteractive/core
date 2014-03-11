@@ -1,0 +1,14 @@
+# OSX
+*.DS_Store
+._*
+[Tt]humbs.db
+
+# Windows
+_notes
+
+# SASS
+*.sass-cache
+config.rb
+
+# General
+log/
