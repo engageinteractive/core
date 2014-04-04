@@ -21,9 +21,13 @@ var $site = {
 };
 
 var site = {
-	resize: false,
-	width: $core.win.height(),
-	height: $core.win.width(),
+	resize: {
+		timer: false,
+		before: {},
+		after: {}
+	},
+	width: $core.win.width(),
+	height: $core.win.height(),
 	scroll: {
 		x: 0,
 		y: 0
@@ -40,12 +44,28 @@ var site = {
 
 /**
  *  Updates site metrics and calls any necessary
- *  functions after a browser resize.
+ *  functions before and then after a browser resize.
  */
+var beforeResize = function(){
+
+	$.each(site.resize.before, function(){
+
+		this();
+
+	});
+
+};
+
 var afterResize = function(){
 
 	site.width = $core.win.width();
 	site.height = $core.win.height();
+
+	$.each(site.resize.after, function(){
+
+		this();
+
+	});
 
 };
 
@@ -67,11 +87,16 @@ $core.win.on({
 
 	resize: function(){
 
-		clearTimeout(site.resize);
+		if( !site.resize.timer )
+			beforeResize();
 
-		site.resize = setTimeout(function(){
+		clearTimeout(site.resize.timer);
+
+		site.resize.timer = setTimeout(function(){
 
 			afterResize();
+
+			site.resize.timer = false;
 
 		}, 200);
 
