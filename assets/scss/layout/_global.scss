@@ -2,8 +2,7 @@ body {
 	position: relative;
 }
 
-.container {
-	max-width: $mq-huge;
+[class^="container"] {
 	padding: 0 round( $s-container-gutter / 2 );
 	margin: auto;
 
@@ -23,6 +22,30 @@ body {
 	@media screen and (min-width: $mq-huge){
 		width: $mq-huge - ( $s-container-gutter * 2 );
 	}
+}
+
+.container-max-small {
+	max-width: $mq-small - ( $s-container-gutter * 2 );
+}
+
+.container-max-medium {
+	width: $mq-medium - ( $s-container-gutter * 2 );
+}
+
+.container-max-large {
+	width: $mq-large - ( $s-container-gutter * 2 );
+}
+
+.container-fixed-small {
+	width: $mq-small - ( $s-container-gutter * 2 );
+}
+
+.container-fixed-small {
+	width: $mq-medium - ( $s-container-gutter * 2 );
+}
+
+.container-fixed-small {
+	width: $mq-large - ( $s-container-gutter * 2 );
 }
 
 .full-width {
