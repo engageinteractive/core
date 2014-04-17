@@ -2753,23 +2753,40 @@ th.hide-for-touch {
 body {
   position: relative; }
 
-.container {
-  max-width: 1300px;
+[class^="container"] {
   padding: 0 10px;
   margin: auto; }
   @media screen and (min-width: 768px) {
-    .container {
+    [class^="container"] {
       width: 728px;
       padding: 0; } }
   @media screen and (min-width: 1024px) {
-    .container {
+    [class^="container"] {
       width: 984px; } }
   @media screen and (min-width: 1140px) {
-    .container {
+    [class^="container"] {
       width: 1100px; } }
   @media screen and (min-width: 1300px) {
-    .container {
+    [class^="container"] {
       width: 1260px; } }
+
+.container-max-small {
+  max-width: 728px; }
+
+.container-max-medium {
+  width: 984px; }
+
+.container-max-large {
+  width: 1100px; }
+
+.container-fixed-small {
+  width: 728px; }
+
+.container-fixed-small {
+  width: 984px; }
+
+.container-fixed-small {
+  width: 1100px; }
 
 .full-width {
   padding: 0 1rem; }
