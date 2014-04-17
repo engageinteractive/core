@@ -7,7 +7,11 @@
 	<title>Front-end baseplate</title>
 	<meta name="description" content="Website description">
 	<meta name="keywords" content="Website keywords">
-	<link rel="shortcut icon" href="/assets/img/template/favicon.png">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/assets/img/icons/touch.png">
+	<link rel="icon" href="/assets/img/icons/favicon.png">
+	<!--[if IE]><link rel="shortcut icon" href="/assets/img/icons/favicon.ico"><![endif]-->
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="/assets/css/site.css">
