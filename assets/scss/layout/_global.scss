@@ -29,11 +29,11 @@ body {
 }
 
 .container-max-medium {
-	width: $mq-medium - ( $s-container-gutter * 2 );
+	max-width: $mq-medium - ( $s-container-gutter * 2 );
 }
 
 .container-max-large {
-	width: $mq-large - ( $s-container-gutter * 2 );
+	max-width: $mq-large - ( $s-container-gutter * 2 );
 }
 
 .container-fixed-small {
