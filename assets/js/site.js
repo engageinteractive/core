@@ -391,12 +391,12 @@ jQuery.extend( jQuery.easing,
 jQuery.extend( jQuery.expr[':'],{
 	external: function(obj, index, meta, stack){
 
-		return /:\/\//.test($(obj).attr('href'));
+		return (obj.hostname != location.hostname) && /:\/\//.test($(obj).attr('href'));
 
 	},
 	internal: function(obj, index, meta, stack){
 
-		return !/:\/\//.test($(obj).attr('href'));
+		return (obj.hostname == location.hostname) || !/:\/\//.test($(obj).attr('href'));
 
 	}
 });
