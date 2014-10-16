@@ -26,13 +26,17 @@
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eos, libero, rerum laborum magni soluta atque nihil excepturi quibusdam iste quam unde esse repudiandae sequi dolorem mollitia ullam quasi voluptatum!</p>
 
-				<select>
-					<option>Hey there!</option>
-					<option>Hey ther44e!</option>
-					<option>Hey ther33e!</option>
-					<option>Hey ther 2e!</option>
-					<option>Hey the 2re!</option>
-				</select>
+				<form action="#">
+
+					<select>
+						<option>Hey there!</option>
+						<option>Hey ther44e!</option>
+						<option>Hey ther33e!</option>
+						<option>Hey ther 2e!</option>
+						<option>Hey the 2re!</option>
+					</select>
+
+				</form>
 
 			</div>
 

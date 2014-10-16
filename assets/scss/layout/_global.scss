@@ -1,53 +1,24 @@
+html {
+	font-size: 10px;
+}
+
 body {
 	position: relative;
 }
 
-[class^="container"] {
-	padding: 0 round( $s-container-gutter / 2 );
-	margin: auto;
+.container {
+	max-width: $s-container-max-width;
+	margin: 0 $s-container-gutter / 2;
 
-	@media screen and (min-width: $mq-small){
-		width: $mq-small - ( $s-container-gutter * 2 );
-		padding: 0;
+	@media screen and (min-width: $mq-small) {
+		margin: 0 $s-container-gutter;
 	}
 
-	@media screen and (min-width: $mq-medium){
-		width: $mq-medium - ( $s-container-gutter * 2 );
+	@media screen and (min-width: $s-container-max-width + ( $s-container-gutter * 2 ) ) {
+		margin: auto;
 	}
-
-	@media screen and (min-width: $mq-large){
-		width: $mq-large - ( $s-container-gutter * 2 );
-	}
-
-	@media screen and (min-width: $mq-huge){
-		width: $mq-huge - ( $s-container-gutter * 2 );
-	}
-}
-
-.container-max-small {
-	max-width: $mq-small - ( $s-container-gutter * 2 );
-}
-
-.container-max-medium {
-	max-width: $mq-medium - ( $s-container-gutter * 2 );
-}
-
-.container-max-large {
-	max-width: $mq-large - ( $s-container-gutter * 2 );
-}
-
-.container-fixed-small {
-	width: $mq-small - ( $s-container-gutter * 2 );
-}
-
-.container-fixed-small {
-	width: $mq-medium - ( $s-container-gutter * 2 );
-}
-
-.container-fixed-small {
-	width: $mq-large - ( $s-container-gutter * 2 );
 }
 
 .full-width {
-	padding: 0 round( $s-column-gutter / 2 );
+	padding: 0 $column-gutter / 2;
 }

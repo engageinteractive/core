@@ -16,9 +16,18 @@ $mq-huge: 1300px;
 
 */
 
-$s-body-font-size: 16px;
+$s-h1: 3.6rem;
+$s-h2: 3rem;
+$s-h3: 2.6rem;
+$s-h4: 2.2rem;
+
+$s-p-normal: 1.6rem;
+$s-p-small: 1.4rem;
+$s-p-large: 1.8rem;
+
+$s-column-gutter: $column-gutter; // foundation/settings
 $s-container-gutter: 20px;
-$s-column-gutter: rem-calc(30);
+$s-container-max-width: $mq-huge; // Media queries
 
 
 /*--------------------------------

@@ -1,24 +1,22 @@
 @charset "UTF-8";
 
+// Framework
+@import		'framework/foundation';
+
 //	Core
-@import		'core/functions',
-			'core/variables',
+@import		'core/variables',
 			'core/mixins',
 			'core/extenders',
-			'core/normalise',
+			'core/normalize',
 			'core/animations',
 			'core/fonts',
 			'core/typography',
 			'core/forms';
 
 //	Layout
-@import		'layout/foundation',
-			'layout/global',
+@import		'layout/global',
 			'layout/navigation',
 			'layout/footer';
 
 //	Modules
 @import		'module/buttons';
-
-//	Pages
-// @import		'pages/page-name';
