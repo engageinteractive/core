@@ -4,7 +4,7 @@ Desktop baseplate
 The [Engage Interactive](http://www.engageinteractive.co.uk/) baseplate for desktop sites. Including all the very basic needs for a tablet and up responsive grid-based website.
 
 #### Including
- * ie8+ Support
+ * ie9+ Support
  * Foundation 5 grid - modified for our purposes
  * SCSS
  * jQuery
