@@ -1,7 +1,7 @@
 Desktop baseplate
 ===========================
 
-The [Engage Interactive](http://www.engageinteractive.co.uk/) baseplate for desktop sites. Including all the very basic needs for a tablet and up responsive grid-based website.
+The [Engage Interactive](http://www.engageinteractive.co.uk/) baseplate for desktop sites. Including all the very basic needs for a mobile first responsive grid-based website.
 
 #### Including
  * ie9+ Support
@@ -82,23 +82,22 @@ We've included the basics here.
 When developing locally, the site will include a minified version of site.js which concatinates all these files into one. This should be set up in whatever pre-processor you are comfortable with (we use Codekit and PrePros)
 
 ##### Libs
- * jquery.1.10.x.js
+ * jquery.2.x.js
  * fastclick.js
 
 ##### Plugins
- * html5shiv.js - ie8 only
- * jquery.transit.js
- * respond.min.js - ie8 only
+ * jquery-simpleselect.js
 
-##### Site.js
+##### global.js
 
 This contains a basic javascript file structure with a few bits of functionality and plugins we always use. The noteable parts are:
  * Window scroll and resize listeners which keep a global object storing site metric information up-to-date.
  * External and internal link handling
  * Simple select plugin which allows you a large amount of control over the visuals of a select dropdown.
- * Easing functions for `jQuery.animate()`
+ * An easing functions for `jQuery.animate()`
  * Buffered window resize callback that stops Chrome and IE from going nuts on browser resize.
  * Fastclick activation (for touch based devices)
+ * busy and quiet functions for tracking click bans
 
 If you don't need something, just remove it.
 
@@ -111,7 +110,6 @@ Included in the baseplate is a very, very, very simple example of the grid and s
 In the head we include a link to site.css along with some basic meta tags, scripts and links:
  * Favicon
  * Viewport size (for mobile devices)
- * IE8 fallback javascripts
  * Format detection to stop phone numbers from being styled by the browser without permission
 
  All other scripts are included last thing in the footer.
