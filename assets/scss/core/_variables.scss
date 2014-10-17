@@ -28,6 +28,7 @@ $s-p-large: 1.8rem;
 $s-column-gutter: $column-gutter; // foundation/settings
 $s-container-gutter: 20px;
 $s-container-max-width: $mq-huge; // Media queries
+$s-radius: 6px;
 
 
 /*--------------------------------
@@ -59,6 +60,10 @@ $z-navigation: 90;
 
 $c-white: #FFF;
 $c-black: #222;
+$c-grey: #CCC;
+
+$c-accent: #00AAFF;
+
 $c-facebook: #3c5a95;
 $c-twitter: #3fcdfc;
 $c-body-text: $c-black;

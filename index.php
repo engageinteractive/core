@@ -28,13 +28,32 @@
 
 				<form action="#">
 
-					<select>
-						<option>Hey there!</option>
-						<option>Hey ther44e!</option>
-						<option>Hey ther33e!</option>
-						<option>Hey ther 2e!</option>
-						<option>Hey the 2re!</option>
-					</select>
+					<label>
+						<span>Label</span>
+						<select>
+							<option selected disabled>Choose one</option>
+							<option>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3</option>
+							<option>Option 4</option>
+						</select>
+					</label>
+					<label class="small-6">
+						<span>Label which is longer</span>
+						<input type="email" placeholder="e.g. email@domain.com">
+					</label>
+					<label class="small-6">
+						<span>Label which is longer</span>
+						<input type="email" placeholder="e.g. email@domain.com">
+					</label>
+					<label>
+						<span>Another label</span>
+						<textarea placeholder="e.g. I LOVE TEXTAREAS!!!"></textarea>
+					</label>
+
+					<div class="button-wrapper">
+						<button>Button text</button>
+					</div>
 
 				</form>
 

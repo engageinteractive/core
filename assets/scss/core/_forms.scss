@@ -1,20 +1,111 @@
-.select {
-	@extend %unselectable;
-	position: relative;
+%input-border {
+	border: solid 1px $c-grey;
+	border-radius: $s-radius / 2;
+
+	&:hover {
+		border-color: darken($c-grey, 10%);
+	}
+
+	&:focus,
+	&.focus {
+		border-color: $c-accent;
+		outline: none;
+	}
+}
+
+%input-shadow {
+	box-shadow: 0 1px 1px rgba($c-black, .2);
+
+	&:hover {
+		box-shadow: 0 1px 3px rgba($c-black, .3);
+	}
+
+	&:focus,
+	&.focus {
+		box-shadow: 0 0 3px $c-accent;
+	}
+}
+
+%input-padding {
+	padding: 1rem 1.5rem;
+}
+
+form {
+	@include grid-row(nest);
+}
+
+label,
+.button-wrapper {
+	@include grid-column($columns: 12);
 	display: block;
-	padding: 10px 12px;
-	border: solid 1px #ccc;
+	position: relative;
+	margin: 1rem 0;
+}
+
+label {
+	> span {
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	&.column {
+		clear: none;
+	}
+}
+
+.button-wrapper {
+	text-align: center;
+}
+
+input[type] {
+	@extend %input-padding;
+	@extend %input-border;
+	@extend %input-shadow;
+	display: block;
+	width: 100%;
+}
+
+textarea {
+	@extend %input-padding;
+	@extend %input-border;
+	@extend %input-shadow;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	min-height: 10rem;
+}
+
+.select {
+	@extend %input-border;
+	@extend %input-shadow;
+	@extend %input-padding;
+	display: block;
+	position: relative;
+	background: linear-gradient($c-white, mix($c-grey, $c-white, 20%));
 
 	span {
 		display: block;
 		position: relative;
 		z-index: 0;
 		padding-right: 30px;
-		line-height: 15px;
 
 		&:after {
-			@include css-triangle(#CCC, down, $round: true);
+			@include css-triangle($c-grey, down, $round: true);
 			top: 50%; right: 0;
+		}
+	}
+
+	&:hover {
+
+		span:after {
+			border-top-color: darken($c-grey, 10%);
+		}
+	}
+
+	&.focus {
+
+		span:after {
+			border-top-color: $c-accent;
 		}
 	}
 
@@ -26,21 +117,5 @@
 		height: 100%;
 		opacity: 0;
 		-webkit-appearance: textfield;
-	}
-
-	&.hover {
-		border-color: #333;
-
-		span:after {
-			border-top-color: #333;
-		}
-	}
-
-	&.focus {
-		border-color: #ff004c;
-
-		span:after {
-			border-top-color: #ff004c;
-		}
 	}
 }

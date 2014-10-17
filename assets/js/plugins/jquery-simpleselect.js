@@ -40,8 +40,8 @@
 			// Sort out the original select
 			$this
 				.css({
-					width: $s.innerWidth(),
-					height: $s.innerHeight(),
+					width: '100%',
+					height: '100%',
 					opacity: 0
 				}).on({
 					change: function(){
@@ -65,16 +65,6 @@
 					blur: function(){
 
 						$s.removeClass('focus');
-
-					},
-					mouseenter: function(){
-
-						$s.addClass('hover');
-
-					},
-					mouseleave: function(){
-
-						$s.removeClass('hover');
 
 					}
 
