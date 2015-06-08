@@ -1,0 +1,51 @@
+/*--------------------------------
+
+	Basic form fields layout
+
+*/
+
+.form-fields {
+	@include flush--top;
+
+	> * {
+		@include push--top($base-spacing-unit / 1.5);
+		list-style: none;
+		position: relative;
+
+		&:first-child {
+			@include flush--top;
+		}
+	}
+
+	label,
+	.label {
+		margin-bottom: $base-spacing-unit / 6;
+	}
+}
+
+// inline form fields, useful for a set of checkboxes
+.form-fields__list {
+	@include flush--top;
+
+	> * {
+		list-style: none;
+		margin-top: $base-spacing-unit / 2;
+
+		&:first-child {
+			@include flush--top;
+		}
+	}
+}
+
+.form-fields__list-inline {
+	@include flush--top;
+
+	> * {
+		margin-right: $base-spacing-unit / 2;
+		display: inline-block;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

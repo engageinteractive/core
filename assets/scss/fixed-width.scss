@@ -1,0 +1,10 @@
+@import "variables";
+
+$fixed-width:       true;
+$fixed-width-limit: breakpoint("tablet-wide");
+
+@import "import";
+
+body {
+	min-width: $fixed-width-limit;
+}

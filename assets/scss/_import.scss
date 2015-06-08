@@ -1,0 +1,63 @@
+// UTILITIES
+
+// some useful style resets and initial form styling
+@import "utility/reset/normalize";
+@import "utility/reset/formalize";
+
+// system-wide styles, mixins and placeholders
+@import "utility/functions";
+@import "utility/mixins";
+@import "utility/fonts";
+@import "utility/grid/block";
+@import "utility/grid/columns";
+@import "utility/helper-classes";
+
+// plugins
+// @import "utility/plugin/";
+
+
+// CORE STYLING
+
+@import "core";
+
+
+// CORE
+// basic building blocks, typically single html tags
+
+@import "core/anchor";
+@import "core/form-button";
+@import "core/form-input";
+@import "core/img";
+@import "core/table";
+@import "core/typography";
+
+
+// MODULE
+// simple combinations of cores
+
+@import "module/container";
+@import "module/form-fields";
+@import "module/message";
+
+
+// LAYOUT
+// distinct section of an interface
+
+@import "layout/copy";
+@import "layout/outdated-browser";
+@import "layout/site-content";
+@import "layout/site-header";
+@import "layout/site-footer";
+
+
+// PAGE
+// layouts stitched together to form pages
+
+// @import "page/*";
+
+
+// EXTRAS
+// miscellaneous project extras
+
+@import "utility/print";
+@import "demo";

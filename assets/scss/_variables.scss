@@ -1,0 +1,239 @@
+/*--------------------------------
+
+	Typography
+
+*/
+
+// font stacks
+// for embedded custom fonts, list name below as normal. To generate code see example in utlity/core.scss
+
+$sans-serif: Helvetica, Arial, sans-serif;
+$serif: Georgia, Times, serif;
+
+
+// font sizes
+
+$h-x-small: 1.2rem;
+$h-small: 1.4rem;
+$h-base: 1.6rem;
+$h-medium: 1.8rem;
+$h-large: 2.4rem;
+$h-x-large: 3.6rem;
+$h-xx-large: 4.8rem;
+
+$p-x-small: 1.2rem;
+$p-small: 1.4rem;
+$p-base: 1.6rem;
+$p-medium: 1.8rem;
+$p-large: 2.1rem;
+$p-x-large: 2.4rem;
+
+
+// line-height ratios
+
+$lh-mini: 1.1;
+$lh-small: 1.25;
+$lh-base: 1.5;
+
+
+// default font sizes / line-height
+
+$base-font-size: $p-base;
+$base-line-height: $lh-base;
+
+
+// letter spacing
+
+$letter-spacing: (
+	base: -30
+);
+
+
+// weights
+
+$w-light: 300;
+$w-normal: 400;
+$w-semibold: 600;
+$w-bold: 700;
+$w-heavy: 800;
+
+
+
+/*--------------------------------
+
+	Layout
+
+*/
+
+// breakpoint
+
+/*
+
+use:
+
+	get the value of a particular breakpoint
+
+example:
+
+	.box {
+		width: breakpoint("phone-wide");
+	}
+
+	would generate:
+
+	.box {
+		width: 480px;
+	}
+
+*/
+
+@function breakpoint($name) {
+	@return map_get($breakpoints, $name);
+}
+
+// basic spacing units
+
+$base-spacing-unit: 2.4rem;
+$small-spacing-unit: $base-spacing-unit / 1.2;
+
+
+// grid
+
+$grid-column-count: 24;
+$grid-column-gutter: 2.4rem;
+
+
+// media queries
+
+$breakpoints: (
+	"phone":        320px,
+	"phone-wide":   480px,
+	"tablet-small": 640px,
+	"tablet":       768px,
+	"tablet-wide":  980px,
+	"desktop":      1248px,
+	"huge":         1440px
+);
+
+$max-width: breakpoint("desktop");
+
+
+// z-indexing
+
+/*
+ordered from low to high
+suggested naming convention would be the class/ID the z-index is going on
+*/
+
+$z-indexes: (
+	"site-header",
+	"site-footer"
+);
+
+
+
+/*--------------------------------
+
+	Colours
+
+*/
+
+// brand colours
+
+$c-brand-primary: #fdbc00;
+$c-brand-secondary: #e74c3c;
+
+
+// greyscale
+
+$c-black: #1a1a1a;
+$c-grey-dark: #444;
+$c-grey-dark-2: #222;
+$c-grey: #888;
+$c-grey-light: #ddd;
+$c-grey-light-2: #f1f1f1;
+$c-white: #fff;
+
+
+// other colours
+
+$c-red: #f50023;
+$c-green: #24b35d;
+$c-blue: #4D90FE;
+
+
+// form & message positive/negative colours
+
+$c-positive: $c-green;
+$c-negative: $c-red;
+
+
+// top level element colours
+
+$c-body-bg: $c-white;
+$c-body-color: $c-black;
+
+
+
+/*--------------------------------
+
+	Easing/Timing
+
+*/
+
+//	Cubic
+$ease-in-cubic: cubic-bezier(.55,.055,.675,.19);
+$ease-out-cubic: cubic-bezier(.215,.61,.355,1);
+$ease-in-out-cubic: cubic-bezier(.645,.045,.355,1);
+
+//	Circ
+$ease-in-circ: cubic-bezier(.6,.04,.98,.335);
+$ease-out-circ: cubic-bezier(.075,.82,.165,1);
+$ease-in-out-circ: cubic-bezier(.785,.135,.15,.86);
+
+//	Expo
+$ease-in-expo: cubic-bezier(.95,.05,.795,.035);
+$ease-out-expo: cubic-bezier(.19,1,.22,1);
+$ease-in-out-expo: cubic-bezier(1,0,0,1);
+
+//	Quad
+$ease-in-quad: cubic-bezier(.55,.085,.68,.53);
+$ease-out-quad: cubic-bezier(.25,.46,.450,.94);
+$ease-in-out-quad: cubic-bezier(.455,.03,.515,.955);
+
+//	Quart
+$ease-in-quart: cubic-bezier(.895,.03,.685,.22);
+$ease-out-quart: cubic-bezier(.165,.84,.44,1);
+$ease-in-out-quart: cubic-bezier(.77,0,.175,1);
+
+//	Quint
+$ease-in-quint: cubic-bezier(.755,.05,.855,.06);
+$ease-out-quint: cubic-bezier(.23,1,.320,1);
+$ease-in-out-quint: cubic-bezier(.86,0,.07,1);
+
+//	Sine
+$ease-in-sine: cubic-bezier(.47,0,.745,.715);
+$ease-out-sine: cubic-bezier(.39,.575,.565,1);
+$ease-in-out-sine: cubic-bezier(.445,.05,.55,.95);
+
+//	Back
+$ease-in-back: cubic-bezier(.6,-.28,.735,.045);
+$ease-out-back: cubic-bezier(.175,.885,.32,1.275);
+$ease-in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
+
+//	Smooth fade
+$ease-smooth-fade: cubic-bezier(.365,.005,.355,1);
+
+
+
+/*--------------------------------
+
+	Normalise includes
+
+*/
+
+$reset-mark: false;
+$reset-small: false;
+$reset-sub-sup: false;
+$reset-hr: false;
+$reset-code: false;

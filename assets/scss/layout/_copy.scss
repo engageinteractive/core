@@ -1,0 +1,153 @@
+/*--------------------------------
+
+	Copy
+
+*/
+
+$copy-elems:
+	'p',
+	'ul',
+	'ol',
+	'table';
+
+.copy {
+	margin-top: $base-spacing-unit;
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	a {
+		color: $c-brand-primary;
+
+		&:hover,
+		&:focus {
+			color: $c-black;
+		}
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-weight: $w-bold;
+	}
+
+	h1,
+	h2 {
+		margin-top: $base-spacing-unit;
+
+		+ {
+			h3,
+			#{$copy-elems} {
+				margin-top: $base-spacing-unit / 2;
+			}
+		}
+	}
+
+	h3 {
+		margin-top: $base-spacing-unit / 1.2;
+
+		+ {
+			#{$copy-elems} {
+				margin-top: $base-spacing-unit / 3;
+			}
+		}
+	}
+
+	#{$copy-elems} {
+		margin-top: $base-spacing-unit / 1.5;
+	}
+
+	> p:first-child {
+		font-size: $p-medium;
+	}
+
+	ol,
+	ul {
+		margin-left: $base-spacing-unit * 1.5;
+		margin-right: $base-spacing-unit * 1.5;
+	}
+
+	li {
+		margin-top: $base-spacing-unit / 3;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+
+
+//--------------------------------------------------------------------
+@include mq("tablet-small") {
+
+.copy {
+	font-size: $p-medium;
+
+	h1,
+	h2 {
+		margin-top: $base-spacing-unit * 1.25;
+	}
+
+	h3 {
+		margin-top: $base-spacing-unit;
+
+		+ {
+			#{$copy-elems} {
+				margin-top: $base-spacing-unit / 1.2;
+			}
+		}
+	}
+
+	#{$copy-elems} {
+		margin-top: $base-spacing-unit;
+	}
+
+	> p:first-child {
+		font-size: $p-large;
+	}
+}
+
+}
+//--------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------
+@include mq("tablet-wide") {
+
+.copy {
+	@include unselectable;
+
+	h2 {
+		margin-top: $base-spacing-unit * 1.5;
+
+		+ {
+			h3,
+			#{$copy-elems} {
+				margin-top: $base-spacing-unit / 1.5;
+			}
+		}
+	}
+
+	h3 {
+		margin-top: $base-spacing-unit * 1.25;
+
+		+ {
+			#{$copy-elems} {
+				margin-top: $base-spacing-unit / 1.5;
+			}
+		}
+	}
+
+	ol,
+	ul {}
+
+	li {
+		margin-top: $base-spacing-unit / 2;
+	}
+}
+
+}
+//--------------------------------------------------------------------

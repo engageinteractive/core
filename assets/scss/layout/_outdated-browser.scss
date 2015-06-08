@@ -1,0 +1,17 @@
+.outdated-browser {
+	padding: 20px;
+	background-color: $c-negative;
+	color: $c-white;
+	text-align: center;
+	position: absolute;
+	top: 0; right: 0; left: 0;
+
+	a {
+		color: $c-white;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}

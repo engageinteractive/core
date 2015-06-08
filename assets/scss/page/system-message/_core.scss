@@ -1,0 +1,99 @@
+@import "../../utility/functions";
+@import "../../utility/mixins";
+@import "../../core";
+@import "../../core/anchor";
+@import "../../core/img";
+
+/*--------------------------------
+
+	Stripped down normalise
+
+*/
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+img {
+  border: 0;
+}
+
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+/*--------------------------------
+
+	System Message (e.g. 404, under maintenance)
+
+*/
+
+.system-message {
+	@include push--auto;
+	@include soft($base-spacing-unit);
+	max-width: 460px;
+	text-align: center;
+
+	a {
+		color: $c-brand-primary;
+		font-weight: bold;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $c-black;
+		}
+	}
+
+	.logo {
+		@include push--auto;
+		display: block;
+		width: 200px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	h1 {
+		@include push--top($base-spacing-unit / 1.2);
+		font-size: $h-large;
+
+		@include mq("tablet-small") {
+			@include push--top($base-spacing-unit);
+			font-size: $h-x-large;
+		}
+	}
+
+	p {
+		@include push--top($base-spacing-unit / 2);
+
+		@include mq("tablet-small") {
+			@include push--top($base-spacing-unit / 1.5);
+			font-size: $p-medium;
+		}
+	}
+
+	@include mq("tablet-small") {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

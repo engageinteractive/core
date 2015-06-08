@@ -1,0 +1,19 @@
+.hidden {
+	@include hidden;
+}
+
+.ir {
+	@include ir;
+}
+
+.vh {
+	@include vh;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.cf {
+	@include cf;
+}

@@ -1,0 +1,35 @@
+// containers
+// fluid up to wide mobile, then changes to snap points through the rest of the media queries
+
+.container {
+	@include push--auto;
+	@include soft--sides($base-spacing-unit / 1.5);
+	position: relative;
+	max-width: breakpoint("phone-wide");
+
+	@include mq("tablet-small") {
+		max-width: $max-width - ($base-spacing-unit / ($base-spacing-unit * 0 + 1)) * 10 * 2;
+	}
+
+	&--snap {
+
+		@include mq("tablet-small") {
+			@include hard--sides;
+			max-width: none;
+		}
+
+		@each $name, $width in $breakpoints {
+
+			@if $width > breakpoint("phone-wide") and $width <= $max-width {
+				@include mq($name) {
+					$unit: unit($base-spacing-unit);
+					@if $unit == 'rem' {
+						width: breakpoint($name) - ($base-spacing-unit / ($base-spacing-unit * 0 + 1)) * 10 * 2;
+					} @else {
+						width: breakpoint($name) - $base-spacing-unit * 2;
+					}
+				}
+			}
+		}
+	}
+}
