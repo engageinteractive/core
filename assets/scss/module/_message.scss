@@ -1,0 +1,49 @@
+/*--------------------------------
+
+	Messages - such as form responses, block error messages, alerts
+
+*/
+
+.message {
+	@include soft($small-spacing-unit);
+	border: 1px solid;
+
+	a {
+		font-weight: bold;
+		text-decoration: underline;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $c-black;
+		}
+	}
+
+	p {
+		@include push--top($base-spacing-unit / 3);
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&--negative {
+		background-color: lighten($c-negative, 49%);
+		border-color: $c-negative;
+		color: $c-negative;
+
+		a {
+			color: $c-negative;
+		}
+	}
+
+	&--positive {
+		background-color: lighten($c-positive, 55%);
+		border-color: $c-positive;
+		color: $c-positive;
+
+		a {
+			color: $c-positive;
+		}
+	}
+}

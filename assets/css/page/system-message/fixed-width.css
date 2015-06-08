@@ -1,0 +1,265 @@
+/*--------------------------------
+
+	Typography
+
+*/
+/*--------------------------------
+
+	Layout
+
+*/
+/*
+
+use:
+
+	get the value of a particular breakpoint
+
+example:
+
+	.box {
+		width: breakpoint("phone-wide");
+	}
+
+	would generate:
+
+	.box {
+		width: 480px;
+	}
+
+*/
+/*
+ordered from low to high
+suggested naming convention would be the class/ID the z-index is going on
+*/
+/*--------------------------------
+
+	Colours
+
+*/
+/*--------------------------------
+
+	Easing/Timing
+
+*/
+/*--------------------------------
+
+	Normalise includes
+
+*/
+/*--------------------------------
+
+	Grids
+
+*/
+/*--------------------------------
+
+	Z-indexing
+
+	use:
+
+		instead of guessing or adding random z-indexes throughout the project (e.g. 100000, 999999, etc.), call the z-index function to generate a z-index from a stacked list of classes
+
+	prerequisits:
+
+		$z-indexes list must exist in variables file
+
+	example:
+
+		.box {
+			z-index: z("box");
+		}
+
+*/
+/*--------------------------------
+
+	Photoshop letter spacing
+
+	use:
+
+		for simple conversion between Photoshop letter-spacing to ems
+
+	prerequisits:
+
+		$letter-spacing list must exist in variables file
+
+	example:
+
+		.awesome-heading {
+			letter-spacing: letter-spacing("awesome-heading");
+		}
+
+		could generate (if "awesome-heading") is 2nd in the list:
+
+		.awesome-heading {
+			letter-spacing: -0.01em;
+		}
+
+*/
+/*--------------------------------
+
+	Media Queries
+
+*/
+/*--------------------------------
+
+	Margin / Padding Quick Resets
+
+*/
+/*--------------------------------
+
+	Helper mixins
+
+*/
+/*--------------------------------
+
+	Form input placeholder text
+
+	example:
+
+	input,
+	textarea {
+		@include input-placeholder {
+			color: $grey;
+		}
+	}
+
+*/
+/*--------------------------------
+
+	Retina images
+
+*/
+/*--------------------------------
+
+	Misc
+
+*/
+/*--------------------------------
+
+	Box sizing
+
+*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box; }
+
+/*--------------------------------
+
+	Basic document styling
+
+*/
+html {
+  font-size: 10px;
+  min-height: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: none; }
+
+body {
+  background-color: #fff;
+  color: #1a1a1a;
+  font: 1.6rem/1.5 Helvetica, Arial, sans-serif;
+  min-width: 320px; }
+
+/*--------------------------------
+
+	Text selection/highlighting
+
+*/
+::-moz-selection {
+  background: #fdbc00;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #fdbc00;
+  color: #fff;
+  text-shadow: none; }
+
+a {
+  color: #fdbc00;
+  font-weight: 700;
+  text-decoration: underline; }
+  a:focus, a:hover {
+    color: #1a1a1a;
+    outline: 0; }
+  a:focus {
+    box-shadow: 0 0 5px #4D90FE; }
+  a:link {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+img {
+  display: block;
+  max-width: 100%;
+  font-style: italic; }
+
+/*--------------------------------
+
+	Stripped down normalise
+
+*/
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+body {
+  margin: 0; }
+
+a {
+  background-color: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+img {
+  border: 0; }
+
+h1, p {
+  margin: 0;
+  padding: 0; }
+
+/*--------------------------------
+
+	System Message (e.g. 404, under maintenance)
+
+*/
+.system-message {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.4rem;
+  max-width: 460px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  .system-message a {
+    color: #fdbc00;
+    font-weight: bold;
+    text-decoration: none; }
+    .system-message a:hover, .system-message a:focus {
+      color: #1a1a1a; }
+  .system-message .logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 200px; }
+    .system-message .logo img {
+      width: 100%; }
+  .system-message h1 {
+    margin-top: 2rem;
+    font-size: 2.4rem;
+    margin-top: 2.4rem;
+    font-size: 3.6rem; }
+  .system-message p {
+    margin-top: 1.2rem;
+    margin-top: 1.6rem;
+    font-size: 1.8rem; }
+
+/*# sourceMappingURL=fixed-width.css.map */

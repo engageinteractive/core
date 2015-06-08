@@ -1,0 +1,382 @@
+/*--------------------------------
+
+	Media Queries
+
+*/
+
+// used for outputting content either between media query tags, or without (for fixed-width.scss)
+
+$fixed-width:       false !default;
+$fixed-width-limit: 980px !default;
+
+@mixin mq($width, $type: min) {
+
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+	}
+
+	@if $fixed-width {
+
+		@if $width <= $fixed-width-limit {
+			@content;
+		}
+
+	} @else {
+
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+
+	}
+
+}
+
+
+
+/*--------------------------------
+
+	Margin / Padding Quick Resets
+
+*/
+
+// add/remove margins
+
+@mixin push($spacing: $base-spacing-unit) { margin: $spacing; }
+@mixin push--top($spacing: $base-spacing-unit) { margin-top: $spacing; }
+@mixin push--left($spacing: $base-spacing-unit) { margin-left: $spacing; }
+@mixin push--ends($spacing: $base-spacing-unit) { margin: { top: $spacing; bottom: $spacing; } }
+@mixin push--sides($spacing: $base-spacing-unit) { margin: { left: $spacing; right: $spacing; } }
+
+@mixin push--auto { margin: { left: auto; right: auto; } }
+@mixin offset--sides($spacing: $base-spacing-unit) { margin: { left: -$spacing; right: -$spacing; } }
+
+@mixin flush { margin: 0; }
+@mixin flush--top { margin-top: 0; }
+@mixin flush--left { margin-left: 0; }
+@mixin flush--ends { margin: { top: 0; bottom: 0; } }
+@mixin flush--sides { margin: { left: 0; right: 0; } }
+
+
+// add/remove paddings
+
+@mixin soft($spacing: $base-spacing-unit) { padding: $spacing; }
+@mixin soft--top($spacing: $base-spacing-unit) { padding-top: $spacing; }
+@mixin soft--left($spacing: $base-spacing-unit) { padding-left: $spacing; }
+@mixin soft--ends($spacing: $base-spacing-unit) { padding: { top: $spacing; bottom: $spacing; } }
+@mixin soft--sides($spacing: $base-spacing-unit) { padding: { left: $spacing; right: $spacing; } }
+
+@mixin hard { padding: 0; }
+@mixin hard--top { padding-top: 0; }
+@mixin hard--left { padding-left: 0; }
+@mixin hard--ends { padding: { top: 0; bottom: 0; } }
+@mixin hard--sides { padding: { left: 0; right: 0; } }
+
+
+
+/*--------------------------------
+
+	Helper mixins
+
+*/
+
+// Contain floats / clearfix
+
+@mixin cf {
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+// Image replacement
+
+@mixin ir {
+	display: block;
+	background: {
+		repeat: no-repeat;
+		position: 0 0;
+	}
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+
+// Hide from both screenreaders and browsers
+
+@mixin hidden {
+	display: none;
+	visibility: hidden;
+}
+
+@mixin visible {
+	display: block;
+	visibility: visible;
+}
+
+
+// Hide only visually, but have it available for screenreaders
+
+@mixin vh($focusable: false) {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	@if $focusable {
+		@include vh-focusable;
+	}
+}
+
+@mixin vh-reset {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+
+// Allow the element to be focusable when navigated to via the keyboard
+
+@mixin vh-focusable {
+
+	&:active,
+	&:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+
+// Hide visually and from screenreaders, but maintain layout
+
+@mixin invisible {
+	visibility: hidden;
+}
+
+
+
+/*--------------------------------
+
+	Form input placeholder text
+
+	example:
+
+	input,
+	textarea {
+		@include input-placeholder {
+			color: $grey;
+		}
+	}
+
+*/
+
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+
+
+/*--------------------------------
+
+	Retina images
+
+*/
+
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3 / 2),
+	only screen and (min-device-pixel-ratio: 1.5),
+	only screen and (min-resolution: 1.5dppx) {
+		@content;
+	}
+}
+
+
+
+/*--------------------------------
+
+	Misc
+
+*/
+
+@mixin antialias {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin appearance($val: none) {
+	-webkit-appearance: $val;
+	-moz-appearance: $val;
+	appearance: $val;
+}
+
+
+@mixin content-margins($selector: '> *') {
+
+	#{unquote($selector)} {
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+	@include pseudo($pos: $position);
+	width: 0;
+	height: 0;
+
+	@if $round {
+		border-radius: 3px;
+	}
+
+	@if $direction == down {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+		margin-top: 0 - round( $size / 2.5 );
+	} @else if $direction == up {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+		margin-bottom: 0 - round( $size / 2.5 );
+	} @else if $direction == right {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+		margin-right: -$size;
+	} @else if  $direction == left {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+		margin-left: -$size;
+	}
+}
+
+
+@mixin hardware($backface: true, $perspective: 1000) {
+
+	@if $backface {
+		backface-visibility: hidden;
+	}
+
+	perspective: $perspective;
+}
+
+
+@mixin hide-text($break: false, $indent: 200%, $align: left, $overflow: hidden) {
+	@if $break {
+		position: absolute;
+		top: 0; left: 0;
+		pointer-events: none;
+	}
+	text: {
+		indent: $indent;
+		align: $align;
+	}
+	font-size: 0;
+	white-space: nowrap;
+	@if $overflow {
+		overflow: $overflow;
+	}
+}
+
+
+@mixin pos($pos, $t, $r, $b, $l, $z: false, $hardware: true) {
+	@if $pos == fixed and $hardware { @include hardware; }
+	@if $pos { position: $pos; }
+	@if $t { top: $t; }
+	@if $r { right: $r; }
+	@if $b { bottom: $b; }
+	@if $l { left: $l; }
+	@if $z { z-index: $z; }
+}
+
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+
+@mixin responsive-ratio($x,$y, $pseudo: false, $max-height: false) {
+
+	$padding: unquote( ( $y / $x ) * 100 + '%' );
+
+	@if $pseudo {
+		@if $max-height {
+			max-height: $max-height;
+		}
+		&:before {
+			@include pseudo($pos: relative);
+			width: 100%;
+			padding-top: $padding;
+		}
+	} @else {
+		@if $max-height {
+			max-height: $max-height;
+		}
+		padding-top: $padding;
+	}
+}
+
+
+@mixin selection {
+	::-moz-selection { @content; }
+	::selection { @content; }
+}
+
+
+@mixin truncate($truncation-boundary) {
+	max-width: $truncation-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+@mixin typography($w, $h, $file, $type: png, $overflow: hidden) {
+	@include responsive-ratio($w, $h, true);
+	position: relative;
+	max-width: ( $w / 10 ) * 1rem;
+	background: url('/assets/img/typography/#{$file}.#{$type}') 50% 50% no-repeat;
+	background-size: contain;
+
+	span {
+		@include hide-text(true, $overflow: $overflow);
+	}
+}
+
+
+@mixin unlist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+@mixin unselectable {
+	-webkit-touch-callout: none;
+	user-select: none;
+}

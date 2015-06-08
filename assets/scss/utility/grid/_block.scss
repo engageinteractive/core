@@ -1,0 +1,53 @@
+/*--------------------------------
+
+	Block grid
+
+*/
+
+@mixin block-grid {
+	@include cf;
+	@include unlist;
+
+	> * {
+		display: block;
+		float: left;
+	}
+}
+
+@mixin block-grid-column($columns){
+	width: 100% / $columns;
+}
+
+@mixin block-grid-items($modifier: "") {
+
+	@if $modifier != "" {
+		$modifier: #{$modifier};
+	}
+
+	@for $i from 0 through $grid-column-count {
+
+		.#{$modifier}-block-grid-#{$i} {
+
+			> * {
+				width: grid-calc($grid-column-count, $i);
+			}
+		}
+	}
+
+}
+
+[class*='-block-grid-'] {
+	@include block-grid;
+}
+
+@include block-grid-items("base");
+
+@each $name, $min-width in $breakpoints {
+
+	@include mq($name) {
+
+		@include block-grid-items(#{$name});
+
+	}
+
+}

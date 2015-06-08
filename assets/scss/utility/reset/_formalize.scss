@@ -1,0 +1,163 @@
+// FORMALIZE (based on https://github.com/nathansmith/formalize)
+
+// general
+
+input,
+button,
+select,
+textarea {
+
+	&:invalid {
+		box-shadow: none;
+	}
+
+	&:focus {
+		z-index: 1;
+	}
+}
+
+
+// input, textarea, select
+
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select {
+	margin: 0;
+	display: inline-block;
+	width: 100%;
+	background-clip: padding-box;
+	border-radius: 0;
+	outline: 0;
+	text-align: left;
+	font: normal 16px/1.5 sans-serif;
+	vertical-align: top;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+textarea,
+select[size],
+select[multiple] {
+	height: auto;
+}
+
+select[size],
+select[multiple] {
+	background-image: none;
+	padding-right: 12px;
+}
+
+// Can't remove default dropdown for less-than IE9, so remove background and set default padding
+select {
+	.lte-ie9 & {
+		background-image: none;
+		padding-right: 12px;
+	}
+}
+
+// remove dropdown for IE10+
+select::-ms-expand {
+	display: none;
+}
+
+// Allow only vertical resizing of textareas
+textarea {
+	resize: vertical;
+}
+
+input[type="search"] {
+  box-sizing: border-box; // override normalise
+
+	&::-webkit-search-decoration {
+		display: none;
+	}
+}
+
+optgroup {
+	font-style: normal;
+	font-weight: normal;
+	font-family: sans-serif; // repeated for firefox
+
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+
+// button
+
+button,
+.button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+	display: inline-block;
+	width: auto;
+	margin: 0;
+	border: 0;
+	cursor: pointer;
+	outline: 0;
+	overflow: visible;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	font: normal 16px/100% sans-serif;
+	// background-clip: padding-box;
+	-webkit-appearance: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+button[disabled],
+.button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled] {
+	box-shadow: none;
+	user-select: none;
+
+	&:hover {
+		cursor: not-allowed;
+	}
+}
+
+
+// labels
+
+label,
+.label {
+	display: block;
+}
+
+
+// extra cursor interactions
+
+textarea:active,
+textarea:focus {
+	cursor: text;
+	outline: none;
+}

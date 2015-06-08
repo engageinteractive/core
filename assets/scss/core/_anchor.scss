@@ -1,0 +1,19 @@
+a {
+	color: $c-brand-primary;
+	font-weight: $w-bold;
+	text-decoration: underline;
+
+	&:focus,
+	&:hover {
+		color: $c-black;
+		outline: 0;
+	}
+
+	&:focus {
+		box-shadow: 0 0 5px $c-blue;
+	}
+
+	&:link {
+		-webkit-tap-highlight-color: rgba($c-white, 0);
+	}
+}

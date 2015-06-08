@@ -1,0 +1,246 @@
+// basic inputs
+
+$input-elems:
+	'input[type="date"]',
+	'input[type="datetime"]',
+	'input[type="datetime-local"]',
+	'input[type="email"]',
+	'input[type="month"]',
+	'input[type="number"]',
+	'input[type="password"]',
+	'input[type="search"]',
+	'input[type="tel"]',
+	'input[type="text"]',
+	'input[type="time"]',
+	'input[type="url"]',
+	'input[type="week"]';
+
+#{$input-elems},
+textarea,
+select,
+.select {
+	background-color: $c-white;
+	border: 1px solid $c-grey-light;
+	color: $c-black;
+	display: block;
+	padding: 12px;
+
+	&:focus,
+	&.focus {
+		border-color: $c-blue;
+		box-shadow: 0 0 5px $c-blue;
+	}
+
+	// validation
+	&.success,
+	&.valid,
+	&.error {
+		background-size: 16px;
+		background-repeat: no-repeat;
+		background-position: right 16px center;
+		padding-right: 40px;
+	}
+
+	&.success,
+	&.valid {
+		background-image: url(../img/icon/check-tick-green.svg);
+		border-color: $c-positive;
+	}
+
+	&.error {
+		background-image: url(../img/icon/cross-red.svg);
+		border-color: $c-negative;
+	}
+
+	// error message
+	&:focus + span.error-text {
+		opacity: 1;
+		visibility: visible;
+
+	}
+
+	// placeholder text
+	@include input-placeholder {
+		color: $c-grey-light;
+	}
+}
+
+
+// checkboxes and radios
+
+input[type="checkbox"],
+input[type="radio"] {
+	@include vh;
+
+	.lt-ie9 & {
+		@include vh-reset;
+	}
+
+	+ label {
+		font-weight: normal;
+		margin-bottom: 0;
+		padding-left: $base-font-size + $base-spacing-unit/3;
+		position: relative;
+
+		&:before {
+			background: $c-grey-light center center no-repeat;
+			background-size: 100%;
+			border: 2px solid $c-grey-light;
+			content: "";
+			display: block;
+			width: $base-font-size;
+			height: $base-font-size;
+			position: absolute;
+			top: .4rem;
+			left: 0;
+
+			.lt-ie9 & {
+				display: none;
+			}
+
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&:focus {
+		+ label:before {
+			// box-shadow: 0 0 10px rgb(94, 158, 215);
+			box-shadow: 0 0 5px $c-blue;
+			border-color: $c-blue;
+		}
+	}
+
+	&:checked {
+		+ label:before {
+			background-color: $c-grey-dark;
+			background-image: url(../img/icon/check-tick-white.svg);
+		}
+	}
+
+	&[disabled] {
+		+ label {
+			cursor: not-allowed;
+			opacity: .4;
+			text-decoration: none;
+		}
+	}
+}
+
+input[type="radio"] {
+	+ label:before {
+		border-radius: 50%;
+	}
+}
+
+
+// select and multi select
+
+select,
+.select {
+	background-color: $c-white;
+	background-size: 12px;
+	padding-right: 30px;
+
+	// iOS Zoom Hack
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		font-size: 16px !important;
+	}
+
+	// validation
+	&.success,
+	&.valid,
+	&.error {
+		background-position: right 35px center;
+	}
+}
+
+select[size], select[multiple] {
+	@include soft--ends($base-spacing-unit / 4);
+	background-image: none;
+	height: auto;
+
+	option {
+		@include soft--ends($base-spacing-unit / 4);
+	}
+}
+
+.select {
+	padding: 12px;
+	position: relative;
+	display: block;
+
+	> span {
+		display: block;
+		position: relative;
+	}
+
+	select {
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+	}
+
+	// arrow
+	&:after {
+		@include css-triangle($c-black, 'down');
+		top: 50%; right: 16px;
+	}
+
+	// error message
+	&.focus + span.error-text {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+// disabled form fields
+
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled] {
+
+	&,
+	&:focus,
+	&:hover,
+	&:active {
+		background-color: $c-grey-light;
+		border-color: $c-grey-light;
+		color: $c-white;
+	}
+}
+
+
+// `span` error labels for extra descriptive errors
+
+span.error-text {
+	background-color: $c-negative;
+	color: $c-white;
+	font-size: $p-x-small;
+	line-height: 100%;
+	padding: .6rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .2s $ease-in-out-cubic, visibility .2s $ease-in-out-cubic;
+
+	&:after {
+		@include css-triangle($c-negative, down);
+		top: 100%; left: 50%;
+		margin-left: -3px;
+	}
+}
+
+span.success {
+	@include vh;
+}

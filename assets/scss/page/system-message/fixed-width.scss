@@ -1,0 +1,6 @@
+@import "../../variables";
+
+$fixed-width:       true;
+$fixed-width-limit: breakpoint("tablet-wide");
+
+@import "core";

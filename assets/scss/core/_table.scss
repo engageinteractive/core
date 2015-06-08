@@ -1,0 +1,45 @@
+table {
+	@include push--top($base-spacing-unit);
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: $p-small;
+	width: 100%;
+
+	tr {}
+
+	th,
+	td {
+		padding: 0;
+	}
+
+	th {
+		text-align: left;
+	}
+
+	td {}
+
+	thead {
+		font-size: $p-x-small;
+		font-weight: 700;
+
+		th {
+			padding-bottom: $base-spacing-unit / 3;
+			text-transform: uppercase;
+		}
+	}
+
+	tbody {
+
+		tr:first-child {
+			td {
+				border-top: 1px solid $c-grey-light;
+			}
+		}
+
+		td {
+			@include soft--ends($base-spacing-unit / 3);
+			border-bottom: 1px solid $c-grey-light;
+		}
+	}
+
+}
