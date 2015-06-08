@@ -1,0 +1,50 @@
+/*--------------------------------
+
+	Box sizing
+
+*/
+
+* {
+
+	&,
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+}
+
+
+
+/*--------------------------------
+
+	Basic document styling
+
+*/
+
+html {
+	font-size: 10px;
+	min-height: 100%;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: none;
+}
+
+body {
+	background-color: $c-body-bg;
+	color: $c-body-color;
+	font: #{$base-font-size}/#{$base-line-height} $sans-serif;
+	min-width: breakpoint("phone");
+}
+
+
+
+/*--------------------------------
+
+	Text selection/highlighting
+
+*/
+
+@include selection {
+	background: $c-brand-primary;
+	color: $c-white;
+	text-shadow: none;
+}

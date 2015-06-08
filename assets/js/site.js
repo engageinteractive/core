@@ -1,6 +1,6 @@
-// @codekit-prepend "libs/fastclick.js"
-// @codekit-prepend "libs/jquery-2.1.1.js"
+// Core functionality
+// @codekit-prepend "site/global.js"
 
-// @codekit-prepend "plugins/jquery-simpleselect.js"
+// Modules
 
-// @codekit-prepend "core/global.js"
+// Pages

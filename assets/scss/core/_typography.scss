@@ -1,22 +1,48 @@
-body {
-	font-family: 'Open Sans';
-	font-weight: $n-regular;
-	font-size: $s-p-normal;
-	color: $c-body-text;
+/*--------------------------------
+
+	Basic, low level typography
+
+*/
+
+// Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include font-roboto($w-normal);
+	font-size: 100%;
+	line-height: 100%;
 }
 
-h1, h2, h3, h4 {
-	font-weight: $n-light;
+h1,
+.h1 {
+	font-size: $h-xx-large;
 }
 
-h1 { font-size: $s-h1; }
-h2 { font-size: $s-h2; }
-h3 { font-size: $s-h3; }
-h4 { font-size: $s-h4; }
+h2,
+.h2 {
+	font-size: $h-x-large;
+}
 
-h1 {
+h3,
+.h3 {
+	font-size: $h-large;
+}
 
-	+ p {
-		font-size: $s-p-large;
-	}
+h4,
+.h4 {
+	font-size: $h-medium;
+}
+
+h5,
+.h5 {
+	font-size: $h-base;
+}
+
+h6,
+.h6 {
+	font-size: $h-small;
 }

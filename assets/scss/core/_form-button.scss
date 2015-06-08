@@ -1,0 +1,68 @@
+// basic buttons
+
+button,
+.button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+	background-color: $c-brand-primary;
+	color: $c-white;
+	font-family: $sans-serif;
+	padding: 17px;
+	position: relative;
+
+	&:focus {
+		background-color: $c-grey-dark;
+		box-shadow: 0px 0px 8px $c-blue;
+		color: $c-white;
+	}
+
+	&:active {
+		top: 2px;
+	}
+
+	&[disabled] {
+
+		&,
+		&:focus {
+			background-color: $c-grey-light;
+			color: $c-white;
+		}
+	}
+}
+
+
+// colours
+
+.button--secondary {
+	background-color: $c-black;
+}
+
+.button--positive {
+	background-color: $c-positive;
+
+	&:focus {
+		background-color: $c-positive;
+	}
+}
+
+.button--negative {
+	background-color: $c-negative;
+
+	&:focus {
+		background-color: $c-negative;
+	}
+}
+
+
+// sizes
+
+.button--large {
+	@include soft--ends($base-spacing-unit/1.5);
+	font-size: $p-large;
+}
+
+.button--small {
+	font-size: $p-small;
+	padding: $base-spacing-unit/2 $base-spacing-unit/3;
+}
