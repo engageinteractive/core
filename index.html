@@ -13,9 +13,12 @@
 	<link rel="shortcut icon" href="/assets/img/tile/favicon.ico">
 	<link rel="apple-touch-icon" href="/assets/img/tile/favicon-152.png">
 
-	<link rel="stylesheet" href="/assets/css/main.css">
-
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+	<!--
+	use this if just supporting IE9+
+	<link rel="stylesheet" href="/assets/css/main.css">
+	-->
 
 	<!--[if (gt IE 8) | (IEMobile)]><!-->
 	<link rel="stylesheet" href="/assets/css/main.css">
@@ -147,17 +150,29 @@
 							</ul>
 						</div>
 						<div>
+							<span class="label">Two inputs, 50-50</span>
+							<ul class="form-fields__split">
+								<li>
+									<input type="text" name="text-group-3" id="text-group-3" placeholder="A placeholder value">
+								</li>
+								<li>
+									<input type="text" name="text-group-4" id="text-group-4" placeholder="A placeholder value" class="error">
+									<span class="error-text">Required</span>
+								</li>
+							</ul>
+						</div>
+						<div>
 							<label for="text-disabled">Text (disabled)</label>
 							<input type="text" name="text-disabled" id="text-disabled" disabled>
 						</div>
 						<div>
-							<label for="text-disabled">Text (failed validation)</label>
-							<input type="text" name="text-disabled" id="text-disabled" class="required error" required>
-							<span class="error">Name Required</span>
+							<label for="text-disabled-2">Text (failed validation)</label>
+							<input type="text" name="text-disabled" id="text-disabled-2" class="required error" required>
+							<span class="error-text">Name Required</span>
 						</div>
 						<div>
-							<label for="text-disabled">Text (passed validation)</label>
-							<input type="text" name="text-disabled" id="text-disabled" class="required success" required>
+							<label for="text-disabled-3">Text (passed validation)</label>
+							<input type="text" name="text-disabled" id="text-disabled-3" class="required success" required>
 						</div>
 						<div>
 							<label for="email">Email</label>

@@ -228,8 +228,9 @@ span.error-text {
 	line-height: 100%;
 	padding: .6rem;
 	position: absolute;
-	top: 0;
+	top: 100%;
 	right: 0;
+	margin-top: -8rem;
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity .2s $ease-in-out-cubic, visibility .2s $ease-in-out-cubic;

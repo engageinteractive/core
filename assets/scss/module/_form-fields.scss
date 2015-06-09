@@ -5,12 +5,10 @@
 */
 
 .form-fields {
-	@include flush--top;
 
 	> * {
 		@include push--top($base-spacing-unit / 1.5);
 		list-style: none;
-		position: relative;
 
 		&:first-child {
 			@include flush--top;
@@ -21,31 +19,60 @@
 	.label {
 		margin-bottom: $base-spacing-unit / 6;
 	}
-}
 
-// inline form fields, useful for a set of checkboxes
-.form-fields__list {
-	@include flush--top;
+	&,
+	&__list,
+	&__list-inline,
+	&__split {
 
-	> * {
-		list-style: none;
-		margin-top: $base-spacing-unit / 2;
-
-		&:first-child {
-			@include flush--top;
+		> * {
+			position: relative;
 		}
 	}
-}
 
-.form-fields__list-inline {
-	@include flush--top;
+	&__list {
 
-	> * {
-		margin-right: $base-spacing-unit / 2;
-		display: inline-block;
+		> * {
+			list-style: none;
+			margin-top: $base-spacing-unit / 2;
 
-		&:last-child {
-			margin-right: 0;
+			&:first-child {
+				@include flush--top;
+			}
+		}
+	}
+
+	&__list-inline {
+
+		> * {
+			margin-right: $base-spacing-unit / 2;
+			display: inline-block;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__split {
+		@include cf;
+		@include offset--sides($base-spacing-unit / 4);
+
+		> * {
+			@include soft--sides($base-spacing-unit / 4);
+			float: left;
+			list-style: none;
+			margin-top: $base-spacing-unit / 2;
+			width: 50%;
+
+			&:first-child,
+			&:nth-child(2) {
+				@include flush--top;
+			}
+		}
+
+		span.error-text {
+			right: $base-spacing-unit / 4;
 		}
 	}
 }
