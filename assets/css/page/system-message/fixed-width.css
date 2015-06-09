@@ -1,5 +1,10 @@
 /*--------------------------------
 
+	Default colour variable fallbacks
+
+*/
+/*--------------------------------
+
 	Typography
 
 */
@@ -66,7 +71,7 @@ suggested naming convention would be the class/ID the z-index is going on
 	example:
 
 		.box {
-			z-index: z("box");
+			z-index: z('box');
 		}
 
 */
@@ -85,7 +90,7 @@ suggested naming convention would be the class/ID the z-index is going on
 	example:
 
 		.awesome-heading {
-			letter-spacing: letter-spacing("awesome-heading");
+			letter-spacing: ls('awesome-heading');
 		}
 
 		could generate (if "awesome-heading") is 2nd in the list:
@@ -139,7 +144,9 @@ suggested naming convention would be the class/ID the z-index is going on
 	Box sizing
 
 */
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
 
@@ -179,7 +186,8 @@ a {
   color: #fdbc00;
   font-weight: 700;
   text-decoration: underline; }
-  a:focus, a:hover {
+  a:focus,
+  a:hover {
     color: #1a1a1a;
     outline: 0; }
   a:focus {
@@ -243,7 +251,8 @@ h1, p {
     color: #fdbc00;
     font-weight: bold;
     text-decoration: none; }
-    .system-message a:hover, .system-message a:focus {
+    .system-message a:hover,
+    .system-message a:focus {
       color: #1a1a1a; }
   .system-message .logo {
     margin-left: auto;
@@ -261,5 +270,4 @@ h1, p {
     margin-top: 1.2rem;
     margin-top: 1.6rem;
     font-size: 1.8rem; }
-
 /*# sourceMappingURL=fixed-width.css.map */

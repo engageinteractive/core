@@ -1,5 +1,10 @@
 /*--------------------------------
 
+	Default colour variable fallbacks
+
+*/
+/*--------------------------------
+
 	Typography
 
 */
@@ -506,7 +511,7 @@ textarea:focus {
 	example:
 
 		.box {
-			z-index: z("box");
+			z-index: z('box');
 		}
 
 */
@@ -525,7 +530,7 @@ textarea:focus {
 	example:
 
 		.awesome-heading {
-			letter-spacing: letter-spacing("awesome-heading");
+			letter-spacing: ls('awesome-heading');
 		}
 
 		could generate (if "awesome-heading") is 2nd in the list:
@@ -2920,8 +2925,9 @@ span.error-text {
   line-height: 100%;
   padding: .6rem;
   position: absolute;
-  top: 0;
+  top: 100%;
   right: 0;
+  margin-top: -8rem;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -3040,33 +3046,53 @@ h6,
 	Basic form fields layout
 
 */
-.form-fields {
-  margin-top: 0; }
-  .form-fields > * {
-    margin-top: 1.6rem;
-    list-style: none;
-    position: relative; }
-    .form-fields > *:first-child {
-      margin-top: 0; }
-  .form-fields label,
-  .form-fields .label {
-    margin-bottom: 0.4rem; }
+.form-fields > * {
+  margin-top: 1.6rem;
+  list-style: none; }
+  .form-fields > *:first-child {
+    margin-top: 0; }
 
-.form-fields__list {
-  margin-top: 0; }
-  .form-fields__list > * {
-    list-style: none;
-    margin-top: 1.2rem; }
-    .form-fields__list > *:first-child {
-      margin-top: 0; }
+.form-fields label,
+.form-fields .label {
+  margin-bottom: 0.4rem; }
 
-.form-fields__list-inline {
-  margin-top: 0; }
-  .form-fields__list-inline > * {
-    margin-right: 1.2rem;
-    display: inline-block; }
-    .form-fields__list-inline > *:last-child {
-      margin-right: 0; }
+.form-fields > *,
+.form-fields__list > *,
+.form-fields__list-inline > *,
+.form-fields__split > * {
+  position: relative; }
+
+.form-fields__list > * {
+  list-style: none;
+  margin-top: 1.2rem; }
+  .form-fields__list > *:first-child {
+    margin-top: 0; }
+
+.form-fields__list-inline > * {
+  margin-right: 1.2rem;
+  display: inline-block; }
+  .form-fields__list-inline > *:last-child {
+    margin-right: 0; }
+
+.form-fields__split {
+  margin-left: -0.6rem;
+  margin-right: -0.6rem; }
+  .form-fields__split:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .form-fields__split > * {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    float: left;
+    list-style: none;
+    margin-top: 1.2rem;
+    width: 50%; }
+    .form-fields__split > *:first-child,
+    .form-fields__split > *:nth-child(2) {
+      margin-top: 0; }
+  .form-fields__split span.error-text {
+    right: 0.6rem; }
 
 /*--------------------------------
 

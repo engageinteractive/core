@@ -25,7 +25,7 @@
 	example:
 
 		.box {
-			z-index: z("box");
+			z-index: z('box');
 		}
 
 */
@@ -63,7 +63,7 @@
 	example:
 
 		.awesome-heading {
-			letter-spacing: letter-spacing("awesome-heading");
+			letter-spacing: ls('awesome-heading');
 		}
 
 		could generate (if "awesome-heading") is 2nd in the list:
@@ -76,5 +76,9 @@
 
 @function ls($name) {
 	$value: map_get($letter-spacing, $name);
+	@return $value / 1000 * 1em;
+}
+
+@function ls-basic($value) {
 	@return $value / 1000 * 1em;
 }
