@@ -11,23 +11,27 @@ $fixed-width-limit: 980px !default;
 
 @mixin mq($width, $type: min) {
 
-	@if map_has_key($breakpoints, $width) {
-		$width: map_get($breakpoints, $width);
-	}
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
 
-	@if $fixed-width {
+        @if $type = max {
+            $width: $width - 1px;
+        }
+    }
 
-		@if $width <= $fixed-width-limit {
-			@content;
-		}
+    @if $fixed-width {
 
-	} @else {
+        @if $width <= $fixed-width-limit {
+            @content;
+        }
 
-		@media only screen and (#{$type}-width: $width) {
-			@content;
-		}
+    } @else {
 
-	}
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+
+    }
 
 }
 
