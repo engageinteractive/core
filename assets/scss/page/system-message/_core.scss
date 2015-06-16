@@ -1,48 +1,22 @@
+/*--------------------------------
+
+	System Message (404)
+
+*/
+
+@import "../../utility/reset/normalize";
 @import "../../utility/functions";
 @import "../../utility/mixins";
+@import "../../utility/fonts";
 @import "../../core";
 @import "../../core/anchor";
 @import "../../core/img";
 
-/*--------------------------------
-
-	Stripped down normalise
-
-*/
-
-html {
-  font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
+$base-spacing-unit: 24px;
 
 body {
-  margin: 0;
+	font: #{16px}/#{24px} $sans-serif;
 }
-
-a {
-  background-color: transparent;
-}
-
-a:active,
-a:hover {
-  outline: 0;
-}
-
-img {
-  border: 0;
-}
-
-h1, p {
-  margin: 0;
-  padding: 0;
-}
-
-/*--------------------------------
-
-	System Message (e.g. 404, under maintenance)
-
-*/
 
 .system-message {
 	@include push--auto;
@@ -51,6 +25,7 @@ h1, p {
 	text-align: center;
 
 	a {
+		background-color: transparent;
 		color: $c-brand-primary;
 		font-weight: bold;
 		text-decoration: none;
@@ -67,17 +42,24 @@ h1, p {
 		width: 200px;
 
 		img {
+			border: none;
 			width: 100%;
 		}
 	}
 
+	h1,
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
 	h1 {
 		@include push--top($base-spacing-unit / 1.2);
-		font-size: $h-large;
+		font-size: 24px;
 
 		@include mq("tablet-small") {
 			@include push--top($base-spacing-unit);
-			font-size: $h-x-large;
+			font-size: 32px;
 		}
 	}
 
@@ -86,7 +68,7 @@ h1, p {
 
 		@include mq("tablet-small") {
 			@include push--top($base-spacing-unit / 1.5);
-			font-size: $p-medium;
+			font-size: 18px;
 		}
 	}
 
