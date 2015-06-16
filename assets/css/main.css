@@ -33,7 +33,7 @@ example:
 
 */
 /*
-ordered from low to high
+ordered from high to low
 suggested naming convention would be the class/ID the z-index is going on
 */
 /*--------------------------------
@@ -686,7 +686,7 @@ textarea:focus {
 .base-block-grid-24 > * {
   width: 100%; }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 319px) {
   .phone-block-grid-0 > * {
     width: 100%/Infinity; }
   .phone-block-grid-1 > * {
@@ -738,7 +738,7 @@ textarea:focus {
   .phone-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 479px) {
   .phone-wide-block-grid-0 > * {
     width: 100%/Infinity; }
   .phone-wide-block-grid-1 > * {
@@ -790,7 +790,7 @@ textarea:focus {
   .phone-wide-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 639px) {
   .tablet-small-block-grid-0 > * {
     width: 100%/Infinity; }
   .tablet-small-block-grid-1 > * {
@@ -842,7 +842,7 @@ textarea:focus {
   .tablet-small-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .tablet-block-grid-0 > * {
     width: 100%/Infinity; }
   .tablet-block-grid-1 > * {
@@ -894,7 +894,7 @@ textarea:focus {
   .tablet-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 979px) {
   .tablet-wide-block-grid-0 > * {
     width: 100%/Infinity; }
   .tablet-wide-block-grid-1 > * {
@@ -946,7 +946,7 @@ textarea:focus {
   .tablet-wide-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 1248px) {
+@media only screen and (min-width: 1247px) {
   .desktop-block-grid-0 > * {
     width: 100%/Infinity; }
   .desktop-block-grid-1 > * {
@@ -998,7 +998,7 @@ textarea:focus {
   .desktop-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1439px) {
   .huge-block-grid-0 > * {
     width: 100%/Infinity; }
   .huge-block-grid-1 > * {
@@ -1309,7 +1309,7 @@ textarea:focus {
 .base-push-0 {
   left: 0; }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 319px) {
   .phone--hidden {
     display: none;
     visibility: hidden; }
@@ -1469,7 +1469,7 @@ textarea:focus {
   .phone-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 479px) {
   .phone-wide--hidden {
     display: none;
     visibility: hidden; }
@@ -1629,7 +1629,7 @@ textarea:focus {
   .phone-wide-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 639px) {
   .tablet-small--hidden {
     display: none;
     visibility: hidden; }
@@ -1789,7 +1789,7 @@ textarea:focus {
   .tablet-small-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .tablet--hidden {
     display: none;
     visibility: hidden; }
@@ -1949,7 +1949,7 @@ textarea:focus {
   .tablet-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 979px) {
   .tablet-wide--hidden {
     display: none;
     visibility: hidden; }
@@ -2109,7 +2109,7 @@ textarea:focus {
   .tablet-wide-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 1248px) {
+@media only screen and (min-width: 1247px) {
   .desktop--hidden {
     display: none;
     visibility: hidden; }
@@ -2269,7 +2269,7 @@ textarea:focus {
   .desktop-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1439px) {
   .huge--hidden {
     display: none;
     visibility: hidden; }
@@ -2961,24 +2961,24 @@ h6,
   padding-right: 1.6rem;
   position: relative;
   max-width: 480px; }
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 639px) {
     .container {
       max-width: 1200px; } }
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 639px) {
     .container--snap {
       padding-left: 0;
       padding-right: 0;
       max-width: none; } }
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 639px) {
     .container--snap {
       width: 592px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 767px) {
     .container--snap {
       width: 720px; } }
-  @media only screen and (min-width: 980px) {
+  @media only screen and (min-width: 979px) {
     .container--snap {
       width: 932px; } }
-  @media only screen and (min-width: 1248px) {
+  @media only screen and (min-width: 1247px) {
     .container--snap {
       width: 1200px; } }
 
@@ -3113,7 +3113,7 @@ h6,
     .copy li:first-child {
       margin-top: 0; }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 639px) {
   .copy {
     font-size: 1.8rem; }
     .copy h1,
@@ -3128,7 +3128,7 @@ h6,
     .copy > p:first-child {
       font-size: 2.1rem; } }
 
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 979px) {
   .copy {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
