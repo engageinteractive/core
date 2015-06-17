@@ -32,18 +32,31 @@ select,
 	}
 
 	// validation
+	&.success,
+	&.valid,
 	&.error {
-		background: url(../img/icon/cross-red.svg) right 16px center no-repeat;
 		background-size: 16px;
-		border-color: $c-negative;
+		background-repeat: no-repeat;
+		background-position: right 16px center;
 		padding-right: 40px;
 	}
 
-	&:focus,
-	&:hover {
-		+ span.error-text {
-			opacity: 1;
-			visibility: visible;
+	&.success,
+	&.valid {
+		background-image: url(../img/icon/check-tick-green.svg);
+		border-color: $c-positive;
+	}
+
+	&.error {
+		background-image: url(../img/icon/cross-red.svg);
+		border-color: $c-negative;
+
+		&:focus,
+		&:hover {
+			+ span.error-text {
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 	}
 
