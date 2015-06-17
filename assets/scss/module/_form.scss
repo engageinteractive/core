@@ -7,7 +7,7 @@
 .form-fields {
 
 	> * {
-		@include push--top($base-spacing-unit / 1.5);
+		@include push--top($base-spacing-unit);
 		list-style: none;
 
 		&:first-child {
@@ -17,7 +17,7 @@
 
 	label,
 	.label {
-		margin-bottom: $base-spacing-unit / 6;
+		margin-bottom: $base-spacing-unit / 4;
 	}
 
 	&,
@@ -62,17 +62,18 @@
 			@include soft--sides($base-spacing-unit / 4);
 			float: left;
 			list-style: none;
-			margin-top: $base-spacing-unit / 2;
 			width: 50%;
-
-			&:first-child,
-			&:nth-child(2) {
-				@include flush--top;
-			}
 		}
 
 		span.error-text {
 			right: $base-spacing-unit / 4;
+		}
+
+		&--3 {
+
+			> * {
+				width: 100 / 3 * 1%;
+			}
 		}
 	}
 }
