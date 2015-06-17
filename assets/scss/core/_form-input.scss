@@ -32,31 +32,19 @@ select,
 	}
 
 	// validation
-	&.success,
-	&.valid,
 	&.error {
+		background: url(../img/icon/cross-red.svg) right 16px center no-repeat;
 		background-size: 16px;
-		background-repeat: no-repeat;
-		background-position: right 16px center;
+		border-color: $c-negative;
 		padding-right: 40px;
 	}
 
-	&.success,
-	&.valid {
-		background-image: url(../img/icon/check-tick-green.svg);
-		border-color: $c-positive;
-	}
-
-	&.error {
-		background-image: url(../img/icon/cross-red.svg);
-		border-color: $c-negative;
-	}
-
-	// error message
-	&:focus + span.error-text {
-		opacity: 1;
-		visibility: visible;
-
+	&:focus,
+	&:hover {
+		+ span.error-text {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 
 	// placeholder text
@@ -91,8 +79,9 @@ input[type="radio"] {
 			width: $base-font-size;
 			height: $base-font-size;
 			position: absolute;
-			top: .4rem;
+			top: 50%;
 			left: 0;
+			margin-top: $base-font-size / -2;
 
 			.lt-ie9 & {
 				display: none;
@@ -107,7 +96,6 @@ input[type="radio"] {
 
 	&:focus {
 		+ label:before {
-			// box-shadow: 0 0 10px rgb(94, 158, 215);
 			box-shadow: 0 0 5px $c-blue;
 			border-color: $c-blue;
 		}
@@ -125,6 +113,27 @@ input[type="radio"] {
 			cursor: not-allowed;
 			opacity: .4;
 			text-decoration: none;
+		}
+	}
+
+	// validation
+	&.error {
+		+ label:before {
+			background-color: $c-negative;
+		}
+	}
+
+	+ label + span.error-text {
+		margin-top: 0;
+		left: 0;
+		right: auto;
+	}
+
+	&:focus,
+	&:hover {
+		+ label + span.error-text {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }
@@ -226,20 +235,15 @@ span.error-text {
 	color: $c-white;
 	font-size: $p-x-small;
 	line-height: 100%;
-	padding: .6rem;
+	padding: $base-spacing-unit / 4;
 	position: absolute;
 	top: 100%;
 	right: 0;
-	margin-top: -8rem;
+	margin-top: $base-spacing-unit * -3.5;
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity .2s $ease-in-out-cubic, visibility .2s $ease-in-out-cubic;
-
-	&:after {
-		@include css-triangle($c-negative, down);
-		top: 100%; left: 50%;
-		margin-left: -3px;
-	}
+	z-index: 1;
 }
 
 span.success {
