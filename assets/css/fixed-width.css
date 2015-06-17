@@ -2676,36 +2676,96 @@ select,
   .select.focus {
     border-color: #4D90FE;
     box-shadow: 0 0 5px #4D90FE; }
+  input[type="date"].success,
+  input[type="date"].valid,
+  input[type="date"].error, input[type="datetime"].success,
+  input[type="datetime"].valid,
+  input[type="datetime"].error, input[type="datetime-local"].success,
+  input[type="datetime-local"].valid,
+  input[type="datetime-local"].error, input[type="email"].success,
+  input[type="email"].valid,
+  input[type="email"].error, input[type="month"].success,
+  input[type="month"].valid,
+  input[type="month"].error, input[type="number"].success,
+  input[type="number"].valid,
+  input[type="number"].error, input[type="password"].success,
+  input[type="password"].valid,
+  input[type="password"].error, input[type="search"].success,
+  input[type="search"].valid,
+  input[type="search"].error, input[type="tel"].success,
+  input[type="tel"].valid,
+  input[type="tel"].error, input[type="text"].success,
+  input[type="text"].valid,
+  input[type="text"].error, input[type="time"].success,
+  input[type="time"].valid,
+  input[type="time"].error, input[type="url"].success,
+  input[type="url"].valid,
+  input[type="url"].error, input[type="week"].success,
+  input[type="week"].valid,
+  input[type="week"].error,
+  textarea.success,
+  textarea.valid,
+  textarea.error,
+  select.success,
+  select.valid,
+  select.error,
+  .select.success,
+  .select.valid,
+  .select.error {
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px; }
+  input[type="date"].success,
+  input[type="date"].valid, input[type="datetime"].success,
+  input[type="datetime"].valid, input[type="datetime-local"].success,
+  input[type="datetime-local"].valid, input[type="email"].success,
+  input[type="email"].valid, input[type="month"].success,
+  input[type="month"].valid, input[type="number"].success,
+  input[type="number"].valid, input[type="password"].success,
+  input[type="password"].valid, input[type="search"].success,
+  input[type="search"].valid, input[type="tel"].success,
+  input[type="tel"].valid, input[type="text"].success,
+  input[type="text"].valid, input[type="time"].success,
+  input[type="time"].valid, input[type="url"].success,
+  input[type="url"].valid, input[type="week"].success,
+  input[type="week"].valid,
+  textarea.success,
+  textarea.valid,
+  select.success,
+  select.valid,
+  .select.success,
+  .select.valid {
+    background-image: url(../img/icon/check-tick-green.svg);
+    border-color: #24b35d; }
   input[type="date"].error, input[type="datetime"].error, input[type="datetime-local"].error, input[type="email"].error, input[type="month"].error, input[type="number"].error, input[type="password"].error, input[type="search"].error, input[type="tel"].error, input[type="text"].error, input[type="time"].error, input[type="url"].error, input[type="week"].error,
   textarea.error,
   select.error,
   .select.error {
-    background: url(../img/icon/cross-red.svg) right 16px center no-repeat;
-    background-size: 16px;
-    border-color: #f50023;
-    padding-right: 40px; }
-  input[type="date"]:focus + span.error-text,
-  input[type="date"]:hover + span.error-text, input[type="datetime"]:focus + span.error-text,
-  input[type="datetime"]:hover + span.error-text, input[type="datetime-local"]:focus + span.error-text,
-  input[type="datetime-local"]:hover + span.error-text, input[type="email"]:focus + span.error-text,
-  input[type="email"]:hover + span.error-text, input[type="month"]:focus + span.error-text,
-  input[type="month"]:hover + span.error-text, input[type="number"]:focus + span.error-text,
-  input[type="number"]:hover + span.error-text, input[type="password"]:focus + span.error-text,
-  input[type="password"]:hover + span.error-text, input[type="search"]:focus + span.error-text,
-  input[type="search"]:hover + span.error-text, input[type="tel"]:focus + span.error-text,
-  input[type="tel"]:hover + span.error-text, input[type="text"]:focus + span.error-text,
-  input[type="text"]:hover + span.error-text, input[type="time"]:focus + span.error-text,
-  input[type="time"]:hover + span.error-text, input[type="url"]:focus + span.error-text,
-  input[type="url"]:hover + span.error-text, input[type="week"]:focus + span.error-text,
-  input[type="week"]:hover + span.error-text,
-  textarea:focus + span.error-text,
-  textarea:hover + span.error-text,
-  select:focus + span.error-text,
-  select:hover + span.error-text,
-  .select:focus + span.error-text,
-  .select:hover + span.error-text {
-    opacity: 1;
-    visibility: visible; }
+    background-image: url(../img/icon/cross-red.svg);
+    border-color: #f50023; }
+    input[type="date"].error:focus + span.error-text,
+    input[type="date"].error:hover + span.error-text, input[type="datetime"].error:focus + span.error-text,
+    input[type="datetime"].error:hover + span.error-text, input[type="datetime-local"].error:focus + span.error-text,
+    input[type="datetime-local"].error:hover + span.error-text, input[type="email"].error:focus + span.error-text,
+    input[type="email"].error:hover + span.error-text, input[type="month"].error:focus + span.error-text,
+    input[type="month"].error:hover + span.error-text, input[type="number"].error:focus + span.error-text,
+    input[type="number"].error:hover + span.error-text, input[type="password"].error:focus + span.error-text,
+    input[type="password"].error:hover + span.error-text, input[type="search"].error:focus + span.error-text,
+    input[type="search"].error:hover + span.error-text, input[type="tel"].error:focus + span.error-text,
+    input[type="tel"].error:hover + span.error-text, input[type="text"].error:focus + span.error-text,
+    input[type="text"].error:hover + span.error-text, input[type="time"].error:focus + span.error-text,
+    input[type="time"].error:hover + span.error-text, input[type="url"].error:focus + span.error-text,
+    input[type="url"].error:hover + span.error-text, input[type="week"].error:focus + span.error-text,
+    input[type="week"].error:hover + span.error-text,
+    textarea.error:focus + span.error-text,
+    textarea.error:hover + span.error-text,
+    select.error:focus + span.error-text,
+    select.error:hover + span.error-text,
+    .select.error:focus + span.error-text,
+    .select.error:hover + span.error-text {
+      opacity: 1;
+      visibility: visible; }
   input[type="date"].placeholder, input[type="datetime"].placeholder, input[type="datetime-local"].placeholder, input[type="email"].placeholder, input[type="month"].placeholder, input[type="number"].placeholder, input[type="password"].placeholder, input[type="search"].placeholder, input[type="tel"].placeholder, input[type="text"].placeholder, input[type="time"].placeholder, input[type="url"].placeholder, input[type="week"].placeholder,
   textarea.placeholder,
   select.placeholder,
@@ -3006,14 +3066,14 @@ h6,
 
 */
 .form-fields > * {
-  margin-top: 1.6rem;
+  margin-top: 2.4rem;
   list-style: none; }
   .form-fields > *:first-child {
     margin-top: 0; }
 
 .form-fields label,
 .form-fields .label {
-  margin-bottom: 0.4rem; }
+  margin-bottom: 0.6rem; }
 
 .form-fields > *,
 .form-fields__list > *,
@@ -3045,13 +3105,11 @@ h6,
     padding-right: 0.6rem;
     float: left;
     list-style: none;
-    margin-top: 1.2rem;
     width: 50%; }
-    .form-fields__split > *:first-child,
-    .form-fields__split > *:nth-child(2) {
-      margin-top: 0; }
   .form-fields__split span.error-text {
     right: 0.6rem; }
+  .form-fields__split--3 > * {
+    width: 33.33333%; }
 
 /*--------------------------------
 
