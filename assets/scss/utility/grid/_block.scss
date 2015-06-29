@@ -24,7 +24,7 @@
 		$modifier: #{$modifier};
 	}
 
-	@for $i from 0 through $grid-column-count {
+	@for $i from 1 through $grid-column-count {
 
 		.#{$modifier}-block-grid-#{$i} {
 
