@@ -30,9 +30,8 @@ html {
 
 body {
 	background-color: $c-body-bg;
-	color: $c-body-color;
+	color: $c-body-colour;
 	font: #{$base-font-size}/#{$base-line-height} $sans-serif;
-	min-width: breakpoint("phone");
 }
 
 
