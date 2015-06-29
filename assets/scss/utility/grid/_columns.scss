@@ -41,7 +41,7 @@
 		$modifier: #{$modifier};
 	}
 
-	@for $i from 0 through $grid-column-count {
+	@for $i from 1 through $grid-column-count {
 
 		.#{$modifier}-#{$i} {
 			width: grid-calc($grid-column-count, $i);
@@ -68,11 +68,11 @@
 
 	@include mq($name) {
 
-		.#{$name}--hidden {
+		.#{$name}-hidden {
 			@include hidden;
 		}
 
-		.#{$name}--visible {
+		.#{$name}-visible {
 			@include visible;
 		}
 

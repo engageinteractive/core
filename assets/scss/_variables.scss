@@ -108,13 +108,15 @@ $grid-column-gutter: 2.4rem;
 // media queries
 
 $breakpoints: (
-	"phone":        320px,
+	"phone-small":  320px,
+	"phone":        400px,
 	"phone-wide":   480px,
+	"phablet":      560px,
 	"tablet-small": 640px,
 	"tablet":       768px,
 	"tablet-wide":  1024px,
 	"desktop":      1248px,
-	"huge":         1440px
+	"desktop-wide": 1440px
 );
 
 $max-width: breakpoint("desktop");
@@ -171,7 +173,7 @@ $c-negative: $c-red;
 // top level element colours
 
 $c-body-bg: $c-white;
-$c-body-color: $c-black;
+$c-body-colour: $c-black;
 
 
 

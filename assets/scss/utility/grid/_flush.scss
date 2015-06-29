@@ -1,0 +1,38 @@
+/*--------------------------------
+
+	Flush - to remove a margin when at a certain breakpoint
+	Should be used when using a grid
+
+*/
+
+@mixin flush($modifier: "") {
+
+	@if $modifier != "" {
+		$modifier: #{$modifier};
+	}
+
+	@for $i from 1 through 6 {
+
+		.#{$modifier}-flush-#{$i} {
+
+			> * {
+				&:nth-child(-n+#{$i}) {
+					@include flush--top;
+				}
+			}
+		}
+	}
+
+}
+
+@include flush("base");
+
+@each $name, $min-width in $breakpoints {
+
+	@include mq($name) {
+
+		@include flush(#{$name});
+
+	}
+
+}

@@ -178,6 +178,8 @@ $core.win
 
 			});
 
-		$('select:not([multiple="multiple"])').simpleSelect();
+		if( !$('.lt-ie9').length ){
+			simpleSelect($('select:not([multiple="multiple"])'), { selectClass : 'select' });
+		}
 
 	});
