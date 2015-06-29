@@ -3688,7 +3688,8 @@ form ul {
   position: absolute;
   top: 0;
   right: 0;
-  left: 0; }
+  left: 0;
+  z-index: 3; }
   .outdated-browser a {
     color: #fff; }
     .outdated-browser a:hover,
