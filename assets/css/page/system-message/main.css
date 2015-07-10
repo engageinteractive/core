@@ -484,7 +484,9 @@ html {
 body {
   background-color: #fff;
   color: #1a1a1a;
-  font: 1.6rem/1.5 Helvetica, Arial, sans-serif; }
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5; }
 
 /*--------------------------------
 
