@@ -31,7 +31,9 @@ html {
 body {
 	background-color: $c-body-bg;
 	color: $c-body-colour;
-	font: #{$base-font-size}/#{$base-line-height} $sans-serif;
+	font-family: $sans-serif;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
 }
 
 
