@@ -3995,13 +3995,7 @@ form ul {
   h3 {
     page-break-after: avoid; } }
 
-.site-wrapper {
-  padding: 40px 0; }
-
-.site-content,
-hr {
-  margin: 40px 0; }
-
+/* ? */
 body {
   min-width: 1024px; }
 /*# sourceMappingURL=fixed-width.css.map */
