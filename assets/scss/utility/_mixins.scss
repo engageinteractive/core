@@ -2,9 +2,29 @@
 
 	Media Queries
 
-*/
+	used for outputting content either between media query tags, or without (for fixed-width.scss)
 
-// used for outputting content either between media query tags, or without (for fixed-width.scss)
+	example: basic usage
+
+	.element {
+		width: 50%;
+
+		@include mq("tablet-small") {
+			width: 20%;
+		}
+	}
+
+	example: using max-width
+
+	.element {
+		width: 50%;
+
+		@include mq("tablet-small", "max") {
+			width: 20%;
+		}
+	}
+
+*/
 
 $fixed-width:       false !default;
 $fixed-width-limit: 980px !default;
@@ -40,6 +60,26 @@ $fixed-width-limit: 980px !default;
 /*--------------------------------
 
 	Margin / Padding Quick Resets
+
+	example: top margin
+	.element {
+		@include push--top($base-spacing-unit);
+	}
+
+	example: top & bottom margin
+	.element {
+		@include push--ends($base-spacing-unit);
+	}
+
+	example: left & right margin
+	.element {
+		@include push--sides($base-spacing-unit);
+	}
+
+	example: remove a top margin
+	.element {
+		@include flush--top;
+	}
 
 */
 
@@ -202,6 +242,14 @@ $fixed-width-limit: 980px !default;
 
 	Retina images
 
+	example:
+
+	.element {
+		@include retina {
+			background-image: url(../img/background@2x.png);
+		}
+	}
+
 */
 
 @mixin retina {
@@ -218,22 +266,37 @@ $fixed-width-limit: 980px !default;
 
 /*--------------------------------
 
-	Misc
+	Content margins
+
+	fore removing first/last child margins
+
+	example: default
+	.element {
+		@include content-margins;
+	}
+
+	output:
+	.element > *:first-child {
+		margin-top: 0;
+	}
+	.element > *:last-child {
+		margin-bottom: 0;
+	}
+
+	example: empty selector
+	.element {
+		@include content-margins(false);
+	}
+
+	output:
+	.element:first-child {
+		margin-top: 0;
+	}
+	.element:last-child {
+		margin-bottom: 0;
+	}
 
 */
-
-@mixin antialias {
-	font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-
-@mixin appearance($val: none) {
-	-webkit-appearance: $val;
-	-moz-appearance: $val;
-	appearance: $val;
-}
 
 
 @mixin content-margins($selector: '> *') {
@@ -244,6 +307,23 @@ $fixed-width-limit: 980px !default;
 	}
 }
 
+
+
+/*--------------------------------
+
+	CSS Triangle
+
+	used for creating CSS only triangles
+
+	example:
+	.element {
+
+		&:before {
+			@include css-triangle(blue, down);
+		}
+	}
+
+*/
 
 @mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
 	@include pseudo($pos: $position);
@@ -278,15 +358,18 @@ $fixed-width-limit: 980px !default;
 }
 
 
-@mixin hardware($backface: true, $perspective: 1000) {
 
-	@if $backface {
-		backface-visibility: hidden;
+/*--------------------------------
+
+	Hide text
+
+	example:
+
+	.element {
+		@include hide-text;
 	}
 
-	perspective: $perspective;
-}
-
+*/
 
 @mixin hide-text($break: false, $indent: 200%, $align: left, $overflow: hidden) {
 	@if $break {
@@ -303,6 +386,106 @@ $fixed-width-limit: 980px !default;
 	@if $overflow {
 		overflow: $overflow;
 	}
+}
+
+
+
+/*--------------------------------
+
+	Responsive ratio
+
+	Used for creating scalable elements that maintain the same ratio
+
+	example:
+	.element {
+		@include responsive-ratio(400, 300);
+	}
+
+*/
+
+@mixin responsive-ratio($x,$y, $pseudo: false, $max-height: false) {
+	$padding: unquote( ( $y / $x ) * 100 + '%' );
+
+	@if $pseudo {
+		@if $max-height {
+			max-height: $max-height;
+		}
+		&:before {
+			@include pseudo($pos: relative);
+			width: 100%;
+			padding-top: $padding;
+		}
+	} @else {
+		@if $max-height {
+			max-height: $max-height;
+		}
+		padding-top: $padding;
+	}
+}
+
+
+
+/*--------------------------------
+
+	Typography
+
+	Text image replacement, with responsive ratio
+
+	HTML:
+
+	<h1 class="element">
+		<span>Text to replace</span>
+	</h1>
+
+	example:
+	.element {
+		@include typography(200, 50, 'hello-world');
+	}
+
+
+*/
+
+@mixin typography($w, $h, $file, $type: png, $overflow: hidden) {
+	@include responsive-ratio($w, $h, true);
+	position: relative;
+	max-width: ( $w / 10 ) * 1rem;
+	background: url('/assets/img/typography/#{$file}.#{$type}') 50% 50% no-repeat;
+	background-size: contain;
+
+	span {
+		@include hide-text(true, $overflow: $overflow);
+	}
+}
+
+
+
+/*--------------------------------
+
+	Misc
+
+*/
+
+@mixin antialias {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin appearance($val: none) {
+	-webkit-appearance: $val;
+	-moz-appearance: $val;
+	appearance: $val;
+}
+
+
+@mixin hardware($backface: true, $perspective: 1000) {
+
+	@if $backface {
+		backface-visibility: hidden;
+	}
+
+	perspective: $perspective;
 }
 
 
@@ -324,28 +507,6 @@ $fixed-width-limit: 980px !default;
 }
 
 
-@mixin responsive-ratio($x,$y, $pseudo: false, $max-height: false) {
-
-	$padding: unquote( ( $y / $x ) * 100 + '%' );
-
-	@if $pseudo {
-		@if $max-height {
-			max-height: $max-height;
-		}
-		&:before {
-			@include pseudo($pos: relative);
-			width: 100%;
-			padding-top: $padding;
-		}
-	} @else {
-		@if $max-height {
-			max-height: $max-height;
-		}
-		padding-top: $padding;
-	}
-}
-
-
 @mixin selection {
 	::-moz-selection { @content; }
 	::selection { @content; }
@@ -357,19 +518,6 @@ $fixed-width-limit: 980px !default;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
-
-
-@mixin typography($w, $h, $file, $type: png, $overflow: hidden) {
-	@include responsive-ratio($w, $h, true);
-	position: relative;
-	max-width: ( $w / 10 ) * 1rem;
-	background: url('/assets/img/typography/#{$file}.#{$type}') 50% 50% no-repeat;
-	background-size: contain;
-
-	span {
-		@include hide-text(true, $overflow: $overflow);
-	}
 }
 
 
