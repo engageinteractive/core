@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "19051",
+"creatorBuild": "18902",
 "files": {
 	"\/404.html": {
 		"fileType": 8192,
@@ -62,7 +62,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1503,
+		"initialSize": 6781,
 		"inputAbbreviatedPath": "\/assets\/img\/tile\/tile-wide.png",
 		"outputAbbreviatedPath": "\/assets\/img\/tile\/tile-wide.png",
 		"outputPathIsOutsideProject": 0,
@@ -73,7 +73,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 3087,
+		"initialSize": 13767,
 		"inputAbbreviatedPath": "\/assets\/img\/tile\/tile.png",
 		"outputAbbreviatedPath": "\/assets\/img\/tile\/tile.png",
 		"outputPathIsOutsideProject": 0,
@@ -135,17 +135,6 @@
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js\/libs\/enquire.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/libs\/enquire.js",
-		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/enquire.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
 	"\/assets\/js\/libs\/fastclick.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -159,21 +148,10 @@
 		},
 	"\/assets\/js\/libs\/jquery-2.1.4.min.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/js\/libs\/jquery-2.1.4.min.js",
 		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/jquery-2.1.4.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/libs\/matchMedia.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/libs\/matchMedia.js",
-		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/matchMedia.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
@@ -190,17 +168,6 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js\/libs\/TweenLite.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/libs\/TweenLite.js",
-		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/TweenLite.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
 	"\/assets\/js\/plugins.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -209,61 +176,6 @@
 		"outputAbbreviatedPath": "\/assets\/js-min\/plugins.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/plugins\/gsap-AttrPlugin.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/gsap-AttrPlugin.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/gsap-AttrPlugin.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/plugins\/gsap-CSSPlugin.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/gsap-CSSPlugin.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/gsap-CSSPlugin.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/plugins\/gsap-EasePack.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/gsap-EasePack.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/gsap-EasePack.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/plugins\/gsap-ScrollToPlugin.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/gsap-ScrollToPlugin.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/gsap-ScrollToPlugin.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/plugins\/gsap-StaggerTo.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/gsap-StaggerTo.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/gsap-StaggerTo.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
@@ -967,7 +879,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Simon Willans",
+"lastSavedByUser": "Will Blackmore",
 "manualImportLinks": {
 	},
 "projectAttributes": {
@@ -1456,6 +1368,10 @@
 			}
 		},
 	"jsLintFlags2": {
+		"ass": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"bitwise": {
 			"active": 0,
 			"flagValue": -1
@@ -1464,7 +1380,15 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"couch": {
+		"closure": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"continue": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"debug": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -1472,27 +1396,75 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"es6": {
+		"eqeq": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"eval": {
+		"evil": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"for": {
+		"forin": {
 			"active": 0,
 			"flagValue": -1
+			},
+		"indent": {
+			"active": 0,
+			"flagValue": 4
 			},
 		"maxlen": {
 			"active": 0,
 			"flagValue": 150
 			},
+		"newcap": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"node": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"this": {
+		"nomen": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"plusplus": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"properties": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"regexp": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"rhino": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"sloppy": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"stupid": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"sub": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"todo": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unparam": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"vars": {
 			"active": 0,
 			"flagValue": -1
 			},

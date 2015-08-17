@@ -9,11 +9,6 @@ var $core = {
 var $site = {
 	wrapper: $('#site-wrapper'),
 	content: $('#site-content'),
-	nav: {
-		root: $('#site-nav'),
-		inner: $('#site-nav').children('.inner'),
-		toggle: $('#site-nav-toggle')
-	},
 	header: $('#site-header'),
 	footer: $('#site-footer')
 };
@@ -30,17 +25,6 @@ var site = {
 	old: {
 		width: 0,
 		height: 0
-	},
-	scrollTo: function(y, s){
-
-		TweenLite
-			.to(window, s, {
-				scrollTo: {
-					y: y
-				},
-				ease: Expo.easeInOut
-			});
-
 	}
 };
 
@@ -157,29 +141,32 @@ jQuery.extend( jQuery.expr[':'], {
 
 --------------------------------*/
 
-$core.win
-	.ready(function(){
+Modernizr
+	.load({
+		test: Modernizr.touch && !navigator.userAgent.match(/iemobile/i),
+		yep: '/assets/js/libs/fastclick.js',
+		complete: function(){
 
-		if( !navigator.userAgent.match(/iemobile/i) )
-			FastClick.attach(document.body);
+			if( Modernizr.touch )
+				FastClick.attach(document.body);
 
-		$('[data-img]').loadImg();
+		}
+	});
 
-		$core.body
-			.on('click', 'a:external:not(.internal):not(.slide), a.external', function(e){
+$('[data-img]').loadImg();
 
-				if( e.which != 2 ){
+$core.body
+	.on('click', 'a:external:not(.internal), a.external', function(e){
 
-					window.open( $(this).attr('href') );
+		if( e.which != 2 ){
 
-					e.preventDefault();
+			window.open( $(this).attr('href') );
 
-				}
+			e.preventDefault();
 
-			});
-
-		if( !$('.lt-ie9').length ){
-			simpleSelect($('select:not([multiple="multiple"])'), { selectClass : 'select' });
 		}
 
 	});
+
+if( !$('.lt-ie9').length )
+	simpleSelect($('select:not([multiple="multiple"])'), { selectClass : 'select' });
