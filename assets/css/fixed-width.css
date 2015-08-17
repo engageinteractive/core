@@ -544,10 +544,52 @@ textarea:focus {
 
 	Media Queries
 
+	used for outputting content either between media query tags, or without (for fixed-width.scss)
+
+	example: basic usage
+
+	.element {
+		width: 50%;
+
+		@include mq("tablet-small") {
+			width: 20%;
+		}
+	}
+
+	example: using max-width
+
+	.element {
+		width: 50%;
+
+		@include mq("tablet-small", "max") {
+			width: 20%;
+		}
+	}
+
 */
 /*--------------------------------
 
 	Margin / Padding Quick Resets
+
+	example: top margin
+	.element {
+		@include push--top($base-spacing-unit);
+	}
+
+	example: top & bottom margin
+	.element {
+		@include push--ends($base-spacing-unit);
+	}
+
+	example: left & right margin
+	.element {
+		@include push--sides($base-spacing-unit);
+	}
+
+	example: remove a top margin
+	.element {
+		@include flush--top;
+	}
 
 */
 /*--------------------------------
@@ -572,6 +614,104 @@ textarea:focus {
 /*--------------------------------
 
 	Retina images
+
+	example:
+
+	.element {
+		@include retina {
+			background-image: url(../img/background@2x.png);
+		}
+	}
+
+*/
+/*--------------------------------
+
+	Content margins
+
+	fore removing first/last child margins
+
+	example: default
+	.element {
+		@include content-margins;
+	}
+
+	output:
+	.element > *:first-child {
+		margin-top: 0;
+	}
+	.element > *:last-child {
+		margin-bottom: 0;
+	}
+
+	example: empty selector
+	.element {
+		@include content-margins(false);
+	}
+
+	output:
+	.element:first-child {
+		margin-top: 0;
+	}
+	.element:last-child {
+		margin-bottom: 0;
+	}
+
+*/
+/*--------------------------------
+
+	CSS Triangle
+
+	used for creating CSS only triangles
+
+	example:
+	.element {
+
+		&:before {
+			@include css-triangle(blue, down);
+		}
+	}
+
+*/
+/*--------------------------------
+
+	Hide text
+
+	example:
+
+	.element {
+		@include hide-text;
+	}
+
+*/
+/*--------------------------------
+
+	Responsive ratio
+
+	Used for creating scalable elements that maintain the same ratio
+
+	example:
+	.element {
+		@include responsive-ratio(400, 300);
+	}
+
+*/
+/*--------------------------------
+
+	Typography
+
+	Text image replacement, with responsive ratio
+
+	HTML:
+
+	<h1 class="element">
+		<span>Text to replace</span>
+	</h1>
+
+	example:
+	.element {
+		@include typography(200, 50, 'hello-world');
+	}
+
 
 */
 /*--------------------------------
