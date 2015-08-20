@@ -823,7 +823,7 @@ textarea:focus {
 .base-block-grid-24 > * {
   width: 100%; }
 
-@media only screen and (min-width: 319px) {
+@media only screen and (min-width: 320px) {
   .phone-small-block-grid-1 > * {
     width: 4.16667%; }
   .phone-small-block-grid-2 > * {
@@ -873,7 +873,7 @@ textarea:focus {
   .phone-small-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 399px) {
+@media only screen and (min-width: 400px) {
   .phone-block-grid-1 > * {
     width: 4.16667%; }
   .phone-block-grid-2 > * {
@@ -923,7 +923,7 @@ textarea:focus {
   .phone-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 479px) {
+@media only screen and (min-width: 480px) {
   .phone-wide-block-grid-1 > * {
     width: 4.16667%; }
   .phone-wide-block-grid-2 > * {
@@ -973,7 +973,7 @@ textarea:focus {
   .phone-wide-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 559px) {
+@media only screen and (min-width: 560px) {
   .phablet-block-grid-1 > * {
     width: 4.16667%; }
   .phablet-block-grid-2 > * {
@@ -1023,7 +1023,7 @@ textarea:focus {
   .phablet-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 639px) {
+@media only screen and (min-width: 640px) {
   .tablet-small-block-grid-1 > * {
     width: 4.16667%; }
   .tablet-small-block-grid-2 > * {
@@ -1073,7 +1073,7 @@ textarea:focus {
   .tablet-small-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .tablet-block-grid-1 > * {
     width: 4.16667%; }
   .tablet-block-grid-2 > * {
@@ -1123,7 +1123,7 @@ textarea:focus {
   .tablet-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 1024px) {
   .tablet-wide-block-grid-1 > * {
     width: 4.16667%; }
   .tablet-wide-block-grid-2 > * {
@@ -1173,7 +1173,7 @@ textarea:focus {
   .tablet-wide-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 1247px) {
+@media only screen and (min-width: 1248px) {
   .desktop-block-grid-1 > * {
     width: 4.16667%; }
   .desktop-block-grid-2 > * {
@@ -1223,7 +1223,7 @@ textarea:focus {
   .desktop-block-grid-24 > * {
     width: 100%; } }
 
-@media only screen and (min-width: 1439px) {
+@media only screen and (min-width: 1440px) {
   .desktop-wide-block-grid-1 > * {
     width: 4.16667%; }
   .desktop-wide-block-grid-2 > * {
@@ -1523,7 +1523,7 @@ textarea:focus {
 .base-push-0 {
   left: 0; }
 
-@media only screen and (min-width: 319px) {
+@media only screen and (min-width: 320px) {
   .phone-small-hidden {
     display: none;
     visibility: hidden; }
@@ -1677,7 +1677,7 @@ textarea:focus {
   .phone-small-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 399px) {
+@media only screen and (min-width: 400px) {
   .phone-hidden {
     display: none;
     visibility: hidden; }
@@ -1831,7 +1831,7 @@ textarea:focus {
   .phone-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 479px) {
+@media only screen and (min-width: 480px) {
   .phone-wide-hidden {
     display: none;
     visibility: hidden; }
@@ -1985,7 +1985,7 @@ textarea:focus {
   .phone-wide-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 559px) {
+@media only screen and (min-width: 560px) {
   .phablet-hidden {
     display: none;
     visibility: hidden; }
@@ -2139,7 +2139,7 @@ textarea:focus {
   .phablet-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 639px) {
+@media only screen and (min-width: 640px) {
   .tablet-small-hidden {
     display: none;
     visibility: hidden; }
@@ -2293,7 +2293,7 @@ textarea:focus {
   .tablet-small-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .tablet-hidden {
     display: none;
     visibility: hidden; }
@@ -2447,7 +2447,7 @@ textarea:focus {
   .tablet-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 1024px) {
   .tablet-wide-hidden {
     display: none;
     visibility: hidden; }
@@ -2601,7 +2601,7 @@ textarea:focus {
   .tablet-wide-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 1247px) {
+@media only screen and (min-width: 1248px) {
   .desktop-hidden {
     display: none;
     visibility: hidden; }
@@ -2755,7 +2755,7 @@ textarea:focus {
   .desktop-push-0 {
     left: 0; } }
 
-@media only screen and (min-width: 1439px) {
+@media only screen and (min-width: 1440px) {
   .desktop-wide-hidden {
     display: none;
     visibility: hidden; }
@@ -2933,7 +2933,7 @@ textarea:focus {
 .base-flush-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-@media only screen and (min-width: 319px) {
+@media only screen and (min-width: 320px) {
   .phone-small-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .phone-small-flush-2 > *:nth-child(-n+2) {
@@ -2947,7 +2947,7 @@ textarea:focus {
   .phone-small-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 399px) {
+@media only screen and (min-width: 400px) {
   .phone-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .phone-flush-2 > *:nth-child(-n+2) {
@@ -2961,7 +2961,7 @@ textarea:focus {
   .phone-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 479px) {
+@media only screen and (min-width: 480px) {
   .phone-wide-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .phone-wide-flush-2 > *:nth-child(-n+2) {
@@ -2975,7 +2975,7 @@ textarea:focus {
   .phone-wide-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 559px) {
+@media only screen and (min-width: 560px) {
   .phablet-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .phablet-flush-2 > *:nth-child(-n+2) {
@@ -2989,7 +2989,7 @@ textarea:focus {
   .phablet-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 639px) {
+@media only screen and (min-width: 640px) {
   .tablet-small-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .tablet-small-flush-2 > *:nth-child(-n+2) {
@@ -3003,7 +3003,7 @@ textarea:focus {
   .tablet-small-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .tablet-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .tablet-flush-2 > *:nth-child(-n+2) {
@@ -3017,7 +3017,7 @@ textarea:focus {
   .tablet-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 1024px) {
   .tablet-wide-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .tablet-wide-flush-2 > *:nth-child(-n+2) {
@@ -3031,7 +3031,7 @@ textarea:focus {
   .tablet-wide-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 1247px) {
+@media only screen and (min-width: 1248px) {
   .desktop-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .desktop-flush-2 > *:nth-child(-n+2) {
@@ -3045,7 +3045,7 @@ textarea:focus {
   .desktop-flush-6 > *:nth-child(-n+6) {
     margin-top: 0; } }
 
-@media only screen and (min-width: 1439px) {
+@media only screen and (min-width: 1440px) {
   .desktop-wide-flush-1 > *:nth-child(-n+1) {
     margin-top: 0; }
   .desktop-wide-flush-2 > *:nth-child(-n+2) {
@@ -3611,7 +3611,7 @@ h6,
   padding-right: 1.6rem;
   position: relative;
   max-width: 1248px; }
-  @media only screen and (min-width: 639px) {
+  @media only screen and (min-width: 640px) {
     .container {
       padding-left: 2.4rem;
       padding-right: 2.4rem;
@@ -3637,10 +3637,10 @@ form ul {
     margin-top: 0;
     padding-top: 0;
     border-top: none; }
-  @media only screen and (min-width: 639px) {
+  @media only screen and (min-width: 640px) {
     .form-fieldset__title {
       font-size: 3.6rem; } }
-  @media only screen and (min-width: 639px) {
+  @media only screen and (min-width: 640px) {
     .form-fieldset {
       margin-top: 4.8rem;
       padding-top: 4.2rem; } }
@@ -3788,7 +3788,7 @@ form ul {
     .copy li:first-child {
       margin-top: 0; }
 
-@media only screen and (min-width: 639px) {
+@media only screen and (min-width: 640px) {
   .copy {
     font-size: 1.8rem; }
     .copy h1,
@@ -3803,7 +3803,7 @@ form ul {
     .copy > p:first-child {
       font-size: 2.1rem; } }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 1024px) {
   .copy {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

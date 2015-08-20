@@ -693,17 +693,17 @@ body {
   .system-message h1 {
     margin-top: 20px;
     font-size: 24px; }
-    @media only screen and (min-width: 639px) {
+    @media only screen and (min-width: 640px) {
       .system-message h1 {
         margin-top: 24px;
         font-size: 32px; } }
   .system-message p {
     margin-top: 12px; }
-    @media only screen and (min-width: 639px) {
+    @media only screen and (min-width: 640px) {
       .system-message p {
         margin-top: 16px;
         font-size: 18px; } }
-  @media only screen and (min-width: 639px) {
+  @media only screen and (min-width: 640px) {
     .system-message {
       position: absolute;
       top: 50%;
