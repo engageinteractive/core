@@ -34,7 +34,7 @@ $fixed-width-limit: 980px !default;
     @if map_has_key($breakpoints, $width) {
         $width: map_get($breakpoints, $width);
 
-        @if $type = max {
+        @if $type == max {
             $width: $width - 1px;
         }
     }
