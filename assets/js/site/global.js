@@ -147,7 +147,7 @@ Modernizr
 		yep: '/assets/js/libs/fastclick.js',
 		complete: function(){
 
-			if( Modernizr.touch )
+			if( Modernizr.touch && !navigator.userAgent.match(/iemobile/i) )
 				FastClick.attach(document.body);
 
 		}
