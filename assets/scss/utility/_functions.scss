@@ -5,7 +5,12 @@
 */
 
 @function grid-calc($t, $c){
-	@return 100% / ( $t / $c );
+	@if $c == 0 {
+		$val: 0%;
+	}@else{
+		$val: 100% / ( $t / $c );
+	}
+	@return $val;
 }
 
 

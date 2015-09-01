@@ -291,7 +291,7 @@
 		},
 	"\/assets\/js-min\/plugins.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js-min\/plugins.js",
 		"outputAbbreviatedPath": "\/assets\/js-min\/min\/plugins.min.js",
@@ -302,7 +302,7 @@
 		},
 	"\/assets\/js-min\/site.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js-min\/site.js",
 		"outputAbbreviatedPath": "\/assets\/js-min\/min\/site.min.js",
@@ -369,11 +369,11 @@
 	"\/assets\/js\/plugins.js": {
 		"fileType": 64,
 		"ignore": 0,
-		"ignoreWasSetByUser": 1,
+		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/plugins.js",
-		"outputAbbreviatedPath": "\/assets\/js-min\/plugins.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/plugins.min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
@@ -426,9 +426,9 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/site.js",
-		"outputAbbreviatedPath": "\/assets\/js-min\/site.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/site.min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
@@ -715,11 +715,11 @@
 		"inputAbbreviatedPath": "\/assets\/scss\/fixed-width.scss",
 		"outputAbbreviatedPath": "\/assets\/css\/fixed-width.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
-		"useLibsass": 1
+		"useLibsass": 0
 		},
 	"\/assets\/scss\/layout\/_site-content.scss": {
 		"createSourceMap": 1,
