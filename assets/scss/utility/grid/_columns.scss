@@ -169,3 +169,15 @@
 	}
 
 }
+
+@include columns("base");
+
+@each $name, $min-width in $breakpoints {
+
+	@include mq($name) {
+
+		@include columns(#{$name});
+
+	}
+
+}
