@@ -1,14 +1,22 @@
-// containers
-// fluid up to wide mobile, then changes to snap points through the rest of the media queries
-
 .container {
 	@include push--auto;
-	@include soft--sides($base-spacing-unit / 1.5);
+	@include soft--sides($base-spacing-unit / 1.2);
 	position: relative;
 	max-width: $max-width;
 
-	@include mq("tablet-small") {
+	@include mq("phablet") {
 		@include soft--sides($base-spacing-unit);
-		max-width: $max-width - ($base-spacing-unit / ($base-spacing-unit * 0 + 1)) * 10 * 2;
+	}
+
+	@include mq("tablet-small") {
+		@include soft--sides($base-spacing-unit * 1.25);
+	}
+
+	@include mq("tablet-wide") {
+		@include soft--sides($base-spacing-unit * 1.75);
+	}
+
+	@include mq("desktop") {
+		@include soft--sides($base-spacing-unit * 2);
 	}
 }

@@ -1,5 +1,20 @@
 @import "utility/defaults";
 
+
+/*--------------------------------
+
+	Development mode
+
+	if development mode is set to true, then the following things apply:
+
+	When a site is ready to go live, change it to false, and make sure you
+	populate any relevant variables such as the grid classes
+
+*/
+
+$dev_mode: true;
+
+
 /*--------------------------------
 
 	Typography
@@ -36,6 +51,7 @@ $p-x-large: 2.4rem;
 $lh-mini: 1.1;
 $lh-small: 1.25;
 $lh-base: 1.5;
+$lh-large: 1.75;
 
 
 // default font sizes / line-height
@@ -106,9 +122,9 @@ $grid-column-gutter: 2.4rem;
 
 
 // media queries
+// build mobile first
 
 $breakpoints: (
-	"phone-small":  320px,
 	"phone":        400px,
 	"phone-wide":   480px,
 	"phablet":      560px,
@@ -155,6 +171,7 @@ $c-black: #1a1a1a;
 $c-grey-dark: #444;
 $c-grey: #888;
 $c-grey-light: #ddd;
+$c-grey-off-white: #F6F6F6;
 $c-white: #fff;
 
 
@@ -175,6 +192,61 @@ $c-negative: $c-red;
 
 $c-body-bg: $c-white;
 $c-body-colour: $c-black;
+
+
+// colour map (only use colours from the styleguide)
+// used for when looping through panel/theme styles
+
+@function c($colour, $value: "base") {
+
+	@if map-has-key($colours, $colour) {
+
+		$colour: map-get($colours, $colour);
+		$colourVal: map-get($colour, $value);
+		@return $colourVal;
+
+	} @else {
+
+		@warn "Colour name #{$colour} not found in $colours.";
+
+	}
+
+}
+
+$colours: (
+	// primary colours
+	"yellow": (
+		"base": $c-brand-primary
+	),
+	"green": (
+		"base": $c-green
+	),
+	"red": (
+		"base": $c-red
+	),
+	"blue": (
+		"base": $c-blue
+	),
+	// greyscale
+	"black": (
+		"base": $c-black
+	),
+	"grey": (
+		"base": $c-grey
+	),
+	"grey-dark": (
+		"base": $c-grey-dark
+	),
+	"grey-light": (
+		"base": $c-grey-light
+	),
+	"grey-off-white": (
+		"base": $c-grey-off-white
+	),
+	"white": (
+		"base": $c-white
+	)
+);
 
 
 
@@ -226,17 +298,3 @@ $ease-in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
 
 //	Smooth fade
 $ease-smooth-fade: cubic-bezier(.365,.005,.355,1);
-
-
-
-/*--------------------------------
-
-	Normalise includes
-
-*/
-
-$reset-mark: false;
-$reset-small: false;
-$reset-sub-sup: false;
-$reset-hr: false;
-$reset-code: false;

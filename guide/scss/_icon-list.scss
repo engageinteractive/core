@@ -1,0 +1,10 @@
+.icon-list {
+	@include cf;
+	@include unlist;
+
+	> li {
+		float: left;
+		margin-right: $base-spacing-unit;
+		margin-bottom: 0;
+	}
+}

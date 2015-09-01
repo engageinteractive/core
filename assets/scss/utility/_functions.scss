@@ -82,3 +82,22 @@
 @function ls-basic($value) {
 	@return $value / 1000 * 1em;
 }
+
+
+
+/*--------------------------------
+
+	Map deep get
+
+	Get values from anywhere in a variable list
+
+	http://css-tricks.com/snippets/sass/deep-getset-maps/
+
+*/
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}

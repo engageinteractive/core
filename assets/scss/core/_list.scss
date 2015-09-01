@@ -1,0 +1,11 @@
+.list-inline {
+	@include unlist($margin: 'horizontal', $padding: false);
+
+	> li {
+		display: inline-block;
+	}
+}
+
+.list-unstyled {
+	@include unlist($margin: 'horizontal', $padding: false);
+}

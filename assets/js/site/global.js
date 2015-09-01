@@ -36,6 +36,35 @@ var site = {
 --------------------------------*/
 
 /**
+ *  Adds/removes an item to an array, while array has contents
+ *  you can check it's length to check for activity and
+ *  prevent button mashing
+ */
+var busy = function(arr){
+
+	for( item in arr ){
+
+		site.busy.push(arr[item]);
+
+	}
+
+};
+
+var quiet = function(arr){
+
+	for( item in arr ){
+
+		var i = site.busy.indexOf( arr[item] );
+
+		if( i > -1 )
+			site.busy.splice(i, 1);
+
+	}
+
+};
+
+
+/**
  *  Updates site metrics and calls any necessary
  *  functions before and then after a browser resize.
  */
@@ -147,13 +176,16 @@ Modernizr
 		yep: '/assets/js/libs/fastclick.js',
 		complete: function(){
 
-			if( Modernizr.touch )
+			if( Modernizr.touch && !navigator.userAgent.match(/iemobile/i) )
 				FastClick.attach(document.body);
 
 		}
 	});
 
 $('[data-img]').loadImg();
+
+$site.content
+	.fitVids();
 
 $core.body
 	.on('click', 'a:external:not(.internal), a.external', function(e){

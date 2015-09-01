@@ -87,7 +87,9 @@ $fixed-width-limit: 980px !default;
 
 @mixin push($spacing: $base-spacing-unit) { margin: $spacing; }
 @mixin push--top($spacing: $base-spacing-unit) { margin-top: $spacing; }
+@mixin push--bottom($spacing: $base-spacing-unit) { margin-bottom: $spacing; }
 @mixin push--left($spacing: $base-spacing-unit) { margin-left: $spacing; }
+@mixin push--right($spacing: $base-spacing-unit) { margin-right: $spacing; }
 @mixin push--ends($spacing: $base-spacing-unit) { margin: { top: $spacing; bottom: $spacing; } }
 @mixin push--sides($spacing: $base-spacing-unit) { margin: { left: $spacing; right: $spacing; } }
 
@@ -96,7 +98,9 @@ $fixed-width-limit: 980px !default;
 
 @mixin flush { margin: 0; }
 @mixin flush--top { margin-top: 0; }
+@mixin flush--bottom { margin-bottom: 0; }
 @mixin flush--left { margin-left: 0; }
+@mixin flush--right { margin-right: 0; }
 @mixin flush--ends { margin: { top: 0; bottom: 0; } }
 @mixin flush--sides { margin: { left: 0; right: 0; } }
 
@@ -105,15 +109,44 @@ $fixed-width-limit: 980px !default;
 
 @mixin soft($spacing: $base-spacing-unit) { padding: $spacing; }
 @mixin soft--top($spacing: $base-spacing-unit) { padding-top: $spacing; }
+@mixin soft--bottom($spacing: $base-spacing-unit) { padding-bottom: $spacing; }
 @mixin soft--left($spacing: $base-spacing-unit) { padding-left: $spacing; }
+@mixin soft--right($spacing: $base-spacing-unit) { padding-right: $spacing; }
 @mixin soft--ends($spacing: $base-spacing-unit) { padding: { top: $spacing; bottom: $spacing; } }
 @mixin soft--sides($spacing: $base-spacing-unit) { padding: { left: $spacing; right: $spacing; } }
 
 @mixin hard { padding: 0; }
 @mixin hard--top { padding-top: 0; }
+@mixin hard--bottom { padding-bottom: 0; }
 @mixin hard--left { padding-left: 0; }
+@mixin hard--right { padding-right: 0; }
 @mixin hard--ends { padding: { top: 0; bottom: 0; } }
 @mixin hard--sides { padding: { left: 0; right: 0; } }
+
+
+
+/*--------------------------------
+
+	LT IE9
+
+	to be used in conjunction with fixed-width.scss
+
+*/
+
+// only chuck out content
+$lt-ie9: false !default;
+
+@mixin lt-ie9 {
+
+	@if $lt-ie9 {
+
+		.lt-ie9 & {
+			@content;
+		}
+
+	}
+
+}
 
 
 
@@ -461,6 +494,78 @@ $fixed-width-limit: 980px !default;
 
 /*--------------------------------
 
+	Icon
+
+	For using fontastic icons in pseudo elements
+
+*/
+
+@mixin icon-css($content: false) {
+	@if $content {
+		content: '#{$content}';
+	}
+	display: block;
+	font-family: "university-of-northampton" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/*--------------------------------
+
+	Colours
+
+	background, colour, etc. match up with colour map in _variables.scss
+
+	modify to suit per project
+
+*/
+
+@mixin colours(
+	$selector: false,
+	$chain: "&--",
+	$background: "base",
+	$border: true
+) {
+
+	@each $name, $values in $colours {
+		#{$chain}#{$name} {
+
+			@if $selector {
+
+				#{$selector} {
+					@if $background {
+						background-color: map-get($values, $background);
+						@if $border {
+							border-color: darken(map-get($values, $background), 20%);
+						}
+					}
+				}
+
+			} @else {
+
+				@if $background {
+					background-color: map-get($values, $background);
+				}
+
+			}
+		}
+
+	}
+
+}
+
+
+
+/*--------------------------------
+
 	Misc
 
 */
@@ -521,9 +626,19 @@ $fixed-width-limit: 980px !default;
 }
 
 
-@mixin unlist {
-	margin: 0;
-	padding: 0;
+@mixin unlist($margin: true, $padding: true) {
+	@if $margin {
+		@if $margin == 'vertical' {
+			@include flush--ends;
+		} @elseif $margin == 'horizontal' {
+			@include flush--sides;
+		} @else {
+			margin: 0;
+		}
+	}
+	@if $padding {
+		padding: 0;
+	}
 	list-style: none;
 }
 

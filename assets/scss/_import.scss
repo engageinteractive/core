@@ -26,26 +26,38 @@
 // basic building blocks, typically single html tags
 
 @import "core/anchor";
+@import "core/blockquote";
+@import "core/code";
+@import "core/figure";
 @import "core/form-button";
 @import "core/form-input";
+@import "core/icon";
 @import "core/img";
+@import "core/list";
+@import "core/logo";
 @import "core/table";
 @import "core/typography";
 
 
 // MODULE
-// simple combinations of cores
+// simple combinations of cores and reusable components not tied to a specific section
 
 @import "module/container";
+@import "module/copy";
 @import "module/form";
+@import "module/media";
 @import "module/message";
+@import "module/outdated-browser";
+@import "module/table-responsive-collapse";
+
+// some useful pre-built components
+@import "module/component/breadcrumb";
+@import "module/component/pagination";
 
 
 // LAYOUT
 // distinct section of an interface
 
-@import "layout/copy";
-@import "layout/outdated-browser";
 @import "layout/site-content";
 @import "layout/site-header";
 @import "layout/site-footer";
@@ -61,4 +73,3 @@
 // miscellaneous project extras
 
 @import "utility/print";
-@import "demo";

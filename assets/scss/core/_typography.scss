@@ -4,6 +4,14 @@
 
 */
 
+$typography-elems:
+	'p',
+	'ul',
+	'ol',
+	'.table-wrapper',
+	'.media',
+	'.blockquote';
+
 // Headings
 
 h1,
@@ -11,10 +19,21 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
 	@include font-roboto($w-normal);
+	font-weight: $w-normal;
 	font-size: 100%;
 	line-height: 100%;
+
+	a {
+		font-weight: $w-normal;
+	}
 }
 
 h1,
@@ -45,4 +64,107 @@ h5,
 h6,
 .h6 {
 	font-size: $h-small;
+}
+
+
+// Basic typography styling
+
+h1,
+h2,
+h3,
+h4,
+#{$typography-elems} {
+	@include content-margins("&");
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin-top: 1em;
+}
+
+h1 {
+	margin-bottom: .5em;
+}
+
+h2 {
+	margin-bottom: .6em;
+}
+
+h3,
+h4 {
+	margin-bottom: .75em;
+}
+
+#{$typography-elems} {
+	margin-bottom: 1em;
+}
+
+ol,
+ul {
+	margin-left: $base-spacing-unit * 1.5;
+	margin-right: $base-spacing-unit * 1.5;
+}
+
+li {
+	margin-bottom: .75em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+dl {
+	@include cf;
+}
+
+dt,
+dd {
+
+	@include mq("tablet-small") {
+		float: left;
+	}
+}
+
+dt {
+	@include push--top(1em);
+	font-weight: $w-bold;
+
+	&:first-child {
+		@include flush--top;
+
+		+ dd {
+
+			@include mq("tablet-small") {
+				@include flush--top;
+			}
+		}
+	}
+
+	@include mq("tablet-small") {
+		clear: left;
+		width: 25%;
+	}
+}
+
+dd {
+	@include push--top(.5em);
+
+	@include mq("tablet-small") {
+		@include push--top(1em);
+		@include soft--left($base-spacing-unit / 1.2);
+		width: 75%;
+	}
+}
+
+
+// Stylistic elements
+
+strong {
+	font-weight: $w-bold;
+}
+
+small {
+	font-size: 80%;
 }

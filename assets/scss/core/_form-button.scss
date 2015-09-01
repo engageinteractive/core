@@ -60,6 +60,10 @@ input[type="button"] {
 .button--large {
 	@include soft--ends($base-spacing-unit/1.5);
 	font-size: $p-large;
+
+	@include mq("tablet-small") {
+		padding: $base-spacing-unit/1.2 $base-spacing-unit;
+	}
 }
 
 .button--small {

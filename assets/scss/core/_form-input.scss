@@ -16,6 +16,12 @@ $input-elems:
 	'input[type="week"]';
 
 #{$input-elems},
+select,
+.select {
+	height: 5rem;
+}
+
+#{$input-elems},
 textarea,
 select,
 .select {
@@ -23,7 +29,7 @@ select,
 	border: 1px solid $c-grey-light;
 	color: $c-black;
 	display: block;
-	padding: 12px;
+	padding: 1.2rem;
 
 	&:focus,
 	&.focus {
@@ -35,10 +41,10 @@ select,
 	&.success,
 	&.valid,
 	&.error {
-		background-size: 16px;
+		background-size: 1.6rem;
 		background-repeat: no-repeat;
-		background-position: right 16px center;
-		padding-right: 40px;
+		background-position: right 1.6rem center;
+		padding-right: 4rem;
 	}
 
 	&.success,
@@ -73,7 +79,7 @@ input[type="checkbox"],
 input[type="radio"] {
 	@include vh;
 
-	.lt-ie9 & {
+	@include lt-ie9 {
 		@include vh-reset;
 	}
 
@@ -96,7 +102,7 @@ input[type="radio"] {
 			left: 0;
 			margin-top: $base-font-size / -2;
 
-			.lt-ie9 & {
+			@include lt-ie9 {
 				display: none;
 			}
 
@@ -163,19 +169,18 @@ input[type="radio"] {
 select,
 .select {
 	background-color: $c-white;
-	background-size: 12px;
-	padding-right: 30px;
+	background-size: 1.2rem;
+	padding-right: 3rem;
 
 	// iOS Zoom Hack
 	@media screen and (-webkit-min-device-pixel-ratio: 0) {
-		font-size: 16px !important;
+		font-size: $base-font-size !important;
 	}
 
 	// validation
-	&.success,
 	&.valid,
 	&.error {
-		background-position: right 35px center;
+		background-position: right 3.6rem center;
 	}
 }
 
@@ -190,16 +195,17 @@ select[size], select[multiple] {
 }
 
 .select {
-	padding: 12px;
 	position: relative;
 	display: block;
 
 	> span {
+		@include truncate(100%);
 		display: block;
 		position: relative;
 	}
 
 	select {
+		padding: 0;
 		position: absolute;
 		top: 0; right: 0; bottom: 0; left: 0;
 		z-index: 2;
@@ -211,7 +217,7 @@ select[size], select[multiple] {
 	// arrow
 	&:after {
 		@include css-triangle($c-black, 'down');
-		top: 50%; right: 16px;
+		top: 50%; right: 1.6rem;
 	}
 
 	// error message
@@ -259,6 +265,6 @@ span.error-text {
 	z-index: 1;
 }
 
-span.success {
+span.error-text--success {
 	@include vh;
 }
