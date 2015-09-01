@@ -28,7 +28,7 @@
 	}
 
 	&--positive {
-		background-color: lighten($c-positive, 65%);
+		background-color: mix($c-positive, $c-white, 5%);
 		border-color: $c-positive;
 		color: $c-positive;
 
@@ -38,7 +38,7 @@
 	}
 
 	&--negative {
-		background-color: lighten($c-negative, 49%);
+		background-color: mix($c-negative, $c-white, 5%);
 		border-color: $c-negative;
 		color: $c-negative;
 
