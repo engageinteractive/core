@@ -14,8 +14,6 @@
 	@include visible('table-cell');
 }
 
-@include columns("base");
-
 @each $name, $min-width in $breakpoints {
 
 	@include mq($name) {
@@ -35,8 +33,6 @@
 		.#{$name}-visible-td {
 			@include visible('table-cell');
 		}
-
-		@include columns(#{$name});
 
 	}
 
