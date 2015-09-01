@@ -11,16 +11,28 @@
 		$modifier: #{$modifier};
 	}
 
-	@for $i from 1 through 6 {
+	@for $i from 1 through $grid-column-count {
 
-		.#{$modifier}-flush-#{$i} {
+		@if $dev_mode {
+			.#{$modifier}-flush-#{$i} {
 
-			> * {
-				&:nth-child(-n+#{$i}) {
-					@include flush--top;
+				> * {
+					&:nth-child(-n+#{$i}) {
+						@include flush--top;
+					}
+				}
+			}
+		} @else if index( map-deep-get($grid-bp, $modifier, flush) , $i) or map-deep-get($grid-bp, $modifier, flush) == true {
+			.#{$modifier}-flush-#{$i} {
+
+				> * {
+					&:nth-child(-n+#{$i}) {
+						@include flush--top;
+					}
 				}
 			}
 		}
+
 	}
 
 }

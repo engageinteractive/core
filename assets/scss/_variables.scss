@@ -121,8 +121,8 @@ $grid-column-count: 24;
 $grid-column-gutter: 2.4rem;
 
 
-// media queries
-// build mobile first
+// media queries and breakpoints
+// build mobile first 300+
 
 $breakpoints: (
 	"phone":        400px,
@@ -133,6 +133,93 @@ $breakpoints: (
 	"tablet-wide":  1024px,
 	"desktop":      1248px,
 	"desktop-wide": 1440px
+);
+
+// once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
+// this is to keep unused code to a minimum
+
+$grid-bp: (
+	"base": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"phone": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"phone-wide": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"phablet": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"tablet-small": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"tablet": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"tablet-wide": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"desktop": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	),
+	"desktop-wide": (
+		"block": (),
+		"columns": (
+			"width": (),
+			"push": (),
+			"pull": ()
+		),
+		"flush": ()
+	)
 );
 
 $max-width: breakpoint("desktop");
