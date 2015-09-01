@@ -1,0 +1,13 @@
+figure {
+
+	img {
+		@include push--auto;
+	}
+}
+
+figcaption {
+	@include push(.5em auto 0);
+	font-style: italic;
+	max-width: 30em;
+	text-align: center;
+}

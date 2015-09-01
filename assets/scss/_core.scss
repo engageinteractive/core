@@ -26,6 +26,10 @@ html {
 	min-height: 100%;
 	overflow-y: scroll;
 	-webkit-text-size-adjust: none;
+
+	@include mq("phone-wide", "max") {
+		font-size: 9px;
+	}
 }
 
 body {

@@ -1,0 +1,76 @@
+.pagination {
+	line-height: 1;
+
+	ol {
+		list-style: none;
+		text-align: center;
+	}
+
+	li {
+		@include flush--bottom;
+		@include soft--sides($base-spacing-unit / 4);
+		display: inline-block;
+
+		&:first-child {
+			@include hard--left;
+		}
+
+		&:last-child {
+			@include hard--right;
+		}
+	}
+
+	a,
+	span {
+		display: block;
+		font-size: $p-small;
+		line-height: 1;
+	}
+
+	a {
+		background-color: $c-blue;
+		color: $c-white;
+		padding: $base-spacing-unit/2;
+		text-decoration: none;
+		transition: background .2s $ease-in-out-quad, color .2s $ease-in-out-quad;
+
+		&:hover,
+		&:focus {
+			background-color: $c-black;
+			color: $c-white;
+		}
+	}
+
+	.jump {
+
+		&--disabled {
+
+			a {
+				background-color: $c-grey-light;
+				color: $c-grey;
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	.page {
+
+		&--current {
+
+			a {
+				background-color: $c-brand-primary;
+				color: $c-white;
+			}
+		}
+	}
+
+	@include mq("tablet", "max") {
+
+		.jump--first,
+		.jump--last,
+		.page--end,
+		.gap {
+			display: none;
+		}
+	}
+}

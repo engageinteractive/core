@@ -27,6 +27,16 @@
 		}
 	}
 
+	&--positive {
+		background-color: lighten($c-positive, 65%);
+		border-color: $c-positive;
+		color: $c-positive;
+
+		a {
+			color: $c-positive;
+		}
+	}
+
 	&--negative {
 		background-color: lighten($c-negative, 49%);
 		border-color: $c-negative;
@@ -34,16 +44,6 @@
 
 		a {
 			color: $c-negative;
-		}
-	}
-
-	&--positive {
-		background-color: lighten($c-positive, 55%);
-		border-color: $c-positive;
-		color: $c-positive;
-
-		a {
-			color: $c-positive;
 		}
 	}
 }

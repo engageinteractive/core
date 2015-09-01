@@ -1,0 +1,86 @@
+@mixin icon-container {
+	@include cf;
+	display: inline-block;
+	vertical-align: bottom;
+	width: 2.4rem;
+	height: 2.4rem;
+}
+
+
+// basic icon
+// <i class="icon icon-name"></i>
+
+.icon {
+	display: block;
+	font-size: 2.4rem;
+	line-height: 1;
+
+	&:before {
+		display: block;
+	}
+}
+
+
+// icon wrapper
+// <div class="icon-wrapper"><i class="icon icon-name"></i></div>
+
+.icon-wrapper {
+	@include icon-container;
+
+	.icon {
+		float: left;
+	}
+}
+
+
+// circle icons
+// <div class="icon-circle"><i class="icon icon-name"></i></div>
+
+.icon-circle {
+	@include colours;
+	@include icon-container;
+	background-color: $c-black;
+	border-radius: 50%;
+	color: $c-white;
+	padding: .6rem;
+
+	.icon {
+		font-size: 1.2rem;
+	}
+}
+
+
+// text with an icon
+// <h2 class="icon-text"><span class="icon-text__text"></span> <i class="icon-text__icon"></i></h2>
+// <h2 class="icon-text"><i class="icon-text__icon"></i> <span class="icon-text__text"></span></h2>
+
+.icon-text {
+	display: inline-block;
+	position: relative;
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		margin-top: -1.2rem;
+
+		&:first-child {
+			left: 0;
+		}
+
+		&:last-child {
+			right: 0;
+		}
+
+		+ .icon-text__text {
+			padding-left: 3.0rem;
+		}
+	}
+
+	&__text {
+		padding-right: 3.0rem;
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}

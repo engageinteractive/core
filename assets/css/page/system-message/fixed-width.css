@@ -5,6 +5,16 @@
 */
 /*--------------------------------
 
+	Development mode
+
+	if development mode is set to true, then the following things apply:
+
+	When a site is ready to go live, change it to false, and make sure you
+	populate any relevant variables such as the grid classes
+
+*/
+/*--------------------------------
+
 	Typography
 
 */
@@ -44,11 +54,6 @@ suggested naming convention would be the class/ID the z-index is going on
 /*--------------------------------
 
 	Easing/Timing
-
-*/
-/*--------------------------------
-
-	Normalise includes
 
 */
 /*--------------------------------
@@ -168,12 +173,32 @@ dfn {
 /**
  * Address styling not present in IE 8/9.
  */
+mark {
+  background: #ff0;
+  color: #000; }
+
 /**
  * Address inconsistent and variable font size in all browsers.
  */
+small {
+  font-size: 80%; }
+
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
 /* Embedded content
    ========================================================================== */
 /**
@@ -193,6 +218,27 @@ svg:not(:root) {
 /**
  * Address differences between Firefox and other browsers.
  */
+hr {
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
 /* Forms
    ========================================================================== */
 /**
@@ -407,6 +453,15 @@ hr, figure {
 */
 /*--------------------------------
 
+	Map deep get
+
+	Get values from anywhere in a variable list
+
+	http://css-tricks.com/snippets/sass/deep-getset-maps/
+
+*/
+/*--------------------------------
+
 	Media Queries
 
 	used for outputting content either between media query tags, or without (for fixed-width.scss)
@@ -455,6 +510,13 @@ hr, figure {
 	.element {
 		@include flush--top;
 	}
+
+*/
+/*--------------------------------
+
+	LT IE9
+
+	to be used in conjunction with fixed-width.scss
 
 */
 /*--------------------------------
@@ -581,6 +643,22 @@ hr, figure {
 */
 /*--------------------------------
 
+	Icon
+
+	For using fontastic icons in pseudo elements
+
+*/
+/*--------------------------------
+
+	Colours
+
+	background, colour, etc. match up with colour map in _variables.scss
+
+	modify to suit per project
+
+*/
+/*--------------------------------
+
 	Misc
 
 */
@@ -619,7 +697,8 @@ html {
   font-size: 10px;
   min-height: 100%;
   overflow-y: scroll;
-  -webkit-text-size-adjust: none; }
+  -webkit-text-size-adjust: none;
+  font-size: 9px; }
 
 body {
   background-color: #fff;
@@ -649,10 +728,7 @@ a {
   text-decoration: underline; }
   a:focus,
   a:hover {
-    color: #1a1a1a;
-    outline: 0; }
-  a:focus {
-    box-shadow: 0 0 5px #4D90FE; }
+    color: #1a1a1a; }
   a:link {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 

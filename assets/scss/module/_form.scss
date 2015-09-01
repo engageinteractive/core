@@ -14,7 +14,12 @@ form {
 	}
 
 	ul {
+		@include flush--sides;
 		list-style: none;
+	}
+
+	li {
+		@include flush--bottom;
 	}
 }
 

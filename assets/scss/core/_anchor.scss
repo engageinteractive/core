@@ -6,11 +6,11 @@ a {
 	&:focus,
 	&:hover {
 		color: $c-black;
-		outline: 0;
+		// outline: 0; // include if using custom focus outlines
 	}
 
 	&:focus {
-		box-shadow: 0 0 5px $c-blue;
+		// box-shadow: 0 0 5px $c-blue; // custom focus outline
 	}
 
 	&:link {

@@ -134,43 +134,37 @@ dfn {
  * Address styling not present in IE 8/9.
  */
 
-@if $reset-mark {
-  mark {
-    background: #ff0;
-    color: #000;
-  }
+mark {
+  background: #ff0;
+  color: #000;
 }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
 
-@if $reset-small {
-  small {
-    font-size: 80%;
-  }
+small {
+  font-size: 80%;
 }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 
-@if $reset-sub-sup {
-  sub,
-  sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
 
-  sup {
-    top: -0.5em;
-  }
+sup {
+  top: -0.5em;
+}
 
-  sub {
-    bottom: -0.25em;
-  }
+sub {
+  bottom: -0.25em;
 }
 
 /* Embedded content
@@ -199,33 +193,29 @@ svg:not(:root) {
  * Address differences between Firefox and other browsers.
  */
 
-@if $reset-hr {
-  hr {
-    box-sizing: content-box;
-    height: 0;
-  }
+hr {
+  box-sizing: content-box;
+  height: 0;
 }
 
-@if $reset-code {
-  /**
-   * Contain overflow in all browsers.
-   */
+/**
+ * Contain overflow in all browsers.
+ */
 
-  pre {
-    overflow: auto;
-  }
+pre {
+  overflow: auto;
+}
 
-  /**
-   * Address odd `em`-unit font size rendering in all browsers.
-   */
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
 
-  code,
-  kbd,
-  pre,
-  samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
-  }
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 /* Forms
