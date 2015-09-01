@@ -4,27 +4,110 @@
 
 */
 
-.row,
-.full-width {
-	@include cf;
-}
-
 .row {
+	@include cf;
 	margin-right: $grid-column-gutter / -2;
 	margin-left: $grid-column-gutter / -2;
+
+	+ .row {
+		margin-top: $base-spacing-unit;
+
+		@include mq("tablet-small") {
+			margin-top: $base-spacing-unit * 1.25;
+		}
+
+		@include mq("tablet") {
+			margin-top: $base-spacing-unit * 1.5;
+		}
+
+		@include mq("desktop") {
+			margin-top: $base-spacing-unit * 2;
+		}
+	}
 }
 
 .full-width {
+	@include cf;
 	padding-right: $grid-column-gutter / 2;
 	padding-left: $grid-column-gutter / 2;
 }
 
 .column {
+	@include content-margins;
 	position: relative;
 	float: left;
 	width: 100%;
+	margin-top: $base-spacing-unit / 1.2;
 	padding-right: $grid-column-gutter / 2;
 	padding-left: $grid-column-gutter / 2;
+
+	@include mq("tablet-small") {
+		margin-top: $base-spacing-unit;
+	}
+
+	@include mq("tablet") {
+		margin-top: $base-spacing-unit * 1.25;
+	}
+
+	@include mq("desktop") {
+		margin-top: $base-spacing-unit * 1.75;
+	}
+
+	> * {
+		@include content-margins;
+		margin-top: $base-spacing-unit / 1.2;
+
+		@include mq("tablet-small") {
+			margin-top: $base-spacing-unit * 1.25;
+		}
+
+		@include mq("desktop") {
+			margin-top: $base-spacing-unit * 1.75;
+		}
+
+		@include mq("desktop-wide") {
+			margin-top: $base-spacing-unit * 2;
+		}
+	}
+
+	> .section {
+		padding-top: $base-spacing-unit / 1.2;
+
+		@include mq("tablet-small") {
+			padding-top: $base-spacing-unit;
+		}
+
+		@include mq("tablet") {
+			padding-top: $base-spacing-unit * 1.25;
+		}
+
+		@include mq("desktop") {
+			padding-top: $base-spacing-unit * 1.5;
+		}
+	}
+
+	> * + {
+
+		.gap--flush {
+			@include flush--top;
+		}
+
+		.gap--minimal {
+			margin-top: 2px;
+		}
+
+		.gap--small {
+			margin-top: $base-spacing-unit / 3;
+
+			@include mq("tablet-small") {
+				margin-top: $base-spacing-unit / 2;
+			}
+
+			@include mq("desktop") {
+				margin-top: $base-spacing-unit / 1.5;
+			}
+		}
+	}
 }
 
 
@@ -35,7 +118,7 @@
 
 */
 
-@mixin widths($modifier: "") {
+@mixin columns($modifier: "") {
 
 	@if $modifier != "" {
 		$modifier: #{$modifier};
@@ -43,41 +126,46 @@
 
 	@for $i from 1 through $grid-column-count {
 
-		.#{$modifier}-#{$i} {
-			width: grid-calc($grid-column-count, $i);
+		@if $dev_mode {
+
+			.#{$modifier}-#{$i} {
+				width: grid-calc($grid-column-count, $i);
+			}
+
+			.#{$modifier}-push-#{$i} {
+				left: grid-calc($grid-column-count, $i);
+			}
+
+			.#{$modifier}-pull-#{$i} {
+				left: 0 - grid-calc($grid-column-count, $i);
+			}
+
+		} @else {
+
+			@if index( map-deep-get($grid-bp, $modifier, columns, width) , $i) or map-deep-get($grid-bp, $modifier, columns, width) == true {
+				.#{$modifier}-#{$i} {
+					width: grid-calc($grid-column-count, $i);
+				}
+			}
+
+			@if index( map-deep-get($grid-bp, $modifier, columns, push) , $i) or map-deep-get($grid-bp, $modifier, columns, push) == true {
+				.#{$modifier}-push-#{$i} {
+					left: grid-calc($grid-column-count, $i);
+				}
+			}
+
+			@if index( map-deep-get($grid-bp, $modifier, columns, pull) , $i) or map-deep-get($grid-bp, $modifier, columns, pull) == true {
+				.#{$modifier}-pull-#{$i} {
+					left: 0 - grid-calc($grid-column-count, $i);
+				}
+			}
+
 		}
 
-		.#{$modifier}-push-#{$i} {
-			left: grid-calc($grid-column-count, $i);
-		}
-
-		.#{$modifier}-pull-#{$i} {
-			left: 0 - grid-calc($grid-column-count, $i);
-		}
 	}
 
 	.#{$modifier}-push-0 {
 		left: 0;
-	}
-
-}
-
-@include widths("base");
-
-@each $name, $min-width in $breakpoints {
-
-	@include mq($name) {
-
-		.#{$name}-hidden {
-			@include hidden;
-		}
-
-		.#{$name}-visible {
-			@include visible;
-		}
-
-		@include widths(#{$name});
-
 	}
 
 }

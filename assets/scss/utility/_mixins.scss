@@ -189,8 +189,8 @@ $lt-ie9: false !default;
 	visibility: hidden;
 }
 
-@mixin visible {
-	display: block;
+@mixin visible($state: 'block') {
+	display: unquote($state);
 	visibility: visible;
 }
 
