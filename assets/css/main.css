@@ -4430,13 +4430,13 @@ form li {
     .message p:first-child {
       margin-top: 0; }
   .message--positive {
-    background-color: white;
+    background-color: #f4fbf7;
     border-color: #24b35d;
     color: #24b35d; }
     .message--positive a {
       color: #24b35d; }
   .message--negative {
-    background-color: #fff0f2;
+    background-color: #fff2f4;
     border-color: #f50023;
     color: #f50023; }
     .message--negative a {
