@@ -5,7 +5,7 @@
 
 */
 
-@mixin flush($modifier: "") {
+@mixin flush-content($modifier: "") {
 
 	@if $modifier != "" {
 		$modifier: #{$modifier};
@@ -37,13 +37,13 @@
 
 }
 
-@include flush("base");
+@include flush-content("base");
 
 @each $name, $min-width in $breakpoints {
 
 	@include mq($name) {
 
-		@include flush(#{$name});
+		@include flush-content(#{$name});
 
 	}
 
