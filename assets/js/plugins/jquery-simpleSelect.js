@@ -67,7 +67,7 @@
 				addClass(wrap, options.selectClass || 'simple-select');
 
 				display = document.createElement('span');
-				display.textContent = options.defaultText || select.options[select.selectedIndex].text;
+				display.textContent = options.defaultText || (select.options[select.selectedIndex] ? select.options[select.selectedIndex].text : '');
 
 				classes = select.className.split(' ');
 				if( classes.length && classes[0] !== ''){
