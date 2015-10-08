@@ -23,18 +23,6 @@
 	width: 100%;
 	padding-right: $grid-column-gutter / 2;
 	padding-left: $grid-column-gutter / 2;
-
-	@include mq("tablet-small") {
-		margin-top: $base-spacing-unit;
-	}
-
-	@include mq("tablet") {
-		margin-top: $base-spacing-unit * 1.25;
-	}
-
-	@include mq("desktop") {
-		margin-top: $base-spacing-unit * 1.75;
-	}
 }
 
 

@@ -1359,9 +1359,7 @@ textarea:focus {
   float: left;
   width: 100%;
   padding-right: 1.2rem;
-  padding-left: 1.2rem;
-  margin-top: 2.4rem;
-  margin-top: 3rem; }
+  padding-left: 1.2rem; }
   .column > *:first-child {
     margin-top: 0; }
   .column > *:last-child {
