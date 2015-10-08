@@ -1313,17 +1313,6 @@ textarea:focus {
     content: "";
     display: table;
     clear: both; }
-  .row + .row {
-    margin-top: 2.4rem; }
-    @media only screen and (min-width: 640px) {
-      .row + .row {
-        margin-top: 3rem; } }
-    @media only screen and (min-width: 768px) {
-      .row + .row {
-        margin-top: 3.6rem; } }
-    @media only screen and (min-width: 1248px) {
-      .row + .row {
-        margin-top: 4.8rem; } }
 
 .full-width {
   padding-right: 1.2rem;
@@ -1337,7 +1326,6 @@ textarea:focus {
   position: relative;
   float: left;
   width: 100%;
-  margin-top: 2rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem; }
   .column > *:first-child {
@@ -1353,44 +1341,6 @@ textarea:focus {
   @media only screen and (min-width: 1248px) {
     .column {
       margin-top: 4.2rem; } }
-  .column > * {
-    margin-top: 2rem; }
-    .column > * > *:first-child {
-      margin-top: 0; }
-    .column > * > *:last-child {
-      margin-bottom: 0; }
-    @media only screen and (min-width: 640px) {
-      .column > * {
-        margin-top: 3rem; } }
-    @media only screen and (min-width: 1248px) {
-      .column > * {
-        margin-top: 4.2rem; } }
-    @media only screen and (min-width: 1440px) {
-      .column > * {
-        margin-top: 4.8rem; } }
-  .column > .section {
-    padding-top: 2rem; }
-    @media only screen and (min-width: 640px) {
-      .column > .section {
-        padding-top: 2.4rem; } }
-    @media only screen and (min-width: 768px) {
-      .column > .section {
-        padding-top: 3rem; } }
-    @media only screen and (min-width: 1248px) {
-      .column > .section {
-        padding-top: 3.6rem; } }
-  .column > * + .gap--flush {
-    margin-top: 0; }
-  .column > * + .gap--minimal {
-    margin-top: 2px; }
-  .column > * + .gap--small {
-    margin-top: 0.8rem; }
-    @media only screen and (min-width: 640px) {
-      .column > * + .gap--small {
-        margin-top: 1.2rem; } }
-    @media only screen and (min-width: 1248px) {
-      .column > * + .gap--small {
-        margin-top: 1.6rem; } }
 
 /*--------------------------------
 

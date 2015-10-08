@@ -1345,10 +1345,6 @@ textarea:focus {
     content: "";
     display: table;
     clear: both; }
-  .row + .row {
-    margin-top: 2.4rem;
-    margin-top: 3rem;
-    margin-top: 3.6rem; }
 
 .full-width {
   padding-right: 1.2rem;
@@ -1362,7 +1358,6 @@ textarea:focus {
   position: relative;
   float: left;
   width: 100%;
-  margin-top: 2rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;
   margin-top: 2.4rem;
@@ -1371,24 +1366,6 @@ textarea:focus {
     margin-top: 0; }
   .column > *:last-child {
     margin-bottom: 0; }
-  .column > * {
-    margin-top: 2rem;
-    margin-top: 3rem; }
-    .column > * > *:first-child {
-      margin-top: 0; }
-    .column > * > *:last-child {
-      margin-bottom: 0; }
-  .column > .section {
-    padding-top: 2rem;
-    padding-top: 2.4rem;
-    padding-top: 3rem; }
-  .column > * + .gap--flush {
-    margin-top: 0; }
-  .column > * + .gap--minimal {
-    margin-top: 2px; }
-  .column > * + .gap--small {
-    margin-top: 0.8rem;
-    margin-top: 1.2rem; }
 
 /*--------------------------------
 
