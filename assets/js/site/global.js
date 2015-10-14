@@ -14,18 +14,12 @@ var $site = {
 };
 
 var site = {
-	busy: [],
 	resize: {
 		timer: false,
-		before: {},
 		after: {}
 	},
-	width: $core.win.width(),
-	height: $core.win.height(),
-	old: {
-		width: 0,
-		height: 0
-	}
+	width: viewport().width,
+	height: viewport().height
 };
 
 
@@ -35,56 +29,41 @@ var site = {
 
 --------------------------------*/
 
+
 /**
- *  Adds/removes an item to an array, while array has contents
- *  you can check it's length to check for activity and
- *  prevent button mashing
+ *  Returns a width and height for the browser
+ *  viewport. These sizes match Media Queries
  */
-var busy = function(arr){
+function viewport(value){
 
-	for( item in arr ){
+	var e = window,
+		a = 'inner';
 
-		site.busy.push(arr[item]);
+	if( !( 'innerWidth' in window ) ){
 
-	}
-
-};
-
-var quiet = function(arr){
-
-	for( item in arr ){
-
-		var i = site.busy.indexOf( arr[item] );
-
-		if( i > -1 )
-			site.busy.splice(i, 1);
+		a = 'client';
+		e = document.documentElement || document.body;
 
 	}
 
-};
+	return {
+		width: e[ a + 'Width' ],
+		height: e[ a + 'Height' ]
+	}
 
+};
 
 /**
  *  Updates site metrics and calls any necessary
- *  functions before and then after a browser resize.
+ *  functions after a browser resize.
  */
-function beforeResize(){
-
-	site.old.width = site.width;
-	site.old.height = site.height;
-
-	$.each(site.resize.before, function(){
-
-		this();
-
-	});
-
-};
 
 function afterResize(){
 
-	site.width = $core.win.width();
-	site.height = $core.win.height();
+	var viewport = viewport();
+
+	site.width = viewport.width;
+	site.height = viewport.height;
 
 	$.each(site.resize.after, function(){
 
@@ -127,18 +106,8 @@ function rangeToRange(oldVal, oldMax, oldMin, newMax, newMin){
 $core.win.on({
 	resize: function(){
 
-		if( !site.resize.timer )
-			beforeResize();
-
 		clearTimeout(site.resize.timer);
-
-		site.resize.timer = setTimeout(function(){
-
-			afterResize();
-
-			site.resize.timer = false;
-
-		}, 300);
+		site.resize.timer = setTimeout(afterResize, 300);
 
 	}
 });
@@ -184,8 +153,7 @@ Modernizr
 
 $('[data-img]').loadImg();
 
-$site.content
-	.fitVids();
+$site.content.fitVids();
 
 $core.body
 	.on('click', 'a:external:not(.internal), a.external', function(e){
