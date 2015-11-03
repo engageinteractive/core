@@ -3964,9 +3964,9 @@ span.error-text--success {
     .icon-text__icon:last-child {
       right: 0; }
     .icon-text__icon + .icon-text__text {
-      padding-left: 3.0rem; }
+      padding-left: 3rem; }
   .icon-text__text {
-    padding-right: 3.0rem; }
+    padding-right: 3rem; }
     .icon-text__text:last-child {
       padding-right: 0; }
 
@@ -4387,13 +4387,13 @@ form li {
     .message p:first-child {
       margin-top: 0; }
   .message--positive {
-    background-color: #f4fbf7;
+    background-color: #f4fbf6;
     border-color: #24b35d;
     color: #24b35d; }
     .message--positive a {
       color: #24b35d; }
   .message--negative {
-    background-color: #fff2f4;
+    background-color: #fef2f4;
     border-color: #f50023;
     color: #f50023; }
     .message--negative a {

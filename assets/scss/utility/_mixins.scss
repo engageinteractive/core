@@ -436,22 +436,16 @@ $lt-ie9: false !default;
 
 */
 
-@mixin responsive-ratio($x,$y, $pseudo: false, $max-height: false) {
+@mixin responsive-ratio($x,$y, $pseudo: false) {
 	$padding: unquote( ( $y / $x ) * 100 + '%' );
 
 	@if $pseudo {
-		@if $max-height {
-			max-height: $max-height;
-		}
 		&:before {
 			@include pseudo($pos: relative);
 			width: 100%;
 			padding-top: $padding;
 		}
 	} @else {
-		@if $max-height {
-			max-height: $max-height;
-		}
 		padding-top: $padding;
 	}
 }
