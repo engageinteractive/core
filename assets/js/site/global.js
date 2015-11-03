@@ -139,21 +139,10 @@ jQuery.extend( jQuery.expr[':'], {
 
 --------------------------------*/
 
-Modernizr
-	.load({
-		test: Modernizr.touch && !navigator.userAgent.match(/iemobile/i),
-		yep: '/assets/js/libs/fastclick.js',
-		complete: function(){
-
-			if( Modernizr.touch && !navigator.userAgent.match(/iemobile/i) )
-				FastClick.attach(document.body);
-
-		}
-	});
+if( Modernizr.touchevents && !navigator.userAgent.match(/iemobile/i) )
+	FastClick.attach(document.body);
 
 $('[data-img]').loadImg();
-
-$site.content.fitVids();
 
 $core.body
 	.on('click', 'a:external:not(.internal), a.external', function(e){
