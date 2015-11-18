@@ -300,6 +300,28 @@
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
+	"\/assets\/js-min\/precompiled\/jquery-2.1.4.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js-min\/precompiled\/jquery-2.1.4.min.js",
+		"outputAbbreviatedPath": "\/assets\/js-min\/precompiled\/min\/jquery-2.1.4.min.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 2,
+		"syntaxCheckerStyle": 0
+		},
+	"\/assets\/js-min\/precompiled\/modernizr.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js-min\/precompiled\/modernizr.js",
+		"outputAbbreviatedPath": "\/assets\/js-min\/precompiled\/min\/modernizr.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 2,
+		"syntaxCheckerStyle": 0
+		},
 	"\/assets\/js-min\/site.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -335,43 +357,10 @@
 		},
 	"\/assets\/js\/libs\/fastclick.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/libs\/fastclick.js",
 		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/fastclick.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/libs\/jquery-2.1.4.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/assets\/js\/libs\/jquery-2.1.4.min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/jquery-2.1.4.min.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/libs\/modernizr.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/assets\/js\/libs\/modernizr.js",
-		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/modernizr.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 0
-		},
-	"\/assets\/js\/min\/site.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/site.min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/site.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
