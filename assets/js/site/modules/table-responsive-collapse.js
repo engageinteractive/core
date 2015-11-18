@@ -33,9 +33,7 @@
 				});
 
 			// set section name widths
-			site.resize.after['tableResponsiveCollapse-' + count] = function(){
-
-				if( site.width == site.old.width ) return false;
+			site.resize['tableResponsiveCollapse-' + count] = function(){
 
 				if( site.width < options.breakpoint ){
 
@@ -51,7 +49,7 @@
 
 			};
 
-			site.resize.after['tableResponsiveCollapse-' + count]();
+			site.resize['tableResponsiveCollapse-' + count]();
 
 			count++;
 

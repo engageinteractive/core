@@ -14,10 +14,8 @@ var $site = {
 };
 
 var site = {
-	resize: {
-		timer: false,
-		after: {}
-	},
+	resize: {},
+	resizeTimer: false,
 	width: viewport().width,
 	height: viewport().height
 };
@@ -58,14 +56,14 @@ function viewport(value){
  *  functions after a browser resize.
  */
 
-function afterResize(){
+function siteResize(){
 
-	var viewport = viewport();
+	var dimensions = viewport();
 
-	site.width = viewport.width;
-	site.height = viewport.height;
+	site.width = dimensions.width;
+	site.height = dimensions.height;
 
-	$.each(site.resize.after, function(){
+	$.each(site.resize, function(){
 
 		this();
 
@@ -73,9 +71,9 @@ function afterResize(){
 
 };
 
-function clearResize(time, name){
+function clearSiteResize(name){
 
-	delete site.resize[time][name];
+	delete site.resize[name];
 
 };
 
@@ -106,8 +104,8 @@ function rangeToRange(oldVal, oldMax, oldMin, newMax, newMin){
 $core.win.on({
 	resize: function(){
 
-		clearTimeout(site.resize.timer);
-		site.resize.timer = setTimeout(afterResize, 300);
+		clearTimeout(site.resizeTimer);
+		site.resizeTimer = setTimeout(siteResize, 300);
 
 	}
 });

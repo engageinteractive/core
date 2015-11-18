@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="/guide/css/styles.css">
 	<!-- /remove for production -->
 
-	<script src="/assets/js/libs/modernizr.js"></script>
+	<script src="/assets/js-min/precompiled/modernizr.js"></script>
 
 	<!-- sharing meta data (http://moz.com/blog/meta-data-templates-123) -->
 	<!-- google authorship and publisher markup -->
