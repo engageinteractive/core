@@ -35,8 +35,6 @@
 			// set section name widths
 			site.resize['tableResponsiveCollapse-' + count] = function(){
 
-				if( site.width == site.old.width ) return false;
-
 				if( site.width < options.breakpoint ){
 
 					$trc.root
