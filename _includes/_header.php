@@ -34,16 +34,6 @@
 
 	<script src="/assets/js-min/precompiled/modernizr.js"></script>
 
-	<!-- sharing meta data (http://moz.com/blog/meta-data-templates-123) -->
-	<!-- google authorship and publisher markup -->
-	<link rel="author" href=" https://plus.google.com/[Google+_Profile]/posts">
-	<link rel="publisher" href="https://plus.google.com/[Google+_Page_Profile]">
-
-	<!-- schema.org markup for google+ -->
-	<meta itemprop="name" content="Page Title (Max 70 characters)">
-	<meta itemprop="description" content="Page description">
-	<meta itemprop="image" content="/assets/img/tile/tile.png"><!-- pass in page/product image, if not, use tile.png -->
-
 	<!-- twitter card data (https://dev.twitter.com/docs/cards, https://dev.twitter.com/docs/cards/large-image-summary-card) -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@publisher_handle">
