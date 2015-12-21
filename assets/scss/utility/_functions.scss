@@ -5,6 +5,7 @@
 */
 
 @function grid-calc($t, $c){
+	$val: 0;
 	@if $c == 0 {
 		$val: 0%;
 	}@else{
