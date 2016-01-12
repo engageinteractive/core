@@ -155,9 +155,6 @@ jQuery.extend( jQuery.expr[':'], {
 
 --------------------------------*/
 
-if( Modernizr.touchevents && !navigator.userAgent.match(/iemobile/i) )
-	FastClick.attach(document.body);
-
 $('[data-img]').loadImg();
 
 $core.body
