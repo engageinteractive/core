@@ -1,5 +1,3 @@
-// data-responsive="{from0: 100, from512: 300, from1024: 600, retina: true}"
-
 $.fn.preload = function(settings){
 
 	var defaults = {
@@ -31,6 +29,7 @@ $.preload = function(settings){
 	var defaults = {
 		src: null,
 		timeout: false,
+		arrayItemReady: function(){},
 		ready: function(){},
 		error: function(){}
 	};
@@ -41,7 +40,30 @@ $.preload = function(settings){
 		tooSlow = false,
 		complete = false;
 
-	if( option.src ){
+	if( typeof option.src == 'object' ){
+
+		var total = option.src.length,
+			loaded = 0;
+
+		for( var i = option.src.length - 1; i >= 0; i-- ){
+
+			$.preload({
+				src: option.src[i],
+				ready: function(img){
+
+					loaded++;
+
+					option.arrayItemReady(loaded);
+
+					if( total == loaded )
+						option.ready(img,option.src);
+
+				}
+			});
+
+		};
+
+	}else if( option.src ){
 
 		$img.one('load', function(){
 

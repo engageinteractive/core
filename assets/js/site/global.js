@@ -17,7 +17,11 @@ var site = {
 	resize: {},
 	resizeTimer: false,
 	width: viewport().width,
-	height: viewport().height
+	height: viewport().height,
+	scroll: {
+		x: 0,
+		y: 0
+	}
 };
 
 
@@ -88,7 +92,7 @@ function getRandomInt(min, max) {
 
 /**
  *  Takes one range and converts it to
- *  another! Easy as pie! I love pie.
+ *  another! Easy as pie! We love pie.
  */
 function rangeToRange(oldVal, oldMax, oldMin, newMax, newMin){
 	return ( ( ( oldVal - oldMin ) * ( newMax - newMin ) ) / ( oldMax - oldMin ) ) + newMin;
@@ -106,6 +110,20 @@ $core.win.on({
 
 		clearTimeout(site.resizeTimer);
 		site.resizeTimer = setTimeout(siteResize, 300);
+
+	},
+	scroll: function(){
+
+		var x, y;
+
+		y = document.documentElement.scrollTop;
+		y = y === 0 ? document.body.scrollTop : y;
+
+		x = document.documentElement.scrollLeft;
+		x = x === 0 ? document.body.scrollLeft : x;
+
+		site.scroll.x = x;
+		site.scroll.y = y;
 
 	}
 });
@@ -136,9 +154,6 @@ jQuery.extend( jQuery.expr[':'], {
     Ready? Go!
 
 --------------------------------*/
-
-if( Modernizr.touchevents && !navigator.userAgent.match(/iemobile/i) )
-	FastClick.attach(document.body);
 
 $('[data-img]').loadImg();
 
