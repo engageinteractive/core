@@ -10,5 +10,8 @@ _notes
 *.sass-cache
 config.rb
 
+# Node modules
+node_modules/
+
 # General
 log/
