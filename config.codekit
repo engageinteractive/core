@@ -355,17 +355,6 @@
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js\/libs\/fastclick.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/libs\/fastclick.js",
-		"outputAbbreviatedPath": "\/assets\/js\/libs\/min\/fastclick.min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 2,
-		"syntaxCheckerStyle": 0
-		},
 	"\/assets\/js\/plugins.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -377,45 +366,45 @@
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js\/plugins\/jquery-fitvids.js": {
+	"\/assets\/js\/plugins\/jquery\/fitvids.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery-fitvids.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/jquery-fitvids.min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/fitvids.js",
+		"outputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/min\/fitvids.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js\/plugins\/jquery-loadImg.js": {
+	"\/assets\/js\/plugins\/jquery\/loadImg.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery-loadImg.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/jquery-loadImg.min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/loadImg.js",
+		"outputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/min\/loadImg.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js\/plugins\/jquery-preload.js": {
+	"\/assets\/js\/plugins\/jquery\/preload.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery-preload.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/jquery-preload.min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/preload.js",
+		"outputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/min\/preload.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js\/plugins\/jquery-simpleSelect.js": {
+	"\/assets\/js\/plugins\/jquery\/simpleSelect.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery-simpleSelect.js",
-		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/jquery-simpleSelect.min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/simpleSelect.js",
+		"outputAbbreviatedPath": "\/assets\/js\/plugins\/jquery\/min\/simpleSelect.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
