@@ -333,8 +333,12 @@ $lt-ie9: false !default;
 
 
 @mixin content-margins($selector: '> *') {
-
-	#{unquote($selector)} {
+	@if $selector {
+		#{unquote($selector)} {
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	} @else {
 		&:first-child { margin-top: 0; }
 		&:last-child { margin-bottom: 0; }
 	}
