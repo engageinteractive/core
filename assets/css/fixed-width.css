@@ -3020,7 +3020,7 @@ textarea:focus {
 	Flush - to set "margin-top: 0" from the first nth elements
 
 	Example class:
-	<div class="base-flush-nth-2">
+	<div class="base-flush-first-2">
 		<div>Child 1</div>
 		<div>Child 2</div>
 		<div>Child 3</div>
@@ -3030,7 +3030,7 @@ textarea:focus {
 	Would target, at no media query, first 2 children ( div:nth-child(-n+2) )
 
 	Example class:
-	<div class="base-flush-nth-2 tablet-flush-nth-3">
+	<div class="base-flush-first-2 tablet-flush-first-3">
 		<div>Child 1</div>
 		<div>Child 2</div>
 		<div>Child 3</div>
@@ -3041,508 +3041,508 @@ textarea:focus {
 	And would target, at tablet media query, first 3 children ( div:nth-child(-n+2) )
 
 */
-.base-flush-nth-1 > *:nth-child(-n+1) {
+.base-flush-first-1 > *:nth-child(-n+1) {
   margin-top: 0; }
 
-.base-flush-nth-2 > *:nth-child(-n+2) {
+.base-flush-first-2 > *:nth-child(-n+2) {
   margin-top: 0; }
 
-.base-flush-nth-3 > *:nth-child(-n+3) {
+.base-flush-first-3 > *:nth-child(-n+3) {
   margin-top: 0; }
 
-.base-flush-nth-4 > *:nth-child(-n+4) {
+.base-flush-first-4 > *:nth-child(-n+4) {
   margin-top: 0; }
 
-.base-flush-nth-5 > *:nth-child(-n+5) {
+.base-flush-first-5 > *:nth-child(-n+5) {
   margin-top: 0; }
 
-.base-flush-nth-6 > *:nth-child(-n+6) {
+.base-flush-first-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-.base-flush-nth-7 > *:nth-child(-n+7) {
+.base-flush-first-7 > *:nth-child(-n+7) {
   margin-top: 0; }
 
-.base-flush-nth-8 > *:nth-child(-n+8) {
+.base-flush-first-8 > *:nth-child(-n+8) {
   margin-top: 0; }
 
-.base-flush-nth-9 > *:nth-child(-n+9) {
+.base-flush-first-9 > *:nth-child(-n+9) {
   margin-top: 0; }
 
-.base-flush-nth-10 > *:nth-child(-n+10) {
+.base-flush-first-10 > *:nth-child(-n+10) {
   margin-top: 0; }
 
-.base-flush-nth-11 > *:nth-child(-n+11) {
+.base-flush-first-11 > *:nth-child(-n+11) {
   margin-top: 0; }
 
-.base-flush-nth-12 > *:nth-child(-n+12) {
+.base-flush-first-12 > *:nth-child(-n+12) {
   margin-top: 0; }
 
-.base-flush-nth-13 > *:nth-child(-n+13) {
+.base-flush-first-13 > *:nth-child(-n+13) {
   margin-top: 0; }
 
-.base-flush-nth-14 > *:nth-child(-n+14) {
+.base-flush-first-14 > *:nth-child(-n+14) {
   margin-top: 0; }
 
-.base-flush-nth-15 > *:nth-child(-n+15) {
+.base-flush-first-15 > *:nth-child(-n+15) {
   margin-top: 0; }
 
-.base-flush-nth-16 > *:nth-child(-n+16) {
+.base-flush-first-16 > *:nth-child(-n+16) {
   margin-top: 0; }
 
-.base-flush-nth-17 > *:nth-child(-n+17) {
+.base-flush-first-17 > *:nth-child(-n+17) {
   margin-top: 0; }
 
-.base-flush-nth-18 > *:nth-child(-n+18) {
+.base-flush-first-18 > *:nth-child(-n+18) {
   margin-top: 0; }
 
-.base-flush-nth-19 > *:nth-child(-n+19) {
+.base-flush-first-19 > *:nth-child(-n+19) {
   margin-top: 0; }
 
-.base-flush-nth-20 > *:nth-child(-n+20) {
+.base-flush-first-20 > *:nth-child(-n+20) {
   margin-top: 0; }
 
-.base-flush-nth-21 > *:nth-child(-n+21) {
+.base-flush-first-21 > *:nth-child(-n+21) {
   margin-top: 0; }
 
-.base-flush-nth-22 > *:nth-child(-n+22) {
+.base-flush-first-22 > *:nth-child(-n+22) {
   margin-top: 0; }
 
-.base-flush-nth-23 > *:nth-child(-n+23) {
+.base-flush-first-23 > *:nth-child(-n+23) {
   margin-top: 0; }
 
-.base-flush-nth-24 > *:nth-child(-n+24) {
+.base-flush-first-24 > *:nth-child(-n+24) {
   margin-top: 0; }
 
-.phone-flush-nth-1 > *:nth-child(-n+1) {
+.phone-flush-first-1 > *:nth-child(-n+1) {
   margin-top: 0; }
 
-.phone-flush-nth-2 > *:nth-child(-n+2) {
+.phone-flush-first-2 > *:nth-child(-n+2) {
   margin-top: 0; }
 
-.phone-flush-nth-3 > *:nth-child(-n+3) {
+.phone-flush-first-3 > *:nth-child(-n+3) {
   margin-top: 0; }
 
-.phone-flush-nth-4 > *:nth-child(-n+4) {
+.phone-flush-first-4 > *:nth-child(-n+4) {
   margin-top: 0; }
 
-.phone-flush-nth-5 > *:nth-child(-n+5) {
+.phone-flush-first-5 > *:nth-child(-n+5) {
   margin-top: 0; }
 
-.phone-flush-nth-6 > *:nth-child(-n+6) {
+.phone-flush-first-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-.phone-flush-nth-7 > *:nth-child(-n+7) {
+.phone-flush-first-7 > *:nth-child(-n+7) {
   margin-top: 0; }
 
-.phone-flush-nth-8 > *:nth-child(-n+8) {
+.phone-flush-first-8 > *:nth-child(-n+8) {
   margin-top: 0; }
 
-.phone-flush-nth-9 > *:nth-child(-n+9) {
+.phone-flush-first-9 > *:nth-child(-n+9) {
   margin-top: 0; }
 
-.phone-flush-nth-10 > *:nth-child(-n+10) {
+.phone-flush-first-10 > *:nth-child(-n+10) {
   margin-top: 0; }
 
-.phone-flush-nth-11 > *:nth-child(-n+11) {
+.phone-flush-first-11 > *:nth-child(-n+11) {
   margin-top: 0; }
 
-.phone-flush-nth-12 > *:nth-child(-n+12) {
+.phone-flush-first-12 > *:nth-child(-n+12) {
   margin-top: 0; }
 
-.phone-flush-nth-13 > *:nth-child(-n+13) {
+.phone-flush-first-13 > *:nth-child(-n+13) {
   margin-top: 0; }
 
-.phone-flush-nth-14 > *:nth-child(-n+14) {
+.phone-flush-first-14 > *:nth-child(-n+14) {
   margin-top: 0; }
 
-.phone-flush-nth-15 > *:nth-child(-n+15) {
+.phone-flush-first-15 > *:nth-child(-n+15) {
   margin-top: 0; }
 
-.phone-flush-nth-16 > *:nth-child(-n+16) {
+.phone-flush-first-16 > *:nth-child(-n+16) {
   margin-top: 0; }
 
-.phone-flush-nth-17 > *:nth-child(-n+17) {
+.phone-flush-first-17 > *:nth-child(-n+17) {
   margin-top: 0; }
 
-.phone-flush-nth-18 > *:nth-child(-n+18) {
+.phone-flush-first-18 > *:nth-child(-n+18) {
   margin-top: 0; }
 
-.phone-flush-nth-19 > *:nth-child(-n+19) {
+.phone-flush-first-19 > *:nth-child(-n+19) {
   margin-top: 0; }
 
-.phone-flush-nth-20 > *:nth-child(-n+20) {
+.phone-flush-first-20 > *:nth-child(-n+20) {
   margin-top: 0; }
 
-.phone-flush-nth-21 > *:nth-child(-n+21) {
+.phone-flush-first-21 > *:nth-child(-n+21) {
   margin-top: 0; }
 
-.phone-flush-nth-22 > *:nth-child(-n+22) {
+.phone-flush-first-22 > *:nth-child(-n+22) {
   margin-top: 0; }
 
-.phone-flush-nth-23 > *:nth-child(-n+23) {
+.phone-flush-first-23 > *:nth-child(-n+23) {
   margin-top: 0; }
 
-.phone-flush-nth-24 > *:nth-child(-n+24) {
+.phone-flush-first-24 > *:nth-child(-n+24) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-1 > *:nth-child(-n+1) {
+.phone-wide-flush-first-1 > *:nth-child(-n+1) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-2 > *:nth-child(-n+2) {
+.phone-wide-flush-first-2 > *:nth-child(-n+2) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-3 > *:nth-child(-n+3) {
+.phone-wide-flush-first-3 > *:nth-child(-n+3) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-4 > *:nth-child(-n+4) {
+.phone-wide-flush-first-4 > *:nth-child(-n+4) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-5 > *:nth-child(-n+5) {
+.phone-wide-flush-first-5 > *:nth-child(-n+5) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-6 > *:nth-child(-n+6) {
+.phone-wide-flush-first-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-7 > *:nth-child(-n+7) {
+.phone-wide-flush-first-7 > *:nth-child(-n+7) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-8 > *:nth-child(-n+8) {
+.phone-wide-flush-first-8 > *:nth-child(-n+8) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-9 > *:nth-child(-n+9) {
+.phone-wide-flush-first-9 > *:nth-child(-n+9) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-10 > *:nth-child(-n+10) {
+.phone-wide-flush-first-10 > *:nth-child(-n+10) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-11 > *:nth-child(-n+11) {
+.phone-wide-flush-first-11 > *:nth-child(-n+11) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-12 > *:nth-child(-n+12) {
+.phone-wide-flush-first-12 > *:nth-child(-n+12) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-13 > *:nth-child(-n+13) {
+.phone-wide-flush-first-13 > *:nth-child(-n+13) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-14 > *:nth-child(-n+14) {
+.phone-wide-flush-first-14 > *:nth-child(-n+14) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-15 > *:nth-child(-n+15) {
+.phone-wide-flush-first-15 > *:nth-child(-n+15) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-16 > *:nth-child(-n+16) {
+.phone-wide-flush-first-16 > *:nth-child(-n+16) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-17 > *:nth-child(-n+17) {
+.phone-wide-flush-first-17 > *:nth-child(-n+17) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-18 > *:nth-child(-n+18) {
+.phone-wide-flush-first-18 > *:nth-child(-n+18) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-19 > *:nth-child(-n+19) {
+.phone-wide-flush-first-19 > *:nth-child(-n+19) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-20 > *:nth-child(-n+20) {
+.phone-wide-flush-first-20 > *:nth-child(-n+20) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-21 > *:nth-child(-n+21) {
+.phone-wide-flush-first-21 > *:nth-child(-n+21) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-22 > *:nth-child(-n+22) {
+.phone-wide-flush-first-22 > *:nth-child(-n+22) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-23 > *:nth-child(-n+23) {
+.phone-wide-flush-first-23 > *:nth-child(-n+23) {
   margin-top: 0; }
 
-.phone-wide-flush-nth-24 > *:nth-child(-n+24) {
+.phone-wide-flush-first-24 > *:nth-child(-n+24) {
   margin-top: 0; }
 
-.phablet-flush-nth-1 > *:nth-child(-n+1) {
+.phablet-flush-first-1 > *:nth-child(-n+1) {
   margin-top: 0; }
 
-.phablet-flush-nth-2 > *:nth-child(-n+2) {
+.phablet-flush-first-2 > *:nth-child(-n+2) {
   margin-top: 0; }
 
-.phablet-flush-nth-3 > *:nth-child(-n+3) {
+.phablet-flush-first-3 > *:nth-child(-n+3) {
   margin-top: 0; }
 
-.phablet-flush-nth-4 > *:nth-child(-n+4) {
+.phablet-flush-first-4 > *:nth-child(-n+4) {
   margin-top: 0; }
 
-.phablet-flush-nth-5 > *:nth-child(-n+5) {
+.phablet-flush-first-5 > *:nth-child(-n+5) {
   margin-top: 0; }
 
-.phablet-flush-nth-6 > *:nth-child(-n+6) {
+.phablet-flush-first-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-.phablet-flush-nth-7 > *:nth-child(-n+7) {
+.phablet-flush-first-7 > *:nth-child(-n+7) {
   margin-top: 0; }
 
-.phablet-flush-nth-8 > *:nth-child(-n+8) {
+.phablet-flush-first-8 > *:nth-child(-n+8) {
   margin-top: 0; }
 
-.phablet-flush-nth-9 > *:nth-child(-n+9) {
+.phablet-flush-first-9 > *:nth-child(-n+9) {
   margin-top: 0; }
 
-.phablet-flush-nth-10 > *:nth-child(-n+10) {
+.phablet-flush-first-10 > *:nth-child(-n+10) {
   margin-top: 0; }
 
-.phablet-flush-nth-11 > *:nth-child(-n+11) {
+.phablet-flush-first-11 > *:nth-child(-n+11) {
   margin-top: 0; }
 
-.phablet-flush-nth-12 > *:nth-child(-n+12) {
+.phablet-flush-first-12 > *:nth-child(-n+12) {
   margin-top: 0; }
 
-.phablet-flush-nth-13 > *:nth-child(-n+13) {
+.phablet-flush-first-13 > *:nth-child(-n+13) {
   margin-top: 0; }
 
-.phablet-flush-nth-14 > *:nth-child(-n+14) {
+.phablet-flush-first-14 > *:nth-child(-n+14) {
   margin-top: 0; }
 
-.phablet-flush-nth-15 > *:nth-child(-n+15) {
+.phablet-flush-first-15 > *:nth-child(-n+15) {
   margin-top: 0; }
 
-.phablet-flush-nth-16 > *:nth-child(-n+16) {
+.phablet-flush-first-16 > *:nth-child(-n+16) {
   margin-top: 0; }
 
-.phablet-flush-nth-17 > *:nth-child(-n+17) {
+.phablet-flush-first-17 > *:nth-child(-n+17) {
   margin-top: 0; }
 
-.phablet-flush-nth-18 > *:nth-child(-n+18) {
+.phablet-flush-first-18 > *:nth-child(-n+18) {
   margin-top: 0; }
 
-.phablet-flush-nth-19 > *:nth-child(-n+19) {
+.phablet-flush-first-19 > *:nth-child(-n+19) {
   margin-top: 0; }
 
-.phablet-flush-nth-20 > *:nth-child(-n+20) {
+.phablet-flush-first-20 > *:nth-child(-n+20) {
   margin-top: 0; }
 
-.phablet-flush-nth-21 > *:nth-child(-n+21) {
+.phablet-flush-first-21 > *:nth-child(-n+21) {
   margin-top: 0; }
 
-.phablet-flush-nth-22 > *:nth-child(-n+22) {
+.phablet-flush-first-22 > *:nth-child(-n+22) {
   margin-top: 0; }
 
-.phablet-flush-nth-23 > *:nth-child(-n+23) {
+.phablet-flush-first-23 > *:nth-child(-n+23) {
   margin-top: 0; }
 
-.phablet-flush-nth-24 > *:nth-child(-n+24) {
+.phablet-flush-first-24 > *:nth-child(-n+24) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-1 > *:nth-child(-n+1) {
+.tablet-small-flush-first-1 > *:nth-child(-n+1) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-2 > *:nth-child(-n+2) {
+.tablet-small-flush-first-2 > *:nth-child(-n+2) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-3 > *:nth-child(-n+3) {
+.tablet-small-flush-first-3 > *:nth-child(-n+3) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-4 > *:nth-child(-n+4) {
+.tablet-small-flush-first-4 > *:nth-child(-n+4) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-5 > *:nth-child(-n+5) {
+.tablet-small-flush-first-5 > *:nth-child(-n+5) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-6 > *:nth-child(-n+6) {
+.tablet-small-flush-first-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-7 > *:nth-child(-n+7) {
+.tablet-small-flush-first-7 > *:nth-child(-n+7) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-8 > *:nth-child(-n+8) {
+.tablet-small-flush-first-8 > *:nth-child(-n+8) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-9 > *:nth-child(-n+9) {
+.tablet-small-flush-first-9 > *:nth-child(-n+9) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-10 > *:nth-child(-n+10) {
+.tablet-small-flush-first-10 > *:nth-child(-n+10) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-11 > *:nth-child(-n+11) {
+.tablet-small-flush-first-11 > *:nth-child(-n+11) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-12 > *:nth-child(-n+12) {
+.tablet-small-flush-first-12 > *:nth-child(-n+12) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-13 > *:nth-child(-n+13) {
+.tablet-small-flush-first-13 > *:nth-child(-n+13) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-14 > *:nth-child(-n+14) {
+.tablet-small-flush-first-14 > *:nth-child(-n+14) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-15 > *:nth-child(-n+15) {
+.tablet-small-flush-first-15 > *:nth-child(-n+15) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-16 > *:nth-child(-n+16) {
+.tablet-small-flush-first-16 > *:nth-child(-n+16) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-17 > *:nth-child(-n+17) {
+.tablet-small-flush-first-17 > *:nth-child(-n+17) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-18 > *:nth-child(-n+18) {
+.tablet-small-flush-first-18 > *:nth-child(-n+18) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-19 > *:nth-child(-n+19) {
+.tablet-small-flush-first-19 > *:nth-child(-n+19) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-20 > *:nth-child(-n+20) {
+.tablet-small-flush-first-20 > *:nth-child(-n+20) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-21 > *:nth-child(-n+21) {
+.tablet-small-flush-first-21 > *:nth-child(-n+21) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-22 > *:nth-child(-n+22) {
+.tablet-small-flush-first-22 > *:nth-child(-n+22) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-23 > *:nth-child(-n+23) {
+.tablet-small-flush-first-23 > *:nth-child(-n+23) {
   margin-top: 0; }
 
-.tablet-small-flush-nth-24 > *:nth-child(-n+24) {
+.tablet-small-flush-first-24 > *:nth-child(-n+24) {
   margin-top: 0; }
 
-.tablet-flush-nth-1 > *:nth-child(-n+1) {
+.tablet-flush-first-1 > *:nth-child(-n+1) {
   margin-top: 0; }
 
-.tablet-flush-nth-2 > *:nth-child(-n+2) {
+.tablet-flush-first-2 > *:nth-child(-n+2) {
   margin-top: 0; }
 
-.tablet-flush-nth-3 > *:nth-child(-n+3) {
+.tablet-flush-first-3 > *:nth-child(-n+3) {
   margin-top: 0; }
 
-.tablet-flush-nth-4 > *:nth-child(-n+4) {
+.tablet-flush-first-4 > *:nth-child(-n+4) {
   margin-top: 0; }
 
-.tablet-flush-nth-5 > *:nth-child(-n+5) {
+.tablet-flush-first-5 > *:nth-child(-n+5) {
   margin-top: 0; }
 
-.tablet-flush-nth-6 > *:nth-child(-n+6) {
+.tablet-flush-first-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-.tablet-flush-nth-7 > *:nth-child(-n+7) {
+.tablet-flush-first-7 > *:nth-child(-n+7) {
   margin-top: 0; }
 
-.tablet-flush-nth-8 > *:nth-child(-n+8) {
+.tablet-flush-first-8 > *:nth-child(-n+8) {
   margin-top: 0; }
 
-.tablet-flush-nth-9 > *:nth-child(-n+9) {
+.tablet-flush-first-9 > *:nth-child(-n+9) {
   margin-top: 0; }
 
-.tablet-flush-nth-10 > *:nth-child(-n+10) {
+.tablet-flush-first-10 > *:nth-child(-n+10) {
   margin-top: 0; }
 
-.tablet-flush-nth-11 > *:nth-child(-n+11) {
+.tablet-flush-first-11 > *:nth-child(-n+11) {
   margin-top: 0; }
 
-.tablet-flush-nth-12 > *:nth-child(-n+12) {
+.tablet-flush-first-12 > *:nth-child(-n+12) {
   margin-top: 0; }
 
-.tablet-flush-nth-13 > *:nth-child(-n+13) {
+.tablet-flush-first-13 > *:nth-child(-n+13) {
   margin-top: 0; }
 
-.tablet-flush-nth-14 > *:nth-child(-n+14) {
+.tablet-flush-first-14 > *:nth-child(-n+14) {
   margin-top: 0; }
 
-.tablet-flush-nth-15 > *:nth-child(-n+15) {
+.tablet-flush-first-15 > *:nth-child(-n+15) {
   margin-top: 0; }
 
-.tablet-flush-nth-16 > *:nth-child(-n+16) {
+.tablet-flush-first-16 > *:nth-child(-n+16) {
   margin-top: 0; }
 
-.tablet-flush-nth-17 > *:nth-child(-n+17) {
+.tablet-flush-first-17 > *:nth-child(-n+17) {
   margin-top: 0; }
 
-.tablet-flush-nth-18 > *:nth-child(-n+18) {
+.tablet-flush-first-18 > *:nth-child(-n+18) {
   margin-top: 0; }
 
-.tablet-flush-nth-19 > *:nth-child(-n+19) {
+.tablet-flush-first-19 > *:nth-child(-n+19) {
   margin-top: 0; }
 
-.tablet-flush-nth-20 > *:nth-child(-n+20) {
+.tablet-flush-first-20 > *:nth-child(-n+20) {
   margin-top: 0; }
 
-.tablet-flush-nth-21 > *:nth-child(-n+21) {
+.tablet-flush-first-21 > *:nth-child(-n+21) {
   margin-top: 0; }
 
-.tablet-flush-nth-22 > *:nth-child(-n+22) {
+.tablet-flush-first-22 > *:nth-child(-n+22) {
   margin-top: 0; }
 
-.tablet-flush-nth-23 > *:nth-child(-n+23) {
+.tablet-flush-first-23 > *:nth-child(-n+23) {
   margin-top: 0; }
 
-.tablet-flush-nth-24 > *:nth-child(-n+24) {
+.tablet-flush-first-24 > *:nth-child(-n+24) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-1 > *:nth-child(-n+1) {
+.tablet-wide-flush-first-1 > *:nth-child(-n+1) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-2 > *:nth-child(-n+2) {
+.tablet-wide-flush-first-2 > *:nth-child(-n+2) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-3 > *:nth-child(-n+3) {
+.tablet-wide-flush-first-3 > *:nth-child(-n+3) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-4 > *:nth-child(-n+4) {
+.tablet-wide-flush-first-4 > *:nth-child(-n+4) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-5 > *:nth-child(-n+5) {
+.tablet-wide-flush-first-5 > *:nth-child(-n+5) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-6 > *:nth-child(-n+6) {
+.tablet-wide-flush-first-6 > *:nth-child(-n+6) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-7 > *:nth-child(-n+7) {
+.tablet-wide-flush-first-7 > *:nth-child(-n+7) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-8 > *:nth-child(-n+8) {
+.tablet-wide-flush-first-8 > *:nth-child(-n+8) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-9 > *:nth-child(-n+9) {
+.tablet-wide-flush-first-9 > *:nth-child(-n+9) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-10 > *:nth-child(-n+10) {
+.tablet-wide-flush-first-10 > *:nth-child(-n+10) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-11 > *:nth-child(-n+11) {
+.tablet-wide-flush-first-11 > *:nth-child(-n+11) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-12 > *:nth-child(-n+12) {
+.tablet-wide-flush-first-12 > *:nth-child(-n+12) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-13 > *:nth-child(-n+13) {
+.tablet-wide-flush-first-13 > *:nth-child(-n+13) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-14 > *:nth-child(-n+14) {
+.tablet-wide-flush-first-14 > *:nth-child(-n+14) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-15 > *:nth-child(-n+15) {
+.tablet-wide-flush-first-15 > *:nth-child(-n+15) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-16 > *:nth-child(-n+16) {
+.tablet-wide-flush-first-16 > *:nth-child(-n+16) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-17 > *:nth-child(-n+17) {
+.tablet-wide-flush-first-17 > *:nth-child(-n+17) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-18 > *:nth-child(-n+18) {
+.tablet-wide-flush-first-18 > *:nth-child(-n+18) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-19 > *:nth-child(-n+19) {
+.tablet-wide-flush-first-19 > *:nth-child(-n+19) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-20 > *:nth-child(-n+20) {
+.tablet-wide-flush-first-20 > *:nth-child(-n+20) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-21 > *:nth-child(-n+21) {
+.tablet-wide-flush-first-21 > *:nth-child(-n+21) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-22 > *:nth-child(-n+22) {
+.tablet-wide-flush-first-22 > *:nth-child(-n+22) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-23 > *:nth-child(-n+23) {
+.tablet-wide-flush-first-23 > *:nth-child(-n+23) {
   margin-top: 0; }
 
-.tablet-wide-flush-nth-24 > *:nth-child(-n+24) {
+.tablet-wide-flush-first-24 > *:nth-child(-n+24) {
   margin-top: 0; }
 
 .hidden {

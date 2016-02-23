@@ -3,7 +3,7 @@
 	Flush - to set "margin-top: 0" from the first nth elements
 
 	Example class:
-	<div class="base-flush-nth-2">
+	<div class="base-flush-first-2">
 		<div>Child 1</div>
 		<div>Child 2</div>
 		<div>Child 3</div>
@@ -13,7 +13,7 @@
 	Would target, at no media query, first 2 children ( div:nth-child(-n+2) )
 
 	Example class:
-	<div class="base-flush-nth-2 tablet-flush-nth-3">
+	<div class="base-flush-first-2 tablet-flush-first-3">
 		<div>Child 1</div>
 		<div>Child 2</div>
 		<div>Child 3</div>
@@ -34,7 +34,7 @@
 	@for $i from 1 through $grid-column-count {
 
 		@if $dev_mode {
-			.#{$modifier}-flush-nth-#{$i} {
+			.#{$modifier}-flush-first-#{$i} {
 
 				> * {
 					&:nth-child(-n+#{$i}) {
@@ -43,7 +43,7 @@
 				}
 			}
 		} @else if index( map-deep-get($grid-bp, $modifier, flush) , $i) or map-deep-get($grid-bp, $modifier, flush) == true {
-			.#{$modifier}-flush-nth-#{$i} {
+			.#{$modifier}-flush-first-#{$i} {
 
 				> * {
 					&:nth-child(-n+#{$i}) {
