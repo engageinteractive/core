@@ -43,17 +43,15 @@
 // MODULE
 // simple combinations of cores and reusable components not tied to a specific section
 
+@import "module/breadcrumb";
 @import "module/container";
 @import "module/copy";
 @import "module/form";
 @import "module/media";
 @import "module/message";
 @import "module/outdated-browser";
+@import "module/pagination";
 @import "module/table-responsive-collapse";
-
-// some useful pre-built components
-@import "module/component/breadcrumb";
-@import "module/component/pagination";
 
 
 // LAYOUT

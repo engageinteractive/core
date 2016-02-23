@@ -4136,6 +4136,25 @@ strong {
 small {
   font-size: 80%; }
 
+.breadcrumb {
+  font-size: 1.4rem;
+  line-height: 1; }
+  .breadcrumb:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .breadcrumb a,
+  .breadcrumb .icon,
+  .breadcrumb span {
+    float: left;
+    margin-right: 0.6rem; }
+    .breadcrumb a:last-child,
+    .breadcrumb .icon:last-child,
+    .breadcrumb span:last-child {
+      margin-right: 0; }
+  .breadcrumb .icon {
+    font-size: 1.4rem; }
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -4336,6 +4355,49 @@ form li {
     .outdated-browser a:hover, .outdated-browser a:focus {
       text-decoration: none; }
 
+.pagination {
+  line-height: 1; }
+  .pagination ol {
+    list-style: none;
+    text-align: center; }
+  .pagination li {
+    margin-bottom: 0;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    display: inline-block; }
+    .pagination li:first-child {
+      padding-left: 0; }
+    .pagination li:last-child {
+      padding-right: 0; }
+  .pagination a,
+  .pagination span {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1; }
+  .pagination a {
+    background-color: #4D90FE;
+    color: #fff;
+    padding: 1.2rem;
+    text-decoration: none;
+    -webkit-transition: background 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: background 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+    .pagination a:hover, .pagination a:focus {
+      background-color: #1a1a1a;
+      color: #fff; }
+  .pagination .jump--disabled a {
+    background-color: #ddd;
+    color: #888;
+    cursor: not-allowed; }
+  .pagination .page--current a {
+    background-color: #fdbc00;
+    color: #fff; }
+  @media only screen and (max-width: 767px) {
+    .pagination .jump--first,
+    .pagination .jump--last,
+    .pagination .page--end,
+    .pagination .gap {
+      display: none; } }
+
 .table-responsive-collapse .faux-th {
   display: none; }
   .table-responsive-collapse .faux-th + * {
@@ -4395,68 +4457,6 @@ form li {
 
 .table-responsive-collapse--collapsed tr:first-child td {
   padding-top: 0; }
-
-.breadcrumb {
-  font-size: 1.4rem;
-  line-height: 1; }
-  .breadcrumb:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .breadcrumb a,
-  .breadcrumb .icon,
-  .breadcrumb span {
-    float: left;
-    margin-right: 0.6rem; }
-    .breadcrumb a:last-child,
-    .breadcrumb .icon:last-child,
-    .breadcrumb span:last-child {
-      margin-right: 0; }
-  .breadcrumb .icon {
-    font-size: 1.4rem; }
-
-.pagination {
-  line-height: 1; }
-  .pagination ol {
-    list-style: none;
-    text-align: center; }
-  .pagination li {
-    margin-bottom: 0;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    display: inline-block; }
-    .pagination li:first-child {
-      padding-left: 0; }
-    .pagination li:last-child {
-      padding-right: 0; }
-  .pagination a,
-  .pagination span {
-    display: block;
-    font-size: 1.4rem;
-    line-height: 1; }
-  .pagination a {
-    background-color: #4D90FE;
-    color: #fff;
-    padding: 1.2rem;
-    text-decoration: none;
-    -webkit-transition: background 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    transition: background 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-    .pagination a:hover, .pagination a:focus {
-      background-color: #1a1a1a;
-      color: #fff; }
-  .pagination .jump--disabled a {
-    background-color: #ddd;
-    color: #888;
-    cursor: not-allowed; }
-  .pagination .page--current a {
-    background-color: #fdbc00;
-    color: #fff; }
-  @media only screen and (max-width: 767px) {
-    .pagination .jump--first,
-    .pagination .jump--last,
-    .pagination .page--end,
-    .pagination .gap {
-      display: none; } }
 
 .site-header {
   position: relative;
