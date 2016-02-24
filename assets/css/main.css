@@ -2741,134 +2741,6 @@ textarea:focus {
   .desktop-wide-push-0 {
     left: 0; } }
 
-.base-hidden {
-  display: none;
-  visibility: hidden; }
-
-.base-visible {
-  display: block;
-  visibility: visible; }
-
-.base-visible-inline {
-  display: inline;
-  visibility: visible; }
-
-.base-visible-td {
-  display: table-cell;
-  visibility: visible; }
-
-@media only screen and (min-width: 400px) {
-  .phone-hidden {
-    display: none;
-    visibility: hidden; }
-  .phone-visible {
-    display: block;
-    visibility: visible; }
-  .phone-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .phone-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
-@media only screen and (min-width: 480px) {
-  .phone-wide-hidden {
-    display: none;
-    visibility: hidden; }
-  .phone-wide-visible {
-    display: block;
-    visibility: visible; }
-  .phone-wide-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .phone-wide-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
-@media only screen and (min-width: 560px) {
-  .phablet-hidden {
-    display: none;
-    visibility: hidden; }
-  .phablet-visible {
-    display: block;
-    visibility: visible; }
-  .phablet-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .phablet-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
-@media only screen and (min-width: 640px) {
-  .tablet-small-hidden {
-    display: none;
-    visibility: hidden; }
-  .tablet-small-visible {
-    display: block;
-    visibility: visible; }
-  .tablet-small-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .tablet-small-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
-@media only screen and (min-width: 768px) {
-  .tablet-hidden {
-    display: none;
-    visibility: hidden; }
-  .tablet-visible {
-    display: block;
-    visibility: visible; }
-  .tablet-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .tablet-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
-@media only screen and (min-width: 1024px) {
-  .tablet-wide-hidden {
-    display: none;
-    visibility: hidden; }
-  .tablet-wide-visible {
-    display: block;
-    visibility: visible; }
-  .tablet-wide-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .tablet-wide-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
-@media only screen and (min-width: 1248px) {
-  .desktop-hidden {
-    display: none;
-    visibility: hidden; }
-  .desktop-visible {
-    display: block;
-    visibility: visible; }
-  .desktop-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .desktop-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
-@media only screen and (min-width: 1440px) {
-  .desktop-wide-hidden {
-    display: none;
-    visibility: hidden; }
-  .desktop-wide-visible {
-    display: block;
-    visibility: visible; }
-  .desktop-wide-visible-inline {
-    display: inline;
-    visibility: visible; }
-  .desktop-wide-visible-td {
-    display: table-cell;
-    visibility: visible; } }
-
 /*--------------------------------
 
 	Flush - to set "margin-top: 0" from the first nth elements
@@ -3396,6 +3268,134 @@ textarea:focus {
   content: "";
   display: table;
   clear: both; }
+
+.base-hidden {
+  display: none;
+  visibility: hidden; }
+
+.base-visible {
+  display: block;
+  visibility: visible; }
+
+.base-visible-inline {
+  display: inline;
+  visibility: visible; }
+
+.base-visible-td {
+  display: table-cell;
+  visibility: visible; }
+
+@media only screen and (min-width: 400px) {
+  .phone-hidden {
+    display: none;
+    visibility: hidden; }
+  .phone-visible {
+    display: block;
+    visibility: visible; }
+  .phone-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .phone-visible-td {
+    display: table-cell;
+    visibility: visible; } }
+
+@media only screen and (min-width: 480px) {
+  .phone-wide-hidden {
+    display: none;
+    visibility: hidden; }
+  .phone-wide-visible {
+    display: block;
+    visibility: visible; }
+  .phone-wide-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .phone-wide-visible-td {
+    display: table-cell;
+    visibility: visible; } }
+
+@media only screen and (min-width: 560px) {
+  .phablet-hidden {
+    display: none;
+    visibility: hidden; }
+  .phablet-visible {
+    display: block;
+    visibility: visible; }
+  .phablet-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .phablet-visible-td {
+    display: table-cell;
+    visibility: visible; } }
+
+@media only screen and (min-width: 640px) {
+  .tablet-small-hidden {
+    display: none;
+    visibility: hidden; }
+  .tablet-small-visible {
+    display: block;
+    visibility: visible; }
+  .tablet-small-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .tablet-small-visible-td {
+    display: table-cell;
+    visibility: visible; } }
+
+@media only screen and (min-width: 768px) {
+  .tablet-hidden {
+    display: none;
+    visibility: hidden; }
+  .tablet-visible {
+    display: block;
+    visibility: visible; }
+  .tablet-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .tablet-visible-td {
+    display: table-cell;
+    visibility: visible; } }
+
+@media only screen and (min-width: 1024px) {
+  .tablet-wide-hidden {
+    display: none;
+    visibility: hidden; }
+  .tablet-wide-visible {
+    display: block;
+    visibility: visible; }
+  .tablet-wide-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .tablet-wide-visible-td {
+    display: table-cell;
+    visibility: visible; } }
+
+@media only screen and (min-width: 1248px) {
+  .desktop-hidden {
+    display: none;
+    visibility: hidden; }
+  .desktop-visible {
+    display: block;
+    visibility: visible; }
+  .desktop-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .desktop-visible-td {
+    display: table-cell;
+    visibility: visible; } }
+
+@media only screen and (min-width: 1440px) {
+  .desktop-wide-hidden {
+    display: none;
+    visibility: hidden; }
+  .desktop-wide-visible {
+    display: block;
+    visibility: visible; }
+  .desktop-wide-visible-inline {
+    display: inline;
+    visibility: visible; }
+  .desktop-wide-visible-td {
+    display: table-cell;
+    visibility: visible; } }
 
 /*--------------------------------
 
