@@ -1,1 +1,4 @@
-.site-content {}
+.site-content {
+	position: relative;
+	z-index: z('site-footer');
+}

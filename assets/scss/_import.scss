@@ -10,12 +10,6 @@
 @import "utility/fonts";
 @import "utility/grid/block";
 @import "utility/grid/columns";
-@import "utility/flush-nth";
-@import "utility/helper-classes";
-@import "utility/visible";
-
-// plugins
-// @import "utility/plugin/";
 
 
 // CORE STYLING
@@ -26,18 +20,18 @@
 // CORE
 // basic building blocks, typically single html tags
 
+@import "core/typography";
 @import "core/anchor";
+@import "core/button";
 @import "core/blockquote";
 @import "core/code";
 @import "core/figure";
-@import "core/form-button";
 @import "core/form-input";
 @import "core/icon";
 @import "core/img";
 @import "core/list";
 @import "core/logo";
 @import "core/table";
-@import "core/typography";
 
 
 // MODULE
@@ -49,7 +43,6 @@
 @import "module/form";
 @import "module/media";
 @import "module/message";
-@import "module/outdated-browser";
 @import "module/pagination";
 @import "module/table-responsive-collapse";
 
@@ -57,8 +50,9 @@
 // LAYOUT
 // distinct section of an interface
 
-@import "layout/site-content";
+@import "layout/outdated-browser";
 @import "layout/site-header";
+@import "layout/site-content";
 @import "layout/site-footer";
 
 
@@ -66,6 +60,14 @@
 // layouts stitched together to form pages
 
 // @import "page/*";
+
+
+// OVERRIDING UTILITIES
+// any aditional utilities that should have more important than other CSS
+
+@import "utility/flush-nth";
+@import "utility/helper-classes";
+@import "utility/visible";
 
 
 // EXTRAS
