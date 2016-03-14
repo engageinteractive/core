@@ -300,12 +300,12 @@
 		"outputStyle": 2,
 		"syntaxCheckerStyle": 0
 		},
-	"\/assets\/js-min\/precompiled\/jquery-2.2.1.min.js": {
+	"\/assets\/js-min\/precompiled\/jquery-2.2.0.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js-min\/precompiled\/jquery-2.2.1.min.js",
-		"outputAbbreviatedPath": "\/assets\/js-min\/precompiled\/min\/jquery-2.2.1.min.min.js",
+		"inputAbbreviatedPath": "\/assets\/js-min\/precompiled\/jquery-2.2.0.min.js",
+		"outputAbbreviatedPath": "\/assets\/js-min\/precompiled\/min\/jquery-2.2.0.min.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
@@ -401,7 +401,7 @@
 		},
 	"\/assets\/js\/plugins\/simpleSelect.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/plugins\/simpleSelect.js",
 		"outputAbbreviatedPath": "\/assets\/js\/plugins\/min\/simpleSelect.min.js",

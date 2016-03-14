@@ -20,7 +20,28 @@ var site = {
 	height: viewport().height,
 	scroll: {
 		x: 0,
-		y: 0
+		y: 0,
+		update: function(){
+
+			var x, y;
+
+			y = document.documentElement.scrollTop;
+			y = y === 0 ? document.body.scrollTop : y;
+
+			x = document.documentElement.scrollLeft;
+			x = x === 0 ? document.body.scrollLeft : x;
+
+			site.scroll.x = x;
+			site.scroll.y = y;
+
+			$.each(site.scroll.listener, function(){
+
+				this();
+
+			});
+
+		},
+		listener: {}
 	}
 };
 
@@ -114,16 +135,11 @@ $core.win.on({
 	},
 	scroll: function(){
 
-		var x, y;
-
-		y = document.documentElement.scrollTop;
-		y = y === 0 ? document.body.scrollTop : y;
-
-		x = document.documentElement.scrollLeft;
-		x = x === 0 ? document.body.scrollLeft : x;
-
-		site.scroll.x = x;
-		site.scroll.y = y;
+		if( Modernizr.raf ){
+			requestAnimationFrame(site.scroll.update);
+		}else{
+			site.scroll.update();
+		}
 
 	}
 });
