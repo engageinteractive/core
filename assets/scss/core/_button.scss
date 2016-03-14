@@ -1,10 +1,7 @@
 // basic buttons
 
 button,
-.button,
-input[type="reset"],
-input[type="submit"],
-input[type="button"] {
+.button {
 	background-color: $c-brand-primary;
 	color: $c-white;
 	font-family: $sans-serif;
