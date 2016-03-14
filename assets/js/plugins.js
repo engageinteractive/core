@@ -1,5 +1,7 @@
+// Plugins
+// @codekit-prepend "plugins/simpleSelect.js"
+
 // jQuery plugins
-//import("plugins/jquery/fitvids.js");
-//import("plugins/jquery/simpleSelect.js");
-//import("plugins/jquery/preload.js");
-//import("plugins/jquery/loadImg.js");
+// @codekit-prepend "plugins/jquery/fitvids.js"
+// @codekit-prepend "plugins/jquery/preload.js"
+// @codekit-prepend "plugins/jquery/loadImg.js"

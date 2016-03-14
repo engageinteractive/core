@@ -14,4 +14,4 @@ config.rb
 node_modules/
 
 # General
-log/
+# log/
