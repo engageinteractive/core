@@ -1,5 +1,5 @@
 // Plugins
-// @codekit-prepend "plugins/jquery/simpleSelect.js"
+// @codekit-prepend "plugins/simpleSelect.js"
 
 // jQuery plugins
 // @codekit-prepend "plugins/jquery/fitvids.js"
