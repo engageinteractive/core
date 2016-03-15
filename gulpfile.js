@@ -65,15 +65,12 @@ gulp.task('clean', function(cb) {
 gulp.task('styles', function() {
 
     return gulp.src(paths.styles.src)
-        .pipe(plugins.notify({ message: paths.scripts.precompiled.root }))
-        // .pipe(plugins.notify({ message: 'Styles task running' }))
         .pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
         .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.cleanCss())
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
-        // .pipe(plugins.notify({ message: 'Styles task complete' }))
         .pipe(browserSync.stream());
 
 });
