@@ -1,174 +1,143 @@
 /*!
  * gulp
- * Useage
- - You need node installed if you don't already have it - https://nodejs.org/en/
- - Open Terminal
- - Run command 'npm install --global gulp'
- - Navigate to the root of your project in terminal with 'cd <path to your project>'
- - Run the command 'npm install' which installs all of the gulp plugins to the project
- - Run the command 'gulp watch'
- - You're all set and style and js changes should be auto detected
- - If you want live reload functionality just download the chrome plugin here https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
-
- * $ npm install gulp-ruby-plugins.sass gulp-autoprefixer gulp-minify-css gulp-plugins.jshint gulp-concat gulp-plugins.uglify gulp-imagemin gulp-plugins.notify gulp-rename gulp-livereload gulp-cache del gulp-bower gulp-imports merge-stream --save-dev
+ * Dependencies
+ * - You need node installed if you don't already have it - https://nodejs.org/en/
+ * - Open Terminal
+ * - Run command 'npm install --global gulp'
+ *
+ * Project usage
+ * - Navigate to the root of your project in terminal with 'cd <path to your project>'
+ * - Run the command 'npm install' which installs all of the gulp plugins to the project
+ * - Run the command 'gulp watch'
  */
 
-// Load plugins
-var gulp = require('gulp');
+var
 
-var plugins = require("gulp-load-plugins")({
-    pattern: ['gulp-*', 'gulp.*'],
-    replaceString: /\bgulp[\-.]/,
-    rename: {
-        'gulp-ruby-sass': 'sass'
-    }
+    // Dependencies
+    browserSync = require('browser-sync'),
+    gulp = require('gulp'),
+    plugins = require("gulp-load-plugins")(),
+
+    // Paths
+    base = {
+        src: 'src',
+        public: 'public'
+    },
+    assets = base.public + '/assets'
+    paths = {
+        styles: {
+            src:  base.src + '/scss/**/*.scss',
+            dest: assets + '/css'
+        },
+        scripts: {
+            src: base.src + '/js/**',
+            dest: assets + '/js'
+        },
+        images: {
+            src:  base.src + '/img/**/*',
+            dest: assets + '/img'
+        }
+    };
+
+
+// Clean
+
+gulp.task('clean', function() {
+    return del([
+        paths.styles.dest,
+        paths.scripts.dest,
+        paths.images.dest
+    ]);
 });
 
-// Set the paths up here, for most projects you should only need to change the basePath.src
-var basePaths = {
-    src: 'assets/'
-};
 
-var paths = {
-    scripts: {
-        src: basePaths.src + 'js/',
-        dest: basePaths.src + 'js-min/'
-    },
-    styles: {
-        src: basePaths.src + 'scss/',
-        dest: basePaths.src + 'css/'
-    }
-};
+// SCSS
 
-// configure the plugins.jshint task
+gulp.task('styles', function() {
+
+    return gulp.src(paths.styles.src)
+        // .pipe(plugins.notify({ message: 'Styles task running' }))
+        .pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
+        .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.cleanCss())
+        .pipe(plugins.sourcemaps.write('.'))
+        .pipe(gulp.dest(paths.styles.dest))
+        // .pipe(plugins.notify({ message: 'Styles task complete' }))
+        .pipe(browserSync.stream());
+
+});
+
+
+// Images
+
+gulp.task('images', function() {
+
+    var optimised = plugins.filter('**/*.{jpg,png}', { restore: true });
+
+    return gulp.src(paths.images.src)
+        .pipe(plugins.changed(paths.images.dest))
+        .pipe(optimised)
+        .pipe(plugins.tinypng('5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum'))
+        .pipe(optimised.restore)
+        .pipe(gulp.dest(paths.images.dest))
+        .pipe(browserSync.stream());
+
+});
+
+
+// JS
+
 gulp.task('plugins.jshint', function() {
-  return gulp.src(paths.scripts.src+'**/*.js')
+  return gulp.src(paths.scripts.src + '**/*.js')
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('styles', function() {
-  return plugins.sass(paths.styles.src+'*.{scss,sass}', { style: 'expanded' })
-    .pipe(plugins.autoprefixer({
-            browsers: ['last 2 versions', 'IE 9'],
-            cascade: false
-        }))
-    .pipe(plugins.notify({ message: 'Styles task running' }))
-    .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.cssnano())
-    .pipe(plugins.sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.styles.dest))
-    .pipe(plugins.notify({ message: 'Styles task complete' }));
-});
-
-// Takes all the files imported into core.js and merges them into js-min/core.js
-gulp.task('coreimports', function() {
-    gulp.src([paths.scripts.src+'core.js'])
-        .pipe(plugins.imports())
-        .pipe(plugins.plumber({
-            errorHandler: plugins.notify.onError('Error: <%= error.message %>')
-        }))
-        .pipe(plugins.uglify())
-        .on('error', onError)
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-// Takes all the files imported into site.js and merges them into js-min/site.js
-gulp.task('siteimports', function() {
-    gulp.src([paths.scripts.src+'site.js'])
-        .pipe(plugins.imports())
-        .pipe(plugins.plumber({
-            errorHandler: plugins.notify.onError('Error: <%= error.message %>')
-        }))
-        .pipe(plugins.uglify())
-        .on('error', onError)
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-// Takes all the files imported into plugins.js and merges them into js-min/plugins.js
-gulp.task('pluginimports', function() {
-    gulp.src([paths.scripts.src+'plugins.js'])
-        .pipe(plugins.imports())
-        .pipe(plugins.plumber({
-            errorHandler: plugins.notify.onError('Error: <%= error.message %>')
-        }))
-        .pipe(plugins.uglify())
-        .on('error', onError)
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-// Takes all the files imported into libs.js and merges them into js-min/libs.js
-gulp.task('libimports', function() {
-    gulp.src([paths.scripts.src+'libs.js'])
-        .pipe(plugins.imports())
-        .pipe(plugins.plumber({
-            errorHandler: plugins.notify.onError('Error: <%= error.message %>')
-        }))
-        .pipe(plugins.uglify())
-        .on('error', onError)
-        .pipe(gulp.dest(paths.scripts.dest));
-});
-
-// Takes all the files imported into utils.js and merges them into js-min/utils.js
-gulp.task('utilimports', function() {
-    gulp.src([paths.scripts.src+'utils.js'])
-        .pipe(plugins.imports())
-        .pipe(plugins.plumber({
-            errorHandler: plugins.notify.onError('Error: <%= error.message %>')
-        }))
-        .pipe(plugins.uglify())
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(plugins.notify({ message: 'Scripts task complete' }));
-});
-
-// Scripts - central locations which runs all of the import tasks
 gulp.task('scripts', function() {
-    gulp.run('pluginimports');
-    gulp.run('libimports');
-    gulp.run('coreimports');
-    gulp.run('siteimports');
-    gulp.run('utilimports');
+
+    return gulp.src([
+            paths.scripts.src + '/libs.js',
+            paths.scripts.src + '/plugins.js',
+            paths.scripts.src + '/utils.js',
+            paths.scripts.src + '/site.js'
+        ])
+        .pipe(plugins.imports())
+        .pipe(plugins.uglify())
+        .on('error', onError)
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream());
+
 });
 
 function onError(err) {
-  plugins.notify.onError({
+    plugins.notify.onError({
         message: 'Error: <%= err %>'
     });
-  console.log(err);
-  this.emit('end');
+    console.log(err);
 }
-
-// Install Dependencies
-gulp.task('bower', function() {
-  return bower()
-    .pipe(gulp.dest())
-});
-
-// Clean
-gulp.task('clean', function(cb) {
-    del(['assets/css', 'assets/js'], cb)
-});
-
-// Default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts');
-});
 
 // Watch
 gulp.task('watch', function() {
 
-  gulp.watch(paths.scripts.src+'/**/*.js', ['plugins.jshint']);
+    browserSync.init({
+        ghostMode: { scroll: false },
+        notify: false,
+        open: false,
+        proxy: 'demo.dev.com'
+    });
 
-  // Watch .scss files
-  gulp.watch(paths.styles.src+'/**/*.scss', ['styles']);
+    gulp.watch(paths.styles.src, ['styles']);
 
-  // Watch .js files
-  gulp.watch(paths.scripts.src+'/**/*.js', ['scripts']);
+    gulp.watch(paths.images.src, ['images'])
+        // .on('change', browserSync.reload);
 
-  // Create LiveReload server
-  plugins.livereload.listen();
+    gulp.watch(paths.scripts.src + '/**/*.js', ['plugins.jshint']);
 
-  // Watch any files in dist/, reload on change
-  gulp.watch('assets/**').on('change', plugins.livereload.changed);
+    gulp.watch(paths.scripts.src, ['scripts']);
 
+});
+
+gulp.task('default', ['clean'], function() {
+    gulp.start('styles', 'scripts', 'images');
 });
