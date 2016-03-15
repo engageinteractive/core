@@ -1,5 +1,7 @@
 // Core functionality
-//import("/site/global.js");
+// @codekit-prepend "site/global.js"
 
 // Modules
-//import("site/modules/table-responsive-collapse.js");
+// @codekit-prepend "site/modules/table-responsive-collapse.js"
+
+// Pages
