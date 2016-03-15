@@ -8,6 +8,7 @@
  * Project usage
  * - Navigate to the root of your project in terminal with 'cd <path to your project>'
  * - Run the command 'npm install' which installs all of the gulp plugins to the project
+ * - Run the command 'gulp' if you want to manually clean up and compile all CSS, JS, and images
  * - Run the command 'gulp watch'
  */
 
@@ -16,6 +17,7 @@ var
     // Dependencies
     browserSync = require('browser-sync'),
     gulp = require('gulp'),
+    del = require('del'),
     plugins = require("gulp-load-plugins")(),
 
     // Paths
@@ -31,7 +33,12 @@ var
         },
         scripts: {
             src: base.src + '/js/**',
-            dest: assets + '/js'
+            dest: assets + '/js',
+            destFiles: assets + '/js/**/*',
+            precompiled: {
+                root: assets + '/js/precompiled',
+                files: assets + '/js/precompiled/**'
+            }
         },
         images: {
             src:  base.src + '/img/**/*',
@@ -42,12 +49,14 @@ var
 
 // Clean
 
-gulp.task('clean', function() {
+gulp.task('clean', function(cb) {
     return del([
         paths.styles.dest,
-        paths.scripts.dest,
+        paths.scripts.destFiles,
+        '!' + paths.scripts.precompiled.root,
+        '!' + paths.scripts.precompiled.files,
         paths.images.dest
-    ]);
+    ], cb);
 });
 
 
@@ -56,6 +65,7 @@ gulp.task('clean', function() {
 gulp.task('styles', function() {
 
     return gulp.src(paths.styles.src)
+        .pipe(plugins.notify({ message: paths.scripts.precompiled.root }))
         // .pipe(plugins.notify({ message: 'Styles task running' }))
         .pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
         .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
@@ -124,12 +134,12 @@ gulp.task('watch', function() {
         ghostMode: { scroll: false },
         notify: false,
         open: false,
-        proxy: 'demo.dev.com'
+        proxy: 'front-end-baseplate.dev.com'
     });
 
     gulp.watch(paths.styles.src, ['styles']);
 
-    gulp.watch(paths.images.src, ['images'])
+    gulp.watch(paths.images.src, ['images']);
         // .on('change', browserSync.reload);
 
     gulp.watch(paths.scripts.src + '/**/*.js', ['plugins.jshint']);
