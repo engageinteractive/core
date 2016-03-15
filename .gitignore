@@ -1,3 +1,9 @@
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+npm-debug.log
+
 # OSX
 *.DS_Store
 ._*
@@ -9,9 +15,6 @@ _notes
 # SASS
 *.sass-cache
 config.rb
-
-# Node modules
-node_modules/
 
 # General
 # log/
