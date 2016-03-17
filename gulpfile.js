@@ -68,7 +68,7 @@ gulp.task('styles', function() {
         .pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
         .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
         .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.cleanCss())
+        .pipe(plugins.cleanCss({ restructuring: false }))
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream());
