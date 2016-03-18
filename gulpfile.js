@@ -66,10 +66,10 @@ gulp.task('clean', function(cb) {
 gulp.task('styles', function() {
 
     return gulp.src(paths.styles.src)
-        .pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
-        .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
         .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
         .pipe(plugins.cleanCss({ restructuring: false }))
+        .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream());
