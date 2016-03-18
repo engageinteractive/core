@@ -32,7 +32,8 @@ var
             dest: assets + '/css'
         },
         scripts: {
-            src: base.src + '/js',
+            dir: base.src + '/js',
+            src: base.src + '/js/**/*.js',
             dest: assets + '/js',
             destFiles: assets + '/js/**/*',
             precompiled: {
@@ -96,7 +97,7 @@ gulp.task('images', function() {
 // JS
 
 gulp.task('plugins.jshint', function() {
-  return gulp.src(paths.scripts.src + '/**/*.js')
+  return gulp.src(paths.scripts.src)
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'));
 });
@@ -104,10 +105,10 @@ gulp.task('plugins.jshint', function() {
 gulp.task('scripts', function() {
 
     return gulp.src([
-            paths.scripts.src + '/libs.js',
-            paths.scripts.src + '/plugins.js',
-            paths.scripts.src + '/utils.js',
-            paths.scripts.src + '/site.js'
+            paths.scripts.dir + '/libs.js',
+            paths.scripts.dir + '/plugins.js',
+            paths.scripts.dir + '/utils.js',
+            paths.scripts.dir + '/site.js'
         ])
         .pipe(plugins.imports())
         .pipe(plugins.uglify())
@@ -138,7 +139,7 @@ gulp.task('watch', function() {
 
     gulp.watch(paths.images.src, ['images']);
 
-    gulp.watch(paths.scripts.src + '/**/*.js', ['plugins.jshint']);
+    gulp.watch(paths.scripts.src, ['plugins.jshint']);
 
     gulp.watch(paths.scripts.src, ['scripts']);
 
