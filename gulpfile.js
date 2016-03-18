@@ -32,7 +32,7 @@ var
             dest: assets + '/css'
         },
         scripts: {
-            src: base.src + '/js/**',
+            src: base.src + '/js',
             dest: assets + '/js',
             destFiles: assets + '/js/**/*',
             precompiled: {
@@ -96,7 +96,7 @@ gulp.task('images', function() {
 // JS
 
 gulp.task('plugins.jshint', function() {
-  return gulp.src(paths.scripts.src + '**/*.js')
+  return gulp.src(paths.scripts.src + '/**/*.js')
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'));
 });

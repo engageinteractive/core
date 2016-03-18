@@ -43,25 +43,26 @@ $.preload = function(settings){
 	if( typeof option.src == 'object' ){
 
 		var total = option.src.length,
-			loaded = 0;
+			loaded = 0,
+			_ready = function(img){
+
+				loaded++;
+
+				option.arrayItemReady(loaded);
+
+				if( total == loaded )
+					option.ready(img,option.src);
+
+			};
 
 		for( var i = option.src.length - 1; i >= 0; i-- ){
 
 			$.preload({
 				src: option.src[i],
-				ready: function(img){
-
-					loaded++;
-
-					option.arrayItemReady(loaded);
-
-					if( total == loaded )
-						option.ready(img,option.src);
-
-				}
+				ready: _ready
 			});
 
-		};
+		}
 
 	}else if( option.src ){
 

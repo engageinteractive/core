@@ -72,9 +72,9 @@ function viewport(value){
 	return {
 		width: e[ a + 'Width' ],
 		height: e[ a + 'Height' ]
-	}
+	};
 
-};
+}
 
 /**
  *  Updates site metrics and calls any necessary
@@ -94,13 +94,13 @@ function siteResize(){
 
 	});
 
-};
+}
 
 function clearSiteResize(name){
 
 	delete site.resize[name];
 
-};
+}
 
 
 /**
@@ -117,7 +117,7 @@ function getRandomInt(min, max) {
  */
 function rangeToRange(oldVal, oldMax, oldMin, newMax, newMin){
 	return ( ( ( oldVal - oldMin ) * ( newMax - newMin ) ) / ( oldMax - oldMin ) ) + newMin;
-};
+}
 
 
 /*--------------------------------

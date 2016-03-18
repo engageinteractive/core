@@ -66,10 +66,10 @@ $.fn.loadImg = function(){
 			};
 
 			if( data.animation )
-				setCss['x'] = data.animation == 'from-left' ? '-50%' : '50%';
+				setCss.x = data.animation == 'from-left' ? '-50%' : '50%';
 
 			if( data.fade )
-				setCss['opacity'] = 0;
+				setCss.opacity = 0;
 
 			TweenLite
 				.set($this, setCss);
