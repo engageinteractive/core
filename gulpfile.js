@@ -14,50 +14,50 @@
 
 var
 
-    // Dependencies
-    browserSync = require('browser-sync'),
-    gulp = require('gulp'),
-    del = require('del'),
-    plugins = require("gulp-load-plugins")(),
+	// Dependencies
+	browserSync = require('browser-sync'),
+	gulp = require('gulp'),
+	del = require('del'),
+	plugins = require("gulp-load-plugins")(),
 
-    // Paths
-    base = {
-        src: 'src',
-        public: 'public'
-    },
-    assets = base.public + '/assets'
-    paths = {
-        styles: {
-            src:  base.src + '/scss/**/*.scss',
-            dest: assets + '/css'
-        },
-        scripts: {
-            dir: base.src + '/js',
-            src: base.src + '/js/**/*.js',
-            dest: assets + '/js',
-            destFiles: assets + '/js/**/*',
-            precompiled: {
-                root: assets + '/js/precompiled',
-                files: assets + '/js/precompiled/**'
-            }
-        },
-        images: {
-            src:  base.src + '/img/**/*',
-            dest: assets + '/img'
-        }
-    };
+	// Paths
+	base = {
+		src: 'src',
+		public: 'public'
+	},
+	assets = base.public + '/assets'
+	paths = {
+		styles: {
+			src:	base.src + '/scss/**/*.scss',
+			dest: assets + '/css'
+		},
+		scripts: {
+			dir: base.src + '/js',
+			src: base.src + '/js/**/*.js',
+			dest: assets + '/js',
+			destFiles: assets + '/js/**/*',
+			precompiled: {
+				root: assets + '/js/precompiled',
+				files: assets + '/js/precompiled/**'
+			}
+		},
+		images: {
+			src:	base.src + '/img/**/*',
+			dest: assets + '/img'
+		}
+	};
 
 
 // Clean
 
 gulp.task('clean', function(cb) {
-    return del([
-        paths.styles.dest,
-        paths.scripts.destFiles,
-        '!' + paths.scripts.precompiled.root,
-        '!' + paths.scripts.precompiled.files,
-        paths.images.dest
-    ], cb);
+	return del([
+		paths.styles.dest,
+		paths.scripts.destFiles,
+		'!' + paths.scripts.precompiled.root,
+		'!' + paths.scripts.precompiled.files,
+		paths.images.dest
+	], cb);
 });
 
 
@@ -65,14 +65,14 @@ gulp.task('clean', function(cb) {
 
 gulp.task('styles', function() {
 
-    return gulp.src(paths.styles.src)
-        .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
-        .pipe(plugins.cleanCss({ restructuring: false }))
-        .pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
-        .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.stream());
+	return gulp.src(paths.styles.src)
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
+		.pipe(plugins.cleanCss({ restructuring: false }))
+		.pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest(paths.styles.dest))
+		.pipe(browserSync.stream());
 
 });
 
@@ -81,15 +81,15 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
 
-    var optimised = plugins.filter('**/*.{jpg,png}', { restore: true });
+	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true });
 
-    return gulp.src(paths.images.src)
-        .pipe(plugins.changed(paths.images.dest))
-        .pipe(optimised)
-        .pipe(plugins.tinypng('5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum'))
-        .pipe(optimised.restore)
-        .pipe(gulp.dest(paths.images.dest))
-        .pipe(browserSync.stream());
+	return gulp.src(paths.images.src)
+		.pipe(plugins.changed(paths.images.dest))
+		.pipe(optimised)
+		.pipe(plugins.tinypng('5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum'))
+		.pipe(optimised.restore)
+		.pipe(gulp.dest(paths.images.dest))
+		.pipe(browserSync.stream());
 
 });
 
@@ -97,56 +97,56 @@ gulp.task('images', function() {
 // JS
 
 gulp.task('plugins.jshint', function() {
-  return gulp.src(paths.scripts.src)
-    .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter('jshint-stylish'));
+	return gulp.src(paths.scripts.src)
+	.pipe(plugins.jshint())
+	.pipe(plugins.jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('scripts', function() {
 
-    return gulp.src([
-            paths.scripts.dir + '/libs.js',
-            paths.scripts.dir + '/plugins.js',
-            paths.scripts.dir + '/utils.js',
-            paths.scripts.dir + '/site.js'
-        ])
-        .pipe(plugins.imports())
-        .pipe(plugins.uglify())
-        .on('error', onError)
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(browserSync.stream());
+	return gulp.src([
+			paths.scripts.dir + '/libs.js',
+			paths.scripts.dir + '/plugins.js',
+			paths.scripts.dir + '/utils.js',
+			paths.scripts.dir + '/site.js'
+		])
+		.pipe(plugins.imports())
+		.pipe(plugins.uglify())
+		.on('error', onError)
+		.pipe(gulp.dest(paths.scripts.dest))
+		.pipe(browserSync.stream());
 
 });
 
 function onError(err) {
-    plugins.notify.onError({
-        message: 'Error: <%= err %>'
-    });
-    console.log(err);
+	plugins.notify.onError({
+		message: 'Error: <%= err %>'
+	});
+	console.log(err);
 }
 
 // Watch
 gulp.task('watch', function() {
 
-    browserSync.init({
-        ghostMode: { scroll: false },
-        notify: false,
-        open: false,
-        proxy: 'front-end-baseplate.dev.com'
-    });
+	browserSync.init({
+		ghostMode: { scroll: false },
+		notify: false,
+		open: false,
+		proxy: 'front-end-baseplate.dev.com'
+	});
 
-    gulp.watch(paths.styles.src, ['styles']);
+	gulp.watch(paths.styles.src, ['styles']);
 
-    gulp.watch(paths.images.src, ['images']);
+	gulp.watch(paths.images.src, ['images']);
 
-    gulp.watch(paths.scripts.src, ['plugins.jshint']);
+	gulp.watch(paths.scripts.src, ['plugins.jshint']);
 
-    gulp.watch(paths.scripts.src, ['scripts']);
+	gulp.watch(paths.scripts.src, ['scripts']);
 
-    gulp.watch(['public/**/*.html', 'public/**/*.php']) .on('change', browserSync.reload);
+	gulp.watch(['public/**/*.html', 'public/**/*.php']) .on('change', browserSync.reload);
 
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'images');
+	gulp.start('styles', 'scripts', 'images');
 });
