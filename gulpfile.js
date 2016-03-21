@@ -101,8 +101,9 @@ gulp.task('images', function() {
 gulp.task('scripts.lint', function() {
 	return gulp
 		.src(paths.scripts.src)
-		.pipe(plugins.jshint())
-		.pipe(plugins.jshint.reporter('jshint-stylish'));
+		.pipe(plugins.eslint())
+		.pipe(plugins.eslint.format())
+		.pipe(plugins.eslint.failAfterError());
 });
 
 gulp.task('scripts.site', function() {
