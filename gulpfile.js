@@ -66,13 +66,13 @@ gulp.task('clean', function(cb) {
 gulp.task('styles', function() {
 	return gulp
 		.src(paths.styles.src)
+		.pipe(plugins.changed(paths.styles.dest))
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
 		.pipe(plugins.cleanCss({ restructuring: false }))
 		.pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.styles.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.styles.dest));
 });
 
 
@@ -86,8 +86,7 @@ gulp.task('images', function() {
 		.pipe(optimised)
 		.pipe(plugins.tinypng('5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum'))
 		.pipe(optimised.restore)
-		.pipe(gulp.dest(paths.images.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.images.dest));
 });
 
 
@@ -113,8 +112,7 @@ gulp.task('scripts.site', function() {
 		.pipe(plugins.changed(paths.scripts.dest))
 		.pipe(plugins.uglify())
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.scripts.dest));
 });
 
 gulp.task('scripts.plugins', function() {
@@ -128,8 +126,7 @@ gulp.task('scripts.plugins', function() {
 		.pipe(plugins.changed(paths.scripts.dest))
 		.pipe(plugins.uglify())
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.scripts.dest));
 });
 
 gulp.task('scripts.libs', function() {
@@ -140,8 +137,7 @@ gulp.task('scripts.libs', function() {
 		.pipe(plugins.changed(paths.scripts.dest))
 		.pipe(plugins.uglify())
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.scripts.dest));
 });
 
 gulp.task('scripts', ['scripts.lint'], function() {
@@ -156,13 +152,19 @@ gulp.task('watch', function() {
 		ghostMode: { scroll: false },
 		notify: false,
 		open: false,
-		proxy: 'front-end-baseplate.dev.com'
+		proxy: 'front-end-baseplate.dev.com',
+		files: [
+			paths.images.dest,
+			paths.scripts.dest + '/**/*.js',
+			paths.styles.dest + '/**/*.css',
+			base.public + '**/*.html',
+			base.public + '**/*.php'
+		],
 	});
 
 	gulp.watch(paths.styles.src, ['styles']);
 	gulp.watch(paths.images.src, ['images']);
 	gulp.watch(paths.scripts.src, ['scripts']);
-	gulp.watch(['public/**/*.html', 'public/**/*.php']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['clean'], function() {
