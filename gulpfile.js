@@ -14,6 +14,13 @@
 
 var
 
+	// Config
+	config = {
+		url: 'front-end-baseplate.dev.com',
+		tinyPngKey: '5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum',
+		autoprefixer: ['last 2 versions', 'IE 9'],
+	},
+
 	// Dependencies
 	browserSync = require('browser-sync'),
 	gulp = require('gulp'),
@@ -70,7 +77,7 @@ gulp.task('styles', function() {
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
 		.pipe(plugins.cleanCss({ restructuring: false }))
-		.pipe(plugins.autoprefixer({ browsers: ['last 2 versions', 'IE 9'], cascade: false }))
+		.pipe(plugins.autoprefixer({ browsers: config.autoprefixer, cascade: false }))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.styles.dest));
 });
@@ -84,7 +91,7 @@ gulp.task('images', function() {
 		.src(paths.images.src)
 		.pipe(plugins.changed(paths.images.dest))
 		.pipe(optimised)
-		.pipe(plugins.tinypng('5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum'))
+		.pipe(plugins.tinypng(config.tinyPngKey))
 		.pipe(optimised.restore)
 		.pipe(gulp.dest(paths.images.dest));
 });
@@ -152,7 +159,7 @@ gulp.task('watch', function() {
 		ghostMode: { scroll: false },
 		notify: false,
 		open: false,
-		proxy: 'front-end-baseplate.dev.com',
+		proxy: config.url,
 		files: [
 			paths.images.dest,
 			paths.scripts.dest + '/**/*.js',
