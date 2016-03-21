@@ -96,26 +96,60 @@ gulp.task('images', function() {
 
 // JS
 
-gulp.task('plugins.jshint', function() {
+gulp.task('scripts.lint', function() {
 	return gulp.src(paths.scripts.src)
 	.pipe(plugins.jshint())
 	.pipe(plugins.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts.site', function() {
 
-	return gulp.src([
-			paths.scripts.dir + '/libs.js',
-			paths.scripts.dir + '/plugins.js',
-			paths.scripts.dir + '/utils.js',
-			paths.scripts.dir + '/site.js'
+	return gulp
+		.src([
+			paths.scripts.dir + '/site/global.js',
+			paths.scripts.dir + '/site/modules/*.js',
+			paths.scripts.dir + '/site/pages/*.js',
 		])
-		.pipe(plugins.imports())
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.concat('site.js'))
 		.pipe(plugins.uglify())
-		.on('error', onError)
+		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.scripts.dest))
 		.pipe(browserSync.stream());
 
+});
+
+gulp.task('scripts.plugins', function() {
+
+	return gulp
+		.src([
+			paths.scripts.dir + '/plugins/*.js',
+			paths.scripts.dir + '/plugins/jquery/*.js',
+		])
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.concat('plugins.js'))
+		.pipe(plugins.uglify())
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest(paths.scripts.dest))
+		.pipe(browserSync.stream());
+
+});
+
+gulp.task('scripts.libs', function() {
+
+	return gulp
+		.src(paths.scripts.dir + '/libs/*.js')
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.concat('libs.js'))
+		.pipe(plugins.uglify())
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest(paths.scripts.dest))
+		.pipe(browserSync.stream());
+
+});
+
+gulp.task('scripts', ['scripts.lint'], function() {
+	gulp.start('scripts.site', 'scripts.plugins', 'scripts.libs');
 });
 
 function onError(err) {
@@ -139,7 +173,7 @@ gulp.task('watch', function() {
 
 	gulp.watch(paths.images.src, ['images']);
 
-	gulp.watch(paths.scripts.src, ['plugins.jshint']);
+	gulp.watch(paths.scripts.src, ['scripts.lint']);
 
 	gulp.watch(paths.scripts.src, ['scripts']);
 
