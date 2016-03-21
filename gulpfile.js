@@ -167,6 +167,6 @@ gulp.task('watch', function() {
 	gulp.watch(paths.scripts.src, ['scripts']);
 });
 
-gulp.task('default', ['clean'], function() {
+gulp.task('default', [], function() {
 	gulp.start('styles', 'scripts', 'images');
 });
