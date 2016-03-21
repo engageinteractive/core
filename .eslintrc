@@ -1,0 +1,20 @@
+{
+  extends: 'airbnb/legacy',
+  globals: {
+    '$': true,
+    '$core': true,
+    '$site': true,
+    'Modernizr': true,
+    'clearSiteResize': true,
+    'getRandomInt': true,
+    'jQuery': true,
+    'rangeToRange': true,
+    'site': true,
+    'siteResize': true,
+  },
+  rules: {
+    'indent': [2, 'tab'],
+    'space-before-function-paren': [2, 'never'],
+    'func-names': [0],
+  },
+}
