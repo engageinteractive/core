@@ -65,7 +65,8 @@ gulp.task('clean', function(cb) {
 
 gulp.task('styles', function() {
 
-	return gulp.src(paths.styles.src)
+	return gulp
+		.src(paths.styles.src)
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
 		.pipe(plugins.cleanCss({ restructuring: false }))
@@ -83,7 +84,8 @@ gulp.task('images', function() {
 
 	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true });
 
-	return gulp.src(paths.images.src)
+	return gulp
+		.src(paths.images.src)
 		.pipe(plugins.changed(paths.images.dest))
 		.pipe(optimised)
 		.pipe(plugins.tinypng('5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum'))
@@ -97,9 +99,10 @@ gulp.task('images', function() {
 // JS
 
 gulp.task('scripts.lint', function() {
-	return gulp.src(paths.scripts.src)
-	.pipe(plugins.jshint())
-	.pipe(plugins.jshint.reporter('jshint-stylish'));
+	return gulp
+		.src(paths.scripts.src)
+		.pipe(plugins.jshint())
+		.pipe(plugins.jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('scripts.site', function() {
@@ -152,12 +155,6 @@ gulp.task('scripts', ['scripts.lint'], function() {
 	gulp.start('scripts.site', 'scripts.plugins', 'scripts.libs');
 });
 
-function onError(err) {
-	plugins.notify.onError({
-		message: 'Error: <%= err %>'
-	});
-	console.log(err);
-}
 
 // Watch
 gulp.task('watch', function() {
