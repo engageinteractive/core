@@ -17,7 +17,7 @@ var
 	// Config
 	config = {
 		url: 'front-end-baseplate.dev.com',
-		tinyPngKey: '5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum',
+		tinyPngKey: '5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum', // https://tinypng.com/developers
 		autoprefixer: ['last 2 versions', 'IE 9'],
 	},
 
