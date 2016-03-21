@@ -160,6 +160,7 @@ gulp.task('watch', function() {
 		notify: false,
 		open: false,
 		proxy: config.url,
+		port: 5757,
 		files: [
 			paths.images.dest,
 			paths.scripts.dest + '/**/*.js',
