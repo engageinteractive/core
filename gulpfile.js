@@ -100,6 +100,14 @@ gulp.task('scripts.lint', function() {
 	return gulp
 		.src(paths.scripts.dir + '/site/**/*.js')
 		.pipe(plugins.eslint())
+		.pipe(plugins.eslint.format(require('eslint-summary')))
+		.pipe(plugins.eslint.failAfterError());
+});
+
+gulp.task('scripts.lint.full', function() {
+	return gulp
+		.src(paths.scripts.dir + '/site/**/*.js')
+		.pipe(plugins.eslint())
 		.pipe(plugins.eslint.format())
 		.pipe(plugins.eslint.failAfterError());
 });
