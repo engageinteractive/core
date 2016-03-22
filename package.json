@@ -22,7 +22,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-tinypng": "^1.0.2",
+    "gulp-tinypng-compress": "^1.2.0",
     "gulp-uglify": "^1.5.3"
   }
 }

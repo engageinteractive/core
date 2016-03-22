@@ -17,7 +17,7 @@ var
 	// Config
 	config = {
 		url: 'front-end-baseplate.dev.com',
-		tinyPngKey: '5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum', // https://tinypng.com/developers
+		tinypngKey: '5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum', // https://tinypng.com/developers
 		autoprefixer: ['last 2 versions', 'IE 9'],
 	},
 
@@ -49,6 +49,7 @@ var
 			}
 		},
 		images: {
+			dir:	base.src + '/img',
 			src:	base.src + '/img/**/*',
 			dest: assets + '/img'
 		}
@@ -89,9 +90,12 @@ gulp.task('images', function() {
 	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true });
 	return gulp
 		.src(paths.images.src)
-		.pipe(plugins.changed(paths.images.dest))
 		.pipe(optimised)
-		.pipe(plugins.tinypng(config.tinyPngKey))
+		.pipe(plugins.tinypngCompress({
+			key: config.tinypngKey,
+			sigFile: paths.images.dir + '/.tinypng',
+			log: true,
+		}))
 		.pipe(optimised.restore)
 		.pipe(gulp.dest(paths.images.dest));
 });
