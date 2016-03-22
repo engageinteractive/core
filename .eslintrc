@@ -10,11 +10,15 @@
     'jQuery': true,
     'rangeToRange': true,
     'site': true,
-    'siteResize': true,
+    'siteResize': true
   },
   rules: {
     # overrides
+    'func-names': 0,
     'indent': [2, 'tab'],
+    'one-var': 0,
+    'padded-blocks': [1, 'always'],
+    'space-before-function-paren': [2, 'never'],
     # warnings
     'comma-dangle': 1,
     'comma-spacing': 1,
@@ -23,7 +27,6 @@
     'dot-notation': 1,
     'eol-last': 1,
     'eqeqeq': 1,
-    'func-names': 1,
     'key-spacing': 1,
     'keyword-spacing': 1,
     'max-len': 1,
@@ -33,13 +36,10 @@
     'no-param-reassign': 1,
     'no-undef': 1,
     'no-unused-vars': 1,
-    'one-var': 1,
-    'padded-blocks': 1,
     'semi': 1,
     'space-before-blocks': 1,
-    'space-before-function-paren': 1,
     'space-in-parens': 1,
     'spaced-comment': 1,
-    'vars-on-top': 1,
+    'vars-on-top': 1
   },
 }
