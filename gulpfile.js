@@ -18,7 +18,7 @@ var
 	config = {
 		url: 'front-end-baseplate.dev.com',
 		tinypngKey: '5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum', // https://tinypng.com/developers
-		autoprefixer: ['last 2 versions', 'IE 9'],
+		autoprefixer: ['last 2 versions', 'IE 9']
 	},
 
 	// Dependencies
@@ -94,7 +94,7 @@ gulp.task('images', function() {
 		.pipe(plugins.tinypngCompress({
 			key: config.tinypngKey,
 			sigFile: paths.images.dir + '/.tinypng',
-			log: true,
+			summarise: true,
 		}))
 		.pipe(optimised.restore)
 		.pipe(gulp.dest(paths.images.dest));
