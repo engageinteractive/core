@@ -169,8 +169,8 @@ gulp.task('watch', function() {
 			paths.images.dest,
 			paths.scripts.dest + '/**/*.js',
 			paths.styles.dest + '/**/*.css',
-			base.public + '**/*.html',
-			base.public + '**/*.php'
+			base.public + '/**/*.html',
+			base.public + '/**/*.php',
 		],
 	});
 
