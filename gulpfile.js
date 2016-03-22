@@ -42,16 +42,15 @@ var
 			dir: base.src + '/js',
 			src: base.src + '/js/**/*.js',
 			dest: assets + '/js',
-			destFiles: assets + '/js/**/*',
-			precompiled: {
-				root: assets + '/js/precompiled',
-				files: assets + '/js/precompiled/**'
-			}
 		},
 		images: {
 			dir: base.src + '/img',
 			src: base.src + '/img/**/*',
 			dest: assets + '/img'
+		},
+		static: {
+			src: base.src + '/static/**/*',
+			dest: assets + '/static'
 		}
 	};
 
@@ -59,13 +58,7 @@ var
 // Clean
 
 gulp.task('clean', function(cb) {
-	return del([
-		paths.styles.dest,
-		paths.scripts.destFiles,
-		'!' + paths.scripts.precompiled.root,
-		'!' + paths.scripts.precompiled.files,
-		paths.images.dest
-	], cb);
+	return del(assets, cb);
 });
 
 
@@ -156,6 +149,15 @@ gulp.task('scripts', ['scripts.lint'], function() {
 });
 
 
+// Static
+
+gulp.task('static', function() {
+	return gulp
+		.src(paths.static.src)
+		.pipe(gulp.dest(paths.static.dest));
+});
+
+
 // Watch
 
 gulp.task('watch', function() {
@@ -180,5 +182,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', [], function() {
-	gulp.start('styles', 'scripts', 'images');
+	gulp.start('static', 'styles', 'scripts', 'images');
 });

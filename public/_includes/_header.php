@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="/guide/css/styles.css">
 	<!-- /remove for production -->
 
-	<script src="/assets/js/precompiled/modernizr.js"></script>
+	<script src="/assets/static/js/modernizr.js"></script>
 
 	<!-- twitter card data (https://dev.twitter.com/docs/cards, https://dev.twitter.com/docs/cards/large-image-summary-card) -->
 	<meta name="twitter:card" content="summary_large_image">
