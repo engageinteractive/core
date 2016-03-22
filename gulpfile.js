@@ -35,7 +35,7 @@ var
 	assets = base.public + '/assets',
 	paths = {
 		styles: {
-			src:	base.src + '/scss/**/*.scss',
+			src: base.src + '/scss/**/*.scss',
 			dest: assets + '/css'
 		},
 		scripts: {
@@ -49,8 +49,8 @@ var
 			}
 		},
 		images: {
-			dir:	base.src + '/img',
-			src:	base.src + '/img/**/*',
+			dir: base.src + '/img',
+			src: base.src + '/img/**/*',
 			dest: assets + '/img'
 		}
 	};
