@@ -49,7 +49,7 @@ var
 			dest: assets + '/img'
 		},
 		svgIcons: {
-			src: base.src + '/img/svg-icons/**/*',
+			src:  base.src + '/img/svg-icons/**/*',
 			dest: assets + '/img/svg-icons'
 		},
 		static: {
@@ -73,11 +73,21 @@ gulp.task('styles', function() {
 		.src(paths.styles.src)
 		.pipe(plugins.changed(paths.styles.dest))
 		.pipe(plugins.sourcemaps.init())
-		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'expanded' }))
+		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'compressed' })
+				.on('error', plugins.notify.onError({
+					title: 'Error compiling SCSS (see terminal)',
+					icon: paths.images.dir + '/tile/favicon-152.png'
+				}))
+		)
 		.pipe(plugins.cleanCss({ restructuring: false }))
 		.pipe(plugins.autoprefixer({ browsers: config.autoprefixer, cascade: false }))
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.styles.dest));
+		.pipe(gulp.dest(paths.styles.dest))
+		.pipe(plugins.notify({
+			message: 'Styles compiled',
+			onLast: true,
+			icon: paths.images.dir + '/tile/favicon-152.png'
+		}));
 });
 
 
@@ -180,7 +190,7 @@ gulp.task('svg-icon-sprite', function() {
 		.pipe(plugins.svgSprite({
 			mode: {
 				symbol: {
-					dest: '',
+					dest:   '',
 					sprite: 'sprite.svg'
 				}
 			},
@@ -216,8 +226,8 @@ gulp.task('watch', function() {
 			paths.scripts.dest + '/**/*.js',
 			paths.images.dest,
 			base.public + '/**/*.html',
-			base.public + '/**/*.php'
-		]
+			base.public + '/**/*.php',
+		],
 	});
 
 	gulp.watch(paths.styles.src, ['styles']);
