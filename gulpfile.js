@@ -17,7 +17,7 @@ var
 	// Config
 	config = {
 		url: 'front-end-baseplate.dev.com',
-		tinypngKey: '5_gZs_VCSFhHU28xGAVSm8o_JbT0Gpum', // https://tinypng.com/developers
+		tinypngKey: '4JMVAf6xxnmCIghoCC30WGJez6kwgX7d', // https://tinypng.com/developers
 		autoprefixer: ['last 2 versions', 'IE 9']
 	},
 
@@ -48,6 +48,10 @@ var
 			src: base.src + '/img/**/*',
 			dest: assets + '/img'
 		},
+		svgIcons: {
+			src:  base.src + '/img/svg-icons/**/*',
+			dest: assets + '/img/svg-icons'
+		},
 		static: {
 			src: base.src + '/static/**/*',
 			dest: assets + '/static'
@@ -62,7 +66,7 @@ gulp.task('clean', function(cb) {
 });
 
 
-// SCSS
+// Styles
 
 gulp.task('styles', function() {
 	return gulp
@@ -74,23 +78,6 @@ gulp.task('styles', function() {
 		.pipe(plugins.autoprefixer({ browsers: config.autoprefixer, cascade: false }))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.styles.dest));
-});
-
-
-// Images
-
-gulp.task('images', function() {
-	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true });
-	return gulp
-		.src(paths.images.src)
-		.pipe(optimised)
-		.pipe(plugins.tinypngCompress({
-			key: config.tinypngKey,
-			sigFile: paths.images.dir + '/.tinypng',
-			summarise: true,
-		}))
-		.pipe(optimised.restore)
-		.pipe(gulp.dest(paths.images.dest));
 });
 
 
@@ -157,6 +144,55 @@ gulp.task('scripts', ['scripts.lint'], function() {
 });
 
 
+// Images
+
+gulp.task('images', function() {
+	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true }),
+		svgs = plugins.filter(['**/*.svg', paths.images.framework + '.svg'], { restore: true });
+
+	return gulp
+		.src(paths.images.src)
+		.pipe(optimised)
+		.pipe(plugins.tinypngCompress({
+			key: config.tinypngKey,
+			sigFile: paths.images.dir + '/.tinypng',
+			summarise: true,
+		}))
+		.pipe(optimised.restore)
+		.pipe(svgs)
+		.pipe(plugins.svgmin({
+			plugins: [
+				{
+					removeDoctype: true
+				}
+			]
+		}))
+		.pipe(svgs.restore)
+		.pipe(gulp.dest(paths.images.dest));
+});
+
+
+// SVG icon sprite
+
+gulp.task('svg-icon-sprite', function() {
+	return gulp
+		.src(paths.svgIcons.src)
+		.pipe(plugins.svgSprite({
+			mode: {
+				symbol: {
+					dest:   '',
+					sprite: 'sprite.svg'
+				}
+			},
+			svg: {
+				xmlDeclaration: false,
+				doctypeDeclaration: false
+			}
+		}))
+		.pipe(gulp.dest(paths.svgIcons.dest));
+});
+
+
 // Static
 
 gulp.task('static', function() {
@@ -176,19 +212,20 @@ gulp.task('watch', function() {
 		proxy: config.url,
 		port: 5757,
 		files: [
-			paths.images.dest,
-			paths.scripts.dest + '/**/*.js',
 			paths.styles.dest + '/**/*.css',
+			paths.scripts.dest + '/**/*.js',
+			paths.images.dest,
 			base.public + '/**/*.html',
 			base.public + '/**/*.php',
 		],
 	});
 
 	gulp.watch(paths.styles.src, ['styles']);
-	gulp.watch(paths.images.src, ['images']);
 	gulp.watch(paths.scripts.src, ['scripts']);
+	gulp.watch(paths.images.src, ['images']);
+	gulp.watch(paths.svgIcons.src, ['svg-icon-sprite']);
 });
 
 gulp.task('default', [], function() {
-	gulp.start('static', 'styles', 'scripts', 'images');
+	gulp.start('static', 'styles', 'scripts', 'images', 'svg-icon-sprite');
 });
