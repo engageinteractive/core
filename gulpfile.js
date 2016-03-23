@@ -49,7 +49,7 @@ var
 			dest: assets + '/img'
 		},
 		svgIcons: {
-			src:  base.src + '/img/svg-icons/**/*',
+			src: base.src + '/img/svg-icons/**/*',
 			dest: assets + '/img/svg-icons'
 		},
 		static: {
@@ -180,7 +180,7 @@ gulp.task('svg-icon-sprite', function() {
 		.pipe(plugins.svgSprite({
 			mode: {
 				symbol: {
-					dest:   '',
+					dest: '',
 					sprite: 'sprite.svg'
 				}
 			},
@@ -216,8 +216,8 @@ gulp.task('watch', function() {
 			paths.scripts.dest + '/**/*.js',
 			paths.images.dest,
 			base.public + '/**/*.html',
-			base.public + '/**/*.php',
-		],
+			base.public + '/**/*.php'
+		]
 	});
 
 	gulp.watch(paths.styles.src, ['styles']);
