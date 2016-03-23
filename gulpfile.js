@@ -41,7 +41,7 @@ var
 		scripts: {
 			dir: base.src + '/js',
 			src: base.src + '/js/**/*.js',
-			dest: assets + '/js',
+			dest: assets + '/js'
 		},
 		images: {
 			dir: base.src + '/img',
