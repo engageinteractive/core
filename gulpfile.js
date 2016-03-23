@@ -148,7 +148,7 @@ gulp.task('scripts', ['scripts.lint'], function() {
 
 gulp.task('images', function() {
 	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true }),
-		svgs = plugins.filter(['**/*.svg', paths.images.framework + '.svg'], { restore: true });
+		svgs = plugins.filter('**/*.svg', { restore: true });
 
 	return gulp
 		.src(paths.images.src)
@@ -156,7 +156,7 @@ gulp.task('images', function() {
 		.pipe(plugins.tinypngCompress({
 			key: config.tinypngKey,
 			sigFile: paths.images.dir + '/.tinypng',
-			summarise: true,
+			summarise: true
 		}))
 		.pipe(optimised.restore)
 		.pipe(svgs)
