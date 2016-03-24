@@ -17,28 +17,33 @@ What we've done is somewhat of a halfway house between the HTML5 Boilerplate and
 
 ## Setup
 
-### Initial Installation
+### Prerequisites
 
-Once per machine:
+- [Node.js](https://nodejs.org/en/download/) - LTS is fine
+- [Fixed npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-1-change-the-permission-to-npms-default-directory) (typically option 1)
+- [Gulp](http://gulpjs.com/) installed globally - run `npm install --global gulp-cli` in Terminal
 
-1. Download and install [Node.js](https://nodejs.org/en/download/)
-2. [Install Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#1-install-gulp-globally)
+### Initial Project Setup
 
-### New Projects
+1. Navigate to your project's root directory in [Terminal](#termnial)
+2. `npm install`
+  - installs the dependencies for this project
+  - can take several minutes
+  - will output a lot of debugging information (including occasional deprecation warnings) that can be ignored
+3. Open `gulpfile.js` and check/update the `config` object
+  - **note** - non-static projects (i.e. PHP) still require setting up in Apache/NGINX
 
-1. Navigate to your project's root directory in Terminal
-2. `npm install` - installs the required dependencies, can take a few minutes
+### Typical Development Process
 
-### Existing Project
-
-- `gulp` - optional, recompiles everything
+- `gulp` - recompiles everything (optional)
 - `gulp watch` - starts [Browsersync](https://www.browsersync.io/) and watches for source changes
   - you can `⌘` + double-click the local address shown in Terminal to open the link
-  - you can also use the friendly network name, eg [http://adam.local:5757/](http://adam.local:5757/)
+  - you can alternatively use your machine's network name, e.g. `adam.local:5757`
   - keep an eye on Terminal if it seems like changes aren't showing up in your browser
-- `gulp clean` - delete all compiled assets
+  - stop the process using `ctrl + c`
+- `gulp clean` - deletes all compiled assets
 
-#### Termnial?!1
+#### <a name="termnial"></a>Termnial?!1
 
 Check you've enabled `System Preferences > Keyboard > Shortcuts > Services > New Terminal at Folder`, then you can right-click the project folder, choose services (at the bottom) and just click `New Terminal at Folder`.
 
