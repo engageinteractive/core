@@ -234,8 +234,9 @@ gulp.task('watch', function() {
 	gulp.watch(paths.scripts.src, ['scripts']);
 	gulp.watch(paths.images.src, ['images']);
 	gulp.watch(paths.svgIcons.src, ['svg-icon-sprite']);
+	gulp.watch(paths.static.src, ['static']);
 });
 
 gulp.task('default', [], function() {
-	gulp.start('static', 'styles', 'scripts', 'images', 'svg-icon-sprite');
+	gulp.start('styles', 'scripts', 'images', 'svg-icon-sprite', 'static');
 });
