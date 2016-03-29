@@ -9,7 +9,7 @@
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
-    "eslint": "^2.4.0",
+    "eslint": "^2.5.3",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-summary": "git+https://github.com/engageinteractive/eslint-summary.git",
     "gulp": "^3.9.1",
