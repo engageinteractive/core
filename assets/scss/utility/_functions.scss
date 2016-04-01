@@ -107,3 +107,22 @@
     }
     @return $map;
 }
+
+
+/*--------------------------------
+
+	Very simple number functions
+
+*/
+
+@function h($num) {
+	@return $num / 2;
+}
+
+@function n($num) {
+	@return 0 - $num;
+}
+
+@function hn($num) {
+	@return n(h($num));
+}
