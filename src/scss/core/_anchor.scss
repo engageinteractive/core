@@ -3,14 +3,16 @@ a {
 	font-weight: $w-bold;
 	text-decoration: underline;
 
-	&:focus,
-	&:hover {
-		color: $c-black;
-		// outline: 0; // include if using custom focus outlines
+	&:hover:not(.button) {
+		.no-touchevents & {
+			color: $c-black;
+		}
 	}
 
 	&:focus {
-		// box-shadow: 0 0 5px $c-blue; // custom focus outline
+		.no-touchevents & {
+			box-shadow: 0px 0px 3px $c-blue, 0px 0px 6px $c-blue;
+		}
 	}
 
 	&:link {

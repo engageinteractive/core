@@ -67,6 +67,7 @@
 				addClass(wrap, options.selectClass || 'simple-select');
 
 				display = document.createElement('span');
+				addClass(display, 'select__label');
 				display.textContent = options.defaultText || (select.options[select.selectedIndex] ? select.options[select.selectedIndex].text : '');
 
 				classes = select.className.split(' ');
@@ -78,7 +79,7 @@
 
 				select.parentNode.insertBefore(wrap, select);
 				wrap.appendChild(select);
-				wrap.insertBefore(display, select);
+				wrap.insertBefore(display, select.nextSibling);
 
 				select.style.width = '100%';
 				select.style.height = '100%';

@@ -6,7 +6,6 @@ input,
 button,
 select,
 textarea {
-
 	&:invalid {
 		box-shadow: none;
 	}
@@ -35,16 +34,11 @@ input[type="week"],
 textarea,
 select {
 	margin: 0;
-	display: inline-block;
 	width: 100%;
 	background-clip: border-box;
-	border-radius: 0;
 	outline: 0;
 	text-align: left;
-	font: normal 16px/1.5 sans-serif;
 	vertical-align: top;
-	-moz-appearance: none;
-	-webkit-appearance: none;
 	appearance: none;
 }
 
@@ -64,7 +58,6 @@ select[multiple] {
 select {
 	.lte-ie9 & {
 		background-image: none;
-		padding-right: 12px;
 	}
 }
 
@@ -101,14 +94,11 @@ optgroup {
 // button
 
 button,
-.button,
-input[type="reset"],
-input[type="submit"],
-input[type="button"] {
-	display: inline-block;
+.button {
+	background: none;
+	padding: 0;
 	width: auto;
 	margin: 0;
-	border: 0;
 	cursor: pointer;
 	outline: 0;
 	overflow: visible;
@@ -116,8 +106,7 @@ input[type="button"] {
 	text-decoration: none;
 	vertical-align: top;
 	font: normal 16px/100% sans-serif;
-	// background-clip: padding-box;
-	-webkit-appearance: none;
+	appearance: none;
 
 	&:hover,
 	&:focus {
@@ -143,14 +132,6 @@ textarea[disabled] {
 	&:hover {
 		cursor: not-allowed;
 	}
-}
-
-
-// labels
-
-label,
-.label {
-	display: block;
 }
 
 

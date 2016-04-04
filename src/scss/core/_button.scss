@@ -1,29 +1,32 @@
 // basic buttons
 
-button,
+button {
+	border: none;
+}
+
 .button {
 	background-color: $c-brand-primary;
 	color: $c-white;
+	display: inline-block;
 	font-family: $sans-serif;
-	padding: 17px;
+	font-size: $p-base;
+	font-weight: $w-bold;
+	padding: 16px;
 	position: relative;
 
-	&:focus {
-		background-color: $c-grey-dark;
-		box-shadow: 0px 0px 8px $c-blue;
-		color: $c-white;
+	&.focused {
+		box-shadow: 0px 0px 3px $c-blue, 0px 0px 6px $c-blue;
 	}
 
 	&:active {
-		top: 2px;
+		top: 4px;
 	}
 
 	&[disabled] {
-
 		&,
 		&:focus {
 			background-color: $c-grey-light;
-			color: $c-white;
+			color: mix($c-grey-light, $c-black, 60%);
 		}
 	}
 }
