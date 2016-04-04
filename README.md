@@ -8,7 +8,7 @@ The [Engage Interactive](http://www.engageinteractive.co.uk/) baseplate for resp
  * IE9+ Support
  * Scss
  * jQuery
- 
+
 ## Another baseplate/boilerplate/bootstrap?
 
 Yes! But not quite. Over time, we've played about and used various boilerplates and bootstraps - and we were never fully happy with them. There always seemed far too much bloat.
@@ -17,7 +17,35 @@ What we've done is somewhat of a halfway house between the HTML5 Boilerplate and
 
 ## Setup
 
-Setup is pretty simple. Download all the files and place them into your project folder. If you are working with a framework like Laravel, place all the files into their logical locations and update all your paths accordingly.
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/download/) - LTS is fine
+- [Fixed npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-1-change-the-permission-to-npms-default-directory) (typically option 1)
+- [Gulp](http://gulpjs.com/) installed globally - run `npm install --global gulp-cli` in Terminal
+
+### Initial Project Setup
+
+1. Navigate to your project's root directory in [Terminal](#termnial)
+2. `npm install`
+  - installs the dependencies for this project
+  - can take several minutes
+  - will output a lot of debugging information (including occasional deprecation warnings) that can be ignored
+3. Open `gulpfile.js` and check/update the `config` object
+  - **note** - non-static projects (i.e. PHP) still require setting up in Apache/NGINX
+
+### Typical Development Process
+
+- `gulp` - recompiles everything (optional)
+- `gulp watch` - starts [Browsersync](https://www.browsersync.io/) and watches for source changes
+  - you can `⌘` + double-click the local address shown in Terminal to open the link
+  - you can alternatively use your machine's network name, e.g. `adam.local:5757`
+  - keep an eye on Terminal if it seems like changes aren't showing up in your browser
+  - stop the process using `ctrl + c`
+- `gulp clean` - deletes all compiled assets
+
+#### <a name="termnial"></a>Termnial?!1
+
+Check you've enabled `System Preferences > Keyboard > Shortcuts > Services > New Terminal at Folder`, then you can right-click the project folder, choose services (at the bottom) and just click `New Terminal at Folder`.
 
 ## Included files
 
