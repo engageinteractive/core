@@ -7,10 +7,12 @@
 $typography-elems:
 	'p',
 	'ul',
-	'ol',
+	'ol';
+
+$media-elems:
+	'.button-wrapper',
 	'.table-wrapper',
-	'.media',
-	'.blockquote';
+	'.media';
 
 // Headings
 
@@ -26,79 +28,78 @@ h6,
 .h4,
 .h5,
 .h6 {
+	@include content-margins('&');
 	@include font-roboto($w-normal);
-	font-weight: $w-normal;
+	font-weight: $w-semibold;
 	font-size: 100%;
-	line-height: 100%;
+	line-height: 1;
+	margin-top: 1em;
 
 	a {
-		font-weight: $w-normal;
+		font-weight: $w-semibold;
 	}
 }
 
 h1,
 .h1 {
-	font-size: $h-xx-large;
+	font-size: $h-xx-large - .8rem;
+	line-height: 1;
+	margin-bottom: .5em;
+
+	@include mq('desktop') {
+		font-size: $h-xx-large;
+	}
 }
 
 h2,
 .h2 {
-	font-size: $h-x-large;
+	font-size: $h-x-large - .6rem;
+	margin-bottom: .6em;
+
+	@include mq('desktop') {
+		font-size: $h-x-large;
+	}
 }
 
 h3,
 .h3 {
-	font-size: $h-large;
+	font-size: $h-large - .2rem;
+	margin-bottom: .75em;
+
+	@include mq('desktop') {
+		font-size: $h-large;
+	}
 }
 
 h4,
 .h4 {
 	font-size: $h-medium;
+	margin-bottom: .75em;
 }
 
 h5,
 .h5 {
-	font-size: $h-base;
+	font-size: $h-small;
+	margin-bottom: .75em;
 }
 
 h6,
 .h6 {
-	font-size: $h-small;
+	font-size: $h-x-small;
+	margin-bottom: .75em;
 }
 
 
 // Basic typography styling
 
-h1,
-h2,
-h3,
-h4,
 #{$typography-elems} {
 	@include content-margins("&");
-}
-
-h1,
-h2,
-h3,
-h4 {
-	margin-top: 1em;
-}
-
-h1 {
-	margin-bottom: .5em;
-}
-
-h2 {
-	margin-bottom: .6em;
-}
-
-h3,
-h4 {
-	margin-bottom: .75em;
-}
-
-#{$typography-elems} {
 	margin-bottom: 1em;
+}
+
+#{$media-elems} {
+	@include content-margins("&");
+	margin-bottom: 1.25em;
 }
 
 ol,
@@ -121,8 +122,7 @@ dl {
 
 dt,
 dd {
-
-	@include mq("tablet-small") {
+	@include mq('tablet-small') {
 		float: left;
 	}
 }
@@ -136,13 +136,13 @@ dt {
 
 		+ dd {
 
-			@include mq("tablet-small") {
+			@include mq('tablet-small') {
 				@include flush--top;
 			}
 		}
 	}
 
-	@include mq("tablet-small") {
+	@include mq('tablet-small') {
 		clear: left;
 		width: 25%;
 	}
@@ -151,7 +151,7 @@ dt {
 dd {
 	@include push--top(.5em);
 
-	@include mq("tablet-small") {
+	@include mq('tablet-small') {
 		@include push--top(1em);
 		@include soft--left($base-spacing-unit / 1.2);
 		width: 75%;
@@ -161,6 +161,7 @@ dd {
 
 // Stylistic elements
 
+b,
 strong {
 	font-weight: $w-bold;
 }
