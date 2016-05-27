@@ -9,6 +9,9 @@
 .base-visible-inline {
 	@include visible('inline');
 }
+.base-visible-inline-block {
+	@include visible('inline-block');
+}
 
 .base-visible-td {
 	@include visible('table-cell');
@@ -28,6 +31,10 @@
 
 		.#{$name}-visible-inline {
 			@include visible('inline');
+		}
+
+		.#{$name}-visible-inline-block {
+			@include visible('inline-block');
 		}
 
 		.#{$name}-visible-td {
