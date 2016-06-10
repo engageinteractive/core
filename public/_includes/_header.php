@@ -40,13 +40,13 @@
 	<meta name="twitter:creator" content="@author_handle"><!-- if page has an author (like a blog post), pass in twitter handle -->
 	<meta name="twitter:title" content="Page Title (Max 70 characters)">
 	<meta name="twitter:description" content="Page description (Max 200 characters)">
-	<meta name="twitter:image:src" content="/assets/img/tile/tile.png"><!-- pass in page/product image, if not, use tile.png. Min image size: 280x150 (if smaller, will use og:image below) -->
+	<meta name="twitter:image:src" content="/assets/img/tile/share.png"><!-- share image, min dimensions: 280x150, file size < 8MB -->
 
 	<!-- open graph data -->
 	<meta property="og:title" content="Page Title (Max 70 characters)">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="http://www.example.com/"><!-- current page URL -->
-	<meta property="og:image" content="/assets/img/tile/tile.png"><!-- pass in page/product image, if not, use tile.png -->
+	<meta property="og:image" content="/assets/img/tile/share.png"><!-- share image, min dimensions: 1200x630, file size < 8MB -->
 	<meta property="og:description" content="Page description">
 	<meta property="og:site_name" content="Site Name, i.e. Engage">
 	<meta property="article:published_time" content="2013-09-17T05:59:00+01:00"><!-- if entry is is time sensitive (e.g. news), pass this info through -->
