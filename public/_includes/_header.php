@@ -29,7 +29,7 @@
 	<![endif]-->
 
 	<!-- remove for production -->
-	<link rel="stylesheet" href="/guide/css/styles.css">
+	<link rel="stylesheet" href="/assets/css/styleguide.css">
 	<!-- /remove for production -->
 
 	<script src="/assets/static/js/modernizr.js"></script>
