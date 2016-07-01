@@ -17,6 +17,7 @@ include('_includes/_header.php');
 			<li><a href="#lists">Lists</a></li>
 			<li><a href="#dl">Definition Lists</a></li>
 			<li><a href="#blockquotes">Blockquotes</a></li>
+			<li><a href="#grid">Grid</a></li>
 			<li><a href="#tables">Tables</a></li>
 			<li><a href="#buttons">Buttons</a></li>
 			<li><a href="#forms">Forms</a></li>
@@ -127,6 +128,20 @@ include('_includes/_header.php');
 			<div class="component__content component__content--spaced">
 
 				<?php include('_includes/components/blockquotes.php'); ?>
+
+			</div>
+
+		</section>
+
+		<section class="component" id="grid">
+
+			<header class="component__header">
+				<h1 class="h2">Grid</h1>
+			</header>
+
+			<div class="component__content component__content--spaced">
+
+				<?php include('_includes/components/grid.php'); ?>
 
 			</div>
 
