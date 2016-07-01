@@ -25,6 +25,7 @@ var
 	browserSync = require('browser-sync'),
 	gulp = require('gulp'),
 	del = require('del'),
+	path = require('path'),
 	plugins = require('gulp-load-plugins')(),
 
 	// Paths
@@ -46,7 +47,8 @@ var
 		images: {
 			dir: base.src + '/img',
 			src: base.src + '/img/**/*',
-			dest: assets + '/img'
+			dest: assets + '/img',
+			icon: base.src + '/img/meta/favicon-152.png'
 		},
 		svgIcons: {
 			src:  base.src + '/img/svg-icons/**/*',
@@ -73,21 +75,24 @@ gulp.task('styles', function() {
 		.src(paths.styles.src)
 		.pipe(plugins.changed(paths.styles.dest))
 		.pipe(plugins.sourcemaps.init())
-		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'compressed' })
+		.pipe(
+			plugins.sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed'
+			})
 				.on('error', plugins.notify.onError({
-					title: 'Error compiling SCSS (see terminal)',
-					icon: paths.images.dir + '/tile/favicon-152.png'
+					title: 'Sass Error',
+					subtitle: '<%= error.relativePath %>:<%= error.line %>',
+					message: '<%= error.messageOriginal %>',
+					open: 'file://<%= error.file %>',
+					onLast: true,
+					icon: paths.images.icon
 				}))
 		)
 		.pipe(plugins.cleanCss({ restructuring: false }))
 		.pipe(plugins.autoprefixer({ browsers: config.autoprefixer, cascade: false }))
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.styles.dest))
-		.pipe(plugins.notify({
-			message: 'Styles compiled',
-			onLast: true,
-			icon: paths.images.dir + '/tile/favicon-152.png'
-		}));
+		.pipe(gulp.dest(paths.styles.dest));
 });
 
 
@@ -98,6 +103,20 @@ gulp.task('scripts.lint', function() {
 		.src(paths.scripts.dir + '/site/**/*.js')
 		.pipe(plugins.eslint())
 		.pipe(plugins.eslint.format(require('eslint-summary')))
+		.pipe(
+			plugins.eslint.failOnError()
+				.on('error', plugins.notify.onError({
+					title: 'JavaScript Error',
+					subtitle: '<%= options.relative(options.cwd, error.fileName) %>:<%= error.lineNumber %>',
+					message: '<%= error.message %>',
+					open: 'file://<%= error.fileName %>',
+					templateOptions: {
+						relative: path.relative,
+						cwd: process.cwd()
+					},
+					icon: paths.images.icon
+				}))
+		)
 		.pipe(plugins.eslint.failAfterError());
 });
 
