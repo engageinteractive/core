@@ -244,8 +244,7 @@ gulp.task('watch', function() {
 			paths.styles.dest + '/**/*.css',
 			paths.scripts.dest + '/**/*.js',
 			paths.images.dest,
-			base.public + '/**/*.html',
-			base.public + '/**/*.php'
+			base.public + '/**/*.{html,php}'
 		]
 	});
 
