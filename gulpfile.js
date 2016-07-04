@@ -26,7 +26,7 @@ var
 	gulp = require('gulp'),
 	del = require('del'),
 	path = require('path'),
-	summary = require('eslint-summary'),
+	summary = require('engage-eslint-summary'),
 	plugins = require('gulp-load-plugins')(),
 
 	// Paths
