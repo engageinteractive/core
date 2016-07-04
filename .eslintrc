@@ -17,7 +17,7 @@
     'func-names': 0,
     'indent': [2, 'tab'],
     'one-var': 0,
-    'padded-blocks': [1, 'always'],
+    'padded-blocks': 0,
     'space-before-function-paren': [2, 'never'],
     # warnings
     'comma-dangle': 1,

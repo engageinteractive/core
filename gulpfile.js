@@ -17,7 +17,7 @@ var
 	// Config
 	config = {
 		url: 'front-end-baseplate.dev.com',
-		tinypngKey: '4JMVAf6xxnmCIghoCC30WGJez6kwgX7d', // https://tinypng.com/developers
+		tinypngKey: process.env.TINYPNG_KEY,
 		autoprefixer: ['last 2 versions', 'IE 9']
 	},
 
@@ -25,6 +25,8 @@ var
 	browserSync = require('browser-sync'),
 	gulp = require('gulp'),
 	del = require('del'),
+	path = require('path'),
+	summary = require('engage-eslint-summary'),
 	plugins = require('gulp-load-plugins')(),
 
 	// Paths
@@ -46,10 +48,11 @@ var
 		images: {
 			dir: base.src + '/img',
 			src: base.src + '/img/**/*',
-			dest: assets + '/img'
+			dest: assets + '/img',
+			icon: base.src + '/img/meta/favicon-152.png'
 		},
 		svgIcons: {
-			src:  base.src + '/img/svg-icons/**/*',
+			src: base.src + '/img/svg-icons/**/*',
 			dest: assets + '/img/svg-icons'
 		},
 		static: {
@@ -73,21 +76,24 @@ gulp.task('styles', function() {
 		.src(paths.styles.src)
 		.pipe(plugins.changed(paths.styles.dest))
 		.pipe(plugins.sourcemaps.init())
-		.pipe(plugins.sass({ errLogToConsole: true, outputStyle: 'compressed' })
+		.pipe(
+			plugins.sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed'
+			})
 				.on('error', plugins.notify.onError({
-					title: 'Error compiling SCSS (see terminal)',
-					icon: paths.images.dir + '/tile/favicon-152.png'
+					title: 'Sass Error',
+					subtitle: '<%= error.relativePath %>:<%= error.line %>',
+					message: '<%= error.messageOriginal %>',
+					open: 'file://<%= error.file %>',
+					onLast: true,
+					icon: paths.images.icon
 				}))
 		)
 		.pipe(plugins.cleanCss({ restructuring: false }))
 		.pipe(plugins.autoprefixer({ browsers: config.autoprefixer, cascade: false }))
 		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.styles.dest))
-		.pipe(plugins.notify({
-			message: 'Styles compiled',
-			onLast: true,
-			icon: paths.images.dir + '/tile/favicon-152.png'
-		}));
+		.pipe(gulp.dest(paths.styles.dest));
 });
 
 
@@ -97,7 +103,21 @@ gulp.task('scripts.lint', function() {
 	return gulp
 		.src(paths.scripts.dir + '/site/**/*.js')
 		.pipe(plugins.eslint())
-		.pipe(plugins.eslint.format(require('eslint-summary')))
+		.pipe(plugins.eslint.format(summary))
+		.pipe(
+			plugins.eslint.failOnError()
+				.on('error', plugins.notify.onError({
+					title: 'JavaScript Error',
+					subtitle: '<%= options.relative(options.cwd, error.fileName) %>:<%= error.lineNumber %>',
+					message: '<%= error.message %>',
+					open: 'file://<%= error.fileName %>',
+					templateOptions: {
+						relative: path.relative,
+						cwd: process.cwd()
+					},
+					icon: paths.images.icon
+				}))
+		)
 		.pipe(plugins.eslint.failAfterError());
 });
 
@@ -190,7 +210,7 @@ gulp.task('svg-icon-sprite', function() {
 		.pipe(plugins.svgSprite({
 			mode: {
 				symbol: {
-					dest:   '',
+					dest: '',
 					sprite: 'sprite.svg'
 				}
 			},
@@ -225,9 +245,8 @@ gulp.task('watch', function() {
 			paths.styles.dest + '/**/*.css',
 			paths.scripts.dest + '/**/*.js',
 			paths.images.dest,
-			base.public + '/**/*.html',
-			base.public + '/**/*.php',
-		],
+			base.public + '/**/*.{html,php}'
+		]
 	});
 
 	gulp.watch(paths.styles.src, ['styles']);
