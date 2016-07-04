@@ -26,6 +26,7 @@ var
 	gulp = require('gulp'),
 	del = require('del'),
 	path = require('path'),
+	summary = require('eslint-summary'),
 	plugins = require('gulp-load-plugins')(),
 
 	// Paths
@@ -102,7 +103,7 @@ gulp.task('scripts.lint', function() {
 	return gulp
 		.src(paths.scripts.dir + '/site/**/*.js')
 		.pipe(plugins.eslint())
-		.pipe(plugins.eslint.format(require('eslint-summary')))
+		.pipe(plugins.eslint.format(summary))
 		.pipe(
 			plugins.eslint.failOnError()
 				.on('error', plugins.notify.onError({
