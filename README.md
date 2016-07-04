@@ -22,7 +22,8 @@ What we've done is somewhat of a halfway house between the HTML5 Boilerplate and
 - [Node.js](https://nodejs.org/en/download/) - LTS is fine
 - [Fixed npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-1-change-the-permission-to-npms-default-directory) (typically option 1)
 - [Gulp](http://gulpjs.com/) installed globally - run `npm install --global gulp-cli` in Terminal
-- [TinyPNG Developer API](https://tinypng.com/developers) Key - environment variable with key `TINYPNG_KEY` (`echo "export TINYPNG_KEY=YOUR_KEY_HERE" >> ~/.bash_profile && source ~/.bash_profile`)
+- [TinyPNG Developer API](https://tinypng.com/developers) Key - setup as an environment variable with key `TINYPNG_KEY`
+  - Run `echo "export TINYPNG_KEY=YOUR_KEY_HERE" >> ~/.bash_profile && source ~/.bash_profile` in Terminal (replacing `YOUR_KEY_HERE` with your key)
 
 ### Initial Project Setup
 
