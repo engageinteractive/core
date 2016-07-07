@@ -10,7 +10,8 @@
     'jQuery': true,
     'rangeToRange': true,
     'site': true,
-    'siteResize': true
+    'siteResize': true,
+    'bem': true
   },
   rules: {
     # overrides
