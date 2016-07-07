@@ -74,13 +74,9 @@ gulp.task('clean', function(cb) {
 gulp.task('styles', function() {
 	return gulp
 		.src(paths.styles.src)
-		.pipe(plugins.changed(paths.styles.dest))
 		.pipe(plugins.sourcemaps.init())
 		.pipe(
-			plugins.sass({
-				errLogToConsole: true,
-				outputStyle: 'compressed'
-			})
+			plugins.sass()
 				.on('error', plugins.notify.onError({
 					title: 'Sass Error',
 					subtitle: '<%= error.relativePath %>:<%= error.line %>',
@@ -91,7 +87,10 @@ gulp.task('styles', function() {
 				}))
 		)
 		.pipe(plugins.cleanCss({ restructuring: false }))
-		.pipe(plugins.autoprefixer({ browsers: config.autoprefixer, cascade: false }))
+		.pipe(plugins.autoprefixer({
+			browsers: config.autoprefixer,
+			cascade: false
+		}))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.styles.dest));
 });
