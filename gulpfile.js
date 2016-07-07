@@ -79,7 +79,10 @@ gulp.task('styles', function() {
 			plugins.sass()
 				.on('error', plugins.notify.onError({
 					title: 'Sass Error',
-					subtitle: '<%= error.relativePath %>:<%= error.line %>',
+					subtitle: [
+						'<%= error.relativePath %>',
+						'<%= error.line %>'
+					].join(':'),
 					message: '<%= error.messageOriginal %>',
 					open: 'file://<%= error.file %>',
 					onLast: true,
@@ -107,7 +110,10 @@ gulp.task('scripts.lint', function() {
 			plugins.eslint.failOnError()
 				.on('error', plugins.notify.onError({
 					title: 'JavaScript Error',
-					subtitle: '<%= options.relative(options.cwd, error.fileName) %>:<%= error.lineNumber %>',
+					subtitle: [
+						'<%= options.relative(options.cwd, error.fileName) %>',
+						'<%= error.lineNumber %>'
+					].join(':'),
 					message: '<%= error.message %>',
 					open: 'file://<%= error.fileName %>',
 					templateOptions: {
