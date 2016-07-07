@@ -182,7 +182,8 @@ gulp.task('scripts', ['scripts.lint'], function() {
 // Images
 
 gulp.task('images', function() {
-	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true }),
+	var
+		optimised = plugins.filter('**/*.{jpg,png}', { restore: true }),
 		svgs = plugins.filter('**/*.svg', { restore: true });
 
 	return gulp
@@ -195,13 +196,7 @@ gulp.task('images', function() {
 		}))
 		.pipe(optimised.restore)
 		.pipe(svgs)
-		.pipe(plugins.svgmin({
-			plugins: [
-				{
-					removeDoctype: true
-				}
-			]
-		}))
+		.pipe(plugins.svgmin())
 		.pipe(svgs.restore)
 		.pipe(gulp.dest(paths.images.dest));
 });
