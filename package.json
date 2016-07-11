@@ -11,6 +11,7 @@
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
     "engage-eslint-summary": "^1.2.0",
+    "eslint": "^3.0.1",
     "eslint-config-airbnb-base": "^4.0.0",
     "eslint-plugin-import": "^1.10.2",
     "gulp": "^3.9.1",
