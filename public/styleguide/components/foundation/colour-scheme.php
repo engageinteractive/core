@@ -1,15 +1,15 @@
-<h2 class="h3">Primary colours</h2>
+<h2 class="h5">Primary colours</h2>
 
-<ul class="colour-scheme">
+<ul class="sg-colour-scheme">
 	<li class="yellow">yellow</li>
 	<li class="green">green</li>
 	<li class="red">red</li>
 	<li class="blue">blue</li>
 </ul>
 
-<h2 class="h3">Greyscale</h2>
+<h2 class="h5">Greyscale</h2>
 
-<ul class="colour-scheme">
+<ul class="sg-colour-scheme">
 	<li class="black">black</li>
 	<li class="grey">grey</li>
 	<li class="grey-dark">grey-dark</li>

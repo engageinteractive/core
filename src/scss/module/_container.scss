@@ -8,15 +8,7 @@
 		@include soft--sides($base-spacing-unit);
 	}
 
-	@include mq("tablet-small") {
+	@include mq("tablet") {
 		@include soft--sides($base-spacing-unit * 1.25);
-	}
-
-	@include mq("tablet-wide") {
-		@include soft--sides($base-spacing-unit * 1.75);
-	}
-
-	@include mq("desktop") {
-		@include soft--sides($base-spacing-unit * 2);
 	}
 }

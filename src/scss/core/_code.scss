@@ -1,11 +1,19 @@
 code,
 pre {
-    line-height: $lh-mini;
-    word-wrap: break-word;
-    font-family: 'courier new', monospace, serif;
-    color: $c-grey-dark;
-    background-color: $c-grey-off-white;
-    font-weight: normal;
-    padding: .5rem;
-    white-space: pre-wrap;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	font-family: 'courier new', monospace, serif;
+	font-size: $p-small;
+	font-weight: normal;
+	line-height: $lh-mini;
+	background-color: $c-grey-off-white;
+	color: $c-grey-dark;
+}
+
+code {
+	padding: .5rem;
+}
+
+pre {
+	padding: 1.5rem;
 }

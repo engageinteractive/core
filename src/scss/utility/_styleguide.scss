@@ -1,0 +1,201 @@
+.sg {
+	@include soft--ends(5rem);
+}
+
+.sg-header {}
+
+.sg-nav {
+	li {
+		> ul {
+			margin-top: .5em;
+		}
+	}
+}
+
+.sg-body {
+	margin-top: 4rem;
+
+	@include mq('tablet') {
+		margin-top: 6rem;
+	}
+}
+
+.sg-group {
+	margin-top: 4rem;
+	padding-top: 4rem;
+	border-top: 1px solid $c-grey-dark;
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&:first-child {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: none;
+	}
+
+	@include mq('tablet') {
+		margin-top: 6rem;
+		padding-top: 6rem;
+	}
+}
+
+.sg-section {
+	margin-top: 3rem;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&__header {}
+
+	&__body {
+		margin-top: 2rem;
+
+		@include mq('tablet') {
+			margin-top: 3rem;
+		}
+	}
+
+	@include mq('tablet') {
+		margin-top: 4rem;
+	}
+}
+
+.sg-content {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px dashed $c-grey;
+
+	&:first-child {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: none;
+	}
+
+	@include mq('tablet') {
+		margin-top: 3rem;
+		padding-top: 3rem;
+	}
+
+	&__header {}
+
+	&__example {
+		margin-top: 2rem;
+
+		@include mq('tablet') {
+			margin-top: 3rem;
+		}
+	}
+
+	&__markup {
+		margin-top: 2rem;
+		text-align: right;
+
+		&__source {
+			margin-top: 2rem;
+			text-align: left;
+		}
+
+		@include mq('tablet') {
+			margin-top: 3rem;
+		}
+	}
+}
+/*
+ * Colour scheme
+ */
+
+.sg-colour-scheme {
+	$colour-size: 10rem;
+	@include cf;
+	@include unlist;
+
+	li {
+		@include colours("&:before", $chain: "&.");
+		@include content-margins;
+		@include push--top($base-spacing-unit / 1.2);
+		@include flush--bottom;
+		line-height: $colour-size;
+		padding-left: $colour-size + 1.5rem;
+		position: relative;
+		white-space: nowrap;
+
+		&:before {
+			@include pseudo;
+			width: $colour-size;
+			height: $colour-size;
+			position: absolute;
+			top: 0; left: 0;
+			border: 1px solid;
+		}
+
+		@include mq("phone-wide") {
+			float: left;
+			width: 100 / 2 * 1%;
+
+			&:nth-child(-n+2) {
+				margin-top: 0;
+			}
+		}
+
+		@include mq("tablet-wide") {
+			width: 100 / 3 * 1%;
+
+			&:nth-child(-n+3) {
+				margin-top: 0;
+			}
+		}
+
+		@include mq("desktop") {
+			width: 100 / 4 * 1%;
+
+			&:nth-child(-n+4) {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+
+/*
+ * Grid demos
+ */
+
+.sg-example-grid {
+	.column,
+	.full-width {
+		@include soft--ends($grid-column-gutter / 2);
+
+		@for $i from 1 through $grid-column-count {
+			&:nth-child(#{$i}) span::before {
+				content: '#{$i}';
+				position: absolute;
+				top: .2rem; left: .4rem;
+				font-size: .9rem;
+				opacity: .3;
+			}
+		}
+	}
+
+	span {
+		display: block;
+		position: relative;
+		padding: 1rem;
+		border: solid 1px $c-grey-light;
+		text-align: center;
+		background: $c-grey-off-white;
+		color: $c-grey-dark;
+		font-weight: $w-bold;
+		font-size: $p-small;
+	}
+}
+
+.sg-flush-test {
+	div {
+		@include push--top($grid-column-gutter);
+		background-color: $c-grey-off-white;
+		border: solid 1px $c-grey-light;
+	}
+}
