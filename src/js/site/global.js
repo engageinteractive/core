@@ -233,3 +233,5 @@ if (!$('.lt-ie9').length) {
 	simpleSelect($('select:not([multiple="multiple"])'), { selectClass: 'select' });
 
 }
+
+$core.body.fitVids();

@@ -74,16 +74,15 @@ gulp.task('clean', function(cb) {
 gulp.task('styles', function() {
 	return gulp
 		.src(paths.styles.src)
-		.pipe(plugins.changed(paths.styles.dest))
 		.pipe(plugins.sourcemaps.init())
 		.pipe(
-			plugins.sass({
-				errLogToConsole: true,
-				outputStyle: 'compressed'
-			})
+			plugins.sass()
 				.on('error', plugins.notify.onError({
 					title: 'Sass Error',
-					subtitle: '<%= error.relativePath %>:<%= error.line %>',
+					subtitle: [
+						'<%= error.relativePath %>',
+						'<%= error.line %>'
+					].join(':'),
 					message: '<%= error.messageOriginal %>',
 					open: 'file://<%= error.file %>',
 					onLast: true,
@@ -91,7 +90,10 @@ gulp.task('styles', function() {
 				}))
 		)
 		.pipe(plugins.cleanCss({ restructuring: false }))
-		.pipe(plugins.autoprefixer({ browsers: config.autoprefixer, cascade: false }))
+		.pipe(plugins.autoprefixer({
+			browsers: config.autoprefixer,
+			cascade: false
+		}))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.styles.dest));
 });
@@ -108,7 +110,10 @@ gulp.task('scripts.lint', function() {
 			plugins.eslint.failOnError()
 				.on('error', plugins.notify.onError({
 					title: 'JavaScript Error',
-					subtitle: '<%= options.relative(options.cwd, error.fileName) %>:<%= error.lineNumber %>',
+					subtitle: [
+						'<%= options.relative(options.cwd, error.fileName) %>',
+						'<%= error.lineNumber %>'
+					].join(':'),
 					message: '<%= error.message %>',
 					open: 'file://<%= error.fileName %>',
 					templateOptions: {
@@ -177,7 +182,8 @@ gulp.task('scripts', ['scripts.lint'], function() {
 // Images
 
 gulp.task('images', function() {
-	var optimised = plugins.filter('**/*.{jpg,png}', { restore: true }),
+	var
+		optimised = plugins.filter('**/*.{jpg,png}', { restore: true }),
 		svgs = plugins.filter('**/*.svg', { restore: true });
 
 	return gulp
@@ -190,13 +196,7 @@ gulp.task('images', function() {
 		}))
 		.pipe(optimised.restore)
 		.pipe(svgs)
-		.pipe(plugins.svgmin({
-			plugins: [
-				{
-					removeDoctype: true
-				}
-			]
-		}))
+		.pipe(plugins.svgmin())
 		.pipe(svgs.restore)
 		.pipe(gulp.dest(paths.images.dest));
 });

@@ -1,10 +1,11 @@
 {
-  extends: 'airbnb/legacy',
+  extends: 'airbnb-base',
   globals: {
     '$': true,
     '$core': true,
     '$site': true,
     'Modernizr': true,
+    'bem': true,
     'clearSiteResize': true,
     'getRandomInt': true,
     'jQuery': true,
@@ -32,6 +33,7 @@
     'max-len': 1,
     'no-extra-semi': 1,
     'no-floating-decimal': 1,
+    'no-mixed-operators': 1,
     'no-multi-spaces': 1,
     'no-param-reassign': 1,
     'no-undef': 1,
@@ -40,6 +42,11 @@
     'space-before-blocks': 1,
     'space-in-parens': 1,
     'spaced-comment': 1,
-    'vars-on-top': 1
+    'vars-on-top': 1,
+    # es2015
+    'no-var': 1,
+    'object-shorthand': 1,
+    'prefer-arrow-callback': 1,
+    'prefer-template': 1
   },
 }

@@ -1,4 +1,5 @@
 .site-content {
+	@include soft--ends(2rem);
 	position: relative;
 	z-index: z('site-footer');
 }

@@ -1,4 +1,4 @@
-<div class="copy">
+<article class="copy">
 
 	<h1>Heading 1</h1>
 
@@ -80,4 +80,4 @@
 
 	<p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
 
-</div>
+</article>

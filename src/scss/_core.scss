@@ -33,11 +33,16 @@ html {
 }
 
 body {
+	@include soft--ends(3rem);
 	background-color: $c-body-bg;
 	color: $c-body-colour;
 	font-family: $sans-serif;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+
+	@include mq('tablet') {
+		@include soft--ends(5rem);
+	}
 }
 
 

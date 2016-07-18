@@ -1,13 +1,4 @@
 .copy {
 	@include content-margins('> *');
-	margin-top: $base-spacing-unit;
 	max-width: 35em;
-
-	> *:first-child {
-		margin-top: 0;
-	}
-
-	@include mq("tablet-small") {
-		font-size: $p-medium;
-	}
 }

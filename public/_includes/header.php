@@ -28,10 +28,6 @@
 	<!-- <link rel="stylesheet" href="/assets/css/fixed-width.css"> -->
 	<![endif]-->
 
-	<!-- remove for production -->
-	<link rel="stylesheet" href="/assets/css/styleguide.css">
-	<!-- /remove for production -->
-
 	<script src="/assets/static/js/modernizr.js"></script>
 
 	<!-- twitter card data (https://dev.twitter.com/docs/cards, https://dev.twitter.com/docs/cards/large-image-summary-card) -->
@@ -69,7 +65,7 @@
 
 			<div class="container">
 
-				<h1><a href="">Front-end Baseplate</a></h1>
+				<h1><a href="/">Front-end Baseplate</a></h1>
 
 			</div>
 
