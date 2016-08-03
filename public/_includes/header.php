@@ -10,8 +10,10 @@
 	<title><?php echo $meta_title; ?> - Front-end Baseplate</title>
 	<meta name="description" content="Page description (Max 155 characters)">
 
-	<link rel="shortcut icon" href="/assets/img/meta/favicon.ico">
-	<link rel="apple-touch-icon" href="/assets/img/meta/favicon-152.png">
+	<link rel="icon" type="image/png" href="/assets/img/meta/favicon-32.png">
+	<!--[if IE]><link rel="shortcut icon" href="/assets/img/meta/favicon.ico"><![endif]-->
+	<link rel="apple-touch-icon" href="/assets/img/meta/favicon-180.png">
+	<link rel="mask-icon" href="/assets/img/meta/mask-icon.svg" color="#000000">
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 	<link href="https://fontastic.s3.amazonaws.com/D27eCVUyDsGBHCCy5Uydba/icons.css" rel="stylesheet">
