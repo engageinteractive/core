@@ -42,7 +42,7 @@ h6,
 
 h1,
 .h1 {
-	font-size: $h-xx-large - .8rem;
+	font-size: $h-x-large;
 	line-height: 1;
 	margin-bottom: .5em;
 
@@ -63,30 +63,26 @@ h2,
 
 h3,
 .h3 {
-	font-size: $h-large - .2rem;
-	margin-bottom: .75em;
-
-	@include mq('desktop') {
-		font-size: $h-large;
-	}
+	font-size: $h-large;
+	margin-bottom: .7em;
 }
 
 h4,
 .h4 {
 	font-size: $h-medium;
-	margin-bottom: .75em;
+	margin-bottom: .7em;
 }
 
 h5,
 .h5 {
 	font-size: $h-small;
-	margin-bottom: .75em;
+	margin-bottom: .8em;
 }
 
 h6,
 .h6 {
 	font-size: $h-x-small;
-	margin-bottom: .75em;
+	margin-bottom: .9em;
 }
 
 
