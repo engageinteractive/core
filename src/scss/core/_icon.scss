@@ -41,20 +41,22 @@ $icon-size: 2.4rem;
 		width: $icon-size;
 		height: $icon-size;
 		position: absolute;
-		top: 50%; left: 0;
+		top: 50%; right: 0;
 		transform: translateY(-50%);
 
 		&:first-child {
-			right: 0; left: auto;
+			right: auto; left: 0;
 		}
 	}
 
 	&__t {
-		padding-left: $icon-size + ($base-spacing-unit / 3);
+		padding-right: $icon-size + ($base-spacing-unit / 3);
 
 		&:last-child {
-			padding-right: $icon-size + ($base-spacing-unit / 3);
-			padding-left: 0;
+			padding: {
+				right: 0;
+				left: $icon-size + ($base-spacing-unit / 3);
+			}
 		}
 	}
 }
