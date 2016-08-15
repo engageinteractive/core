@@ -38,7 +38,7 @@ include('../_includes/header.php');
 
 	<div class="sg-body">
 		<section class="sg-group sg-group--docs">
-			<h1 class="sg-group__title h2">Documentation</h1>
+			<h1 class="sg-group__title">Documentation</h1>
 
 			<div class="sg-section">
 				<?php sgContent('documentation', false, false); ?>
@@ -46,11 +46,11 @@ include('../_includes/header.php');
 		</section>
 
 		<section class="sg-group sg-group--components">
-			<h1 class="sg-group__title h2">Components</h1>
+			<h1 class="sg-group__title">Components</h1>
 
 			<section class="sg-section">
 				<header class="sg-section__header">
-					<h1 class="h3">Foundation</h1>
+					<h1 class="h2">Foundation</h1>
 
 					<p>Branding, colour schemes and basic typopgraphy.</p>
 				</header>
@@ -62,7 +62,7 @@ include('../_includes/header.php');
 
 			<section class="sg-section">
 				<header class="sg-section__header">
-					<h1 class="h3">Core</h1>
+					<h1 class="h2">Core</h1>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
 				</header>
@@ -74,7 +74,7 @@ include('../_includes/header.php');
 
 			<section class="sg-section">
 				<header class="sg-section__header">
-					<h1 class="h3">Module</h1>
+					<h1 class="h2">Module</h1>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
 				</header>
@@ -86,7 +86,7 @@ include('../_includes/header.php');
 
 			<section class="sg-section">
 				<header class="sg-section__header">
-					<h1 class="h3">Layout</h1>
+					<h1 class="h2">Layout</h1>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
 				</header>
@@ -98,7 +98,7 @@ include('../_includes/header.php');
 
 			<section class="sg-section">
 				<header class="sg-section__header">
-					<h1 class="h3">Grid</h1>
+					<h1 class="h2">Grid</h1>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
 				</header>
@@ -110,7 +110,7 @@ include('../_includes/header.php');
 
 			<section class="sg-section">
 				<header class="sg-section__header">
-					<h1 class="h3">Utility</h1>
+					<h1 class="h2">Utility</h1>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
 				</header>

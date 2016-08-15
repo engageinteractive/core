@@ -18,3 +18,7 @@ config.rb
 
 # General
 # log/
+
+# Remove these if you're working on a team project, or after development is complete
+/public/assets
+.tinypng

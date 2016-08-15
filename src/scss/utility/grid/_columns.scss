@@ -8,12 +8,22 @@
 	@include cf;
 	margin-right: $grid-column-gutter / -2;
 	margin-left: $grid-column-gutter / -2;
+
+	@include mq('tablet') {
+		margin-right: $grid-column-gutter / -1.5;
+		margin-left: $grid-column-gutter / -1.5;
+	}
 }
 
 .full-width {
 	@include cf;
 	padding-right: $grid-column-gutter / 2;
 	padding-left: $grid-column-gutter / 2;
+
+	@include mq('tablet') {
+		padding-right: $grid-column-gutter / 1.5;
+		padding-left: $grid-column-gutter / 1.5;
+	}
 }
 
 .column {
@@ -23,6 +33,11 @@
 	width: 100%;
 	padding-right: $grid-column-gutter / 2;
 	padding-left: $grid-column-gutter / 2;
+
+	@include mq('tablet') {
+		padding-right: $grid-column-gutter / 1.5;
+		padding-left: $grid-column-gutter / 1.5;
+	}
 }
 
 
