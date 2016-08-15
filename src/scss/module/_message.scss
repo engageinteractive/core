@@ -5,7 +5,7 @@
 */
 
 .message {
-	@include soft($small-spacing-unit);
+	@include soft($base-spacing-unit / 1.2);
 	border: 1px solid;
 
 	a {
