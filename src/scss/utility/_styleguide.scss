@@ -176,6 +176,10 @@
 				opacity: .3;
 			}
 		}
+
+		@include mq('tablet') {
+			@include soft--ends($grid-column-gutter / 1.5);
+		}
 	}
 
 	span {
