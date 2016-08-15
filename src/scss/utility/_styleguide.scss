@@ -48,7 +48,15 @@
 		margin-top: 0;
 	}
 
-	&__header {}
+	&__header {
+		background-color: $c-grey-light;
+		padding: $base-spacing-unit;
+
+		h1 {
+			font-weight: $w-normal;
+			font-style: italic;
+		}
+	}
 
 	&__body {
 		margin-top: 2rem;
@@ -79,7 +87,17 @@
 		padding-top: 3rem;
 	}
 
-	&__header {}
+	&__header {
+		h1 {
+			position: relative;
+
+			&::before {
+				@include css-triangle($c-brand-secondary, 'right');
+				top: 50%; left: -1.5rem;
+				transform: translateY(-50%);
+			}
+		}
+	}
 
 	&__example {
 		margin-top: 2rem;
