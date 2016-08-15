@@ -18,6 +18,30 @@
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#cross"></use>
 		</svg>
 	</li>
+
+	<li>
+		<svg viewBox="0 0 100 100" class="icon">
+			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-up"></use>
+		</svg>
+	</li>
+
+	<li>
+		<svg viewBox="0 0 100 100" class="icon">
+			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-down"></use>
+		</svg>
+	</li>
+
+	<li>
+		<svg viewBox="0 0 100 100" class="icon">
+			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-left"></use>
+		</svg>
+	</li>
+
+	<li>
+		<svg viewBox="0 0 100 100" class="icon">
+			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-right"></use>
+		</svg>
+	</li>
 </ul>
 
 <h2 class="h5">Icons with text</h2>
