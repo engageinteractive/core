@@ -1,4 +1,4 @@
-<h2 class="h5">Basic icons</h2>
+<h2 class="h4">Basic icons</h2>
 
 <ul class="list-inline">
 	<li>
@@ -44,7 +44,7 @@
 	</li>
 </ul>
 
-<h2 class="h5">Icons with text</h2>
+<h2 class="h4">Icons with text</h2>
 
 <ul class="list-unstyled">
 	<li>

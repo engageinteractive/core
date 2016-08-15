@@ -66,7 +66,7 @@ function sgContent($type, $folder = 'components', $showMarkup = true){
 
 	$files = array();
 	$folder = $folder ? $folder . '/' : false;
-	$title_class = $folder ? 'h4' : 'h3';
+	$title_class = $folder ? 'h3' : 'h2';
 	$handle = opendir($folder . $type);
 
 	while (false !== ($file = readdir($handle))) :
