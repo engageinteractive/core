@@ -30,6 +30,8 @@ include('../_includes/header.php');
 						<?php sgListOptions('grid'); ?>
 
 						<?php sgListOptions('utility'); ?>
+
+						<?php sgListOptions('scripts'); ?>
 					</ul>
 				</li>
 			</ul>
@@ -64,7 +66,7 @@ include('../_includes/header.php');
 				<header class="sg-section__header">
 					<h1 class="h2">Core</h1>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
+					<p>Basic low level elements such as links and buttons.</p>
 				</header>
 
 				<div class="sg-section__body">
@@ -76,7 +78,7 @@ include('../_includes/header.php');
 				<header class="sg-section__header">
 					<h1 class="h2">Module</h1>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
+					<p>Simple combinations of cores and reusable components not tied to a specific section</p>
 				</header>
 
 				<div class="sg-section__body">
@@ -88,7 +90,7 @@ include('../_includes/header.php');
 				<header class="sg-section__header">
 					<h1 class="h2">Layout</h1>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
+					<p>Distinct section of an interface.</p>
 				</header>
 
 				<div class="sg-section__body">
@@ -100,7 +102,7 @@ include('../_includes/header.php');
 				<header class="sg-section__header">
 					<h1 class="h2">Grid</h1>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
+					<p>For responsive web layouts.</p>
 				</header>
 
 				<div class="sg-section__body">
@@ -112,11 +114,23 @@ include('../_includes/header.php');
 				<header class="sg-section__header">
 					<h1 class="h2">Utility</h1>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, laboriosam. Consequatur, inventore, dignissimos saepe sunt cum nisi obcaecati ipsum blanditiis quos aliquid, reprehenderit quo enim placeat magni quia delectus totam!</p>
+					<p>Classes and helpers that override other styles.</p>
 				</header>
 
 				<div class="sg-section__body">
 					<?php sgContent('utility'); ?>
+				</div>
+			</section>
+
+			<section class="sg-section">
+				<header class="sg-section__header">
+					<h1 class="h2">Scripts</h1>
+
+					<p>Demos of any useful baseplate scripts.</p>
+				</header>
+
+				<div class="sg-section__body">
+					<?php sgContent('scripts'); ?>
 				</div>
 			</section>
 		</section>
