@@ -16,7 +16,6 @@
 	<link rel="mask-icon" href="/assets/img/meta/mask-icon.svg" color="#000000">
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-	<link href="https://fontastic.s3.amazonaws.com/D27eCVUyDsGBHCCy5Uydba/icons.css" rel="stylesheet">
 
 	<!-- use this if just supporting IE9+ -->
 	<link rel="stylesheet" href="/assets/css/main.css">
