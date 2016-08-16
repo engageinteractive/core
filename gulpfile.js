@@ -49,7 +49,7 @@ var
 			dir: base.src + '/img',
 			src: base.src + '/img/**/*',
 			dest: assets + '/img',
-			icon: base.src + '/img/meta/favicon-152.png'
+			icon: base.src + '/img/meta/favicon-180.png'
 		},
 		svgIcons: {
 			src: base.src + '/img/svg-icons/**/*',
