@@ -55,7 +55,16 @@
 					display.textContent = select.options[select.selectedIndex].text;
 				}
 			},
-			wrap, display, checkSelectedTextInterval;
+			formReset = function(){
+				setTimeout(function(){
+					changeCallback();
+				}, 50);
+			},
+			wrap,
+			display,
+			checkSelectedTextInterval,
+			form,
+			elem;
 
 		options = options || {};
 
@@ -63,11 +72,11 @@
 			bind : function(){
 				var classes;
 
-				wrap = document.createElement('span');
+				wrap = select.parentNode;
 				addClass(wrap, options.selectClass || 'simple-select');
 
 				display = document.createElement('span');
-				addClass(display, 'select__label');
+				addClass(display, 'simple-select__label');
 				display.textContent = options.defaultText || (select.options[select.selectedIndex] ? select.options[select.selectedIndex].text : '');
 
 				classes = select.className.split(' ');
@@ -77,19 +86,22 @@
 					}
 				}
 
-				select.parentNode.insertBefore(wrap, select);
-				wrap.appendChild(select);
 				wrap.insertBefore(display, select.nextSibling);
-
-				select.style.width = '100%';
-				select.style.height = '100%';
-				select.style.opacity = '0';
 
 				select.addEventListener('change', changeCallback);
 				select.addEventListener('focus', focusCallback);
 				select.addEventListener('blur', blurCallback);
 				select.addEventListener('mouseenter', mouseenterCallback);
 				select.addEventListener('mouseleave', mouseleaveCallback);
+
+				// check for form reset
+				elem = select;
+				for ( ; elem && elem !== document && elem.nodeType === 1; elem = elem.parentNode ){
+					if ( elem.tagName.toLowerCase() === 'form' ) {
+						form = elem;
+					}
+				}
+				form.addEventListener('reset', formReset);
 
 				if( options && options.checkSelectedText === true ){
 					checkSelectedTextInterval = setInterval(
@@ -105,12 +117,7 @@
 				select.removeEventListener('blur', blurCallback);
 				select.removeEventListener('change', changeCallback);
 
-				wrap.parentNode.insertBefore(select, wrap);
-				wrap.parentNode.removeChild(wrap);
-
-				select.style.width = '';
-				select.style.height = '';
-				select.style.opacity = '';
+				wrap.parentNode.removeChild(display);
 
 				if( options && options.checkSelectedText === true ){
 					clearInterval(checkSelectedTextInterval);

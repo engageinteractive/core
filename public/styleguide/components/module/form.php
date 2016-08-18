@@ -62,27 +62,37 @@
 			<textarea name="textarea" id="textarea" rows="10"></textarea>
 		</div>
 		<div class="form-field">
-			<label for="select">Select (for plugin version - need to enable in main.js)</label>
-			<select name="select" id="select">
+			<label for="select-unstyled">Select (unstyled)</label>
+			<select name="select-unstyled" id="select-unstyled">
 				<option>Option 1</option>
 				<option>Option 2</option>
 				<option>Option 3</option>
 				<option>Option 4</option>
 				<option>Option 5</option>
-				<option>Option 6</option>
-				<option>Option 7</option>
-				<option>Option 8</option>
-				<option>Option 9</option>
-				<option>Option 10</option>
-				<option>Option 11</option>
-				<option>Option 12</option>
-				<option>Option 13</option>
-				<option>Option 14</option>
 				<optgroup label="Optgroup">
 					<option>Option A</option>
 					<option>Option B</option>
 				</optgroup>
 			</select>
+		</div>
+		<div class="form-field">
+			<label for="select-styled">Select (styled, with custom arrow)</label>
+			<div class="select">
+				<select name="select-styled" id="select-styled">
+					<option>Option 1</option>
+					<option>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea tempore sint adipisci maiores explicabo obcaecati ipsa ex magnam, nostrum, quasi dolor nihil ipsam quaerat vitae saepe alias tempora, veritatis similique!</option>
+					<option>Option 3</option>
+					<option>Option 4</option>
+					<option>Option 5</option>
+					<optgroup label="Optgroup">
+						<option>Option A</option>
+						<option>Option B</option>
+					</optgroup>
+				</select>
+			</div>
+		</div>
+		<div class="form-field">
+			<button type="reset" class="button">RESET</button>
 		</div>
 		<div class="form-field">
 			<label for="select">Select (multiple)</label>

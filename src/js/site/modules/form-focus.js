@@ -24,14 +24,26 @@
 
 			if (mouseActive === false) {
 
-				$(this).addClass('focused');
+				var $this = $(this);
+
+				$this.addClass('focused');
+
+				if( $this.is('select:not([multiple="multiple"])') ){
+					$this.parent('.simple-select').addClass('focused');
+				}
 
 			}
 
 		})
 		.on('blur', selectors, function() {
 
+			var $this = $(this);
+
 			$(this).removeClass('focused');
+
+			if( $this.is('select:not([multiple="multiple"])') ){
+				$this.parent('.simple-select').removeClass('focused');
+			}
 
 		});
 

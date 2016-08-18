@@ -1,8 +1,10 @@
 input,
 textarea,
 select,
-.select__label {
+.simple-select {
+	background: $c-white;
 	border: 1px solid $c-grey-light;
+	border-radius: 0;
 	color: $c-black;
 	display: block;
 	font: normal #{$p-base}/1.5 $sans-serif;
@@ -12,7 +14,8 @@ select,
 
 input,
 textarea,
-select {
+select,
+.simple-select {
 	&:focus {
 		border-color: $c-grey;
 	}
@@ -51,6 +54,12 @@ select {
 	// placeholder text
 	@include input-placeholder {
 		color: $c-grey-light;
+	}
+}
+
+.simple-select {
+	&.focus {
+		border-color: $c-grey;
 	}
 }
 
@@ -147,79 +156,52 @@ input[type="radio"] {
 
 
 // select and multi select
-select,
-.select {
+select {
 	// iOS Zoom Hack
 	@media screen and (-webkit-min-device-pixel-ratio: 0) {
 		font-size: $base-font-size !important;
 	}
 }
 
-select[size], select[multiple] {
-	@include soft--ends($base-spacing-unit / 4);
+select[size],
+select[multiple] {
 	background-image: none;
 	height: auto;
+	padding: .6rem 1.2rem;
 
 	option {
-		@include soft--ends($base-spacing-unit / 4);
+		padding: .6rem;
 	}
 }
 
 .select {
 	position: relative;
 	display: block;
+	height: 5rem;
 
 	select {
-		padding: 0;
-		position: absolute;
-		top: 0; right: 0; bottom: 0; left: 0;
-		z-index: 2;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-
-		&:focus {
-			+ .select__label {
-				border-color: $c-grey;
-			}
-		}
-
-		&.focused {
-			+ .select__label {
-				border-color: $c-blue;
-				box-shadow: 0 0 5px $c-blue;
-			}
-		}
-
-		&.error {
-			+ .select__label {
-				border-color: $c-negative;
-			}
-
-			&.focused {
-				+ .select__label {
-					box-shadow: 0 0 5px $c-negative;
-				}
-			}
-		}
-	}
-
-	.select__label {
-		@include truncate(100%);
-		display: block;
-		padding-right: 4rem;
-		position: relative;
+		padding-right: 5rem;
 	}
 
 	// arrow
 	&:after {
-		@include css-triangle($c-grey-dark, 'down', .6rem);
-		top: 50%; right: 1.2rem;
-		margin-top: -.2rem;
+		@include css-triangle($c-grey-dark, 'down', .8rem);
+		top: 50%; right: 1.8rem;
+		margin-top: -.4rem;
+		z-index: 3;
+		pointer-events: none;
+	}
+}
 
-		@include mq('tablet') {
-			right: 2.4rem;
-		}
+.simple-select {
+	select {
+		background-color: transparent;
+		position: absolute;
+		top: 0; right: 0; left: 0;
+		height: 100%;
+		z-index: 1;
+		opacity: 0;
+		padding: 0;
 	}
 }
 
