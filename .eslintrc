@@ -37,6 +37,7 @@
     'no-multi-spaces': 1,
     'no-param-reassign': 1,
     'no-undef': 1,
+    'no-underscore-dangle': 1,
     'no-unused-vars': 1,
     'semi': 1,
     'space-before-blocks': 1,
