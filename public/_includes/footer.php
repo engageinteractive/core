@@ -1,7 +1,7 @@
 
 		</div>
 
-		<footer id="site-footer" class="site-footer">
+		<footer id="site-footer" class="site-footer" data-img="//placehold.it/400">
 			<div class="container">
 				<p>&copy; 2016 Engage</p>
 			</div>
@@ -9,8 +9,8 @@
 
 	</div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="/assets/static/js/jquery-2.2.0.min.js"><\/script>')</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/assets/static/js/jquery-3.1.0.min.js"><\/script>')</script>
 	<!-- <script src="/assets/js/libs.js"></script> -->
 	<script src="/assets/js/plugins.js"></script>
 	<script src="/assets/js/site.js"></script>
