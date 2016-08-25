@@ -1,7 +1,7 @@
 
 		</div>
 
-		<footer id="site-footer" class="site-footer" data-img="//placehold.it/400">
+		<footer id="site-footer" class="site-footer">
 			<div class="container">
 				<p>&copy; 2016 Engage</p>
 			</div>

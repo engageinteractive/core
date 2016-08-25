@@ -34,28 +34,6 @@ $.fn.loadImg = function(){
 
 						$this.append($img);
 
-						if( data.fade ){
-
-							TweenLite
-								.set($img, {
-									opacity: 0
-								});
-
-							TweenLite
-								.to($img, 1, {
-									opacity: 1,
-									ease: Cubic.easeOut,
-									delay: data.delay ? data.delay : 0,
-									onComplete: function(){
-
-										$img.removeAttr('style');
-										$this.removeAttr('style');
-
-									}
-								});
-
-						}
-
 					}
 				});
 
@@ -71,20 +49,8 @@ $.fn.loadImg = function(){
 			if( data.fade )
 				setCss.opacity = 0;
 
-			TweenLite
-				.set($this, setCss);
-
-			if( data.fade ){
-
-				TweenLite
-					.to($this, 1, {
-						opacity: 1,
-						x: 0,
-						delay: data.delay ? data.delay : 0,
-						ease: Cubic.easeOut
-					});
-
-			}
+			$this
+				.css(setCss);
 
 		}
 
