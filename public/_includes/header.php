@@ -17,17 +17,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
-	<!-- use this if just supporting IE9+ -->
 	<link rel="stylesheet" href="/assets/css/main.css">
-
-	<!-- use these if supporting IE8+ -->
-	<!--[if (gt IE 8) | (IEMobile)]><!-->
-	<!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
-	<!--<![endif]-->
-
-	<!--[if (lte IE 8) & (!IEMobile)]>
-	<!-- <link rel="stylesheet" href="/assets/css/fixed-width.css"> -->
-	<![endif]-->
 
 	<script src="/assets/static/js/modernizr.js"></script>
 

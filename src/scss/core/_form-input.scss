@@ -75,10 +75,6 @@ input[type="checkbox"],
 input[type="radio"] {
 	@include vh;
 
-	@include lt-ie9 {
-		@include vh-reset;
-	}
-
 	+ label {
 		font-weight: normal;
 		margin-bottom: 0;
@@ -97,10 +93,6 @@ input[type="radio"] {
 			top: 50%;
 			left: 0;
 			transform: translateY(-50%);
-
-			@include lt-ie9 {
-				display: none;
-			}
 		}
 	}
 

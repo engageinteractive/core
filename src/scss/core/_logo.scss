@@ -3,8 +3,4 @@
 	max-width: 30rem;
 	width: 100%;
 	height: auto;
-
-	@include lt-ie9 {
-		max-width: none;
-	}
 }

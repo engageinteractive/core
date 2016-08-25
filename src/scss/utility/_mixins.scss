@@ -2,7 +2,7 @@
 
 	Media Queries
 
-	used for outputting content either between media query tags, or without (for fixed-width.scss)
+	used for outputting content either between media query tags
 
 	example: basic usage
 
@@ -26,32 +26,19 @@
 
 */
 
-$fixed-width:       false !default;
-$fixed-width-limit: 980px !default;
-
 @mixin mq($width, $type: min) {
 
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
 
-        @if $type == max {
-            $width: $width - 1px;
-        }
-    }
+		@if $type == max {
+			$width: $width - 1px;
+		}
+	}
 
-    @if $fixed-width {
-
-        @if $width <= $fixed-width-limit {
-            @content;
-        }
-
-    } @else {
-
-        @media only screen and (#{$type}-width: $width) {
-            @content;
-        }
-
-    }
+	@media only screen and (#{$type}-width: $width) {
+		@content;
+	}
 
 }
 
@@ -122,31 +109,6 @@ $fixed-width-limit: 980px !default;
 @mixin hard--right { padding-right: 0; }
 @mixin hard--ends { padding: { top: 0; bottom: 0; } }
 @mixin hard--sides { padding: { left: 0; right: 0; } }
-
-
-
-/*--------------------------------
-
-	LT IE9
-
-	to be used in conjunction with fixed-width.scss
-
-*/
-
-// only chuck out content
-$lt-ie9: false !default;
-
-@mixin lt-ie9 {
-
-	@if $lt-ie9 {
-
-		.lt-ie9 & {
-			@content;
-		}
-
-	}
-
-}
 
 
 

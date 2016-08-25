@@ -228,7 +228,7 @@ $core.body.on('click', 'a:external:not(.internal), a.external', function(e) {
 
 });
 
-if (!$('.lt-ie9').length && !Modernizr.csspointerevents) {
+if (!Modernizr.csspointerevents) {
 	simpleSelect($('.select select:not([multiple="multiple"])'));
 }
 
