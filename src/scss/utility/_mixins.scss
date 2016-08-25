@@ -130,20 +130,6 @@
 }
 
 
-// Image replacement
-
-@mixin ir {
-	display: block;
-	background: {
-		repeat: no-repeat;
-		position: 0 0;
-	}
-	overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
-}
-
-
 // Hide from both screenreaders and browsers
 
 @mixin hidden {
