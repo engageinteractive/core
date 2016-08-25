@@ -29,13 +29,13 @@ h6,
 .h5,
 .h6 {
 	@include content-margins('&');
-	font-weight: $w-semibold;
+	font-weight: $w-bold;
 	font-size: 100%;
 	line-height: 1;
 	margin-top: 1em;
 
 	a {
-		font-weight: $w-semibold;
+		font-weight: $w-bold;
 	}
 }
 
