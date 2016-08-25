@@ -2,7 +2,7 @@
 	<div class="message">
 		<h2 class="h4">
 			<span class="icon-text">
-				<svg viewBox="0 0 100 100" class="icon-text__i icon">
+				<svg class="icon-text__i icon">
 					<use xlink:href="/assets/img/svg-icons/sprite.svg#cross"></use>
 				</svg>
 

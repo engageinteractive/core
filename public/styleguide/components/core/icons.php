@@ -2,43 +2,43 @@
 
 <ul class="list-inline">
 	<li>
-		<svg viewBox="0 0 100 100" class="icon">
+		<svg class="icon">
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#plus"></use>
 		</svg>
 	</li>
 
 	<li>
-		<svg viewBox="0 0 100 100" class="icon">
+		<svg class="icon">
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#check"></use>
 		</svg>
 	</li>
 
 	<li>
-		<svg viewBox="0 0 100 100" class="icon">
+		<svg class="icon">
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#cross"></use>
 		</svg>
 	</li>
 
 	<li>
-		<svg viewBox="0 0 100 100" class="icon">
+		<svg class="icon">
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-up"></use>
 		</svg>
 	</li>
 
 	<li>
-		<svg viewBox="0 0 100 100" class="icon">
+		<svg class="icon">
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-down"></use>
 		</svg>
 	</li>
 
 	<li>
-		<svg viewBox="0 0 100 100" class="icon">
+		<svg class="icon">
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-left"></use>
 		</svg>
 	</li>
 
 	<li>
-		<svg viewBox="0 0 100 100" class="icon">
+		<svg class="icon">
 			<use xlink:href="/assets/img/svg-icons/sprite.svg#arrow-right"></use>
 		</svg>
 	</li>
@@ -51,7 +51,7 @@
 		<span class="icon-text">
 			<span class="icon-text__t">Icon text, description or title</span>
 
-			<svg viewBox="0 0 100 100" class="icon-text__i icon">
+			<svg class="icon-text__i icon">
 				<use xlink:href="/assets/img/svg-icons/sprite.svg#plus"></use>
 			</svg>
 		</span>
@@ -59,7 +59,7 @@
 
 	<li>
 		<span class="icon-text">
-			<svg viewBox="0 0 100 100" class="icon-text__i icon">
+			<svg class="icon-text__i icon">
 				<use xlink:href="/assets/img/svg-icons/sprite.svg#plus"></use>
 			</svg>
 

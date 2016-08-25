@@ -233,3 +233,5 @@ if (!Modernizr.csspointerevents) {
 }
 
 $core.body.fitVids();
+
+svg4everybody();
