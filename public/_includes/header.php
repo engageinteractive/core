@@ -15,8 +15,6 @@
 	<link rel="apple-touch-icon" href="/assets/img/meta/favicon-180.png">
 	<link rel="mask-icon" href="/assets/img/meta/mask-icon.svg" color="#000000">
 
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-
 	<link rel="stylesheet" href="/assets/css/main.css">
 
 	<script src="/assets/static/js/modernizr.js"></script>

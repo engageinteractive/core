@@ -29,7 +29,6 @@ h6,
 .h5,
 .h6 {
 	@include content-margins('&');
-	@include font-roboto($w-normal);
 	font-weight: $w-semibold;
 	font-size: 100%;
 	line-height: 1;
