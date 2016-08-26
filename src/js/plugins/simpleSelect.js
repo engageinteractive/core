@@ -39,16 +39,16 @@
 				display.textContent = select.options[select.selectedIndex].text;
 			},
 			focusCallback = function(){
-				addClass(wrap, 'focus');
+				addClass(wrap, 'is-focused-ss');
 			},
 			blurCallback = function(){
-				removeClass(wrap, 'focus');
+				removeClass(wrap, 'is-focused-ss');
 			},
 			mouseenterCallback = function(){
-				addClass(wrap, 'hover');
+				addClass(wrap, 'is-hovered');
 			},
 			mouseleaveCallback = function(){
-				removeClass(wrap, 'hover');
+				removeClass(wrap, 'is-hovered');
 			},
 			checkSelectedText = function(){
 				if( display.textContent !== select.options[select.selectedIndex].text ){
