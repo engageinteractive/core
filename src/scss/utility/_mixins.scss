@@ -9,7 +9,7 @@
 	.element {
 		width: 50%;
 
-		@include mq("tablet-small") {
+		@include mq('tablet-small') {
 			width: 20%;
 		}
 	}
@@ -19,7 +19,7 @@
 	.element {
 		width: 50%;
 
-		@include mq("tablet-small", "max") {
+		@include mq('tablet-small', 'max') {
 			width: 20%;
 		}
 	}
@@ -123,7 +123,7 @@
 @mixin cf {
 
 	&:after {
-		content: "";
+		content: '';
 		display: table;
 		clear: both;
 	}
@@ -451,7 +451,7 @@
 		content: '#{$content}';
 	}
 	display: block;
-	font-family: "university-of-northampton" !important;
+	font-family: 'icon-font-family' !important;
 	font-style: normal !important;
 	font-weight: normal !important;
 	font-variant: normal !important;
@@ -476,8 +476,8 @@
 
 @mixin colours(
 	$selector: false,
-	$chain: "&--",
-	$background: "base",
+	$chain: '&--',
+	$background: 'base',
 	$border: true
 ) {
 

@@ -61,7 +61,7 @@ button {
 	@include soft--ends($base-spacing-unit/1.5);
 	font-size: $p-large;
 
-	@include mq("tablet-small") {
+	@include mq('tablet') {
 		padding: $base-spacing-unit/1.2 $base-spacing-unit;
 	}
 }

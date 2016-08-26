@@ -25,9 +25,9 @@
 
 */
 
-@mixin flush-nth($modifier: "") {
+@mixin flush-nth($modifier: '') {
 
-	@if $modifier != "" {
+	@if $modifier != '' {
 		$modifier: #{$modifier};
 	}
 
@@ -57,7 +57,7 @@
 
 }
 
-@include flush-nth("base");
+@include flush-nth('base');
 
 @each $name, $min-width in $breakpoints {
 

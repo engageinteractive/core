@@ -88,12 +88,12 @@ h6,
 // Basic typography styling
 
 #{$typography-elems} {
-	@include content-margins("&");
+	@include content-margins('&');
 	margin-bottom: 1em;
 }
 
 #{$media-elems} {
-	@include content-margins("&");
+	@include content-margins('&');
 	margin-bottom: 1.25em;
 }
 

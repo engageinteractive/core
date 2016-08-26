@@ -130,7 +130,7 @@
 	@include unlist;
 
 	li {
-		@include colours("&:before", $chain: "&.");
+		@include colours('&:before', $chain: '&.');
 		@include content-margins;
 		@include push--top($base-spacing-unit / 1.2);
 		@include flush--bottom;
@@ -148,7 +148,7 @@
 			border: 1px solid;
 		}
 
-		@include mq("phone-wide") {
+		@include mq('phone-wide') {
 			float: left;
 			width: 100 / 2 * 1%;
 
@@ -157,7 +157,7 @@
 			}
 		}
 
-		@include mq("tablet-wide") {
+		@include mq('tablet-wide') {
 			width: 100 / 3 * 1%;
 
 			&:nth-child(-n+3) {
@@ -165,7 +165,7 @@
 			}
 		}
 
-		@include mq("desktop") {
+		@include mq('desktop') {
 			width: 100 / 4 * 1%;
 
 			&:nth-child(-n+4) {

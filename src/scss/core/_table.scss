@@ -60,11 +60,11 @@ table {
 		> div {
 			@include truncate(12rem);
 
-			@include mq("tablet-wide") {
+			@include mq('tablet-wide') {
 				max-width: 15rem;
 			}
 
-			@include mq("desktop-wide") {
+			@include mq('desktop-wide') {
 				max-width: 18rem;
 			}
 		}
@@ -89,7 +89,7 @@ table {
 			margin-left: $base-spacing-unit / 6;
 		}
 
-		@include mq("tablet") {
+		@include mq('tablet') {
 			@include soft--ends($base-spacing-unit / 1.2);
 		}
 	}
@@ -99,7 +99,7 @@ table {
 		border-top: 1px solid $c-grey-light;
 		transition: background .2s $ease-in-out-cubic;
 
-		@include mq("tablet") {
+		@include mq('tablet') {
 			@include soft--ends($base-spacing-unit);
 		}
 	}

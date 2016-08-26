@@ -4,13 +4,13 @@
 
 */
 
-@import "../../utility/reset/normalize";
-@import "../../utility/functions";
-@import "../../utility/mixins";
-@import "../../utility/fonts";
-@import "../../core";
-@import "../../core/anchor";
-@import "../../core/img";
+@import '../../utility/reset/normalize';
+@import '../../utility/functions';
+@import '../../utility/mixins';
+@import '../../utility/fonts';
+@import '../../core';
+@import '../../core/anchor';
+@import '../../core/img';
 
 $base-spacing-unit: 24px;
 
@@ -57,7 +57,7 @@ body {
 		@include push--top($base-spacing-unit / 1.2);
 		font-size: 24px;
 
-		@include mq("tablet-small") {
+		@include mq('tablet-small') {
 			@include push--top($base-spacing-unit);
 			font-size: 32px;
 		}
@@ -66,13 +66,13 @@ body {
 	p {
 		@include push--top($base-spacing-unit / 2);
 
-		@include mq("tablet-small") {
+		@include mq('tablet-small') {
 			@include push--top($base-spacing-unit / 1.5);
 			font-size: 18px;
 		}
 	}
 
-	@include mq("tablet-small") {
+	@include mq('tablet-small') {
 		position: absolute;
 		top: 50%;
 		left: 50%;

@@ -1,4 +1,4 @@
-@import "utility/defaults";
+@import 'utility/defaults';
 
 
 /*--------------------------------
@@ -93,7 +93,7 @@ use:
 example:
 
 	.box {
-		width: breakpoint("phone-wide");
+		width: breakpoint('phone-wide');
 	}
 
 	would generate:
@@ -123,104 +123,104 @@ $grid-column-gutter: 2.4rem;
 // build mobile first 300+
 
 $breakpoints: (
-	"phone":        375px,
-	"phone-wide":   480px,
-	"phablet":      560px,
-	"tablet-small": 640px,
-	"tablet":       768px,
-	"tablet-wide":  1024px,
-	"desktop":      1248px,
-	"desktop-wide": 1440px
+	'phone':        375px,
+	'phone-wide':   480px,
+	'phablet':      560px,
+	'tablet-small': 640px,
+	'tablet':       768px,
+	'tablet-wide':  1024px,
+	'desktop':      1248px,
+	'desktop-wide': 1440px
 );
 
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
 // this is to keep unused code to a minimum
 
 $grid-bp: (
-	"base": (
-		"block": (3),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'base': (
+		'block': (3),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"phone": (
-		"block": (3),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'phone': (
+		'block': (3),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"phone-wide": (
-		"block": (4),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'phone-wide': (
+		'block': (4),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"phablet": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'phablet': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"tablet-small": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'tablet-small': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"tablet": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'tablet': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"tablet-wide": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'tablet-wide': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"desktop": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'desktop': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"desktop-wide": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'desktop-wide': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	)
 );
 
-$max-width: breakpoint("desktop");
+$max-width: breakpoint('desktop');
 
 
 // z-indexing
@@ -231,10 +231,10 @@ suggested naming convention would be the class/ID the z-index is going on
 */
 
 $z-indexes: (
-	"outdated-browser",
-	"site-header",
-	"site-content",
-	"site-footer"
+	'outdated-browser',
+	'site-header',
+	'site-content',
+	'site-footer'
 );
 
 
@@ -294,7 +294,7 @@ $c-body-colour: $c-black;
 // colour map (only use colours from the styleguide)
 // used for when looping through panel/theme styles
 
-@function c($colour, $value: "base") {
+@function c($colour, $value: 'base') {
 
 	@if map-has-key($colours, $colour) {
 
@@ -304,7 +304,7 @@ $c-body-colour: $c-black;
 
 	} @else {
 
-		@warn "Colour name #{$colour} not found in $colours.";
+		@warn 'Colour name #{$colour} not found in $colours.';
 
 	}
 
@@ -312,36 +312,36 @@ $c-body-colour: $c-black;
 
 $colours: (
 	// primary colours
-	"yellow": (
-		"base": $c-brand-primary
+	'yellow': (
+		'base': $c-brand-primary
 	),
-	"green": (
-		"base": $c-green
+	'green': (
+		'base': $c-green
 	),
-	"red": (
-		"base": $c-red
+	'red': (
+		'base': $c-red
 	),
-	"blue": (
-		"base": $c-blue
+	'blue': (
+		'base': $c-blue
 	),
 	// greyscale
-	"black": (
-		"base": $c-black
+	'black': (
+		'base': $c-black
 	),
-	"grey": (
-		"base": $c-grey
+	'grey': (
+		'base': $c-grey
 	),
-	"grey-dark": (
-		"base": $c-grey-dark
+	'grey-dark': (
+		'base': $c-grey-dark
 	),
-	"grey-light": (
-		"base": $c-grey-light
+	'grey-light': (
+		'base': $c-grey-light
 	),
-	"grey-off-white": (
-		"base": $c-grey-off-white
+	'grey-off-white': (
+		'base': $c-grey-off-white
 	),
-	"white": (
-		"base": $c-white
+	'white': (
+		'base': $c-white
 	)
 );
 

@@ -37,9 +37,9 @@
 
 */
 
-@mixin columns($modifier: "") {
+@mixin columns($modifier: '') {
 
-	@if $modifier != "" {
+	@if $modifier != '' {
 		$modifier: #{$modifier};
 	}
 
@@ -89,7 +89,7 @@
 
 }
 
-@include columns("base");
+@include columns('base');
 
 @each $name, $min-width in $breakpoints {
 

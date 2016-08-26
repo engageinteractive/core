@@ -1,7 +1,7 @@
 .media {
 	width: 100%;
 
-	@include mq("tablet-small") {
+	@include mq('tablet-small') {
 
 		&--left {
 			@include push--right($base-spacing-unit / 2);

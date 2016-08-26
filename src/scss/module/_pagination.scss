@@ -42,9 +42,7 @@
 	}
 
 	.jump {
-
 		&--disabled {
-
 			a {
 				background-color: $c-grey-light;
 				color: $c-grey;
@@ -54,9 +52,7 @@
 	}
 
 	.page {
-
 		&--current {
-
 			a {
 				background-color: $c-brand-primary;
 				color: $c-white;
@@ -64,8 +60,7 @@
 		}
 	}
 
-	@include mq("tablet", "max") {
-
+	@include mq('tablet', 'max') {
 		.jump--first,
 		.jump--last,
 		.page--end,
