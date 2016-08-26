@@ -45,7 +45,7 @@
 
 	@for $i from 1 through $grid-column-count {
 
-		@if $dev_mode {
+		@if $dev-mode {
 
 			.#{$modifier}-#{$i} {
 				width: grid-calc($grid-column-count, $i);

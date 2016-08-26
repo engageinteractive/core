@@ -12,7 +12,7 @@
 
 */
 
-$dev_mode: true;
+$dev-mode: true;
 
 
 /*--------------------------------
@@ -138,7 +138,7 @@ $breakpoints: (
 
 $grid-bp: (
 	"base": (
-		"block": (),
+		"block": (3),
 		"columns": (
 			"width": (),
 			"push": (),
@@ -147,7 +147,7 @@ $grid-bp: (
 		"flush": ()
 	),
 	"phone": (
-		"block": (),
+		"block": (3),
 		"columns": (
 			"width": (),
 			"push": (),
@@ -156,7 +156,7 @@ $grid-bp: (
 		"flush": ()
 	),
 	"phone-wide": (
-		"block": (),
+		"block": (4),
 		"columns": (
 			"width": (),
 			"push": (),

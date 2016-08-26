@@ -18,26 +18,31 @@
 	width: 100% / $columns;
 }
 
-@mixin block-grid-items($modifier: "") {
+@mixin block-grid-items($modifier: '') {
 
-	@if $modifier != "" {
-		$modifier: '--#{$modifier}';
+	$modifierClass: '';
+
+	@if $modifier != '' {
+		$modifierClass: '--#{$modifier}';
+	}
+	@else {
+		$modifier: 'base';
 	}
 
 	@for $i from 1 through $grid-column-count {
 
-		@if $dev_mode {
-			.block-grid-#{$i}#{$modifier} {
+		@if $dev-mode {
+			.block-grid-#{$i}#{$modifierClass} {
 				> * {
 					width: 100% / $i;
 				}
 			}
 		} @else if index( map-deep-get($grid-bp, $modifier, block) , $i) or map-deep-get($grid-bp, $modifier, block) == true {
-			.block-grid-#{$i}#{$modifier} {
-				> * {
-					width: 100% / $i;
+				.block-grid-#{$i}#{$modifierClass} {
+					> * {
+						width: 100% / $i;
+					}
 				}
-			}
 		}
 
 	}
@@ -48,7 +53,7 @@
 	@include block-grid;
 }
 
-@include block-grid-items();
+@include block-grid-items;
 
 @each $name, $min-width in $breakpoints {
 
