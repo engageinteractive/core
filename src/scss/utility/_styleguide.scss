@@ -181,8 +181,7 @@
  */
 
 .sg-example-grid {
-	.column,
-	.full-width {
+	.column {
 		@include soft--ends($grid-column-gutter / 2);
 
 		@for $i from 1 through $grid-column-count {
