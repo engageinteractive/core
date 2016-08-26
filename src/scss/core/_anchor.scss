@@ -1,21 +1,26 @@
-a {
+a,
+.a {
 	color: $c-brand-primary;
-	font-weight: $w-bold;
 	text-decoration: underline;
 
-	&:hover:not(.button) {
-		.no-touchevents & {
-			color: $c-black;
-		}
+	&:hover {
+		text-decoration: none;
 	}
 
-	&:focus {
-		.no-touchevents & {
-			box-shadow: 0px 0px 3px $c-blue, 0px 0px 6px $c-blue;
-		}
-	}
+	&:focus {}
 
 	&:link {
 		-webkit-tap-highlight-color: rgba($c-white, 0);
+	}
+}
+
+.a {
+	&--block {
+		display: block;
+	}
+
+	&--subtle {
+		colour: inherit;
+		text-decoration: none;
 	}
 }
