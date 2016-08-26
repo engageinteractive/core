@@ -5,7 +5,19 @@
 .sg-header {}
 
 .sg-nav {
+	ul {
+		margin-left: $base-spacing-unit * 1.5;
+		margin-right: $base-spacing-unit * 1.5;
+		list-style-type: disc;
+	}
+
 	li {
+		margin-top: .75em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
 		> ul {
 			margin-top: .5em;
 		}
