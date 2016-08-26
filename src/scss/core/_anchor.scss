@@ -6,7 +6,9 @@ a,
 	&:hover {
 		text-decoration: none;
 	}
+}
 
+a {
 	&:focus {}
 
 	&:link {
@@ -20,7 +22,7 @@ a,
 	}
 
 	&--subtle {
-		colour: inherit;
+		color: inherit;
 		text-decoration: none;
 	}
 }
