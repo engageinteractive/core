@@ -1,0 +1,21 @@
+.ol,
+.ul {
+	margin-left: $spacing-unit;
+	margin-right: $spacing-unit;
+
+	> li {
+		margin-top: .75em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.ol {
+	list-style-type: decimal;
+}
+
+.ul {
+	list-style-type: disc;
+}
