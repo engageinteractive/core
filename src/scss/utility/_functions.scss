@@ -4,14 +4,12 @@
 
 */
 
-@function grid-calc($t, $c){
-	$val: 0;
-	@if $c == 0 {
-		$val: 0%;
-	}@else{
-		$val: 100% / ( $t / $c );
+@function grid-calc($index, $total: $grid-column-count) {
+	@if $index == 0 {
+		@return 0%;
+	} @else {
+		@return 100%/($total/$index);
 	}
-	@return $val;
 }
 
 
