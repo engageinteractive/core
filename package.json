@@ -28,6 +28,7 @@
     "gulp-svg-sprite": "^1.2.19",
     "gulp-svgmin": "^1.2.2",
     "gulp-tinypng-compress": "^1.2.0",
-    "gulp-uglify": "^1.5.3"
+    "gulp-uglify": "^1.5.3",
+    "normalize.css": "4.2.0"
   }
 }

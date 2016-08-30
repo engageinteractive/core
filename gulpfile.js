@@ -76,7 +76,7 @@ gulp.task('styles', function() {
 		.src(paths.styles.src)
 		.pipe(plugins.sourcemaps.init())
 		.pipe(
-			plugins.sass()
+			plugins.sass({ includePaths: ['node_modules'] })
 				.on('error', plugins.notify.onError({
 					title: 'Sass Error',
 					subtitle: [
