@@ -40,7 +40,7 @@ include('../_includes/header.php');
 
 	<div class="sg-body">
 		<section class="sg-group sg-group--docs">
-			<h1 class="sg-group__title">Documentation</h1>
+			<h1 class="sg-group__title h1">Documentation</h1>
 
 			<div class="sg-section">
 				<?php sgContent('documentation', false, false); ?>
@@ -48,7 +48,7 @@ include('../_includes/header.php');
 		</section>
 
 		<section class="sg-group sg-group--components">
-			<h1 class="sg-group__title">Components</h1>
+			<h1 class="sg-group__title h1">Components</h1>
 
 			<section class="sg-section">
 				<header class="sg-section__header">
