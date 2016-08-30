@@ -226,8 +226,8 @@ label,
 }
 
 
-// `span` error labels for extra descriptive errors
-span.error-text {
+// error labels for extra descriptive errors
+.error-text {
 	background-color: $c--negative;
 	color: $c--white;
 	display: inline-block;
@@ -242,8 +242,8 @@ span.error-text {
 		bottom: 100%; left: 50%;
 		transform: translateX(-50%);
 	}
-}
 
-span.error-text--success {
-	@include vh;
+	&--success {
+		@include vh;
+	}
 }
