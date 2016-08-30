@@ -150,22 +150,22 @@
 
 			<ul class="fields-list-inline">
 				<li>
-					<input id="checkbox-1b" type="checkbox" checked>
+					<input id="checkbox-1b" type="checkbox" class="checkbox" checked>
 					<label for="checkbox-1b">Option 1</label>
 				</li>
 
 				<li>
-					<input id="checkbox-2b" type="checkbox">
+					<input id="checkbox-2b" type="checkbox" class="checkbox">
 					<label for="checkbox-2b">Option 2</label>
 				</li>
 
 				<li>
-					<input id="checkbox-3b" type="checkbox" class="is-invalid">
+					<input id="checkbox-3b" type="checkbox" class="checkbox" class="is-invalid">
 					<label for="checkbox-3b">Option 3 error</label>
 				</li>
 
 				<li>
-					<input id="checkbox-4b" type="checkbox" disabled>
+					<input id="checkbox-4b" type="checkbox" class="checkbox" disabled>
 					<label for="checkbox-4b">Option Disabled</label>
 				</li>
 			</ul>
@@ -176,22 +176,22 @@
 
 			<ul class="fields-list">
 				<li>
-					<input id="radio-1" name="radio" type="radio" checked>
+					<input id="radio-1" name="radio" type="radio" class="radio" checked>
 					<label for="radio-1">Option 1</label>
 				</li>
 
 				<li>
-					<input id="radio-2" name="radio" type="radio">
+					<input id="radio-2" name="radio" type="radio" class="radio">
 					<label for="radio-2">Option 2</label>
 				</li>
 
 				<li>
-					<input id="radio-3" name="radio" type="radio" class="is-invalid">
+					<input id="radio-3" name="radio" type="radio" class="radio" class="is-invalid">
 					<label for="radio-3">Option 3 error</label>
 				</li>
 
 				<li>
-					<input id="radio-4" name="radio" type="radio" disabled>
+					<input id="radio-4" name="radio" type="radio" class="radio" disabled>
 					<label for="radio-4">Option Disabled</label>
 				</li>
 			</ul>
