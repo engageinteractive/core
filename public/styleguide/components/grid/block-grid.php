@@ -1,5 +1,5 @@
 <div class="sg-example-grid">
-	<div class="block-grid-2 block-grid-6--tablet block-grid-8--desktop">
+	<div class="block-grid block-grid--2 block-grid--tablet-6 block-grid--desktop-8">
 		<div><span>&nbsp;</span></div>
 		<div><span>&nbsp;</span></div>
 		<div><span>&nbsp;</span></div>
@@ -10,7 +10,7 @@
 		<div><span>&nbsp;</span></div>
 	</div>
 
-	<div class="block-grid-4 block-grid-8--tablet block-grid-12--desktop">
+	<div class="block-grid block-grid--4 block-grid--tablet-8 block-grid--desktop-12">
 		<div><span>&nbsp;</span></div>
 		<div><span>&nbsp;</span></div>
 		<div><span>&nbsp;</span></div>

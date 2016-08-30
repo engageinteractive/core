@@ -10,11 +10,12 @@
 	> * {
 		display: block;
 		float: left;
+		width: 100%;
 	}
 }
 
 @mixin block-grid-item($modifierClass, $i) {
-	.block-grid-#{$i}#{$modifierClass} {
+	.block-grid--#{$modifierClass}#{$i} {
 		> * {
 			width: 100% / $i;
 		}
@@ -26,7 +27,7 @@
 	$modifierClass: '';
 
 	@if $modifier != '' {
-		$modifierClass: '--#{$modifier}';
+		$modifierClass: '#{$modifier}-';
 	}
 	@else {
 		$modifier: 'base';
@@ -48,7 +49,7 @@
 
 }
 
-[class*='block-grid-'] {
+.block-grid {
 	@include block-grid;
 }
 
