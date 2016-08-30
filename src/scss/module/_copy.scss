@@ -33,8 +33,4 @@
 	ul {
 		@extend .ul;
 	}
-
-	@include mq('tablet') {
-		font-size: $p--medium;
-	}
 }
