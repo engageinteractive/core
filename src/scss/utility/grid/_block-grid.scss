@@ -6,7 +6,6 @@
 
 @mixin block-grid {
 	@include cf;
-	@include unlist;
 
 	> * {
 		display: block;

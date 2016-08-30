@@ -139,13 +139,11 @@
 .sg-colour-scheme {
 	$colour-size: 10rem;
 	@include cf;
-	@include unlist;
 
 	li {
 		@include colours('&:before', $chain: '&.');
 		@include content-margins;
-		@include push--top($spacing-unit / 1.2);
-		@include flush--bottom;
+		@include push--top($spacing-unit--small);
 		line-height: $colour-size;
 		padding-left: $colour-size + 1.5rem;
 		position: relative;

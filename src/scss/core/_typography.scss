@@ -102,6 +102,28 @@ ul {
 	list-style: none;
 }
 
+.ol,
+.ul {
+	margin-left: $spacing-unit * 1.5;
+	margin-right: $spacing-unit * 1.5;
+
+	> li {
+		margin-top: .75em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.ol {
+	list-style-type: decimal;
+}
+
+.ul {
+	list-style-type: disc;
+}
+
 
 // Stylistic elements
 
