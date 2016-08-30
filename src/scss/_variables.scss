@@ -114,6 +114,12 @@ $spacing-unit--small: 2rem;
 $spacing-unit--large: 4rem;
 
 
+// page gutter
+$page-gutter: $spacing-unit--small;
+$page-gutter--tablet: $spacing-unit;
+$page-gutter--desktop: $spacing-unit--large;
+
+
 // grid
 
 $grid-column-count: 24;

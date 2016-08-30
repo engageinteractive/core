@@ -1,14 +1,17 @@
 .container {
-	@include push--auto;
-	@include soft--sides($spacing-unit / 1.2);
+	@include push--sides($page-gutter);
 	position: relative;
 	max-width: $max-width;
 
-	@include mq('phablet') {
-		@include soft--sides($spacing-unit);
+	@include mq('tablet') {
+		@include push--sides($page-gutter--tablet);
 	}
 
-	@include mq('tablet') {
-		@include soft--sides($spacing-unit * 1.25);
+	@include mq('desktop') {
+		@include push--sides($page-gutter--desktop);
+	}
+
+	@include mq($max-width + ( strip-unit($page-gutter--desktop) * 10 * 2 )) {
+		@include push--auto;
 	}
 }
