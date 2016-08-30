@@ -7,7 +7,7 @@ include('../_includes/header.php');
 
 <div class="sg container" id="sg">
 	<header class="sg-header">
-		<h1>Styleguide</h1>
+		<h1 class="h1">Styleguide</h1>
 
 		<nav class="sg-nav">
 			<h1 class="vh">Styleguide menu</h1>
