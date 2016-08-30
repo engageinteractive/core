@@ -15,6 +15,16 @@
 	@include mq('desktop') {
 		margin-left: n($grid-column-gutter--desktop);
 	}
+
+	&--compact {
+		> .column {
+			margin-top: $spacing-unit--small;
+
+			@include mq('tablet') {
+				margin-top: $spacing-unit;
+			}
+		}
+	}
 }
 
 .column {

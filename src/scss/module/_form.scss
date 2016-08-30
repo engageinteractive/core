@@ -4,57 +4,11 @@
 
 */
 
-// global form styling
-
-form {
-	ul {
-		margin: 0;
-		list-style: none;
-	}
-
-	li {
-		@include flush--bottom;
-	}
-}
-
-
-// form fieldset
-
-.form-fieldset {
-	margin-top: $spacing-unit * 1.25;
-	padding-top: $spacing-unit * 1.25;
-	border-top: 1px solid $c--grey-light;
-
-	&:first-child {
-		@include flush--top;
-		@include hard--top;
-		border-top: none;
-	}
-
-	@include mq('desktop') {
-		margin-top: $spacing-unit * 1.75;
-		padding-top: $spacing-unit * 1.75;
-	}
-}
-
-.form-field {
-	margin-top: $spacing-unit / 1.2;
-
-	&:first-child {
-		margin-top: 0;
-	}
-
-	@include mq('desktop') {
-		margin-top: $spacing-unit;
-	}
-}
-
-
 // lists & groupings
 
 .fields-list {
 	> * {
-		margin-top: $spacing-unit / 1.5;
+		margin-top: $spacing-unit--small;
 
 		&:first-child {
 			margin-top: 0;
@@ -63,11 +17,11 @@ form {
 }
 
 .fields-list-inline {
-	margin-top: $spacing-unit / -1.5;
+	margin-top: n($spacing-unit--small);
 
 	> * {
-		margin-top: $spacing-unit / 1.5;
-		margin-right: $spacing-unit / 2;
+		margin-top: $spacing-unit--small;
+		margin-right: $spacing-unit--small;
 		display: inline-block;
 
 		&:last-child {

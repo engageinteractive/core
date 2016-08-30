@@ -1,30 +1,30 @@
 <form>
-	<fieldset class="fields-group">
-		<div class="form-field">
+	<fieldset class="row row--compact flush-first-1">
+		<div class="column">
 			<label for="text">Text</label>
 
 			<input type="text" name="text" id="text">
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="text-value">Text (with value)</label>
 
 			<input type="text" name="text-value" id="text-value" value="A test value">
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="text-required">Text (required)</label>
 
 			<input type="text" name="text-required" id="text-required" required>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="text-placeholder">Text (with placeholder)</label>
 
 			<input type="text" name="text-placeholder" id="text-placeholder" placeholder="A placeholder value">
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<span class="label">Two inputs</span>
 
 			<ul class="fields-list">
@@ -40,13 +40,13 @@
 			</ul>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="text-disabled">Text (disabled)</label>
 
 			<input type="text" name="text-disabled" id="text-disabled" disabled>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="text-disabled-2">Text (failed validation)</label>
 
 			<input type="text" name="text-disabled" id="text-disabled-2" class="is-invalid" required>
@@ -54,43 +54,43 @@
 			<span class="error-text">Name Required</span>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="text-disabled-3">Text (passed validation)</label>
 
 			<input type="text" name="text-disabled" id="text-disabled-3" class="is-valid" required>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="email">Email</label>
 
 			<input type="email" name="email" id="email">
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="date">Date</label>
 
 			<input type="date" name="date" id="date">
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="search">Search</label>
 
 			<input type="search" name="search" id="search">
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="telephone">Telephone</label>
 
 			<input type="tel" name="telephone" id="telephone">
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="textarea">Textarea</label>
 
 			<textarea name="textarea" id="textarea" rows="10"></textarea>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="select-unstyled">Select (unstyled)</label>
 
 			<select name="select-unstyled" id="select-unstyled">
@@ -106,7 +106,7 @@
 			</select>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="select-styled">Select (styled, with custom arrow)</label>
 
 			<div class="select">
@@ -124,11 +124,11 @@
 			</div>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<button type="reset" class="button">RESET</button>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<label for="select">Select (multiple)</label>
 
 			<select name="select" id="select" multiple="multiple" size="5" class="valid">
@@ -145,7 +145,7 @@
 			</select>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<span class="label">Checkbox List</span>
 
 			<ul class="fields-list-inline">
@@ -171,7 +171,7 @@
 			</ul>
 		</div>
 
-		<div class="form-field">
+		<div class="column">
 			<span class="label">Radio List</span>
 
 			<ul class="fields-list">
