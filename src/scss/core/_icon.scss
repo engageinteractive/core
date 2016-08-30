@@ -12,7 +12,7 @@ $icon-size: 2.4rem;
 
 .icon {
 	display: block;
-	fill: $c-black;
+	fill: $c--black;
 	width: $icon-size;
 	height: $icon-size;
 
@@ -51,12 +51,12 @@ $icon-size: 2.4rem;
 	}
 
 	&__t {
-		padding-right: $icon-size + ($base-spacing-unit / 3);
+		padding-right: $icon-size + ($spacing-unit / 3);
 
 		&:last-child {
 			padding: {
 				right: 0;
-				left: $icon-size + ($base-spacing-unit / 3);
+				left: $icon-size + ($spacing-unit / 3);
 			}
 		}
 	}

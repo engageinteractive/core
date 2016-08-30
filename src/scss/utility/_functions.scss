@@ -64,7 +64,7 @@
 
 	prerequisits:
 
-		$letter-spacing list must exist in variables file
+		$ls list must exist in variables file
 
 	example:
 
@@ -81,7 +81,7 @@
 */
 
 @function ls($name) {
-	$value: map_get($letter-spacing, $name);
+	$value: map_get($ls, $name);
 	@return $value / 1000 * 1em;
 }
 

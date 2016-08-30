@@ -13,7 +13,7 @@ dd {
 
 dt {
 	@include push--top(1em);
-	font-weight: $w-bold;
+	font-weight: $w--bold;
 
 	&:first-child {
 		@include flush--top;
@@ -37,7 +37,7 @@ dd {
 
 	@include mq('tablet-small') {
 		@include push--top(1em);
-		@include soft--left($base-spacing-unit / 1.2);
+		@include soft--left($spacing-unit / 1.2);
 		width: 75%;
 	}
 }

@@ -1,6 +1,6 @@
 a,
 .a {
-	color: $c-brand-primary;
+	color: $c--brand-primary;
 	text-decoration: underline;
 
 	&:hover {
@@ -12,7 +12,7 @@ a {
 	&:focus {}
 
 	&:link {
-		-webkit-tap-highlight-color: rgba($c-white, 0);
+		-webkit-tap-highlight-color: rgba($c--white, 0);
 	}
 }
 

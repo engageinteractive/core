@@ -8,33 +8,33 @@ $dev-mode: false !default;
 
 // brand colours
 
-$c-brand-primary: #fdbc00 !default;
+$c--brand-primary: #fdbc00 !default;
 
 
 // greyscale
 
-$c-black: #1a1a1a !default;
-$c-grey-dark: #444 !default;
-$c-grey: #888 !default;
-$c-grey-light: #ddd !default;
-$c-grey-off-white: #f6f6f6 !default;
-$c-white: #fff !default;
+$c--black: #1a1a1a !default;
+$c--grey-dark: #444 !default;
+$c--grey: #888 !default;
+$c--grey-light: #ddd !default;
+$c--grey-x-light: #f6f6f6 !default;
+$c--white: #fff !default;
 
 
 // other colours
 
-$c-red: #f50023 !default;
-$c-green: #24b35d !default;
-$c-blue: #4D90FE !default;
+$c--red: #f50023 !default;
+$c--green: #24b35d !default;
+$c--blue: #4D90FE !default;
 
 
 // form & message positive/negative colours
 
-$c-positive: #24b35d !default;
-$c-negative: #f50023 !default;
+$c--positive: #24b35d !default;
+$c--negative: #f50023 !default;
 
 
 // top level element colours
 
-$c-body-bg: white !default;
-$c-body-colour: black !default;
+$c--body-bg: white !default;
+$c--body-colour: black !default;

@@ -5,7 +5,7 @@
 	example:
 
 	@include font-face('Clarendon', 'clarendon-webfont');
-	@include font-face('Clarendon', 'clarendon-webfont', $w-bold, italic);
+	@include font-face('Clarendon', 'clarendon-webfont', $w--bold, italic);
 
 */
 

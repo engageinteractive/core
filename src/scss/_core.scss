@@ -5,7 +5,6 @@
 */
 
 * {
-
 	&,
 	&:before,
 	&:after {
@@ -30,11 +29,11 @@ html {
 
 body {
 	@include soft--ends(3rem);
-	background-color: $c-body-bg;
-	color: $c-body-colour;
-	font-family: $sans-serif;
-	font-size: $base-font-size;
-	line-height: $base-line-height;
+	background-color: $c--body-bg;
+	color: $c--body-colour;
+	font-family: $stack--sans-serif;
+	font-size: $font-size;
+	line-height: $line-height;
 
 	@include mq('tablet') {
 		@include soft--ends(5rem);
@@ -50,7 +49,7 @@ body {
 */
 
 @include selection {
-	background: $c-brand-primary;
-	color: $c-white;
+	background: $c--brand-primary;
+	color: $c--white;
 	text-shadow: none;
 }

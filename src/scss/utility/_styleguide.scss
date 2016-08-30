@@ -6,8 +6,8 @@
 
 .sg-nav {
 	ul {
-		margin-left: $base-spacing-unit * 1.5;
-		margin-right: $base-spacing-unit * 1.5;
+		margin-left: $spacing-unit * 1.5;
+		margin-right: $spacing-unit * 1.5;
 		list-style-type: disc;
 	}
 
@@ -35,7 +35,7 @@
 .sg-group {
 	margin-top: 4rem;
 	padding-top: 4rem;
-	border-top: 1px solid $c-grey-dark;
+	border-top: 1px solid $c--grey-dark;
 
 	&__title {
 		margin-bottom: 0;
@@ -61,11 +61,11 @@
 	}
 
 	&__header {
-		background-color: $c-grey-light;
-		padding: $base-spacing-unit;
+		background-color: $c--grey-light;
+		padding: $spacing-unit;
 
 		h1 {
-			font-weight: $w-normal;
+			font-weight: $w--normal;
 			font-style: italic;
 		}
 	}
@@ -86,7 +86,7 @@
 .sg-content {
 	margin-top: 2rem;
 	padding-top: 2rem;
-	border-top: 1px dashed $c-grey;
+	border-top: 1px dashed $c--grey;
 
 	&:first-child {
 		margin-top: 0;
@@ -104,7 +104,7 @@
 			position: relative;
 
 			&::before {
-				@include css-triangle($c-brand-secondary, 'right');
+				@include css-triangle($c--brand-secondary, 'right');
 				top: 50%; left: -1.5rem;
 				transform: translateY(-50%);
 			}
@@ -144,7 +144,7 @@
 	li {
 		@include colours('&:before', $chain: '&.');
 		@include content-margins;
-		@include push--top($base-spacing-unit / 1.2);
+		@include push--top($spacing-unit / 1.2);
 		@include flush--bottom;
 		line-height: $colour-size;
 		padding-left: $colour-size + 1.5rem;
@@ -193,41 +193,23 @@
  */
 
 .sg-example-grid {
-	.column {
-		@include soft--ends($grid-column-gutter / 2);
-
-		@for $i from 1 through $grid-column-count {
-			&:nth-child(#{$i}) span::before {
-				content: '#{$i}';
-				position: absolute;
-				top: .2rem; left: .4rem;
-				font-size: .9rem;
-				opacity: .3;
-			}
-		}
-
-		@include mq('tablet') {
-			@include soft--ends($grid-column-gutter / 1.5);
-		}
-	}
-
 	span {
 		display: block;
 		position: relative;
 		padding: 1rem;
-		border: solid 1px $c-grey-light;
+		border: solid 1px $c--grey-light;
 		text-align: center;
-		background: $c-grey-off-white;
-		color: $c-grey-dark;
-		font-weight: $w-bold;
-		font-size: $p-small;
+		background: $c--grey-x-light;
+		color: $c--grey-dark;
+		font-weight: $w--bold;
+		font-size: $p--small;
 	}
 }
 
 .sg-flush-test {
 	div {
 		@include push--top($grid-column-gutter);
-		background-color: $c-grey-off-white;
-		border: solid 1px $c-grey-light;
+		background-color: $c--grey-x-light;
+		border: solid 1px $c--grey-light;
 	}
 }

@@ -5,8 +5,8 @@
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	font-size: $p-base;
-	line-height: $lh-small;
+	font-size: $p--base;
+	line-height: $lh--small;
 	width: 100%;
 
 	caption {
@@ -25,36 +25,36 @@ table {
 		&:last-child {
 
 			td {
-				border-bottom: 1px solid $c-grey-light;
+				border-bottom: 1px solid $c--grey-light;
 			}
 		}
 
 		&:nth-child(even) {
 
 			td {
-				background-color: $c-grey-off-white;
+				background-color: $c--grey-x-light;
 			}
 		}
 
 		&:hover {
 
 			td {
-				background-color: darken($c-grey-off-white, 3%);
+				background-color: darken($c--grey-x-light, 3%);
 			}
 		}
 	}
 
 	th,
 	td {
-		padding-right: $base-spacing-unit / 1.5;
+		padding-right: $spacing-unit / 1.5;
 		vertical-align: top;
 
 		&:first-child {
-			padding-left: $base-spacing-unit / 2;
+			padding-left: $spacing-unit / 2;
 		}
 
 		&:last-child {
-			padding-right: $base-spacing-unit / 2;
+			padding-right: $spacing-unit / 2;
 		}
 
 		> div {
@@ -71,12 +71,12 @@ table {
 	}
 
 	th {
-		@include soft--ends($base-spacing-unit / 1.5);
-		background-color: darken($c-grey-off-white, 3%);
-		border-top: 1px solid $c-grey-light;
-		border-bottom: 1px solid $c-grey-light;
-		font-weight: $w-bold;
-		// padding-bottom: $base-spacing-unit / 1.5;
+		@include soft--ends($spacing-unit / 1.5);
+		background-color: darken($c--grey-x-light, 3%);
+		border-top: 1px solid $c--grey-light;
+		border-bottom: 1px solid $c--grey-light;
+		font-weight: $w--bold;
+		// padding-bottom: $spacing-unit / 1.5;
 		text-align: left;
 
 		.text,
@@ -86,21 +86,20 @@ table {
 		}
 
 		.icon-wrapper {
-			margin-left: $base-spacing-unit / 6;
+			margin-left: $spacing-unit / 6;
 		}
 
 		@include mq('tablet') {
-			@include soft--ends($base-spacing-unit / 1.2);
+			@include soft--ends($spacing-unit / 1.2);
 		}
 	}
 
 	td {
-		@include soft--ends($base-spacing-unit / 1.2);
-		border-top: 1px solid $c-grey-light;
-		transition: background .2s $ease-in-out-cubic;
+		@include soft--ends($spacing-unit / 1.2);
+		border-top: 1px solid $c--grey-light;
 
 		@include mq('tablet') {
-			@include soft--ends($base-spacing-unit);
+			@include soft--ends($spacing-unit);
 		}
 	}
 }

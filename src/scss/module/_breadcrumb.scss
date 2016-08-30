@@ -1,13 +1,13 @@
 .breadcrumb {
 	@include cf;
-	font-size: $p-small;
+	font-size: $p--small;
 	line-height: 1;
 
 	a,
 	.icon,
 	span {
 		float: left;
-		margin-right: $base-spacing-unit / 4;
+		margin-right: $spacing-unit / 4;
 
 		&:last-child {
 			margin-right: 0;
@@ -15,8 +15,8 @@
 	}
 
 	.icon {
-		width: $p-small;
-		height: $p-small;
+		width: $p--small;
+		height: $p--small;
 	}
 
 	span {}

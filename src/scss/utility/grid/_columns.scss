@@ -6,12 +6,14 @@
 
 .row {
 	@include cf;
-	margin-right: $grid-column-gutter / -2;
-	margin-left: $grid-column-gutter / -2;
+	margin-left: n($grid-column-gutter);
 
 	@include mq('tablet') {
-		margin-right: $grid-column-gutter / -1.5;
-		margin-left: $grid-column-gutter / -1.5;
+		margin-left: n($grid-column-gutter--tablet);
+	}
+
+	@include mq('desktop') {
+		margin-left: n($grid-column-gutter--desktop);
 	}
 }
 
@@ -20,12 +22,17 @@
 	position: relative;
 	float: left;
 	width: 100%;
-	padding-right: $grid-column-gutter / 2;
-	padding-left: $grid-column-gutter / 2;
+	margin-top: $grid-column-gutter;
+	padding-left: $grid-column-gutter;
 
 	@include mq('tablet') {
-		padding-right: $grid-column-gutter / 1.5;
-		padding-left: $grid-column-gutter / 1.5;
+		margin-top: $grid-column-gutter--tablet;
+		padding-left: $grid-column-gutter--tablet;
+	}
+
+	@include mq('desktop') {
+		margin-top: $grid-column-gutter--desktop;
+		padding-left: $grid-column-gutter--desktop;
 	}
 }
 

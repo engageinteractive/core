@@ -23,16 +23,16 @@
 
 		tr {
 			@include cf;
-			border-top: 1px solid $c-grey-light;
+			border-top: 1px solid $c--grey-light;
 
 			td {
 
 				&:first-child {
-					padding-top: $base-spacing-unit / 1.2;
+					padding-top: $spacing-unit / 1.2;
 				}
 
 				&:last-child {
-					padding-bottom: $base-spacing-unit / 1.2;
+					padding-bottom: $spacing-unit / 1.2;
 				}
 			}
 
@@ -66,7 +66,7 @@
 		}
 
 		td {
-			@include push--top($base-spacing-unit / 1.5);
+			@include push--top($spacing-unit / 1.5);
 			border-top: none;
 			clear: left;
 			float: left;
@@ -83,7 +83,7 @@
 			.faux-th {
 				@include antialias;
 				display: block;
-				font-weight: $w-bold;
+				font-weight: $w--bold;
 				padding-bottom: .5em;
 			}
 		}

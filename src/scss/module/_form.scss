@@ -21,9 +21,9 @@ form {
 // form fieldset
 
 .form-fieldset {
-	margin-top: $base-spacing-unit * 1.25;
-	padding-top: $base-spacing-unit * 1.25;
-	border-top: 1px solid $c-grey-light;
+	margin-top: $spacing-unit * 1.25;
+	padding-top: $spacing-unit * 1.25;
+	border-top: 1px solid $c--grey-light;
 
 	&:first-child {
 		@include flush--top;
@@ -31,27 +31,21 @@ form {
 		border-top: none;
 	}
 
-	&__title {
-		@include mq('desktop') {
-			font-size: $h-x-large;
-		}
-	}
-
 	@include mq('desktop') {
-		margin-top: $base-spacing-unit * 1.75;
-		padding-top: $base-spacing-unit * 1.75;
+		margin-top: $spacing-unit * 1.75;
+		padding-top: $spacing-unit * 1.75;
 	}
 }
 
 .form-field {
-	margin-top: $base-spacing-unit / 1.2;
+	margin-top: $spacing-unit / 1.2;
 
 	&:first-child {
 		margin-top: 0;
 	}
 
 	@include mq('desktop') {
-		margin-top: $base-spacing-unit;
+		margin-top: $spacing-unit;
 	}
 }
 
@@ -60,7 +54,7 @@ form {
 
 .fields-list {
 	> * {
-		margin-top: $base-spacing-unit / 1.5;
+		margin-top: $spacing-unit / 1.5;
 
 		&:first-child {
 			margin-top: 0;
@@ -69,11 +63,11 @@ form {
 }
 
 .fields-list-inline {
-	margin-top: $base-spacing-unit / -1.5;
+	margin-top: $spacing-unit / -1.5;
 
 	> * {
-		margin-top: $base-spacing-unit / 1.5;
-		margin-right: $base-spacing-unit / 2;
+		margin-top: $spacing-unit / 1.5;
+		margin-right: $spacing-unit / 2;
 		display: inline-block;
 
 		&:last-child {

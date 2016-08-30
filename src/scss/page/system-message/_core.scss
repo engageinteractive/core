@@ -12,27 +12,27 @@
 @import '../../core/anchor';
 @import '../../core/img';
 
-$base-spacing-unit: 24px;
+$spacing-unit: 24px;
 
 body {
-	font: #{16px}/#{24px} $sans-serif;
+	font: #{16px}/#{24px} $stack--sans-serif;
 }
 
 .system-message {
 	@include push--auto;
-	@include soft($base-spacing-unit);
+	@include soft($spacing-unit);
 	max-width: 460px;
 	text-align: center;
 
 	a {
 		background-color: transparent;
-		color: $c-brand-primary;
+		color: $c--brand-primary;
 		font-weight: bold;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color: $c-black;
+			color: $c--black;
 		}
 	}
 
@@ -54,20 +54,20 @@ body {
 	}
 
 	h1 {
-		@include push--top($base-spacing-unit / 1.2);
+		@include push--top($spacing-unit / 1.2);
 		font-size: 24px;
 
 		@include mq('tablet-small') {
-			@include push--top($base-spacing-unit);
+			@include push--top($spacing-unit);
 			font-size: 32px;
 		}
 	}
 
 	p {
-		@include push--top($base-spacing-unit / 2);
+		@include push--top($spacing-unit / 2);
 
 		@include mq('tablet-small') {
-			@include push--top($base-spacing-unit / 1.5);
+			@include push--top($spacing-unit / 1.5);
 			font-size: 18px;
 		}
 	}

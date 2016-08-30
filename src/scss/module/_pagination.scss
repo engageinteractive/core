@@ -8,7 +8,7 @@
 
 	li {
 		@include flush--bottom;
-		@include soft--sides($base-spacing-unit / 4);
+		@include soft--sides($spacing-unit / 4);
 		display: inline-block;
 
 		&:first-child {
@@ -23,29 +23,28 @@
 	a,
 	span {
 		display: block;
-		font-size: $p-small;
+		font-size: $p--small;
 		line-height: 1;
 	}
 
 	a {
-		background-color: $c-blue;
-		color: $c-white;
-		padding: $base-spacing-unit/2;
+		background-color: $c--blue;
+		color: $c--white;
+		padding: $spacing-unit/2;
 		text-decoration: none;
-		transition: background .2s $ease-in-out-quad, color .2s $ease-in-out-quad;
 
 		&:hover,
 		&:focus {
-			background-color: $c-black;
-			color: $c-white;
+			background-color: $c--black;
+			color: $c--white;
 		}
 	}
 
 	.jump {
 		&--disabled {
 			a {
-				background-color: $c-grey-light;
-				color: $c-grey;
+				background-color: $c--grey-light;
+				color: $c--grey;
 				cursor: not-allowed;
 			}
 		}
@@ -54,8 +53,8 @@
 	.page {
 		&--current {
 			a {
-				background-color: $c-brand-primary;
-				color: $c-white;
+				background-color: $c--brand-primary;
+				color: $c--white;
 			}
 		}
 	}

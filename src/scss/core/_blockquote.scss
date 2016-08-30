@@ -8,7 +8,7 @@
 		@include pseudo;
 		width: 3rem;
 		height: 1px;
-		background-color: $c-blue;
+		background-color: $c--blue;
 		position: absolute;
 		left: 50%;
 		margin-left: -1.5rem;
@@ -40,19 +40,19 @@
 
 	p {
 		@include push--bottom(.4em);
-		font-size: $p-medium;
-		line-height: $lh-large;
+		font-size: $p--medium;
+		line-height: $lh--large;
 
 		@include mq('tablet-small') {
-			font-size: $p-large;
+			font-size: $p--large;
 		}
 	}
 
 	cite {
-		font-size: $p-small;
+		font-size: $p--small;
 
 		@include mq('tablet-small') {
-			font-size: $p-base;
+			font-size: $p--base;
 		}
 	}
 

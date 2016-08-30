@@ -29,58 +29,58 @@ h6,
 .h5,
 .h6 {
 	@include content-margins('&');
-	font-weight: $w-bold;
+	font-weight: $w--bold;
 	font-size: 100%;
 	line-height: 1;
 	margin-top: 1em;
 
 	a {
-		font-weight: $w-bold;
+		font-weight: $w--bold;
 	}
 }
 
 h1,
 .h1 {
-	font-size: $h-x-large;
+	font-size: $h--x-large;
 	line-height: 1;
 	margin-bottom: .5em;
 
 	@include mq('desktop') {
-		font-size: $h-xx-large;
+		font-size: $h--xx-large;
 	}
 }
 
 h2,
 .h2 {
-	font-size: $h-x-large - .6rem;
+	font-size: $h--x-large - .6rem;
 	margin-bottom: .6em;
 
 	@include mq('desktop') {
-		font-size: $h-x-large;
+		font-size: $h--x-large;
 	}
 }
 
 h3,
 .h3 {
-	font-size: $h-large;
+	font-size: $h--large;
 	margin-bottom: .7em;
 }
 
 h4,
 .h4 {
-	font-size: $h-medium;
+	font-size: $h--medium;
 	margin-bottom: .7em;
 }
 
 h5,
 .h5 {
-	font-size: $h-small;
+	font-size: $h--small;
 	margin-bottom: .8em;
 }
 
 h6,
 .h6 {
-	font-size: $h-x-small;
+	font-size: $h--x-small;
 	margin-bottom: .9em;
 }
 
@@ -107,7 +107,7 @@ ul {
 
 b,
 strong {
-	font-weight: $w-bold;
+	font-weight: $w--bold;
 }
 
 small {

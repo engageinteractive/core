@@ -4,15 +4,15 @@
 	@include mq('tablet-small') {
 
 		&--left {
-			@include push--right($base-spacing-unit / 2);
-			@include soft--right($base-spacing-unit / 2);
+			@include push--right($spacing-unit / 2);
+			@include soft--right($spacing-unit / 2);
 			float: left;
 			max-width: 50%;
 		}
 
 		&--right {
-			@include push--left($base-spacing-unit / 2);
-			@include soft--left($base-spacing-unit / 2);
+			@include push--left($spacing-unit / 2);
+			@include soft--left($spacing-unit / 2);
 			float: right;
 			max-width: 50%;
 		}

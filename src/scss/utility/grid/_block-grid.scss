@@ -14,8 +14,12 @@
 	}
 }
 
-@mixin block-grid-column($columns){
-	width: 100% / $columns;
+@mixin block-grid-item($modifierClass, $i) {
+	.block-grid-#{$i}#{$modifierClass} {
+		> * {
+			width: 100% / $i;
+		}
+	}
 }
 
 @mixin block-grid-items($modifier: '') {
@@ -32,17 +36,13 @@
 	@for $i from 1 through $grid-column-count {
 
 		@if $dev-mode {
-			.block-grid-#{$i}#{$modifierClass} {
-				> * {
-					width: 100% / $i;
-				}
-			}
+
+			@include block-grid-item($modifierClass, $i);
+
 		} @else if index( map-deep-get($grid-bp, $modifier, block) , $i) or map-deep-get($grid-bp, $modifier, block) == true {
-				.block-grid-#{$i}#{$modifierClass} {
-					> * {
-						width: 100% / $i;
-					}
-				}
+
+			@include block-grid-item($modifierClass, $i);
+
 		}
 
 	}

@@ -1,7 +1,7 @@
 <div class="sg-example-grid">
-	<div class="row">
-		<div class="column tablet-12 tablet-push-12"><span>12 (Push 12)</span></div>
-		<div class="column tablet-12 tablet-pull-12"><span>12 (Pull 12)</span></div>
+	<div class="row flush-first-1 flush-first-2--tablet">
+		<div class="column tablet-12"><span>12 (Push 12)</span></div>
+		<div class="column tablet-12"><span>12 (Pull 12)</span></div>
 	</div>
 
 	<div class="row">

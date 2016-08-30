@@ -1,14 +1,14 @@
 .container {
 	@include push--auto;
-	@include soft--sides($base-spacing-unit / 1.2);
+	@include soft--sides($spacing-unit / 1.2);
 	position: relative;
 	max-width: $max-width;
 
 	@include mq('phablet') {
-		@include soft--sides($base-spacing-unit);
+		@include soft--sides($spacing-unit);
 	}
 
 	@include mq('tablet') {
-		@include soft--sides($base-spacing-unit * 1.25);
+		@include soft--sides($spacing-unit * 1.25);
 	}
 }
