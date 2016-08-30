@@ -69,7 +69,7 @@ textarea {
 
 
 // checkboxes and radios
-$checkbox-size: $spacing-unit;
+$checkbox-size: $spacing-unit--small;
 $radio-inner-size: $checkbox-size / 2;
 input[type='checkbox'],
 input[type='radio'] {
@@ -78,7 +78,7 @@ input[type='radio'] {
 	+ label {
 		font-weight: normal;
 		margin-bottom: 0;
-		padding-left: $checkbox-size + $spacing-unit/3;
+		padding-left: $checkbox-size + $spacing-unit--x-small;
 		position: relative;
 
 		&:before {
@@ -222,7 +222,7 @@ label,
 	cursor: pointer;
 	display: block;
 	font-weight: $w--bold;
-	margin-bottom: $spacing-unit / 4;
+	margin-bottom: .5em;
 }
 
 
@@ -231,11 +231,11 @@ span.error-text {
 	background-color: $c--negative;
 	color: $c--white;
 	display: inline-block;
-	font-size: $p--base;
+	font-size: $p--small;
 	line-height: $lh--small;
-	padding: $spacing-unit / 3;
+	padding: $spacing-unit--x-small;
 	position: relative;
-	margin-top: $spacing-unit / 2;
+	margin-top: $spacing-unit--x-small;
 
 	&::before {
 		@include css-triangle($c--negative, up, 10px);

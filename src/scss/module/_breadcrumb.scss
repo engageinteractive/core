@@ -7,7 +7,7 @@
 	.icon,
 	span {
 		float: left;
-		margin-right: $spacing-unit / 4;
+		margin-right: $spacing-unit--x-small;
 
 		&:last-child {
 			margin-right: 0;
@@ -18,6 +18,4 @@
 		width: $p--small;
 		height: $p--small;
 	}
-
-	span {}
 }

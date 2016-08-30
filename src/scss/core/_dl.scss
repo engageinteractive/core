@@ -1,12 +1,12 @@
 dl {
-	@include mq('tablet-small') {
+	@include mq('tablet') {
 		@include cf;
 	}
 }
 
 dt,
 dd {
-	@include mq('tablet-small') {
+	@include mq('tablet') {
 		float: left;
 	}
 }
@@ -20,13 +20,13 @@ dt {
 
 		+ dd {
 
-			@include mq('tablet-small') {
+			@include mq('tablet') {
 				@include flush--top;
 			}
 		}
 	}
 
-	@include mq('tablet-small') {
+	@include mq('tablet') {
 		clear: left;
 		width: 25%;
 	}
@@ -35,9 +35,9 @@ dt {
 dd {
 	@include push--top(.5em);
 
-	@include mq('tablet-small') {
+	@include mq('tablet') {
 		@include push--top(1em);
-		@include soft--left($spacing-unit / 1.2);
+		@include soft--left($spacing-unit--small);
 		width: 75%;
 	}
 }

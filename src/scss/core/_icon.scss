@@ -51,12 +51,12 @@ $icon-size: 2.4rem;
 	}
 
 	&__t {
-		padding-right: $icon-size + ($spacing-unit / 3);
+		padding-right: $icon-size + $spacing-unit--x-small;
 
 		&:last-child {
 			padding: {
 				right: 0;
-				left: $icon-size + ($spacing-unit / 3);
+				left: $icon-size + $spacing-unit--x-small;
 			}
 		}
 	}

@@ -32,7 +32,7 @@ $stack--serif: Georgia, Times, serif;
 
 $h--x-small: 1.6rem;
 $h--small: 1.8rem;
-$h--medium: 2.1rem;
+$h--medium: 2.2rem;
 $h--large: 2.4rem;
 $h--x-large: 3.6rem;
 $h--xx-large: 4.8rem;
@@ -41,7 +41,7 @@ $p--x-small: 1.2rem;
 $p--small: 1.4rem;
 $p--base: 1.6rem;
 $p--medium: 1.8rem;
-$p--large: 2.1rem;
+$p--large: 2.2rem;
 
 
 // line-height ratios
@@ -110,6 +110,7 @@ example:
 // basic spacing units
 
 $spacing-unit: 3rem;
+$spacing-unit--x-small: 1rem;
 $spacing-unit--small: 2rem;
 $spacing-unit--large: 4rem;
 

@@ -11,7 +11,7 @@ button {
 	font-family: $stack--sans-serif;
 	font-size: $p--base;
 	font-weight: $w--normal;
-	padding: 16px;
+	padding: 1.7rem;
 	position: relative;
 
 	&.focused {
@@ -58,15 +58,15 @@ button {
 // sizes
 
 .button--large {
-	@include soft--ends($spacing-unit/1.5);
-	font-size: $p--large;
+	padding: 2.2rem 3rem;
 
 	@include mq('tablet') {
-		padding: $spacing-unit/1.2 $spacing-unit;
+		padding: 2.5rem 4rem;
+		font-size: $p--medium;
 	}
 }
 
 .button--small {
 	font-size: $p--small;
-	padding: $spacing-unit/2 $spacing-unit/3;
+	padding: 1.2rem;
 }

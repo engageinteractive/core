@@ -46,15 +46,15 @@ table {
 
 	th,
 	td {
-		padding-right: $spacing-unit / 1.5;
+		padding-right: $spacing-unit--small;
 		vertical-align: top;
 
 		&:first-child {
-			padding-left: $spacing-unit / 2;
+			padding-left: $spacing-unit--small;
 		}
 
 		&:last-child {
-			padding-right: $spacing-unit / 2;
+			padding-right: $spacing-unit--small;
 		}
 
 		> div {
@@ -71,12 +71,11 @@ table {
 	}
 
 	th {
-		@include soft--ends($spacing-unit / 1.5);
+		@include soft--ends($spacing-unit--small);
 		background-color: darken($c--grey-x-light, 3%);
 		border-top: 1px solid $c--grey-light;
 		border-bottom: 1px solid $c--grey-light;
 		font-weight: $w--bold;
-		// padding-bottom: $spacing-unit / 1.5;
 		text-align: left;
 
 		.text,
@@ -90,12 +89,12 @@ table {
 		}
 
 		@include mq('tablet') {
-			@include soft--ends($spacing-unit / 1.2);
+			@include soft--ends($spacing-unit--small);
 		}
 	}
 
 	td {
-		@include soft--ends($spacing-unit / 1.2);
+		@include soft--ends($spacing-unit--small);
 		border-top: 1px solid $c--grey-light;
 
 		@include mq('tablet') {

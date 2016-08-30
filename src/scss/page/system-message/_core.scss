@@ -12,7 +12,8 @@
 @import '../../core/anchor';
 @import '../../core/img';
 
-$spacing-unit: 24px;
+$spacing-unit: 30px;
+$spacing-unit--small: 20px;
 
 body {
 	font: #{16px}/#{24px} $stack--sans-serif;
@@ -54,7 +55,7 @@ body {
 	}
 
 	h1 {
-		@include push--top($spacing-unit / 1.2);
+		@include push--top($spacing-unit--small);
 		font-size: 24px;
 
 		@include mq('tablet-small') {
@@ -64,12 +65,7 @@ body {
 	}
 
 	p {
-		@include push--top($spacing-unit / 2);
-
-		@include mq('tablet-small') {
-			@include push--top($spacing-unit / 1.5);
-			font-size: 18px;
-		}
+		@include push--top($spacing-unit--small);
 	}
 
 	@include mq('tablet-small') {

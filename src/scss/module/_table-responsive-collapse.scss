@@ -28,11 +28,11 @@
 			td {
 
 				&:first-child {
-					padding-top: $spacing-unit / 1.2;
+					padding-top: $spacing-unit--small;
 				}
 
 				&:last-child {
-					padding-bottom: $spacing-unit / 1.2;
+					padding-bottom: $spacing-unit--small;
 				}
 			}
 
@@ -66,7 +66,7 @@
 		}
 
 		td {
-			@include push--top($spacing-unit / 1.5);
+			@include push--top($spacing-unit--small);
 			border-top: none;
 			clear: left;
 			float: left;

@@ -2,21 +2,15 @@
 	line-height: 1;
 
 	ol {
-		list-style: none;
 		text-align: center;
 	}
 
 	li {
-		@include flush--bottom;
-		@include soft--sides($spacing-unit / 4);
 		display: inline-block;
+		margin-left: $spacing-unit--x-small;
 
 		&:first-child {
-			@include hard--left;
-		}
-
-		&:last-child {
-			@include hard--right;
+			margin-left: 0;
 		}
 	}
 
@@ -30,7 +24,7 @@
 	a {
 		background-color: $c--blue;
 		color: $c--white;
-		padding: $spacing-unit/2;
+		padding: $spacing-unit--x-small;
 		text-decoration: none;
 
 		&:hover,
