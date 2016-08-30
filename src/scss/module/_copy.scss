@@ -2,25 +2,39 @@
 	@include content-margins('> *');
 	max-width: 35em;
 
-	ol,
-	ul {
-		margin-left: $spacing-unit;
-		margin-right: $spacing-unit;
+	h1 {
+		@extend .h1;
+	}
+
+	h2 {
+		@extend .h2;
+	}
+
+	h3 {
+		@extend .h3;
+	}
+
+	h4 {
+		@extend .h4;
+	}
+
+	h5 {
+		@extend .h5;
+	}
+
+	h6 {
+		@extend .h6;
 	}
 
 	ol {
-		list-style-type: decimal;
+		@extend .ol;
 	}
 
 	ul {
-		list-style-type: disc;
+		@extend .ul;
 	}
 
-	li {
-		margin-top: .75em;
-
-		&:first-child {
-			margin-top: 0;
-		}
+	@include mq('tablet') {
+		font-size: $p--medium;
 	}
 }

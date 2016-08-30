@@ -21,7 +21,10 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+	font-size: 100%;
+}
+
 .h1,
 .h2,
 .h3,
@@ -30,7 +33,6 @@ h6,
 .h6 {
 	@include content-margins('&');
 	font-weight: $w--bold;
-	font-size: 100%;
 	line-height: 1;
 	margin-top: 1em;
 
@@ -39,49 +41,79 @@ h6,
 	}
 }
 
-h1,
 .h1 {
-	font-size: $h--x-large;
+	font-size: $h--large;
 	line-height: 1;
 	margin-bottom: .5em;
 
+	@include mq('tablet') {
+		font-size: $h--x-large;
+	}
+
 	@include mq('desktop') {
-		font-size: $h--xx-large;
+		font-size: $h--xxx-large;
+		margin-bottom: .3em;
 	}
 }
 
-h2,
 .h2 {
-	font-size: $h--x-large - .6rem;
+	font-size: $h--medium;
 	margin-bottom: .6em;
+
+	@include mq('tablet') {
+		font-size: $h--large;
+	}
+
+	@include mq('desktop') {
+		font-size: $h--xx-large;
+		margin-bottom: .4em;
+	}
+}
+
+.h3 {
+	font-size: $h--small;
+	margin-bottom: .7em;
+
+	@include mq('tablet') {
+		font-size: $h--medium;
+	}
 
 	@include mq('desktop') {
 		font-size: $h--x-large;
+		margin-bottom: .5em;
 	}
 }
 
-h3,
-.h3 {
-	font-size: $h--large;
-	margin-bottom: .7em;
-}
-
-h4,
 .h4 {
-	font-size: $h--medium;
-	margin-bottom: .7em;
-}
-
-h5,
-.h5 {
-	font-size: $h--small;
-	margin-bottom: .8em;
-}
-
-h6,
-.h6 {
 	font-size: $h--x-small;
+	margin-bottom: .7em;
+
+	@include mq('tablet') {
+		font-size: $h--small;
+	}
+
+	@include mq('desktop') {
+		font-size: $h--medium;
+		margin-bottom: .4em;
+	}
+}
+
+.h5 {
+	font-size: $h--xx-small;
+	margin-bottom: .8em;
+
+	@include mq('tablet') {
+		font-size: $h--x-small;
+	}
+}
+
+.h6 {
+	font-size: $h--xxx-small;
 	margin-bottom: .9em;
+
+	@include mq('tablet') {
+		font-size: $h--xx-small;
+	}
 }
 
 
