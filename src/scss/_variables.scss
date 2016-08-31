@@ -152,7 +152,7 @@ $breakpoints: (
 
 $grid-bp: (
 	'base': (
-		'block': (3),
+		'block': (),
 		'columns': (
 			'width': (),
 			'push': (),
@@ -161,7 +161,7 @@ $grid-bp: (
 		'flush': ()
 	),
 	'phone': (
-		'block': (3),
+		'block': (),
 		'columns': (
 			'width': (),
 			'push': (),
@@ -170,7 +170,7 @@ $grid-bp: (
 		'flush': ()
 	),
 	'phone-wide': (
-		'block': (4),
+		'block': (),
 		'columns': (
 			'width': (),
 			'push': (),
