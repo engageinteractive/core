@@ -1,12 +1,5 @@
 $icon-size: 1em;
 
-@mixin icon-container {
-	@include cf;
-	display: inline-block;
-	vertical-align: bottom;
-}
-
-
 // basic icon
 // <svg class="icon icon-name"></svg>
 
@@ -19,14 +12,6 @@ $icon-size: 1em;
 	&:before {
 		display: block;
 	}
-}
-
-
-// icon wrapper
-// <div class="icon-wrapper"><svg class="icon"></svg></div>
-
-.icon-wrapper {
-	@include icon-container;
 }
 
 
