@@ -28,12 +28,15 @@ html {
 }
 
 body {
-	@include soft--ends(3rem);
 	background-color: $c--body-bg;
 	color: $c--body-colour;
 	font-family: $stack--sans-serif;
 	font-size: $font-size;
 	line-height: $line-height;
+}
+
+.site-wrapper {
+	@include soft--ends(3rem);
 
 	@include mq('tablet') {
 		@include soft--ends(5rem);
