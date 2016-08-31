@@ -1,4 +1,4 @@
-$icon-size: $p--large;
+$icon-size: 1em;
 
 @mixin icon-container {
 	@include cf;
@@ -51,12 +51,12 @@ $icon-size: $p--large;
 	}
 
 	&__t {
-		padding-right: $icon-size + $spacing-unit--x-small;
+		padding-right: $icon-size + .5em;
 
 		&:last-child {
 			padding: {
 				right: 0;
-				left: $icon-size + $spacing-unit--x-small;
+				left: $icon-size + .5em;
 			}
 		}
 	}
