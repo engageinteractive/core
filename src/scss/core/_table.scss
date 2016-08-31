@@ -3,6 +3,8 @@
 }
 
 table {
+	border: 1px solid $c--grey-light;
+	border-top: none;
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size: $p--base;
@@ -12,81 +14,21 @@ table {
 	caption {
 		@include vh;
 	}
+}
 
-	tr {
+th,
+td {
+	@include soft--ends($spacing-unit--small);
+	border-top: 1px solid $c--grey-light;
+	padding-right: $spacing-unit--small;
+	vertical-align: top;
 
-		&:first-child {
-
-			td {
-				border-top: none;
-			}
-		}
-
-		&:last-child {
-
-			td {
-				border-bottom: 1px solid $c--grey-light;
-			}
-		}
-
-		&:nth-child(even) {
-
-			td {
-				background-color: $c--grey-x-light;
-			}
-		}
-
-		&:hover {
-
-			td {
-				background-color: darken($c--grey-x-light, 3%);
-			}
-		}
+	&:first-child {
+		padding-left: $spacing-unit--small;
 	}
+}
 
-	th,
-	td {
-		padding-right: $spacing-unit--small;
-		vertical-align: top;
-
-		&:first-child {
-			padding-left: $spacing-unit--small;
-		}
-
-		&:last-child {
-			padding-right: $spacing-unit--small;
-		}
-	}
-
-	th {
-		@include soft--ends($spacing-unit--small);
-		background-color: darken($c--grey-x-light, 3%);
-		border-top: 1px solid $c--grey-light;
-		border-bottom: 1px solid $c--grey-light;
-		font-weight: $w--bold;
-		text-align: left;
-
-		.text,
-		.icon-wrapper {
-			display: inline-block;
-			vertical-align: top;
-		}
-
-		.icon-wrapper {
-			margin-left: $spacing-unit / 6;
-		}
-
-		@include mq('tablet') {
-			@include soft--ends($spacing-unit--small);
-		}
-	}
-
-	td {
-		@include soft--ends($spacing-unit--small);
-		border-top: 1px solid $c--grey-light;
-
-		@include mq('tablet') {
-			@include soft--ends($spacing-unit);
-		}
-	}
+th {
+	font-weight: $w--bold;
+	text-align: left;
 }

@@ -1,5 +1,4 @@
 .table-responsive-collapse {
-
 	.faux-th {
 		display: none;
 
@@ -9,7 +8,6 @@
 	}
 
 	&--collapsed {
-
 		thead {
 			display: none;
 		}
@@ -24,45 +22,7 @@
 		tr {
 			@include cf;
 			border-top: 1px solid $c--grey-light;
-
-			td {
-
-				&:first-child {
-					padding-top: $spacing-unit--small;
-				}
-
-				&:last-child {
-					padding-bottom: $spacing-unit--small;
-				}
-			}
-
-			&:first-child {
-				@include hard--top;
-				border-top: none;
-			}
-
-			&:last-child {
-				padding-bottom: 0;
-
-				td {
-					border-bottom: none;
-					padding-bottom: 0;
-				}
-			}
-
-			&:nth-child(even) {
-
-				td {
-					background-color: transparent;
-				}
-			}
-
-			&:hover {
-
-				td {
-					background-color: transparent;
-				}
-			}
+			padding: $spacing-unit--small;
 		}
 
 		td {
@@ -77,7 +37,6 @@
 
 			&:first-child {
 				@include flush--top;
-				@include hard--left;
 			}
 
 			.faux-th {
@@ -85,13 +44,6 @@
 				display: block;
 				font-weight: $w--bold;
 				padding-bottom: .5em;
-			}
-		}
-
-		tr:first-child {
-
-			td {
-				padding-top: 0;
 			}
 		}
 	}
