@@ -67,5 +67,3 @@
 		</span>
 	</li>
 </ul>
-
-<p><em>Note: If you want to support older versions of IE, you'll need to include the contents of <code>/assets/img/svg-icons/sprite.svg</code> directly on the page.</em></p>
