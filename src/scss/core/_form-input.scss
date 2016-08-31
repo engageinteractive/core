@@ -1,3 +1,9 @@
+$input-border-width: 1px;
+$input-line-height: 1.5;
+$input-padding: 12px;
+$input-validation-icon: $p--base;
+$input-height: ($input-padding * 2) + ($input-border-width * 2) + ($p--base * $input-line-height);
+
 input,
 textarea,
 select,
@@ -7,9 +13,9 @@ select,
 	border-radius: 0;
 	color: $c--black;
 	display: block;
-	font: normal #{$p--base}/1.5 $stack--sans-serif;
-	padding: 1.2rem;
-	height: 5rem;
+	font: normal #{$p--base}/#{$input-line-height} $stack--sans-serif;
+	padding: $input-padding;
+	height: $input-height;
 
 	&.is-focused {
 		border-color: $c--blue;
@@ -45,10 +51,10 @@ input,
 textarea {
 	&.is-valid,
 	&.is-invalid {
-		background-size: 1.6rem;
+		background-size: $input-validation-icon;
 		background-repeat: no-repeat;
-		background-position: right 1.8rem center;
-		padding-right: 5rem;
+		background-position: right $input-validation-icon center;
+		padding-right: $input-validation-icon * 3;
 	}
 
 	&.is-valid {
@@ -157,27 +163,27 @@ select[size],
 select[multiple] {
 	background-image: none;
 	height: auto;
-	padding: .6rem 1.2rem;
+	padding: ($input-padding / 2) $input-padding;
 
 	option {
-		padding: .6rem;
+		padding: ($input-padding / 2);
 	}
 }
 
 .select {
 	position: relative;
 	display: block;
-	height: 5rem;
+	height: $input-height;
 
 	select {
-		padding-right: 5rem;
+		padding-right: $input-validation-icon * 3;
 	}
 
 	// arrow
 	&:after {
-		@include css-triangle($c--grey-dark, 'down', .8rem);
-		top: 50%; right: 1.8rem;
-		margin-top: -.4rem;
+		@include css-triangle($c--grey-dark, 'down', 8px);
+		top: 50%; right: $input-validation-icon;
+		margin-top: -4px;
 		z-index: 3;
 		pointer-events: none;
 	}
@@ -199,7 +205,7 @@ select[multiple] {
 		@include truncate(100%);
 		position: absolute;
 		top: 0; right: 0; bottom: 0; left: 0;
-		padding: 1.2rem 5rem 1.2rem 1.2rem
+		padding: $input-padding ($input-validation-icon * 3) $input-padding $input-padding;
 	}
 
 	&.is-focused-ss {

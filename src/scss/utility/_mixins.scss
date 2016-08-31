@@ -427,7 +427,7 @@
 @mixin typography($w, $h, $file, $type: png, $overflow: hidden) {
 	@include responsive-ratio($w, $h, true);
 	position: relative;
-	max-width: ( $w / 10 ) * 1rem;
+	max-width: $w * 1px;
 	background: url('/assets/img/typography/#{$file}.#{$type}') 50% 50% no-repeat;
 	background-size: contain;
 

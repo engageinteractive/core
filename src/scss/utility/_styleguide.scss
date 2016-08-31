@@ -1,5 +1,5 @@
 .sg {
-	@include soft--ends(3rem);
+	@include soft--ends($spacing-unit);
 }
 
 .sg-header {}
@@ -25,16 +25,16 @@
 }
 
 .sg-body {
-	margin-top: 4rem;
+	margin-top: $spacing-unit--large;
 
 	@include mq('tablet') {
-		margin-top: 6rem;
+		margin-top: $spacing-unit--x-large;
 	}
 }
 
 .sg-group {
-	margin-top: 4rem;
-	padding-top: 4rem;
+	margin-top: $spacing-unit--large;
+	padding-top: $spacing-unit--large;
 	border-top: 1px solid $c--grey-dark;
 
 	&__title {
@@ -48,13 +48,13 @@
 	}
 
 	@include mq('tablet') {
-		margin-top: 6rem;
-		padding-top: 6rem;
+		margin-top: $spacing-unit--x-large;
+		padding-top: $spacing-unit--x-large;
 	}
 }
 
 .sg-section {
-	margin-top: 3rem;
+	margin-top: $spacing-unit;
 
 	&:first-child {
 		margin-top: 0;
@@ -71,21 +71,21 @@
 	}
 
 	&__body {
-		margin-top: 2rem;
+		margin-top: $spacing-unit--small;
 
 		@include mq('tablet') {
-			margin-top: 3rem;
+			margin-top: $spacing-unit;
 		}
 	}
 
 	@include mq('tablet') {
-		margin-top: 4rem;
+		margin-top: $spacing-unit--large;
 	}
 }
 
 .sg-content {
-	margin-top: 2rem;
-	padding-top: 2rem;
+	margin-top: $spacing-unit--small;
+	padding-top: $spacing-unit--small;
 	border-top: 1px dashed $c--grey;
 
 	&:first-child {
@@ -95,8 +95,8 @@
 	}
 
 	@include mq('tablet') {
-		margin-top: 3rem;
-		padding-top: 3rem;
+		margin-top: $spacing-unit;
+		padding-top: $spacing-unit;
 	}
 
 	&__header {
@@ -105,30 +105,30 @@
 
 			&::before {
 				@include css-triangle($c--brand-secondary, 'right');
-				top: 50%; left: -1.5rem;
+				top: 50%; left: n($spacing-unit--small);
 				transform: translateY(-50%);
 			}
 		}
 	}
 
 	&__example {
-		margin-top: 2rem;
+		margin-top: $spacing-unit--small;
 
 		@include mq('tablet') {
-			margin-top: 3rem;
+			margin-top: $spacing-unit;
 		}
 	}
 
 	&__markup {
-		margin-top: 2rem;
+		margin-top: $spacing-unit--small;
 
 		&__source {
-			margin-top: 2rem;
+			margin-top: $spacing-unit--small;
 			text-align: left;
 		}
 
 		@include mq('tablet') {
-			margin-top: 3rem;
+			margin-top: $spacing-unit;
 		}
 	}
 }
@@ -137,7 +137,7 @@
  */
 
 .sg-colour-scheme {
-	$colour-size: 10rem;
+	$colour-size: 100px;
 	@include cf;
 
 	li {
@@ -145,7 +145,7 @@
 		@include content-margins;
 		@include push--top($spacing-unit--small);
 		line-height: $colour-size;
-		padding-left: $colour-size + 1.5rem;
+		padding-left: $colour-size + 15px;
 		position: relative;
 		white-space: nowrap;
 
@@ -194,7 +194,7 @@
 	span {
 		display: block;
 		position: relative;
-		padding: 1rem;
+		padding: $spacing-unit--x-small;
 		border: solid 1px $c--grey-light;
 		text-align: center;
 		background: $c--grey-x-light;

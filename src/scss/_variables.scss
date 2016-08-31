@@ -30,21 +30,21 @@ $stack--serif: Georgia, Times, serif;
 
 // font sizes
 
-$h--xxx-small: 1.6rem;
-$h--xx-small: 1.8rem;
-$h--x-small: 2rem;
-$h--small: 2.2rem;
-$h--medium: 2.4rem;
-$h--large: 2.8rem;
-$h--x-large: 3.6rem;
-$h--xx-large: 4.8rem;
-$h--xxx-large: 6.4rem;
+$h--xxx-small: 16px;
+$h--xx-small: 18px;
+$h--x-small: 20px;
+$h--small: 22px;
+$h--medium: 24px;
+$h--large: 28px;
+$h--x-large: 36px;
+$h--xx-large: 48px;
+$h--xxx-large: 64px;
 
-$p--x-small: 1.2rem;
-$p--small: 1.4rem;
-$p--base: 1.6rem;
-$p--medium: 1.8rem;
-$p--large: 2.2rem;
+$p--x-small: 12px;
+$p--small: 14px;
+$p--base: 16px;
+$p--medium: 18px;
+$p--large: 24px;
 
 
 // line-height ratios
@@ -112,10 +112,11 @@ example:
 
 // basic spacing units
 
-$spacing-unit: 3rem;
-$spacing-unit--x-small: 1rem;
-$spacing-unit--small: 2rem;
-$spacing-unit--large: 4rem;
+$spacing-unit: 30px;
+$spacing-unit--x-small: 10px;
+$spacing-unit--small: 20px;
+$spacing-unit--large: 40px;
+$spacing-unit--x-large: 60px;
 
 
 // page gutter

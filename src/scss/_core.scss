@@ -36,10 +36,10 @@ body {
 }
 
 .site-wrapper {
-	@include soft--ends(3rem);
+	@include soft--ends($spacing-unit);
 
 	@include mq('tablet') {
-		@include soft--ends(5rem);
+		@include soft--ends($spacing-unit--large);
 	}
 }
 

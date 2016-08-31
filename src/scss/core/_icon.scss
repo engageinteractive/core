@@ -1,4 +1,4 @@
-$icon-size: 2.4rem;
+$icon-size: $p--large;
 
 @mixin icon-container {
 	@include cf;
