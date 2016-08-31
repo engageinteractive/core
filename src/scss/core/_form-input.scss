@@ -10,22 +10,39 @@ select,
 	font: normal #{$p--base}/1.5 $stack--sans-serif;
 	padding: 1.2rem;
 	height: 5rem;
-}
-
-input,
-textarea,
-select,
-.simple-select {
-	&:focus {
-		border-color: $c--grey;
-	}
 
 	&.is-focused {
 		border-color: $c--blue;
 		box-shadow: 0 0 5px $c--blue;
 	}
 
-	// validation
+	&.is-invalid {
+		border-color: $c--negative;
+
+		&:focus {
+			border-color: $c--negative;
+		}
+
+		&.is-focused {
+			box-shadow: 0 0 5px $c--negative;
+		}
+	}
+}
+
+input,
+textarea,
+select {
+	&:focus {
+		border-color: $c--grey;
+	}
+
+	@include input-placeholder {
+		color: $c--grey-light;
+	}
+}
+
+input,
+textarea {
 	&.is-valid,
 	&.is-invalid {
 		background-size: 1.6rem;
@@ -40,26 +57,6 @@ select,
 
 	&.is-invalid {
 		background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22%3E%3Cpath style=%22fill:%23F50023%22 d=%22M28.943 24l-8-8 8-8a.823.823 0 0 0 0-1.165l-3.78-3.778a.82.82 0 0 0-1.164 0l-8 8-7.998-8a.825.825 0 0 0-1.165 0l-3.78 3.778a.824.824 0 0 0 0 1.165l8 8-8 8a.823.823 0 0 0 0 1.165l3.78 3.778a.824.824 0 0 0 1.165 0l8-7.998 7.998 8a.823.823 0 0 0 1.165 0l3.78-3.78a.824.824 0 0 0 0-1.166z%22/%3E%3C/svg%3E');
-		border-color: $c--negative;
-
-		&:focus {
-			border-color: $c--negative;
-		}
-
-		&.is-focused {
-			box-shadow: 0 0 5px $c--negative;
-		}
-	}
-
-	// placeholder text
-	@include input-placeholder {
-		color: $c--grey-light;
-	}
-}
-
-.simple-select {
-	&.is-focused-ss {
-		border-color: $c--grey;
 	}
 }
 
@@ -186,6 +183,7 @@ select[multiple] {
 	}
 }
 
+// select plugin
 .simple-select {
 	select {
 		background-color: transparent;
@@ -195,6 +193,17 @@ select[multiple] {
 		z-index: 1;
 		opacity: 0;
 		padding: 0;
+	}
+
+	&__label {
+		@include truncate(100%);
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		padding: 1.2rem 5rem 1.2rem 1.2rem
+	}
+
+	&.is-focused-ss {
+		border-color: $c--grey;
 	}
 }
 
