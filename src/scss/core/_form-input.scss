@@ -85,7 +85,7 @@ $radio-inner-size: $checkbox-size / 2;
 		padding-left: $checkbox-size + $spacing-unit--x-small;
 		position: relative;
 
-		&:before {
+		&::before {
 			background: center center no-repeat;
 			background-size: 80%;
 			border: 2px solid $c--grey;
@@ -101,7 +101,7 @@ $radio-inner-size: $checkbox-size / 2;
 	}
 
 	&.is-focused {
-		+ label:before {
+		+ label::before {
 			box-shadow: 0 0 3px 1px $c--blue;
 		}
 	}
@@ -116,7 +116,7 @@ $radio-inner-size: $checkbox-size / 2;
 
 	// validation
 	&.is-invalid {
-		+ label:before {
+		+ label::before {
 			border-color: $c--negative;
 		}
 	}
@@ -124,19 +124,19 @@ $radio-inner-size: $checkbox-size / 2;
 
 .checkbox {
 	&:checked {
-		+ label:before {
+		+ label::before {
 			background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22415.582%22 height=%22415.582%22 viewBox=%220 0 415.582 415.582%22 style=%22fill:%23444444;%22%3E%3Cpath d=%22M411.47 96.426l-46.32-46.32c-5.48-5.482-14.37-5.482-19.852 0l-192.95 192.952-82.066-82.064c-5.48-5.482-14.37-5.482-19.85 0l-46.32 46.32c-5.482 5.48-5.482 14.37 0 19.852l138.31 138.31a13.99 13.99 0 0 0 9.927 4.112c3.592 0 7.185-1.37 9.925-4.112l249.195-249.2a14.034 14.034 0 0 0 0-19.85z%22/%3E%3C/svg%3E');
 		}
 	}
 }
 
 .radio {
-	+ label:before {
+	+ label::before {
 		border-radius: 50%;
 	}
 
 	&:checked {
-		+ label:after {
+		+ label::after {
 			background: $c--grey-dark;
 			border-radius: 50%;
 			content: '';
@@ -180,7 +180,7 @@ select[multiple] {
 	}
 
 	// arrow
-	&:after {
+	&::after {
 		@include css-triangle($c--grey-dark, 'down', 8px);
 		top: 50%; right: $input-validation-icon;
 		margin-top: -4px;

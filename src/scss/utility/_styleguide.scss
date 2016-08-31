@@ -141,7 +141,7 @@
 	@include cf;
 
 	li {
-		@include colours('&:before', $chain: '&.');
+		@include colours('&::before', $chain: '&.');
 		@include content-margins;
 		@include push--top($spacing-unit--small);
 		line-height: $colour-size;
@@ -149,7 +149,7 @@
 		position: relative;
 		white-space: nowrap;
 
-		&:before {
+		&::before {
 			@include pseudo;
 			width: $colour-size;
 			height: $colour-size;
