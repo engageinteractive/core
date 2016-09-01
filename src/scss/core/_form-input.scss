@@ -232,19 +232,6 @@ textarea[disabled] {
 }
 
 
-// labels
-label,
-.label {
-	cursor: pointer;
-	display: block;
-	font-weight: $w--bold;
-
-	+ * {
-		margin-top: .5em;
-	}
-}
-
-
 // error labels for extra descriptive errors
 .error-text {
 	background-color: $c--negative;

@@ -1,25 +1,25 @@
 <form>
 	<fieldset class="row row--compact flush-first-1">
 		<div class="column">
-			<label for="form-example-text">Text</label>
+			<label class="label" for="form-example-text">Text</label>
 
 			<input type="text" name="form-example-text" id="form-example-text">
 		</div>
 
 		<div class="column">
-			<label for="form-example-text-value">Text (with value)</label>
+			<label class="label" for="form-example-text-value">Text (with value)</label>
 
 			<input type="text" name="form-example-text-value" id="form-example-text-value" value="A test value">
 		</div>
 
 		<div class="column">
-			<label for="form-example-text-required">Text (required)</label>
+			<label class="label" for="form-example-text-required">Text (required)</label>
 
 			<input type="text" name="form-example-text-required" id="form-example-text-required" required>
 		</div>
 
 		<div class="column">
-			<label for="form-example-text-placeholder">Text (with placeholder)</label>
+			<label class="label" for="form-example-text-placeholder">Text (with placeholder)</label>
 
 			<input type="text" name="form-example-text-placeholder" id="form-example-text-placeholder" placeholder="A placeholder value">
 		</div>
@@ -41,13 +41,13 @@
 		</div>
 
 		<div class="column">
-			<label for="form-example-text-disabled">Text (disabled)</label>
+			<label class="label" for="form-example-text-disabled">Text (disabled)</label>
 
 			<input type="text" name="form-example-text-disabled" id="form-example-text-disabled" disabled>
 		</div>
 
 		<div class="column">
-			<label for="form-example-text-disabled-2">Text (failed validation)</label>
+			<label class="label" for="form-example-text-disabled-2">Text (failed validation)</label>
 
 			<input type="text" name="form-example-text-disabled-2" id="form-example-text-disabled-2" class="is-invalid" required>
 
@@ -55,49 +55,49 @@
 		</div>
 
 		<div class="column">
-			<label for="form-example-text-disabled-3">Text (passed validation)</label>
+			<label class="label" for="form-example-text-disabled-3">Text (passed validation)</label>
 
 			<input type="text" name="form-example-text-disabled-3" id="form-example-text-disabled-3" class="is-valid" required>
 		</div>
 
 		<div class="column">
-			<label for="form-example-email">Email</label>
+			<label class="label" for="form-example-email">Email</label>
 
 			<input type="email" name="form-example-email" id="form-example-email">
 		</div>
 
 		<div class="column">
-			<label for="form-example-date">Date</label>
+			<label class="label" for="form-example-date">Date</label>
 
 			<input type="date" name="form-example-date" id="form-example-date">
 		</div>
 
 		<div class="column">
-			<label for="form-search">Search</label>
+			<label class="label" for="form-search">Search</label>
 
 			<input type="search" name="form-search" id="form-search">
 		</div>
 
 		<div class="column">
-			<label for="form-example-telephone">Telephone</label>
+			<label class="label" for="form-example-telephone">Telephone</label>
 
 			<input type="tel" name="form-example-telephone" id="form-example-telephone">
 		</div>
 
 		<div class="column">
-			<label for="form-example-number">Number</label>
+			<label class="label" for="form-example-number">Number</label>
 
 			<input type="number" name="form-example-number" id="form-example-number">
 		</div>
 
 		<div class="column">
-			<label for="form-example-textarea">Textarea</label>
+			<label class="label" for="form-example-textarea">Textarea</label>
 
 			<textarea name="form-example-textarea" id="form-example-textarea" rows="10"></textarea>
 		</div>
 
 		<div class="column">
-			<label for="form-example-select-unstyled">Select (unstyled)</label>
+			<label class="label" for="form-example-select-unstyled">Select (unstyled)</label>
 
 			<select name="form-example-select-unstyled" id="form-example-select-unstyled">
 				<option>Option 1</option>
@@ -113,7 +113,7 @@
 		</div>
 
 		<div class="column">
-			<label for="form-example-select-styled">Select (styled, with custom arrow)</label>
+			<label class="label" for="form-example-select-styled">Select (styled, with custom arrow)</label>
 
 			<div class="select">
 				<select name="form-example-select-styled" id="form-example-select-styled">
@@ -135,7 +135,7 @@
 		</div>
 
 		<div class="column">
-			<label for="form-example-select-multiple">Select (multiple)</label>
+			<label class="label" for="form-example-select-multiple">Select (multiple)</label>
 
 			<select name="form-example-select-multiple" id="form-example-select-multiple" multiple="multiple" size="5" class="valid">
 				<option>Option 1</option>
@@ -157,22 +157,22 @@
 			<ul class="fields-list-inline">
 				<li>
 					<input id="form-example-checkbox-1b" type="checkbox" class="checkbox" checked>
-					<label for="form-example-checkbox-1b">Option 1</label>
+					<label class="label" for="form-example-checkbox-1b">Option 1</label>
 				</li>
 
 				<li>
 					<input id="form-example-checkbox-2b" type="checkbox" class="checkbox">
-					<label for="form-example-checkbox-2b">Option 2</label>
+					<label class="label" for="form-example-checkbox-2b">Option 2</label>
 				</li>
 
 				<li>
 					<input id="form-example-checkbox-3b" type="checkbox" class="checkbox" class="is-invalid">
-					<label for="form-example-checkbox-3b">Option 3 error</label>
+					<label class="label" for="form-example-checkbox-3b">Option 3 error</label>
 				</li>
 
 				<li>
 					<input id="form-example-checkbox-4b" type="checkbox" class="checkbox" disabled>
-					<label for="form-example-checkbox-4b">Option Disabled</label>
+					<label class="label" for="form-example-checkbox-4b">Option Disabled</label>
 				</li>
 			</ul>
 		</div>
@@ -183,22 +183,22 @@
 			<ul class="fields-list">
 				<li>
 					<input id="form-example-radio-1" name="radio" type="radio" class="radio" checked>
-					<label for="form-example-radio-1">Option 1</label>
+					<label class="label" for="form-example-radio-1">Option 1</label>
 				</li>
 
 				<li>
 					<input id="form-example-radio-2" name="radio" type="radio" class="radio">
-					<label for="form-example-radio-2">Option 2</label>
+					<label class="label" for="form-example-radio-2">Option 2</label>
 				</li>
 
 				<li>
 					<input id="form-example-radio-3" name="radio" type="radio" class="radio" class="is-invalid">
-					<label for="form-example-radio-3">Option 3 error</label>
+					<label class="label" for="form-example-radio-3">Option 3 error</label>
 				</li>
 
 				<li>
 					<input id="form-example-radio-4" name="radio" type="radio" class="radio" disabled>
-					<label for="form-example-radio-4">Option Disabled</label>
+					<label class="label" for="form-example-radio-4">Option Disabled</label>
 				</li>
 			</ul>
 		</div>
