@@ -33,7 +33,7 @@ dt {
 }
 
 dd {
-	@include push--top(.5em);
+	margin: .5em 0 0;
 
 	@include mq('tablet') {
 		@include push--top(1em);
