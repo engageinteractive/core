@@ -2,6 +2,7 @@ a,
 .a {
 	color: $c--brand-primary;
 	text-decoration: underline;
+	cursor: pointer;
 
 	&:hover {
 		text-decoration: none;
