@@ -2,7 +2,6 @@ $hr-height: 1px;
 
 hr,
 .hr {
-	@include flush--ends;
 	height: $hr-height;
 	background-color: $c--black;
 	border: none;

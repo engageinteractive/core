@@ -132,7 +132,7 @@ h6 {
 
 ol,
 ul {
-	@include unlist;
+	list-style: none;
 }
 
 
