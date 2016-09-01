@@ -18,7 +18,7 @@ var
 	config = {
 		url: 'front-end-baseplate.dev.com',
 		tinypngKey: process.env.TINYPNG_KEY,
-		autoprefixer: ['last 2 versions', 'IE 9']
+		autoprefixer: ['last 2 versions', 'IE 9', 'Safari 8']
 	},
 
 	// Dependencies
