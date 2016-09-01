@@ -238,7 +238,10 @@ label,
 	cursor: pointer;
 	display: block;
 	font-weight: $w--bold;
-	margin-bottom: .5em;
+
+	+ * {
+		margin-top: .5em;
+	}
 }
 
 
