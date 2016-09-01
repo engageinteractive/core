@@ -36,14 +36,19 @@ function viewport() {
 
 window.siteResize = function() {
 
-	var dimensions = viewport();
+	var dimensions = viewport(),
+		prevWidth = site.width,
+		prevHeight = site.height;
 
 	site.width = dimensions.width;
 	site.height = dimensions.height;
 
+	var x = prevWidth != site.width,
+		y = prevHeight != site.height;
+
 	$.each(site.resize, function() {
 
-		this();
+		this(x, y);
 
 	});
 
@@ -162,7 +167,7 @@ $core.win.on({
 
 /*--------------------------------
 
-    External/internal links
+	External/internal links
 
 --------------------------------*/
 
@@ -182,7 +187,7 @@ jQuery.extend(jQuery.expr[':'], {
 
 /*--------------------------------
 
-    BEM helpers
+	BEM helpers
 
 --------------------------------*/
 
@@ -211,7 +216,7 @@ window.bem = {
 
 /*--------------------------------
 
-    Ready? Go!
+	Ready? Go!
 
 --------------------------------*/
 
