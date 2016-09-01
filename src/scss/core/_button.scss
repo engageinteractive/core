@@ -1,20 +1,15 @@
 // basic buttons
 
-button {
-	border: none;
-}
-
 .button {
 	background-color: $c--brand-primary;
 	color: $c--white;
-	display: inline-block;
 	font-family: $stack--sans-serif;
 	font-size: $p--base;
 	font-weight: $w--normal;
 	padding: 17px;
 	position: relative;
 
-	&.focused {
+	&.is-focused {
 		box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue;
 	}
 
