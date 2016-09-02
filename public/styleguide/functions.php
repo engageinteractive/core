@@ -95,8 +95,6 @@ function sgContent($type, $folder = 'components', $showMarkup = true){
 		$documentation = 'usage/'.$type.'/'.$file;
 		$id =  $type . '-' . $filename;
 
-		echo 'xxx' . $id;
-
 		$html .= "<article class=\"sg-content\">\n";
 
 			$html .= "\t<header class=\"sg-content__header\">\n";
