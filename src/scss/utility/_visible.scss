@@ -1,19 +1,20 @@
-.base-hidden {
+.hidden {
 	@include hidden;
 }
 
-.base-visible {
+.visible {
 	@include visible;
 }
 
-.base-visible-inline {
+.visible-inline {
 	@include visible('inline');
 }
-.base-visible-inline-block {
+
+.visible-inline-block {
 	@include visible('inline-block');
 }
 
-.base-visible-td {
+.visible-td {
 	@include visible('table-cell');
 }
 
@@ -21,23 +22,23 @@
 
 	@include mq($name) {
 
-		.#{$name}-hidden {
+		.hidden--#{$name} {
 			@include hidden;
 		}
 
-		.#{$name}-visible {
+		.visible--#{$name} {
 			@include visible;
 		}
 
-		.#{$name}-visible-inline {
+		.visible-inline--#{$name} {
 			@include visible('inline');
 		}
 
-		.#{$name}-visible-inline-block {
+		.visible-inline-block--#{$name} {
 			@include visible('inline-block');
 		}
 
-		.#{$name}-visible-td {
+		.visible-td--#{$name} {
 			@include visible('table-cell');
 		}
 
