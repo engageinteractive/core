@@ -34,19 +34,19 @@ function viewport() {
  *  functions after a browser resize.
  */
 
-window.siteResize = function() {
+window.coreResize = function() {
 
 	var dimensions = viewport(),
-		prevWidth = site.width,
-		prevHeight = site.height;
+		prevWidth = core.width,
+		prevHeight = core.height;
 
-	site.width = dimensions.width;
-	site.height = dimensions.height;
+	core.width = dimensions.width;
+	core.height = dimensions.height;
 
-	var x = prevWidth != site.width,
-		y = prevHeight != site.height;
+	var x = prevWidth != core.width,
+		y = prevHeight != core.height;
 
-	$.each(site.resize, function() {
+	$.each(core.resize, function() {
 
 		this(x, y);
 
@@ -54,9 +54,9 @@ window.siteResize = function() {
 
 };
 
-window.clearSiteResize = function(name) {
+window.clearCoreResize = function(name) {
 
-	delete site.resize[name];
+	delete core.resize[name];
 
 };
 
@@ -88,21 +88,7 @@ window.rangeToRange = function(oldVal, oldMax, oldMin, newMax, newMin) {
 
 --------------------------------*/
 
-window.$core = {
-	win: $(window),
-	doc: $(document),
-	html: $('html'),
-	body: $('body')
-};
-
-window.$site = {
-	wrapper: $('#site-wrapper'),
-	content: $('#site-content'),
-	header: $('#site-header'),
-	footer: $('#site-footer')
-};
-
-window.site = {
+window.core = {
 	resize: {},
 	resizeTimer: false,
 	width: viewport().width,
@@ -121,10 +107,10 @@ window.site = {
 			x = document.documentElement.scrollLeft;
 			x = x === 0 ? document.body.scrollLeft : x;
 
-			site.scroll.x = x;
-			site.scroll.y = y;
+			core.scroll.x = x;
+			core.scroll.y = y;
 
-			$.each(site.scroll.listener, function() {
+			$.each(core.scroll.listener, function() {
 
 				this();
 
@@ -142,22 +128,22 @@ window.site = {
 
 --------------------------------*/
 
-$core.win.on({
+$(window).on({
 	resize: function() {
 
-		clearTimeout(site.resizeTimer);
-		site.resizeTimer = setTimeout(siteResize, 300);
+		clearTimeout(core.resizeTimer);
+		core.resizeTimer = setTimeout(coreResize, 300);
 
 	},
 	scroll: function() {
 
 		if (Modernizr.raf) {
 
-			requestAnimationFrame(site.scroll.update);
+			requestAnimationFrame(core.scroll.update);
 
 		} else {
 
-			site.scroll.update();
+			core.scroll.update();
 
 		}
 
@@ -222,7 +208,7 @@ window.bem = {
 
 $('[data-img]').loadImg();
 
-$core.body.on('click', 'a:external:not(.internal), a.external', function(e) {
+$(document.body).on('click', 'a:external:not(.internal), a.external', function(e) {
 
 	if (e.which !== 2) {
 
@@ -237,6 +223,6 @@ if (!Modernizr.csspointerevents) {
 	simpleSelect($('.select select:not([multiple="multiple"])'));
 }
 
-$core.body.fitVids();
+$(document.body).fitVids();
 
 svg4everybody();

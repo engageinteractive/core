@@ -2,16 +2,14 @@
   extends: 'airbnb-base',
   globals: {
     '$': true,
-    '$core': true,
-    '$site': true,
     'Modernizr': true,
     'bem': true,
-    'clearSiteResize': true,
+    'clearCoreResize': true,
+    'core': true,
+    'coreResize': true,
     'getRandomInt': true,
     'jQuery': true,
-    'rangeToRange': true,
-    'site': true,
-    'siteResize': true
+    'rangeToRange': true
   },
   rules: {
     # overrides

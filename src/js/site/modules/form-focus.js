@@ -4,7 +4,7 @@
 		mouseActive = false,
 		selectors = 'input, select, textarea, button, .button';
 
-	$core.body
+	$(document.body)
 		.on('mousedown', selectors, function() {
 
 			mouseActive = true;
