@@ -1,5 +1,3 @@
-/* global simpleSelect */
-
 /*--------------------------------
 
 	Functions
@@ -124,7 +122,7 @@ window.core = {
 
 /*--------------------------------
 
-	Indirect events
+	Window events
 
 --------------------------------*/
 
@@ -149,80 +147,3 @@ $(window).on({
 
 	}
 });
-
-
-/*--------------------------------
-
-	External/internal links
-
---------------------------------*/
-
-jQuery.extend(jQuery.expr[':'], {
-	external: function(obj) {
-
-		return (obj.hostname !== location.hostname) && /:\/\//.test($(obj).attr('href'));
-
-	},
-	internal: function(obj) {
-
-		return (obj.hostname === location.hostname) || !/:\/\//.test($(obj).attr('href'));
-
-	}
-});
-
-
-/*--------------------------------
-
-	BEM helpers
-
---------------------------------*/
-
-window.bem = {
-
-	states: {
-		active: 'is-active',
-		hidden: 'is-hidden',
-		loading: 'is-loading'
-	},
-
-	event: function(_block, _event) {
-
-		return _block + ':' + _event;
-
-	},
-
-	selector: function(_block, _element) {
-
-		return '.js-' + _block + (_element ? ('__' + _element) : '');
-
-	}
-
-};
-
-
-/*--------------------------------
-
-	Ready? Go!
-
---------------------------------*/
-
-$('[data-img]').loadImg();
-
-$(document.body).on('click', 'a:external:not(.internal), a.external', function(e) {
-
-	if (e.which !== 2) {
-
-		window.open($(this).attr('href'));
-		e.preventDefault();
-
-	}
-
-});
-
-if (!Modernizr.csspointerevents) {
-	simpleSelect($('.select select:not([multiple="multiple"])'));
-}
-
-$(document.body).fitVids();
-
-svg4everybody();
