@@ -33,6 +33,7 @@ h6 {
 .h5,
 .h6 {
 	@include content-margins('&');
+	font-family: $stack--heading;
 	font-weight: $w--bold;
 	line-height: 1;
 	margin-top: 1em;

@@ -13,7 +13,7 @@ select,
 	border-radius: 0;
 	color: $c--black;
 	display: block;
-	font: normal #{$p--base}/#{$input-line-height} $stack--sans-serif;
+	font: normal #{$p--base}/#{$input-line-height} $stack;
 	padding: $input-padding;
 	height: $input-height;
 

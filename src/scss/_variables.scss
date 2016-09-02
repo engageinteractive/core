@@ -24,8 +24,8 @@ $dev-mode: true;
 // font stacks
 // for embedded custom fonts, list name below as normal. To generate code see example in utlity/core.scss
 
-$stack--sans-serif: Helvetica, Arial, sans-serif;
-$stack--serif: Georgia, Times, serif;
+$stack: Helvetica, Arial, sans-serif;
+$stack--heading: $stack;
 
 
 // font sizes
