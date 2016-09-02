@@ -191,7 +191,7 @@ gulp.task('images', function() {
 		.pipe(optimised)
 		.pipe(plugins.tinypngCompress({
 			key: config.tinypngKey,
-			sigFile: paths.images.dir + '/.tinypng',
+			sigFile: paths.images.dest + '/.tinypng',
 			summarise: true
 		}))
 		.pipe(optimised.restore)
