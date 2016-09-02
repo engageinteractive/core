@@ -1,6 +1,5 @@
 <!doctype html>
-<!--[if lte IE 8]>     <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 <head>
 
 	<meta charset="utf-8">
@@ -15,19 +14,7 @@
 	<link rel="apple-touch-icon" href="/assets/img/meta/favicon-180.png">
 	<link rel="mask-icon" href="/assets/img/meta/mask-icon.svg" color="#000000">
 
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-
-	<!-- use this if just supporting IE9+ -->
 	<link rel="stylesheet" href="/assets/css/main.css">
-
-	<!-- use these if supporting IE8+ -->
-	<!--[if (gt IE 8) | (IEMobile)]><!-->
-	<!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
-	<!--<![endif]-->
-
-	<!--[if (lte IE 8) & (!IEMobile)]>
-	<!-- <link rel="stylesheet" href="/assets/css/fixed-width.css"> -->
-	<![endif]-->
 
 	<script src="/assets/static/js/modernizr.js"></script>
 
@@ -66,7 +53,7 @@
 
 			<div class="container">
 
-				<h1><a href="/">Front-end Baseplate</a></h1>
+				<h1 class="h2"><a href="/">Front-end Baseplate</a></h1>
 
 			</div>
 

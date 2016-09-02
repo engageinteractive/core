@@ -6,49 +6,54 @@
 
 @mixin block-grid {
 	@include cf;
-	@include unlist;
 
 	> * {
 		display: block;
 		float: left;
+		width: 100%;
 	}
 }
 
-@mixin block-grid-column($columns){
-	width: 100% / $columns;
+@mixin block-grid-item($modifierClass, $i) {
+	.block-grid--#{$modifierClass}#{$i} {
+		> * {
+			width: 100% / $i;
+		}
+	}
 }
 
-@mixin block-grid-items($modifier: "") {
+@mixin block-grid-items($modifier: '') {
 
-	@if $modifier != "" {
-		$modifier: '#{$modifier}';
+	$modifierClass: '';
+
+	@if $modifier != '' {
+		$modifierClass: '#{$modifier}-';
+	}
+	@else {
+		$modifier: 'base';
 	}
 
 	@for $i from 1 through $grid-column-count {
 
-		@if $dev_mode {
-			.#{$modifier}-block-grid-#{$i} {
-				> * {
-					width: 100% / $i;
-				}
-			}
+		@if $dev-mode {
+
+			@include block-grid-item($modifierClass, $i);
+
 		} @else if index( map-deep-get($grid-bp, $modifier, block) , $i) or map-deep-get($grid-bp, $modifier, block) == true {
-			.#{$modifier}-block-grid-#{$i} {
-				> * {
-					width: 100% / $i;
-				}
-			}
+
+			@include block-grid-item($modifierClass, $i);
+
 		}
 
 	}
 
 }
 
-[class*='-block-grid-'] {
+.block-grid {
 	@include block-grid;
 }
 
-@include block-grid-items("base");
+@include block-grid-items;
 
 @each $name, $min-width in $breakpoints {
 

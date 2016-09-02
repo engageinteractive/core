@@ -1,4 +1,4 @@
-@import "utility/defaults";
+@import 'utility/defaults';
 
 
 /*--------------------------------
@@ -12,7 +12,7 @@
 
 */
 
-$dev_mode: true;
+$dev-mode: true;
 
 
 /*--------------------------------
@@ -24,55 +24,57 @@ $dev_mode: true;
 // font stacks
 // for embedded custom fonts, list name below as normal. To generate code see example in utlity/core.scss
 
-$sans-serif: Helvetica, Arial, sans-serif;
-$serif: Georgia, Times, serif;
+$stack--sans-serif: Helvetica, Arial, sans-serif;
+$stack--serif: Georgia, Times, serif;
 
 
 // font sizes
 
-$h-x-small: 1.6rem;
-$h-small: 1.8rem;
-$h-medium: 2.1rem;
-$h-large: 2.4rem;
-$h-x-large: 3.6rem;
-$h-xx-large: 4.8rem;
+$h--xxx-small: 16px;
+$h--xx-small: 18px;
+$h--x-small: 20px;
+$h--small: 22px;
+$h--medium: 24px;
+$h--large: 28px;
+$h--x-large: 36px;
+$h--xx-large: 48px;
+$h--xxx-large: 64px;
 
-$p-x-small: 1.2rem;
-$p-small: 1.4rem;
-$p-base: 1.6rem;
-$p-medium: 1.8rem;
-$p-large: 2.1rem;
-$p-x-large: 2.4rem;
+$p--x-small: 12px;
+$p--small: 14px;
+$p--base: 16px;
+$p--medium: 18px;
+$p--large: 24px;
 
 
 // line-height ratios
 
-$lh-mini: 1.1;
-$lh-small: 1.25;
-$lh-base: 1.5;
-$lh-large: 1.75;
+$lh--x-small: 1.1;
+$lh--small: 1.25;
+$lh--base: 1.5;
+$lh--large: 1.75;
 
 
 // default font sizes / line-height
 
-$base-font-size: $p-base;
-$base-line-height: $lh-base;
+$font-size: $p--base;
+$line-height: $lh--base;
 
 
 // letter spacing
 
-$letter-spacing: (
+$ls: (
 	base: -30
 );
 
 
 // weights
 
-$w-light: 300;
-$w-normal: 400;
-$w-semibold: 600;
-$w-bold: 700;
-$w-heavy: 800;
+// $w--light: 300;
+$w--normal: 400;
+// $w--semibold: 600;
+$w--bold: 700;
+// $w--heavy: 800;
 
 
 
@@ -93,7 +95,7 @@ use:
 example:
 
 	.box {
-		width: breakpoint("phone-wide");
+		width: breakpoint('phone-wide');
 	}
 
 	would generate:
@@ -110,117 +112,129 @@ example:
 
 // basic spacing units
 
-$base-spacing-unit: 2.4rem;
+$spacing-unit: 30px;
+$spacing-unit--x-small: 10px;
+$spacing-unit--small: 20px;
+$spacing-unit--large: 40px;
+$spacing-unit--x-large: 60px;
+
+
+// page gutter
+$page-gutter: $spacing-unit--small;
+$page-gutter--tablet: $spacing-unit;
+$page-gutter--desktop: $spacing-unit--large;
 
 
 // grid
 
 $grid-column-count: 24;
-$grid-column-gutter: 2.4rem;
+$grid-column-gutter: $spacing-unit--small;
+$grid-column-gutter--tablet: $spacing-unit;
+$grid-column-gutter--desktop: $spacing-unit--large;
 
 
 // media queries and breakpoints
 // build mobile first 300+
 
 $breakpoints: (
-	"phone":        375px,
-	"phone-wide":   480px,
-	"phablet":      560px,
-	"tablet-small": 640px,
-	"tablet":       768px,
-	"tablet-wide":  1024px,
-	"desktop":      1248px,
-	"desktop-wide": 1440px
+	'phone':        375px,
+	'phone-wide':   480px,
+	'phablet':      560px,
+	'tablet-small': 640px,
+	'tablet':       768px,
+	'tablet-wide':  1024px,
+	'desktop':      1248px,
+	'desktop-wide': 1440px
 );
 
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
 // this is to keep unused code to a minimum
 
 $grid-bp: (
-	"base": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'base': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"phone": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'phone': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"phone-wide": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'phone-wide': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"phablet": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'phablet': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"tablet-small": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'tablet-small': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"tablet": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'tablet': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"tablet-wide": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'tablet-wide': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"desktop": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'desktop': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	),
-	"desktop-wide": (
-		"block": (),
-		"columns": (
-			"width": (),
-			"push": (),
-			"pull": ()
+	'desktop-wide': (
+		'block': (),
+		'columns': (
+			'width': (),
+			'push': (),
+			'pull': ()
 		),
-		"flush": ()
+		'flush': ()
 	)
 );
 
-$max-width: breakpoint("desktop");
+$max-width: breakpoint('desktop');
 
 
 // z-indexing
@@ -231,10 +245,10 @@ suggested naming convention would be the class/ID the z-index is going on
 */
 
 $z-indexes: (
-	"outdated-browser",
-	"site-header",
-	"site-content",
-	"site-footer"
+	'outdated-browser',
+	'site-header',
+	'site-content',
+	'site-footer'
 );
 
 
@@ -247,54 +261,54 @@ $z-indexes: (
 
 // brand colours
 
-$c-brand-primary: #fdbc00;
-$c-brand-secondary: #e74c3c;
+$c--brand-primary: #fdbc00;
+$c--brand-secondary: #e74c3c;
 
 
 // greyscale
 
-$c-black: #1a1a1a;
-$c-grey-dark: #444;
-$c-grey: #888;
-$c-grey-light: #ddd;
-$c-grey-off-white: #F6F6F6;
-$c-white: #fff;
+$c--black: #1a1a1a;
+$c--grey-dark: #444;
+$c--grey: #888;
+$c--grey-light: #ddd;
+$c--grey-x-light: #F6F6F6;
+$c--white: #fff;
 
 
 // other colours
 
-$c-red: #f50023;
-$c-green: #24b35d;
-$c-blue: #4D90FE;
+$c--red: #f50023;
+$c--green: #24b35d;
+$c--blue: #4D90FE;
 
 
 // social colours
 
-$c-twitter: #55acee;
-$c-facebook: #3b5998;
-$c-youtube: #bb0000;
-$c-pinterest: #cb2027;
-$c-linkedin: #007bb5;
-$c-instagram: #125688;
-// $c-instagram: #8a3ab9; // new purple colour
+$c--twitter: #55acee;
+$c--facebook: #3b5998;
+$c--youtube: #bb0000;
+$c--pinterest: #cb2027;
+$c--linkedin: #007bb5;
+$c--instagram: #8a3ab9; // new purple colour
+// $c--instagram: #125688; // old blue colour
 
 
 // form & message positive/negative colours
 
-$c-positive: $c-green;
-$c-negative: $c-red;
+$c--positive: $c--green;
+$c--negative: $c--red;
 
 
 // top level element colours
 
-$c-body-bg: $c-white;
-$c-body-colour: $c-black;
+$c--body-bg: $c--white;
+$c--body-colour: $c--black;
 
 
 // colour map (only use colours from the styleguide)
 // used for when looping through panel/theme styles
 
-@function c($colour, $value: "base") {
+@function c($colour, $value: 'base') {
 
 	@if map-has-key($colours, $colour) {
 
@@ -304,7 +318,7 @@ $c-body-colour: $c-black;
 
 	} @else {
 
-		@warn "Colour name #{$colour} not found in $colours.";
+		@warn 'Colour name #{$colour} not found in $colours.';
 
 	}
 
@@ -312,36 +326,36 @@ $c-body-colour: $c-black;
 
 $colours: (
 	// primary colours
-	"yellow": (
-		"base": $c-brand-primary
+	'yellow': (
+		'base': $c--brand-primary
 	),
-	"green": (
-		"base": $c-green
+	'green': (
+		'base': $c--green
 	),
-	"red": (
-		"base": $c-red
+	'red': (
+		'base': $c--red
 	),
-	"blue": (
-		"base": $c-blue
+	'blue': (
+		'base': $c--blue
 	),
 	// greyscale
-	"black": (
-		"base": $c-black
+	'black': (
+		'base': $c--black
 	),
-	"grey": (
-		"base": $c-grey
+	'grey': (
+		'base': $c--grey
 	),
-	"grey-dark": (
-		"base": $c-grey-dark
+	'grey-dark': (
+		'base': $c--grey-dark
 	),
-	"grey-light": (
-		"base": $c-grey-light
+	'grey-light': (
+		'base': $c--grey-light
 	),
-	"grey-off-white": (
-		"base": $c-grey-off-white
+	'grey-off-white': (
+		'base': $c--grey-x-light
 	),
-	"white": (
-		"base": $c-white
+	'white': (
+		'base': $c--white
 	)
 );
 
@@ -354,44 +368,44 @@ $colours: (
 */
 
 //	Cubic
-$ease-in-cubic: cubic-bezier(.55,.055,.675,.19);
-$ease-out-cubic: cubic-bezier(.215,.61,.355,1);
-$ease-in-out-cubic: cubic-bezier(.645,.045,.355,1);
+$ease--in-cubic: cubic-bezier(.55,.055,.675,.19);
+$ease--out-cubic: cubic-bezier(.215,.61,.355,1);
+$ease--in-out-cubic: cubic-bezier(.645,.045,.355,1);
 
 //	Circ
-$ease-in-circ: cubic-bezier(.6,.04,.98,.335);
-$ease-out-circ: cubic-bezier(.075,.82,.165,1);
-$ease-in-out-circ: cubic-bezier(.785,.135,.15,.86);
+$ease--in-circ: cubic-bezier(.6,.04,.98,.335);
+$ease--out-circ: cubic-bezier(.075,.82,.165,1);
+$ease--in-out-circ: cubic-bezier(.785,.135,.15,.86);
 
 //	Expo
-$ease-in-expo: cubic-bezier(.95,.05,.795,.035);
-$ease-out-expo: cubic-bezier(.19,1,.22,1);
-$ease-in-out-expo: cubic-bezier(1,0,0,1);
+$ease--in-expo: cubic-bezier(.95,.05,.795,.035);
+$ease--out-expo: cubic-bezier(.19,1,.22,1);
+$ease--in-out-expo: cubic-bezier(1,0,0,1);
 
 //	Quad
-$ease-in-quad: cubic-bezier(.55,.085,.68,.53);
-$ease-out-quad: cubic-bezier(.25,.46,.450,.94);
-$ease-in-out-quad: cubic-bezier(.455,.03,.515,.955);
+$ease--in-quad: cubic-bezier(.55,.085,.68,.53);
+$ease--out-quad: cubic-bezier(.25,.46,.450,.94);
+$ease--in-out-quad: cubic-bezier(.455,.03,.515,.955);
 
 //	Quart
-$ease-in-quart: cubic-bezier(.895,.03,.685,.22);
-$ease-out-quart: cubic-bezier(.165,.84,.44,1);
-$ease-in-out-quart: cubic-bezier(.77,0,.175,1);
+$ease--in-quart: cubic-bezier(.895,.03,.685,.22);
+$ease--out-quart: cubic-bezier(.165,.84,.44,1);
+$ease--in-out-quart: cubic-bezier(.77,0,.175,1);
 
 //	Quint
-$ease-in-quint: cubic-bezier(.755,.05,.855,.06);
-$ease-out-quint: cubic-bezier(.23,1,.320,1);
-$ease-in-out-quint: cubic-bezier(.86,0,.07,1);
+$ease--in-quint: cubic-bezier(.755,.05,.855,.06);
+$ease--out-quint: cubic-bezier(.23,1,.320,1);
+$ease--in-out-quint: cubic-bezier(.86,0,.07,1);
 
 //	Sine
-$ease-in-sine: cubic-bezier(.47,0,.745,.715);
-$ease-out-sine: cubic-bezier(.39,.575,.565,1);
-$ease-in-out-sine: cubic-bezier(.445,.05,.55,.95);
+$ease--in-sine: cubic-bezier(.47,0,.745,.715);
+$ease--out-sine: cubic-bezier(.39,.575,.565,1);
+$ease--in-out-sine: cubic-bezier(.445,.05,.55,.95);
 
 //	Back
-$ease-in-back: cubic-bezier(.6,-.28,.735,.045);
-$ease-out-back: cubic-bezier(.175,.885,.32,1.275);
-$ease-in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
+$ease--in-back: cubic-bezier(.6,-.28,.735,.045);
+$ease--out-back: cubic-bezier(.175,.885,.32,1.275);
+$ease--in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
 
 //	Smooth fade
-$ease-smooth-fade: cubic-bezier(.365,.005,.355,1);
+$ease--smooth-fade: cubic-bezier(.365,.005,.355,1);

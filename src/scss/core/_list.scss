@@ -1,12 +1,21 @@
-.list-inline {
-	@include unlist($margin: 'horizontal', $padding: false);
+.ol,
+.ul {
+	margin-left: $spacing-unit;
+	margin-right: $spacing-unit;
 
 	> li {
-		display: inline-block;
-		margin-bottom: 0;
+		margin-top: .75em;
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 }
 
-.list-unstyled {
-	@include unlist($margin: 'horizontal', $padding: false);
+.ol {
+	list-style-type: decimal;
+}
+
+.ul {
+	list-style-type: disc;
 }

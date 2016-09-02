@@ -1,4 +1,36 @@
 .copy {
 	@include content-margins('> *');
 	max-width: 35em;
+
+	h1 {
+		@extend .h1;
+	}
+
+	h2 {
+		@extend .h2;
+	}
+
+	h3 {
+		@extend .h3;
+	}
+
+	h4 {
+		@extend .h4;
+	}
+
+	h5 {
+		@extend .h5;
+	}
+
+	h6 {
+		@extend .h6;
+	}
+
+	ol {
+		@extend .ol;
+	}
+
+	ul {
+		@extend .ul;
+	}
 }

@@ -5,10 +5,9 @@
 */
 
 * {
-
 	&,
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		box-sizing: border-box;
 	}
 }
@@ -29,15 +28,18 @@ html {
 }
 
 body {
-	@include soft--ends(3rem);
-	background-color: $c-body-bg;
-	color: $c-body-colour;
-	font-family: $sans-serif;
-	font-size: $base-font-size;
-	line-height: $base-line-height;
+	background-color: $c--body-bg;
+	color: $c--body-colour;
+	font-family: $stack--sans-serif;
+	font-size: $font-size;
+	line-height: $line-height;
+}
+
+.site-wrapper {
+	@include soft--ends($spacing-unit);
 
 	@include mq('tablet') {
-		@include soft--ends(5rem);
+		@include soft--ends($spacing-unit--large);
 	}
 }
 
@@ -50,7 +52,7 @@ body {
 */
 
 @include selection {
-	background: $c-brand-primary;
-	color: $c-white;
+	background: $c--brand-primary;
+	color: $c--white;
 	text-shadow: none;
 }

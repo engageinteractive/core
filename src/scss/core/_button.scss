@@ -1,21 +1,16 @@
 // basic buttons
 
-button {
-	border: none;
-}
-
 .button {
-	background-color: $c-brand-primary;
-	color: $c-white;
-	display: inline-block;
-	font-family: $sans-serif;
-	font-size: $p-base;
-	font-weight: $w-bold;
-	padding: 16px;
+	background-color: $c--brand-primary;
+	color: $c--white;
+	font-family: $stack--sans-serif;
+	font-size: $p--base;
+	font-weight: $w--normal;
+	padding: 17px;
 	position: relative;
 
-	&.focused {
-		box-shadow: 0px 0px 3px $c-blue, 0px 0px 6px $c-blue;
+	&.is-focused {
+		box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue;
 	}
 
 	&:active {
@@ -25,8 +20,8 @@ button {
 	&[disabled] {
 		&,
 		&:focus {
-			background-color: $c-grey-light;
-			color: mix($c-grey-light, $c-black, 60%);
+			background-color: $c--grey-light;
+			color: mix($c--grey-light, $c--black, 60%);
 		}
 	}
 }
@@ -35,22 +30,22 @@ button {
 // colours
 
 .button--secondary {
-	background-color: $c-black;
+	background-color: $c--black;
 }
 
 .button--positive {
-	background-color: $c-positive;
+	background-color: $c--positive;
 
 	&:focus {
-		background-color: $c-positive;
+		background-color: $c--positive;
 	}
 }
 
 .button--negative {
-	background-color: $c-negative;
+	background-color: $c--negative;
 
 	&:focus {
-		background-color: $c-negative;
+		background-color: $c--negative;
 	}
 }
 
@@ -58,15 +53,15 @@ button {
 // sizes
 
 .button--large {
-	@include soft--ends($base-spacing-unit/1.5);
-	font-size: $p-large;
+	padding: 22px 30px;
 
-	@include mq("tablet-small") {
-		padding: $base-spacing-unit/1.2 $base-spacing-unit;
+	@include mq('tablet') {
+		padding: 25px 40px;
+		font-size: $p--medium;
 	}
 }
 
 .button--small {
-	font-size: $p-small;
-	padding: $base-spacing-unit/2 $base-spacing-unit/3;
+	font-size: $p--small;
+	padding: 12px;
 }

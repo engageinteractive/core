@@ -1,0 +1,255 @@
+$input-border-width: 1px;
+$input-line-height: 1.5;
+$input-padding: 12px;
+$input-validation-icon: $p--base;
+$input-height: ($input-padding * 2) + ($input-border-width * 2) + ($p--base * $input-line-height);
+
+input,
+textarea,
+select,
+.simple-select {
+	background: $c--white;
+	border: 1px solid $c--grey-light;
+	border-radius: 0;
+	color: $c--black;
+	display: block;
+	font: normal #{$p--base}/#{$input-line-height} $stack--sans-serif;
+	padding: $input-padding;
+	height: $input-height;
+
+	&.is-focused {
+		border-color: $c--blue;
+		box-shadow: 0 0 5px $c--blue;
+	}
+
+	&.is-invalid {
+		border-color: $c--negative;
+
+		&:focus {
+			border-color: $c--negative;
+		}
+
+		&.is-focused {
+			box-shadow: 0 0 5px $c--negative;
+		}
+	}
+}
+
+input,
+textarea,
+select {
+	&:focus {
+		border-color: $c--grey;
+	}
+
+	@include input-placeholder {
+		color: $c--grey-light;
+	}
+}
+
+input,
+textarea {
+	&.is-valid,
+	&.is-invalid {
+		background-size: $input-validation-icon;
+		background-repeat: no-repeat;
+		background-position: right $input-validation-icon center;
+		padding-right: $input-validation-icon * 3;
+	}
+
+	&.is-valid {
+		background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22415.582%22 height=%22415.582%22 viewBox=%220 0 415.582 415.582%22%3E%3Cpath style=%22fill:%2324B35D%22 d=%22M411.47 96.426l-46.32-46.32c-5.48-5.482-14.37-5.482-19.852 0l-192.95 192.952-82.066-82.064c-5.48-5.482-14.37-5.482-19.85 0l-46.32 46.32c-5.482 5.48-5.482 14.37 0 19.852l138.31 138.31a13.99 13.99 0 0 0 9.927 4.112c3.592 0 7.185-1.37 9.925-4.112l249.195-249.2a14.034 14.034 0 0 0 0-19.85z%22/%3E%3C/svg%3E');
+	}
+
+	&.is-invalid {
+		background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22%3E%3Cpath style=%22fill:%23F50023%22 d=%22M28.943 24l-8-8 8-8a.823.823 0 0 0 0-1.165l-3.78-3.778a.82.82 0 0 0-1.164 0l-8 8-7.998-8a.825.825 0 0 0-1.165 0l-3.78 3.778a.824.824 0 0 0 0 1.165l8 8-8 8a.823.823 0 0 0 0 1.165l3.78 3.778a.824.824 0 0 0 1.165 0l8-7.998 7.998 8a.823.823 0 0 0 1.165 0l3.78-3.78a.824.824 0 0 0 0-1.166z%22/%3E%3C/svg%3E');
+	}
+}
+
+textarea {
+	height: auto;
+}
+
+
+// checkboxes and radios
+$checkbox-size: $spacing-unit--small;
+$radio-inner-size: $checkbox-size / 2;
+
+.checkbox,
+.radio {
+	@include vh;
+
+	+ label {
+		font-weight: normal;
+		margin-bottom: 0;
+		padding-left: $checkbox-size + $spacing-unit--x-small;
+		position: relative;
+
+		&::before {
+			background: center center no-repeat;
+			background-size: 80%;
+			border: 2px solid $c--grey;
+			content: '';
+			display: block;
+			width: $checkbox-size;
+			height: $checkbox-size;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+	}
+
+	&.is-focused {
+		+ label::before {
+			box-shadow: 0 0 3px 1px $c--blue;
+		}
+	}
+
+	&[disabled] {
+		+ label {
+			cursor: not-allowed;
+			opacity: .4;
+			text-decoration: none;
+		}
+	}
+
+	// validation
+	&.is-invalid {
+		+ label::before {
+			border-color: $c--negative;
+		}
+	}
+}
+
+.checkbox {
+	&:checked {
+		+ label::before {
+			background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22415.582%22 height=%22415.582%22 viewBox=%220 0 415.582 415.582%22 style=%22fill:%23444444;%22%3E%3Cpath d=%22M411.47 96.426l-46.32-46.32c-5.48-5.482-14.37-5.482-19.852 0l-192.95 192.952-82.066-82.064c-5.48-5.482-14.37-5.482-19.85 0l-46.32 46.32c-5.482 5.48-5.482 14.37 0 19.852l138.31 138.31a13.99 13.99 0 0 0 9.927 4.112c3.592 0 7.185-1.37 9.925-4.112l249.195-249.2a14.034 14.034 0 0 0 0-19.85z%22/%3E%3C/svg%3E');
+		}
+	}
+}
+
+.radio {
+	+ label::before {
+		border-radius: 50%;
+	}
+
+	&:checked {
+		+ label::after {
+			background: $c--grey-dark;
+			border-radius: 50%;
+			content: '';
+			display: block;
+			width: $radio-inner-size;
+			height: $radio-inner-size;
+			position: absolute;
+			top: 50%; left: ($checkbox-size - $radio-inner-size) / 2;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+
+// select and multi select
+select {
+	// iOS Zoom Hack
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		font-size: $font-size !important;
+	}
+}
+
+select[size],
+select[multiple] {
+	background-image: none;
+	height: auto;
+	padding: ($input-padding / 2) $input-padding;
+
+	option {
+		padding: ($input-padding / 2);
+	}
+}
+
+.select {
+	position: relative;
+	display: block;
+	height: $input-height;
+
+	select {
+		padding-right: $input-validation-icon * 3;
+	}
+
+	// arrow
+	&::after {
+		@include css-triangle($c--grey-dark, 'down', 8px);
+		top: 50%; right: $input-validation-icon;
+		margin-top: -4px;
+		z-index: 3;
+		pointer-events: none;
+	}
+}
+
+// select plugin
+.simple-select {
+	select {
+		background-color: transparent;
+		position: absolute;
+		top: 0; right: 0; left: 0;
+		height: 100%;
+		z-index: 1;
+		opacity: 0;
+		padding: 0;
+	}
+
+	&__label {
+		@include truncate(100%);
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		padding: $input-padding ($input-validation-icon * 3) $input-padding $input-padding;
+	}
+
+	&.is-focused-ss {
+		border-color: $c--grey;
+	}
+}
+
+
+// disabled form fields
+
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled] {
+	&,
+	&:focus,
+	&:hover,
+	&:active {
+		background-color: $c--grey-light;
+		border-color: $c--grey-light;
+		color: $c--white;
+	}
+}
+
+
+// error labels for extra descriptive errors
+.error-text {
+	background-color: $c--negative;
+	color: $c--white;
+	display: inline-block;
+	font-size: $p--small;
+	line-height: $lh--small;
+	padding: $spacing-unit--x-small;
+	position: relative;
+	margin-top: $spacing-unit--x-small;
+
+	&::before {
+		@include css-triangle($c--negative, up, 10px);
+		bottom: 100%; left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&--success {
+		@include vh;
+	}
+}

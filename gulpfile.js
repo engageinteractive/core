@@ -18,7 +18,7 @@ var
 	config = {
 		url: 'front-end-baseplate.dev.com',
 		tinypngKey: process.env.TINYPNG_KEY,
-		autoprefixer: ['last 2 versions', 'IE 9']
+		autoprefixer: ['last 2 versions', 'IE 9', 'Safari 8']
 	},
 
 	// Dependencies
@@ -76,7 +76,7 @@ gulp.task('styles', function() {
 		.src(paths.styles.src)
 		.pipe(plugins.sourcemaps.init())
 		.pipe(
-			plugins.sass()
+			plugins.sass({ includePaths: ['node_modules'] })
 				.on('error', plugins.notify.onError({
 					title: 'Sass Error',
 					subtitle: [
@@ -245,7 +245,9 @@ gulp.task('watch', function() {
 			paths.styles.dest + '/**/*.css',
 			paths.scripts.dest + '/**/*.js',
 			paths.images.dest,
-			base.public + '/**/*.{html,php}'
+			base.public + '/**/*.{html,php}',
+			'app/views/**/*.php',
+			'resources/views/**/*.php'
 		]
 	});
 

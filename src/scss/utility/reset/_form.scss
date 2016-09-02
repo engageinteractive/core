@@ -1,0 +1,82 @@
+input,
+select,
+textarea {
+	appearance: none;
+	background-clip: border-box;
+	margin: 0;
+	outline: 0;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	width: auto;
+	height: auto;
+}
+
+input[type='checkbox'] {
+	appearance: checkbox;
+}
+
+input[type='radio'] {
+	appearance: radio;
+}
+
+textarea,
+select[size],
+select[multiple] {
+	height: auto;
+}
+
+// remove dropdown for IE10+
+select::-ms-expand {
+	display: none;
+}
+
+// Allow only vertical resizing of textareas
+textarea {
+	resize: vertical;
+}
+
+// remove search controls
+input[type='search']::-webkit-search-decoration {
+	display: none;
+}
+
+
+// button
+button {
+	appearance: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+}
+
+button,
+.button {
+	display: inline-block;
+	font: normal 16px/1 sans-serif;
+	outline: 0;
+	overflow: visible;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	width: auto;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+// disabled states
+[disabled],
+[disabled] * {
+	box-shadow: none;
+	cursor: not-allowed;
+	user-select: none;
+}

@@ -1,58 +1,22 @@
 .blockquote {
-	@include soft--ends(3rem);
 	max-width: 45em;
 	position: relative;
 
-	&:before,
-	&:after {
-		@include pseudo;
-		width: 3rem;
-		height: 1px;
-		background-color: $c-blue;
-		position: absolute;
-		left: 50%;
-		margin-left: -1.5rem;
-	}
-
-	&:before {
-		top: 1.5rem;
-	}
-
-	&:after {
-		bottom: 1.5rem;
-	}
-
-	&:first-child {
-		@include hard--top;
-
-		&:before {
-			display: none;
-		}
-	}
-
-	&:last-child {
-		@include hard--bottom;
-
-		&:after {
-			display: none;
-		}
-	}
-
 	p {
 		@include push--bottom(.4em);
-		font-size: $p-medium;
-		line-height: $lh-large;
+		font-size: $p--medium;
+		line-height: $lh--large;
 
-		@include mq("tablet-small") {
-			font-size: $p-large;
+		@include mq('tablet-small') {
+			font-size: $p--large;
 		}
 	}
 
 	cite {
-		font-size: $p-small;
+		font-size: $p--small;
 
-		@include mq("tablet-small") {
-			font-size: $p-base;
+		@include mq('tablet-small') {
+			font-size: $p--base;
 		}
 	}
 

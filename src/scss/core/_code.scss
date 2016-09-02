@@ -3,18 +3,18 @@ pre {
 	word-wrap: break-word;
 	white-space: pre-wrap;
 	font-family: 'courier new', monospace, serif;
-	font-size: $p-small;
+	font-size: $p--small;
 	font-style: normal;
 	font-weight: normal;
-	line-height: $lh-mini;
-	background-color: $c-grey-off-white;
-	color: $c-grey-dark;
+	line-height: $lh--x-small;
+	background-color: $c--grey-x-light;
+	color: $c--grey-dark;
 }
 
 code {
-	padding: .5rem;
+	padding: $spacing-unit--x-small;
 }
 
 pre {
-	padding: 1.5rem;
+	padding: $spacing-unit--small;
 }

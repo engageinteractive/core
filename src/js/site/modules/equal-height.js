@@ -25,7 +25,9 @@
 				height: false
 			};
 
-			site.resize['equalHeight-' + count] = function(){
+			core.resize['equalHeight-' + count] = function(x, y){
+
+				if( x === false ) return false;
 
 				eh.height = 0;
 
@@ -34,7 +36,7 @@
 						minHeight: false
 					});
 
-				if( site.width >= options.active ){
+				if( core.width >= options.active ){
 
 					if( $eh.master.length ){
 
@@ -62,7 +64,7 @@
 
 			};
 
-			site.resize['equalHeight-' + count]();
+			core.resize['equalHeight-' + count]();
 
 			count++;
 

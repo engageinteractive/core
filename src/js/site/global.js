@@ -1,5 +1,3 @@
-/* global simpleSelect */
-
 /*--------------------------------
 
 	Functions
@@ -34,24 +32,29 @@ function viewport() {
  *  functions after a browser resize.
  */
 
-window.siteResize = function() {
+window.coreResize = function() {
 
-	var dimensions = viewport();
+	var dimensions = viewport(),
+		prevWidth = core.width,
+		prevHeight = core.height;
 
-	site.width = dimensions.width;
-	site.height = dimensions.height;
+	core.width = dimensions.width;
+	core.height = dimensions.height;
 
-	$.each(site.resize, function() {
+	var x = prevWidth != core.width,
+		y = prevHeight != core.height;
 
-		this();
+	$.each(core.resize, function() {
+
+		this(x, y);
 
 	});
 
 };
 
-window.clearSiteResize = function(name) {
+window.clearCoreResize = function(name) {
 
-	delete site.resize[name];
+	delete core.resize[name];
 
 };
 
@@ -83,21 +86,7 @@ window.rangeToRange = function(oldVal, oldMax, oldMin, newMax, newMin) {
 
 --------------------------------*/
 
-window.$core = {
-	win: $(window),
-	doc: $(document),
-	html: $('html'),
-	body: $('body')
-};
-
-window.$site = {
-	wrapper: $('#site-wrapper'),
-	content: $('#site-content'),
-	header: $('#site-header'),
-	footer: $('#site-footer')
-};
-
-window.site = {
+window.core = {
 	resize: {},
 	resizeTimer: false,
 	width: viewport().width,
@@ -116,10 +105,10 @@ window.site = {
 			x = document.documentElement.scrollLeft;
 			x = x === 0 ? document.body.scrollLeft : x;
 
-			site.scroll.x = x;
-			site.scroll.y = y;
+			core.scroll.x = x;
+			core.scroll.y = y;
 
-			$.each(site.scroll.listener, function() {
+			$.each(core.scroll.listener, function() {
 
 				this();
 
@@ -133,103 +122,28 @@ window.site = {
 
 /*--------------------------------
 
-	Indirect events
+	Window events
 
 --------------------------------*/
 
-$core.win.on({
+$(window).on({
 	resize: function() {
 
-		clearTimeout(site.resizeTimer);
-		site.resizeTimer = setTimeout(siteResize, 300);
+		clearTimeout(core.resizeTimer);
+		core.resizeTimer = setTimeout(coreResize, 300);
 
 	},
 	scroll: function() {
 
 		if (Modernizr.raf) {
 
-			requestAnimationFrame(site.scroll.update);
+			requestAnimationFrame(core.scroll.update);
 
 		} else {
 
-			site.scroll.update();
+			core.scroll.update();
 
 		}
 
 	}
 });
-
-
-/*--------------------------------
-
-    External/internal links
-
---------------------------------*/
-
-jQuery.extend(jQuery.expr[':'], {
-	external: function(obj) {
-
-		return (obj.hostname !== location.hostname) && /:\/\//.test($(obj).attr('href'));
-
-	},
-	internal: function(obj) {
-
-		return (obj.hostname === location.hostname) || !/:\/\//.test($(obj).attr('href'));
-
-	}
-});
-
-
-/*--------------------------------
-
-    BEM helpers
-
---------------------------------*/
-
-window.bem = {
-
-	states: {
-		active: 'is-active',
-		hidden: 'is-hidden',
-		loading: 'is-loading'
-	},
-
-	event: function(_block, _event) {
-
-		return _block + ':' + _event;
-
-	},
-
-	selector: function(_block, _element) {
-
-		return '.js-' + _block + (_element ? ('__' + _element) : '');
-
-	}
-
-};
-
-
-/*--------------------------------
-
-    Ready? Go!
-
---------------------------------*/
-
-$('[data-img]').loadImg();
-
-$core.body.on('click', 'a:external:not(.internal), a.external', function(e) {
-
-	if (e.which !== 2) {
-
-		window.open($(this).attr('href'));
-		e.preventDefault();
-
-	}
-
-});
-
-if (!$('.lt-ie9').length && !Modernizr.csspointerevents) {
-	simpleSelect($('.select select:not([multiple="multiple"])'));
-}
-
-$core.body.fitVids();

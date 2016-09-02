@@ -6,23 +6,24 @@
 
 .row {
 	@include cf;
-	margin-right: $grid-column-gutter / -2;
-	margin-left: $grid-column-gutter / -2;
+	margin-left: n($grid-column-gutter);
 
 	@include mq('tablet') {
-		margin-right: $grid-column-gutter / -1.5;
-		margin-left: $grid-column-gutter / -1.5;
+		margin-left: n($grid-column-gutter--tablet);
 	}
-}
 
-.full-width {
-	@include cf;
-	padding-right: $grid-column-gutter / 2;
-	padding-left: $grid-column-gutter / 2;
+	@include mq('desktop') {
+		margin-left: n($grid-column-gutter--desktop);
+	}
 
-	@include mq('tablet') {
-		padding-right: $grid-column-gutter / 1.5;
-		padding-left: $grid-column-gutter / 1.5;
+	&--compact {
+		> .column {
+			margin-top: $spacing-unit--small;
+
+			@include mq('tablet') {
+				margin-top: $spacing-unit;
+			}
+		}
 	}
 }
 
@@ -31,12 +32,17 @@
 	position: relative;
 	float: left;
 	width: 100%;
-	padding-right: $grid-column-gutter / 2;
-	padding-left: $grid-column-gutter / 2;
+	margin-top: $grid-column-gutter;
+	padding-left: $grid-column-gutter;
 
 	@include mq('tablet') {
-		padding-right: $grid-column-gutter / 1.5;
-		padding-left: $grid-column-gutter / 1.5;
+		margin-top: $grid-column-gutter--tablet;
+		padding-left: $grid-column-gutter--tablet;
+	}
+
+	@include mq('desktop') {
+		margin-top: $grid-column-gutter--desktop;
+		padding-left: $grid-column-gutter--desktop;
 	}
 }
 
@@ -48,45 +54,45 @@
 
 */
 
-@mixin columns($modifier: "") {
+@mixin columns($modifier: '') {
 
-	@if $modifier != "" {
+	@if $modifier != '' {
 		$modifier: #{$modifier};
 	}
 
 	@for $i from 1 through $grid-column-count {
 
-		@if $dev_mode {
+		@if $dev-mode {
 
 			.#{$modifier}-#{$i} {
-				width: grid-calc($grid-column-count, $i);
+				width: grid-calc($i);
 			}
 
 			.#{$modifier}-push-#{$i} {
-				left: grid-calc($grid-column-count, $i);
+				left: grid-calc($i);
 			}
 
 			.#{$modifier}-pull-#{$i} {
-				left: 0 - grid-calc($grid-column-count, $i);
+				left: 0 - grid-calc($i);
 			}
 
 		} @else {
 
 			@if index( map-deep-get($grid-bp, $modifier, columns, width) , $i) or map-deep-get($grid-bp, $modifier, columns, width) == true {
 				.#{$modifier}-#{$i} {
-					width: grid-calc($grid-column-count, $i);
+					width: grid-calc($i);
 				}
 			}
 
 			@if index( map-deep-get($grid-bp, $modifier, columns, push) , $i) or map-deep-get($grid-bp, $modifier, columns, push) == true {
 				.#{$modifier}-push-#{$i} {
-					left: grid-calc($grid-column-count, $i);
+					left: grid-calc($i);
 				}
 			}
 
 			@if index( map-deep-get($grid-bp, $modifier, columns, pull) , $i) or map-deep-get($grid-bp, $modifier, columns, pull) == true {
 				.#{$modifier}-pull-#{$i} {
-					left: 0 - grid-calc($grid-column-count, $i);
+					left: 0 - grid-calc($i);
 				}
 			}
 
@@ -100,7 +106,7 @@
 
 }
 
-@include columns("base");
+@include columns('base');
 
 @each $name, $min-width in $breakpoints {
 

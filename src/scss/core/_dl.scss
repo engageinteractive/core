@@ -1,0 +1,43 @@
+dl {
+	@include mq('tablet') {
+		@include cf;
+	}
+}
+
+dt,
+dd {
+	@include mq('tablet') {
+		float: left;
+	}
+}
+
+dt {
+	@include push--top(1em);
+	font-weight: $w--bold;
+
+	&:first-child {
+		@include flush--top;
+
+		+ dd {
+
+			@include mq('tablet') {
+				@include flush--top;
+			}
+		}
+	}
+
+	@include mq('tablet') {
+		clear: left;
+		width: 25%;
+	}
+}
+
+dd {
+	@include push--top(.5em);
+
+	@include mq('tablet') {
+		@include push--top(1em);
+		@include soft--left($spacing-unit--small);
+		width: 75%;
+	}
+}

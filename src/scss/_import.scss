@@ -1,77 +1,81 @@
 // UTILITIES
 
 // some useful style resets and initial form styling
-@import "utility/reset/normalize";
-@import "utility/reset/formalize";
+@import 'normalize.css/normalize';
+@import 'utility/reset/spacing';
+@import 'utility/reset/form';
 
 // system-wide styles, mixins and placeholders
-@import "utility/functions";
-@import "utility/mixins";
-@import "utility/fonts";
-@import "utility/grid/block";
-@import "utility/grid/columns";
+@import 'utility/functions';
+@import 'utility/mixins';
+@import 'utility/fonts';
+@import 'utility/grid/block-grid';
+@import 'utility/grid/columns';
 
 
 // CORE STYLING
 
-@import "core";
+@import 'core';
 
 
 // CORE
 // basic building blocks, typically single html tags
 
-@import "core/typography";
-@import "core/anchor";
-@import "core/button";
-@import "core/blockquote";
-@import "core/code";
-@import "core/figure";
-@import "core/form-input";
-@import "core/icon";
-@import "core/img";
-@import "core/list";
-@import "core/logo";
-@import "core/table";
+@import 'core/typography';
+@import 'core/anchor';
+@import 'core/button';
+@import 'core/blockquote';
+@import 'core/code';
+@import 'core/dl';
+@import 'core/figure';
+@import 'core/hr';
+@import 'core/icon';
+@import 'core/img';
+@import 'core/input';
+@import 'core/label';
+@import 'core/list';
+@import 'core/table';
 
 
 // MODULE
 // simple combinations of cores and reusable components not tied to a specific section
 
-@import "module/breadcrumb";
-@import "module/container";
-@import "module/copy";
-@import "module/form";
-@import "module/media";
-@import "module/message";
-@import "module/pagination";
-@import "module/table-responsive-collapse";
+@import 'module/breadcrumb';
+@import 'module/container';
+@import 'module/copy';
+@import 'module/form';
+@import 'module/inline-children';
+@import 'module/media';
+@import 'module/pagination';
+@import 'module/reveal';
+@import 'module/table-responsive-collapse';
 
 
 // LAYOUT
 // distinct section of an interface
 
-@import "layout/outdated-browser";
-@import "layout/site-header";
-@import "layout/site-content";
-@import "layout/site-footer";
+@import 'layout/outdated-browser';
+@import 'layout/site-header';
+@import 'layout/site-content';
+@import 'layout/site-footer';
 
 
 // PAGE
 // layouts stitched together to form pages
 
-// @import "page/*";
+// @import 'page/*';
 
 
 // OVERRIDING UTILITIES
 // any aditional utilities that should have more important than other CSS
 
-@import "utility/flush-nth";
-@import "utility/helper-classes";
-@import "utility/styleguide";
-@import "utility/visible";
+@import 'utility/flush-nth';
+@import 'utility/helper-classes';
+@import 'utility/styleguide';
+@import 'utility/visible';
 
 
 // EXTRAS
 // miscellaneous project extras
 
-@import "utility/print";
+@import 'utility/print';

@@ -1,31 +1,17 @@
-$icon-size: 2.4rem;
-
-@mixin icon-container {
-	@include cf;
-	display: inline-block;
-	vertical-align: bottom;
-}
-
+$icon-size: 1em;
 
 // basic icon
 // <svg class="icon icon-name"></svg>
 
 .icon {
 	display: block;
-	fill: $c-black;
+	fill: $c--black;
 	width: $icon-size;
+	height: $icon-size;
 
-	&:before {
+	&::before {
 		display: block;
 	}
-}
-
-
-// icon wrapper
-// <div class="icon-wrapper"><svg class="icon"></svg></div>
-
-.icon-wrapper {
-	@include icon-container;
 }
 
 
@@ -50,12 +36,12 @@ $icon-size: 2.4rem;
 	}
 
 	&__t {
-		padding-right: $icon-size + ($base-spacing-unit / 3);
+		padding-right: $icon-size + .5em;
 
 		&:last-child {
 			padding: {
 				right: 0;
-				left: $icon-size + ($base-spacing-unit / 3);
+				left: $icon-size + .5em;
 			}
 		}
 	}

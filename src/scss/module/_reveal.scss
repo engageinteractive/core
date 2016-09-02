@@ -1,0 +1,33 @@
+$block: '.reveal';
+
+#{$block} {
+	&__wrapper {
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+		opacity: 0;
+
+		#{$block}__toggle:checked ~ & {
+			height: auto;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&--once,
+	&--inline {
+		#{$block}__toggle:checked ~ #{$block}__label {
+			@include hidden;
+		}
+	}
+
+	&--inline {
+		#{$block}__wrapper {
+			font-size: 0;
+		}
+
+		#{$block}__toggle:checked ~ #{$block}__wrapper {
+			font-size: inherit;
+		}
+	}
+}

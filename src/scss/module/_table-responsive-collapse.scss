@@ -1,5 +1,4 @@
 .table-responsive-collapse {
-
 	.faux-th {
 		display: none;
 
@@ -9,7 +8,6 @@
 	}
 
 	&--collapsed {
-
 		thead {
 			display: none;
 		}
@@ -23,50 +21,12 @@
 
 		tr {
 			@include cf;
-			border-top: 1px solid $c-grey-light;
-
-			td {
-
-				&:first-child {
-					padding-top: $base-spacing-unit / 1.2;
-				}
-
-				&:last-child {
-					padding-bottom: $base-spacing-unit / 1.2;
-				}
-			}
-
-			&:first-child {
-				@include hard--top;
-				border-top: none;
-			}
-
-			&:last-child {
-				padding-bottom: 0;
-
-				td {
-					border-bottom: none;
-					padding-bottom: 0;
-				}
-			}
-
-			&:nth-child(even) {
-
-				td {
-					background-color: transparent;
-				}
-			}
-
-			&:hover {
-
-				td {
-					background-color: transparent;
-				}
-			}
+			border-top: 1px solid $c--grey-light;
+			padding: $spacing-unit--small;
 		}
 
 		td {
-			@include push--top($base-spacing-unit / 1.5);
+			@include push--top($spacing-unit--small);
 			border-top: none;
 			clear: left;
 			float: left;
@@ -77,21 +37,13 @@
 
 			&:first-child {
 				@include flush--top;
-				@include hard--left;
 			}
 
 			.faux-th {
 				@include antialias;
 				display: block;
-				font-weight: $w-bold;
+				font-weight: $w--bold;
 				padding-bottom: .5em;
-			}
-		}
-
-		tr:first-child {
-
-			td {
-				padding-top: 0;
 			}
 		}
 	}

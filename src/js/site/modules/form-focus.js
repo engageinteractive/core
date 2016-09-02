@@ -4,7 +4,7 @@
 		mouseActive = false,
 		selectors = 'input, select, textarea, button, .button';
 
-	$core.body
+	$(document.body)
 		.on('mousedown', selectors, function() {
 
 			mouseActive = true;
@@ -26,10 +26,10 @@
 
 				var $this = $(this);
 
-				$this.addClass('focused');
+				$this.addClass('is-focused');
 
 				if( $this.is('select:not([multiple="multiple"])') ){
-					$this.parent('.simple-select').addClass('focused');
+					$this.parent('.simple-select').addClass('is-focused');
 				}
 
 			}
@@ -39,10 +39,10 @@
 
 			var $this = $(this);
 
-			$(this).removeClass('focused');
+			$(this).removeClass('is-focused');
 
 			if( $this.is('select:not([multiple="multiple"])') ){
-				$this.parent('.simple-select').removeClass('focused');
+				$this.parent('.simple-select').removeClass('is-focused');
 			}
 
 		});

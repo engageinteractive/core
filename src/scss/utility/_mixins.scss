@@ -2,14 +2,14 @@
 
 	Media Queries
 
-	used for outputting content either between media query tags, or without (for fixed-width.scss)
+	used for outputting content either between media query tags
 
 	example: basic usage
 
 	.element {
 		width: 50%;
 
-		@include mq("tablet-small") {
+		@include mq('tablet-small') {
 			width: 20%;
 		}
 	}
@@ -19,39 +19,26 @@
 	.element {
 		width: 50%;
 
-		@include mq("tablet-small", "max") {
+		@include mq('tablet-small', 'max') {
 			width: 20%;
 		}
 	}
 
 */
 
-$fixed-width:       false !default;
-$fixed-width-limit: 980px !default;
-
 @mixin mq($width, $type: min) {
 
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+	}
 
-        @if $type == max {
-            $width: $width - 1px;
-        }
-    }
+	@if $type == max {
+		$width: $width - 1px;
+	}
 
-    @if $fixed-width {
-
-        @if $width <= $fixed-width-limit {
-            @content;
-        }
-
-    } @else {
-
-        @media only screen and (#{$type}-width: $width) {
-            @content;
-        }
-
-    }
+	@media only screen and (#{$type}-width: $width) {
+		@content;
+	}
 
 }
 
@@ -63,17 +50,17 @@ $fixed-width-limit: 980px !default;
 
 	example: top margin
 	.element {
-		@include push--top($base-spacing-unit);
+		@include push--top($spacing-unit);
 	}
 
 	example: top & bottom margin
 	.element {
-		@include push--ends($base-spacing-unit);
+		@include push--ends($spacing-unit);
 	}
 
 	example: left & right margin
 	.element {
-		@include push--sides($base-spacing-unit);
+		@include push--sides($spacing-unit);
 	}
 
 	example: remove a top margin
@@ -85,16 +72,16 @@ $fixed-width-limit: 980px !default;
 
 // add/remove margins
 
-@mixin push($spacing: $base-spacing-unit) { margin: $spacing; }
-@mixin push--top($spacing: $base-spacing-unit) { margin-top: $spacing; }
-@mixin push--bottom($spacing: $base-spacing-unit) { margin-bottom: $spacing; }
-@mixin push--left($spacing: $base-spacing-unit) { margin-left: $spacing; }
-@mixin push--right($spacing: $base-spacing-unit) { margin-right: $spacing; }
-@mixin push--ends($spacing: $base-spacing-unit) { margin: { top: $spacing; bottom: $spacing; } }
-@mixin push--sides($spacing: $base-spacing-unit) { margin: { left: $spacing; right: $spacing; } }
+@mixin push($spacing: $spacing-unit) { margin: $spacing; }
+@mixin push--top($spacing: $spacing-unit) { margin-top: $spacing; }
+@mixin push--bottom($spacing: $spacing-unit) { margin-bottom: $spacing; }
+@mixin push--left($spacing: $spacing-unit) { margin-left: $spacing; }
+@mixin push--right($spacing: $spacing-unit) { margin-right: $spacing; }
+@mixin push--ends($spacing: $spacing-unit) { margin: { top: $spacing; bottom: $spacing; } }
+@mixin push--sides($spacing: $spacing-unit) { margin: { left: $spacing; right: $spacing; } }
 
 @mixin push--auto { margin: { left: auto; right: auto; } }
-@mixin offset--sides($spacing: $base-spacing-unit) { margin: { left: -$spacing; right: -$spacing; } }
+@mixin offset--sides($spacing: $spacing-unit) { margin: { left: -$spacing; right: -$spacing; } }
 
 @mixin flush { margin: 0; }
 @mixin flush--top { margin-top: 0; }
@@ -107,13 +94,13 @@ $fixed-width-limit: 980px !default;
 
 // add/remove paddings
 
-@mixin soft($spacing: $base-spacing-unit) { padding: $spacing; }
-@mixin soft--top($spacing: $base-spacing-unit) { padding-top: $spacing; }
-@mixin soft--bottom($spacing: $base-spacing-unit) { padding-bottom: $spacing; }
-@mixin soft--left($spacing: $base-spacing-unit) { padding-left: $spacing; }
-@mixin soft--right($spacing: $base-spacing-unit) { padding-right: $spacing; }
-@mixin soft--ends($spacing: $base-spacing-unit) { padding: { top: $spacing; bottom: $spacing; } }
-@mixin soft--sides($spacing: $base-spacing-unit) { padding: { left: $spacing; right: $spacing; } }
+@mixin soft($spacing: $spacing-unit) { padding: $spacing; }
+@mixin soft--top($spacing: $spacing-unit) { padding-top: $spacing; }
+@mixin soft--bottom($spacing: $spacing-unit) { padding-bottom: $spacing; }
+@mixin soft--left($spacing: $spacing-unit) { padding-left: $spacing; }
+@mixin soft--right($spacing: $spacing-unit) { padding-right: $spacing; }
+@mixin soft--ends($spacing: $spacing-unit) { padding: { top: $spacing; bottom: $spacing; } }
+@mixin soft--sides($spacing: $spacing-unit) { padding: { left: $spacing; right: $spacing; } }
 
 @mixin hard { padding: 0; }
 @mixin hard--top { padding-top: 0; }
@@ -127,31 +114,6 @@ $fixed-width-limit: 980px !default;
 
 /*--------------------------------
 
-	LT IE9
-
-	to be used in conjunction with fixed-width.scss
-
-*/
-
-// only chuck out content
-$lt-ie9: false !default;
-
-@mixin lt-ie9 {
-
-	@if $lt-ie9 {
-
-		.lt-ie9 & {
-			@content;
-		}
-
-	}
-
-}
-
-
-
-/*--------------------------------
-
 	Helper mixins
 
 */
@@ -160,25 +122,11 @@ $lt-ie9: false !default;
 
 @mixin cf {
 
-	&:after {
-		content: "";
+	&::after {
+		content: '';
 		display: table;
 		clear: both;
 	}
-}
-
-
-// Image replacement
-
-@mixin ir {
-	display: block;
-	background: {
-		repeat: no-repeat;
-		position: 0 0;
-	}
-	overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
 }
 
 
@@ -355,7 +303,7 @@ $lt-ie9: false !default;
 	example:
 	.element {
 
-		&:before {
+		&::before {
 			@include css-triangle(blue, down);
 		}
 	}
@@ -444,7 +392,7 @@ $lt-ie9: false !default;
 	$padding: unquote( ( $y / $x ) * 100 + '%' );
 
 	@if $pseudo {
-		&:before {
+		&::before {
 			@include pseudo($pos: relative);
 			width: 100%;
 			padding-top: $padding;
@@ -479,7 +427,7 @@ $lt-ie9: false !default;
 @mixin typography($w, $h, $file, $type: png, $overflow: hidden) {
 	@include responsive-ratio($w, $h, true);
 	position: relative;
-	max-width: ( $w / 10 ) * 1rem;
+	max-width: $w * 1px;
 	background: url('/assets/img/typography/#{$file}.#{$type}') 50% 50% no-repeat;
 	background-size: contain;
 
@@ -503,7 +451,7 @@ $lt-ie9: false !default;
 		content: '#{$content}';
 	}
 	display: block;
-	font-family: "university-of-northampton" !important;
+	font-family: 'icon-font-family' !important;
 	font-style: normal !important;
 	font-weight: normal !important;
 	font-variant: normal !important;
@@ -528,8 +476,8 @@ $lt-ie9: false !default;
 
 @mixin colours(
 	$selector: false,
-	$chain: "&--",
-	$background: "base",
+	$chain: '&--',
+	$background: 'base',
 	$border: true
 ) {
 
@@ -567,6 +515,26 @@ $lt-ie9: false !default;
 	Misc
 
 */
+
+@mixin align($vertical: true, $horizontal: false, $position: relative) {
+	@if $position {
+		position: $position;
+	}
+	@if $vertical {
+		top: 50%;
+	}
+	@if $horizontal {
+		left: 50%;
+	}
+
+	@if $vertical and $horizontal {
+		transform: translateX(-50%) translateY(-50%);
+	} @else if $vertical {
+		transform: translateY(-50%);
+	} @else {
+		transform: translateX(-50%);
+	}
+}
 
 @mixin antialias {
 	font-smoothing: antialiased;

@@ -27,16 +27,18 @@
 
 			});
 
-			site.resize['tableResponsiveCollapse-' + count] = function() {
+			core.resize['tableResponsiveCollapse-' + count] = function(x, y) {
+
+				if( x === false ) return false;
 
 				$trc.root.toggleClass(
 					'table-responsive-collapse--collapsed',
-					site.width < options.breakpoint
+					core.width < options.breakpoint
 				);
 
 			};
 
-			site.resize['tableResponsiveCollapse-' + count]();
+			core.resize['tableResponsiveCollapse-' + count]();
 
 			count++;
 

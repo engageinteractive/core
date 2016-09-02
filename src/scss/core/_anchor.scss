@@ -1,21 +1,29 @@
-a {
-	color: $c-brand-primary;
-	font-weight: $w-bold;
+a,
+.a {
+	color: $c--brand-primary;
 	text-decoration: underline;
+	cursor: pointer;
 
-	&:hover:not(.button) {
-		.no-touchevents & {
-			color: $c-black;
-		}
+	&:hover {
+		text-decoration: none;
 	}
+}
 
-	&:focus {
-		.no-touchevents & {
-			box-shadow: 0px 0px 3px $c-blue, 0px 0px 6px $c-blue;
-		}
-	}
+a {
+	&:focus {}
 
 	&:link {
-		-webkit-tap-highlight-color: rgba($c-white, 0);
+		-webkit-tap-highlight-color: rgba($c--white, 0);
+	}
+}
+
+.a {
+	&--block {
+		display: block;
+	}
+
+	&--subtle {
+		color: inherit;
+		text-decoration: none;
 	}
 }

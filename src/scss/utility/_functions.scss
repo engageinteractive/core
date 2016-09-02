@@ -4,14 +4,12 @@
 
 */
 
-@function grid-calc($t, $c){
-	$val: 0;
-	@if $c == 0 {
-		$val: 0%;
-	}@else{
-		$val: 100% / ( $t / $c );
+@function grid-calc($index, $total: $grid-column-count) {
+	@if $index == 0 {
+		@return 0%;
+	} @else {
+		@return 100%/($total/$index);
 	}
-	@return $val;
 }
 
 
@@ -64,7 +62,7 @@
 
 	prerequisits:
 
-		$letter-spacing list must exist in variables file
+		$ls list must exist in variables file
 
 	example:
 
@@ -81,7 +79,7 @@
 */
 
 @function ls($name) {
-	$value: map_get($letter-spacing, $name);
+	$value: map_get($ls, $name);
 	@return $value / 1000 * 1em;
 }
 
@@ -106,6 +104,21 @@
         $map: map-get($map, $key);
     }
     @return $map;
+}
+
+
+/*--------------------------------
+
+	Strip unit
+
+*/
+
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
 }
 
 

@@ -25,17 +25,21 @@
 
 */
 
-@mixin flush-nth($modifier: "") {
+@mixin flush-nth($modifier: '') {
 
-	@if $modifier != "" {
-		$modifier: #{$modifier};
+	$modifierClass: '';
+
+	@if $modifier != '' {
+		$modifierClass: '--#{$modifier}';
+	}
+	@else {
+		$modifier: 'base';
 	}
 
 	@for $i from 1 through $grid-column-count {
 
-		@if $dev_mode {
-			.#{$modifier}-flush-first-#{$i} {
-
+		@if $dev-mode {
+			.flush-first-#{$i}#{$modifierClass} {
 				> * {
 					&:nth-child(-n+#{$i}) {
 						@include flush--top;
@@ -43,8 +47,7 @@
 				}
 			}
 		} @else if index( map-deep-get($grid-bp, $modifier, flush) , $i) or map-deep-get($grid-bp, $modifier, flush) == true {
-			.#{$modifier}-flush-first-#{$i} {
-
+			.flush-first-#{$i}#{$modifierClass} {
 				> * {
 					&:nth-child(-n+#{$i}) {
 						@include flush--top;
@@ -57,7 +60,7 @@
 
 }
 
-@include flush-nth("base");
+@include flush-nth;
 
 @each $name, $min-width in $breakpoints {
 
