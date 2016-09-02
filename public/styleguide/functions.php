@@ -45,11 +45,13 @@ function sgListOptions($type, $folder = 'components'){
 
 			$filename = preg_replace("/\.php$/i", "", $file);
 
+			$id =  $type . '-' . $filename;
+
 			$title = preg_replace("/\-/i", " ", $filename);
 
 			$title = ucwords($title);
 
-			$html .= "\t\t<li><a href=\"#sg-" . $filename . "\">" . $title . "</a></li>\n";
+			$html .= "\t\t<li><a href=\"#sg-" . $id . "\">" . $title . "</a></li>\n";
 
 		endforeach;
 
@@ -91,11 +93,14 @@ function sgContent($type, $folder = 'components', $showMarkup = true){
 
 		$filename = preg_replace("/\.php$/i", "", $file);
 		$documentation = 'usage/'.$type.'/'.$file;
+		$id =  $type . '-' . $filename;
+
+		echo 'xxx' . $id;
 
 		$html .= "<article class=\"sg-content\">\n";
 
 			$html .= "\t<header class=\"sg-content__header\">\n";
-				$html .= "\t\t<h1 class=\"" . $title_class . "\" id=\"sg-" . $filename . "\">" . titleify($filename) . "</h1>\n";
+				$html .= "\t\t<h1 class=\"" . $title_class . "\" id=\"sg-" . $id . "\">" . titleify($filename) . "</h1>\n";
 			$html .= "\t</header>\n\n";
 
 			$html .= "\t<div class=\"sg-content__example\">\n";
@@ -103,15 +108,15 @@ function sgContent($type, $folder = 'components', $showMarkup = true){
 			$html .= "\t</div>\n";
 
 			if ($showMarkup ) :
-				$html .= "\t<div class=\"sg-content__markup\">\n";
+				$html .= "\t<div class=\"sg-content__markup reveal\">\n";
 
-					$html .= "\t\t<button class=\"sg-content__markup__toggle button toggle-class\">View Source</button>\n";
+					$html .= "\t\t<input class=\"vh reveal__toggle\" type=\"checkbox\" id=\"source-" . $id . "\" value=\"\" tabindex=\"-1\">\n";
 
-					$html .= "\t\t<div class=\"sg-content__markup__source vh\">\n";
+					$html .= "\t\t<label class=\"button reveal__label\" for=\"source-" . $id . "\">View Source</label>\n";
+
+					$html .= "\t\t<div class=\"sg-content__markup__source reveal__wrapper\">\n";
 						$html .= "\t\t\t<pre>\n";
-							// $html .= "\t\t\t\t<code>\n";
-								$html .= htmlspecialchars(file_get_contents($folder . $type .'/' . $file));
-							// $html .= "\t\t\t\t</code>\n";
+							$html .= htmlspecialchars(file_get_contents($folder . $type .'/' . $file));
 						$html .= "\t\t\t</pre>\n";
 					$html .= "\t\t</div>\n";
 
