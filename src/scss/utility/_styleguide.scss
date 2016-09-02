@@ -117,6 +117,10 @@
 		@include mq('tablet') {
 			margin-top: $spacing-unit;
 		}
+
+		.logo {
+			width: 200px;
+		}
 	}
 
 	&__markup {
