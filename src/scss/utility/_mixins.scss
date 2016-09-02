@@ -26,17 +26,17 @@
 
 */
 
-@mixin mq($width, $type: min) {
+@mixin mq($size, $type: min, $property: width) {
 
-	@if map_has_key($breakpoints, $width) {
-		$width: map_get($breakpoints, $width);
+	@if map_has_key($breakpoints, $size) {
+		$size: map_get($breakpoints, $size);
 	}
 
 	@if $type == max {
-		$width: $width - 1px;
+		$size: $size - 1px;
 	}
 
-	@media only screen and (#{$type}-width: $width) {
+	@media only screen and (#{$type}-#{$property}: $size) {
 		@content;
 	}
 
