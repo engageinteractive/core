@@ -51,13 +51,13 @@ button {
 	appearance: none;
 	background: none;
 	border: none;
-	cursor: pointer;
 	margin: 0;
 	padding: 0;
 }
 
 button,
 .button {
+	cursor: pointer;
 	display: inline-block;
 	font: normal 16px/1 sans-serif;
 	outline: 0;
