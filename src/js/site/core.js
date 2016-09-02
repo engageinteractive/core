@@ -96,18 +96,6 @@ window.core = {
 		y: 0,
 		update: function() {
 
-			var x;
-			var y;
-
-			y = document.documentElement.scrollTop;
-			y = y === 0 ? document.body.scrollTop : y;
-
-			x = document.documentElement.scrollLeft;
-			x = x === 0 ? document.body.scrollLeft : x;
-
-			core.scroll.x = x;
-			core.scroll.y = y;
-
 			$.each(core.scroll.listener, function() {
 
 				this();
@@ -135,7 +123,19 @@ $(window).on({
 	},
 	scroll: function() {
 
-		if (Modernizr.raf) {
+		var x,
+			y;
+
+		y = document.documentElement.scrollTop;
+		y = y === 0 ? document.body.scrollTop : y;
+
+		x = document.documentElement.scrollLeft;
+		x = x === 0 ? document.body.scrollLeft : x;
+
+		core.scroll.x = x;
+		core.scroll.y = y;
+
+		if( Modernizr.raf ){
 
 			requestAnimationFrame(core.scroll.update);
 

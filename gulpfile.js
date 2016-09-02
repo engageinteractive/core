@@ -137,7 +137,7 @@ gulp.task('scripts.lint.full', function() {
 gulp.task('scripts.site', function() {
 	return gulp
 		.src([
-			paths.scripts.dir + '/site/global.js',
+			paths.scripts.dir + '/site/core.js',
 			paths.scripts.dir + '/site/modules/*.js',
 			paths.scripts.dir + '/site/pages/*.js'
 		])
