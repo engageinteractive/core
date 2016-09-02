@@ -1,8 +1,8 @@
 $input-border-width: 1px;
 $input-line-height: 1.5;
 $input-padding: 12px;
-$input-validation-icon: $p--base;
-$input-height: ($input-padding * 2) + ($input-border-width * 2) + ($p--base * $input-line-height);
+$input-validation-icon: $p;
+$input-height: ($input-padding * 2) + ($input-border-width * 2) + ($p * $input-line-height);
 
 input,
 textarea,
@@ -13,7 +13,7 @@ select,
 	border-radius: 0;
 	color: $c--black;
 	display: block;
-	font: normal #{$p--base}/#{$input-line-height} $stack;
+	font: normal #{$p}/#{$input-line-height} $stack;
 	padding: $input-padding;
 	height: $input-height;
 
@@ -155,7 +155,7 @@ $radio-inner-size: $checkbox-size / 2;
 select {
 	// iOS Zoom Hack
 	@media screen and (-webkit-min-device-pixel-ratio: 0) {
-		font-size: $font-size !important;
+		font-size: $p !important;
 	}
 }
 

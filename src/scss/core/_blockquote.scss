@@ -16,7 +16,7 @@
 		font-size: $p--small;
 
 		@include mq('tablet-small') {
-			font-size: $p--base;
+			font-size: $p;
 		}
 	}
 

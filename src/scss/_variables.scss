@@ -40,25 +40,18 @@ $h--x-large: 36px;
 $h--xx-large: 48px;
 $h--xxx-large: 64px;
 
-$p--x-small: 12px;
-$p--small: 14px;
-$p--base: 16px;
+$p: 16px;
+$p--small: 12px;
 $p--medium: 18px;
 $p--large: 24px;
 
 
 // line-height ratios
 
+$lh: 1.5;
 $lh--x-small: 1.1;
 $lh--small: 1.25;
-$lh--base: 1.5;
 $lh--large: 1.75;
-
-
-// default font sizes / line-height
-
-$font-size: $p--base;
-$line-height: $lh--base;
 
 
 // letter spacing
