@@ -29,8 +29,6 @@
 
 				if( x === false ) return false;
 
-				console.log('do resize', x, core.width);
-
 				eh.height = 0;
 
 				$eh.children
