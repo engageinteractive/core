@@ -44,7 +44,7 @@
 	</li>
 </ul>
 
-<h2 class="h4">Icons with text</h2>
+<h2 class="h4">Set-position icons with text</h2>
 
 <ul class="list-unstyled">
 	<li>
