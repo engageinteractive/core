@@ -145,84 +145,66 @@ $breakpoints: (
 
 $grid-bp: (
 	'base': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'phone': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'phone-wide': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'phablet': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'tablet-small': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'tablet': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'tablet-wide': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'desktop': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'desktop-wide': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	)
 );
