@@ -1,6 +1,5 @@
 .breadcrumb {
 	@include cf;
-	font-size: $p--small;
 	line-height: 1;
 
 	a,
@@ -12,10 +11,5 @@
 		&:last-child {
 			margin-right: 0;
 		}
-	}
-
-	.icon {
-		width: $p--small;
-		height: $p--small;
 	}
 }
