@@ -1,6 +1,6 @@
 .breadcrumb {
 	@include cf;
-	line-height: 1;
+	line-height: $lh--small;
 
 	a,
 	.icon,
