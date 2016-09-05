@@ -1,16 +1,21 @@
 $icon-size: 1em;
 
 // basic icon
-// <svg class="icon icon-name"></svg>
+// <svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg>
 
 .icon {
-	display: block;
-	fill: $c--black;
+	display: inline-block;
+	fill: currentColor;
+	vertical-align: top;
 	width: $icon-size;
 	height: $icon-size;
 
-	&::before {
-		display: block;
+	&--inline {
+		// y = line-height measurment was taken at
+		// x =  how far off centre the baseline is, at `y`
+		$x: 10;
+		$y: 90;
+		vertical-align: n($x/$y * 100%);
 	}
 }
 

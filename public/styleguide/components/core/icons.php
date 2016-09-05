@@ -116,6 +116,10 @@
 	</li>
 </ul>
 
+<h2 class="h4">Inline icons</h2>
+
+<p><svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> Lorem ipsum dolor sit amet, consectetur <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> adipisicing elit. <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg></p>
+
 <h2 class="h4">Set-position icons with text</h2>
 
 <ul class="list-unstyled">
