@@ -51,9 +51,9 @@ var
 			dest: assets + '/img',
 			icon: base.src + '/img/meta/favicon-180.png'
 		},
-		svgIcons: {
-			src: base.src + '/img/svg-icons/**/*',
-			dest: assets + '/img/svg-icons'
+		sprite: {
+			src: base.src + '/sprite/**/*',
+			dest: assets + '/img'
 		},
 		static: {
 			src: base.src + '/static/**/*',
@@ -202,12 +202,12 @@ gulp.task('images', function() {
 });
 
 
-// SVG icon sprite
+// SVG sprite
 
-gulp.task('svg-icon-sprite', function() {
+gulp.task('sprite', function() {
 	return gulp
-		.src(paths.svgIcons.src)
-		.pipe(plugins.svgSprite({
+		.src(paths.sprite.src)
+		.pipe(plugins.sprite({
 			mode: {
 				symbol: {
 					dest: '',
@@ -219,7 +219,7 @@ gulp.task('svg-icon-sprite', function() {
 				doctypeDeclaration: false
 			}
 		}))
-		.pipe(gulp.dest(paths.svgIcons.dest));
+		.pipe(gulp.dest(paths.sprite.dest));
 });
 
 
@@ -254,10 +254,10 @@ gulp.task('watch', function() {
 	gulp.watch(paths.styles.src, ['styles']);
 	gulp.watch(paths.scripts.src, ['scripts']);
 	gulp.watch(paths.images.src, ['images']);
-	gulp.watch(paths.svgIcons.src, ['svg-icon-sprite']);
+	gulp.watch(paths.sprite.src, ['sprite']);
 	gulp.watch(paths.static.src, ['static']);
 });
 
 gulp.task('default', [], function() {
-	gulp.start('styles', 'scripts', 'images', 'svg-icon-sprite', 'static');
+	gulp.start('styles', 'scripts', 'images', 'sprite', 'static');
 });
