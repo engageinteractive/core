@@ -1,4 +1,4 @@
-<p>Since we employ a top-left margin in most instances, the flush-first-nth utility is a simple way of removing the <code>margin-top</code> property from the first N children at certain breakpoints.</p>
+<p>Since we employ a top-left margin in most instances, the flush-first utility is a simple way of removing the <code>margin-top</code> property from the first N children at certain breakpoints.</p>
 
 <div class="example-grid">
 	<h2 class="h5">Flush first 2 (desktop)</h2>
