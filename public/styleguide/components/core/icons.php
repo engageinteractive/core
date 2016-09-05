@@ -114,12 +114,6 @@
 			<use xlink:href="/assets/img/sprite.svg#triangle-right"></use>
 		</svg>
 	</li>
-
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#cycle"></use>
-		</svg>
-	</li>
 </ul>
 
 <h2 class="h4">Set-position icons with text</h2>
