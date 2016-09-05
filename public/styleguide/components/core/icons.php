@@ -1,6 +1,6 @@
 <h2 class="h4">Basic icons</h2>
 
-<ul class="list-inline">
+<ul class="inline-children sg-icons">
 	<li>
 		<svg class="icon">
 			<use xlink:href="/assets/img/sprite.svg#chevron-thin-up"></use>
