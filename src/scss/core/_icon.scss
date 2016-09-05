@@ -36,12 +36,12 @@ $icon-size: 1em;
 	}
 
 	&__t {
-		padding-right: $icon-size + .5em;
+		padding-right: $icon-size + .3em;
 
 		&:last-child {
 			padding: {
 				right: 0;
-				left: $icon-size + .5em;
+				left: $icon-size + .3em;
 			}
 		}
 	}
