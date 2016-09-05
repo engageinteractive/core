@@ -205,9 +205,12 @@ gulp.task('images', function() {
 // SVG sprite
 
 gulp.task('sprite', function() {
+	var svgs = plugins.filter('**/*.svg', { restore: true });
+
 	return gulp
 		.src(paths.sprite.src)
-		.pipe(plugins.sprite({
+		.pipe(svgs)
+		.pipe(plugins.svgSprite({
 			mode: {
 				symbol: {
 					dest: '',
@@ -219,6 +222,7 @@ gulp.task('sprite', function() {
 				doctypeDeclaration: false
 			}
 		}))
+		.pipe(svgs.restore)
 		.pipe(gulp.dest(paths.sprite.dest));
 });
 
