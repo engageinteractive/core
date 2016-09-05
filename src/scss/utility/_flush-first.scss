@@ -3,7 +3,7 @@
 	Flush - to set "margin-top: 0" from the first nth elements
 
 	Example class:
-	<div class="base-flush-first-2">
+	<div class="flush-first--2">
 		<div>Child 1</div>
 		<div>Child 2</div>
 		<div>Child 3</div>
@@ -13,7 +13,7 @@
 	Would target, at no media query, first 2 children ( div:nth-child(-n+2) )
 
 	Example class:
-	<div class="base-flush-first-2 tablet-flush-first-3">
+	<div class="flush-first--2 flush-first--tablet-3">
 		<div>Child 1</div>
 		<div>Child 2</div>
 		<div>Child 3</div>
@@ -25,12 +25,22 @@
 
 */
 
-@mixin flush-nth($modifier: '') {
+@mixin flush-first-item($modifierClass, $i) {
+	.flush-first--#{$modifierClass}#{$i} {
+		> * {
+			&:nth-child(-n+#{$i}) {
+				@include flush--top;
+			}
+		}
+	}
+}
+
+@mixin flush-first($modifier: '') {
 
 	$modifierClass: '';
 
 	@if $modifier != '' {
-		$modifierClass: '--#{$modifier}';
+		$modifierClass: '#{$modifier}-';
 	}
 	@else {
 		$modifier: 'base';
@@ -39,34 +49,22 @@
 	@for $i from 1 through $grid-column-count {
 
 		@if $dev-mode {
-			.flush-first-#{$i}#{$modifierClass} {
-				> * {
-					&:nth-child(-n+#{$i}) {
-						@include flush--top;
-					}
-				}
-			}
+			@include flush-first-item($modifierClass, $i);
 		} @else if index( map-deep-get($grid-bp, $modifier, flush) , $i) or map-deep-get($grid-bp, $modifier, flush) == true {
-			.flush-first-#{$i}#{$modifierClass} {
-				> * {
-					&:nth-child(-n+#{$i}) {
-						@include flush--top;
-					}
-				}
-			}
+			@include flush-first-item($modifierClass, $i);
 		}
 
 	}
 
 }
 
-@include flush-nth;
+@include flush-first;
 
 @each $name, $min-width in $breakpoints {
 
 	@include mq($name) {
 
-		@include flush-nth(#{$name});
+		@include flush-first(#{$name});
 
 	}
 

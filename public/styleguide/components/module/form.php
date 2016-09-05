@@ -1,5 +1,5 @@
 <form>
-	<fieldset class="row row--compact flush-first-1">
+	<fieldset class="row row--compact flush-first--1">
 		<div class="column">
 			<label class="label" for="form-example-text">Text</label>
 

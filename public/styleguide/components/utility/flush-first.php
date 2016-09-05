@@ -3,7 +3,7 @@
 <div class="example-grid">
 	<h2 class="h5">Flush first 2 (desktop)</h2>
 
-	<div class="sg-flush-test flush-first-2--desktop">
+	<div class="sg-flush-test flush-first--desktop-2">
 		<div><span>Child 1</span></div>
 		<div><span>Child 2</span></div>
 		<div><span>Child 3</span></div>
@@ -11,7 +11,7 @@
 	</div>
 
 	<h2 class="h5">Flush first 2 (phone), then 3 (tablet)</h2>
-	<div class="sg-flush-test flush-first-2--phone flush-first-3--tablet">
+	<div class="sg-flush-test flush-first--phone-2 flush-first--tablet-3">
 		<div><span>Child 1</span></div>
 		<div><span>Child 2</span></div>
 		<div><span>Child 3</span></div>

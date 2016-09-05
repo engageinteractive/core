@@ -1,5 +1,5 @@
 <div class="sg-example-grid">
-	<div class="row flush-first-1 flush-first-2--tablet">
+	<div class="row flush-first--1 flush-first--tablet-2">
 		<div class="column width--tablet-12"><span>12 (tablet)</span></div>
 		<div class="column width--tablet-12"><span>12 (tablet)</span></div>
 	</div>
