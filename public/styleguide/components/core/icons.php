@@ -3,6 +3,30 @@
 <ul class="inline-children sg-icons">
 	<li>
 		<svg class="icon">
+			<use xlink:href="/assets/img/sprite.svg#chevron-up"></use>
+		</svg>
+	</li>
+
+	<li>
+		<svg class="icon">
+			<use xlink:href="/assets/img/sprite.svg#chevron-down"></use>
+		</svg>
+	</li>
+
+	<li>
+		<svg class="icon">
+			<use xlink:href="/assets/img/sprite.svg#chevron-left"></use>
+		</svg>
+	</li>
+
+	<li>
+		<svg class="icon">
+			<use xlink:href="/assets/img/sprite.svg#chevron-right"></use>
+		</svg>
+	</li>
+
+	<li>
+		<svg class="icon">
 			<use xlink:href="/assets/img/sprite.svg#chevron-thin-up"></use>
 		</svg>
 	</li>
@@ -22,29 +46,6 @@
 	<li>
 		<svg class="icon">
 			<use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use>
-		</svg>
-	</li>
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#arrow-up"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#arrow-down"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#arrow-right"></use>
 		</svg>
 	</li>
 
@@ -74,24 +75,6 @@
 
 	<li>
 		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#circle-with-cross"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#circle-with-plus"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#circle-with-minus"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
 			<use xlink:href="/assets/img/sprite.svg#link"></use>
 		</svg>
 	</li>
@@ -104,7 +87,7 @@
 
 	<li>
 		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#email"></use>
+			<use xlink:href="/assets/img/sprite.svg#mail"></use>
 		</svg>
 	</li>
 
@@ -134,18 +117,6 @@
 
 	<li>
 		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#cw"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
-			<use xlink:href="/assets/img/sprite.svg#ccw"></use>
-		</svg>
-	</li>
-
-	<li>
-		<svg class="icon">
 			<use xlink:href="/assets/img/sprite.svg#cycle"></use>
 		</svg>
 	</li>
@@ -159,7 +130,7 @@
 			<span class="icon-text__t">Icon text, description or title</span>
 
 			<svg class="icon-text__i icon">
-				<use xlink:href="/assets/img/sprite.svg#circle-with-plus"></use>
+				<use xlink:href="/assets/img/sprite.svg#plus"></use>
 			</svg>
 		</span>
 	</li>
@@ -167,7 +138,7 @@
 	<li>
 		<span class="icon-text">
 			<svg class="icon-text__i icon">
-				<use xlink:href="/assets/img/sprite.svg#circle-with-plus"></use>
+				<use xlink:href="/assets/img/sprite.svg#plus"></use>
 			</svg>
 
 			<span class="icon-text__t">Icon text, description or title</span>
