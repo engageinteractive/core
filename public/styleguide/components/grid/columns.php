@@ -28,4 +28,8 @@
 		<div class="column width--10 push--13"><span>10 (Push 13)</span></div>
 		<div class="column width--10 pull--9"><span>10 (Pull 9)</span></div>
 	</div>
+
+	<div class="row">
+		<div class="column width--20 push--2 width--tablet-10 push--tablet-7"><span>Responsive width, push and pull</span></div>
+	</div>
 </div>
