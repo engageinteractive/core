@@ -52,7 +52,7 @@ var
 			icon: base.src + '/img/meta/favicon-180.png'
 		},
 		sprite: {
-			src: base.src + '/sprite/**/*',
+			src: base.src + '/sprite/**/*.svg',
 			dest: assets + '/img'
 		},
 		static: {
@@ -205,11 +205,8 @@ gulp.task('images', function() {
 // SVG sprite
 
 gulp.task('sprite', function() {
-	var svgs = plugins.filter('**/*.svg', { restore: true });
-
 	return gulp
 		.src(paths.sprite.src)
-		.pipe(svgs)
 		.pipe(plugins.svgSprite({
 			mode: {
 				symbol: {
@@ -222,7 +219,6 @@ gulp.task('sprite', function() {
 				doctypeDeclaration: false
 			}
 		}))
-		.pipe(svgs.restore)
 		.pipe(gulp.dest(paths.sprite.dest));
 });
 
