@@ -35,6 +35,12 @@ select::-ms-expand {
 	display: none;
 }
 
+// remove IE11 select element selected option state
+select:focus::-ms-value {
+	background-color: transparent;
+	color: inherit;
+}
+
 // Allow only vertical resizing of textareas
 textarea {
 	resize: vertical;
