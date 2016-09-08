@@ -6,7 +6,7 @@
 	font-family: $stack;
 	font-size: $p;
 	font-weight: $w--normal;
-	padding: 17px;
+	padding: rem(17px);
 	position: relative;
 
 	&.is-focused {
@@ -53,7 +53,7 @@
 // sizes
 
 .button--large {
-	padding: 22px 30px;
+	padding: rem(22px) rem(30px);
 
 	@include mq('tablet') {
 		padding: 25px 40px;
@@ -63,5 +63,5 @@
 
 .button--small {
 	font-size: $p--small;
-	padding: 12px;
+	padding: rem(12px);
 }

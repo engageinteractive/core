@@ -1,8 +1,8 @@
 $input-border-width: 1px;
 $input-line-height: 1.5;
-$input-padding: 12px;
+$input-padding: rem(12px);
 $input-validation-icon: $p;
-$input-height: ($input-padding * 2) + ($input-border-width * 2) + ($p * $input-line-height);
+$input-height: ($input-padding * 2) + (rem($input-border-width) * 2) + ($p * $input-line-height);
 
 input,
 textarea,

@@ -33,7 +33,8 @@
 	}
 
 	@if $type == max {
-		$size: $size - 1px;
+		$negative: if($media-query-units == em, 0.01em, 1px);
+		$size: $size - $negative;
 	}
 
 	@media only screen and (#{$type}-#{$property}: $size) {
