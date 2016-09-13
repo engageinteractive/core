@@ -106,11 +106,11 @@ example:
 
 // basic spacing units
 
-$spacing-unit: 30px;
-$spacing-unit--x-small: 10px;
-$spacing-unit--small: 20px;
-$spacing-unit--large: 40px;
-$spacing-unit--x-large: 60px;
+$spacing-unit: rem(30px);
+$spacing-unit--x-small: rem(10px);
+$spacing-unit--small: rem(20px);
+$spacing-unit--large: rem(40px);
+$spacing-unit--x-large: rem(60px);
 
 
 // page gutter
