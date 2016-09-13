@@ -8,6 +8,7 @@
 	font-weight: $w--normal;
 	padding: rem(17px);
 	position: relative;
+	text-decoration: none;
 
 	&.is-focused {
 		box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue;
