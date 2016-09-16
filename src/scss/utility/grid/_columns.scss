@@ -22,7 +22,6 @@
 }
 
 .column {
-	@include content-margins;
 	position: relative;
 	float: left;
 	width: 100%;

@@ -122,13 +122,19 @@ h6 {
 // Basic typography styling
 
 #{$typography-elems} {
-	@include content-margins('&');
 	margin-bottom: 1em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 #{$media-elems} {
-	@include content-margins('&');
 	margin-bottom: 1.25em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 ol,
