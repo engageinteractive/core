@@ -38,6 +38,7 @@
     'no-undef': 1,
     'no-underscore-dangle': 1,
     'no-unused-vars': 1,
+    'prefer-rest-params': 1,
     'semi': 1,
     'space-before-blocks': 1,
     'space-in-parens': 1,
