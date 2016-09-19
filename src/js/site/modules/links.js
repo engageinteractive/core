@@ -1,14 +1,14 @@
 jQuery.extend(jQuery.expr[':'], {
 	external: function(obj) {
 
-		return (obj.hostname !== location.hostname) && /:\/\//.test($(obj).attr('href'));
+		return (obj.hostname !== window.location.hostname) && /:\/\//.test($(obj).attr('href'));
 
 	},
 	internal: function(obj) {
 
-		return (obj.hostname === location.hostname) || !/:\/\//.test($(obj).attr('href'));
+		return (obj.hostname === window.location.hostname) || !/:\/\//.test($(obj).attr('href'));
 
-	}
+	},
 });
 
 $(document.body)

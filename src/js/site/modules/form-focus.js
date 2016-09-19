@@ -22,13 +22,13 @@
 		})
 		.on('focus', selectors, function() {
 
-			if (mouseActive === false) {
+			var $this = $(this);
 
-				var $this = $(this);
+			if (!mouseActive) {
 
 				$this.addClass('is-focused');
 
-				if( $this.is('select:not([multiple="multiple"])') ){
+				if ($this.is('select:not([multiple="multiple"])')) {
 					$this.parent('.simple-select').addClass('is-focused');
 				}
 
@@ -41,7 +41,7 @@
 
 			$(this).removeClass('is-focused');
 
-			if( $this.is('select:not([multiple="multiple"])') ){
+			if ($this.is('select:not([multiple="multiple"])')) {
 				$this.parent('.simple-select').removeClass('is-focused');
 			}
 

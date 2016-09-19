@@ -9,7 +9,9 @@
     'coreResize': true,
     'getRandomInt': true,
     'jQuery': true,
-    'rangeToRange': true
+    'rangeToRange': true,
+    'window': true,
+    'document': true
   },
   rules: {
     # overrides

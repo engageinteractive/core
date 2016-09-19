@@ -1,51 +1,50 @@
-;(function(){
+(function() {
 
 	var defaults = {
-			active: 768
+			active: 768,
 		},
 		count = 0;
 
-	$.fn.equalHeight = function(method, settings){
+	$.fn.equalHeight = function(method, settings) {
 
 		var instanceOptions = $.extend({}, defaults, settings);
 
-		this.each(function(){
+		this.each(function() {
 
-			var $eh = $(this);
-
-			var options = $.extend({}, instanceOptions, $eh.data());
+			var
+				$eh = $(this),
+				options = $.extend({}, instanceOptions, $eh.data()),
+				eh = {
+					height: false,
+				};
 
 			$eh = {
 				root: $eh,
 				master: $eh.find('.equal-height__master'),
-				children: $eh.find('.equal-height__component')
+				children: $eh.find('.equal-height__component'),
 			};
 
-			var eh = {
-				height: false
-			};
+			core.resize['equalHeight-' + count] = function(x) {
 
-			core.resize['equalHeight-' + count] = function(x, y){
-
-				if( x === false ) return false;
+				if (!x) return;
 
 				eh.height = 0;
 
 				$eh.children
 					.css({
-						minHeight: false
+						minHeight: false,
 					});
 
-				if( core.width >= options.active ){
+				if (core.width >= options.active) {
 
-					if( $eh.master.length ){
+					if ($eh.master.length) {
 
 						eh.height = $eh.master.height();
 
-					}else{
+					} else {
 
 						$eh.children
-							.each(function(){
+							.each(function() {
 
 								var $this = $(this);
 
@@ -57,7 +56,7 @@
 
 					$eh.children
 						.css({
-							minHeight: eh.height
+							minHeight: eh.height,
 						});
 
 				}
@@ -66,7 +65,7 @@
 
 			core.resize['equalHeight-' + count]();
 
-			count++;
+			count += 1;
 
 		});
 

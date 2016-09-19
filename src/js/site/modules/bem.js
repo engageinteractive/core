@@ -3,7 +3,7 @@ window.bem = {
 	states: {
 		active: 'is-active',
 		hidden: 'is-hidden',
-		loading: 'is-loading'
+		loading: 'is-loading',
 	},
 
 	event: function(_block, _event) {
@@ -16,6 +16,6 @@ window.bem = {
 
 		return '.js-' + _block + (_element ? ('__' + _element) : '');
 
-	}
+	},
 
 };

@@ -22,7 +22,7 @@ function viewport() {
 
 	return {
 		width: e[a + 'Width'],
-		height: e[a + 'Height']
+		height: e[a + 'Height'],
 	};
 
 }
@@ -36,13 +36,15 @@ window.coreResize = function() {
 
 	var dimensions = viewport(),
 		prevWidth = core.width,
-		prevHeight = core.height;
+		prevHeight = core.height,
+		x,
+		y;
 
 	core.width = dimensions.width;
 	core.height = dimensions.height;
 
-	var x = prevWidth != core.width,
-		y = prevHeight != core.height;
+	x = prevWidth !== core.width;
+	y = prevHeight !== core.height;
 
 	$.each(core.resize, function() {
 
@@ -64,7 +66,7 @@ window.clearCoreResize = function(name) {
  */
 window.getRandomInt = function(min, max) {
 
-	return Math.floor(Math.random() * (max - min + 1)) + min;
+	return Math.floor(Math.random() * (max - (min + 1))) + min;
 
 };
 
@@ -103,8 +105,8 @@ window.core = {
 			});
 
 		},
-		listener: {}
-	}
+		listener: {},
+	},
 };
 
 
@@ -135,9 +137,9 @@ $(window).on({
 		core.scroll.x = x;
 		core.scroll.y = y;
 
-		if( Modernizr.raf ){
+		if (Modernizr.raf) {
 
-			requestAnimationFrame(core.scroll.update);
+			window.requestAnimationFrame(core.scroll.update);
 
 		} else {
 
@@ -145,5 +147,5 @@ $(window).on({
 
 		}
 
-	}
+	},
 });

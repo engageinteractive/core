@@ -15,7 +15,7 @@
 			$trc = {
 				root: $trc,
 				headers: $trc.find('thead th'),
-				rows: $trc.find('tbody tr')
+				rows: $trc.find('tbody tr'),
 			};
 
 			$trc.headers.each(function() {
@@ -27,9 +27,9 @@
 
 			});
 
-			core.resize['tableResponsiveCollapse-' + count] = function(x, y) {
+			core.resize['tableResponsiveCollapse-' + count] = function(x) {
 
-				if( x === false ) return false;
+				if (!x) return;
 
 				$trc.root.toggleClass(
 					'table-responsive-collapse--collapsed',
@@ -40,7 +40,7 @@
 
 			core.resize['tableResponsiveCollapse-' + count]();
 
-			count++;
+			count += 1;
 
 		});
 
