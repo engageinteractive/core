@@ -189,11 +189,18 @@ gulp.task('images', function() {
 	return gulp
 		.src(paths.images.src)
 		.pipe(optimised)
-		.pipe(plugins.tinypngCompress({
-			key: config.tinypngKey,
-			sigFile: paths.images.dest + '/.tinypng',
-			summarise: true,
-		}))
+		.pipe(
+			plugins.tinypngCompress({
+				key: config.tinypngKey,
+				sigFile: paths.images.dest + '/.tinypng',
+				summarise: true,
+			})
+				.on('error', plugins.notify.onError({
+					title: 'Images Error',
+					message: '<%= error.message %>',
+					icon: paths.images.icon,
+				}))
+		)
 		.pipe(optimised.restore)
 		.pipe(svgs)
 		.pipe(plugins.svgmin())
