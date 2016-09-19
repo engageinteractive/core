@@ -16,11 +16,12 @@
   rules: {
     # overrides
     'func-names': 0,
+    'import/no-extraneous-dependencies': [2, {'devDependencies': true}],
     'indent': [2, 'tab'],
+    'no-tabs': 0,
     'one-var': 0,
     'padded-blocks': 0,
     'space-before-function-paren': [2, 'never'],
-    'import/no-extraneous-dependencies': [2, {'devDependencies': true}],
     # warnings
     'comma-dangle': 1,
     'comma-spacing': 1,
