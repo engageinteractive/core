@@ -18,7 +18,7 @@ var
 	config = {
 		url: 'front-end-baseplate.dev.com',
 		tinypngKey: process.env.TINYPNG_KEY,
-		autoprefixer: ['last 2 versions', 'IE 9', 'Safari 8']
+		autoprefixer: ['last 2 versions', 'IE 9', 'Safari 8'],
 	},
 
 	// Dependencies
@@ -32,33 +32,33 @@ var
 	// Paths
 	base = {
 		src: 'src',
-		public: 'public'
+		public: 'public',
 	},
 	assets = base.public + '/assets',
 	paths = {
 		styles: {
 			src: base.src + '/scss/**/*.scss',
-			dest: assets + '/css'
+			dest: assets + '/css',
 		},
 		scripts: {
 			dir: base.src + '/js',
 			src: base.src + '/js/**/*.js',
-			dest: assets + '/js'
+			dest: assets + '/js',
 		},
 		images: {
 			dir: base.src + '/img',
 			src: base.src + '/img/**/*',
 			dest: assets + '/img',
-			icon: base.src + '/img/meta/favicon-180.png'
+			icon: base.src + '/img/meta/favicon-180.png',
 		},
 		sprite: {
 			src: base.src + '/sprite/**/*.svg',
-			dest: assets + '/img'
+			dest: assets + '/img',
 		},
 		static: {
 			src: base.src + '/static/**/*',
-			dest: assets + '/static'
-		}
+			dest: assets + '/static',
+		},
 	};
 
 
@@ -81,18 +81,18 @@ gulp.task('styles', function() {
 					title: 'Sass Error',
 					subtitle: [
 						'<%= error.relativePath %>',
-						'<%= error.line %>'
+						'<%= error.line %>',
 					].join(':'),
 					message: '<%= error.messageOriginal %>',
 					open: 'file://<%= error.file %>',
 					onLast: true,
-					icon: paths.images.icon
+					icon: paths.images.icon,
 				}))
 		)
 		.pipe(plugins.cleanCss({ restructuring: false }))
 		.pipe(plugins.autoprefixer({
 			browsers: config.autoprefixer,
-			cascade: false
+			cascade: false,
 		}))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.styles.dest));
@@ -112,15 +112,15 @@ gulp.task('scripts.lint', function() {
 					title: 'JavaScript Error',
 					subtitle: [
 						'<%= options.relative(options.cwd, error.fileName) %>',
-						'<%= error.lineNumber %>'
+						'<%= error.lineNumber %>',
 					].join(':'),
 					message: '<%= error.message %>',
 					open: 'file://<%= error.fileName %>',
 					templateOptions: {
 						relative: path.relative,
-						cwd: process.cwd()
+						cwd: process.cwd(),
 					},
-					icon: paths.images.icon
+					icon: paths.images.icon,
 				}))
 		)
 		.pipe(plugins.eslint.failAfterError());
@@ -139,7 +139,7 @@ gulp.task('scripts.site', function() {
 		.src([
 			paths.scripts.dir + '/site/core.js',
 			paths.scripts.dir + '/site/modules/*.js',
-			paths.scripts.dir + '/site/pages/*.js'
+			paths.scripts.dir + '/site/pages/*.js',
 		])
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.concat('site.js'))
@@ -153,7 +153,7 @@ gulp.task('scripts.plugins', function() {
 	return gulp
 		.src([
 			paths.scripts.dir + '/plugins/*.js',
-			paths.scripts.dir + '/plugins/jquery/*.js'
+			paths.scripts.dir + '/plugins/jquery/*.js',
 		])
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.concat('plugins.js'))
@@ -192,7 +192,7 @@ gulp.task('images', function() {
 		.pipe(plugins.tinypngCompress({
 			key: config.tinypngKey,
 			sigFile: paths.images.dest + '/.tinypng',
-			summarise: true
+			summarise: true,
 		}))
 		.pipe(optimised.restore)
 		.pipe(svgs)
@@ -211,13 +211,13 @@ gulp.task('sprite', function() {
 			mode: {
 				symbol: {
 					dest: '',
-					sprite: 'sprite.svg'
-				}
+					sprite: 'sprite.svg',
+				},
 			},
 			svg: {
 				xmlDeclaration: false,
-				doctypeDeclaration: false
-			}
+				doctypeDeclaration: false,
+			},
 		}))
 		.pipe(gulp.dest(paths.sprite.dest));
 });
@@ -247,8 +247,8 @@ gulp.task('watch', function() {
 			paths.images.dest,
 			base.public + '/**/*.{html,php}',
 			'app/views/**/*.php',
-			'resources/views/**/*.php'
-		]
+			'resources/views/**/*.php',
+		],
 	});
 
 	gulp.watch(paths.styles.src, ['styles']);
