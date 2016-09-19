@@ -36,7 +36,7 @@ h6 {
 	font-family: $stack--heading;
 	font-weight: $w--bold;
 	line-height: 1;
-	margin-top: 1em;
+	margin-top: .8em;
 
 	a {
 		font-weight: $w--bold;
@@ -46,7 +46,6 @@ h6 {
 .h1 {
 	font-size: $h--large;
 	line-height: 1;
-	margin-bottom: .5em;
 
 	@include mq('tablet') {
 		font-size: $h--x-large;
@@ -54,13 +53,11 @@ h6 {
 
 	@include mq('desktop') {
 		font-size: $h--xxx-large;
-		margin-bottom: .3em;
 	}
 }
 
 .h2 {
 	font-size: $h--medium;
-	margin-bottom: .6em;
 
 	@include mq('tablet') {
 		font-size: $h--large;
@@ -68,13 +65,11 @@ h6 {
 
 	@include mq('desktop') {
 		font-size: $h--xx-large;
-		margin-bottom: .4em;
 	}
 }
 
 .h3 {
 	font-size: $h--small;
-	margin-bottom: .7em;
 
 	@include mq('tablet') {
 		font-size: $h--medium;
@@ -82,13 +77,11 @@ h6 {
 
 	@include mq('desktop') {
 		font-size: $h--x-large;
-		margin-bottom: .5em;
 	}
 }
 
 .h4 {
 	font-size: $h--x-small;
-	margin-bottom: .7em;
 
 	@include mq('tablet') {
 		font-size: $h--small;
@@ -96,13 +89,11 @@ h6 {
 
 	@include mq('desktop') {
 		font-size: $h--medium;
-		margin-bottom: .4em;
 	}
 }
 
 .h5 {
 	font-size: $h--xx-small;
-	margin-bottom: .8em;
 
 	@include mq('tablet') {
 		font-size: $h--x-small;
@@ -111,7 +102,6 @@ h6 {
 
 .h6 {
 	font-size: $h--xxx-small;
-	margin-bottom: .9em;
 
 	@include mq('tablet') {
 		font-size: $h--xx-small;
@@ -121,19 +111,12 @@ h6 {
 
 // Basic typography styling
 
-#{$typography-elems} {
-	margin-bottom: 1em;
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
-
+#{$typography-elems},
 #{$media-elems} {
-	margin-bottom: 1.25em;
+	margin-top: 1.25em;
 
-	&:last-child {
-		margin-bottom: 0;
+	&:first-child {
+		margin-top: 0;
 	}
 }
 
