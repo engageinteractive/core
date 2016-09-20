@@ -4,9 +4,11 @@
 
 	<p>Nobis, accusamus, velit, laudantium illum minima a <a href="">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
 
-	<p>
-		<img src="//placehold.it/1200x800" alt="">
-	</p>
+	<figure class="media">
+		<div class="placeholder">
+			<img src="//placehold.it/1600x900" alt="Image alt text">
+		</div>
+	</figure>
 
 	<p>Nobis, accusamus, velit, laudantium illum minima a <a href="">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
 
@@ -37,7 +39,9 @@
 	</ul>
 
 	<figure class="media media--right">
-		<img src="//placehold.it/400" alt="Image alt text">
+		<div class="placeholder placeholder--square">
+			<img src="//placehold.it/400" alt="Image alt text">
+		</div>
 	</figure>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?</p>
@@ -51,7 +55,9 @@
 	<p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porroorporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
 
 	<figure class="media media--left">
-		<img src="//placehold.it/400" alt="Image alt text">
+		<div class="placeholder placeholder--square">
+			<img src="//placehold.it/400" alt="Image alt text">
+		</div>
 	</figure>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?</p>
@@ -65,7 +71,10 @@
 	<p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. rporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
 
 	<figure class="media media--centre">
-		<img src="//placehold.it/400" alt="Image alt text">
+		<div class="placeholder placeholder--square">
+			<img src="//placehold.it/400" alt="Image alt text">
+		</div>
+
 		<figcaption>Lorem ipsum dolor sit amet</figcaption>
 	</figure>
 
@@ -75,6 +84,7 @@
 
 	<blockquote class="blockquote blockquote--centre">
 		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
 		<cite class="blockquote__meta">Author name here, Role/department</cite>
 	</blockquote>
 

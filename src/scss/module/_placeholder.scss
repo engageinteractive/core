@@ -1,0 +1,24 @@
+.placeholder {
+	@include responsive-ratio(16, 9);
+	position: relative;
+	width: 100%;
+
+	> * {
+		position: absolute;
+		top: 0;	left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&--square {
+		@include responsive-ratio(1, 1);
+	}
+
+	&--landscape {
+		@include responsive-ratio(4, 3);
+	}
+
+	&--portrait {
+		@include responsive-ratio(3, 4);
+	}
+}
