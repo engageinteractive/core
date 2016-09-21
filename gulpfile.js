@@ -64,8 +64,8 @@ var
 
 // Clean
 
-gulp.task('clean', function(cb) {
-	return del(assets, cb);
+gulp.task('clean', function() {
+	return del(assets);
 });
 
 
@@ -174,9 +174,10 @@ gulp.task('scripts.libs', function() {
 		.pipe(gulp.dest(paths.scripts.dest));
 });
 
-gulp.task('scripts', ['scripts.lint'], function() {
-	gulp.start('scripts.site', 'scripts.plugins', 'scripts.libs');
-});
+gulp.task('scripts', gulp.series(
+	'scripts.lint',
+	gulp.parallel('scripts.site', 'scripts.plugins', 'scripts.libs')
+));
 
 
 // Images
@@ -258,13 +259,11 @@ gulp.task('watch', function() {
 		],
 	});
 
-	gulp.watch(paths.styles.src, ['styles']);
-	gulp.watch(paths.scripts.src, ['scripts']);
-	gulp.watch(paths.images.src, ['images']);
-	gulp.watch(paths.sprite.src, ['sprite']);
-	gulp.watch(paths.static.src, ['static']);
+	gulp.watch(paths.styles.src, gulp.parallel('styles'));
+	gulp.watch(paths.scripts.src, gulp.parallel('scripts'));
+	gulp.watch(paths.images.src, gulp.parallel('images'));
+	gulp.watch(paths.sprite.src, gulp.parallel('sprite'));
+	gulp.watch(paths.static.src, gulp.parallel('static'));
 });
 
-gulp.task('default', [], function() {
-	gulp.start('styles', 'scripts', 'images', 'sprite', 'static');
-});
+gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'sprite', 'static'));
