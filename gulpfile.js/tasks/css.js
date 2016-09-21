@@ -1,11 +1,11 @@
 var
 	config = require('../config'),
 	gulp = require('gulp'),
+	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('css'),
 
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCss = require('gulp-clean-css'),
-	notify = require('gulp-notify'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
 
@@ -14,18 +14,12 @@ var
 			.src(paths.src)
 			.pipe(sourcemaps.init())
 			.pipe(
-				sass(config.tasks.css.sass)
-					.on('error', notify.onError({
-						title: 'Sass Error',
-						subtitle: [
-							'<%= error.relativePath %>',
-							'<%= error.line %>',
-						].join(':'),
-						message: '<%= error.messageOriginal %>',
-						open: 'file://<%= error.file %>',
-						onLast: true,
-						icon: config.tasks.images.icon,
-					}))
+				sass(config.tasks.css.sass).on('error', notification({
+					title: 'Sass Error',
+					subtitle: '<%= error.relativePath %>:<%= error.line %>',
+					message: '<%= error.messageOriginal %>',
+					open: 'file://<%= error.file %>',
+				}))
 			)
 			.pipe(cleanCss(config.tasks.css.cleanCss))
 			.pipe(autoprefixer(config.tasks.css.autoprefixer))
