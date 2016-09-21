@@ -33,16 +33,19 @@
       "src": "img",
       "dest": "img",
       "extensions": {
-        "bitmap": [
+        "bitmaps": [
           "jpg",
           "png",
           "gif"
         ],
-        "vector": [
+        "vectors": [
           "svg"
         ]
       },
-      "icon": "meta/favicon-180.png"
+      "icon": "meta/favicon-180.png",
+      "tinypngCompress": {
+        "summarise": true
+      }
     }
   }
 }
