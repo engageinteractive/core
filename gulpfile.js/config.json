@@ -65,6 +65,13 @@
           "doctypeDeclaration": false
         }
       }
+    },
+    "static": {
+      "src": "static",
+      "dest": "static",
+      "extensions": [
+        "*"
+      ]
     }
   }
 }
