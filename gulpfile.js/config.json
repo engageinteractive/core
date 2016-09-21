@@ -46,6 +46,25 @@
       "tinypngCompress": {
         "summarise": true
       }
+    },
+    "sprite": {
+      "src": "sprite",
+      "dest": "img",
+      "extensions": [
+        "svg"
+      ],
+      "svgSprite": {
+        "mode": {
+          "symbol": {
+            "dest": "",
+            "sprite": "sprite.svg"
+          }
+        },
+        "svg": {
+          "xmlDeclaration": false,
+          "doctypeDeclaration": false
+        }
+      }
     }
   }
 }
