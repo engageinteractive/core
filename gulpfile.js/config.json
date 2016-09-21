@@ -74,6 +74,29 @@
       "extensions": [
         "*"
       ]
+    },
+    "watch": {
+      "tasks": [
+        "css",
+        "bitmap",
+        "svg",
+        "sprite",
+        "static"
+      ],
+      "browserSync": {
+        "ghostMode": {
+          "scroll": false
+        },
+        "notify": false,
+        "open": false,
+        "proxy": "front-end-baseplate.dev.com",
+        "port": 5757,
+        "files": [
+          "public/**/*.{html,php}",
+          "app/views/**/*.php",
+          "resources/views/**/*.php"
+        ]
+      }
     }
   }
 }
