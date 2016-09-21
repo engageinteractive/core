@@ -3,5 +3,42 @@
     "src": "src",
     "dest": "public/assets"
   },
-  "tasks": {}
+  "tasks": {
+    "css": {
+      "src": "scss",
+      "dest": "css",
+      "extensions": [
+        "css",
+        "sass",
+        "scss"
+      ],
+      "sass": {
+        "includePaths": [
+          "node_modules"
+        ]
+      },
+      "cleanCss": {
+        "restructuring": false
+      },
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions",
+          "IE 9",
+          "Safari 8"
+        ],
+        "cascade": false
+      }
+    },
+    "images": {
+      "src": "img",
+      "dest": "img",
+      "extensions": [
+        "jpg",
+        "png",
+        "svg",
+        "gif"
+      ],
+      "icon": "meta/favicon-180.png"
+    }
+  }
 }
