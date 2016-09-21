@@ -29,23 +29,25 @@
         "cascade": false
       }
     },
-    "images": {
+    "bitmap": {
       "src": "img",
       "dest": "img",
-      "extensions": {
-        "bitmaps": [
-          "jpg",
-          "png",
-          "gif"
-        ],
-        "vectors": [
-          "svg"
-        ]
-      },
+      "extensions": [
+        "jpg",
+        "png",
+        "gif"
+      ],
       "icon": "meta/favicon-180.png",
       "tinypngCompress": {
         "summarise": true
       }
+    },
+    "svg": {
+      "src": "img",
+      "dest": "img",
+      "extensions": [
+        "svg"
+      ]
     },
     "sprite": {
       "src": "sprite",

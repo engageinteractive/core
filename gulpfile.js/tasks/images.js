@@ -2,27 +2,26 @@ var
 	config = require('../config'),
 	gulp = require('gulp'),
 	notification = require('../utils/notification'),
-	paths = require('../utils/paths')('images'),
+	paths = require('../utils/paths'),
+	bitmapPaths = paths('bitmap'),
+	svgPaths = paths('svg'),
+	options = config.tasks.bitmap.tinypngCompress,
+	task,
 
 	path = require('path'),
 	svgmin = require('gulp-svgmin'),
 	tinypngCompress = require('gulp-tinypng-compress'),
-	task,
 
-	vectors = function() {
+	svg = function() {
 		return gulp
-			.src(paths.src('vectors'))
+			.src(svgPaths.src)
 			.pipe(svgmin())
-			.pipe(gulp.dest(paths.dest));
+			.pipe(gulp.dest(svgPaths.dest));
 	},
 
-	bitmaps = function() {
-		var options = config.tasks.images.tinypngCompress;
-		options.key = options.key || process.env.TINYPNG_KEY;
-		options.sigFile = options.sigFile || path.join(paths.dest, '.tinypng');
-
+	bitmap = function() {
 		return gulp
-			.src(paths.src('bitmaps'))
+			.src(bitmapPaths.src)
 			.pipe(
 				tinypngCompress(options)
 					.on('error', notification({
@@ -30,13 +29,15 @@ var
 						message: '<%= error.message %>',
 					}))
 			)
-			.pipe(gulp.dest(paths.dest));
+			.pipe(gulp.dest(bitmapPaths.dest));
 	};
 
-gulp.task('images.vectors', vectors);
-gulp.task('images.bitmaps', bitmaps);
+options.key = options.key || process.env.TINYPNG_KEY;
+options.sigFile = options.sigFile || path.join(bitmapPaths.dest, '.tinypng');
 
-task = gulp.parallel('images.vectors', 'images.bitmaps');
+gulp.task('bitmap', bitmap);
+gulp.task('svg', svg);
 
+task = gulp.parallel('svg', 'bitmap');
 gulp.task('images', task);
 module.exports = task;
