@@ -1,0 +1,7 @@
+{
+  "root": {
+    "src": "src",
+    "dest": "public/assets"
+  },
+  "tasks": {}
+}
