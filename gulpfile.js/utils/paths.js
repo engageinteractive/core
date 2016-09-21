@@ -7,7 +7,7 @@ module.exports = function(task) {
 		src: path.join(
 			config.root.src,
 			config.tasks[task].src,
-			'/**/*.{' + config.tasks[task].extensions + '}'
+			'/**/*.+(' + config.tasks[task].extensions.join('|') + ')'
 		),
 		dest: path.join(
 			config.root.dest,
