@@ -29,6 +29,36 @@
         "cascade": false
       }
     },
+    "scripts": {
+      "src": "js",
+      "dest": "js",
+      "extensions": [
+        "js"
+      ],
+      "files": [
+        {
+          "name": "site",
+          "src": [
+            "core",
+            "modules/*",
+            "pages/*"
+          ]
+        },
+        {
+          "name": "plugins",
+          "src": [
+            "*",
+            "jquery/*"
+          ]
+        },
+        {
+          "name": "libs",
+          "src": [
+            "**/*"
+          ]
+        }
+      ]
+    },
     "bitmap": {
       "src": "img",
       "dest": "img",
