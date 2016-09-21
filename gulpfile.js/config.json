@@ -32,12 +32,16 @@
     "images": {
       "src": "img",
       "dest": "img",
-      "extensions": [
-        "jpg",
-        "png",
-        "svg",
-        "gif"
-      ],
+      "extensions": {
+        "bitmap": [
+          "jpg",
+          "png",
+          "gif"
+        ],
+        "vector": [
+          "svg"
+        ]
+      },
       "icon": "meta/favicon-180.png"
     }
   }
