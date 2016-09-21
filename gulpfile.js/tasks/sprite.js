@@ -7,7 +7,7 @@ var
 
 	task = function() {
 		return gulp
-			.src(paths.src())
+			.src(paths.src)
 			.pipe(svgSprite(config.tasks.sprite.svgSprite))
 			.pipe(gulp.dest(paths.dest));
 	};

@@ -11,7 +11,7 @@ var
 
 	task = function() {
 		return gulp
-			.src(paths.src())
+			.src(paths.src)
 			.pipe(sourcemaps.init())
 			.pipe(
 				sass(config.tasks.css.sass).on('error', notification({

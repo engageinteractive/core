@@ -4,7 +4,7 @@ var
 
 	task = function() {
 		return gulp
-			.src(paths.src())
+			.src(paths.src)
 			.pipe(gulp.dest(paths.dest));
 	};
 
