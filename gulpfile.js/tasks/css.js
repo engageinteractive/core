@@ -1,25 +1,13 @@
 var
 	config = require('../config'),
 	gulp = require('gulp'),
+	paths = require('../utils/paths')('css'),
 
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCss = require('gulp-clean-css'),
 	notify = require('gulp-notify'),
-	path = require('path'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
-
-	paths = {
-		src: path.join(
-			config.root.src,
-			config.tasks.css.src,
-			'/**/*.{' + config.tasks.css.extensions + '}'
-		),
-		dest: path.join(
-			config.root.dest,
-			config.tasks.css.dest
-		),
-	},
 
 	task = function() {
 		return gulp
