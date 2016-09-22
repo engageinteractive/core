@@ -43,12 +43,6 @@ $.fn.loadImg = function(){
 				backgroundImage: 'url(' + src + ')'
 			};
 
-			if( data.animation )
-				setCss.x = data.animation == 'from-left' ? '-50%' : '50%';
-
-			if( data.fade )
-				setCss.opacity = 0;
-
 			$this
 				.css(setCss);
 
