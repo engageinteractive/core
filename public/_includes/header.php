@@ -41,10 +41,12 @@
 </head>
 <body>
 
-	<!--[if lt IE 9]>
-	<div class="outdated-browser">
-		You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-	</div>
+	<!--[if lte IE 9]>
+		<div class="outdated-browser-wrapper">
+			<div class="outdated-browser">
+				You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/">upgrade your browser</a> to improve your viewing experience.
+			</div>
+		</div>
 	<![endif]-->
 
 	<div id="site-wrapper" class="site-wrapper">
