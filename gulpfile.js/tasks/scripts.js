@@ -14,18 +14,16 @@ var
 	uglify = require('gulp-uglify'),
 
 	fileSrc = function(name) {
-		var file = config.tasks.scripts.files.find(function(item) {
-			return item.name === name;
-		});
-
-		return file.src.map(function(src) {
-			return path.join(
-				config.root.src,
-				config.tasks.scripts.src,
-				file.name,
-				src + '.+(' + config.tasks.scripts.extensions.join('|') + ')'
-			);
-		});
+		return config.tasks.scripts.files
+			.find(function(file) { return file.name === name; }).src
+			.map(function(src) {
+				return path.join(
+					config.root.src,
+					config.tasks.scripts.src,
+					name,
+					src + '.+(' + config.tasks.scripts.extensions.join('|') + ')'
+				);
+			});
 	},
 
 	lint = function() {
