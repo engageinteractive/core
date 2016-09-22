@@ -3,7 +3,6 @@ var
 	gulp = require('gulp'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('scripts'),
-	lintSrc = paths.lint(),
 	task,
 
 	concat = require('gulp-concat'),
@@ -12,32 +11,36 @@ var
 	summary = require('engage-eslint-summary'),
 	uglify = require('gulp-uglify'),
 
-	lintSummary = function() {
-		return gulp
-			.src(lintSrc)
-			.pipe(eslint())
-			.pipe(eslint.format(summary))
-			.pipe(
-				eslint.failOnError()
-					.on('error', notification({
-						title: 'JavaScript Error',
-						subtitle: [
-							'<%= options.relative(options.cwd, error.fileName) %>',
-							'<%= error.lineNumber %>',
-						].join(':'),
-						message: '<%= error.message %>',
-						open: 'file://<%= error.fileName %>',
-					}))
-			)
-			.pipe(eslint.failAfterError());
+	lintSummary = function(name) {
+		return function() {
+			return gulp
+				.src(paths.scripts(name, true))
+				.pipe(eslint())
+				.pipe(eslint.format(summary))
+				.pipe(
+					eslint.failOnError()
+						.on('error', notification({
+							title: 'JavaScript Error',
+							subtitle: [
+								'<%= options.relative(options.cwd, error.fileName) %>',
+								'<%= error.lineNumber %>',
+							].join(':'),
+							message: '<%= error.message %>',
+							open: 'file://<%= error.fileName %>',
+						}))
+				)
+				.pipe(eslint.failAfterError());
+		};
 	},
 
-	lint = function() {
-		return gulp
-			.src(lintSrc)
-			.pipe(eslint())
-			.pipe(eslint.format())
-			.pipe(eslint.failAfterError());
+	lint = function(name) {
+		return function() {
+			return gulp
+				.src(paths.scripts(name, true))
+				.pipe(eslint())
+				.pipe(eslint.format())
+				.pipe(eslint.failAfterError());
+		};
 	},
 
 	compile = function(name) {
@@ -52,18 +55,27 @@ var
 		};
 	};
 
-gulp.task('scripts.lint', lintSummary);
-gulp.task('scripts.lint.full', lint);
-
 config.tasks.scripts.files.forEach(function(file) {
-	gulp.task('scripts.' + file.name, compile(file.name));
+	var
+		tasks = [],
+		prefix = 'scripts.' + file.name;
+
+	if (file.lint) {
+		task = prefix + '.lint';
+		tasks.push(task);
+		gulp.task(task, lintSummary(file.name));
+		gulp.task(task + '.full', lint(file.name));
+	}
+
+	task = prefix + '.compile';
+	tasks.push(task);
+	gulp.task(task, compile(file.name));
+
+	gulp.task(prefix, gulp.series(tasks));
 });
 
-task = gulp.series(
-	'scripts.lint',
-	gulp.parallel(config.tasks.scripts.files.map(function(file) {
-		return 'scripts.' + file.name;
-	}))
-);
+task = gulp.parallel(config.tasks.scripts.files.map(function(file) {
+	return 'scripts.' + file.name;
+}));
 gulp.task('scripts', task);
 module.exports = task;
