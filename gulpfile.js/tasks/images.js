@@ -8,6 +8,7 @@ var
 	options = config.tasks.bitmap.tinypngCompress,
 	task,
 
+	changed = require('gulp-changed'),
 	path = require('path'),
 	svgmin = require('gulp-svgmin'),
 	tinypngCompress = require('gulp-tinypng-compress'),
@@ -15,6 +16,7 @@ var
 	svg = function() {
 		return gulp
 			.src(svgPaths.src)
+			.pipe(changed(svgPaths.dest))
 			.pipe(svgmin())
 			.pipe(gulp.dest(svgPaths.dest));
 	},
