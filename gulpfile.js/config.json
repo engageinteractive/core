@@ -110,11 +110,12 @@
     },
     "watch": {
       "tasks": [
-        "css",
         "bitmap",
-        "svg",
+        "css",
+        "scripts",
         "sprite",
-        "static"
+        "static",
+        "svg"
       ],
       "browserSync": {
         "ghostMode": {
