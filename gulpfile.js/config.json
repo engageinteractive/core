@@ -42,20 +42,23 @@
             "core",
             "modules/*",
             "pages/*"
-          ]
+          ],
+          "lint": true
         },
         {
           "name": "plugins",
           "src": [
             "*",
             "jquery/*"
-          ]
+          ],
+          "lint": false
         },
         {
           "name": "libs",
           "src": [
             "**/*"
-          ]
+          ],
+          "lint": false
         }
       ]
     },
