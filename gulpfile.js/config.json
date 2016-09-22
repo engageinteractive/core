@@ -131,6 +131,16 @@
           "resources/views/**/*.php"
         ]
       }
+    },
+    "default": {
+      "tasks": [
+        "bitmap",
+        "css",
+        "scripts",
+        "sprite",
+        "static",
+        "svg"
+      ]
     }
   }
 }
