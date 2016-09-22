@@ -3,30 +3,16 @@ var
 	gulp = require('gulp'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('scripts'),
-	lintSrc,
+	lintSrc = paths.lint(),
 	task,
 
 	concat = require('gulp-concat'),
 	eslint = require('gulp-eslint'),
-	path = require('path'),
 	sourcemaps = require('gulp-sourcemaps'),
 	summary = require('engage-eslint-summary'),
 	uglify = require('gulp-uglify'),
 
-	fileSrc = function(name) {
-		return config.tasks.scripts.files
-			.find(function(file) { return file.name === name; }).src
-			.map(function(src) {
-				return path.join(
-					config.root.src,
-					config.tasks.scripts.src,
-					name,
-					src + '.+(' + config.tasks.scripts.extensions.join('|') + ')'
-				);
-			});
-	},
-
-	lint = function() {
+	lintSummary = function() {
 		return gulp
 			.src(lintSrc)
 			.pipe(eslint())
@@ -46,7 +32,7 @@ var
 			.pipe(eslint.failAfterError());
 	},
 
-	lintReport = function() {
+	lint = function() {
 		return gulp
 			.src(lintSrc)
 			.pipe(eslint())
@@ -57,7 +43,7 @@ var
 	compile = function(name) {
 		return function() {
 			return gulp
-				.src(fileSrc(name))
+				.src(paths.scripts(name))
 				.pipe(sourcemaps.init())
 				.pipe(concat(name + '.js'))
 				.pipe(uglify())
@@ -66,13 +52,8 @@ var
 		};
 	};
 
-lintSrc = config.tasks.scripts.files
-	.filter(function(file) { return file.lint; })
-	.map(function(file) { return fileSrc(file.name); })
-	.reduce(function(a, b) { return a.concat(b); });
-
-gulp.task('scripts.lint', lint);
-gulp.task('scripts.lint.full', lintReport);
+gulp.task('scripts.lint', lintSummary);
+gulp.task('scripts.lint.full', lint);
 
 config.tasks.scripts.files.forEach(function(file) {
 	gulp.task('scripts.' + file.name, compile(file.name));
