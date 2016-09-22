@@ -35,9 +35,9 @@ var
 options.key = options.key || process.env.TINYPNG_KEY;
 options.sigFile = options.sigFile || path.join(bitmapPaths.dest, '.tinypng');
 
-gulp.task('images.bitmap', bitmap);
-gulp.task('images.svg', svg);
+gulp.task('bitmap', bitmap);
+gulp.task('svg', svg);
 
-task = gulp.parallel('images.svg', 'images.bitmap');
+task = gulp.parallel('svg', 'bitmap');
 gulp.task('images', task);
 module.exports = task;
