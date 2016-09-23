@@ -2,28 +2,25 @@ var
 	config = require('../config'),
 	gulp = require('gulp'),
 	notification = require('../utils/notification'),
-	paths = require('../utils/paths'),
-	bitmapPaths = paths('bitmap'),
-	svgPaths = paths('svg'),
-	options = config.tasks.bitmap.tinypngCompress,
-	task,
+	paths = require('../utils/paths')('images'),
+	options = config.tasks.images.tinypngCompress,
 
 	changed = require('gulp-changed'),
+	filter = require('gulp-filter'),
 	path = require('path'),
 	svgmin = require('gulp-svgmin'),
 	tinypngCompress = require('gulp-tinypng-compress'),
 
-	svg = function() {
-		return gulp
-			.src(svgPaths.src)
-			.pipe(changed(svgPaths.dest))
-			.pipe(svgmin())
-			.pipe(gulp.dest(svgPaths.dest));
+	filters = {
+		optimise: filter('**/*.{jpg,png}', { restore: true }),
+		svg: filter('**/*.svg', { restore: true }),
 	},
 
-	bitmap = function() {
+	task = function() {
 		return gulp
-			.src(bitmapPaths.src)
+			.src(paths.src)
+			.pipe(changed(paths.dest))
+			.pipe(filters.optimise)
 			.pipe(
 				tinypngCompress(options)
 					.on('error', notification({
@@ -31,15 +28,15 @@ var
 						message: '<%= error.message %>',
 					}))
 			)
-			.pipe(gulp.dest(bitmapPaths.dest));
+			.pipe(filters.optimise.restore)
+			.pipe(filters.svg)
+			.pipe(svgmin())
+			.pipe(filters.svg.restore)
+			.pipe(gulp.dest(paths.dest));
 	};
 
 options.key = options.key || process.env.TINYPNG_KEY;
-options.sigFile = options.sigFile || path.join(bitmapPaths.dest, '.tinypng');
+options.sigFile = options.sigFile || path.join(paths.dest, '.tinypng');
 
-gulp.task('bitmap', bitmap);
-gulp.task('svg', svg);
-
-task = gulp.parallel('svg', 'bitmap');
 gulp.task('images', task);
 module.exports = task;
