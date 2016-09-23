@@ -28,10 +28,6 @@ $sections = [
 		'utility',
 		'Classes and helpers that override other styles.'
 	],
-	[
-		'scripts',
-		'Demos of any useful baseplate scripts.'
-	],
 ];
 include('../_includes/header.php');
 ?>
