@@ -79,3 +79,6 @@ task = gulp.parallel(config.tasks.scripts.files.map(function(file) {
 }));
 gulp.task('scripts', task);
 module.exports = task;
+
+gulp.task('scripts.lint', gulp.series('scripts.site.lint')); // legacy alias
+gulp.task('scripts.lint.full', gulp.series('scripts.site.lint.full')); // legacy alias

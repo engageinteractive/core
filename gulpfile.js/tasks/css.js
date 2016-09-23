@@ -30,3 +30,5 @@ var
 
 gulp.task('css', task);
 module.exports = task;
+
+gulp.task('styles', gulp.series('css')); // legacy alias
