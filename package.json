@@ -30,6 +30,7 @@
     "gulp-tinypng-compress": "^1.2.1",
     "gulp-uglify": "^2.0.0",
     "normalize.css": "4.2.0",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "svg4everybody": "^2.1.0"
   }
 }
