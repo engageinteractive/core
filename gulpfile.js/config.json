@@ -35,6 +35,9 @@
       "extensions": [
         "js"
       ],
+      "includePaths": [
+        "node_modules"
+      ],
       "files": [
         {
           "name": "site",

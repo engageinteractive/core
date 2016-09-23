@@ -7,6 +7,7 @@ var
 
 	concat = require('gulp-concat'),
 	eslint = require('gulp-eslint'),
+	include = require('gulp-include'),
 	sourcemaps = require('gulp-sourcemaps'),
 	summary = require('engage-eslint-summary'),
 	uglify = require('gulp-uglify'),
@@ -49,6 +50,10 @@ var
 				.src(paths.scripts(name))
 				.pipe(sourcemaps.init())
 				.pipe(concat(name + '.js'))
+				.pipe(include({
+					hardFail: true,
+					includePaths: config.tasks.scripts.includePaths,
+				}))
 				.pipe(uglify())
 				.pipe(sourcemaps.write('.'))
 				.pipe(gulp.dest(paths.dest));
