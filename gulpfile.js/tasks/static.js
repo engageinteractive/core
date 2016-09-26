@@ -1,8 +1,8 @@
 var
 	paths = require('../utils/paths')('static'),
-	gulp = require('gulp'),
 
 	changed = require('gulp-changed'),
+	gulp = require('gulp'),
 
 	task = function() {
 		return gulp

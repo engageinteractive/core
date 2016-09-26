@@ -1,12 +1,12 @@
 var
 	config = require('../config'),
-	gulp = require('gulp'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('images'),
 	options = config.tasks.images.tinypngCompress,
 
 	changed = require('gulp-changed'),
 	filter = require('gulp-filter'),
+	gulp = require('gulp'),
 	path = require('path'),
 	svgmin = require('gulp-svgmin'),
 	tinypngCompress = require('gulp-tinypng-compress'),

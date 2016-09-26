@@ -1,5 +1,6 @@
 var
 	config = require('../config'),
+
 	path = require('path');
 
 module.exports = function(task) {

@@ -1,7 +1,7 @@
 var
 	config = require('../config'),
-	gulp = require('gulp'),
 
+	gulp = require('gulp'),
 	del = require('del'),
 
 	task = function() {

@@ -1,9 +1,9 @@
 var
 	config = require('../config'),
-	gulp = require('gulp'),
 	paths = require('../utils/paths'),
 
 	browserSync = require('browser-sync'),
+	gulp = require('gulp'),
 
 	task = function() {
 		var options = config.tasks.watch.browserSync;

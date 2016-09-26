@@ -1,8 +1,12 @@
 var
 	config = require('../config'),
+	paths = require('../utils/paths')('images'),
+	icon,
+
 	notify = require('gulp-notify'),
-	path = require('path'),
-	icon = path.join(require('../utils/paths')('images').dest, config.tasks.images.icon);
+	path = require('path');
+
+icon = path.join(paths.dest, config.tasks.images.icon);
 
 module.exports = function(opts) {
 	return notify.onError({

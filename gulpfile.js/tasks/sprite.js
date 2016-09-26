@@ -1,8 +1,8 @@
 var
 	config = require('../config'),
-	gulp = require('gulp'),
 	paths = require('../utils/paths')('sprite'),
 
+	gulp = require('gulp'),
 	svgSprite = require('gulp-svg-sprite'),
 
 	task = function() {

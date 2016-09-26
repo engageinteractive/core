@@ -1,11 +1,11 @@
 var
 	config = require('../config'),
-	gulp = require('gulp'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('css'),
 
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCss = require('gulp-clean-css'),
+	gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
 
