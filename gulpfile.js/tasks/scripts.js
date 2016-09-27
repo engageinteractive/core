@@ -6,6 +6,7 @@ var
 
 	ModernizrPlugin = require('modernizr-webpack-plugin'),
 	eslint = require('gulp-eslint'),
+	filter = require('gulp-filter')(['**/!(*.min.js)']),
 	gulp = require('gulp'),
 	named = require('vinyl-named'),
 	summary = require('engage-eslint-summary'),
@@ -14,6 +15,7 @@ var
 gulp.task('scripts.lint', function() {
 	return gulp
 		.src(paths.src)
+		.pipe(filter)
 		.pipe(eslint())
 		.pipe(eslint.format(summary))
 		.pipe(
