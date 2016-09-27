@@ -6,8 +6,7 @@ $input-height: ($input-padding * 2) + (rem($input-border-width) * 2) + ($p * $in
 
 input,
 textarea,
-select,
-.simple-select {
+select {
 	background: $c--white;
 	border: 1px solid $c--grey-light;
 	border-radius: 0;
