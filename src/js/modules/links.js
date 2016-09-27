@@ -1,17 +1,4 @@
-$.extend($.expr[':'], {
-	external: function(obj) {
-
-		return (obj.hostname !== window.location.hostname) && /:\/\//.test($(obj).attr('href'));
-
-	},
-	internal: function(obj) {
-
-		return (obj.hostname === window.location.hostname) || !/:\/\//.test($(obj).attr('href'));
-
-	},
-});
-
-$(document.body).on('click', 'a:external:not(.internal), a.external', function(e) {
+$(document.body).on('click', 'a.external, a[rel="external"], a[href$=".pdf"]', function(e) {
 
 	if (e.which !== 2) {
 
