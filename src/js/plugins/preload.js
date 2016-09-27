@@ -1,23 +1,22 @@
-$.fn.preload = function(settings) {
+$.fn.preload = function(settings){
 
 	var defaults = {
 		src: false,
 		timeout: false,
-		ready: function() {},
-		error: function() {},
+		ready: function(){},
+		error: function(){},
 	};
 
-	this.each(function() {
+	this.each(function(){
 
-		var
-			$img = $(this),
+		var $img = $(this),
 			option = $.extend(defaults, settings);
 
-		if (!option.src) {
+		if( !option.src ){
 			option.src = $img.attr('src');
 		}
 
-		if (option.src) {
+		if( option.src ){
 			$.preload(option);
 		}
 
@@ -27,19 +26,16 @@ $.fn.preload = function(settings) {
 
 };
 
-$.preload = function(settings) {
+$.preload = function(settings){
 
 	var defaults = {
-		src: null,
-		timeout: false,
-		arrayItemReady: function() {},
-		ready: function() {},
-		error: function() {},
-	};
-
-	var option = $.extend(defaults, settings);
-
-	var
+			src: null,
+			timeout: false,
+			arrayItemReady: function(){},
+			ready: function(){},
+			error: function(){},
+		},
+		option = $.extend(defaults, settings),
 		$img = $('<img/>'),
 		tooSlow = false,
 		complete = false,
@@ -48,23 +44,23 @@ $.preload = function(settings) {
 		ready,
 		i;
 
-	if (typeof option.src === 'object') {
+	if( typeof option.src === 'object' ){
 
 		total = option.src.length;
 		loaded = 0;
-		ready = function(img) {
+		ready = function(img){
 
 			loaded += 1;
 
 			option.arrayItemReady(loaded);
 
-			if (total === loaded) {
+			if( total === loaded ){
 				option.ready(img, option.src);
 			}
 
 		};
 
-		for (i = option.src.length - 1; i >= 0; i -= 1) {
+		for( i = option.src.length - 1; i >= 0; i -= 1 ){
 
 			$.preload({
 				src: option.src[i],
@@ -73,46 +69,46 @@ $.preload = function(settings) {
 
 		}
 
-	} else if (option.src) {
+	}else if( option.src ){
 
-		$img.one('load', function() {
+		$img.one('load', function(){
 
 			var img = this;
 
 			// Timeout for Webkit
 			// As the width/height of the image is 0 initially
-			setTimeout(function() {
+			setTimeout(function(){
 
 				complete = true;
 
-				if (!tooSlow) {
+				if( !tooSlow ){
 					option.ready(img, option.src);
 				}
 
 			}, 0);
 
 		})
-		.one('error', function() {
+		.one('error', function(){
 
 			option.error();
 
 		})
 		.attr('src', option.src)
-		.each(function() {
+		.each(function(){
 
-			if (this.complete) {
+			if( this.complete ){
 				$img.trigger('load');
 			}
 
 		});
 
-		if (option.timeout) {
+		if( option.timeout ){
 
-			setTimeout(function() {
+			setTimeout(function(){
 
 				tooSlow = true;
 
-				if (!complete) {
+				if( !complete ){
 					option.ready(null, option.src);
 				}
 

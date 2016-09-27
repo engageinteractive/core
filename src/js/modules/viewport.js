@@ -1,20 +1,19 @@
-var
-	width = 0,
+var width = 0,
 	height = 0,
 	listeners = {},
 	timer = null,
-	update = function() {
+	update = function(){
 
 		width = window.innerWidth;
 		height = window.innerHeight;
 
-		$.each(listeners, function() {
+		$.each(listeners, function(){
 			this();
 		});
 
 	};
 
-$(window).on('resize', function() {
+$(window).on('resize', function(){
 
 	clearTimeout(timer);
 	timer = setTimeout(update, 300);
@@ -24,16 +23,16 @@ $(window).on('resize', function() {
 update();
 
 module.exports = {
-	width: function() {
+	width: function(){
 		return width;
 	},
-	height: function() {
+	height: function(){
 		return height;
 	},
-	addListener: function(name, listener) {
+	addListener: function(name, listener){
 		listeners[name] = listener;
 	},
-	removeListener: function(name) {
+	removeListener: function(name){
 		delete listeners[name];
 	},
 };

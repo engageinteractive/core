@@ -1,40 +1,61 @@
 {
-  extends: 'airbnb-base/legacy',
-  globals: {
-    '$': true,
-    'Modernizr': true
+  "extends": "airbnb-base/legacy",
+  "globals": {
+    "$": true,
+    "Modernizr": true
   },
-  rules: {
-    # overrides
-    'comma-dangle': [2, 'always-multiline'],
-    'func-names': 0,
-    'indent': [2, 'tab'],
-    'no-tabs': 0,
-    'one-var': 0,
-    'padded-blocks': 0,
-    'space-before-function-paren': [2, 'never'],
-    # warnings
-    'comma-spacing': 1,
-    'consistent-return': 1,
-    'curly': 1,
-    'dot-notation': 1,
-    'eol-last': 1,
-    'eqeqeq': 1,
-    'key-spacing': 1,
-    'keyword-spacing': 1,
-    'max-len': 1,
-    'no-extra-semi': 1,
-    'no-floating-decimal': 1,
-    'no-mixed-operators': 1,
-    'no-multi-spaces': 1,
-    'no-param-reassign': 1,
-    'no-undef': 1,
-    'no-underscore-dangle': 1,
-    'no-unused-vars': 1,
-    'semi': 1,
-    'space-before-blocks': 1,
-    'space-in-parens': 1,
-    'spaced-comment': 1,
-    'vars-on-top': 1
-  },
+  "rules": {
+    "comma-dangle": [
+      "warn",
+      "always-multiline"
+    ],
+    "comma-spacing": "warn",
+    "consistent-return": "warn",
+    "curly": "warn",
+    "dot-notation": "warn",
+    "eol-last": "warn",
+    "eqeqeq": "warn",
+    "func-names": "off",
+    "indent": [
+      "warn",
+      "tab"
+    ],
+    "key-spacing": "warn",
+    "keyword-spacing": [
+      "warn",
+      {
+        "after": false,
+        "before": false,
+        "overrides": {
+          "return": {
+            "after": true
+          }
+        }
+      }
+    ],
+    "max-len": "warn",
+    "no-extra-semi": "warn",
+    "no-floating-decimal": "warn",
+    "no-mixed-operators": "warn",
+    "no-multi-spaces": "warn",
+    "no-param-reassign": "warn",
+    "no-tabs": "off",
+    "no-undef": "warn",
+    "no-underscore-dangle": "warn",
+    "no-unused-vars": "warn",
+    "one-var": "off",
+    "padded-blocks": "off",
+    "semi": "warn",
+    "space-before-blocks": [
+      "warn",
+      "never"
+    ],
+    "space-before-function-paren": [
+      "warn",
+      "never"
+    ],
+    "space-in-parens": "off",
+    "spaced-comment": "warn",
+    "vars-on-top": "warn"
+  }
 }

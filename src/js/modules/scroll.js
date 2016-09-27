@@ -1,28 +1,26 @@
-var
-	x = 0,
+var x = 0,
 	y = 0,
 	listeners = {},
-	update = function() {
+	update = function(){
 
-		$.each(listeners, function() {
+		$.each(listeners, function(){
 			this(x, y);
 		});
 
 	},
-	onScroll = function() {
+	onScroll = function(){
 
-		var
-			left = document.documentElement.scrollLeft,
+		var left = document.documentElement.scrollLeft,
 			top = document.documentElement.scrollTop;
 
 		x = left === 0 ? document.body.scrollLeft : left;
 		y = top === 0 ? document.body.scrollTop : top;
 
-		if (typeof window.requestAnimationFrame === 'function') {
+		if( typeof window.requestAnimationFrame === 'function' ){
 
 			window.requestAnimationFrame(update);
 
-		} else {
+		}else{
 
 			update();
 
@@ -44,19 +42,19 @@ $.extend($.easing, {
 /* eslint-enable */
 
 module.exports = {
-	x: function() {
+	x: function(){
 		return x;
 	},
-	y: function() {
+	y: function(){
 		return y;
 	},
-	addListener: function(name, listener) {
+	addListener: function(name, listener){
 		listeners[name] = listener;
 	},
-	removeListener: function(name) {
+	removeListener: function(name){
 		delete listeners[name];
 	},
-	animate: function(top) {
+	animate: function(top){
 		$('body, html').animate({
 			scrollTop: top,
 		}, 500, 'easeInOutQuad');

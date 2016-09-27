@@ -11,27 +11,26 @@
 
 require('./preload');
 
-$.fn.loadImg = function() {
+$.fn.loadImg = function(){
 
-	this.each(function() {
+	this.each(function(){
 
-		var
-			$this = $(this),
+		var $this = $(this),
 			$img = null,
 			data = $this.data(),
 			src = data.img;
 
-		if (data.insert) {
+		if( data.insert ){
 
 			$img = $('<img/>');
 
 			$img
 				.attr('src', src)
 				.preload({
-					src:	src,
-					ready:	function() {
+					src: src,
+					ready: function(){
 
-						if (data.replace) {
+						if( data.replace ){
 							$this.empty();
 						}
 
@@ -40,7 +39,7 @@ $.fn.loadImg = function() {
 					},
 				});
 
-		} else {
+		}else{
 
 			$this.css({
 				backgroundImage: 'url(' + src + ')',

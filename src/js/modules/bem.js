@@ -1,6 +1,6 @@
-module.exports = function(block) {
+module.exports = function(block){
 
-	if (!block) {
+	if( !block ){
 		throw new Error('Missing block parameter.');
 	}
 
@@ -13,13 +13,13 @@ module.exports = function(block) {
 			fixed: 'is-fixed',
 		},
 
-		event: function(_event) {
+		event: function(_event){
 
 			return block + ':' + _event;
 
 		},
 
-		selector: function(_element) {
+		selector: function(_element){
 
 			return '.js-' + block + (_element ? ('__' + _element) : '');
 
