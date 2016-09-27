@@ -53,3 +53,5 @@ $.fn.loadImg = function() {
 	return this;
 
 };
+
+$('[data-img]').loadImg();
