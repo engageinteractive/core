@@ -39,6 +39,7 @@
     "no-mixed-operators": "warn",
     "no-multi-spaces": "warn",
     "no-param-reassign": "warn",
+    "no-plusplus": "off",
     "no-tabs": "off",
     "no-undef": "warn",
     "no-underscore-dangle": "warn",
