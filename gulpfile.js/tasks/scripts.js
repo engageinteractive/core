@@ -31,7 +31,7 @@ gulp.task('scripts.lint', function() {
 		.pipe(eslint.failAfterError());
 });
 
-gulp.task('scripts.lint', function() {
+gulp.task('scripts.lint.full', function() {
 	return gulp
 		.src(paths.src)
 		.pipe(eslint())
