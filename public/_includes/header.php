@@ -16,7 +16,7 @@
 
 	<link rel="stylesheet" href="/assets/css/main.css">
 
-	<script src="/assets/static/js/modernizr.js"></script>
+	<script src="/assets/js/modernizr.js"></script>
 
 	<!-- twitter card data (https://dev.twitter.com/docs/cards, https://dev.twitter.com/docs/cards/large-image-summary-card) -->
 	<meta name="twitter:card" content="summary_large_image">

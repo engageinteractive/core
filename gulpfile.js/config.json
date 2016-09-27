@@ -1,7 +1,8 @@
 {
   "root": {
     "src": "src",
-    "dest": "public/assets"
+    "public": "public",
+    "dest": "assets"
   },
   "tasks": {
     "css": {
@@ -35,34 +36,21 @@
       "extensions": [
         "js"
       ],
-      "includePaths": [
-        "node_modules"
+      "entries": [
+        "*"
       ],
-      "files": [
-        {
-          "name": "site",
-          "src": [
-            "core",
-            "modules/*",
-            "pages/*"
-          ],
-          "lint": true
-        },
-        {
-          "name": "plugins",
-          "src": [
-            "*",
-            "jquery/*"
-          ],
-          "lint": false
-        },
-        {
-          "name": "libs",
-          "src": [
-            "**/*"
-          ],
-          "lint": false
-        }
+      "featureDetects": [
+        "canvas",
+        "css/animations",
+        "css/pointerevents",
+        "css/transforms",
+        "css/transforms3d",
+        "css/transitions",
+        "css/transformstylepreserve3d",
+        "requestanimationframe",
+        "svg",
+        "touchevents",
+        "video"
       ]
     },
     "images": {
@@ -100,6 +88,14 @@
       "dest": "static",
       "extensions": [
         "*"
+      ],
+      "npm": [
+        {
+          "dest": "js",
+          "src": [
+            "jquery/dist/jquery.min.js"
+          ]
+        }
       ]
     },
     "watch": {

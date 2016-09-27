@@ -1,4 +1,4 @@
-jQuery.extend(jQuery.expr[':'], {
+$.extend($.expr[':'], {
 	external: function(obj) {
 
 		return (obj.hostname !== window.location.hostname) && /:\/\//.test($(obj).attr('href'));
@@ -11,14 +11,13 @@ jQuery.extend(jQuery.expr[':'], {
 	},
 });
 
-$(document.body)
-	.on('click', 'a:external:not(.internal), a.external', function(e) {
+$(document.body).on('click', 'a:external:not(.internal), a.external', function(e) {
 
-		if (e.which !== 2) {
+	if (e.which !== 2) {
 
-			window.open($(this).attr('href'));
-			e.preventDefault();
+		window.open($(this).attr('href'));
+		e.preventDefault();
 
-		}
+	}
 
-	});
+});

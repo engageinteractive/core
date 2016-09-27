@@ -2,16 +2,7 @@
   extends: 'airbnb-base/legacy',
   globals: {
     '$': true,
-    'Modernizr': true,
-    'bem': true,
-    'clearCoreResize': true,
-    'core': true,
-    'coreResize': true,
-    'getRandomInt': true,
-    'jQuery': true,
-    'rangeToRange': true,
-    'window': true,
-    'document': true
+    'Modernizr': true
   },
   rules: {
     # overrides

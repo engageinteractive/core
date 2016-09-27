@@ -1,89 +1,73 @@
 var
 	config = require('../config'),
-	gulp = require('gulp'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('scripts'),
 	task,
 
-	concat = require('gulp-concat'),
+	ModernizrPlugin = require('modernizr-webpack-plugin'),
 	eslint = require('gulp-eslint'),
-	include = require('gulp-include'),
-	sourcemaps = require('gulp-sourcemaps'),
+	gulp = require('gulp'),
+	named = require('vinyl-named'),
 	summary = require('engage-eslint-summary'),
-	uglify = require('gulp-uglify'),
+	webpack = require('webpack-stream');
 
-	lintSummary = function(name) {
-		return function() {
-			return gulp
-				.src(paths.scripts(name, true))
-				.pipe(eslint())
-				.pipe(eslint.format(summary))
-				.pipe(
-					eslint.failOnError()
-						.on('error', notification({
-							title: 'JavaScript Error',
-							subtitle: [
-								'<%= options.relative(options.cwd, error.fileName) %>',
-								'<%= error.lineNumber %>',
-							].join(':'),
-							message: '<%= error.message %>',
-							open: 'file://<%= error.fileName %>',
-						}))
-				)
-				.pipe(eslint.failAfterError());
-		};
-	},
-
-	lint = function(name) {
-		return function() {
-			return gulp
-				.src(paths.scripts(name, true))
-				.pipe(eslint())
-				.pipe(eslint.format())
-				.pipe(eslint.failAfterError());
-		};
-	},
-
-	compile = function(name) {
-		return function() {
-			return gulp
-				.src(paths.scripts(name))
-				.pipe(sourcemaps.init())
-				.pipe(concat(name + '.js'))
-				.pipe(include({
-					hardFail: true,
-					includePaths: config.tasks.scripts.includePaths,
+gulp.task('scripts.lint', function() {
+	return gulp
+		.src(paths.src)
+		.pipe(eslint())
+		.pipe(eslint.format(summary))
+		.pipe(
+			eslint.failOnError()
+				.on('error', notification({
+					title: 'JavaScript Error',
+					subtitle: [
+						'<%= options.relative(options.cwd, error.fileName) %>',
+						'<%= error.lineNumber %>',
+					].join(':'),
+					message: '<%= error.message %>',
+					open: 'file://<%= error.fileName %>',
 				}))
-				.pipe(uglify())
-				.pipe(sourcemaps.write('.'))
-				.pipe(gulp.dest(paths.dest));
-		};
-	};
-
-config.tasks.scripts.files.forEach(function(file) {
-	var
-		tasks = [],
-		prefix = 'scripts.' + file.name;
-
-	if (file.lint) {
-		task = prefix + '.lint';
-		tasks.push(task);
-		gulp.task(task, lintSummary(file.name));
-		gulp.task(task + '.full', lint(file.name));
-	}
-
-	task = prefix + '.compile';
-	tasks.push(task);
-	gulp.task(task, compile(file.name));
-
-	gulp.task(prefix, gulp.series(tasks));
+		)
+		.pipe(eslint.failAfterError());
 });
 
-task = gulp.parallel(config.tasks.scripts.files.map(function(file) {
-	return 'scripts.' + file.name;
-}));
+gulp.task('scripts.lint', function() {
+	return gulp
+		.src(paths.src)
+		.pipe(eslint())
+		.pipe(eslint.format())
+		.pipe(eslint.failAfterError());
+});
+
+gulp.task('scripts.compile', function() {
+	return gulp
+		.src(paths.entries())
+		.pipe(named())
+		.pipe(
+			webpack({
+				devtool: 'source-map',
+				output: {
+					publicPath: paths.public,
+				},
+				plugins: [
+					new webpack.webpack.optimize.UglifyJsPlugin({
+						compress: { warnings: false },
+					}),
+					new ModernizrPlugin({
+						filename: 'modernizr.js',
+						htmlWebpackPlugin: false,
+						minify: true,
+						options: [
+							'setClasses',
+						],
+						'feature-detects': config.tasks.scripts.featureDetects,
+					}),
+				],
+			})
+		)
+		.pipe(gulp.dest(paths.dest));
+});
+
+task = gulp.series('scripts.lint', 'scripts.compile');
 gulp.task('scripts', task);
 module.exports = task;
-
-gulp.task('scripts.lint', gulp.series('scripts.site.lint')); // legacy alias
-gulp.task('scripts.lint.full', gulp.series('scripts.site.lint.full')); // legacy alias

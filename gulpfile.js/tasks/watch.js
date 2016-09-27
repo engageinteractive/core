@@ -15,22 +15,7 @@ var
 		browserSync.init(options);
 
 		config.tasks.watch.tasks.forEach(function(name) {
-
-			if (name === 'scripts') {
-
-				config.tasks[name].files.forEach(function(file) {
-					gulp.watch(
-						paths(name).scripts(file.name),
-						gulp.parallel('scripts.' + file.name)
-					);
-				});
-
-			} else {
-
-				gulp.watch(paths(name).src, gulp.parallel(name));
-
-			}
-
+			gulp.watch(paths(name).src, gulp.parallel(name));
 		});
 	};
 

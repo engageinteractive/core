@@ -3,9 +3,13 @@ var
 
 	gulp = require('gulp'),
 	del = require('del'),
+	path = require('path'),
 
 	task = function() {
-		return del(config.root.dest);
+		return del(path.join(
+			config.root.public,
+			config.root.dest
+		));
 	};
 
 gulp.task('clean', task);

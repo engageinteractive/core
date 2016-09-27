@@ -8,43 +8,43 @@
  *
  *  @return {Object}	The originally targeted object
  */
-$.fn.loadImg = function(){
 
-	this.each(function(){
+require('./preload');
 
-		var $this = $(this),
+$.fn.loadImg = function() {
+
+	this.each(function() {
+
+		var
+			$this = $(this),
+			$img = null,
 			data = $this.data(),
 			src = data.img;
 
-		if( data.insert ){
+		if (data.insert) {
 
-			var $img = $('<img/>');
+			$img = $('<img/>');
 
 			$img
 				.attr('src', src)
 				.preload({
 					src:	src,
-					ready:	function(){
+					ready:	function() {
 
-						if( data.replace ){
-
+						if (data.replace) {
 							$this.empty();
-
 						}
 
 						$this.append($img);
 
-					}
+					},
 				});
 
-		}else{
+		} else {
 
-			var setCss = {
-				backgroundImage: 'url(' + src + ')'
-			};
-
-			$this
-				.css(setCss);
+			$this.css({
+				backgroundImage: 'url(' + src + ')',
+			});
 
 		}
 
