@@ -1,30 +1,28 @@
-module.exports = function(block){
+module.exports = {
 
-	if( !block ){
-		throw new Error('Missing block parameter.');
+	states: {
+		active: 'is-active',
+		fixed: 'is-fixed',
+		hidden: 'is-hidden',
+		loading: 'is-loading',
+	},
+
+	block: function(name) {
+		if( !name ){
+			throw new Error('Empty block name.');
+		}
+
+		return {
+
+			event: function(event){
+				return name + ':' + event;
+			},
+
+			selector: function(element){
+				return '.js-' + name + (element ? ('__' + element) : '');
+			},
+
+		};
 	}
-
-	return {
-
-		states: {
-			active: 'is-active',
-			hidden: 'is-hidden',
-			loading: 'is-loading',
-			fixed: 'is-fixed',
-		},
-
-		event: function(_event){
-
-			return block + ':' + _event;
-
-		},
-
-		selector: function(_element){
-
-			return '.js-' + block + (_element ? ('__' + _element) : '');
-
-		},
-
-	};
 
 };
