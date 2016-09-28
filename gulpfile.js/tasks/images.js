@@ -2,7 +2,7 @@ var
 	config = require('../config'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('images'),
-	options = config.tasks.images.tinypngCompress,
+	tinypngOptions = config.tasks.images.tinypngCompress,
 
 	changed = require('gulp-changed'),
 	filter = require('gulp-filter'),
@@ -28,7 +28,7 @@ var
 			.src(paths.src)
 			.pipe(changed(paths.dest))
 			.pipe(filters.optimise)
-			.pipe(tinypngCompress(options).on('error', notification(options.notification)))
+			.pipe(tinypngCompress(tinypngOptions).on('error', notification(options.notification)))
 			.pipe(filters.optimise.restore)
 			.pipe(filters.svg)
 			.pipe(svgmin())
@@ -36,8 +36,8 @@ var
 			.pipe(gulp.dest(paths.dest));
 	};
 
-options.key = options.key || process.env.TINYPNG_KEY;
-options.sigFile = options.sigFile || path.join(paths.dest, '.tinypng');
+tinypngOptions.key = tinypngOptions.key || process.env.TINYPNG_KEY;
+tinypngOptions.sigFile = tinypngOptions.sigFile || path.join(paths.dest, '.tinypng');
 
 gulp.task('images', task);
 module.exports = task;
