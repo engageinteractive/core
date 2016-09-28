@@ -31,6 +31,6 @@ gulp.task('static.npm', function() {
 	return merged;
 });
 
-task = gulp.series('static.assets', 'static.npm');
+task = gulp.parallel('static.assets', 'static.npm');
 gulp.task('static', task);
 module.exports = task;
