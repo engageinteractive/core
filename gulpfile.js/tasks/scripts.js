@@ -47,7 +47,7 @@ gulp.task('scripts.compile', function() {
 		.pipe(named())
 		.pipe(
 			webpack({
-				devtool: 'source-map',
+				devtool: 'eval',
 				output: {
 					publicPath: paths.public,
 				},
