@@ -11,6 +11,38 @@ var
 	summary = require('engage-eslint-summary'),
 	webpack = require('webpack-stream'),
 
+	options = {
+		webpack: {
+			devtool: 'source-map',
+			output: {
+				publicPath: paths.public,
+			},
+			plugins: [
+				new webpack.webpack.optimize.UglifyJsPlugin({
+					compress: { warnings: false },
+				}),
+				new ModernizrPlugin({
+					filename: 'modernizr.js',
+					htmlWebpackPlugin: false,
+					minify: true,
+					options: [
+						'setClasses',
+					],
+					'feature-detects': config.tasks.scripts.featureDetects,
+				}),
+			],
+		},
+		notification: {
+			title: 'JavaScript Error',
+			subtitle: [
+				'<%= options.relative(options.cwd, error.fileName) %>',
+				'<%= error.lineNumber %>',
+			].join(':'),
+			message: '<%= error.message %>',
+			open: 'file://<%= error.fileName %>',
+		},
+	},
+
 	task = function(done) {
 		var filters = {
 			custom: filter(['**/!(*.min.js)']),
@@ -22,48 +54,11 @@ var
 			.pipe(filters.custom)
 			.pipe(eslint())
 			.pipe(eslint.format(summary))
-			.pipe(eslint.failOnError()
-				.on('error', function() {
-					notification({
-						title: 'JavaScript Error',
-						subtitle: [
-							'<%= options.relative(options.cwd, error.fileName) %>',
-							'<%= error.lineNumber %>',
-						].join(':'),
-						message: '<%= error.message %>',
-						open: 'file://<%= error.fileName %>',
-					}).apply(this, arguments);
-				})
-			)
-			.pipe(eslint.failOnError()
-				.on('error', function() {
-					done();
-				})
-			)
+			.pipe(eslint.failOnError().on('error', notification(options.notification)))
+			.pipe(eslint.failOnError().on('error', function() { done(); }))
 			.pipe(filters.entries)
 			.pipe(named())
-			.pipe(
-				webpack({
-					devtool: 'source-map',
-					output: {
-						publicPath: paths.public,
-					},
-					plugins: [
-						new webpack.webpack.optimize.UglifyJsPlugin({
-							compress: { warnings: false },
-						}),
-						new ModernizrPlugin({
-							filename: 'modernizr.js',
-							htmlWebpackPlugin: false,
-							minify: true,
-							options: [
-								'setClasses',
-							],
-							'feature-detects': config.tasks.scripts.featureDetects,
-						}),
-					],
-				})
-			)
+			.pipe(webpack(options.webpack))
 			.pipe(gulp.dest(paths.dest));
 	};
 

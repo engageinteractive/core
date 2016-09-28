@@ -11,23 +11,24 @@ var
 	svgmin = require('gulp-svgmin'),
 	tinypngCompress = require('gulp-tinypng-compress'),
 
-	filters = {
-		optimise: filter('**/*.{jpg,png}', { restore: true }),
-		svg: filter('**/*.svg', { restore: true }),
+	options = {
+		notification: {
+			title: 'Images Error',
+			message: '<%= error.message %>',
+		},
 	},
 
 	task = function() {
+		var filters = {
+			optimise: filter('**/*.{jpg,png}', { restore: true }),
+			svg: filter('**/*.svg', { restore: true }),
+		};
+
 		return gulp
 			.src(paths.src)
 			.pipe(changed(paths.dest))
 			.pipe(filters.optimise)
-			.pipe(
-				tinypngCompress(options)
-					.on('error', notification({
-						title: 'Images Error',
-						message: '<%= error.message %>',
-					}))
-			)
+			.pipe(tinypngCompress(options).on('error', notification(options.notification)))
 			.pipe(filters.optimise.restore)
 			.pipe(filters.svg)
 			.pipe(svgmin())

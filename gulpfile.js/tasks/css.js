@@ -9,19 +9,20 @@ var
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
 
+	options = {
+		notification: {
+			title: 'Sass Error',
+			subtitle: '<%= error.relativePath %>:<%= error.line %>',
+			message: '<%= error.messageOriginal %>',
+			open: 'file://<%= error.file %>',
+		},
+	},
+
 	task = function() {
 		return gulp
 			.src(paths.src)
 			.pipe(sourcemaps.init())
-			.pipe(
-				sass(config.tasks.css.sass)
-					.on('error', notification({
-						title: 'Sass Error',
-						subtitle: '<%= error.relativePath %>:<%= error.line %>',
-						message: '<%= error.messageOriginal %>',
-						open: 'file://<%= error.file %>',
-					}))
-			)
+			.pipe(sass(config.tasks.css.sass).on('error', notification(options.notification)))
 			.pipe(cleanCss(config.tasks.css.cleanCss))
 			.pipe(autoprefixer(config.tasks.css.autoprefixer))
 			.pipe(sourcemaps.write('.'))
