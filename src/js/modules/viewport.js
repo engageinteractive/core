@@ -1,14 +1,19 @@
 var width = 0,
 	height = 0,
+	prevWidth,
+	prevHeight,
 	listeners = {},
 	timer = null,
 	update = function(){
+
+		prevWidth = width;
+		prevHeight = height;
 
 		width = window.innerWidth;
 		height = window.innerHeight;
 
 		$.each(listeners, function(){
-			this();
+			this(prevWidth !== width, prevHeight !== height);
 		});
 
 	};
