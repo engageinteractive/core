@@ -7,7 +7,7 @@ module.exports = {
 		loading: 'is-loading',
 	},
 
-	block: function(name) {
+	block: function(name){
 		if( !name ){
 			throw new Error('Empty block name.');
 		}
@@ -23,6 +23,6 @@ module.exports = {
 			},
 
 		};
-	}
+	},
 
 };
