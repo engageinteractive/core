@@ -63,8 +63,13 @@ var
 	};
 
 gulp.task('scripts.lint', function() {
+	var filters = {
+		custom: filter(['**/!(*.min.js)']),
+	};
+
 	return gulp
 		.src(paths.src)
+		.pipe(filters.custom)
 		.pipe(eslint())
 		.pipe(eslint.format());
 });
