@@ -3,9 +3,11 @@ var
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('images'),
 	tinypngOptions = config.tasks.images.tinypngCompress,
+	task,
 
-	changed = require('gulp-changed'),
+	comparison = require('dir-compare'),
 	filter = require('gulp-filter'),
+	gutil = require('gulp-util'),
 	gulp = require('gulp'),
 	path = require('path'),
 	svgmin = require('gulp-svgmin'),
@@ -16,9 +18,12 @@ var
 			title: 'Images Error',
 			message: '<%= error.message %>',
 		},
+		compare: {
+			excludeFilter: '.*, sprite.svg',
+		},
 	},
 
-	task = function() {
+	optimise = function() {
 		var filters = {
 			optimise: filter('**/*.{jpg,png}', { restore: true }),
 			svg: filter('**/*.svg', { restore: true }),
@@ -26,7 +31,6 @@ var
 
 		return gulp
 			.src(paths.src)
-			.pipe(changed(paths.dest))
 			.pipe(filters.optimise)
 			.pipe(tinypngCompress(tinypngOptions).on('error', notification(options.notification)))
 			.pipe(filters.optimise.restore)
@@ -34,10 +38,37 @@ var
 			.pipe(svgmin())
 			.pipe(filters.svg.restore)
 			.pipe(gulp.dest(paths.dest));
+	},
+
+	diff = function() {
+		var
+			src = [config.root.src, config.tasks.images.src].join('/'),
+			dest = [config.root.public, config.root.dest, config.tasks.images.dest].join('/');
+
+		return comparison
+			.compare(src, dest, options.compare)
+			.then(function(result) {
+				if (!result.differencesFiles) {
+					return;
+				}
+
+				gutil.log(gutil.colors.red('Unexpected files in destination directory:'));
+				result.diffSet
+					.filter(function(_diff) {
+						return _diff.type1 === 'missing';
+					})
+					.forEach(function(_diff) {
+						gutil.log([_diff.path2, _diff.name2].join('/').replace(dest + '/', ''));
+					});
+			});
 	};
 
 tinypngOptions.key = tinypngOptions.key || process.env.TINYPNG_KEY;
 tinypngOptions.sigFile = tinypngOptions.sigFile || path.join(paths.dest, '.tinypng');
 
+gulp.task('images.optimise', optimise);
+gulp.task('images.diff', diff);
+
+task = gulp.series('images.optimise', 'images.diff');
 gulp.task('images', task);
 module.exports = task;
