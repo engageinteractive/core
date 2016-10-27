@@ -157,22 +157,22 @@
 			<ul class="fields-list-inline">
 				<li>
 					<input id="form-example-checkbox-1b" type="checkbox" class="checkbox" checked>
-					<label class="label" for="form-example-checkbox-1b">Option 1</label>
+					<label for="form-example-checkbox-1b">Option 1</label>
 				</li>
 
 				<li>
 					<input id="form-example-checkbox-2b" type="checkbox" class="checkbox">
-					<label class="label" for="form-example-checkbox-2b">Option 2</label>
+					<label for="form-example-checkbox-2b">Option 2</label>
 				</li>
 
 				<li>
 					<input id="form-example-checkbox-3b" type="checkbox" class="checkbox" class="is-invalid">
-					<label class="label" for="form-example-checkbox-3b">Option 3 error</label>
+					<label for="form-example-checkbox-3b">Option 3 error</label>
 				</li>
 
 				<li>
 					<input id="form-example-checkbox-4b" type="checkbox" class="checkbox" disabled>
-					<label class="label" for="form-example-checkbox-4b">Option Disabled</label>
+					<label for="form-example-checkbox-4b">Option Disabled</label>
 				</li>
 			</ul>
 		</div>
@@ -183,22 +183,22 @@
 			<ul class="fields-list">
 				<li>
 					<input id="form-example-radio-1" name="radio" type="radio" class="radio" checked>
-					<label class="label" for="form-example-radio-1">Option 1</label>
+					<label for="form-example-radio-1">Option 1</label>
 				</li>
 
 				<li>
 					<input id="form-example-radio-2" name="radio" type="radio" class="radio">
-					<label class="label" for="form-example-radio-2">Option 2</label>
+					<label for="form-example-radio-2">Option 2</label>
 				</li>
 
 				<li>
 					<input id="form-example-radio-3" name="radio" type="radio" class="radio" class="is-invalid">
-					<label class="label" for="form-example-radio-3">Option 3 error</label>
+					<label for="form-example-radio-3">Option 3 error</label>
 				</li>
 
 				<li>
 					<input id="form-example-radio-4" name="radio" type="radio" class="radio" disabled>
-					<label class="label" for="form-example-radio-4">Option Disabled</label>
+					<label for="form-example-radio-4">Option Disabled</label>
 				</li>
 			</ul>
 		</div>

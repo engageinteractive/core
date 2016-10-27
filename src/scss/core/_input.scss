@@ -79,8 +79,7 @@ $radio-inner-size: $checkbox-size / 2;
 	@include vh;
 
 	+ label {
-		font-weight: normal;
-		margin-bottom: 0;
+		cursor: pointer;
 		padding-left: $checkbox-size + $spacing-unit--x-small;
 		position: relative;
 
