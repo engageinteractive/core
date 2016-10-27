@@ -147,7 +147,7 @@
 	li {
 		@include colours('&::before', $chain: '&.');
 		@include content-margins;
-		@include push--top($spacing-unit--small);
+		margin-top: $spacing-unit--small;
 		line-height: $colour-size;
 		padding-left: $colour-size + 15px;
 		position: relative;
@@ -210,7 +210,7 @@
 
 .sg-flush-test {
 	div {
-		@include push--top($grid-column-gutter);
+		margin-top: $grid-column-gutter;
 		background-color: $c--grey-x-light;
 		border: solid 1px $c--grey-light;
 	}

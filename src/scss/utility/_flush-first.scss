@@ -29,7 +29,7 @@
 	.flush-first--#{$modifierClass}#{$i} {
 		> * {
 			&:nth-child(-n+#{$i}) {
-				@include flush--top;
+				margin-top: 0;
 			}
 		}
 	}

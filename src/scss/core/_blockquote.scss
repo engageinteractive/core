@@ -3,7 +3,7 @@
 	position: relative;
 
 	p {
-		@include push--bottom(.4em);
+		margin-bottom: .4em;
 		font-size: $p--medium;
 		line-height: $lh--large;
 
@@ -26,12 +26,12 @@
 	}
 
 	&--left {
-		@include soft--right;
+		padding-right: $spacing-unit;
 		float: left;
 	}
 
 	&--right {
-		@include soft--left;
+		padding-left: $spacing-unit;
 		float: right;
 	}
 

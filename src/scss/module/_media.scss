@@ -14,12 +14,12 @@
 		}
 
 		&--left {
-			@include soft--right($spacing-unit--small);
+			padding-right: $spacing-unit--small;
 			float: left;
 		}
 
 		&--right {
-			@include soft--left($spacing-unit--small);
+			padding-left: $spacing-unit--small;
 			float: right;
 		}
 

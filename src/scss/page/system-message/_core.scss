@@ -21,8 +21,8 @@ body {
 
 .system-message {
 	@include push--auto;
-	@include soft($spacing-unit);
 	max-width: 460px;
+	padding: $spacing-unit;
 	text-align: center;
 
 	a {
@@ -55,17 +55,17 @@ body {
 	}
 
 	h1 {
-		@include push--top($spacing-unit--small);
+		margin-top: $spacing-unit--small;
 		font-size: 24px;
 
 		@include mq('tablet-small') {
-			@include push--top($spacing-unit);
+			margin-top: $spacing-unit;
 			font-size: 32px;
 		}
 	}
 
 	p {
-		@include push--top($spacing-unit--small);
+		margin-top: $spacing-unit--small;
 	}
 
 	@include mq('tablet-small') {
