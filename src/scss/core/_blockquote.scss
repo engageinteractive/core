@@ -3,7 +3,6 @@
 	position: relative;
 
 	p {
-		margin-bottom: $rel-spacing-unit--small;
 		font-size: $p--medium;
 		line-height: $lh--large;
 
@@ -13,7 +12,9 @@
 	}
 
 	cite {
+		display: inline-block;
 		font-size: $p--small;
+		margin-top: $rel-spacing-unit--small;
 
 		@include mq('tablet-small') {
 			font-size: $p;
