@@ -36,7 +36,7 @@ h6 {
 	font-family: $stack--heading;
 	font-weight: $w--bold;
 	line-height: 1;
-	margin-top: .8em;
+	margin-top: $rel-spacing-unit;
 
 	a {
 		font-weight: $w--bold;
@@ -113,7 +113,7 @@ h6 {
 
 #{$typography-elems},
 #{$media-elems} {
-	margin-top: 1.25em;
+	margin-top: $rel-spacing-unit;
 
 	&:first-child {
 		margin-top: 0;

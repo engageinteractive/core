@@ -12,14 +12,14 @@
 	}
 
 	li {
-		margin-top: .75em;
+		margin-top: $rel-spacing-unit--small;
 
 		&:first-child {
 			margin-top: 0;
 		}
 
 		> ul {
-			margin-top: .5em;
+			margin-top: $rel-spacing-unit--small;
 		}
 	}
 }

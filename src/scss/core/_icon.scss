@@ -41,12 +41,12 @@ $icon-size: 1em;
 	}
 
 	&__t {
-		padding-right: $icon-size + .3em;
+		padding-right: $icon-size + $rel-spacing-unit--small;
 
 		&:last-child {
 			padding: {
 				right: 0;
-				left: $icon-size + .3em;
+				left: $icon-size + $rel-spacing-unit--small;
 			}
 		}
 	}

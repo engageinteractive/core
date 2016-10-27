@@ -12,7 +12,7 @@ dd {
 }
 
 dt {
-	margin-top: 1em;
+	margin-top: $rel-spacing-unit;
 	font-weight: $w--bold;
 
 	&:first-child {
@@ -33,10 +33,10 @@ dt {
 }
 
 dd {
-	margin-top: .5em;
+	margin-top: $rel-spacing-unit--small;
 
 	@include mq('tablet') {
-		margin-top: 1em;
+		margin-top: $rel-spacing-unit;
 		padding-left: $spacing-unit--small;
 		width: 75%;
 	}
