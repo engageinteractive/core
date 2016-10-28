@@ -237,7 +237,7 @@
 
 	example: empty selector
 	.element {
-		@include content-margins(false);
+		@include content-margins('false');
 	}
 
 	output:
@@ -251,15 +251,16 @@
 */
 
 
-@mixin content-margins($selector: '> *') {
-	@if $selector {
-		#{unquote($selector)} {
-			&:first-child { margin-top: 0; }
+@mixin content-margins($selector: '> *', $last-child: false) {
+	@if not $selector {
+		$selector: '&';
+	}
+
+	#{unquote($selector)} {
+		&:first-child { margin-top: 0; }
+		@if $last-child {
 			&:last-child { margin-bottom: 0; }
 		}
-	} @else {
-		&:first-child { margin-top: 0; }
-		&:last-child { margin-bottom: 0; }
 	}
 }
 
