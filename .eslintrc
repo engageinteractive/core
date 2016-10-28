@@ -34,6 +34,15 @@
       }
     ],
     "max-len": "warn",
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
     "no-extra-semi": "warn",
     "no-floating-decimal": "warn",
     "no-mixed-operators": "warn",
