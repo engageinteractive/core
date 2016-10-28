@@ -223,3 +223,53 @@ $media-query-units: em !default;
 @function hn($num) {
 	@return n(h($num));
 }
+
+
+/*--------------------------------
+
+	Photoshop letter spacing
+
+	use:
+
+		get the value of a particular breakpoint
+
+	example:
+
+		.box {
+			width: breakpoint('phone-wide');
+		}
+
+		would generate:
+
+		.box {
+			width: 480px;
+		}
+
+*/
+
+@function breakpoint($name) {
+	@return map_get($breakpoints, $name);
+}
+
+
+/*--------------------------------
+
+	Colour map lookup, retrieving base value by default
+
+*/
+
+@function c($colour, $value: 'base') {
+
+	@if map-has-key($colours, $colour) {
+
+		$colour: map-get($colours, $colour);
+		$colourVal: map-get($colour, $value);
+		@return $colourVal;
+
+	} @else {
+
+		@warn 'Colour name #{$colour} not found in $colours.';
+
+	}
+
+}
