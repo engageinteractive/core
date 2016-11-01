@@ -5,7 +5,9 @@ var
 	styleguide,
 	task,
 
+	ejs = require('ejs'),
 	fm = require('front-matter'),
+	fs = require('fs'),
 	gulp = require('gulp'),
 	marked = require('marked'),
 	path = require('path'),
@@ -83,8 +85,18 @@ gulp.task('styleguide.parse', function() {
 });
 
 gulp.task('styleguide.generate', function(done) {
-	console.log(JSON.stringify(styleguide));
-	done();
+	fs.readFile(
+		path.resolve(__dirname, '../utils/styleguide.html'),
+		'utf8',
+		function(err, template) {
+			fs.writeFile(
+				'public/styleguide.html', // TODO: replace hardcoded path
+				ejs.render(template, styleguide),
+				'utf8',
+				done
+			);
+		}
+	);
 });
 
 task = gulp.series('styleguide.parse', 'styleguide.generate');

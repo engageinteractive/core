@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex">
+
+	<title>Styleguide</title>
+
+	<link rel="icon" type="image/png" href="/assets/img/meta/favicon-32.png">
+	<!--[if IE]><link rel="shortcut icon" href="/assets/img/meta/favicon.ico"><![endif]-->
+	<link rel="apple-touch-icon" href="/assets/img/meta/favicon-180.png">
+	<link rel="mask-icon" href="/assets/img/meta/mask-icon.svg" color="#000000">
+
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<script src="/assets/js/modernizr.js"></script>
+</head>
+<body>
+
+	<h1 class="h1">Styleguide</h1>
+
+	<h2 class="h2">Variables</h2>
+
+	<h3 class="h3">Colours</h3>
+
+	<div class="block-grid block-grid--12">
+		<% variables.c.forEach(function(variable){ %>
+			<div style="width: 100px; height: 100px; background-color: <%= variable.value %>">
+				<%= variable.modifier %>
+			</div>
+		<% }); %>
+	</div>
+
+	<h2 class="h2">Examples</h2>
+
+	<% Object.keys(examples).forEach(function(file){ %>
+		<% examples[file].forEach(function(example){ %>
+			<h3 class="h3"><%= example.attributes.title || file %></h3>
+
+			<%- example.html %>
+
+			<h4 class="h4">Source</h4>
+
+			<pre><%= example.html %></pre>
+
+		<% }); %>
+	<% }); %>
+
+	<pre>
+		TODO
+	</pre>
+
+</body>
+</html>
