@@ -22,16 +22,20 @@ var
 		var relPath = path.relative(src, css.source.input.file);
 
 		css.walkDecls(function(decl) {
-			var variable = decl.prop.match(/\$(\w+(-\w+)?)(--(\w+(-\w+)?))?/);
+			var
+				variable = decl.prop.match(/\$(\w+(-\w+)?)(--(\w+(-\w+)?))?/),
+				type = variable && variable[1];
 
 			if (!variable) {
 				return;
 			}
 
-			styleguide.variables.push({
+			if (!styleguide.variables[type]) {
+				styleguide.variables[type] = [];
+			}
+
+			styleguide.variables[type].push({
 				modifier: variable && (variable[4] || false),
-				path: relPath,
-				type: variable[1],
 				value: decl.value,
 			});
 		});
@@ -50,10 +54,13 @@ var
 				content.body = content.body.substr(3);
 			}
 
-			styleguide.examples.push({
+			if (!styleguide.examples[relPath]) {
+				styleguide.examples[relPath] = [];
+			}
+
+			styleguide.examples[relPath].push({
 				attributes: content.attributes,
 				html: marked(content.body.trim()),
-				path: relPath,
 			});
 		});
 	};
@@ -66,8 +73,8 @@ src = path.join(
 
 gulp.task('styleguide.parse', function() {
 	styleguide = {
-		variables: [],
-		examples: [],
+		variables: {},
+		examples: {},
 	};
 
 	return gulp
