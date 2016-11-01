@@ -1,8 +1,14 @@
 var
+	config = require('../config'),
 	paths = require('../utils/paths')('css'),
+	src,
+	styleguide,
 	task,
 
+	fm = require('front-matter'),
 	gulp = require('gulp'),
+	marked = require('marked'),
+	path = require('path'),
 	postcss = require('gulp-postcss'),
 	syntax = require('postcss-scss'),
 
@@ -12,34 +18,58 @@ var
 		},
 	},
 
-	styleguide = {
-		variables: {},
-		files: {},
-	},
-
 	processor = function(css) {
+		var relPath = path.relative(src, css.source.input.file);
+
 		css.walkDecls(function(decl) {
-			var
-				variable = decl.prop.match(/\$(\w+(-\w+)?)(--(\w+(-\w+)?))?/),
-				type = variable && variable[1],
-				parsed = {
-					modifier: variable && (variable[4] || false),
-					value: decl.value,
-				};
+			var variable = decl.prop.match(/\$(\w+(-\w+)?)(--(\w+(-\w+)?))?/);
 
 			if (!variable) {
 				return;
 			}
 
-			if (!styleguide.variables[type]) {
-				styleguide.variables[type] = [];
+			styleguide.variables.push({
+				modifier: variable && (variable[4] || false),
+				path: relPath,
+				type: variable[1],
+				value: decl.value,
+			});
+		});
+
+		css.walkComments(function(comment) {
+			var content;
+
+			// skip non-styleguide comments
+			if (comment.text.substr(0, 3) !== '---') {
+				return;
 			}
 
-			styleguide.variables[type].push(parsed);
+			content = fm(comment.text);
+
+			if (content.body.substr(0, 3) === '---') {
+				content.body = content.body.substr(3);
+			}
+
+			styleguide.examples.push({
+				attributes: content.attributes,
+				html: marked(content.body.trim()),
+				path: relPath,
+			});
 		});
 	};
 
+src = path.join(
+	process.cwd(),
+	config.root.src,
+	config.tasks.css.src
+);
+
 gulp.task('styleguide.parse', function() {
+	styleguide = {
+		variables: [],
+		examples: [],
+	};
+
 	return gulp
 		.src(paths.src)
 		.pipe(postcss([processor], options.postcss));
