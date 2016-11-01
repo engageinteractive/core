@@ -1,5 +1,6 @@
 {
   "rules": {
+    "keyword-spacing": "off",
     "space-before-blocks": [
       "warn",
       "always"
