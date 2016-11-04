@@ -56,11 +56,11 @@ var
 				content.body = content.body.substr(3);
 			}
 
-			if (!styleguide.examples[relPath]) {
-				styleguide.examples[relPath] = [];
+			if (!styleguide.components[relPath]) {
+				styleguide.components[relPath] = [];
 			}
 
-			styleguide.examples[relPath].push({
+			styleguide.components[relPath].push({
 				attributes: content.attributes,
 				html: marked(content.body.trim()),
 			});
@@ -76,7 +76,7 @@ src = path.join(
 gulp.task('styleguide.parse', function() {
 	styleguide = {
 		variables: {},
-		examples: {},
+		components: {},
 	};
 
 	return gulp

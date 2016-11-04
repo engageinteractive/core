@@ -34,17 +34,17 @@
 		<% }); %>
 	</div>
 
-	<h2 class="h2">Examples</h2>
+	<h2 class="h2">Components</h2>
 
-	<% Object.keys(examples).forEach(function(file){ %>
-		<% examples[file].forEach(function(example){ %>
-			<h3 class="h3"><%= example.attributes.title || file %></h3>
+	<% Object.keys(components).forEach(function(file){ %>
+		<% components[file].forEach(function(component){ %>
+			<h3 class="h3"><%= component.attributes.title || file %></h3>
 
-			<%- example.html %>
+			<%- component.html %>
 
 			<h4 class="h4">Source</h4>
 
-			<pre><%= example.html %></pre>
+			<pre><%= component.html %></pre>
 
 		<% }); %>
 	<% }); %>
