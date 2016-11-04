@@ -1,16 +1,11 @@
-/*--------------------------------
-
-	System Message (404)
-
-*/
-
+@import '../variables';
 @import 'normalize.css/normalize';
-@import '../../utility/functions';
-@import '../../utility/mixins';
-@import '../../utility/fonts';
-@import '../../core';
-@import '../../core/anchor';
-@import '../../core/img';
+@import '../utility/functions';
+@import '../utility/mixins';
+@import '../utility/fonts';
+@import '../core';
+@import '../core/anchor';
+@import '../core/img';
 
 $spacing-unit: 30px;
 $spacing-unit--small: 20px;
