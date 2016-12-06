@@ -26,6 +26,35 @@
 			padding: 0;
 		}
 
+		.callout {
+			padding: 1em;
+			background-color:
+		}
+
+		.colour {
+			position: relative;
+			padding-top: 100%;
+		}
+
+			.colour__value {
+				position: absolute;
+				top: 50%;
+				width: 100%;
+				text-align: center;
+				background-color: transparent;
+				color: #333;
+				mix-blend-mode: difference;
+				transform: translateY(-50%);
+			}
+
+			.colour__name {
+				padding: .5em 1em;
+				text-align: center;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+
 	</style>
 
 	<script src="/assets/js/modernizr.js"></script>
@@ -40,8 +69,11 @@
 
 	<div class="block-grid block-grid--12">
 		<% variables.c.forEach(function(variable){ %>
-			<div style="width: 100px; height: 100px; background-color: <%= variable.value %>">
-				<%= variable.modifier %>
+			<div>
+				<div class="colour" style="background-color: <%= variable.value %>">
+					<code class="colour__value"><%= variable.value %></code>
+				</div>
+				<pre class="colour__name"><%= variable.modifier %></pre>
 			</div>
 		<% }); %>
 	</div>
