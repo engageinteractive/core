@@ -15,6 +15,18 @@
 	<link rel="mask-icon" href="/assets/img/meta/mask-icon.svg" color="#000000">
 
 	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<style>
+
+		pre[class*=language-] {
+			margin: 0;
+		}
+
+		code[class*=language-] {
+			padding: 0;
+		}
+
+	</style>
 
 	<script src="/assets/js/modernizr.js"></script>
 </head>
@@ -44,14 +56,12 @@
 
 			<h4 class="h4">Source</h4>
 
-			<pre><%= component.html %></pre>
+			<pre><code class="language-markup"><%= component.html %></code></pre>
 
 		<% }); %>
 	<% }); %>
 
-	<pre>
-		TODO
-	</pre>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
 
 </body>
 </html>
