@@ -117,7 +117,8 @@
         "files": [
           "public/**/*.{html,php}",
           "app/views/**/*.php",
-          "resources/views/**/*.php"
+          "resources/views/**/*.php",
+          "!**/*.map"
         ]
       }
     },
