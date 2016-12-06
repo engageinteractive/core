@@ -30,6 +30,16 @@
         "cascade": false
       }
     },
+    "styleguide": {
+      "src": "scss",
+      "dest": "styleguide.html",
+      "extensions": [
+        "css",
+        "sass",
+        "scss"
+      ],
+      "template": "styleguide.html"
+    },
     "scripts": {
       "src": "js",
       "dest": "js",
@@ -104,7 +114,8 @@
         "images",
         "scripts",
         "sprite",
-        "static"
+        "static",
+        "styleguide"
       ],
       "browserSync": {
         "ghostMode": {
@@ -128,7 +139,8 @@
         "images",
         "scripts",
         "sprite",
-        "static"
+        "static",
+        "styleguide"
       ]
     }
   }
