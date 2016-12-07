@@ -10,6 +10,7 @@ var
 	fs = require('fs'),
 	gulp = require('gulp'),
 	marked = require('marked'),
+	gutil = require('gulp-util'),
 	path = require('path'),
 	postcss = require('gulp-postcss'),
 	syntax = require('postcss-scss'),
@@ -93,18 +94,18 @@ gulp.task('styleguide.parse', function() {
 });
 
 gulp.task('styleguide.generate', function(done) {
-	fs.readFile(
-		template,
-		'utf8',
-		function(err, template) {
-			fs.writeFile(
-				paths.dest,
-				ejs.render(template, styleguide),
-				'utf8',
-				done
-			);
+	fs.readFile(template, 'utf8', function(err, template) {
+		try {
+
+			fs.writeFile(paths.dest, ejs.render(template, styleguide), 'utf8', done);
+
+		} catch (e) {
+
+			gutil.log(gutil.colors.red(e.message));
+			done();
+
 		}
-	);
+	});
 });
 
 task = gulp.series('styleguide.parse', 'styleguide.generate');
