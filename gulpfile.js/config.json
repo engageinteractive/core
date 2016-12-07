@@ -31,14 +31,12 @@
       }
     },
     "styleguide": {
-      "src": "scss",
+      "src": "styleguide",
       "dest": "styleguide.html",
       "extensions": [
-        "css",
-        "sass",
-        "scss"
-      ],
-      "template": "styleguide/index.html"
+        "html",
+        "ejs"
+      ]
     },
     "scripts": {
       "src": "js",

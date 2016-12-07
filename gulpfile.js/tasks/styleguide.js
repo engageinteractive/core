@@ -1,6 +1,9 @@
 var
 	config = require('../config'),
-	paths = require('../utils/paths')('styleguide'),
+	paths = {
+		css: require('../utils/paths')('css'),
+		styleguide: require('../utils/paths')('styleguide'),
+	},
 	src,
 	styleguide,
 	task,
@@ -73,7 +76,8 @@ template = path.resolve(
 	'../..',
 	path.join(
 		config.root.src,
-		config.tasks.styleguide.template
+		config.tasks.styleguide.src,
+		'index.html'
 	)
 ),
 src = path.join(
@@ -89,7 +93,7 @@ gulp.task('styleguide.parse', function() {
 	};
 
 	return gulp
-		.src(paths.src)
+		.src(paths.css.src)
 		.pipe(postcss([processor], options.postcss));
 });
 
@@ -102,7 +106,7 @@ gulp.task('styleguide.generate', function(done) {
 
 		} else {
 
-			fs.writeFile(paths.dest, html, 'utf8', done);
+			fs.writeFile(paths.styleguide.dest, html, 'utf8', done);
 
 		}
 	});
