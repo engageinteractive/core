@@ -1,3 +1,14 @@
+@import 'variables';
+@import 'utility/mixins';
+
+pre[class*=language-] {
+	margin: 0;
+}
+
+code[class*=language-] {
+	padding: 0;
+}
+
 .sg {
 	@include soft--ends($spacing-unit);
 }
