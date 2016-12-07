@@ -94,15 +94,15 @@ gulp.task('styleguide.parse', function() {
 });
 
 gulp.task('styleguide.generate', function(done) {
-	fs.readFile(template, 'utf8', function(err, template) {
-		try {
+	ejs.renderFile(template, styleguide, null, function(error, html) {
+		if (error) {
 
-			fs.writeFile(paths.dest, ejs.render(template, styleguide), 'utf8', done);
-
-		} catch (e) {
-
-			gutil.log(gutil.colors.red(e.message));
+			gutil.log(gutil.colors.red(error.message));
 			done();
+
+		} else {
+
+			fs.writeFile(paths.dest, html, 'utf8', done);
 
 		}
 	});
