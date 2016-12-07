@@ -8,6 +8,7 @@ var
 	styleguide,
 	task,
 
+	directory = require('directory-tree'),
 	ejs = require('ejs'),
 	fm = require('front-matter'),
 	fs = require('fs'),
@@ -90,6 +91,7 @@ gulp.task('styleguide.parse', function() {
 	styleguide = {
 		variables: {},
 		components: {},
+		directory: directory('src/scss').children
 	};
 
 	return gulp

@@ -1,0 +1,19 @@
+<li>
+	<% if (!node.children) { %>
+		<a href="#">
+	<% } %>
+
+	<%= node.name %>
+
+	<% if (node.children) { %>
+		<ul>
+			<% node.children.forEach(function(child) { %>
+				<%- include('_tree.html', { node: child }) %>
+			<% }) %>
+		</ul>
+	<% } %>
+
+	<% if (!node.children) { %>
+		</a>
+	<% } %>
+</li>
