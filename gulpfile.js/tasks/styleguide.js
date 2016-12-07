@@ -24,9 +24,18 @@ var
 			syntax: syntax,
 		},
 	},
+	template = path.resolve(
+		__dirname,
+		'../..',
+		path.join(
+			config.root.src,
+			config.tasks.styleguide.src,
+			'index.html'
+		)
+	),
 
 	processor = function(css) {
-		var relPath = path.relative(src, css.source.input.file);
+		var relPath = path.relative(process.cwd(), css.source.input.file);
 
 		css.walkDecls(function(decl) {
 			var
@@ -72,26 +81,10 @@ var
 		});
 	};
 
-template = path.resolve(
-	__dirname,
-	'../..',
-	path.join(
-		config.root.src,
-		config.tasks.styleguide.src,
-		'index.html'
-	)
-),
-src = path.join(
-	process.cwd(),
-	config.root.src,
-	config.tasks.css.src
-);
-
 gulp.task('styleguide.parse', function() {
 	styleguide = {
 		variables: {},
-		components: {},
-		directory: directory('src/scss').children
+		components: {}
 	};
 
 	return gulp
