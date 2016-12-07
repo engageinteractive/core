@@ -38,7 +38,7 @@
         "sass",
         "scss"
       ],
-      "template": "styleguide.html"
+      "template": "styleguide/index.html"
     },
     "scripts": {
       "src": "js",
