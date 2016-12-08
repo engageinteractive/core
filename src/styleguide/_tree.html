@@ -1,15 +1,15 @@
-<% nodes.forEach(function(node) { %>
+<% nodes.forEach(function(node, i) { %>
 
 	<li>
 		<% if (node.components) { %>
-			<a href="#">
+			<a href="#sg<%= parent + '-' + i %>-0">
 		<% } %>
 
 		<%= node.filename %>
 
 		<% if (node.children) { %>
 			<ul>
-				<%- include('_tree.html', { nodes: node.children }) %>
+				<%- include('_tree.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
 			</ul>
 		<% } %>
 

@@ -57,7 +57,7 @@
 											<li><a href="#">Typography</a></li>
 										</ul>
 									</li>
-									<%- include('_tree.html', { nodes }) %>
+									<%- include('_tree.html', { nodes, parent: '' }) %>
 								</ul>
 							</li>
 						</ul>
@@ -70,7 +70,7 @@
 
 						<h1 class="sg-group__title h1">Components</h1>
 
-						<%- include('_components.html', { nodes }) %>
+						<%- include('_components.html', { nodes, parent: '' }) %>
 
 					</div>
 

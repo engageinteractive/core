@@ -1,4 +1,4 @@
-<% nodes.forEach(function(node) { %>
+<% nodes.forEach(function(node, i) { %>
 
 	<% if (node.children) { %>
 
@@ -12,7 +12,7 @@
 
 			</header>
 
-			<%- include('_components.html', { nodes: node.children }) %>
+			<%- include('_components.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
 
 		</section>
 
@@ -20,7 +20,9 @@
 
 		<div class="sg-section__body">
 
-			<% node.components.forEach(function(component, i) { %>
+			<% node.components.forEach(function(component, j) { %>
+
+				<% var slug = (parent + '-' + i + '-' + j) %>
 
 				<article class="sg-content">
 
@@ -28,7 +30,7 @@
 
 						<header class="sg-content__header">
 
-							<h1 class="h3" id="sg-core-a"><%= component.attributes.title || node.filename %></h1>
+							<h1 class="h3" id="sg<%= slug %>"><%= component.attributes.title || node.filename %></h1>
 
 						</header>
 
@@ -40,9 +42,9 @@
 
 						<div class="sg-content__markup reveal">
 
-							<input class="vh reveal__toggle" type="checkbox" id="source-core-a" value="" tabindex="-1">
+							<input class="vh reveal__toggle" type="checkbox" id="source<%= slug %>" value="" tabindex="-1">
 
-							<label class="button reveal__label" for="source-core-a">View Source</label>
+							<label class="button reveal__label" for="source<%= slug %>">View Source</label>
 
 							<div class="sg-content__markup__source reveal__wrapper">
 
