@@ -40,26 +40,7 @@
 						<h1 class="vh">Styleguide menu</h1>
 
 						<ul>
-							<li>
-								Documentation
-								<ul>
-									<li><a href="#">To do</a></li>
-								</ul>
-							</li>
-							<li>
-								Components
-								<ul>
-									<li>
-										Foundation
-										<ul>
-											<li><a href="#">Branding</a></li>
-											<li><a href="#">Colour Scheme</a></li>
-											<li><a href="#">Typography</a></li>
-										</ul>
-									</li>
-									<%- include('_tree.html', { nodes, parent: '' }) %>
-								</ul>
-							</li>
+							<%- include('_tree.html', { nodes, parent: '' }) %>
 						</ul>
 					</nav>
 				</header>

@@ -86,11 +86,9 @@ var
 	},
 
 	parseNode = function(node) {
-		var components = styleguide.components[node.path];
-
 		return {
 			filename: titleCase(node.name.match(/_?([^\.]+)/)[1]),
-			components: components || [],
+			components: styleguide.components[node.path] || [],
 			children: node.children ? node.children.map(parseNode) : []
 		};
 	},
@@ -114,7 +112,24 @@ gulp.task('styleguide.parse', function() {
 gulp.task('styleguide.generate', function(done) {
 	var data = {
 		variables: styleguide.variables,
-		nodes: directory('src/scss').children.map(parseNode).filter(filterNode)
+		nodes: [
+			{
+				"filename": "Documentation",
+				"components": [],
+				"children": []
+			},
+			{
+				"filename": "Components",
+				"components": [],
+				"children": [
+					{
+						"filename": "Foundation",
+						"components": [],
+						"children": []
+					}
+				].concat(directory('src/scss').children.map(parseNode).filter(filterNode))
+			}
+		]
 	};
 
 	ejs.renderFile(template, data, null, function(error, html) {
