@@ -91,9 +91,14 @@ var
 
 		return {
 			filename: titleCase(node.name.match(/_?([^\.]+)/)[1]),
-			components: !!components && components,
-			children: !!node.children && node.children.map(parseNode)
+			components: components || [],
+			children: node.children ? node.children.map(parseNode) : []
 		};
+	},
+
+	filterNode = function(node) {
+		node.children = node.children.filter(filterNode);
+		return node.children.length || node.components.length;
 	};
 
 gulp.task('styleguide.parse', function() {
@@ -108,13 +113,10 @@ gulp.task('styleguide.parse', function() {
 });
 
 gulp.task('styleguide.generate', function(done) {
-	var
-		data = { variables: styleguide.variables },
-		nodes = directory('src/scss').children.map(parseNode);
-
-	// TODO: remove nodes w/o components
-
-	data.nodes = nodes;
+	var data = {
+		variables: styleguide.variables,
+		nodes: directory('src/scss').children.map(parseNode).filter(filterNode)
+	};
 
 	ejs.renderFile(template, data, null, function(error, html) {
 		if (error) {

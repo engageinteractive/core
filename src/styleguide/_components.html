@@ -1,6 +1,6 @@
 <% nodes.forEach(function(node, i) { %>
 
-	<% if (node.children) { %>
+	<% if (node.children.length) { %>
 
 		<% if (!parent) { %>
 
@@ -24,7 +24,7 @@
 
 		<% } %>
 
-	<% } else if (node.components) { %>
+	<% } else if (node.components.length) { %>
 
 		<div class="sg-section__body">
 
