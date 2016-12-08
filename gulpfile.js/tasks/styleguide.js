@@ -13,7 +13,6 @@ var
 	fm = require('front-matter'),
 	fs = require('fs'),
 	gulp = require('gulp'),
-	marked = require('marked'),
 	gutil = require('gulp-util'),
 	path = require('path'),
 	postcss = require('gulp-postcss'),
@@ -81,7 +80,7 @@ var
 
 			styleguide.components[relPath].push({
 				attributes: content.attributes,
-				html: marked(content.body.trim()),
+				html: content.body.trim(),
 			});
 		});
 	},
