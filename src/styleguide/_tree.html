@@ -1,19 +1,21 @@
-<li>
-	<% if (node.components) { %>
-		<a href="#">
-	<% } %>
+<% nodes.forEach(function(node) { %>
 
-	<%= node.filename %>
+	<li>
+		<% if (node.components) { %>
+			<a href="#">
+		<% } %>
 
-	<% if (node.children) { %>
-		<ul>
-			<% node.children.forEach(function(child) { %>
-				<%- include('_tree.html', { node: child }) %>
-			<% }) %>
-		</ul>
-	<% } %>
+		<%= node.filename %>
 
-	<% if (node.components) { %>
-		</a>
-	<% } %>
-</li>
+		<% if (node.children) { %>
+			<ul>
+				<%- include('_tree.html', { nodes: node.children }) %>
+			</ul>
+		<% } %>
+
+		<% if (node.components) { %>
+			</a>
+		<% } %>
+	</li>
+
+<% }) %>

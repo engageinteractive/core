@@ -57,9 +57,7 @@
 											<li><a href="#">Typography</a></li>
 										</ul>
 									</li>
-									<% nodes.forEach(function(node) { %>
-										<%- include('_tree.html', { node }) %>
-									<% }) %>
+									<%- include('_tree.html', { nodes }) %>
 								</ul>
 							</li>
 						</ul>
@@ -72,9 +70,7 @@
 
 						<h1 class="sg-group__title h1">Components</h1>
 
-						<% nodes.forEach(function(node) { %>
-							<%- include('_components.html', { node }) %>
-						<% }) %>
+						<%- include('_components.html', { nodes }) %>
 
 					</div>
 

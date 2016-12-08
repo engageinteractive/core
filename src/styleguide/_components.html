@@ -1,63 +1,65 @@
-<% if (node.children) { %>
+<% nodes.forEach(function(node) { %>
 
-	<section class="sg-section">
+	<% if (node.children) { %>
 
-		<header class="sg-section__header">
+		<section class="sg-section">
 
-			<h1 class="h2"><%= node.filename %></h1>
+			<header class="sg-section__header">
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+				<h1 class="h2"><%= node.filename %></h1>
 
-		</header>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
 
-		<% node.children.forEach(function(child) { %>
-			<%- include('_components.html', { node: child }) %>
-		<% }) %>
+			</header>
 
-	</section>
+			<%- include('_components.html', { nodes: node.children }) %>
 
-<% } else if (node.components) { %>
+		</section>
 
-	<div class="sg-section__body">
+	<% } else if (node.components) { %>
 
-		<% node.components.forEach(function(component, i) { %>
+		<div class="sg-section__body">
 
-			<article class="sg-content">
+			<% node.components.forEach(function(component, i) { %>
 
-				<div class="sg-content__example">
-
-					<header class="sg-content__header">
-
-						<h1 class="h3" id="sg-core-a"><%= component.attributes.title || node.filename %></h1>
-
-					</header>
+				<article class="sg-content">
 
 					<div class="sg-content__example">
 
-						<%- component.html %>
+						<header class="sg-content__header">
 
-					</div>
+							<h1 class="h3" id="sg-core-a"><%= component.attributes.title || node.filename %></h1>
 
-					<div class="sg-content__markup reveal">
+						</header>
 
-						<input class="vh reveal__toggle" type="checkbox" id="source-core-a" value="" tabindex="-1">
+						<div class="sg-content__example">
 
-						<label class="button reveal__label" for="source-core-a">View Source</label>
+							<%- component.html %>
 
-						<div class="sg-content__markup__source reveal__wrapper">
+						</div>
 
-							<pre><code class="language-markup"><%= component.html %></code></pre>
+						<div class="sg-content__markup reveal">
+
+							<input class="vh reveal__toggle" type="checkbox" id="source-core-a" value="" tabindex="-1">
+
+							<label class="button reveal__label" for="source-core-a">View Source</label>
+
+							<div class="sg-content__markup__source reveal__wrapper">
+
+								<pre><code class="language-markup"><%= component.html %></code></pre>
+
+							</div>
 
 						</div>
 
 					</div>
 
-				</div>
+				</article>
 
-			</article>
+			<% }) %>
 
-		<% }) %>
+		</div>
 
-	</div>
+	<% } %>
 
-<% } %>
+<% }) %>
