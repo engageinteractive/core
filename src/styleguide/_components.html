@@ -2,19 +2,27 @@
 
 	<% if (node.children) { %>
 
-		<section class="sg-section">
+		<% if (!parent) { %>
 
-			<header class="sg-section__header">
+			<section class="sg-section">
 
-				<h1 class="h2"><%= node.filename %></h1>
+				<header class="sg-section__header">
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+					<h1 class="h2"><%= node.filename %></h1>
 
-			</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
 
-			<%- include('_components.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
+				</header>
 
-		</section>
+		<% } %>
+
+		<%- include('_components.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
+
+		<% if (!parent) { %>
+
+			</section>
+
+		<% } %>
 
 	<% } else if (node.components) { %>
 
