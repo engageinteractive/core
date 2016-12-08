@@ -5,54 +5,92 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="noindex">
 
 	<title>Styleguide</title>
-
-	<link rel="icon" type="image/png" href="/assets/img/meta/favicon-32.png">
-	<!--[if IE]><link rel="shortcut icon" href="/assets/img/meta/favicon.ico"><![endif]-->
-	<link rel="apple-touch-icon" href="/assets/img/meta/favicon-180.png">
-	<link rel="mask-icon" href="/assets/img/meta/mask-icon.svg" color="#000000">
+	<meta name="robots" content="noindex">
 
 	<link rel="stylesheet" href="/assets/css/main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
 	<link rel="stylesheet" href="/assets/css/styleguide.css">
 
 	<script src="/assets/js/modernizr.js"></script>
+
 </head>
 <body>
 
-	<h1 class="h1">Styleguide</h1>
+	<div id="site-wrapper" class="site-wrapper">
 
-	<h2 class="h2">Variables</h2>
+		<header id="site-header" class="site-header" role="banner">
 
-	<h3 class="h3">Colours</h3>
+			<div class="container">
 
-	<div class="block-grid block-grid--12">
-		<% variables.c.forEach(function(variable){ %>
-			<div>
-				<div class="colour" style="background-color: <%= variable.value %>">
-					<code class="colour__value"><%= variable.value %></code>
-				</div>
-				<pre class="colour__name"><%= variable.modifier %></pre>
+				<h1 class="h2"><a href="/">Front-end Baseplate</a></h1>
+
 			</div>
-		<% }); %>
+
+		</header>
+
+		<div id="site-content" class="site-content">
+
+			<div class="sg container" id="sg">
+				<header class="sg-header">
+					<h1 class="h1">Styleguide</h1>
+
+					<nav class="sg-nav">
+						<h1 class="vh">Styleguide menu</h1>
+
+						<ul>
+							<li>
+								Documentation
+								<ul>
+									<li><a href="#">To do</a></li>
+								</ul>
+							</li>
+							<li>
+								Components
+								<ul>
+									<li>
+										Foundation
+										<ul>
+											<li><a href="#">Branding</a></li>
+											<li><a href="#">Colour Scheme</a></li>
+											<li><a href="#">Typography</a></li>
+										</ul>
+									</li>
+									<% nodes.forEach(function(node) { %>
+										<%- include('_tree.html', { node }) %>
+									<% }) %>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+				<div class="sg-body">
+
+					<div class="sg-group sg-group--components">
+
+						<h1 class="sg-group__title h1">Components</h1>
+
+						<% nodes.forEach(function(node) { %>
+							<%- include('_components.html', { node }) %>
+						<% }) %>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<footer id="site-footer" class="site-footer">
+			<div class="container">
+				<p>&copy; 2016 Engage</p>
+			</div>
+		</footer>
+
 	</div>
-
-	<h2 class="h2">Components</h2>
-
-	<% Object.keys(components).forEach(function(file){ %>
-		<% components[file].forEach(function(component){ %>
-			<h3 class="h3"><%= component.attributes.title || file %></h3>
-
-			<%- component.html %>
-
-			<h4 class="h4">Source</h4>
-
-			<pre><code class="language-markup"><%= component.html %></code></pre>
-
-		<% }); %>
-	<% }); %>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
 

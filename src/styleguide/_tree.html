@@ -1,9 +1,9 @@
 <li>
-	<% if (!node.children) { %>
+	<% if (node.components) { %>
 		<a href="#">
 	<% } %>
 
-	<%= node.name %>
+	<%= node.filename %>
 
 	<% if (node.children) { %>
 		<ul>
@@ -13,7 +13,7 @@
 		</ul>
 	<% } %>
 
-	<% if (!node.children) { %>
+	<% if (node.components) { %>
 		</a>
 	<% } %>
 </li>

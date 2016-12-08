@@ -18,12 +18,17 @@ var
 	path = require('path'),
 	postcss = require('gulp-postcss'),
 	syntax = require('postcss-scss'),
+	titleCase = require('title-case'),
 
 	options = {
 		postcss: {
 			syntax: syntax,
 		},
 	},
+	src = path.join(
+		config.root.src,
+		config.tasks.css.src
+	),
 	template = path.resolve(
 		__dirname,
 		'../..',
@@ -79,6 +84,16 @@ var
 				html: marked(content.body.trim()),
 			});
 		});
+	},
+
+	parseNode = function(node) {
+		var components = styleguide.components[node.path];
+
+		return {
+			filename: titleCase(node.name.match(/_?([^\.]+)/)[1]),
+			components: !!components && components,
+			children: !!node.children && node.children.map(parseNode)
+		};
 	};
 
 gulp.task('styleguide.parse', function() {
@@ -93,7 +108,15 @@ gulp.task('styleguide.parse', function() {
 });
 
 gulp.task('styleguide.generate', function(done) {
-	ejs.renderFile(template, styleguide, null, function(error, html) {
+	var
+		data = { variables: styleguide.variables },
+		nodes = directory('src/scss').children.map(parseNode);
+
+	// TODO: remove nodes w/o components
+
+	data.nodes = nodes;
+
+	ejs.renderFile(template, data, null, function(error, html) {
 		if (error) {
 
 			gutil.log(gutil.colors.red(error.message));

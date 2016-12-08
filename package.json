@@ -41,6 +41,7 @@
     "require-dir": "^0.3.0",
     "script-loader": "^0.7.0",
     "svg4everybody": "^2.1.0",
+    "title-case": "^2.1.0",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^3.2.0"
   }

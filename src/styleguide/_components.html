@@ -1,0 +1,63 @@
+<% if (node.children) { %>
+
+	<section class="sg-section">
+
+		<header class="sg-section__header">
+
+			<h1 class="h2"><%= node.filename %></h1>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+
+		</header>
+
+		<% node.children.forEach(function(child) { %>
+			<%- include('_components.html', { node: child }) %>
+		<% }) %>
+
+	</section>
+
+<% } else if (node.components) { %>
+
+	<div class="sg-section__body">
+
+		<% node.components.forEach(function(component, i) { %>
+
+			<article class="sg-content">
+
+				<div class="sg-content__example">
+
+					<header class="sg-content__header">
+
+						<h1 class="h3" id="sg-core-a"><%= component.attributes.title || node.filename %></h1>
+
+					</header>
+
+					<div class="sg-content__example">
+
+						<%- component.html %>
+
+					</div>
+
+					<div class="sg-content__markup reveal">
+
+						<input class="vh reveal__toggle" type="checkbox" id="source-core-a" value="" tabindex="-1">
+
+						<label class="button reveal__label" for="source-core-a">View Source</label>
+
+						<div class="sg-content__markup__source reveal__wrapper">
+
+							<pre><code class="language-markup"><%= component.html %></code></pre>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</article>
+
+		<% }) %>
+
+	</div>
+
+<% } %>
