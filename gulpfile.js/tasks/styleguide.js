@@ -90,24 +90,24 @@ var
 		return titleCase(filename.match(/_?([^\.]+)/)[1]);
 	},
 
-	parseDocs = function(node) {
+	parseDoc = function(node) {
 		return {
 			filename: titleCaseFilename(node.name),
-			children: node.children ? node.children.map(parseDocs) : [],
+			children: node.children ? node.children.map(parseDoc) : [],
 			html: !node.children && marked(fs.readFileSync(node.path, { encoding: 'utf8' }))
 		};
 	},
 
-	parseNode = function(node) {
+	parseComponent = function(node) {
 		return {
 			filename: titleCaseFilename(node.name),
 			components: styleguide.components[node.path] || [],
-			children: node.children ? node.children.map(parseNode) : []
+			children: node.children ? node.children.map(parseComponent) : []
 		};
 	},
 
-	filterNode = function(node) {
-		node.children = node.children.filter(filterNode);
+	filterComponent = function(node) {
+		node.children = node.children.filter(filterComponent);
 		return node.children.length || node.components.length;
 	};
 
@@ -126,9 +126,9 @@ gulp.task('styleguide.generate', function(done) {
 	var data = {
 		variables: styleguide.variables,
 		nodes: {
-			docs: directory('src/styleguide/docs', ['.md']).children.map(parseDocs),
+			docs: directory('src/styleguide/docs', ['.md']).children.map(parseDoc),
 			vars: [],
-			components: directory('src/scss').children.map(parseNode).filter(filterNode)
+			components: directory('src/scss').children.map(parseComponent).filter(filterComponent)
 		}
 	};
 
