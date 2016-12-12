@@ -94,7 +94,15 @@ var
 		return {
 			filename: titleCaseFilename(node.name),
 			children: node.children ? node.children.map(parseDoc) : [],
-			html: !node.children && marked(fs.readFileSync(node.path, { encoding: 'utf8' }))
+			html: !node.children && marked(fs.readFileSync(node.path, 'utf8'))
+		};
+	},
+
+	parseVar = function(node) {
+		return {
+			filename: titleCaseFilename(node.name),
+			children: node.children ? node.children.map(parseVar) : [],
+			html: !node.children && ejs.render(fs.readFileSync(node.path, 'utf8'), styleguide.variables)
 		};
 	},
 
@@ -127,8 +135,8 @@ gulp.task('styleguide.generate', function(done) {
 		variables: styleguide.variables,
 		nodes: {
 			docs: directory('src/styleguide/docs', ['.md']).children.map(parseDoc),
-			vars: [],
-			components: directory('src/scss').children.map(parseComponent).filter(filterComponent)
+			vars: directory('src/styleguide/templates/vars', ['.html']).children.map(parseVar),
+			components: directory('src/scss', ['.scss']).children.map(parseComponent).filter(filterComponent)
 		}
 	};
 

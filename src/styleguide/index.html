@@ -52,7 +52,7 @@
 									<li>
 										Foundation
 										<ul>
-											<%- include('templates/_tree.html', { nodes: nodes.vars, parent: '-foundation' }) %>
+											<%- include('templates/_tree.html', { nodes: nodes.vars, parent: '-vars' }) %>
 										</ul>
 									</li>
 									<%- include('templates/_tree.html', { nodes: nodes.components, parent: '-component' }) %>
@@ -79,6 +79,20 @@
 					<div class="sg-group sg-group--components">
 
 						<h1 class="sg-group__title h1">Components</h1>
+
+						<section class="sg-section">
+
+							<header class="sg-section__header">
+
+								<h1 class="h2">Foundation</h1>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+
+							</header>
+
+							<%- include('templates/docs/index.html', { nodes: nodes.vars, parent: '-vars' }) %>
+
+						</section>
 
 						<%- include('templates/components/index.html', { nodes: nodes.components, parent: '-component', top: true }) %>
 

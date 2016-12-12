@@ -1,0 +1,10 @@
+<div class="block-grid block-grid--12">
+	<% c.forEach(function(variable){ %>
+		<div>
+			<div class="colour" style="background-color: <%= variable.value %>">
+				<code class="colour__value"><%= variable.value %></code>
+			</div>
+			<pre class="colour__name"><%= variable.modifier %></pre>
+		</div>
+	<% }); %>
+</div>
