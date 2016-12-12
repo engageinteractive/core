@@ -86,9 +86,13 @@ var
 		});
 	},
 
+	titleCaseFilename = function(filename) {
+		return titleCase(filename.match(/_?([^\.]+)/)[1]);
+	},
+
 	parseDocs = function(node) {
 		return {
-			filename: titleCase(node.name.match(/_?([^\.]+)/)[1]),
+			filename: titleCaseFilename(node.name),
 			children: node.children ? node.children.map(parseDocs) : [],
 			html: !node.children && marked(fs.readFileSync(node.path, { encoding: 'utf8' }))
 		};
@@ -96,7 +100,7 @@ var
 
 	parseNode = function(node) {
 		return {
-			filename: titleCase(node.name.match(/_?([^\.]+)/)[1]),
+			filename: titleCaseFilename(node.name),
 			components: styleguide.components[node.path] || [],
 			children: node.children ? node.children.map(parseNode) : []
 		};
