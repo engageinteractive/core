@@ -14,6 +14,7 @@ var
 	fs = require('fs'),
 	gulp = require('gulp'),
 	gutil = require('gulp-util'),
+	marked = require('marked'),
 	path = require('path'),
 	postcss = require('gulp-postcss'),
 	syntax = require('postcss-scss'),
@@ -85,6 +86,14 @@ var
 		});
 	},
 
+	parseDocs = function(node) {
+		return {
+			filename: titleCase(node.name.match(/_?([^\.]+)/)[1]),
+			children: node.children ? node.children.map(parseDocs) : [],
+			html: !node.children && marked(fs.readFileSync(node.path, { encoding: 'utf8' }))
+		};
+	},
+
 	parseNode = function(node) {
 		return {
 			filename: titleCase(node.name.match(/_?([^\.]+)/)[1]),
@@ -112,24 +121,11 @@ gulp.task('styleguide.parse', function() {
 gulp.task('styleguide.generate', function(done) {
 	var data = {
 		variables: styleguide.variables,
-		nodes: [
-			{
-				"filename": "Documentation",
-				"components": [],
-				"children": []
-			},
-			{
-				"filename": "Components",
-				"components": [],
-				"children": [
-					{
-						"filename": "Foundation",
-						"components": [],
-						"children": []
-					}
-				].concat(directory('src/scss').children.map(parseNode).filter(filterNode))
-			}
-		]
+		nodes: {
+			docs: directory('src/styleguide/docs', ['.md']).children.map(parseDocs),
+			vars: [],
+			components: directory('src/scss').children.map(parseNode).filter(filterNode)
+		}
 	};
 
 	ejs.renderFile(template, data, null, function(error, html) {

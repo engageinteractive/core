@@ -1,0 +1,27 @@
+<% nodes.forEach(function(node, i) { %>
+
+	<% if (node.children.length) { %>
+
+		<%- include('_docs.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
+
+	<% } else { %>
+
+		<article class="sg-content">
+
+			<header class="sg-content__header">
+
+				<h1 class="h2" id="sg<%= parent + '-' + i %>-0"><%= node.filename %></h1>
+
+			</header>
+
+			<div class="sg-content__example">
+
+				<%- node.html %>
+
+			</div>
+
+		</article>
+
+	<% } %>
+
+<% }) %>

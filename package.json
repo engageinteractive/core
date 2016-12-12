@@ -33,6 +33,7 @@
     "gulp-tinypng-compress": "^1.2.1",
     "gulp-util": "^3.0.7",
     "jquery": "3.1.0",
+    "marked": "^0.3.6",
     "merge-stream": "^1.0.0",
     "modernizr-webpack-plugin": "^1.0.5",
     "normalize.css": "4.2.0",

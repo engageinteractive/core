@@ -1,7 +1,7 @@
 <% nodes.forEach(function(node, i) { %>
 
 	<li>
-		<% if (node.components.length) { %>
+		<% if (!node.children.length) { %>
 			<a href="#sg<%= parent + '-' + i %>-0">
 		<% } %>
 
@@ -13,7 +13,7 @@
 			</ul>
 		<% } %>
 
-		<% if (node.components.length) { %>
+		<% if (!node.children.length) { %>
 			</a>
 		<% } %>
 	</li>

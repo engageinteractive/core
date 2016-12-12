@@ -40,18 +40,47 @@
 						<h1 class="vh">Styleguide menu</h1>
 
 						<ul>
-							<%- include('_tree.html', { nodes, parent: '' }) %>
+							<li>
+								Documentation
+								<ul>
+									<%- include('_tree.html', { nodes: nodes.docs, parent: '-docs' }) %>
+								</ul>
+							</li>
+							<li>
+								Components
+								<ul>
+									<li>
+										Foundation
+										<ul>
+											<%- include('_tree.html', { nodes: nodes.vars, parent: '-foundation' }) %>
+										</ul>
+									</li>
+									<%- include('_tree.html', { nodes: nodes.components, parent: '-component' }) %>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</header>
 
 				<div class="sg-body">
 
+					<div class="sg-group sg-group--docs">
+
+						<h1 class="sg-group__title h1">Documentation</h1>
+
+						<div class="sg-section">
+
+							<%- include('_docs.html', { nodes: nodes.docs, parent: '-docs' }) %>
+
+						</div>
+
+					</div>
+
 					<div class="sg-group sg-group--components">
 
 						<h1 class="sg-group__title h1">Components</h1>
 
-						<%- include('_components.html', { nodes, parent: '' }) %>
+						<%- include('_components.html', { nodes: nodes.components, parent: '-component', top: true }) %>
 
 					</div>
 

@@ -35,7 +35,8 @@
       "dest": "styleguide.html",
       "extensions": [
         "html",
-        "ejs"
+        "ejs",
+        "md"
       ]
     },
     "scripts": {
