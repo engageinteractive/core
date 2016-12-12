@@ -2,7 +2,7 @@
 
 	<% if (node.children.length) { %>
 
-		<%- include('_docs.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
+		<%- include('index.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
 
 	<% } else { %>
 

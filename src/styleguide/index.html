@@ -43,7 +43,7 @@
 							<li>
 								Documentation
 								<ul>
-									<%- include('_tree.html', { nodes: nodes.docs, parent: '-docs' }) %>
+									<%- include('templates/_tree.html', { nodes: nodes.docs, parent: '-docs' }) %>
 								</ul>
 							</li>
 							<li>
@@ -52,10 +52,10 @@
 									<li>
 										Foundation
 										<ul>
-											<%- include('_tree.html', { nodes: nodes.vars, parent: '-foundation' }) %>
+											<%- include('templates/_tree.html', { nodes: nodes.vars, parent: '-foundation' }) %>
 										</ul>
 									</li>
-									<%- include('_tree.html', { nodes: nodes.components, parent: '-component' }) %>
+									<%- include('templates/_tree.html', { nodes: nodes.components, parent: '-component' }) %>
 								</ul>
 							</li>
 						</ul>
@@ -70,7 +70,7 @@
 
 						<div class="sg-section">
 
-							<%- include('_docs.html', { nodes: nodes.docs, parent: '-docs' }) %>
+							<%- include('templates/docs/index.html', { nodes: nodes.docs, parent: '-docs' }) %>
 
 						</div>
 
@@ -80,7 +80,7 @@
 
 						<h1 class="sg-group__title h1">Components</h1>
 
-						<%- include('_components.html', { nodes: nodes.components, parent: '-component', top: true }) %>
+						<%- include('templates/components/index.html', { nodes: nodes.components, parent: '-component', top: true }) %>
 
 					</div>
 

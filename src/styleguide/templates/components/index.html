@@ -16,7 +16,7 @@
 
 		<% } %>
 
-		<%- include('_components.html', { nodes: node.children, parent: (parent + '-' + i), top: false }) %>
+		<%- include('index.html', { nodes: node.children, parent: (parent + '-' + i), top: false }) %>
 
 		<% if (top) { %>
 
@@ -31,7 +31,7 @@
 			<% node.components.forEach(function(component, j) { %>
 
 				<%- include(
-					'_component.html',
+					'component.html',
 					{
 						component,
 						name: component.attributes.title || node.filename,
