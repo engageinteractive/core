@@ -43,14 +43,12 @@
         "canvas",
         "css/animations",
         "css/pointerevents",
-        "css/transforms",
         "css/transforms3d",
         "css/transitions",
         "css/transformstylepreserve3d",
         "requestanimationframe",
         "svg",
-        "touchevents",
-        "video"
+        "touchevents"
       ]
     },
     "images": {
