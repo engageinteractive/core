@@ -200,6 +200,41 @@ code[class*=language-] {
 	}
 }
 
+// new
+
+.sg-colours {
+	margin: n($spacing-unit--x-small) n($spacing-unit--x-small) 0;
+}
+
+.sg-colour {
+	padding: $spacing-unit--x-small $spacing-unit--x-small 0;
+	text-align: center;
+
+	&__value {
+		height: 4rem;
+		position: relative;
+
+		span {
+			position: absolute;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: $p--small;
+			background-color: rgba($c--white, .6);
+			padding: $spacing-unit--x-small;
+		}
+	}
+
+	&__hex {}
+
+	&__name {
+		@include truncate(100%);
+		margin-top: $spacing-unit--x-small;
+		padding-bottom: $spacing-unit--x-small;
+		border-bottom: 1px solid $c--grey-light;
+		line-height: 1;
+	}
+}
+
 
 /*
  * Grid demos
