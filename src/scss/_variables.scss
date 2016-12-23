@@ -1,18 +1,5 @@
-@import 'utility/defaults';
-
-
-/*--------------------------------
-
-	Development mode
-
-	if development mode is set to true, then the following things apply:
-
-	When a site is ready to go live, change it to false, and make sure you
-	populate any relevant variables such as the grid classes
-
-*/
-
-$dev-mode: true;
+@import 'settings';
+@import 'utility/functions';
 
 
 /*--------------------------------
@@ -24,41 +11,33 @@ $dev-mode: true;
 // font stacks
 // for embedded custom fonts, list name below as normal. To generate code see example in utlity/core.scss
 
-$stack--sans-serif: Helvetica, Arial, sans-serif;
-$stack--serif: Georgia, Times, serif;
+$stack: Helvetica, Arial, sans-serif;
+$stack--heading: $stack;
 
 
 // font sizes
 
-$h--xxx-small: 16px;
-$h--xx-small: 18px;
-$h--x-small: 20px;
-$h--small: 22px;
-$h--medium: 24px;
-$h--large: 28px;
-$h--x-large: 36px;
-$h--xx-large: 48px;
-$h--xxx-large: 64px;
+$h--xxx-small: rem(16px);
+$h--xx-small: rem(18px);
+$h--x-small: rem(20px);
+$h--small: rem(22px);
+$h--medium: rem(24px);
+$h--large: rem(28px);
+$h--x-large: rem(36px);
+$h--xx-large: rem(48px);
+$h--xxx-large: rem(64px);
 
-$p--x-small: 12px;
-$p--small: 14px;
-$p--base: 16px;
-$p--medium: 18px;
-$p--large: 24px;
-
+$p: rem(16px);
+$p--small: rem(12px);
+$p--medium: rem(18px);
+$p--large: rem(24px);
 
 // line-height ratios
 
+$lh: 1.5;
 $lh--x-small: 1.1;
 $lh--small: 1.25;
-$lh--base: 1.5;
 $lh--large: 1.75;
-
-
-// default font sizes / line-height
-
-$font-size: $p--base;
-$line-height: $lh--base;
 
 
 // letter spacing
@@ -84,42 +63,20 @@ $w--bold: 700;
 
 */
 
-// breakpoint
-
-/*
-
-use:
-
-	get the value of a particular breakpoint
-
-example:
-
-	.box {
-		width: breakpoint('phone-wide');
-	}
-
-	would generate:
-
-	.box {
-		width: 480px;
-	}
-
-*/
-
-@function breakpoint($name) {
-	@return map_get($breakpoints, $name);
-}
-
 // basic spacing units
 
-$spacing-unit: 30px;
-$spacing-unit--x-small: 10px;
-$spacing-unit--small: 20px;
-$spacing-unit--large: 40px;
-$spacing-unit--x-large: 60px;
+$spacing-unit: rem(30px);
+$spacing-unit--x-small: rem(10px);
+$spacing-unit--small: rem(20px);
+$spacing-unit--large: rem(40px);
+$spacing-unit--x-large: rem(60px);
+
+$rel-spacing-unit: 1em;
+$rel-spacing-unit--small: .5em;
 
 
 // page gutter
+
 $page-gutter: $spacing-unit--small;
 $page-gutter--tablet: $spacing-unit;
 $page-gutter--desktop: $spacing-unit--large;
@@ -137,14 +94,14 @@ $grid-column-gutter--desktop: $spacing-unit--large;
 // build mobile first 300+
 
 $breakpoints: (
-	'phone':        375px,
-	'phone-wide':   480px,
-	'phablet':      560px,
-	'tablet-small': 640px,
-	'tablet':       768px,
-	'tablet-wide':  1024px,
-	'desktop':      1248px,
-	'desktop-wide': 1440px
+	'phone':        em(375px),
+	'phone-wide':   em(480px),
+	'phablet':      em(560px),
+	'tablet-small': em(640px),
+	'tablet':       em(768px),
+	'tablet-wide':  em(1024px),
+	'desktop':      em(1248px),
+	'desktop-wide': em(1440px)
 );
 
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
@@ -152,84 +109,66 @@ $breakpoints: (
 
 $grid-bp: (
 	'base': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'phone': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'phone-wide': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'phablet': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'tablet-small': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'tablet': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'tablet-wide': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'desktop': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	),
 	'desktop-wide': (
+		'width': (),
+		'push': (),
+		'pull': (),
 		'block': (),
-		'columns': (
-			'width': (),
-			'push': (),
-			'pull': ()
-		),
 		'flush': ()
 	)
 );
@@ -307,22 +246,6 @@ $c--body-colour: $c--black;
 
 // colour map (only use colours from the styleguide)
 // used for when looping through panel/theme styles
-
-@function c($colour, $value: 'base') {
-
-	@if map-has-key($colours, $colour) {
-
-		$colour: map-get($colours, $colour);
-		$colourVal: map-get($colour, $value);
-		@return $colourVal;
-
-	} @else {
-
-		@warn 'Colour name #{$colour} not found in $colours.';
-
-	}
-
-}
 
 $colours: (
 	// primary colours

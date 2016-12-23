@@ -1,0 +1,132 @@
+{
+  "root": {
+    "src": "src",
+    "public": "public",
+    "dest": "assets"
+  },
+  "tasks": {
+    "css": {
+      "src": "scss",
+      "dest": "css",
+      "extensions": [
+        "css",
+        "sass",
+        "scss"
+      ],
+      "sass": {
+        "includePaths": [
+          "node_modules"
+        ]
+      },
+      "cleanCss": {
+        "restructuring": false
+      },
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions",
+          "IE 9",
+          "Safari 8"
+        ],
+        "cascade": false
+      }
+    },
+    "scripts": {
+      "src": "js",
+      "dest": "js",
+      "extensions": [
+        "js"
+      ],
+      "entries": [
+        "*"
+      ],
+      "featureDetects": [
+        "canvas",
+        "css/animations",
+        "css/pointerevents",
+        "css/transforms3d",
+        "css/transitions",
+        "css/transformstylepreserve3d",
+        "requestanimationframe",
+        "svg",
+        "touchevents"
+      ]
+    },
+    "images": {
+      "src": "img",
+      "dest": "img",
+      "extensions": [
+        "*"
+      ],
+      "icon": "meta/favicon-180.png",
+      "tinypngCompress": {
+        "summarise": true
+      }
+    },
+    "sprite": {
+      "src": "sprite",
+      "dest": "img",
+      "extensions": [
+        "svg"
+      ],
+      "svgSprite": {
+        "mode": {
+          "symbol": {
+            "dest": "",
+            "sprite": "sprite.svg"
+          }
+        },
+        "svg": {
+          "xmlDeclaration": false,
+          "doctypeDeclaration": false
+        }
+      }
+    },
+    "static": {
+      "src": "static",
+      "dest": "static",
+      "extensions": [
+        "*"
+      ],
+      "npm": [
+        {
+          "dest": "js",
+          "src": [
+            "jquery/dist/jquery.min.js"
+          ]
+        }
+      ]
+    },
+    "watch": {
+      "tasks": [
+        "css",
+        "images",
+        "scripts",
+        "sprite",
+        "static"
+      ],
+      "browserSync": {
+        "ghostMode": {
+          "scroll": false
+        },
+        "notify": false,
+        "open": false,
+        "proxy": "front-end-baseplate.dev.com",
+        "port": 5757,
+        "files": [
+          "public/**/*.{html,php}",
+          "app/views/**/*.php",
+          "resources/views/**/*.php"
+        ]
+      }
+    },
+    "default": {
+      "tasks": [
+        "css",
+        "images",
+        "scripts",
+        "sprite",
+        "static"
+      ]
+    }
+  }
+}

@@ -6,11 +6,11 @@
 @import 'utility/reset/form';
 
 // system-wide styles, mixins and placeholders
-@import 'utility/functions';
 @import 'utility/mixins';
 @import 'utility/fonts';
 @import 'utility/grid/block-grid';
 @import 'utility/grid/columns';
+@import 'utility/grid/width-push-pull';
 
 
 // CORE STYLING
@@ -47,8 +47,8 @@
 @import 'module/inline-children';
 @import 'module/media';
 @import 'module/pagination';
+@import 'module/placeholder';
 @import 'module/reveal';
-@import 'module/table-responsive-collapse';
 
 
 // LAYOUT
@@ -69,7 +69,7 @@
 // OVERRIDING UTILITIES
 // any aditional utilities that should have more important than other CSS
 
-@import 'utility/flush-nth';
+@import 'utility/flush-first';
 @import 'utility/helper-classes';
 @import 'utility/styleguide';
 @import 'utility/visible';

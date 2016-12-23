@@ -20,7 +20,7 @@
 </ol>
 
 <h2 class="h4">Inline list</h2>
-<ul class="inline-children">
+<ul class="inline-children--block">
 	<li>item 1</li>
 	<li>item 2</li>
 	<li>item 3</li>

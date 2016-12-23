@@ -26,17 +26,18 @@
 
 */
 
-@mixin mq($width, $type: min) {
+@mixin mq($size, $type: min, $property: width) {
 
-	@if map_has_key($breakpoints, $width) {
-		$width: map_get($breakpoints, $width);
+	@if map_has_key($breakpoints, $size) {
+		$size: map_get($breakpoints, $size);
 	}
 
 	@if $type == max {
-		$width: $width - 1px;
+		$negative: if($media-query-units == em, 0.01em, 1px);
+		$size: $size - $negative;
 	}
 
-	@media only screen and (#{$type}-width: $width) {
+	@media only screen and (#{$type}-#{$property}: $size) {
 		@content;
 	}
 
@@ -48,65 +49,35 @@
 
 	Margin / Padding Quick Resets
 
-	example: top margin
+	example: top & bottom margin set to $spacing-unit
 	.element {
-		@include push--top($spacing-unit);
+		@include push--ends;
 	}
 
-	example: top & bottom margin
+	example: left & right padding set to $spacing-unit--small
 	.element {
-		@include push--ends($spacing-unit);
-	}
-
-	example: left & right margin
-	.element {
-		@include push--sides($spacing-unit);
-	}
-
-	example: remove a top margin
-	.element {
-		@include flush--top;
+		@include soft--sides($spacing-unit--small);
 	}
 
 */
 
 // add/remove margins
 
-@mixin push($spacing: $spacing-unit) { margin: $spacing; }
-@mixin push--top($spacing: $spacing-unit) { margin-top: $spacing; }
-@mixin push--bottom($spacing: $spacing-unit) { margin-bottom: $spacing; }
-@mixin push--left($spacing: $spacing-unit) { margin-left: $spacing; }
-@mixin push--right($spacing: $spacing-unit) { margin-right: $spacing; }
 @mixin push--ends($spacing: $spacing-unit) { margin: { top: $spacing; bottom: $spacing; } }
 @mixin push--sides($spacing: $spacing-unit) { margin: { left: $spacing; right: $spacing; } }
 
 @mixin push--auto { margin: { left: auto; right: auto; } }
 @mixin offset--sides($spacing: $spacing-unit) { margin: { left: -$spacing; right: -$spacing; } }
 
-@mixin flush { margin: 0; }
-@mixin flush--top { margin-top: 0; }
-@mixin flush--bottom { margin-bottom: 0; }
-@mixin flush--left { margin-left: 0; }
-@mixin flush--right { margin-right: 0; }
 @mixin flush--ends { margin: { top: 0; bottom: 0; } }
 @mixin flush--sides { margin: { left: 0; right: 0; } }
 
 
 // add/remove paddings
 
-@mixin soft($spacing: $spacing-unit) { padding: $spacing; }
-@mixin soft--top($spacing: $spacing-unit) { padding-top: $spacing; }
-@mixin soft--bottom($spacing: $spacing-unit) { padding-bottom: $spacing; }
-@mixin soft--left($spacing: $spacing-unit) { padding-left: $spacing; }
-@mixin soft--right($spacing: $spacing-unit) { padding-right: $spacing; }
 @mixin soft--ends($spacing: $spacing-unit) { padding: { top: $spacing; bottom: $spacing; } }
 @mixin soft--sides($spacing: $spacing-unit) { padding: { left: $spacing; right: $spacing; } }
 
-@mixin hard { padding: 0; }
-@mixin hard--top { padding-top: 0; }
-@mixin hard--bottom { padding-bottom: 0; }
-@mixin hard--left { padding-left: 0; }
-@mixin hard--right { padding-right: 0; }
 @mixin hard--ends { padding: { top: 0; bottom: 0; } }
 @mixin hard--sides { padding: { left: 0; right: 0; } }
 
@@ -266,7 +237,7 @@
 
 	example: empty selector
 	.element {
-		@include content-margins(false);
+		@include content-margins('false');
 	}
 
 	output:
@@ -280,15 +251,16 @@
 */
 
 
-@mixin content-margins($selector: '> *') {
-	@if $selector {
-		#{unquote($selector)} {
-			&:first-child { margin-top: 0; }
+@mixin content-margins($selector: '> *', $last-child: false) {
+	@if not $selector {
+		$selector: '&';
+	}
+
+	#{unquote($selector)} {
+		&:first-child { margin-top: 0; }
+		@if $last-child {
 			&:last-child { margin-bottom: 0; }
 		}
-	} @else {
-		&:first-child { margin-top: 0; }
-		&:last-child { margin-bottom: 0; }
 	}
 }
 

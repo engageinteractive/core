@@ -1,5 +1,6 @@
 .table-wrapper {
 	max-width: 100%;
+	overflow-x: auto;
 }
 
 table {
@@ -7,7 +8,7 @@ table {
 	border-top: none;
 	border-collapse: collapse;
 	border-spacing: 0;
-	font-size: $p--base;
+	font-size: $p;
 	line-height: $lh--small;
 	width: 100%;
 

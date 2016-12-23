@@ -3,11 +3,12 @@
 .button {
 	background-color: $c--brand-primary;
 	color: $c--white;
-	font-family: $stack--sans-serif;
-	font-size: $p--base;
+	font-family: $stack;
+	font-size: $p;
 	font-weight: $w--normal;
-	padding: 17px;
+	padding: rem(17px);
 	position: relative;
+	text-decoration: none;
 
 	&.is-focused {
 		box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue;
@@ -53,7 +54,7 @@
 // sizes
 
 .button--large {
-	padding: 22px 30px;
+	padding: rem(22px) rem(30px);
 
 	@include mq('tablet') {
 		padding: 25px 40px;
@@ -63,5 +64,5 @@
 
 .button--small {
 	font-size: $p--small;
-	padding: 12px;
+	padding: rem(12px);
 }

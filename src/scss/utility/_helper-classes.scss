@@ -1,13 +1,9 @@
-.hidden {
+.is-hidden {
 	@include hidden;
 }
 
 .vh {
 	@include vh;
-}
-
-.invisible {
-	visibility: hidden;
 }
 
 .cf {

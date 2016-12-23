@@ -16,7 +16,7 @@
 
 	<link rel="stylesheet" href="/assets/css/main.css">
 
-	<script src="/assets/static/js/modernizr.js"></script>
+	<script src="/assets/js/modernizr.js"></script>
 
 	<!-- twitter card data (https://dev.twitter.com/docs/cards, https://dev.twitter.com/docs/cards/large-image-summary-card) -->
 	<meta name="twitter:card" content="summary_large_image">
@@ -41,10 +41,12 @@
 </head>
 <body>
 
-	<!--[if lt IE 9]>
-	<div class="outdated-browser">
-		You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-	</div>
+	<!--[if lte IE 9]>
+		<div class="outdated-browser-wrapper">
+			<div class="outdated-browser">
+				You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/">upgrade your browser</a> to improve your viewing experience.
+			</div>
+		</div>
 	<![endif]-->
 
 	<div id="site-wrapper" class="site-wrapper">

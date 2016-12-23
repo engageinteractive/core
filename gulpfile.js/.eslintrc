@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "space-before-blocks": [
+      "warn",
+      "always"
+    ]
+  }
+}

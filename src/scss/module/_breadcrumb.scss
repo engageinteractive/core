@@ -1,13 +1,13 @@
 .breadcrumb {
 	@include cf;
-	font-size: $p--small;
-	line-height: 1;
+	line-height: $lh--small;
 
 	a,
 	.icon,
 	span {
-		float: left;
-		margin-right: $spacing-unit--x-small;
+		display: inline-block;
+		margin-right: rem(5px);
+		vertical-align: top;
 
 		&:last-child {
 			margin-right: 0;
@@ -15,7 +15,8 @@
 	}
 
 	.icon {
-		width: $p--small;
-		height: $p--small;
+		$x: 3;
+		$y: 20;
+		vertical-align: n($x/$y * 100%);
 	}
 }

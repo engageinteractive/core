@@ -9,25 +9,15 @@
 
 */
 
-@mixin font-face($name, $filename, $svgfontid, $weight: normal, $style: normal) {
+@mixin font-face($name, $filename, $weight: normal, $style: normal) {
 	@font-face {
 		font-family: $name;
-		src: url('../static/fonts/#{$filename}.eot');
-		src: url('../static/fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
-		     url('../static/fonts/#{$filename}.woff') format('woff'),
-		     url('../static/fonts/#{$filename}.ttf') format('truetype'),
-		     url('../static/fonts/#{$filename}.svg##{$svgfontid}') format('svg');
+		src: url('../static/fonts/#{$filename}.woff2') format('woff2'),
+			 url('../static/fonts/#{$filename}.woff') format('woff');
 		font-style: $style;
 		font-weight: $weight;
 	}
-	@media screen and (-webkit-min-device-pixel-ratio: 0){
-        @font-face {
-            font-family: $name;
-            src: url('../static/fonts/#{$filename}.svg##{$svgfontid}') format('svg');
-        }
-    }
 }
-
 
 
 /*--------------------------------

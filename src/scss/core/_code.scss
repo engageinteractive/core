@@ -2,11 +2,11 @@ code,
 pre {
 	word-wrap: break-word;
 	white-space: pre-wrap;
-	font-family: 'courier new', monospace, serif;
-	font-size: $p--small;
+	font-family: 'PT Mono', monospace;
+	font-size: $p;
 	font-style: normal;
 	font-weight: normal;
-	line-height: $lh--x-small;
+	line-height: 1.5;
 	background-color: $c--grey-x-light;
 	color: $c--grey-dark;
 }

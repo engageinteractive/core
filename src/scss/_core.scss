@@ -21,7 +21,7 @@
 */
 
 html {
-	font-size: 10px;
+	font-size: $html-font-size;
 	min-height: 100%;
 	overflow-y: scroll;
 	-webkit-text-size-adjust: none;
@@ -30,9 +30,9 @@ html {
 body {
 	background-color: $c--body-bg;
 	color: $c--body-colour;
-	font-family: $stack--sans-serif;
-	font-size: $font-size;
-	line-height: $line-height;
+	font-family: $stack;
+	font-size: $p;
+	line-height: $lh;
 }
 
 .site-wrapper {

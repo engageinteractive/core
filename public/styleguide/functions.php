@@ -95,7 +95,9 @@ function sgContent($type, $folder = 'components', $showMarkup = true){
 		$documentation = 'usage/'.$type.'/'.$file;
 		$id =  $type . '-' . $filename;
 
-		echo 'xxx' . $id;
+		ob_start();
+		$return = include($folder . $type . '/' . $file);
+		$output = ob_get_clean();
 
 		$html .= "<article class=\"sg-content\">\n";
 
@@ -104,7 +106,7 @@ function sgContent($type, $folder = 'components', $showMarkup = true){
 			$html .= "\t</header>\n\n";
 
 			$html .= "\t<div class=\"sg-content__example\">\n";
-				$html .= file_get_contents($folder . $type .'/' . $file);
+				$html .= $output;
 			$html .= "\t</div>\n";
 
 			if ($showMarkup ) :
@@ -116,7 +118,7 @@ function sgContent($type, $folder = 'components', $showMarkup = true){
 
 					$html .= "\t\t<div class=\"sg-content__markup__source reveal__wrapper\">\n";
 						$html .= "\t\t\t<pre>\n";
-							$html .= htmlspecialchars(file_get_contents($folder . $type .'/' . $file));
+							$html .= htmlspecialchars($output);
 						$html .= "\t\t\t</pre>\n";
 					$html .= "\t\t</div>\n";
 

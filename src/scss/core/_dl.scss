@@ -12,16 +12,16 @@ dd {
 }
 
 dt {
-	@include push--top(1em);
+	margin-top: $rel-spacing-unit;
 	font-weight: $w--bold;
 
 	&:first-child {
-		@include flush--top;
+		margin-top: 0;
 
 		+ dd {
 
 			@include mq('tablet') {
-				@include flush--top;
+				margin-top: 0;
 			}
 		}
 	}
@@ -33,11 +33,11 @@ dt {
 }
 
 dd {
-	@include push--top(.5em);
+	margin-top: $rel-spacing-unit--small;
 
 	@include mq('tablet') {
-		@include push--top(1em);
-		@include soft--left($spacing-unit--small);
+		margin-top: $rel-spacing-unit;
+		padding-left: $spacing-unit--small;
 		width: 75%;
 	}
 }

@@ -3,7 +3,6 @@
 	position: relative;
 
 	p {
-		@include push--bottom(.4em);
 		font-size: $p--medium;
 		line-height: $lh--large;
 
@@ -13,10 +12,12 @@
 	}
 
 	cite {
+		display: inline-block;
 		font-size: $p--small;
+		margin-top: $rel-spacing-unit--small;
 
 		@include mq('tablet-small') {
-			font-size: $p--base;
+			font-size: $p;
 		}
 	}
 
@@ -26,12 +27,12 @@
 	}
 
 	&--left {
-		@include soft--right;
+		padding-right: $spacing-unit;
 		float: left;
 	}
 
 	&--right {
-		@include soft--left;
+		padding-left: $spacing-unit;
 		float: right;
 	}
 

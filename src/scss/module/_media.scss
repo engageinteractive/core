@@ -3,19 +3,28 @@
 
 	@include mq('tablet-small') {
 
-		&--left {
-			@include soft--right($spacing-unit--small);
-			float: left;
+		&--left,
+		&--right {
+			padding-bottom: $spacing-unit--small;
 			max-width: 50%;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+
+		&--left {
+			padding-right: $spacing-unit--small;
+			float: left;
 		}
 
 		&--right {
-			@include soft--left($spacing-unit--small);
+			padding-left: $spacing-unit--small;
 			float: right;
-			max-width: 50%;
 		}
 
 		&--centre {
+			clear: both;
 			max-width: 75%;
 
 			&,

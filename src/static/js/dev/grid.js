@@ -83,12 +83,10 @@
 			for( var i = grid.breakpoints.length - 1; i >= 0; i-- ){
 
 				grid.build[ grid.breakpoints[i] ] = {
+					width: [],
+					push: [],
+					pull: [],
 					block: [],
-					columns: {
-						width: [],
-						push: [],
-						pull: []
-					},
 					flush: []
 				}
 
@@ -125,9 +123,11 @@
 		run: function(){
 
 			// Do the scans
-			grid.scan.columns();
-			grid.scan.simple('block', '-block-grid-');
-			grid.scan.simple('flush', '-flush-first-');
+			grid.scan('width', 'width--');
+			grid.scan('push', 'push--');
+			grid.scan('pull', 'pull--');
+			grid.scan('block', 'block-grid--');
+			grid.scan('flush', 'flush-first--');
 
 			// Get the page path and store that
 			var pagePath = window.location.pathname,
@@ -162,116 +162,54 @@
 			grid.readyToExport = true;
 
 		},
-		scan: {
-			columns: function(){
+		scan: function(id, classSegment){
 
-				// Gather
-				$('.column')
-					.each(function(){
+			// Gather
+			$('[class*="' + classSegment + '"]')
+				.each(function(){
 
-						// Get the classes for each column and put them into an array
-						var classes = $(this).attr('class').split(' '),
-							options = {
-								width: '-',
-								push: '-push-',
-								pull: '-pull-'
-							};
+					// Get the classes for each column and put them into an array
+					var classes = $(this).attr('class').split(' ');
 
-						// Loop through the breakpoints
-						for( var b = grid.breakpoints.length - 1; b >= 0; b-- ){
+					// Loop through the breakpoints
+					for( var b = grid.breakpoints.length - 1; b >= 0; b-- ){
 
-							// Store the object for easy access
-							var bp = grid.build[grid.breakpoints[b]].columns;
+						// Store the object for easy access
+						var bp = grid.build[grid.breakpoints[b]][id];
 
-							// Loop through the classes for each breakpoint
-							for( var c = classes.length - 1; c >= 0; c-- ){
+						// Loop through the classes for each breakpoint
+						for( var c = classes.length - 1; c >= 0; c-- ){
 
-								$.each(options, function(o){
+							var selector = grid.breakpoints[b] === 'base' ? classSegment : classSegment + grid.breakpoints[b] + '-',
+								expression = selector + '\\d',
+								re = new RegExp(expression),
+								found = classes[c].match(re);
 
-									var expression = grid.breakpoints[b] + options[o] + '\\d',
-										re = new RegExp(expression),
-										found = classes[c].match(re);
+							if( found ){
 
-									if( found ){
+								var num = parseFloat( classes[c].replace(selector, ''));
 
-										var num = parseFloat( classes[c].replace(grid.breakpoints[b] + options[o], ''));
-
-										if( bp[o].indexOf(num) < 0 )
-											bp[o].push(num);
-
-									}
-
-								});
+								if( bp.indexOf(num) < 0 )
+									bp.push(num);
 
 							}
 
 						}
 
-					});
-
-				// Sort
-				$.each(grid.build, function(bp, obj){
-
-					// Columns
-					$.each(obj.columns, function(col, arr){
-
-						arr.sort(function(a, b){
-							return a - b;
-						});
-
-					});
+					}
 
 				});
 
-			},
-			simple: function(id, classSegment){
+			// Sort
+			$.each(grid.build, function(bp, obj){
 
-				// Gather
-				$('[class*="' + classSegment + '"]')
-					.each(function(){
-
-						// Get the classes for each column and put them into an array
-						var classes = $(this).attr('class').split(' ');
-
-						// Loop through the breakpoints
-						for( var b = grid.breakpoints.length - 1; b >= 0; b-- ){
-
-							// Store the object for easy access
-							var bp = grid.build[grid.breakpoints[b]][id];
-
-							// Loop through the classes for each breakpoint
-							for( var c = classes.length - 1; c >= 0; c-- ){
-
-								var expression = grid.breakpoints[b] + classSegment + '\\d',
-									re = new RegExp(expression),
-									found = classes[c].match(re);
-
-								if( found ){
-
-									var num = parseFloat( classes[c].replace(grid.breakpoints[b] + classSegment, ''));
-
-									if( bp.indexOf(num) < 0 )
-										bp.push(num);
-
-								}
-
-							}
-
-						}
-
-					});
-
-				// Sort
-				$.each(grid.build, function(bp, obj){
-
-					// Block
-					obj[id].sort(function(a, b){
-						return a - b;
-					});
-
+				// Block
+				obj[id].sort(function(a, b){
+					return a - b;
 				});
 
-			}
+			});
+
 		},
 		export: function(){
 
@@ -287,15 +225,12 @@
 
 				var bp = grid.build[ grid.breakpoints[i] ];
 
-				// Columns
-				scss += '	"' + grid.breakpoints[i] + '": (\n';
-				scss += '		"block": (' + bp.block + '),\n'
-				scss += '		"columns": (\n'
-				scss += '			"width": (' + bp.columns.width + '),\n'
-				scss += '			"push": (' + bp.columns.push + '),\n'
-				scss += '			"pull": (' + bp.columns.pull + ')\n'
-				scss += '		),\n'
-				scss += '		"flush": (' + bp.flush + ')\n'
+				scss += "	'" + grid.breakpoints[i] + "': (\n";
+				scss += "		'width': (" + bp.width + "),\n"
+				scss += "		'push': (" + bp.push + "),\n"
+				scss += "		'pull': (" + bp.pull + "),\n"
+				scss += "		'block': (" + bp.block + "),\n"
+				scss += "		'flush': (" + bp.flush + ")\n"
 
 				if( count == grid.breakpoints.length - 1 ){
 					scss += '	)\n';

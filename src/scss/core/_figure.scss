@@ -6,7 +6,7 @@ figure {
 }
 
 figcaption {
-	@include push(.5em auto 0);
+	margin: $rel-spacing-unit--small auto 0;
 	font-style: italic;
 	max-width: 30em;
 	text-align: center;

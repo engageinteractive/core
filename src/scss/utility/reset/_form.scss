@@ -1,3 +1,9 @@
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
 input,
 select,
 textarea {
@@ -35,6 +41,12 @@ select::-ms-expand {
 	display: none;
 }
 
+// remove IE11 select element selected option state
+select:focus::-ms-value {
+	background-color: transparent;
+	color: inherit;
+}
+
 // Allow only vertical resizing of textareas
 textarea {
 	resize: vertical;
@@ -51,13 +63,13 @@ button {
 	appearance: none;
 	background: none;
 	border: none;
-	cursor: pointer;
 	margin: 0;
 	padding: 0;
 }
 
 button,
 .button {
+	cursor: pointer;
 	display: inline-block;
 	font: normal 16px/1 sans-serif;
 	outline: 0;

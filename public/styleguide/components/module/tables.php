@@ -1,5 +1,5 @@
 <div class="table-wrapper">
-	<table class="table-responsive-collapse">
+	<table>
 		<caption>A useful description of what is in this table</caption>
 		<thead>
 			<th scope="col">Nulla pariatur</th>

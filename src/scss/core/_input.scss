@@ -1,19 +1,18 @@
 $input-border-width: 1px;
 $input-line-height: 1.5;
-$input-padding: 12px;
-$input-validation-icon: $p--base;
-$input-height: ($input-padding * 2) + ($input-border-width * 2) + ($p--base * $input-line-height);
+$input-padding: rem(12px);
+$input-validation-icon: $p;
+$input-height: ($input-padding * 2) + (rem($input-border-width) * 2) + ($p * $input-line-height);
 
 input,
 textarea,
-select,
-.simple-select {
+select {
 	background: $c--white;
 	border: 1px solid $c--grey-light;
 	border-radius: 0;
 	color: $c--black;
 	display: block;
-	font: normal #{$p--base}/#{$input-line-height} $stack--sans-serif;
+	font: normal #{$p}/#{$input-line-height} $stack;
 	padding: $input-padding;
 	height: $input-height;
 
@@ -80,8 +79,7 @@ $radio-inner-size: $checkbox-size / 2;
 	@include vh;
 
 	+ label {
-		font-weight: normal;
-		margin-bottom: 0;
+		cursor: pointer;
 		padding-left: $checkbox-size + $spacing-unit--x-small;
 		position: relative;
 
@@ -155,7 +153,7 @@ $radio-inner-size: $checkbox-size / 2;
 select {
 	// iOS Zoom Hack
 	@media screen and (-webkit-min-device-pixel-ratio: 0) {
-		font-size: $font-size !important;
+		font-size: $p !important;
 	}
 }
 
@@ -186,30 +184,6 @@ select[multiple] {
 		margin-top: -4px;
 		z-index: 3;
 		pointer-events: none;
-	}
-}
-
-// select plugin
-.simple-select {
-	select {
-		background-color: transparent;
-		position: absolute;
-		top: 0; right: 0; left: 0;
-		height: 100%;
-		z-index: 1;
-		opacity: 0;
-		padding: 0;
-	}
-
-	&__label {
-		@include truncate(100%);
-		position: absolute;
-		top: 0; right: 0; bottom: 0; left: 0;
-		padding: $input-padding ($input-validation-icon * 3) $input-padding $input-padding;
-	}
-
-	&.is-focused-ss {
-		border-color: $c--grey;
 	}
 }
 
