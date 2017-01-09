@@ -3,10 +3,12 @@
 
 pre[class*=language-] {
 	margin: 0;
+	background-color: #f5f5f5;
 }
 
 code[class*=language-] {
 	padding: 0;
+	font-size: 14/16 * 1em;
 }
 
 .sg {
@@ -272,3 +274,25 @@ code[class*=language-] {
  		font-size: 30px;
  	}
  }
+
+
+.sg-example {
+	margin-top: 1em;
+	border: 1px solid #ddd;
+
+	&__preview {
+		position: relative;
+		padding: 1em;
+		overflow: hidden;
+	}
+
+	&__button {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	&__source {
+		border-top: 1px solid #ddd;
+	}
+}
