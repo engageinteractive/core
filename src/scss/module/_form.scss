@@ -1,7 +1,11 @@
 /*---
 
+Basic text field examples:
+
+```
 <form>
 	<fieldset class="row row--compact flush-first--1">
+
 		<div class="column">
 			<label class="label" for="form-example-text">Text</label>
 
@@ -27,7 +31,7 @@
 		</div>
 
 		<div class="column">
-			<span class="label">Two inputs</span>
+			<span class="label">Grouped inputs</span>
 
 			<ul class="fields-list">
 				<li>
@@ -35,12 +39,20 @@
 				</li>
 
 				<li>
-					<input type="text" name="form-example-text-group-2" id="form-example-text-group-2" placeholder="A placeholder value" class="is-invalid">
-
-					<span class="error-text">Required</span>
+					<input type="text" name="form-example-text-group-2" id="form-example-text-group-2" placeholder="A placeholder value">
 				</li>
 			</ul>
 		</div>
+
+	</fieldset>
+</form>
+```
+
+Validation
+
+```
+<form>
+	<fieldset class="row row--compact flush-first--1">
 
 		<div class="column">
 			<label class="label" for="form-example-text-disabled">Text (disabled)</label>
@@ -61,6 +73,16 @@
 
 			<input type="text" name="form-example-text-disabled-3" id="form-example-text-disabled-3" class="is-valid" required>
 		</div>
+
+	</fieldset>
+</form>
+```
+
+Different input types:
+
+```
+<form>
+	<fieldset class="row row--compact flush-first--1">
 
 		<div class="column">
 			<label class="label" for="form-example-email">Email</label>
@@ -204,8 +226,10 @@
 				</li>
 			</ul>
 		</div>
+
 	</fieldset>
 </form>
+```
 
 */
 

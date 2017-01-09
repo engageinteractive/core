@@ -1,7 +1,8 @@
 /*---
 
-<h2 class="h5">Toggle</h2>
+## Toggle
 
+```
 <div class="reveal">
 	<input class="vh reveal__toggle" type="checkbox" id="target-1" value="" tabindex="-1">
 	<label class="a reveal__label" for="target-1">Click to toggle</label>
@@ -9,9 +10,11 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
 	</div>
 </div>
+```
 
-<h2 class="h5">Show</h2>
+## Show
 
+```
 <div class="reveal reveal--once">
 	<input class="vh reveal__toggle" type="checkbox" id="target-2" value="" tabindex="-1">
 	<label class="a reveal__label" for="target-2">Click to show</label>
@@ -19,9 +22,11 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
 	</div>
 </div>
+```
 
-<h2 class="h5">Show more</h2>
+## Show more
 
+```
 <p>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 	<span class="reveal reveal--inline">
@@ -32,11 +37,13 @@
 		<label class="a reveal__label" for="more">Show more</label>
 	</span>
 </p>
+```
 
-<h2 class="h5">Accordion</h2>
+## Accordion
 
-<h3 class="h6">Expand Any</h3>
+### Expand Any
 
+```
 <ul>
 	<li class="reveal">
 		<input class="vh reveal__toggle" type="checkbox" id="faq-2-1" value="" tabindex="-1">
@@ -60,9 +67,11 @@
 		</div>
 	</li>
 </ul>
+```
 
-<h3 class="h6">Expand Single</h3>
+### Expand Single
 
+```
 <ul>
 	<li class="reveal">
 		<input class="vh reveal__toggle" type="radio" id="faq-1" name="faq" value="" tabindex="-1">
@@ -86,6 +95,7 @@
 		</div>
 	</li>
 </ul>
+```
 
 */
 

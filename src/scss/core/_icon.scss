@@ -2,8 +2,9 @@ $icon-size: 1em;
 
 /*---
 
-<h2 class="h4">Basic icons</h2>
+Available icons:
 
+```
 <ul class="inline-children--block sg-icons">
 	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use>
 	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#check"></use></svg></li>
@@ -26,34 +27,39 @@ $icon-size: 1em;
 	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-right"></use></svg></li>
 	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-up"></use></svg></li>
 </ul>
+```
 
-<h2 class="h4">Inline icons</h2>
+Use `inline` when used with text:
 
+```
 <p><svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> Lorem ipsum dolor sit amet, consectetur <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> adipisicing elit. <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg></p>
+```
 
-<h2 class="h4">Set-position icons with text</h2>
+Use `icon-text` for vertical alignment:
 
-<ul class="list-unstyled">
-	<li>
-		<span class="icon-text">
-			<span class="icon-text__t">Icon text, description or title</span>
+```
+<div style="max-width: 10em">
+	<span class="icon-text">
+		<span class="icon-text__t">Icon text, description or title</span>
 
-			<svg class="icon-text__i icon">
-				<use xlink:href="/assets/img/sprite.svg#plus"></use>
-			</svg>
-		</span>
-	</li>
+		<svg class="icon-text__i icon">
+			<use xlink:href="/assets/img/sprite.svg#plus"></use>
+		</svg>
+	</span>
+</div>
+```
 
-	<li>
-		<span class="icon-text">
-			<svg class="icon-text__i icon">
-				<use xlink:href="/assets/img/sprite.svg#plus"></use>
-			</svg>
+```
+<div style="max-width: 10em">
+	<span class="icon-text">
+		<svg class="icon-text__i icon">
+			<use xlink:href="/assets/img/sprite.svg#plus"></use>
+		</svg>
 
-			<span class="icon-text__t">Icon text, description or title</span>
-		</span>
-	</li>
-</ul>
+		<span class="icon-text__t">Icon text, description or title</span>
+	</span>
+</div>
+```
 
 */
 
@@ -73,11 +79,6 @@ $icon-size: 1em;
 	}
 }
 
-
-/*---
-
-*/
-
 .icon-text {
 	display: inline-block;
 	position: relative;
@@ -95,6 +96,7 @@ $icon-size: 1em;
 	}
 
 	&__t {
+		display: inline-block;
 		padding-right: $icon-size + $rel-spacing-unit--small;
 
 		&:last-child {

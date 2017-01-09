@@ -1,24 +1,22 @@
 /*---
 
-<p>
-	<a href="">Regular link</a>
-</p>
+Basic link styles with support for other element types:
 
-<p>
-	<span class="a">Faux link</span>
-</p>
+```
+<a href="#0">Regular link</a>
 
-<p>
-	<label class="a">Label link</label>
-</p>
+<span class="a">Faux link</span>
 
-<p>
-	<a href="" class="a--subtle">Subtle link</a>
-</p>
+<label class="a">Label link</label>
+```
 
-<p>
-	<a href="" class="a--block">Block link</a>
-</p>
+`subtle` to use inherited colour and `block` for block links:
+
+```
+<a href="#0" class="a--subtle">Subtle link</a>
+
+<a href="#0" class="a--block">Block link</a>
+```
 
 */
 

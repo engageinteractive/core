@@ -1,10 +1,13 @@
 /*---
 
+Used to scope generated content blocks, adding typography styles to elements without classes:
+
+```
 <article class="copy">
 
 	<h1>Heading 1</h1>
 
-	<p>Nobis, accusamus, velit, laudantium illum minima a <a href="">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
+	<p>Nobis, accusamus, velit, laudantium illum minima a <a href="#0">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
 
 	<figure class="media">
 		<div class="placeholder">
@@ -12,15 +15,15 @@
 		</div>
 	</figure>
 
-	<p>Nobis, accusamus, velit, laudantium illum minima a <a href="">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
+	<p>Nobis, accusamus, velit, laudantium illum minima a <a href="#0">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
 
 	<h2>Heading 2</h2>
 
-	<p>Nobis, accusamus, velit, <a href="">laudantium</a> illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
+	<p>Nobis, accusamus, velit, <a href="#0">laudantium</a> illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
 
 	<h3>Heading 3</h3>
 
-	<p>Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque <a href="">corrupti officia</a> reiciendis?</p>
+	<p>Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque <a href="#0">corrupti officia</a> reiciendis?</p>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus illum similique, vitae consequuntur aperiam, commodi reiciendis nemo nulla repellat autem saepe adipisci, porro aliquam molestias laborum totam temporibus eaque mollitia.</p>
 
@@ -28,7 +31,7 @@
 
 	<h3>Heading 3</h3>
 
-	<p>Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque <a href="">corrupti officia</a> reiciendis?</p>
+	<p>Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque <a href="#0">corrupti officia</a> reiciendis?</p>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus illum similique, vitae consequuntur aperiam, commodi reiciendis nemo nulla repellat autem saepe adipisci, porro aliquam molestias laborum totam temporibus eaque mollitia.</p>
 
@@ -93,6 +96,7 @@
 	<p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
 
 </article>
+```
 
 */
 

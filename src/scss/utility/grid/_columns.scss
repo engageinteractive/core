@@ -1,5 +1,8 @@
 /*---
 
+Quickly build complex layouts.
+
+```
 <div class="sg-example-grid">
 	<div class="row flush-first--1 flush-first--tablet-2">
 		<div class="column width--tablet-12"><span>12 (tablet)</span></div>
@@ -30,6 +33,7 @@
 		<div class="column width--20 push--2 width--tablet-10 push--tablet-7"><span>Responsive width, push and pull</span></div>
 	</div>
 </div>
+```
 
 */
 
