@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'utility/mixins';
 
+// prism overrides
+
 pre[class*=language-] {
 	margin: 0;
 	background-color: #f5f5f5;
@@ -12,287 +14,100 @@ code[class*=language-] {
 }
 
 .sg {
-	@include soft--ends($spacing-unit);
-}
 
-.sg-header {}
+	// layout
 
-.sg-nav {
-	ul {
-		margin-left: $spacing-unit;
-		margin-right: $spacing-unit;
-		list-style-type: disc;
-	}
-
-	li {
-		margin-top: $rel-spacing-unit--small;
-
-		&:first-child {
-			margin-top: 0;
-		}
-
-		> ul {
-			margin-top: $rel-spacing-unit--small;
-		}
-	}
-}
-
-.sg-body {
-	margin-top: $spacing-unit--large;
-
-	@include mq('tablet') {
-		margin-top: $spacing-unit--x-large;
-	}
-}
-
-.sg-group {
-	margin-top: $spacing-unit--large;
-	padding-top: $spacing-unit--large;
-	border-top: 1px solid $c--grey-dark;
-
-	&__title {
-		margin-bottom: 0;
-	}
-
-	&:first-child {
-		margin-top: 0;
-		padding-top: 0;
-		border-top: none;
-	}
-
-	@include mq('tablet') {
-		margin-top: $spacing-unit--x-large;
-		padding-top: $spacing-unit--x-large;
-	}
-}
-
-.sg-section {
-	margin-top: $spacing-unit;
-
-	&:first-child {
-		margin-top: 0;
-	}
-
-	&__header {
-		background-color: $c--grey-light;
+	&--nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 20rem;
+		height: 100vh;
 		padding: $spacing-unit;
+		overflow-y: auto;
+		border-right: 1px solid #ddd;
+		background-color: #f5f5f5;
 
-		h1 {
-			font-weight: $w--normal;
-			font-style: italic;
+		ul ul {
+			padding-left: $spacing-unit--small;
+		}
+
+		a {
+			text-decoration: none;
 		}
 	}
 
-	&__body {
-		margin-top: $spacing-unit--small;
+	&--main {
+		padding-left: 20rem;
 
-		@include mq('tablet') {
-			margin-top: $spacing-unit;
+		&__inner {
+			padding: $spacing-unit;
 		}
 	}
 
-	@include mq('tablet') {
-		margin-top: $spacing-unit--large;
-	}
-}
+	// components
 
-.sg-content {
-	margin-top: $spacing-unit--small;
-	padding-top: $spacing-unit--small;
-	border-top: 1px dashed $c--grey;
+	&--example {
+		margin-top: $rel-spacing-unit;
+		border: 1px solid #ddd;
 
-	&:first-child {
-		margin-top: 0;
-		padding-top: 0;
-		border-top: none;
-	}
-
-	@include mq('tablet') {
-		margin-top: $spacing-unit;
-		padding-top: $spacing-unit;
-	}
-
-	&__header {
-		h1 {
+		&__preview {
 			position: relative;
-
-			&::before {
-				@include css-triangle($c--brand-secondary, 'right');
-				top: 50%; left: n($spacing-unit--small);
-				transform: translateY(-50%);
-			}
-		}
-	}
-
-	&__example {
-		margin-top: $spacing-unit--small;
-
-		@include mq('tablet') {
-			margin-top: $spacing-unit;
+			padding: $rel-spacing-unit;
+			overflow: hidden;
 		}
 
-		.logo {
-			width: 200px;
+		&__button {
+			position: absolute;
+			bottom: 0;
+			right: 0;
 		}
-	}
-
-	&__markup {
-		margin-top: $spacing-unit--small;
 
 		&__source {
-			margin-top: $spacing-unit--small;
-			text-align: left;
-		}
-
-		@include mq('tablet') {
-			margin-top: $spacing-unit;
-		}
-	}
-}
-/*
- * Colour scheme
- */
-
-.sg-colour-scheme {
-	$colour-size: 100px;
-	@include cf;
-
-	li {
-		@include colours('&::before', $chain: '&.');
-		@include content-margins;
-		margin-top: $spacing-unit--small;
-		line-height: $colour-size;
-		padding-left: $colour-size + 15px;
-		position: relative;
-		white-space: nowrap;
-
-		&::before {
-			@include pseudo;
-			width: $colour-size;
-			height: $colour-size;
-			position: absolute;
-			top: 0; left: 0;
-			border: 1px solid;
-		}
-
-		@include mq('phone-wide') {
-			float: left;
-			width: 100 / 2 * 1%;
-
-			&:nth-child(-n+2) {
-				margin-top: 0;
-			}
-		}
-
-		@include mq('tablet-wide') {
-			width: 100 / 3 * 1%;
-
-			&:nth-child(-n+3) {
-				margin-top: 0;
-			}
-		}
-
-		@include mq('desktop') {
-			width: 100 / 4 * 1%;
-
-			&:nth-child(-n+4) {
-				margin-top: 0;
-			}
-		}
-	}
-}
-
-// new
-
-.sg-colours {
-	margin: n($spacing-unit--x-small) n($spacing-unit--x-small) 0;
-}
-
-.sg-colour {
-	padding: $spacing-unit--x-small $spacing-unit--x-small 0;
-	text-align: center;
-
-	&__value {
-		height: 4rem;
-		position: relative;
-
-		span {
-			position: absolute;
-			top: 50%; left: 50%;
-			transform: translate(-50%, -50%);
-			font-size: $p--small;
-			background-color: rgba($c--white, .6);
-			padding: $spacing-unit--x-small;
+			border-top: 1px solid #ddd;
 		}
 	}
 
-	&__hex {}
+	// foundation
 
-	&__name {
-		@include truncate(100%);
-		margin-top: $spacing-unit--x-small;
-		padding-bottom: $spacing-unit--x-small;
-		border-bottom: 1px solid $c--grey-light;
-		line-height: 1;
-	}
-}
-
-
-/*
- * Grid demos
- */
-
-.sg-example-grid {
-	span {
-		display: block;
-		position: relative;
-		padding: $spacing-unit--x-small;
-		border: solid 1px $c--grey-light;
+	&--colour {
+		padding: {
+			top: $grid-column-gutter;
+			left: $grid-column-gutter;
+		}
 		text-align: center;
-		background: $c--grey-x-light;
-		color: $c--grey-dark;
-		font-weight: $w--bold;
-		font-size: $p--small;
-	}
-}
 
-.sg-flush-test {
-	div {
-		margin-top: $grid-column-gutter;
-		background-color: $c--grey-x-light;
-		border: solid 1px $c--grey-light;
-	}
-}
+		&-wrapper {
+			margin-left: n($grid-column-gutter);
+		}
 
+		&__value {
+			position: relative;
+			padding-top: 100%;
+			border-radius: 50%;
+			border: 1px solid #ddd;
+			background-color: #f5f5f5;
 
-/*
- * Icons
- */
+			span {
+				position: absolute;
+				top: 50%; left: 50%;
+				transform: translate(-50%, -50%);
+				font-family: monospace;
+				background-color: rgba($c--white, .6);
+				padding: $spacing-unit--x-small;
+			}
+		}
 
- .sg-icons {
- 	.icon {
- 		font-size: 30px;
- 	}
- }
-
-
-.sg-example {
-	margin-top: 1em;
-	border: 1px solid #ddd;
-
-	&__preview {
-		position: relative;
-		padding: 1em;
-		overflow: hidden;
+		&__name {
+			@include truncate(100%);
+			margin-top: $spacing-unit--x-small;
+			line-height: 1;
+		}
 	}
 
-	&__button {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-	}
+	// helpers
 
-	&__source {
-		border-top: 1px solid #ddd;
+	&--push {
+		padding-top: $spacing-unit !important;
 	}
 }

@@ -133,16 +133,16 @@ renderer.code = function (code, lang, escaped) {
 	var id = Math.random().toString(36).substring(7);
 
 	return [
-		'<div class="sg-example">',
-			'<div class="sg-example__preview">',
+		'<div class="sg--example">',
+			'<div class="sg--example__preview">',
 				code,
-				'<div class="sg-example__button">',
-					'<label class="button reveal__label" for="' + id + '">View Source</label>',
+				'<div class="sg--example__button">',
+					'<label class="button button--small reveal__label" for="' + id + '">View Source</label>',
 				'</div>',
 			'</div>',
 			'<input class="vh reveal__toggle" type="checkbox" id="' + id + '" value="" tabindex="-1">',
 			'<div class="reveal__wrapper">',
-				'<div class="sg-example__source">',
+				'<div class="sg--example__source">',
 					'<pre class="language-' + (lang || 'markup') + '"><code>',
 						(escaped ? code : escape(code, true)),
 					'</code></pre>',

@@ -4,13 +4,9 @@
 
 		<% if (top) { %>
 
-			<section class="sg-section">
+			<section>
 
-				<header class="sg-section__header">
-
-					<h1 class="h2"><%= node.filename %></h1>
-
-				</header>
+				<h3 class="h2 sg--push"><%= node.filename %></h3>
 
 		<% } %>
 
@@ -24,22 +20,18 @@
 
 	<% } else if (node.components.length) { %>
 
-		<div class="sg-section__body">
+		<% node.components.forEach(function(component, j) { %>
 
-			<% node.components.forEach(function(component, j) { %>
+			<%- include(
+				'component.html',
+				{
+					component,
+					name: component.attributes.title || node.filename,
+					slug: parent + '-' + i + '-' + j
+				}
+			) %>
 
-				<%- include(
-					'component.html',
-					{
-						component,
-						name: component.attributes.title || node.filename,
-						slug: parent + '-' + i + '-' + j
-					}
-				) %>
-
-			<% }) %>
-
-		</div>
+		<% }) %>
 
 	<% } %>
 

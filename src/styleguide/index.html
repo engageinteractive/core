@@ -18,97 +18,64 @@
 </head>
 <body>
 
-	<div id="site-wrapper" class="site-wrapper">
+	<h1 class="vh">Styleguide</h1>
 
-		<header id="site-header" class="site-header" role="banner">
+	<nav class="sg--nav">
 
-			<div class="container">
-
-				<h1 class="h2"><a href="/">Front-end Baseplate</a></h1>
-
-			</div>
-
-		</header>
-
-		<div id="site-content" class="site-content">
-
-			<div class="sg container" id="sg">
-				<header class="sg-header">
-					<h1 class="h1">Styleguide</h1>
-
-					<nav class="sg-nav">
-						<h1 class="vh">Styleguide menu</h1>
-
+		<ul>
+			<li>
+				Documentation
+				<ul>
+					<%- include('templates/_tree.html', { nodes: nodes.docs, parent: '-docs' }) %>
+				</ul>
+			</li>
+			<li>
+				Components
+				<ul>
+					<li>
+						Foundation
 						<ul>
-							<li>
-								Documentation
-								<ul>
-									<%- include('templates/_tree.html', { nodes: nodes.docs, parent: '-docs' }) %>
-								</ul>
-							</li>
-							<li>
-								Components
-								<ul>
-									<li>
-										Foundation
-										<ul>
-											<%- include('templates/_tree.html', { nodes: nodes.vars, parent: '-vars' }) %>
-										</ul>
-									</li>
-									<%- include('templates/_tree.html', { nodes: nodes.components, parent: '-component' }) %>
-								</ul>
-							</li>
+							<%- include('templates/_tree.html', { nodes: nodes.vars, parent: '-vars' }) %>
 						</ul>
-					</nav>
-				</header>
+					</li>
+					<%- include('templates/_tree.html', { nodes: nodes.components, parent: '-component' }) %>
+				</ul>
+			</li>
+		</ul>
 
-				<div class="sg-body">
+	</nav>
 
-					<div class="sg-group sg-group--docs">
+	<main class="sg--main">
 
-						<h1 class="sg-group__title h1">Documentation</h1>
+		<div class="sg--main__inner">
 
-						<div class="sg-section">
+			<section>
 
-							<%- include('templates/docs/index.html', { nodes: nodes.docs, parent: '-docs' }) %>
+				<h2 class="h1">Documentation</h2>
 
-						</div>
+				<%- include('templates/docs/index.html', { nodes: nodes.docs, parent: '-docs' }) %>
 
-					</div>
+			</section>
 
-					<div class="sg-group sg-group--components">
+			<section>
 
-						<h1 class="sg-group__title h1">Components</h1>
+				<h2 class="h1 sg--push">Components</h2>
 
-						<section class="sg-section">
+				<section>
 
-							<header class="sg-section__header">
+					<h3 class="h2 sg--push">Foundation</h3>
 
-								<h1 class="h2">Foundation</h1>
+					<%- include('templates/docs/index.html', { nodes: nodes.vars, parent: '-vars' }) %>
 
-							</header>
+				</section>
 
-							<%- include('templates/docs/index.html', { nodes: nodes.vars, parent: '-vars' }) %>
+				<%- include('templates/components/index.html', { nodes: nodes.components, parent: '-component', top: true }) %>
 
-						</section>
-
-						<%- include('templates/components/index.html', { nodes: nodes.components, parent: '-component', top: true }) %>
-
-					</div>
-
-				</div>
-
-			</div>
+			</section>
 
 		</div>
 
-		<footer id="site-footer" class="site-footer">
-			<div class="container">
-				<p>&copy; 2016 Engage</p>
-			</div>
-		</footer>
-
-	</div>
+	</main>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
 

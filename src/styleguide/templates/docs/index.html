@@ -6,19 +6,11 @@
 
 	<% } else { %>
 
-		<article class="sg-content">
+		<article>
 
-			<header class="sg-content__header">
+			<h4 class="h3 sg--push" id="sg<%= parent + '-' + i %>-0"><%= node.filename %></h3>
 
-				<h1 class="h2" id="sg<%= parent + '-' + i %>-0"><%= node.filename %></h1>
-
-			</header>
-
-			<div class="sg-content__example">
-
-				<%- node.html %>
-
-			</div>
+			<%- node.html %>
 
 		</article>
 

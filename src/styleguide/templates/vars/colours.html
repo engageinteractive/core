@@ -1,11 +1,11 @@
-<div class="sg-colours block-grid block-grid--1 block-grid--phone-2 block-grid--tablet-4 block-grid--desktop-6">
+<div class="sg--colour-wrapper block-grid block-grid--1 block-grid--phone-2 block-grid--tablet-4 block-grid--desktop-6">
 	<% c.forEach(function(variable){ %>
-		<div class="sg-colour">
-			<div class="sg-colour__value" style="background-color: <%= variable.value %>">
+		<div class="sg--colour">
+			<div class="sg--colour__value" style="background-color: <%= variable.value %>">
 				<span><%= variable.value %></span>
 			</div>
 
-			<p class="sg-colour__name"><%= variable.modifier %></p>
+			<p class="sg--colour__name"><%= variable.modifier %></p>
 		</div>
 	<% }); %>
 </div>
