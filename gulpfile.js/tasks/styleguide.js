@@ -38,6 +38,7 @@ var
 			'index.html'
 		)
 	),
+	renderer = new marked.Renderer(),
 
 	processor = function(css) {
 		var relPath = path.relative(process.cwd(), css.source.input.file);
@@ -81,7 +82,7 @@ var
 
 			styleguide.components[relPath].push({
 				attributes: content.attributes,
-				html: content.body.trim(),
+				html: marked(content.body.trim(), { renderer: renderer }),
 			});
 		});
 	},
@@ -117,7 +118,39 @@ var
 	filterComponent = function(node) {
 		node.children = node.children.filter(filterComponent);
 		return node.children.length || node.components.length;
+	},
+
+	escape = function(html, encode) {
+		return html
+			.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#39;');
 	};
+
+renderer.code = function (code, lang, escaped) {
+	var id = Math.random().toString(36).substring(7);
+
+	return [
+		'<div class="sg-example">',
+			'<div class="sg-example__preview">',
+				code,
+				'<div class="sg-example__button">',
+					'<label class="button reveal__label" for="' + id + '">View Source</label>',
+				'</div>',
+			'</div>',
+			'<input class="vh reveal__toggle" type="checkbox" id="' + id + '" value="" tabindex="-1">',
+			'<div class="reveal__wrapper">',
+				'<div class="sg-example__source">',
+					'<pre class="language-' + (lang || 'markup') + '"><code>',
+						(escaped ? code : escape(code, true)),
+					'</code></pre>',
+				'</div>',
+			'</div>',
+		'</div>'
+	].join('');
+};
 
 gulp.task('styleguide.parse', function() {
 	styleguide = {
