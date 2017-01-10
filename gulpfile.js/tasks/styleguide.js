@@ -4,6 +4,8 @@ var
 		css: require('../utils/paths')('css'),
 		styleguide: require('../utils/paths')('styleguide'),
 	},
+	exampleIndex,
+	prevHtml,
 	src,
 	styleguide,
 	task,
@@ -25,6 +27,7 @@ var
 			syntax: syntax,
 		},
 	},
+	renderer = new marked.Renderer(),
 	src = path.join(
 		config.root.src,
 		config.tasks.css.src
@@ -38,7 +41,6 @@ var
 			'index.html'
 		)
 	),
-	renderer = new marked.Renderer(),
 
 	processor = function(css) {
 		var relPath = path.relative(process.cwd(), css.source.input.file);
@@ -130,7 +132,7 @@ var
 	};
 
 renderer.code = function (code, lang, escaped) {
-	var id = Math.random().toString(36).substring(7);
+	var id = 'example-' + (exampleIndex++);
 
 	return [
 		'<div class="sg--example">',
@@ -157,6 +159,7 @@ gulp.task('styleguide.parse', function() {
 		variables: {},
 		components: {}
 	};
+	exampleIndex = 0;
 
 	return gulp
 		.src(paths.css.src)
@@ -180,6 +183,13 @@ gulp.task('styleguide.generate', function(done) {
 			done();
 
 		} else {
+
+			if (html == prevHtml) {
+				done();
+				return;
+			}
+
+			prevHtml = html;
 
 			fs.writeFile(paths.styleguide.dest, html, 'utf8', done);
 
