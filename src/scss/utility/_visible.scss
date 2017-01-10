@@ -3,13 +3,13 @@
 A div that's hidden on mobile, and appears at tablet
 
 ```
-<div class="hidden visible--tablet" style="padding: 30px; background-color: #DDD; text-align: center;">hidden--tablet visible--desktop</div>
+<div class="hidden visible--tablet sg--panel"><code>hidden--tablet visible--desktop</code></div>
 ```
 
 A div that's visible on mobile, hidden at tablet, and visible again at desktop
 
 ```
-<div class="hidden--tablet visible--desktop" style="padding: 30px; background-color: #DDD; text-align: center;">hidden--tablet visible--desktop</div>
+<div class="hidden--tablet visible--desktop sg--panel"><code>hidden--tablet visible--desktop</code></div>
 ```
 
 Visible classes can also be inline and inline-block. Just use classes such as `visible-inline-block--tablet`.

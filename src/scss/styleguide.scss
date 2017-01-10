@@ -1,11 +1,16 @@
 @import 'variables';
 @import 'utility/mixins';
 
+// variables
+
+$c--bg: $c--grey-x-light;
+$c--border: $c--grey-light;
+
 // prism overrides
 
 pre[class*=language-] {
 	margin: 0;
-	background-color: #f5f5f5;
+	background-color: $c--bg;
 }
 
 code[class*=language-] {
@@ -25,15 +30,11 @@ code[class*=language-] {
 		height: 100vh;
 		padding: $spacing-unit;
 		overflow-y: auto;
-		border-right: 1px solid #ddd;
-		background-color: #f5f5f5;
+		border-right: 1px solid $c--border;
+		background-color: $c--bg;
 
 		ul ul {
-			padding-left: $spacing-unit--small;
-		}
-
-		a {
-			text-decoration: none;
+			padding-left: $spacing-unit--x-small;
 		}
 	}
 
@@ -47,9 +48,25 @@ code[class*=language-] {
 
 	// components
 
+	&--component {
+		margin-top: $rel-spacing-unit;
+
+		> h1,
+		> h2,
+		> h3,
+		> h4,
+		> h5,
+		> h6 {
+			font-family: $stack--heading;
+			font-weight: $w--bold;
+			line-height: 1;
+			margin-top: $rel-spacing-unit;
+		}
+	}
+
 	&--example {
 		margin-top: $rel-spacing-unit;
-		border: 1px solid #ddd;
+		border: 1px solid $c--border;
 
 		&__preview {
 			position: relative;
@@ -64,7 +81,7 @@ code[class*=language-] {
 		}
 
 		&__source {
-			border-top: 1px solid #ddd;
+			border-top: 1px solid $c--border;
 		}
 	}
 
@@ -85,8 +102,7 @@ code[class*=language-] {
 			position: relative;
 			padding-top: 100%;
 			border-radius: 50%;
-			border: 1px solid #ddd;
-			background-color: #f5f5f5;
+			background-color: $c--bg;
 
 			span {
 				position: absolute;
@@ -107,7 +123,19 @@ code[class*=language-] {
 
 	// helpers
 
+	&--panel {
+		display: block;
+		padding: $rel-spacing-unit;
+		text-align: center;
+		background-color: $c--bg;
+		border: 1px solid $c--border;
+	}
+
 	&--push {
-		padding-top: $spacing-unit !important;
+		padding-top: $spacing-unit;
+
+		@include mq(rem(800px), $property: height) {
+			padding-top: $spacing-unit--large;
+		}
 	}
 }
