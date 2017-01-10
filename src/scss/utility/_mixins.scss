@@ -33,7 +33,7 @@
 	}
 
 	@if $type == max {
-		$negative: if($media-query-units == em, 0.01em, 1px);
+		$negative: if($em-media-queries, 0.01em, 1px);
 		$size: $size - $negative;
 	}
 

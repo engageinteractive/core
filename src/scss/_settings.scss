@@ -8,9 +8,9 @@ $html-font-size: 100%;
 // accepted values: true, false
 $rems-on: true;
 
-// set whether media queries should use ems or pixels
-// accepted values: px, em
-$media-query-units: em;
+// set whether media queries should ems, or revert to pixels
+// accepted values: true, false
+$em-media-queries: true;
 
 // Development mode
 // if development mode is set to true, then the following things apply:
