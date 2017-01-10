@@ -50,7 +50,7 @@ var
 				variable = decl.prop.match(/\$(\w+(-\w+)?)(--(\w+(-\w+)?))?/),
 				type = variable && variable[1];
 
-			if (!variable) {
+			if (!variable || decl.value.substr(0, 1) === '$' || decl.value.match(/\W*\!default/)) {
 				return;
 			}
 
