@@ -30,6 +30,15 @@
         "cascade": false
       }
     },
+    "styleguide": {
+      "src": "styleguide",
+      "dest": "styleguide.html",
+      "extensions": [
+        "html",
+        "ejs",
+        "md"
+      ]
+    },
     "scripts": {
       "src": "js",
       "dest": "js",
@@ -102,7 +111,8 @@
         "images",
         "scripts",
         "sprite",
-        "static"
+        "static",
+        "styleguide"
       ],
       "browserSync": {
         "ghostMode": {
@@ -115,7 +125,8 @@
         "files": [
           "public/**/*.{html,php}",
           "app/views/**/*.php",
-          "resources/views/**/*.php"
+          "resources/views/**/*.php",
+          "!**/*.map"
         ]
       }
     },
@@ -125,7 +136,8 @@
         "images",
         "scripts",
         "sprite",
-        "static"
+        "static",
+        "styleguide"
       ]
     }
   }

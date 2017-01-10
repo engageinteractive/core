@@ -1,0 +1,19 @@
+<% nodes.forEach(function(node, i) { %>
+
+	<% if (node.children.length) { %>
+
+		<%- include('index.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
+
+	<% } else { %>
+
+		<article>
+
+			<h1 class="h3 sg--push" id="sg<%= parent + '-' + i %>-0"><%= node.filename %></h1>
+
+			<%- node.html %>
+
+		</article>
+
+	<% } %>
+
+<% }) %>

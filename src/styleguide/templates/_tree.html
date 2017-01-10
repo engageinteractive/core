@@ -1,0 +1,21 @@
+<% nodes.forEach(function(node, i) { %>
+
+	<li>
+		<% if (!node.children.length) { %>
+			<a href="#sg<%= parent + '-' + i %>-0">
+		<% } %>
+
+		<%= node.filename %>
+
+		<% if (node.children.length) { %>
+			<ul>
+				<%- include('_tree.html', { nodes: node.children, parent: (parent + '-' + i) }) %>
+			</ul>
+		<% } %>
+
+		<% if (!node.children.length) { %>
+			</a>
+		<% } %>
+	</li>
+
+<% }) %>

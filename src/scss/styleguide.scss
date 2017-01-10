@@ -1,0 +1,141 @@
+@import 'variables';
+@import 'utility/mixins';
+
+// variables
+
+$c--bg: $c--grey-x-light;
+$c--border: $c--grey-light;
+
+// prism overrides
+
+pre[class*=language-] {
+	margin: 0;
+	background-color: $c--bg;
+}
+
+code[class*=language-] {
+	padding: 0;
+	font-size: 14/16 * 1em;
+}
+
+.sg {
+
+	// layout
+
+	&--nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 20rem;
+		height: 100vh;
+		padding: $spacing-unit;
+		overflow-y: auto;
+		border-right: 1px solid $c--border;
+		background-color: $c--bg;
+
+		ul ul {
+			padding-left: $spacing-unit--x-small;
+		}
+	}
+
+	&--main {
+		padding-left: 20rem;
+
+		&__inner {
+			padding: $spacing-unit;
+		}
+	}
+
+	// components
+
+	&--component {
+		margin-top: $rel-spacing-unit;
+
+		> h1,
+		> h2,
+		> h3,
+		> h4,
+		> h5,
+		> h6 {
+			font-family: $stack--heading;
+			font-weight: $w--bold;
+			line-height: 1;
+			margin-top: $rel-spacing-unit;
+		}
+	}
+
+	&--example {
+		margin-top: $rel-spacing-unit;
+		border: 1px solid $c--border;
+
+		&__preview {
+			position: relative;
+			padding: $rel-spacing-unit;
+			overflow: hidden;
+		}
+
+		&__button {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+
+		&__source {
+			border-top: 1px solid $c--border;
+		}
+	}
+
+	// foundation
+
+	&--colour {
+		padding: {
+			top: $grid-column-gutter;
+			left: $grid-column-gutter;
+		}
+		text-align: center;
+
+		&-wrapper {
+			margin-left: n($grid-column-gutter);
+		}
+
+		&__value {
+			position: relative;
+			padding-top: 100%;
+			border-radius: 50%;
+			background-color: $c--bg;
+
+			span {
+				position: absolute;
+				top: 50%; left: 50%;
+				transform: translate(-50%, -50%);
+				font-family: monospace;
+				background-color: rgba($c--white, .6);
+				padding: $spacing-unit--x-small;
+			}
+		}
+
+		&__name {
+			@include truncate(100%);
+			margin-top: $spacing-unit--x-small;
+			line-height: 1;
+		}
+	}
+
+	// helpers
+
+	&--panel {
+		display: block;
+		padding: $rel-spacing-unit;
+		text-align: center;
+		background-color: $c--bg;
+		border: 1px solid $c--border;
+	}
+
+	&--push {
+		padding-top: $spacing-unit;
+
+		@include mq(rem(800px), $property: height) {
+			padding-top: $spacing-unit--large;
+		}
+	}
+}

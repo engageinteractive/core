@@ -1,3 +1,28 @@
+/*---
+
+Apply equal width to child elements.
+
+```
+<div class="sg-example-grid">
+	<div class="block-grid block-grid--4 block-grid--tablet-5 block-grid--tablet-wide-6 block-grid--desktop-7 block-grid--desktop-8">
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+		<div class="sg--panel"><span>Item</span></div>
+	</div>
+</div>
+```
+
+*/
+
 @mixin block-grid {
 	@include cf;
 

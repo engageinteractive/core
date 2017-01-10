@@ -1,7 +1,67 @@
 $icon-size: 1em;
 
-// basic icon
-// <svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg>
+/*---
+
+Available icons:
+
+```
+<ul class="inline-children--block sg-icons">
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#check"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-down"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-left"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-right"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-down"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-left"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-up"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#cross"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#link"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#mail"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#minus"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#phone"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#plus"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-down"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-left"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-right"></use></svg></li>
+	<li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-up"></use></svg></li>
+</ul>
+```
+
+Use `inline` when used with text:
+
+```
+<p><svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> Lorem ipsum dolor sit amet, consectetur <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> adipisicing elit. <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg></p>
+```
+
+Use `icon-text` for vertical alignment:
+
+```
+<div style="max-width: 10em">
+	<span class="icon-text">
+		<span class="icon-text__t">Icon text, description or title</span>
+
+		<svg class="icon-text__i icon">
+			<use xlink:href="/assets/img/sprite.svg#plus"></use>
+		</svg>
+	</span>
+</div>
+```
+
+```
+<div style="max-width: 10em">
+	<span class="icon-text">
+		<svg class="icon-text__i icon">
+			<use xlink:href="/assets/img/sprite.svg#plus"></use>
+		</svg>
+
+		<span class="icon-text__t">Icon text, description or title</span>
+	</span>
+</div>
+```
+
+*/
 
 .icon {
 	display: inline-block;
@@ -18,11 +78,6 @@ $icon-size: 1em;
 		vertical-align: n($x/$y * 100%);
 	}
 }
-
-
-// text with set position icon
-// <span class="icon-text"><svg class="icon-text__i"></svg> <span class="icon-text__t"></span></span>
-// <span class="icon-text"><span class="icon-text__t"></span> <svg class="icon-text__i"></svg></span>
 
 .icon-text {
 	display: inline-block;
@@ -41,6 +96,7 @@ $icon-size: 1em;
 	}
 
 	&__t {
+		display: inline-block;
 		padding-right: $icon-size + $rel-spacing-unit--small;
 
 		&:last-child {
