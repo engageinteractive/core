@@ -6,7 +6,6 @@ var
 	},
 	exampleIndex,
 	prevHtml,
-	src,
 	styleguide,
 	task,
 
@@ -28,10 +27,6 @@ var
 		},
 	},
 	renderer = new marked.Renderer(),
-	src = path.join(
-		config.root.src,
-		config.tasks.css.src
-	),
 	template = path.resolve(
 		__dirname,
 		'../..',
@@ -50,7 +45,7 @@ var
 				variable = decl.prop.match(/\$(\w+(-\w+)?)(--(\w+(-\w+)?))?/),
 				type = variable && variable[1];
 
-			if (!variable || decl.value.substr(0, 1) === '$' || decl.value.match(/\W*\!default/)) {
+			if (!variable || decl.value.substr(0, 1) === '$' || decl.value.match(/\W*!default/)) {
 				return;
 			}
 
@@ -90,14 +85,14 @@ var
 	},
 
 	titleCaseFilename = function(filename) {
-		return titleCase(filename.match(/_?([^\.]+)/)[1]);
+		return titleCase(filename.match(/_?([^.]+)/)[1]);
 	},
 
 	parseDoc = function(node) {
 		return {
 			filename: titleCaseFilename(node.name),
 			children: node.children ? node.children.map(parseDoc) : [],
-			html: !node.children && marked(fs.readFileSync(node.path, 'utf8'))
+			html: !node.children && marked(fs.readFileSync(node.path, 'utf8')),
 		};
 	},
 
@@ -105,7 +100,7 @@ var
 		return {
 			filename: titleCaseFilename(node.name),
 			children: node.children ? node.children.map(parseVar) : [],
-			html: !node.children && ejs.render(fs.readFileSync(node.path, 'utf8'), styleguide.variables)
+			html: !node.children && ejs.render(fs.readFileSync(node.path, 'utf8'), styleguide.variables),
 		};
 	},
 
@@ -113,7 +108,7 @@ var
 		return {
 			filename: titleCaseFilename(node.name),
 			components: styleguide.components[node.path] || [],
-			children: node.children ? node.children.map(parseComponent) : []
+			children: node.children ? node.children.map(parseComponent) : [],
 		};
 	},
 
@@ -131,33 +126,33 @@ var
 			.replace(/'/g, '&#39;');
 	};
 
-renderer.code = function (code, lang, escaped) {
+renderer.code = function(code, lang, escaped) {
 	var id = 'example-' + (exampleIndex++);
 
 	return [
 		'<div class="sg--example">',
-			'<div class="sg--example__preview">',
-				code,
-				'<div class="sg--example__button">',
-					'<label class="button button--small reveal__label" for="' + id + '">View Source</label>',
-				'</div>',
-			'</div>',
-			'<input class="vh reveal__toggle" type="checkbox" id="' + id + '" value="" tabindex="-1">',
-			'<div class="reveal__wrapper">',
-				'<div class="sg--example__source">',
-					'<pre class="language-' + (lang || 'markup') + '"><code>',
-						(escaped ? code : escape(code, true)),
-					'</code></pre>',
-				'</div>',
-			'</div>',
-		'</div>'
+		'	<div class="sg--example__preview">',
+		code,
+		'		<div class="sg--example__button">',
+		'			<label class="button button--small reveal__label" for="' + id + '">View Source</label>',
+		'		</div>',
+		'	</div>',
+		'	<input class="vh reveal__toggle" type="checkbox" id="' + id + '" value="" tabindex="-1">',
+		'	<div class="reveal__wrapper">',
+		'		<div class="sg--example__source">',
+		'			<pre class="language-' + (lang || 'markup') + '"><code>',
+		(escaped ? code : escape(code, true)),
+		'			</code></pre>',
+		'		</div>',
+		'	</div>',
+		'</div>',
 	].join('');
 };
 
 gulp.task('styleguide.parse', function() {
 	styleguide = {
 		variables: {},
-		components: {}
+		components: {},
 	};
 	exampleIndex = 0;
 
@@ -172,8 +167,8 @@ gulp.task('styleguide.generate', function(done) {
 		nodes: {
 			docs: directory('src/styleguide/docs', ['.md']).children.map(parseDoc),
 			vars: directory('src/styleguide/templates/vars', ['.html']).children.map(parseVar),
-			components: directory('src/scss', ['.scss']).children.map(parseComponent).filter(filterComponent)
-		}
+			components: directory('src/scss', ['.scss']).children.map(parseComponent).filter(filterComponent),
+		},
 	};
 
 	ejs.renderFile(template, data, null, function(error, html) {
@@ -184,7 +179,7 @@ gulp.task('styleguide.generate', function(done) {
 
 		} else {
 
-			if (html == prevHtml) {
+			if (html === prevHtml) {
 				done();
 				return;
 			}
