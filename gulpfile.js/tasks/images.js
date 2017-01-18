@@ -42,8 +42,8 @@ var
 
 	diff = function() {
 		var
-			src = [config.root.src, config.tasks.images.src].join('/'),
-			dest = [config.root.public, config.root.dest, config.tasks.images.dest].join('/');
+			src = path.join(config.root.src, config.tasks.images.src),
+			dest = path.join(config.root.public, config.root.dest, config.tasks.images.dest);
 
 		return comparison
 			.compare(src, dest, options.compare)
@@ -58,7 +58,7 @@ var
 						return _diff.type1 === 'missing';
 					})
 					.forEach(function(_diff) {
-						gutil.log([_diff.path2, _diff.name2].join('/').replace(dest + '/', ''));
+						gutil.log(path.relative(dest, path.join(_diff.path2, _diff.name2)));
 					});
 			});
 	};
