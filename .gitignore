@@ -3,6 +3,7 @@ Homestead.yaml
 Homestead.json
 .env
 npm-debug.log
+.map
 
 # OSX
 *.DS_Store
