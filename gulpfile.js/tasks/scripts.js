@@ -64,7 +64,7 @@ const
 			.pipe(eslint())
 			.pipe(eslint.format(summary))
 			.pipe(eslint.failOnError().on('error', notification(options.notification)))
-			.pipe(eslint.failOnError().on('error', done))
+			.pipe(eslint.failOnError().on('error', () => { done(); }))
 			.pipe(filters)
 			.pipe(named())
 			.pipe(webpack(options.webpack))
