@@ -64,7 +64,9 @@
       "src": "img",
       "dest": "img",
       "extensions": [
-        "*"
+        "jpg",
+        "png",
+        "svg"
       ],
       "icon": "meta/favicon-180.png",
       "tinypngCompress": {
