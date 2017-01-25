@@ -23,7 +23,7 @@ code[class*=language-] {
 
 	// layout
 
-	&--nav {
+	&-nav {
 		padding: $spacing-unit;
 		background-color: $c--bg;
 		border: solid $c--border;
@@ -44,7 +44,7 @@ code[class*=language-] {
 		}
 	}
 
-	&--main {
+	&-main {
 		&__inner {
 			padding: $spacing-unit;
 		}
@@ -56,7 +56,7 @@ code[class*=language-] {
 
 	// components
 
-	&--component {
+	&-component {
 		margin-top: $rel-spacing-unit;
 
 		> h1,
@@ -72,7 +72,7 @@ code[class*=language-] {
 		}
 	}
 
-	&--example {
+	&-example {
 		margin-top: $rel-spacing-unit;
 		border: 1px solid $c--border;
 
@@ -95,7 +95,7 @@ code[class*=language-] {
 
 	// foundation
 
-	&--colour {
+	&-colour {
 		padding: {
 			top: $grid-column-gutter;
 			left: $grid-column-gutter;
@@ -131,7 +131,7 @@ code[class*=language-] {
 
 	// helpers
 
-	&--panel {
+	&-panel {
 		display: block;
 		padding: $rel-spacing-unit;
 		text-align: center;
@@ -139,7 +139,7 @@ code[class*=language-] {
 		border: 1px solid $c--border;
 	}
 
-	&--push {
+	&-push {
 		padding-top: $spacing-unit;
 
 		@include mq(rem(800px), $property: height) {
