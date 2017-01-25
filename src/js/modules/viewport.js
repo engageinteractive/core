@@ -1,10 +1,11 @@
-var width = 0,
+let width = 0,
 	height = 0,
 	prevWidth,
 	prevHeight,
-	listeners = {},
-	timer = null,
-	update = function(){
+	timer = null;
+
+const listeners = {},
+	update = () => {
 
 		prevWidth = width;
 		prevHeight = height;
@@ -18,7 +19,7 @@ var width = 0,
 
 	};
 
-$(window).on('resize', function(){
+$(window).on('resize', () => {
 
 	clearTimeout(timer);
 	timer = setTimeout(update, 300);
@@ -28,16 +29,16 @@ $(window).on('resize', function(){
 update();
 
 module.exports = {
-	width: function(){
+	get width(){
 		return width;
 	},
-	height: function(){
+	get height(){
 		return height;
 	},
-	addListener: function(name, listener){
+	addListener(name, listener){
 		listeners[name] = listener;
 	},
-	removeListener: function(name){
+	removeListener(name){
 		delete listeners[name];
 	},
 };

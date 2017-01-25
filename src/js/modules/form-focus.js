@@ -1,25 +1,26 @@
-var mouseActive = false,
-	selectors = 'input, select, textarea, button, .button';
+let mouseActive = false;
+
+const selectors = 'input, select, textarea, button, .button';
 
 $(document.body)
-	.on('mousedown', selectors, function(){
+	.on('mousedown', selectors, () => {
 
 		mouseActive = true;
-		setTimeout(function(){
+		setTimeout(() => {
 
 			mouseActive = false;
 
 		}, 100);
 
 	})
-	.on('mousedown', 'label', function(){
+	.on('mousedown', 'label', () => {
 
 		mouseActive = true;
 
 	})
 	.on('focus', selectors, function(){
 
-		var $this = $(this);
+		const $this = $(this);
 
 		if( !mouseActive ){
 
@@ -34,7 +35,7 @@ $(document.body)
 	})
 	.on('blur', selectors, function(){
 
-		var $this = $(this);
+		const $this = $(this);
 
 		$(this).removeClass('is-focused');
 

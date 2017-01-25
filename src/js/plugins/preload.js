@@ -1,15 +1,15 @@
 $.fn.preload = function(settings){
 
-	var defaults = {
+	const defaults = {
 		src: false,
 		timeout: false,
-		ready: function(){},
-		error: function(){},
+		ready(){},
+		error(){},
 	};
 
 	this.each(function(){
 
-		var $img = $(this),
+		const $img = $(this),
 			option = $.extend(defaults, settings);
 
 		if( !option.src ){
@@ -28,21 +28,22 @@ $.fn.preload = function(settings){
 
 $.preload = function(settings){
 
-	var defaults = {
-			src: null,
-			timeout: false,
-			arrayItemReady: function(){},
-			ready: function(){},
-			error: function(){},
-		},
-		option = $.extend(defaults, settings),
-		$img = $('<img/>'),
-		tooSlow = false,
+	let tooSlow = false,
 		complete = false,
 		total,
 		loaded,
 		ready,
 		i;
+
+	const defaults = {
+			src: null,
+			timeout: false,
+			arrayItemReady(){},
+			ready(){},
+			error(){},
+		},
+		option = $.extend(defaults, settings),
+		$img = $('<img/>');
 
 	if( typeof option.src === 'object' ){
 
@@ -64,7 +65,7 @@ $.preload = function(settings){
 
 			$.preload({
 				src: option.src[i],
-				ready: ready,
+				ready,
 			});
 
 		}
@@ -73,11 +74,11 @@ $.preload = function(settings){
 
 		$img.one('load', function(){
 
-			var img = this;
+			const img = this;
 
 			// Timeout for Webkit
 			// As the width/height of the image is 0 initially
-			setTimeout(function(){
+			setTimeout(() => {
 
 				complete = true;
 
@@ -88,7 +89,7 @@ $.preload = function(settings){
 			}, 0);
 
 		})
-		.one('error', function(){
+		.one('error', () => {
 
 			option.error();
 
@@ -104,7 +105,7 @@ $.preload = function(settings){
 
 		if( option.timeout ){
 
-			setTimeout(function(){
+			setTimeout(() => {
 
 				tooSlow = true;
 

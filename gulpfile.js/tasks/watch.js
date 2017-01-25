@@ -1,15 +1,15 @@
-var
+const
 	config = require('../config'),
 	paths = require('../utils/paths'),
 
 	browserSync = require('browser-sync'),
 	gulp = require('gulp'),
 
-	task = function() {
-		var options = config.tasks.watch.browserSync;
+	task = () => {
+		const options = config.tasks.watch.browserSync;
 
-		config.tasks.watch.tasks.forEach(function(name) {
-			var tasks = [name];
+		config.tasks.watch.tasks.forEach((name) => {
+			const tasks = [name];
 
 			if (name === 'css') {
 				tasks.push('styleguide');

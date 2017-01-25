@@ -1,12 +1,11 @@
-var
+const
 	config = require('../config'),
 	paths = require('../utils/paths')('images'),
-	icon,
 
 	notify = require('gulp-notify'),
-	path = require('path');
+	path = require('path'),
 
-icon = path.join(paths.dest, config.tasks.images.icon);
+	icon = path.join(paths.dest, config.tasks.images.icon);
 
 module.exports = function(opts) {
 	return notify.onError({
@@ -15,7 +14,7 @@ module.exports = function(opts) {
 		message: opts.message,
 		open: opts.open,
 		onLast: true,
-		icon: icon,
+		icon,
 		templateOptions: {
 			relative: path.relative,
 			cwd: process.cwd(),

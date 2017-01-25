@@ -1,4 +1,4 @@
-var
+const
 	config = require('../config'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('scripts'),
@@ -16,6 +16,19 @@ var
 			devtool: 'source-map',
 			output: {
 				publicPath: paths.public,
+			},
+			module: {
+				loaders: [
+					{
+						loader: 'babel-loader',
+						exclude: /node_modules/,
+						query: {
+							presets: [
+								'es2015',
+							],
+						},
+					},
+				],
 			},
 			plugins: [
 				new webpack.webpack.optimize.UglifyJsPlugin({
@@ -43,36 +56,27 @@ var
 		},
 	},
 
-	task = function(done) {
-		var filters = {
-			custom: filter(['**/!(*.min.js)']),
-			entries: filter([paths.entries()]),
-		};
+	task = (done) => {
+		const filters = filter([paths.entries()]);
 
 		return gulp
 			.src(paths.src)
-			.pipe(filters.custom)
 			.pipe(eslint())
 			.pipe(eslint.format(summary))
 			.pipe(eslint.failOnError().on('error', notification(options.notification)))
-			.pipe(eslint.failOnError().on('error', function() { done(); }))
-			.pipe(filters.entries)
+			.pipe(eslint.failOnError().on('error', done))
+			.pipe(filters)
 			.pipe(named())
 			.pipe(webpack(options.webpack))
 			.pipe(gulp.dest(paths.dest));
 	};
 
-gulp.task('scripts.lint', function() {
-	var filters = {
-		custom: filter(['**/!(*.min.js)']),
-	};
-
-	return gulp
+gulp.task('scripts.lint', () => (
+	gulp
 		.src(paths.src)
-		.pipe(filters.custom)
 		.pipe(eslint())
-		.pipe(eslint.format());
-});
+		.pipe(eslint.format())
+));
 
 gulp.task('scripts', task);
 module.exports = task;

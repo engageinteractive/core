@@ -15,8 +15,9 @@ $.fn.loadImg = function(){
 
 	this.each(function(){
 
-		var $this = $(this),
-			$img = null,
+		let $img = null;
+
+		const $this = $(this),
 			data = $this.data(),
 			src = data.img;
 
@@ -27,8 +28,8 @@ $.fn.loadImg = function(){
 			$img
 				.attr('src', src)
 				.preload({
-					src: src,
-					ready: function(){
+					src,
+					ready: () => {
 
 						if( data.replace ){
 							$this.empty();
@@ -42,7 +43,7 @@ $.fn.loadImg = function(){
 		}else{
 
 			$this.css({
-				backgroundImage: 'url(' + src + ')',
+				backgroundImage: `url(${src})`,
 			});
 
 		}

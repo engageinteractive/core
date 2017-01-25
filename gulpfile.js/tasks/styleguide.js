@@ -1,13 +1,13 @@
-var
+let exampleIndex,
+	prevHtml,
+	styleguide;
+
+const
 	config = require('../config'),
 	paths = {
 		css: require('../utils/paths')('css'),
 		styleguide: require('../utils/paths')('styleguide'),
 	},
-	exampleIndex,
-	prevHtml,
-	styleguide,
-	task,
 
 	directory = require('directory-tree'),
 	ejs = require('ejs'),
@@ -23,7 +23,7 @@ var
 
 	options = {
 		postcss: {
-			syntax: syntax,
+			syntax,
 		},
 	},
 	renderer = new marked.Renderer(),
@@ -37,11 +37,11 @@ var
 		)
 	),
 
-	processor = function(css) {
-		var relPath = path.relative(process.cwd(), css.source.input.file);
+	processor = (css) => {
+		const relPath = path.relative(process.cwd(), css.source.input.file);
 
-		css.walkDecls(function(decl) {
-			var
+		css.walkDecls((decl) => {
+			const
 				variable = decl.prop.match(/\$(\w+(-\w+)?)(--(\w+(-\w+)?))?/),
 				type = variable && variable[1];
 
@@ -59,15 +59,13 @@ var
 			});
 		});
 
-		css.walkComments(function(comment) {
-			var content;
-
+		css.walkComments((comment) => {
 			// skip non-styleguide comments
 			if (comment.text.substr(0, 3) !== '---') {
 				return;
 			}
 
-			content = fm(comment.text);
+			const content = fm(comment.text);
 
 			if (content.body.substr(0, 3) === '---') {
 				content.body = content.body.substr(3);
@@ -79,68 +77,60 @@ var
 
 			styleguide.components[relPath].push({
 				attributes: content.attributes,
-				html: marked(content.body.trim(), { renderer: renderer }),
+				html: marked(content.body.trim(), { renderer }),
 			});
 		});
 	},
 
-	titleCaseFilename = function(filename) {
-		return titleCase(filename.match(/_?([^.]+)/)[1]);
-	},
+	titleCaseFilename = filename => titleCase(filename.match(/_?([^.]+)/)[1]),
 
-	parseDoc = function(node) {
-		return {
-			filename: titleCaseFilename(node.name),
-			children: node.children ? node.children.map(parseDoc) : [],
-			html: !node.children && marked(fs.readFileSync(node.path, 'utf8')),
-		};
-	},
+	parseDoc = node => ({
+		filename: titleCaseFilename(node.name),
+		children: node.children ? node.children.map(parseDoc) : [],
+		html: !node.children && marked(fs.readFileSync(node.path, 'utf8')),
+	}),
 
-	parseVar = function(node) {
-		return {
-			filename: titleCaseFilename(node.name),
-			children: node.children ? node.children.map(parseVar) : [],
-			html: !node.children && ejs.render(fs.readFileSync(node.path, 'utf8'), styleguide.variables),
-		};
-	},
+	parseVar = node => ({
+		filename: titleCaseFilename(node.name),
+		children: node.children ? node.children.map(parseVar) : [],
+		html: !node.children && ejs.render(fs.readFileSync(node.path, 'utf8'), styleguide.variables),
+	}),
 
-	parseComponent = function(node) {
-		return {
-			filename: titleCaseFilename(node.name),
-			components: styleguide.components[node.path] || [],
-			children: node.children ? node.children.map(parseComponent) : [],
-		};
-	},
+	parseComponent = node => ({
+		filename: titleCaseFilename(node.name),
+		components: styleguide.components[node.path] || [],
+		children: node.children ? node.children.map(parseComponent) : [],
+	}),
 
-	filterComponent = function(node) {
+	filterComponent = (node) => {
 		node.children = node.children.filter(filterComponent);
 		return node.children.length || node.components.length;
 	},
 
-	escape = function(html, encode) {
-		return html
+	escape = (html, encode) => (
+		html
 			.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;')
 			.replace(/</g, '&lt;')
 			.replace(/>/g, '&gt;')
 			.replace(/"/g, '&quot;')
-			.replace(/'/g, '&#39;');
-	};
+			.replace(/'/g, '&#39;')
+	);
 
-renderer.code = function(code, lang, escaped) {
-	var id = 'example-' + (exampleIndex++);
+renderer.code = (code, lang, escaped) => {
+	const id = `example-${exampleIndex += 1}`;
 
 	return [
 		'<div class="sg-example">',
 		'	<div class="sg-example__preview">',
 		code,
 		'		<div class="sg-example__button">',
-		'			<label class="button button--small reveal__label" for="' + id + '">View Source</label>',
+		`			<label class="button button--small reveal__label" for="${id}">View Source</label>`,
 		'		</div>',
 		'	</div>',
-		'	<input class="vh reveal__toggle" type="checkbox" id="' + id + '" value="" tabindex="-1">',
+		`	<input class="vh reveal__toggle" type="checkbox" id="${id}" value="" tabindex="-1">`,
 		'	<div class="reveal__wrapper">',
 		'		<div class="sg-example__source">',
-		'			<pre class="language-' + (lang || 'markup') + '"><code>',
+		`			<pre class="language-${lang || 'markup'}"><code>`,
 		(escaped ? code : escape(code, true)),
 		'			</code></pre>',
 		'		</div>',
@@ -149,7 +139,7 @@ renderer.code = function(code, lang, escaped) {
 	].join('');
 };
 
-gulp.task('styleguide.parse', function() {
+gulp.task('styleguide.parse', () => {
 	styleguide = {
 		variables: {},
 		components: {},
@@ -161,8 +151,8 @@ gulp.task('styleguide.parse', function() {
 		.pipe(postcss([processor], options.postcss));
 });
 
-gulp.task('styleguide.generate', function(done) {
-	var data = {
+gulp.task('styleguide.generate', (done) => {
+	const data = {
 		variables: styleguide.variables,
 		nodes: {
 			docs: directory('src/styleguide/docs', ['.md']).children.map(parseDoc),
@@ -171,7 +161,7 @@ gulp.task('styleguide.generate', function(done) {
 		},
 	};
 
-	ejs.renderFile(template, data, null, function(error, html) {
+	ejs.renderFile(template, data, null, (error, html) => {
 		if (error) {
 
 			gutil.log(gutil.colors.red(error.message));
@@ -192,6 +182,6 @@ gulp.task('styleguide.generate', function(done) {
 	});
 });
 
-task = gulp.series('styleguide.parse', 'styleguide.generate');
+const task = gulp.series('styleguide.parse', 'styleguide.generate');
 gulp.task('styleguide', task);
 module.exports = task;
