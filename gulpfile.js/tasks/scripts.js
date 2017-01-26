@@ -39,6 +39,7 @@ const
 					htmlWebpackPlugin: false,
 					minify: true,
 					options: [
+						'mq',
 						'setClasses',
 					],
 					'feature-detects': config.tasks.scripts.featureDetects,

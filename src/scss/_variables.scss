@@ -1,5 +1,6 @@
 @import 'settings';
 @import 'utility/functions';
+@import '../variables.json';
 
 
 /*
@@ -93,16 +94,9 @@ $grid-column-gutter--desktop: $spacing-unit--large;
 // media queries and breakpoints
 // build mobile first 300+
 
-$breakpoints: (
-	'phone':        em(375px),
-	'phone-wide':   em(480px),
-	'phablet':      em(560px),
-	'tablet-small': em(640px),
-	'tablet':       em(768px),
-	'tablet-wide':  em(1024px),
-	'desktop':      em(1248px),
-	'desktop-wide': em(1440px)
-);
+@each $name, $width in $breakpoints {
+	$breakpoints: map-merge($breakpoints, ($name: em($width)));
+}
 
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
 // this is to keep unused code to a minimum

@@ -4,7 +4,9 @@ let width = 0,
 	prevHeight,
 	timer = null;
 
-const listeners = {},
+const breakpoints = {},
+	listeners = {},
+	variables = require('json!../../variables.json'),
 	update = () => {
 
 		prevWidth = width;
@@ -28,6 +30,16 @@ $(window).on('resize', () => {
 
 update();
 
+Object.keys(variables.breakpoints).forEach((name) => {
+	let value = variables.breakpoints[name];
+
+	if( variables['em-media-queries'] ){
+		value /= variables['browser-default-font-size'] || 16;
+	}
+
+	breakpoints[name] = value;
+});
+
 module.exports = {
 	get width(){
 		return width;
@@ -40,5 +52,20 @@ module.exports = {
 	},
 	removeListener(name){
 		delete listeners[name];
+	},
+	mq(name, extremum = 'min', property = 'width'){
+		let value = breakpoints[name];
+
+		if( !value ){
+			throw new Error(`Unkown breakpoint: ${name} is not defined`);
+		}
+
+		if( extremum === 'min' ){
+			value -= variables['em-media-queries'] ? 0.01 : 1;
+		}
+
+		const unit = variables['em-media-queries'] ? 'em' : 'px';
+
+		return Modernizr.mq(`only screen and (${extremum}-${property}: ${value}${unit})`);
 	},
 };
