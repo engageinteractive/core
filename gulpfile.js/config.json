@@ -45,9 +45,6 @@
       "extensions": [
         "js"
       ],
-      "entries": [
-        "*"
-      ],
       "featureDetects": [
         "canvas",
         "css/animations",

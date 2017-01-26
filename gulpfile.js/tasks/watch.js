@@ -16,7 +16,7 @@ const
 			}
 
 			options.files.push(paths(name).dest);
-			gulp.watch(paths(name).src, gulp.parallel(tasks));
+			gulp.watch(paths(name).src(), gulp.parallel(tasks));
 		});
 
 		browserSync.init(options);

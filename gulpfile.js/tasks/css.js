@@ -21,7 +21,7 @@ const
 	},
 
 	task = () => gulp
-		.src(paths.src)
+		.src(paths.src())
 		.pipe(sourcemaps.init())
 		.pipe(sass(options.sass).on('error', notification(options.notification)))
 		.pipe(cleanCss(config.tasks.css.cleanCss))

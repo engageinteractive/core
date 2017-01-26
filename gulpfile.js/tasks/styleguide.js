@@ -4,9 +4,8 @@ let exampleIndex,
 	styleguide;
 
 const
-	config = require('../config'),
 	paths = {
-		css: require('../utils/paths')('css'), // eslint-disable-line global-require
+		css: require('../utils/paths')('css').src(), // eslint-disable-line global-require
 		styleguide: require('../utils/paths')('styleguide'), // eslint-disable-line global-require
 	},
 
@@ -28,15 +27,6 @@ const
 		},
 	},
 	renderer = new marked.Renderer(),
-	template = path.resolve(
-		__dirname,
-		'../..',
-		path.join(
-			config.root.src,
-			config.tasks.styleguide.src,
-			'index.html'
-		)
-	),
 
 	processor = (css) => {
 		const relPath = path.relative(process.cwd(), css.source.input.file);
@@ -124,10 +114,13 @@ gulp.task('styleguide.parse', () => {
 		components: {},
 	};
 	exampleIndex = 0;
-	exampleTemplate = fs.readFileSync('src/styleguide/templates/components/example.html', 'utf8');
+	exampleTemplate = fs.readFileSync(
+		paths.styleguide.src('templates/components/example.html', false),
+		'utf8'
+	);
 
 	return gulp
-		.src(paths.css.src)
+		.src(paths.css)
 		.pipe(postcss([processor], options.postcss));
 });
 
@@ -135,13 +128,13 @@ gulp.task('styleguide.generate', (done) => {
 	const data = {
 		variables: styleguide.variables,
 		nodes: {
-			docs: directory('src/styleguide/docs', ['.md']).children.map(parseDoc),
-			vars: directory('src/styleguide/templates/vars', ['.html']).children.map(parseVar),
+			docs: directory(paths.styleguide.src('docs', false), ['.md']).children.map(parseDoc),
+			vars: directory(paths.styleguide.src('templates/vars', false), ['.html']).children.map(parseVar),
 			components: directory('src/scss', ['.scss']).children.map(parseComponent).filter(filterComponent),
 		},
 	};
 
-	ejs.renderFile(template, data, null, (error, html) => {
+	ejs.renderFile(paths.styleguide.src('index.html', false), data, null, (error, html) => {
 		if (error) {
 
 			gutil.log(gutil.colors.red(error.message));

@@ -62,10 +62,10 @@ const
 	},
 
 	task = (done) => {
-		const filters = filter([paths.entries()]);
+		const filters = filter(paths.src('*'));
 
 		return gulp
-			.src(paths.src)
+			.src(paths.src())
 			.pipe(eslint())
 			.pipe(eslint.format(summary))
 			.pipe(eslint.failOnError().on('error', notification(options.notification)))
@@ -78,7 +78,7 @@ const
 
 gulp.task('scripts.lint', () => (
 	gulp
-		.src(paths.src)
+		.src(paths.src())
 		.pipe(eslint())
 		.pipe(eslint.format())
 ));

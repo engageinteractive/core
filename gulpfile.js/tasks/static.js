@@ -19,7 +19,7 @@ config.tasks.static.npm.forEach((item) => {
 
 gulp.task('static.assets', () => (
 	gulp
-		.src(paths.src)
+		.src(paths.src())
 		.pipe(changed(paths.dest))
 		.pipe(gulp.dest(paths.dest))
 ));

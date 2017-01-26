@@ -29,7 +29,7 @@ const
 		};
 
 		return gulp
-			.src(paths.src)
+			.src(paths.src())
 			.pipe(filters.optimise)
 			.pipe(tinypngCompress(tinypngOptions).on('error', notification(options.notification)))
 			.pipe(filters.optimise.restore)
@@ -39,24 +39,22 @@ const
 			.pipe(gulp.dest(paths.dest));
 	},
 
-	diff = () => {
-		const
-			src = path.join(config.root.src, config.tasks.images.src),
-			dest = path.join(config.root.public, config.root.dest, config.tasks.images.dest);
-
-		return comparison
-			.compare(src, dest, options.compare)
+	diff = () => (
+		comparison
+			.compare(paths.src('', false), paths.dest, options.compare)
 			.then((result) => {
-				if (!result.differencesFiles) {
+				const diffSet = result.diffSet.filter(_diff => _diff.type1 === 'missing');
+
+				if (!result.differencesFiles || !diffSet.length) {
 					return;
 				}
 
 				gutil.log(gutil.colors.red('Unexpected files in destination directory:'));
-				result.diffSet
-					.filter(_diff => _diff.type1 === 'missing')
-					.forEach(_diff => gutil.log(path.relative(dest, path.join(_diff.path2, _diff.name2))));
-			});
-	};
+				diffSet.forEach(_diff => gutil.log(
+					path.relative(paths.dest, path.join(_diff.path2, _diff.name2))
+				));
+			})
+	);
 
 tinypngOptions.key = tinypngOptions.key || process.env.TINYPNG_KEY;
 tinypngOptions.sigFile = tinypngOptions.sigFile || path.join(paths.dest, '.tinypng');
