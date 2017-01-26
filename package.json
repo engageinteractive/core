@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/engageinteractive/front-end-baseplate"
   },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint gulpfile.js || true"
+  },
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
