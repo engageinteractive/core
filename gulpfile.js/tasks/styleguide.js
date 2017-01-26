@@ -5,8 +5,8 @@ let exampleIndex,
 const
 	config = require('../config'),
 	paths = {
-		css: require('../utils/paths')('css'),
-		styleguide: require('../utils/paths')('styleguide'),
+		css: require('../utils/paths')('css'), // eslint-disable-line global-require
+		styleguide: require('../utils/paths')('styleguide'), // eslint-disable-line global-require
 	},
 
 	directory = require('directory-tree'),
@@ -103,7 +103,7 @@ const
 	}),
 
 	filterComponent = (node) => {
-		node.children = node.children.filter(filterComponent);
+		node.children = node.children.filter(filterComponent); // eslint-disable-line no-param-reassign
 		return node.children.length || node.components.length;
 	},
 
