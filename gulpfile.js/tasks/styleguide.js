@@ -1,4 +1,5 @@
 let exampleIndex,
+	exampleTemplate,
 	prevHtml,
 	styleguide;
 
@@ -105,38 +106,16 @@ const
 	filterComponent = (node) => {
 		node.children = node.children.filter(filterComponent); // eslint-disable-line no-param-reassign
 		return node.children.length || node.components.length;
-	},
+	};
 
-	escape = (html, encode) => (
-		html
-			.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;')
-			.replace(/</g, '&lt;')
-			.replace(/>/g, '&gt;')
-			.replace(/"/g, '&quot;')
-			.replace(/'/g, '&#39;')
-	);
-
-renderer.code = (code, lang, escaped) => {
+renderer.code = (code, lang) => {
 	const id = `example-${exampleIndex += 1}`;
 
-	return [
-		'<div class="sg-example">',
-		'	<div class="sg-example__preview">',
+	return ejs.render(exampleTemplate, {
 		code,
-		'		<div class="sg-example__button">',
-		`			<label class="button button--small reveal__label" for="${id}">View Source</label>`,
-		'		</div>',
-		'	</div>',
-		`	<input class="vh reveal__toggle" type="checkbox" id="${id}" value="" tabindex="-1">`,
-		'	<div class="reveal__wrapper">',
-		'		<div class="sg-example__source">',
-		`			<pre class="language-${lang || 'markup'}"><code>`,
-		(escaped ? code : escape(code, true)),
-		'			</code></pre>',
-		'		</div>',
-		'	</div>',
-		'</div>',
-	].join('');
+		lang,
+		id,
+	});
 };
 
 gulp.task('styleguide.parse', () => {
@@ -145,6 +124,7 @@ gulp.task('styleguide.parse', () => {
 		components: {},
 	};
 	exampleIndex = 0;
+	exampleTemplate = fs.readFileSync('src/styleguide/templates/components/example.html', 'utf8');
 
 	return gulp
 		.src(paths.css.src)
