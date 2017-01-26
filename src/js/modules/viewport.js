@@ -6,7 +6,7 @@ let width = 0,
 
 const breakpoints = {},
 	listeners = {},
-	variables = require('json!../../variables.json'),
+	variables = require('../../variables.json'),
 	update = () => {
 
 		prevWidth = width;

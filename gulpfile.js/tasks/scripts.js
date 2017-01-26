@@ -28,6 +28,10 @@ const
 							],
 						},
 					},
+					{
+						loader: 'json-loader',
+						test: /\.json$/,
+					},
 				],
 			},
 			plugins: [
