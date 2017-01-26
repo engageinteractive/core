@@ -96,6 +96,58 @@ const
 	filterComponent = (node) => {
 		node.children = node.children.filter(filterComponent); // eslint-disable-line no-param-reassign
 		return node.children.length || node.components.length;
+	},
+
+	generate = (done) => {
+		const data = {
+			variables: styleguide.variables,
+			nodes: {
+				docs: directory(paths.styleguide.src('docs', false), ['.md']).children.map(parseDoc),
+				vars: directory(paths.styleguide.src('templates/vars', false), ['.html']).children.map(parseVar),
+				components: directory('src/scss', ['.scss']).children.map(parseComponent).filter(filterComponent),
+			},
+		};
+
+		ejs.renderFile(paths.styleguide.src('index.html', false), data, null, (error, html) => {
+			if (error) {
+
+				gutil.log(gutil.colors.red(error.message));
+				done();
+
+			} else {
+
+				if (html === prevHtml) {
+					done();
+					return;
+				}
+
+				prevHtml = html;
+
+				fs.writeFile(paths.styleguide.dest, html, 'utf8', done);
+
+			}
+		});
+	},
+
+	task = (done) => {
+		styleguide = {
+			variables: {},
+			components: {},
+		};
+		exampleIndex = 0;
+		exampleTemplate = fs.readFileSync(
+			paths.styleguide.src('templates/components/example.html', false),
+			'utf8'
+		);
+
+		return new Promise((resolve) => {
+			gulp
+				.src(paths.css)
+				.pipe(postcss([processor], options.postcss).on('error', () => { done(); }))
+				.on('finish', resolve)
+				.resume(); // https://github.com/rvagg/through2/issues/37
+		})
+		.then(() => generate(done));
 	};
 
 renderer.code = (code, lang) => {
@@ -108,53 +160,5 @@ renderer.code = (code, lang) => {
 	});
 };
 
-gulp.task('styleguide.parse', () => {
-	styleguide = {
-		variables: {},
-		components: {},
-	};
-	exampleIndex = 0;
-	exampleTemplate = fs.readFileSync(
-		paths.styleguide.src('templates/components/example.html', false),
-		'utf8'
-	);
-
-	return gulp
-		.src(paths.css)
-		.pipe(postcss([processor], options.postcss));
-});
-
-gulp.task('styleguide.generate', (done) => {
-	const data = {
-		variables: styleguide.variables,
-		nodes: {
-			docs: directory(paths.styleguide.src('docs', false), ['.md']).children.map(parseDoc),
-			vars: directory(paths.styleguide.src('templates/vars', false), ['.html']).children.map(parseVar),
-			components: directory('src/scss', ['.scss']).children.map(parseComponent).filter(filterComponent),
-		},
-	};
-
-	ejs.renderFile(paths.styleguide.src('index.html', false), data, null, (error, html) => {
-		if (error) {
-
-			gutil.log(gutil.colors.red(error.message));
-			done();
-
-		} else {
-
-			if (html === prevHtml) {
-				done();
-				return;
-			}
-
-			prevHtml = html;
-
-			fs.writeFile(paths.styleguide.dest, html, 'utf8', done);
-
-		}
-	});
-});
-
-const task = gulp.series('styleguide.parse', 'styleguide.generate');
 gulp.task('styleguide', task);
 module.exports = task;
