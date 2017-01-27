@@ -7,16 +7,6 @@ const
 	merged = require('merge-stream')(),
 	path = require('path');
 
-config.tasks.static.npm.forEach((item) => {
-	const dest = path.join(paths.dest, item.dest);
-
-	merged.add(gulp
-		.src(item.src.map(src => path.join('node_modules', src)))
-		.pipe(changed(dest))
-		.pipe(gulp.dest(dest))
-	);
-});
-
 gulp.task('static.assets', () => (
 	gulp
 		.src(paths.src())
@@ -24,7 +14,19 @@ gulp.task('static.assets', () => (
 		.pipe(gulp.dest(paths.dest))
 ));
 
-gulp.task('static.npm', () => merged);
+gulp.task('static.npm', () => {
+	config.tasks.static.npm.forEach((item) => {
+		const dest = path.join(paths.dest, item.dest);
+
+		merged.add(gulp
+			.src(item.src.map(src => path.join('node_modules', src)))
+			.pipe(changed(dest))
+			.pipe(gulp.dest(dest))
+		);
+	});
+
+	return merged;
+});
 
 const task = gulp.parallel('static.assets', 'static.npm');
 gulp.task('static', task);
