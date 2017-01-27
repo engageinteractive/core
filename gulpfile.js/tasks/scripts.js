@@ -7,6 +7,7 @@ const
 	eslint = require('gulp-eslint'),
 	filter = require('gulp-filter'),
 	gulp = require('gulp'),
+	gutil = require('gulp-util'),
 	named = require('vinyl-named'),
 	summary = require('engage-eslint-summary'),
 	webpack = require('webpack-stream'),
@@ -31,6 +32,11 @@ const
 					{
 						loader: 'json-loader',
 						test: /\.json$/,
+					},
+					{
+						loader: 'script-loader',
+						test: /libs/,
+						exclude: /node_modules/,
 					},
 				],
 			},
@@ -61,6 +67,14 @@ const
 		},
 	},
 
+	handler = (err, stats) => {
+		if (stats.hasErrors()) {
+			gutil.log(gutil.colors.red(stats.compilation.errors[0].error.toString()));
+		} else if (stats.hasWarnings()) {
+			gutil.log(gutil.colors.yellow(stats.compilation.warnings[0].error.toString()));
+		}
+	},
+
 	task = (done) => {
 		const filters = filter(paths.src('*'));
 
@@ -72,7 +86,7 @@ const
 			.pipe(eslint.failOnError().on('error', () => { done(); }))
 			.pipe(filters)
 			.pipe(named())
-			.pipe(webpack(options.webpack))
+			.pipe(webpack(options.webpack, null, handler).on('error', () => { done(); }))
 			.pipe(gulp.dest(paths.dest));
 	};
 
