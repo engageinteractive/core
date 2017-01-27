@@ -22,26 +22,30 @@
 
 	<nav class="sg-nav">
 
-		<ul>
-			<li>
-				Documentation
-				<ul>
-					<%- include('templates/_tree.html', { nodes: nodes.docs, parent: '-docs' }) %>
-				</ul>
-			</li>
-			<li>
-				Components
-				<ul>
-					<li>
-						Foundation
-						<ul>
-							<%- include('templates/_tree.html', { nodes: nodes.vars, parent: '-vars' }) %>
-						</ul>
-					</li>
-					<%- include('templates/_tree.html', { nodes: nodes.components, parent: '-component' }) %>
-				</ul>
-			</li>
-		</ul>
+		<div class="sg-nav__inner">
+
+			<ul>
+				<li>
+					Documentation
+					<ul>
+						<%- include('templates/_tree.html', { nodes: nodes.docs, parent: '-docs' }) %>
+					</ul>
+				</li>
+				<li>
+					Components
+					<ul>
+						<li>
+							Foundation
+							<ul>
+								<%- include('templates/_tree.html', { nodes: nodes.vars, parent: '-vars' }) %>
+							</ul>
+						</li>
+						<%- include('templates/_tree.html', { nodes: nodes.components, parent: '-component' }) %>
+					</ul>
+				</li>
+			</ul>
+
+		</div>
 
 	</nav>
 
