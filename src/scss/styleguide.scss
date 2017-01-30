@@ -42,11 +42,10 @@ $c--border: $c--grey-light;
 		@include mq('tablet-wide') {
 			position: fixed;
 			top: 0;
-			left: 0;
+			right: 100%;
 			width: 20rem;
 			height: 100vh;
 			overflow: visible;
-			transform: translateX(-100%);
 
 			&__inner {
 				height: 100%;
@@ -56,7 +55,7 @@ $c--border: $c--grey-light;
 		}
 
 		&:hover {
-			transform: none;
+			transform: translateX(100%);
 		}
 	}
 
