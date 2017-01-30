@@ -88,6 +88,18 @@ $c--border: $c--grey-light;
 		}
 	}
 
+	&-heading {
+		a {
+			visibility: hidden;
+		}
+
+		&:hover {
+			a {
+				visibility: visible;
+			}
+		}
+	}
+
 	&-example {
 		@include push--sides(n($spacing-unit));
 		margin-top: $rel-spacing-unit;
