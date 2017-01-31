@@ -7,6 +7,9 @@
     "window": true
   },
   "rules": {
+    "comma-dangle": "off",
+    "consistent-return": "warn",
+    "curly": "warn",
     "func-names": "off",
     "import/no-extraneous-dependencies": [
       "warn",
@@ -19,6 +22,8 @@
       "tab"
     ],
     "keyword-spacing": "off",
+    "no-floating-decimal": "off",
+    "no-plusplus": "off",
     "no-tabs": "off",
     "no-var": "warn",
     "object-shorthand": "warn",
@@ -28,6 +33,7 @@
     "prefer-template": "warn",
     "space-before-blocks": "off",
     "space-before-function-paren": "off",
-    "space-in-parens": "off"
+    "space-in-parens": "off",
+    "vars-on-top": "off"
   }
 }
