@@ -11,12 +11,8 @@
     "consistent-return": "warn",
     "curly": "warn",
     "func-names": "off",
-    "import/no-extraneous-dependencies": [
-      "warn",
-      {
-        "devDependencies": true
-      }
-    ],
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
     "indent": [
       "warn",
       "tab"
