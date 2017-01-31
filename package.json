@@ -19,7 +19,7 @@
     "dir-compare": "^1.2.0",
     "directory-tree": "^1.1.1",
     "ejs": "^2.5.2",
-    "engage-eslint-summary": "^1.3.0",
+    "engage-eslint-summary": "^1.5.0",
     "eslint": "^3.5.0",
     "eslint-config-airbnb-base": "^7.1.0",
     "eslint-plugin-import": "^1.15.0",

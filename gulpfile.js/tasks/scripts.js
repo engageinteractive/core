@@ -81,7 +81,7 @@ const
 		return gulp
 			.src(paths.src())
 			.pipe(eslint())
-			.pipe(eslint.format(summary))
+			.pipe(eslint.format(summary({ hideErrors: true })))
 			.pipe(eslint.failOnError().on('error', notification(options.notification)))
 			.pipe(eslint.failOnError().on('error', () => { done(); }))
 			.pipe(filters)
