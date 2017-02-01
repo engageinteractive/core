@@ -60,7 +60,7 @@ module.exports = {
 			throw new Error(`Unkown breakpoint: ${name} is not defined`);
 		}
 
-		if( extremum === 'min' ){
+		if( extremum === 'max' ){
 			value -= variables['em-media-queries'] ? 0.01 : 1;
 		}
 
