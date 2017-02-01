@@ -13,14 +13,10 @@
 @import 'utility/grid/width-push-pull';
 
 
-// CORE STYLING
-
-@import 'core';
-
-
 // CORE
 // basic building blocks, typically single html tags
 
+@import 'core/document';
 @import 'core/typography';
 @import 'core/anchor';
 @import 'core/button';
