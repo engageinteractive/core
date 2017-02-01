@@ -113,7 +113,7 @@ Other states:
 	padding: rem(22px) rem(30px);
 
 	@include mq('tablet') {
-		padding: 25px 40px;
+		padding: rem(25px) rem(40px);
 		font-size: $p--medium;
 	}
 }
