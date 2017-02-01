@@ -4,14 +4,6 @@
 // accepted values: X%, Xpx
 $html-font-size: 100%;
 
-// setting to false will make the rem() function simply return the value passed in to it
-// accepted values: true, false
-$rems-on: true;
-
-// set whether media queries should ems, or revert to pixels
-// accepted values: true, false
-$em-media-queries: true;
-
 // Development mode
 // if development mode is set to true, then the following things apply:
 // When a site is ready to go live, change it to false, and make sure you
