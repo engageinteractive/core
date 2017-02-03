@@ -52,10 +52,10 @@ $c--border: $c--grey-light;
 				overflow-y: auto;
 				border-width: 0 1px 0 0;
 			}
-		}
 
-		&:hover {
-			transform: translateX(100%);
+			&:hover {
+				transform: translateX(100%);
+			}
 		}
 	}
 
