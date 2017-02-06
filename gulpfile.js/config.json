@@ -89,6 +89,13 @@
         }
       }
     },
+	"favicon": {
+      "src": "img/meta",
+      "dest": "img/meta",
+      "extensions": [
+        "png"
+      ]
+    },
     "static": {
       "src": "static",
       "dest": "static",
@@ -132,6 +139,7 @@
     "default": {
       "tasks": [
         "css",
+		"favicon",
         "images",
         "scripts",
         "sprite",
