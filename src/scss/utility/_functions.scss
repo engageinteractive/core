@@ -62,12 +62,13 @@ $rems-base-font-size: $browser-default-font-size / 100% * $html-font-size !defau
 
 $em-media-queries: true !default;
 
-@function em($size) {
+@function em($size, $base: $p) {
 
 	$size: if(str-index(#{$size}, 'rem'), rem($size, true), $size);
+	$base: if(unit($base) == rem, rem($base, true), $base);
 
 	$unitless: strip-unit($size);
-	$unitless-base: strip-unit($browser-default-font-size);
+	$unitless-base: strip-unit($base);
 
 	@if $em-media-queries {
 
@@ -247,8 +248,12 @@ $em-media-queries: true !default;
 
 */
 
-@function breakpoint($name) {
-	@return map_get($breakpoints, $name);
+@function breakpoint($name, $rems: false) {
+	@if $rems {
+		@return map_get($breakpoints--rem, $name);
+	} @else {
+		@return map_get($breakpoints, $name);
+	}
 }
 
 
