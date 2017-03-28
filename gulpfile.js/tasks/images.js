@@ -18,7 +18,7 @@ const
 			message: '<%= error.message %>',
 		},
 		compare: {
-			excludeFilter: '.*, sprite.svg',
+			excludeFilter: '.*, favicon.ico, sprite.svg',
 		},
 	},
 
