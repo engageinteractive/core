@@ -16,9 +16,17 @@ select {
 	padding: $input-padding;
 	height: $input-height;
 
-	&.is-focused {
-		border-color: $c--blue;
-		box-shadow: 0 0 5px $c--blue;
+	&:focus {
+		border-color: $c--grey;
+
+		[data-whatinput='keyboard'] & {
+			border-color: $c--blue;
+			box-shadow: 0 0 5px $c--blue;
+		}
+	}
+
+	@include input-placeholder {
+		color: $c--grey-light;
 	}
 
 	&.is-invalid {
@@ -26,23 +34,11 @@ select {
 
 		&:focus {
 			border-color: $c--negative;
+
+			[data-whatinput='keyboard'] & {
+				box-shadow: 0 0 5px $c--negative;
+			}
 		}
-
-		&.is-focused {
-			box-shadow: 0 0 5px $c--negative;
-		}
-	}
-}
-
-input,
-textarea,
-select {
-	&:focus {
-		border-color: $c--grey;
-	}
-
-	@include input-placeholder {
-		color: $c--grey-light;
 	}
 }
 
@@ -98,9 +94,12 @@ $radio-inner-size: $checkbox-size / 2;
 		}
 	}
 
-	&.is-focused {
-		+ label::before {
-			box-shadow: 0 0 3px 1px $c--blue;
+	&:focus {
+		[data-whatinput='keyboard'] & {
+			+ label::before {
+				border-color: $c--blue;
+				box-shadow: 0 0 3px 1px $c--blue;
+			}
 		}
 	}
 

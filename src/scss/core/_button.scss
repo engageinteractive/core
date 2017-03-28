@@ -66,8 +66,10 @@ Other states:
 	position: relative;
 	text-decoration: none;
 
-	&.is-focused {
-		box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue;
+	&:focus {
+		[data-whatinput='keyboard'] & {
+			box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue, 0px 0px 9px $c--blue;
+		}
 	}
 
 	&:active {
@@ -92,18 +94,10 @@ Other states:
 
 .button--positive {
 	background-color: $c--positive;
-
-	&:focus {
-		background-color: $c--positive;
-	}
 }
 
 .button--negative {
 	background-color: $c--negative;
-
-	&:focus {
-		background-color: $c--negative;
-	}
 }
 
 

@@ -1,5 +1,5 @@
 // require('./plugins/loadImg');
 
-require('./modules/form-focus');
+require('what-input');
 require('./modules/links');
 require('./modules/polyfills');
