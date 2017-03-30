@@ -1,0 +1,3689 @@
+<!doctype html>
+<html class="no-js">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Styleguide</title>
+	<meta name="robots" content="noindex">
+
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+	<link rel="stylesheet" href="/assets/css/styleguide.css">
+
+	<script src="/assets/js/modernizr.js"></script>
+
+</head>
+<body>
+
+	<h1 class="vh">Styleguide</h1>
+
+	<nav class="sg-nav">
+
+		<div class="sg-nav__inner">
+
+			<ul>
+				<li>
+					Documentation
+					<ul>
+						
+
+	<li>
+		
+			<a href="#sg-docs-0-0">
+		
+
+		About
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+					</ul>
+				</li>
+				<li>
+					Components
+					<ul>
+						<li>
+							Foundation
+							<ul>
+								
+
+	<li>
+		
+			<a href="#sg-vars-0-0">
+		
+
+		Colours
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-vars-1-0">
+		
+
+		Typography
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+							</ul>
+						</li>
+						
+
+	<li>
+		
+
+		Core
+
+		
+			<ul>
+				
+
+	<li>
+		
+			<a href="#sg-component-0-0-0">
+		
+
+		Anchor
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-1-0">
+		
+
+		Blockquote
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-2-0">
+		
+
+		Button
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-3-0">
+		
+
+		Definition List
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-4-0">
+		
+
+		Figure
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-5-0">
+		
+
+		Horizontal Rule
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-6-0">
+		
+
+		Icon
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-7-0">
+		
+
+		List
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-0-8-0">
+		
+
+		Table
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+			</ul>
+		
+
+		
+	</li>
+
+
+
+	<li>
+		
+
+		Module
+
+		
+			<ul>
+				
+
+	<li>
+		
+			<a href="#sg-component-1-0-0">
+		
+
+		Breadcrumb
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-1-1-0">
+		
+
+		Copy
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-1-2-0">
+		
+
+		Form
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-1-3-0">
+		
+
+		Inline Children
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-1-4-0">
+		
+
+		Media
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-1-5-0">
+		
+
+		Pagination
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-1-6-0">
+		
+
+		Placeholder
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-1-7-0">
+		
+
+		Reveal
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+			</ul>
+		
+
+		
+	</li>
+
+
+
+	<li>
+		
+
+		Utility
+
+		
+			<ul>
+				
+
+	<li>
+		
+			<a href="#sg-component-2-0-0">
+		
+
+		Flush First
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-2-1-0">
+		
+
+		Visible
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+
+		Grid
+
+		
+			<ul>
+				
+
+	<li>
+		
+			<a href="#sg-component-2-2-0-0">
+		
+
+		Block Grid
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+	<li>
+		
+			<a href="#sg-component-2-2-1-0">
+		
+
+		Columns
+
+		
+
+		
+			</a>
+		
+	</li>
+
+
+
+			</ul>
+		
+
+		
+	</li>
+
+
+
+			</ul>
+		
+
+		
+	</li>
+
+
+
+					</ul>
+				</li>
+			</ul>
+
+		</div>
+
+	</nav>
+
+	<main class="sg-main">
+
+		<div class="sg-main__inner">
+
+			<section>
+
+				<h1 class="h1">Documentation</h1>
+
+				
+
+	
+
+		<article class="sg-push" id="sg-docs-0-0">
+
+			<h1 class="h3 sg-heading">
+				About
+				<a class="a--subtle" href="#sg-docs-0-0">#</a>
+			</h1>
+
+			<p>This page contains a list of documented components used throughout the website.</p>
+
+
+		</article>
+
+	
+
+
+
+
+			</section>
+
+			<section>
+
+				<h1 class="h1 sg-push">Components</h1>
+
+				<section>
+
+					<h1 class="h2 sg-push">Foundation</h1>
+
+					
+
+	
+
+		<article class="sg-push" id="sg-vars-0-0">
+
+			<h1 class="h3 sg-heading">
+				Colours
+				<a class="a--subtle" href="#sg-vars-0-0">#</a>
+			</h1>
+
+			<div class="sg-colour-wrapper block-grid block-grid--1 block-grid--phone-2 block-grid--tablet-4 block-grid--desktop-6">
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #fdbc00">
+				<span>#fdbc00</span>
+			</div>
+
+			<p class="sg-colour__name">brand-primary</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #e74c3c">
+				<span>#e74c3c</span>
+			</div>
+
+			<p class="sg-colour__name">brand-secondary</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #1a1a1a">
+				<span>#1a1a1a</span>
+			</div>
+
+			<p class="sg-colour__name">black</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #444">
+				<span>#444</span>
+			</div>
+
+			<p class="sg-colour__name">grey-dark</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #888">
+				<span>#888</span>
+			</div>
+
+			<p class="sg-colour__name">grey</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #ddd">
+				<span>#ddd</span>
+			</div>
+
+			<p class="sg-colour__name">grey-light</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #fafafa">
+				<span>#fafafa</span>
+			</div>
+
+			<p class="sg-colour__name">grey-x</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #fff">
+				<span>#fff</span>
+			</div>
+
+			<p class="sg-colour__name">white</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #f50023">
+				<span>#f50023</span>
+			</div>
+
+			<p class="sg-colour__name">red</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #24b35d">
+				<span>#24b35d</span>
+			</div>
+
+			<p class="sg-colour__name">green</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #4D90FE">
+				<span>#4D90FE</span>
+			</div>
+
+			<p class="sg-colour__name">blue</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #55acee">
+				<span>#55acee</span>
+			</div>
+
+			<p class="sg-colour__name">twitter</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #3b5998">
+				<span>#3b5998</span>
+			</div>
+
+			<p class="sg-colour__name">facebook</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #bb0000">
+				<span>#bb0000</span>
+			</div>
+
+			<p class="sg-colour__name">youtube</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #cb2027">
+				<span>#cb2027</span>
+			</div>
+
+			<p class="sg-colour__name">pinterest</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #007bb5">
+				<span>#007bb5</span>
+			</div>
+
+			<p class="sg-colour__name">linkedin</p>
+		</div>
+	
+		<div class="sg-colour">
+			<div class="sg-colour__value" style="background-color: #8a3ab9">
+				<span>#8a3ab9</span>
+			</div>
+
+			<p class="sg-colour__name">instagram</p>
+		</div>
+	
+</div>
+
+
+		</article>
+
+	
+
+
+
+	
+
+		<article class="sg-push" id="sg-vars-1-0">
+
+			<h1 class="h3 sg-heading">
+				Typography
+				<a class="a--subtle" href="#sg-vars-1-0">#</a>
+			</h1>
+
+			<h1 class="h4">Heading sizes</h1>
+
+<ul class="ul">
+
+	<li>
+		xxx-small: rem(16px)
+	</li>
+
+	<li>
+		xx-small: rem(18px)
+	</li>
+
+	<li>
+		x-small: rem(20px)
+	</li>
+
+	<li>
+		small: rem(22px)
+	</li>
+
+	<li>
+		medium: rem(24px)
+	</li>
+
+	<li>
+		large: rem(28px)
+	</li>
+
+	<li>
+		x-large: rem(36px)
+	</li>
+
+	<li>
+		xx-large: rem(48px)
+	</li>
+
+	<li>
+		xxx-large: rem(64px)
+	</li>
+
+</ul>
+
+<h1 class="h4">Paragraph sizes</h1>
+
+<ul class="ul">
+
+	<li>
+		base: rem(16px)
+	</li>
+
+	<li>
+		small: rem(12px)
+	</li>
+
+	<li>
+		medium: rem(18px)
+	</li>
+
+	<li>
+		large: rem(24px)
+	</li>
+
+</ul>
+
+<h1 class="h4">Heading elements</h1>
+
+<div class="table-wrapper">
+	<table class="table-responsive-collapse">
+		<thead>
+			<tr>
+				<th>Element / Class</th>
+				<th>Example / Output</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<code>.h1</code>
+				</td>
+				<td>
+					<h1 class="h1">Heading 1</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>.h2</code>
+				</td>
+				<td>
+					<h2 class="h2">Heading 2</h2>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>.h3</code>
+				</td>
+				<td>
+					<h3 class="h3">Heading 3</h3>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>.h4</code>
+				</td>
+				<td>
+					<h4 class="h4">Heading 4</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>.h5</code>
+				</td>
+				<td>
+					<h5 class="h5">Heading 5</h5>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>.h6</code>
+				</td>
+				<td>
+					<h6 class="h6">Heading 6</h6>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h1 class="h4">Global typography elements</h1>
+
+<div class="table-wrapper">
+	<table class="table-responsive-collapse">
+		<thead>
+			<tr>
+				<th>Element / Class</th>
+				<th>Example / Output</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<code>&lt;strong&gt;</code>
+				</td>
+				<td>
+					<strong>Strong text</strong>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;em&gt;</code>
+				</td>
+				<td>
+					<em>Italic text</em>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;abbr&gt;</code>
+				</td>
+				<td>
+					<abbr title="As Soon As Possible">ASAP</abbr>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;dfn&gt;</code>
+				</td>
+				<td>
+					<dfn>Definition</dfn>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;mark&gt;</code>
+				</td>
+				<td>
+					<mark>Mark</mark>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;small&gt;</code>
+				</td>
+				<td>
+					<small>Small text</small>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;sub&gt;</code>
+				</td>
+				<td>
+					Text with <sub>Sub text</sub>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;sup&gt;</code>
+				</td>
+				<td>
+					Text with <sup>Sup text</sup>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<code>&lt;del&gt;</code>
+				</td>
+				<td>
+					<del>Deleted text</del>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+		</article>
+
+	
+
+
+
+
+				</section>
+
+				
+
+	
+
+		
+
+			<section>
+
+				<h1 class="h2 sg-push">Core</h1>
+
+		
+
+		
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-0-0">
+
+	<h1 class="h3 sg-heading">
+		Anchor
+		<a class="a--subtle" href="#sg-component-0-0-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Basic link styles with support for other element types:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<a href="#0">Regular link</a>
+
+<span class="a">Faux link</span>
+
+<label class="a">Label link</label>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-1">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-1" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;a href=&#34;#0&#34;&gt;Regular link&lt;/a&gt;
+
+&lt;span class=&#34;a&#34;&gt;Faux link&lt;/span&gt;
+
+&lt;label class=&#34;a&#34;&gt;Label link&lt;/label&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p><code>subtle</code> to use inherited colour and <code>block</code> for block links:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<a href="#0" class="a--subtle">Subtle link</a>
+
+<a href="#0" class="a--block">Block link</a>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-2">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-2" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;a href=&#34;#0&#34; class=&#34;a--subtle&#34;&gt;Subtle link&lt;/a&gt;
+
+&lt;a href=&#34;#0&#34; class=&#34;a--block&#34;&gt;Block link&lt;/a&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-1-0">
+
+	<h1 class="h3 sg-heading">
+		Blockquote
+		<a class="a--subtle" href="#sg-component-0-1-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Extended quotations, with support for citation:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<blockquote class="blockquote">
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <cite class="blockquote__meta">Author name here, Role/department</cite>
+</blockquote>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-3">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-3" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;blockquote class=&#34;blockquote&#34;&gt;
+    &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&lt;/p&gt;
+
+    &lt;cite class=&#34;blockquote__meta&#34;&gt;Author name here, Role/department&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<blockquote class="blockquote blockquote--right">
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <cite class="blockquote__meta">Author name here, Role/department</cite>
+</blockquote>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-4">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-4" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;blockquote class=&#34;blockquote blockquote--right&#34;&gt;
+    &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&lt;/p&gt;
+
+    &lt;cite class=&#34;blockquote__meta&#34;&gt;Author name here, Role/department&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<blockquote class="blockquote blockquote--left">
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <cite class="blockquote__meta">Author name here, Role/department</cite>
+</blockquote>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-5">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-5" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;blockquote class=&#34;blockquote blockquote--left&#34;&gt;
+    &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&lt;/p&gt;
+
+    &lt;cite class=&#34;blockquote__meta&#34;&gt;Author name here, Role/department&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<blockquote class="blockquote blockquote--centre">
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <cite class="blockquote__meta">Author name here, Role/department</cite>
+</blockquote>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-6">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-6" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;blockquote class=&#34;blockquote blockquote--centre&#34;&gt;
+    &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&lt;/p&gt;
+
+    &lt;cite class=&#34;blockquote__meta&#34;&gt;Author name here, Role/department&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-2-0">
+
+	<h1 class="h3 sg-heading">
+		Button
+		<a class="a--subtle" href="#sg-component-0-2-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Clickable buttons:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="button-wrapper">
+    <button class="button">Button</button>
+</div>
+
+<div class="button-wrapper">
+    <a href="#0" class="button">Button (link)</a>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-7">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-7" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button class=&#34;button&#34;&gt;Button&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;a href=&#34;#0&#34; class=&#34;button&#34;&gt;Button (link)&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Alternate styles using <code>secondary</code>, <code>positive</code> and <code>negative</code> modifiers:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="button-wrapper">
+    <button class="button button--secondary">Button: Secondary</button>
+</div>
+
+<div class="button-wrapper">
+    <button class="button button--positive">Button: Positive</button>
+</div>
+
+<div class="button-wrapper">
+    <button class="button button--negative">Button: Negative</button>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-8">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-8" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button class=&#34;button button--secondary&#34;&gt;Button: Secondary&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button class=&#34;button button--positive&#34;&gt;Button: Positive&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button class=&#34;button button--negative&#34;&gt;Button: Negative&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>And sized using <code>large</code> and <code>small</code>:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="button-wrapper">
+    <button class="button button--large">Button: Large</button>
+</div>
+
+<div class="button-wrapper">
+    <button class="button button--small">Button: Small</button>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-9">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-9" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button class=&#34;button button--large&#34;&gt;Button: Large&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button class=&#34;button button--small&#34;&gt;Button: Small&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Other states:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="button-wrapper">
+    <button class="button" disabled>Button: Disabled</button>
+</div>
+
+<div class="button-wrapper">
+    <button>Unstyled button</button>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-10">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-10" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button class=&#34;button&#34; disabled&gt;Button: Disabled&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;button-wrapper&#34;&gt;
+    &lt;button&gt;Unstyled button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-3-0">
+
+	<h1 class="h3 sg-heading">
+		Definition List
+		<a class="a--subtle" href="#sg-component-0-3-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>A list of groups of terms and descriptions:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<dl>
+    <dt>Delectus veniam ipsa animi</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sunt dolorum quas aperiam, exercitationem quia ducimus odit aliquam. Vel dolore facilis, cumque reiciendis atque, commodi id aliquid et sapiente esse!</dd>
+
+    <dt>Lorem ipsum dolor</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, quae asperiores dolores, quos, amet facilis veritatis vel tenetur necessitatibus voluptatem. Esse iure nihil harum, voluptatum similique fugit quas eius!</dd>
+
+    <dt>Autem consequatur</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora mollitia eveniet est, numquam in asperiores, laudantium, porro provident eum inventore facere laborum amet dolorum! Vitae at itaque natus, aspernatur illum.</dd>
+
+    <dt>Quas reiciendis cupiditate </dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dolorum fugiat officia sequi, obcaecati, nulla earum quod cum ipsum assumenda ea corporis rerum dolorem incidunt ipsa, recusandae tempore quo eius.</dd>
+
+</dl>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-11">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-11" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;dl&gt;
+    &lt;dt&gt;Delectus veniam ipsa animi&lt;/dt&gt;
+    &lt;dd&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sunt dolorum quas aperiam, exercitationem quia ducimus odit aliquam. Vel dolore facilis, cumque reiciendis atque, commodi id aliquid et sapiente esse!&lt;/dd&gt;
+
+    &lt;dt&gt;Lorem ipsum dolor&lt;/dt&gt;
+    &lt;dd&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, quae asperiores dolores, quos, amet facilis veritatis vel tenetur necessitatibus voluptatem. Esse iure nihil harum, voluptatum similique fugit quas eius!&lt;/dd&gt;
+
+    &lt;dt&gt;Autem consequatur&lt;/dt&gt;
+    &lt;dd&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora mollitia eveniet est, numquam in asperiores, laudantium, porro provident eum inventore facere laborum amet dolorum! Vitae at itaque natus, aspernatur illum.&lt;/dd&gt;
+
+    &lt;dt&gt;Quas reiciendis cupiditate &lt;/dt&gt;
+    &lt;dd&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dolorum fugiat officia sequi, obcaecati, nulla earum quod cum ipsum assumenda ea corporis rerum dolorem incidunt ipsa, recusandae tempore quo eius.&lt;/dd&gt;
+
+&lt;/dl&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-4-0">
+
+	<h1 class="h3 sg-heading">
+		Figure
+		<a class="a--subtle" href="#sg-component-0-4-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Self-contained content, with support for a caption:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div style="max-width: 35em">
+    <figure>
+        <div class="placeholder">
+            <img src="//placehold.it/1600x900" alt="Always specify alt text">
+        </div>
+
+        <figcaption>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, facilis, sed non dolore excepturi beatae veritatis corporis cumque tempora quo harum voluptatem et, suscipit similique nisi necessitatibus perferendis dolores consectetur.</figcaption>
+    </figure>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-12">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-12" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div style=&#34;max-width: 35em&#34;&gt;
+    &lt;figure&gt;
+        &lt;div class=&#34;placeholder&#34;&gt;
+            &lt;img src=&#34;//placehold.it/1600x900&#34; alt=&#34;Always specify alt text&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;figcaption&gt;Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, facilis, sed non dolore excepturi beatae veritatis corporis cumque tempora quo harum voluptatem et, suscipit similique nisi necessitatibus perferendis dolores consectetur.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-5-0">
+
+	<h1 class="h3 sg-heading">
+		Horizontal Rule
+		<a class="a--subtle" href="#sg-component-0-5-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>A thematic break between paragraph-level elements:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<hr>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-13">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-13" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;hr&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Alternate <code>grey-light</code> style:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<hr class="hr--grey-light">
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-14">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-14" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;hr class=&#34;hr--grey-light&#34;&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-6-0">
+
+	<h1 class="h3 sg-heading">
+		Icon
+		<a class="a--subtle" href="#sg-component-0-6-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Available icons:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<ul class="inline-children--block sg-icons">
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#check"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-down"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-left"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-right"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-down"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-left"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-thin-up"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#cross"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#link"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#mail"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#minus"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#phone"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#plus"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-down"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-left"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-right"></use></svg></li>
+    <li><svg class="icon"><use xlink:href="/assets/img/sprite.svg#triangle-up"></use></svg></li>
+</ul>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-15">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-15" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;ul class=&#34;inline-children--block sg-icons&#34;&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-up&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#check&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-down&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-left&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-right&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-thin-down&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-thin-left&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-thin-right&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-thin-up&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-up&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#cross&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#link&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#mail&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#minus&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#phone&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#plus&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#triangle-down&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#triangle-left&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#triangle-right&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;svg class=&#34;icon&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#triangle-up&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Use <code>inline</code> when used with text:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<p><svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> Lorem ipsum dolor sit amet, consectetur <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg> adipisicing elit. <svg class="icon icon--inline"><use xlink:href="/assets/img/sprite.svg#chevron-up"></use></svg></p>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-16">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-16" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;p&gt;&lt;svg class=&#34;icon icon--inline&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-up&#34;&gt;&lt;/use&gt;&lt;/svg&gt; Lorem ipsum dolor sit amet, consectetur &lt;svg class=&#34;icon icon--inline&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-up&#34;&gt;&lt;/use&gt;&lt;/svg&gt; adipisicing elit. &lt;svg class=&#34;icon icon--inline&#34;&gt;&lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-up&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/p&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Use <code>icon-text</code> for vertical alignment:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div style="max-width: 10em">
+    <span class="icon-text">
+        <span class="icon-text__t">Icon text, description or title</span>
+
+        <svg class="icon-text__i icon">
+            <use xlink:href="/assets/img/sprite.svg#plus"></use>
+        </svg>
+    </span>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-17">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-17" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div style=&#34;max-width: 10em&#34;&gt;
+    &lt;span class=&#34;icon-text&#34;&gt;
+        &lt;span class=&#34;icon-text__t&#34;&gt;Icon text, description or title&lt;/span&gt;
+
+        &lt;svg class=&#34;icon-text__i icon&#34;&gt;
+            &lt;use xlink:href=&#34;/assets/img/sprite.svg#plus&#34;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div style="max-width: 10em">
+    <span class="icon-text">
+        <svg class="icon-text__i icon">
+            <use xlink:href="/assets/img/sprite.svg#plus"></use>
+        </svg>
+
+        <span class="icon-text__t">Icon text, description or title</span>
+    </span>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-18">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-18" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div style=&#34;max-width: 10em&#34;&gt;
+    &lt;span class=&#34;icon-text&#34;&gt;
+        &lt;svg class=&#34;icon-text__i icon&#34;&gt;
+            &lt;use xlink:href=&#34;/assets/img/sprite.svg#plus&#34;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+
+        &lt;span class=&#34;icon-text__t&#34;&gt;Icon text, description or title&lt;/span&gt;
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-7-0">
+
+	<h1 class="h3 sg-heading">
+		List
+		<a class="a--subtle" href="#sg-component-0-7-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Unstyled list (default)</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim, fugiat a consectetur odit, nam ab, deserunt veniam autem quas animi laudantium! Dolorum animi quos dolorem nesciunt eius, velit obcaecati?</li>
+    <li>Nemo consequuntur ad earum sequi, mollitia quas impedit, possimus blanditiis aspernatur alias eius eligendi, suscipit quos itaque voluptatem. Cum ullam cupiditate id beatae neque vel maxime architecto aspernatur, corrupti odio.</li>
+    <li>Qui repellat omnis, tempore reiciendis. Distinctio, veritatis, atque? Dignissimos aut deleniti, maiores eum dolorum rerum, cum repudiandae sequi alias odio quaerat saepe deserunt nobis incidunt iure aliquid vero esse omnis.</li>
+</ul>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-19">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-19" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;ul&gt;
+    &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim, fugiat a consectetur odit, nam ab, deserunt veniam autem quas animi laudantium! Dolorum animi quos dolorem nesciunt eius, velit obcaecati?&lt;/li&gt;
+    &lt;li&gt;Nemo consequuntur ad earum sequi, mollitia quas impedit, possimus blanditiis aspernatur alias eius eligendi, suscipit quos itaque voluptatem. Cum ullam cupiditate id beatae neque vel maxime architecto aspernatur, corrupti odio.&lt;/li&gt;
+    &lt;li&gt;Qui repellat omnis, tempore reiciendis. Distinctio, veritatis, atque? Dignissimos aut deleniti, maiores eum dolorum rerum, cum repudiandae sequi alias odio quaerat saepe deserunt nobis incidunt iure aliquid vero esse omnis.&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Unordered list</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<ul class="ul">
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim, fugiat a consectetur odit, nam ab, deserunt veniam autem quas animi laudantium! Dolorum animi quos dolorem nesciunt eius, velit obcaecati?</li>
+    <li>Nemo consequuntur ad earum sequi, mollitia quas impedit, possimus blanditiis aspernatur alias eius eligendi, suscipit quos itaque voluptatem. Cum ullam cupiditate id beatae neque vel maxime architecto aspernatur, corrupti odio.</li>
+    <li>Qui repellat omnis, tempore reiciendis. Distinctio, veritatis, atque? Dignissimos aut deleniti, maiores eum dolorum rerum, cum repudiandae sequi alias odio quaerat saepe deserunt nobis incidunt iure aliquid vero esse omnis.</li>
+</ul>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-20">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-20" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;ul class=&#34;ul&#34;&gt;
+    &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim, fugiat a consectetur odit, nam ab, deserunt veniam autem quas animi laudantium! Dolorum animi quos dolorem nesciunt eius, velit obcaecati?&lt;/li&gt;
+    &lt;li&gt;Nemo consequuntur ad earum sequi, mollitia quas impedit, possimus blanditiis aspernatur alias eius eligendi, suscipit quos itaque voluptatem. Cum ullam cupiditate id beatae neque vel maxime architecto aspernatur, corrupti odio.&lt;/li&gt;
+    &lt;li&gt;Qui repellat omnis, tempore reiciendis. Distinctio, veritatis, atque? Dignissimos aut deleniti, maiores eum dolorum rerum, cum repudiandae sequi alias odio quaerat saepe deserunt nobis incidunt iure aliquid vero esse omnis.&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Ordered list</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<ol class="ol">
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim, fugiat a consectetur odit, nam ab, deserunt veniam autem quas animi laudantium! Dolorum animi quos dolorem nesciunt eius, velit obcaecati?</li>
+    <li>Nemo consequuntur ad earum sequi, mollitia quas impedit, possimus blanditiis aspernatur alias eius eligendi, suscipit quos itaque voluptatem. Cum ullam cupiditate id beatae neque vel maxime architecto aspernatur, corrupti odio.</li>
+    <li>Qui repellat omnis, tempore reiciendis. Distinctio, veritatis, atque? Dignissimos aut deleniti, maiores eum dolorum rerum, cum repudiandae sequi alias odio quaerat saepe deserunt nobis incidunt iure aliquid vero esse omnis.</li>
+</ol>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-21">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-21" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;ol class=&#34;ol&#34;&gt;
+    &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim, fugiat a consectetur odit, nam ab, deserunt veniam autem quas animi laudantium! Dolorum animi quos dolorem nesciunt eius, velit obcaecati?&lt;/li&gt;
+    &lt;li&gt;Nemo consequuntur ad earum sequi, mollitia quas impedit, possimus blanditiis aspernatur alias eius eligendi, suscipit quos itaque voluptatem. Cum ullam cupiditate id beatae neque vel maxime architecto aspernatur, corrupti odio.&lt;/li&gt;
+    &lt;li&gt;Qui repellat omnis, tempore reiciendis. Distinctio, veritatis, atque? Dignissimos aut deleniti, maiores eum dolorum rerum, cum repudiandae sequi alias odio quaerat saepe deserunt nobis incidunt iure aliquid vero esse omnis.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Inline list</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<ul class="inline-children--block">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+    <li>item 5</li>
+</ul>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-22">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-22" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;ul class=&#34;inline-children--block&#34;&gt;
+    &lt;li&gt;item 1&lt;/li&gt;
+    &lt;li&gt;item 2&lt;/li&gt;
+    &lt;li&gt;item 3&lt;/li&gt;
+    &lt;li&gt;item 4&lt;/li&gt;
+    &lt;li&gt;item 5&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-0-8-0">
+
+	<h1 class="h3 sg-heading">
+		Table
+		<a class="a--subtle" href="#sg-component-0-8-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="table-wrapper">
+    <table>
+        <caption>A useful description of what is in this table</caption>
+        <thead>
+            <th scope="col">Nulla pariatur</th>
+            <th scope="col">Perspiciatis</th>
+            <th scope="col">Natus error</th>
+            <th scope="col">Inventore</th>
+            <th scope="col">Accusantium</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quod distinctio aperiam magnam dicta nesciunt et amet quia necessitatibus cupiditate voluptates libero, ea vero aliquid neque perspiciatis mollitia, impedit possimus.</td>
+                <td>Tempore ipsa consequuntur ipsum cum voluptatibus, corrupti alias. Laudantium deserunt magnam reiciendis labore esse eius voluptas atque, officia, numquam, eaque voluptatibus aliquid.</td>
+                <td>Maiores enim porro voluptatibus illum nobis id ea consequuntur, officiis quod voluptates adipisci dolorem iure aut, maxime rerum sed temporibus fugiat! Ad.</td>
+                <td>Soluta vel ad recusandae vero nesciunt velit ipsa odit nihil, consequatur expedita officiis? Aspernatur hic vero veritatis unde voluptatum, adipisci recusandae laborum?</td>
+                <td>Qui mollitia delectus iste veniam, quos sequi sint numquam, ipsa suscipit dicta illum et saepe architecto ipsam ab quaerat eum, impedit doloribus.</td>
+            </tr>
+            <tr>
+                <td scope="row">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quod distinctio aperiam magnam dicta nesciunt et amet quia necessitatibus cupiditate voluptates libero, ea vero aliquid neque perspiciatis mollitia, impedit possimus.</td>
+                <td>Tempore ipsa consequuntur ipsum cum voluptatibus, corrupti alias. Laudantium deserunt magnam reiciendis labore esse eius voluptas atque, officia, numquam, eaque voluptatibus aliquid.</td>
+                <td>Maiores enim porro voluptatibus illum nobis id ea consequuntur, officiis quod voluptates adipisci dolorem iure aut, maxime rerum sed temporibus fugiat! Ad.</td>
+                <td>Soluta vel ad recusandae vero nesciunt velit ipsa odit nihil, consequatur expedita officiis? Aspernatur hic vero veritatis unde voluptatum, adipisci recusandae laborum?</td>
+                <td>Qui mollitia delectus iste veniam, quos sequi sint numquam, ipsa suscipit dicta illum et saepe architecto ipsam ab quaerat eum, impedit doloribus.</td>
+            </tr>
+            <tr>
+                <td scope="row">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quod distinctio aperiam magnam dicta nesciunt et amet quia necessitatibus cupiditate voluptates libero, ea vero aliquid neque perspiciatis mollitia, impedit possimus.</td>
+                <td>Tempore ipsa consequuntur ipsum cum voluptatibus, corrupti alias. Laudantium deserunt magnam reiciendis labore esse eius voluptas atque, officia, numquam, eaque voluptatibus aliquid.</td>
+                <td>Maiores enim porro voluptatibus illum nobis id ea consequuntur, officiis quod voluptates adipisci dolorem iure aut, maxime rerum sed temporibus fugiat! Ad.</td>
+                <td>Soluta vel ad recusandae vero nesciunt velit ipsa odit nihil, consequatur expedita officiis? Aspernatur hic vero veritatis unde voluptatum, adipisci recusandae laborum?</td>
+                <td>Qui mollitia delectus iste veniam, quos sequi sint numquam, ipsa suscipit dicta illum et saepe architecto ipsam ab quaerat eum, impedit doloribus.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-23">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-23" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;table-wrapper&#34;&gt;
+    &lt;table&gt;
+        &lt;caption&gt;A useful description of what is in this table&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;th scope=&#34;col&#34;&gt;Nulla pariatur&lt;/th&gt;
+            &lt;th scope=&#34;col&#34;&gt;Perspiciatis&lt;/th&gt;
+            &lt;th scope=&#34;col&#34;&gt;Natus error&lt;/th&gt;
+            &lt;th scope=&#34;col&#34;&gt;Inventore&lt;/th&gt;
+            &lt;th scope=&#34;col&#34;&gt;Accusantium&lt;/th&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td scope=&#34;row&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quod distinctio aperiam magnam dicta nesciunt et amet quia necessitatibus cupiditate voluptates libero, ea vero aliquid neque perspiciatis mollitia, impedit possimus.&lt;/td&gt;
+                &lt;td&gt;Tempore ipsa consequuntur ipsum cum voluptatibus, corrupti alias. Laudantium deserunt magnam reiciendis labore esse eius voluptas atque, officia, numquam, eaque voluptatibus aliquid.&lt;/td&gt;
+                &lt;td&gt;Maiores enim porro voluptatibus illum nobis id ea consequuntur, officiis quod voluptates adipisci dolorem iure aut, maxime rerum sed temporibus fugiat! Ad.&lt;/td&gt;
+                &lt;td&gt;Soluta vel ad recusandae vero nesciunt velit ipsa odit nihil, consequatur expedita officiis? Aspernatur hic vero veritatis unde voluptatum, adipisci recusandae laborum?&lt;/td&gt;
+                &lt;td&gt;Qui mollitia delectus iste veniam, quos sequi sint numquam, ipsa suscipit dicta illum et saepe architecto ipsam ab quaerat eum, impedit doloribus.&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td scope=&#34;row&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quod distinctio aperiam magnam dicta nesciunt et amet quia necessitatibus cupiditate voluptates libero, ea vero aliquid neque perspiciatis mollitia, impedit possimus.&lt;/td&gt;
+                &lt;td&gt;Tempore ipsa consequuntur ipsum cum voluptatibus, corrupti alias. Laudantium deserunt magnam reiciendis labore esse eius voluptas atque, officia, numquam, eaque voluptatibus aliquid.&lt;/td&gt;
+                &lt;td&gt;Maiores enim porro voluptatibus illum nobis id ea consequuntur, officiis quod voluptates adipisci dolorem iure aut, maxime rerum sed temporibus fugiat! Ad.&lt;/td&gt;
+                &lt;td&gt;Soluta vel ad recusandae vero nesciunt velit ipsa odit nihil, consequatur expedita officiis? Aspernatur hic vero veritatis unde voluptatum, adipisci recusandae laborum?&lt;/td&gt;
+                &lt;td&gt;Qui mollitia delectus iste veniam, quos sequi sint numquam, ipsa suscipit dicta illum et saepe architecto ipsam ab quaerat eum, impedit doloribus.&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td scope=&#34;row&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quod distinctio aperiam magnam dicta nesciunt et amet quia necessitatibus cupiditate voluptates libero, ea vero aliquid neque perspiciatis mollitia, impedit possimus.&lt;/td&gt;
+                &lt;td&gt;Tempore ipsa consequuntur ipsum cum voluptatibus, corrupti alias. Laudantium deserunt magnam reiciendis labore esse eius voluptas atque, officia, numquam, eaque voluptatibus aliquid.&lt;/td&gt;
+                &lt;td&gt;Maiores enim porro voluptatibus illum nobis id ea consequuntur, officiis quod voluptates adipisci dolorem iure aut, maxime rerum sed temporibus fugiat! Ad.&lt;/td&gt;
+                &lt;td&gt;Soluta vel ad recusandae vero nesciunt velit ipsa odit nihil, consequatur expedita officiis? Aspernatur hic vero veritatis unde voluptatum, adipisci recusandae laborum?&lt;/td&gt;
+                &lt;td&gt;Qui mollitia delectus iste veniam, quos sequi sint numquam, ipsa suscipit dicta illum et saepe architecto ipsam ab quaerat eum, impedit doloribus.&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+
+		
+
+			</section>
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<section>
+
+				<h1 class="h2 sg-push">Module</h1>
+
+		
+
+		
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-0-0">
+
+	<h1 class="h3 sg-heading">
+		Breadcrumb
+		<a class="a--subtle" href="#sg-component-1-0-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="breadcrumb">
+    <a href="#0">Home</a>
+
+    <svg class="icon">
+        <use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use>
+    </svg>
+
+    <a href="#0">Foo</a>
+
+    <svg class="icon">
+        <use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use>
+    </svg>
+
+    <span>Bar</span>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-24">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-24" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;breadcrumb&#34;&gt;
+    &lt;a href=&#34;#0&#34;&gt;Home&lt;/a&gt;
+
+    &lt;svg class=&#34;icon&#34;&gt;
+        &lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-thin-right&#34;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+
+    &lt;a href=&#34;#0&#34;&gt;Foo&lt;/a&gt;
+
+    &lt;svg class=&#34;icon&#34;&gt;
+        &lt;use xlink:href=&#34;/assets/img/sprite.svg#chevron-thin-right&#34;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+
+    &lt;span&gt;Bar&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-1-0">
+
+	<h1 class="h3 sg-heading">
+		Copy
+		<a class="a--subtle" href="#sg-component-1-1-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Used to scope generated content blocks, adding typography styles to elements without classes:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<article class="copy">
+
+    <h1>Heading 1</h1>
+
+    <p>Nobis, accusamus, velit, laudantium illum minima a <a href="#0">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
+
+    <figure class="media">
+        <div class="placeholder">
+            <img src="//placehold.it/1600x900" alt="Image alt text">
+        </div>
+    </figure>
+
+    <p>Nobis, accusamus, velit, laudantium illum minima a <a href="#0">perferendis ducimus</a> ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
+
+    <h2>Heading 2</h2>
+
+    <p>Nobis, accusamus, velit, <a href="#0">laudantium</a> illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?</p>
+
+    <h3>Heading 3</h3>
+
+    <p>Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque <a href="#0">corrupti officia</a> reiciendis?</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus illum similique, vitae consequuntur aperiam, commodi reiciendis nemo nulla repellat autem saepe adipisci, porro aliquam molestias laborum totam temporibus eaque mollitia.</p>
+
+    <h2>Heading 2</h2>
+
+    <h3>Heading 3</h3>
+
+    <p>Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque <a href="#0">corrupti officia</a> reiciendis?</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus illum similique, vitae consequuntur aperiam, commodi reiciendis nemo nulla repellat autem saepe adipisci, porro aliquam molestias laborum totam temporibus eaque mollitia.</p>
+
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Culpa, perspiciatis, consectetur architecto debitis reprehenderit.</li>
+        <li>Ratione fugit placeat eius impedit velit soluta eveniet quaerat!</li>
+        <li>Incidunt, eaque optio fugit iusto atque necessitatibus unde debitis.</li>
+        <li>Cum, dignissimos ad vel tempore quam quod delectus eaque quaerat!</li>
+    </ul>
+
+    <figure class="media media--right">
+        <div class="placeholder placeholder--square">
+            <img src="//placehold.it/400" alt="Image alt text">
+        </div>
+    </figure>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!</p>
+
+    <p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!</p>
+
+    <p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porroorporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
+
+    <figure class="media media--left">
+        <div class="placeholder placeholder--square">
+            <img src="//placehold.it/400" alt="Image alt text">
+        </div>
+    </figure>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!</p>
+
+    <p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!</p>
+
+    <p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. rporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
+
+    <figure class="media media--centre">
+        <div class="placeholder placeholder--square">
+            <img src="//placehold.it/400" alt="Image alt text">
+        </div>
+
+        <figcaption>Lorem ipsum dolor sit amet</figcaption>
+    </figure>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!</p>
+
+    <blockquote class="blockquote blockquote--centre">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+        <cite class="blockquote__meta">Author name here, Role/department</cite>
+    </blockquote>
+
+    <p>Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.</p>
+
+</article>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-25">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-25" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;article class=&#34;copy&#34;&gt;
+
+    &lt;h1&gt;Heading 1&lt;/h1&gt;
+
+    &lt;p&gt;Nobis, accusamus, velit, laudantium illum minima a &lt;a href=&#34;#0&#34;&gt;perferendis ducimus&lt;/a&gt; ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?&lt;/p&gt;
+
+    &lt;figure class=&#34;media&#34;&gt;
+        &lt;div class=&#34;placeholder&#34;&gt;
+            &lt;img src=&#34;//placehold.it/1600x900&#34; alt=&#34;Image alt text&#34;&gt;
+        &lt;/div&gt;
+    &lt;/figure&gt;
+
+    &lt;p&gt;Nobis, accusamus, velit, laudantium illum minima a &lt;a href=&#34;#0&#34;&gt;perferendis ducimus&lt;/a&gt; ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?&lt;/p&gt;
+
+    &lt;h2&gt;Heading 2&lt;/h2&gt;
+
+    &lt;p&gt;Nobis, accusamus, velit, &lt;a href=&#34;#0&#34;&gt;laudantium&lt;/a&gt; illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque corrupti officia reiciendis?&lt;/p&gt;
+
+    &lt;h3&gt;Heading 3&lt;/h3&gt;
+
+    &lt;p&gt;Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque &lt;a href=&#34;#0&#34;&gt;corrupti officia&lt;/a&gt; reiciendis?&lt;/p&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus illum similique, vitae consequuntur aperiam, commodi reiciendis nemo nulla repellat autem saepe adipisci, porro aliquam molestias laborum totam temporibus eaque mollitia.&lt;/p&gt;
+
+    &lt;h2&gt;Heading 2&lt;/h2&gt;
+
+    &lt;h3&gt;Heading 3&lt;/h3&gt;
+
+    &lt;p&gt;Nobis, accusamus, velit, laudantium illum minima a perferendis ducimus ratione aliquid tempore ea magnam unde voluptatem saepe impedit itaque &lt;a href=&#34;#0&#34;&gt;corrupti officia&lt;/a&gt; reiciendis?&lt;/p&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus illum similique, vitae consequuntur aperiam, commodi reiciendis nemo nulla repellat autem saepe adipisci, porro aliquam molestias laborum totam temporibus eaque mollitia.&lt;/p&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/li&gt;
+        &lt;li&gt;Culpa, perspiciatis, consectetur architecto debitis reprehenderit.&lt;/li&gt;
+        &lt;li&gt;Ratione fugit placeat eius impedit velit soluta eveniet quaerat!&lt;/li&gt;
+        &lt;li&gt;Incidunt, eaque optio fugit iusto atque necessitatibus unde debitis.&lt;/li&gt;
+        &lt;li&gt;Cum, dignissimos ad vel tempore quam quod delectus eaque quaerat!&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;figure class=&#34;media media--right&#34;&gt;
+        &lt;div class=&#34;placeholder placeholder--square&#34;&gt;
+            &lt;img src=&#34;//placehold.it/400&#34; alt=&#34;Image alt text&#34;&gt;
+        &lt;/div&gt;
+    &lt;/figure&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?&lt;/p&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!&lt;/p&gt;
+
+    &lt;p&gt;Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.&lt;/p&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!&lt;/p&gt;
+
+    &lt;p&gt;Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porroorporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.&lt;/p&gt;
+
+    &lt;figure class=&#34;media media--left&#34;&gt;
+        &lt;div class=&#34;placeholder placeholder--square&#34;&gt;
+            &lt;img src=&#34;//placehold.it/400&#34; alt=&#34;Image alt text&#34;&gt;
+        &lt;/div&gt;
+    &lt;/figure&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?&lt;/p&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!&lt;/p&gt;
+
+    &lt;p&gt;Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.&lt;/p&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!&lt;/p&gt;
+
+    &lt;p&gt;Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. rporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.&lt;/p&gt;
+
+    &lt;figure class=&#34;media media--centre&#34;&gt;
+        &lt;div class=&#34;placeholder placeholder--square&#34;&gt;
+            &lt;img src=&#34;//placehold.it/400&#34; alt=&#34;Image alt text&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;figcaption&gt;Lorem ipsum dolor sit amet&lt;/figcaption&gt;
+    &lt;/figure&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ducimus odit sunt dolore, ex porro autem, vel molestias nemo itaque velit ab! Laudantium consectetur ab labore, optio voluptates ipsam quo?&lt;/p&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio porro, suscipit nemo eum illo, culpa officia quia excepturi quod. Maxime eius perferendis magni deserunt molestiae facere temporibus dicta tempore sunt!&lt;/p&gt;
+
+    &lt;blockquote class=&#34;blockquote blockquote--centre&#34;&gt;
+        &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&lt;/p&gt;
+
+        &lt;cite class=&#34;blockquote__meta&#34;&gt;Author name here, Role/department&lt;/cite&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;Ipsa quasi labore adipisci amet quia beatae velit reiciendis, id quaerat. Explicabo dolores dignissimos sed corporis quidem aperiam vitae provident modi atque quis, nisi laboriosam! Ipsam, eos suscipit. Nostrum, porro.&lt;/p&gt;
+
+&lt;/article&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-2-0">
+
+	<h1 class="h3 sg-heading">
+		Form
+		<a class="a--subtle" href="#sg-component-1-2-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Basic text field examples:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<form>
+    <fieldset class="row row--compact flush-first--1">
+
+        <div class="column">
+            <label class="label" for="form-example-text">Text</label>
+
+            <input type="text" name="form-example-text" id="form-example-text">
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-text-value">Text (with value)</label>
+
+            <input type="text" name="form-example-text-value" id="form-example-text-value" value="A test value">
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-text-required">Text (required)</label>
+
+            <input type="text" name="form-example-text-required" id="form-example-text-required" required>
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-text-placeholder">Text (with placeholder)</label>
+
+            <input type="text" name="form-example-text-placeholder" id="form-example-text-placeholder" placeholder="A placeholder value">
+        </div>
+
+        <div class="column">
+            <span class="label">Grouped inputs</span>
+
+            <ul class="fields-list">
+                <li>
+                    <input type="text" name="form-example-text-group-1" id="form-example-text-group-1" placeholder="A placeholder value">
+                </li>
+
+                <li>
+                    <input type="text" name="form-example-text-group-2" id="form-example-text-group-2" placeholder="A placeholder value">
+                </li>
+            </ul>
+        </div>
+
+    </fieldset>
+</form>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-26">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-26" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;form&gt;
+    &lt;fieldset class=&#34;row row--compact flush-first--1&#34;&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-text&#34;&gt;Text&lt;/label&gt;
+
+            &lt;input type=&#34;text&#34; name=&#34;form-example-text&#34; id=&#34;form-example-text&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-text-value&#34;&gt;Text (with value)&lt;/label&gt;
+
+            &lt;input type=&#34;text&#34; name=&#34;form-example-text-value&#34; id=&#34;form-example-text-value&#34; value=&#34;A test value&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-text-required&#34;&gt;Text (required)&lt;/label&gt;
+
+            &lt;input type=&#34;text&#34; name=&#34;form-example-text-required&#34; id=&#34;form-example-text-required&#34; required&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-text-placeholder&#34;&gt;Text (with placeholder)&lt;/label&gt;
+
+            &lt;input type=&#34;text&#34; name=&#34;form-example-text-placeholder&#34; id=&#34;form-example-text-placeholder&#34; placeholder=&#34;A placeholder value&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;span class=&#34;label&#34;&gt;Grouped inputs&lt;/span&gt;
+
+            &lt;ul class=&#34;fields-list&#34;&gt;
+                &lt;li&gt;
+                    &lt;input type=&#34;text&#34; name=&#34;form-example-text-group-1&#34; id=&#34;form-example-text-group-1&#34; placeholder=&#34;A placeholder value&#34;&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;input type=&#34;text&#34; name=&#34;form-example-text-group-2&#34; id=&#34;form-example-text-group-2&#34; placeholder=&#34;A placeholder value&#34;&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Validation</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<form>
+    <fieldset class="row row--compact flush-first--1">
+
+        <div class="column">
+            <label class="label" for="form-example-text-disabled">Text (disabled)</label>
+
+            <input type="text" name="form-example-text-disabled" id="form-example-text-disabled" disabled>
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-text-disabled-2">Text (failed validation)</label>
+
+            <input type="text" name="form-example-text-disabled-2" id="form-example-text-disabled-2" class="is-invalid" required>
+
+            <span class="error-text">Name Required</span>
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-text-disabled-3">Text (passed validation)</label>
+
+            <input type="text" name="form-example-text-disabled-3" id="form-example-text-disabled-3" class="is-valid" required>
+        </div>
+
+    </fieldset>
+</form>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-27">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-27" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;form&gt;
+    &lt;fieldset class=&#34;row row--compact flush-first--1&#34;&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-text-disabled&#34;&gt;Text (disabled)&lt;/label&gt;
+
+            &lt;input type=&#34;text&#34; name=&#34;form-example-text-disabled&#34; id=&#34;form-example-text-disabled&#34; disabled&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-text-disabled-2&#34;&gt;Text (failed validation)&lt;/label&gt;
+
+            &lt;input type=&#34;text&#34; name=&#34;form-example-text-disabled-2&#34; id=&#34;form-example-text-disabled-2&#34; class=&#34;is-invalid&#34; required&gt;
+
+            &lt;span class=&#34;error-text&#34;&gt;Name Required&lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-text-disabled-3&#34;&gt;Text (passed validation)&lt;/label&gt;
+
+            &lt;input type=&#34;text&#34; name=&#34;form-example-text-disabled-3&#34; id=&#34;form-example-text-disabled-3&#34; class=&#34;is-valid&#34; required&gt;
+        &lt;/div&gt;
+
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Different input types:</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<form>
+    <fieldset class="row row--compact flush-first--1">
+
+        <div class="column">
+            <label class="label" for="form-example-email">Email</label>
+
+            <input type="email" name="form-example-email" id="form-example-email">
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-date">Date</label>
+
+            <input type="date" name="form-example-date" id="form-example-date">
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-search">Search</label>
+
+            <input type="search" name="form-search" id="form-search">
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-telephone">Telephone</label>
+
+            <input type="tel" name="form-example-telephone" id="form-example-telephone">
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-number">Number</label>
+
+            <input type="number" name="form-example-number" id="form-example-number">
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-textarea">Textarea</label>
+
+            <textarea name="form-example-textarea" id="form-example-textarea" rows="10"></textarea>
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-select-unstyled">Select (unstyled)</label>
+
+            <select name="form-example-select-unstyled" id="form-example-select-unstyled">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+                <optgroup label="Optgroup">
+                    <option>Option A</option>
+                    <option>Option B</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-select-styled">Select (styled, with custom arrow)</label>
+
+            <div class="select">
+                <select name="form-example-select-styled" id="form-example-select-styled">
+                    <option>Option 1</option>
+                    <option>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea tempore sint adipisci maiores explicabo obcaecati ipsa ex magnam, nostrum, quasi dolor nihil ipsam quaerat vitae saepe alias tempora, veritatis similique!</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                    <optgroup label="Optgroup">
+                        <option>Option A</option>
+                        <option>Option B</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+        <div class="column">
+            <button type="reset" class="button">RESET</button>
+        </div>
+
+        <div class="column">
+            <label class="label" for="form-example-select-multiple">Select (multiple)</label>
+
+            <select name="form-example-select-multiple" id="form-example-select-multiple" multiple="multiple" size="5" class="valid">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+                <option>Option 6</option>
+                <option>Option 7</option>
+                <option>Option 8</option>
+                <option>Option 9</option>
+                <option>Option 10</option>
+            </select>
+        </div>
+
+        <div class="column">
+            <span class="label">Checkbox List</span>
+
+            <ul class="fields-list-inline">
+                <li>
+                    <input id="form-example-checkbox-1b" type="checkbox" class="checkbox" checked>
+                    <label for="form-example-checkbox-1b">Option 1</label>
+                </li>
+
+                <li>
+                    <input id="form-example-checkbox-2b" type="checkbox" class="checkbox">
+                    <label for="form-example-checkbox-2b">Option 2</label>
+                </li>
+
+                <li>
+                    <input id="form-example-checkbox-3b" type="checkbox" class="checkbox" class="is-invalid">
+                    <label for="form-example-checkbox-3b">Option 3 error</label>
+                </li>
+
+                <li>
+                    <input id="form-example-checkbox-4b" type="checkbox" class="checkbox" disabled>
+                    <label for="form-example-checkbox-4b">Option Disabled</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <span class="label">Radio List</span>
+
+            <ul class="fields-list">
+                <li>
+                    <input id="form-example-radio-1" name="radio" type="radio" class="radio" checked>
+                    <label for="form-example-radio-1">Option 1</label>
+                </li>
+
+                <li>
+                    <input id="form-example-radio-2" name="radio" type="radio" class="radio">
+                    <label for="form-example-radio-2">Option 2</label>
+                </li>
+
+                <li>
+                    <input id="form-example-radio-3" name="radio" type="radio" class="radio" class="is-invalid">
+                    <label for="form-example-radio-3">Option 3 error</label>
+                </li>
+
+                <li>
+                    <input id="form-example-radio-4" name="radio" type="radio" class="radio" disabled>
+                    <label for="form-example-radio-4">Option Disabled</label>
+                </li>
+            </ul>
+        </div>
+
+    </fieldset>
+</form>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-28">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-28" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;form&gt;
+    &lt;fieldset class=&#34;row row--compact flush-first--1&#34;&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-email&#34;&gt;Email&lt;/label&gt;
+
+            &lt;input type=&#34;email&#34; name=&#34;form-example-email&#34; id=&#34;form-example-email&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-date&#34;&gt;Date&lt;/label&gt;
+
+            &lt;input type=&#34;date&#34; name=&#34;form-example-date&#34; id=&#34;form-example-date&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-search&#34;&gt;Search&lt;/label&gt;
+
+            &lt;input type=&#34;search&#34; name=&#34;form-search&#34; id=&#34;form-search&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-telephone&#34;&gt;Telephone&lt;/label&gt;
+
+            &lt;input type=&#34;tel&#34; name=&#34;form-example-telephone&#34; id=&#34;form-example-telephone&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-number&#34;&gt;Number&lt;/label&gt;
+
+            &lt;input type=&#34;number&#34; name=&#34;form-example-number&#34; id=&#34;form-example-number&#34;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-textarea&#34;&gt;Textarea&lt;/label&gt;
+
+            &lt;textarea name=&#34;form-example-textarea&#34; id=&#34;form-example-textarea&#34; rows=&#34;10&#34;&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-select-unstyled&#34;&gt;Select (unstyled)&lt;/label&gt;
+
+            &lt;select name=&#34;form-example-select-unstyled&#34; id=&#34;form-example-select-unstyled&#34;&gt;
+                &lt;option&gt;Option 1&lt;/option&gt;
+                &lt;option&gt;Option 2&lt;/option&gt;
+                &lt;option&gt;Option 3&lt;/option&gt;
+                &lt;option&gt;Option 4&lt;/option&gt;
+                &lt;option&gt;Option 5&lt;/option&gt;
+                &lt;optgroup label=&#34;Optgroup&#34;&gt;
+                    &lt;option&gt;Option A&lt;/option&gt;
+                    &lt;option&gt;Option B&lt;/option&gt;
+                &lt;/optgroup&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-select-styled&#34;&gt;Select (styled, with custom arrow)&lt;/label&gt;
+
+            &lt;div class=&#34;select&#34;&gt;
+                &lt;select name=&#34;form-example-select-styled&#34; id=&#34;form-example-select-styled&#34;&gt;
+                    &lt;option&gt;Option 1&lt;/option&gt;
+                    &lt;option&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea tempore sint adipisci maiores explicabo obcaecati ipsa ex magnam, nostrum, quasi dolor nihil ipsam quaerat vitae saepe alias tempora, veritatis similique!&lt;/option&gt;
+                    &lt;option&gt;Option 3&lt;/option&gt;
+                    &lt;option&gt;Option 4&lt;/option&gt;
+                    &lt;option&gt;Option 5&lt;/option&gt;
+                    &lt;optgroup label=&#34;Optgroup&#34;&gt;
+                        &lt;option&gt;Option A&lt;/option&gt;
+                        &lt;option&gt;Option B&lt;/option&gt;
+                    &lt;/optgroup&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;button type=&#34;reset&#34; class=&#34;button&#34;&gt;RESET&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;label class=&#34;label&#34; for=&#34;form-example-select-multiple&#34;&gt;Select (multiple)&lt;/label&gt;
+
+            &lt;select name=&#34;form-example-select-multiple&#34; id=&#34;form-example-select-multiple&#34; multiple=&#34;multiple&#34; size=&#34;5&#34; class=&#34;valid&#34;&gt;
+                &lt;option&gt;Option 1&lt;/option&gt;
+                &lt;option&gt;Option 2&lt;/option&gt;
+                &lt;option&gt;Option 3&lt;/option&gt;
+                &lt;option&gt;Option 4&lt;/option&gt;
+                &lt;option&gt;Option 5&lt;/option&gt;
+                &lt;option&gt;Option 6&lt;/option&gt;
+                &lt;option&gt;Option 7&lt;/option&gt;
+                &lt;option&gt;Option 8&lt;/option&gt;
+                &lt;option&gt;Option 9&lt;/option&gt;
+                &lt;option&gt;Option 10&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;span class=&#34;label&#34;&gt;Checkbox List&lt;/span&gt;
+
+            &lt;ul class=&#34;fields-list-inline&#34;&gt;
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-checkbox-1b&#34; type=&#34;checkbox&#34; class=&#34;checkbox&#34; checked&gt;
+                    &lt;label for=&#34;form-example-checkbox-1b&#34;&gt;Option 1&lt;/label&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-checkbox-2b&#34; type=&#34;checkbox&#34; class=&#34;checkbox&#34;&gt;
+                    &lt;label for=&#34;form-example-checkbox-2b&#34;&gt;Option 2&lt;/label&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-checkbox-3b&#34; type=&#34;checkbox&#34; class=&#34;checkbox&#34; class=&#34;is-invalid&#34;&gt;
+                    &lt;label for=&#34;form-example-checkbox-3b&#34;&gt;Option 3 error&lt;/label&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-checkbox-4b&#34; type=&#34;checkbox&#34; class=&#34;checkbox&#34; disabled&gt;
+                    &lt;label for=&#34;form-example-checkbox-4b&#34;&gt;Option Disabled&lt;/label&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;column&#34;&gt;
+            &lt;span class=&#34;label&#34;&gt;Radio List&lt;/span&gt;
+
+            &lt;ul class=&#34;fields-list&#34;&gt;
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-radio-1&#34; name=&#34;radio&#34; type=&#34;radio&#34; class=&#34;radio&#34; checked&gt;
+                    &lt;label for=&#34;form-example-radio-1&#34;&gt;Option 1&lt;/label&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-radio-2&#34; name=&#34;radio&#34; type=&#34;radio&#34; class=&#34;radio&#34;&gt;
+                    &lt;label for=&#34;form-example-radio-2&#34;&gt;Option 2&lt;/label&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-radio-3&#34; name=&#34;radio&#34; type=&#34;radio&#34; class=&#34;radio&#34; class=&#34;is-invalid&#34;&gt;
+                    &lt;label for=&#34;form-example-radio-3&#34;&gt;Option 3 error&lt;/label&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;input id=&#34;form-example-radio-4&#34; name=&#34;radio&#34; type=&#34;radio&#34; class=&#34;radio&#34; disabled&gt;
+                    &lt;label for=&#34;form-example-radio-4&#34;&gt;Option Disabled&lt;/label&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-3-0">
+
+	<h1 class="h3 sg-heading">
+		Inline Children
+		<a class="a--subtle" href="#sg-component-1-3-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Simple classes for making the direct children of an element either <code>display: inline / inline-block;</code></p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="row">
+
+    <div class="column">
+        <div class="inline-children">
+            <div>Child item</div>
+            <div>Child item</div>
+            <div>Child item</div>
+            <div>Child item</div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="inline-children--block">
+            <div>Child item</div>
+            <div>Child item</div>
+            <div>Child item</div>
+            <div>Child item</div>
+        </div>
+    </div>
+
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-29">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-29" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;row&#34;&gt;
+
+    &lt;div class=&#34;column&#34;&gt;
+        &lt;div class=&#34;inline-children&#34;&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&#34;column&#34;&gt;
+        &lt;div class=&#34;inline-children--block&#34;&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+            &lt;div&gt;Child item&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-4-0">
+
+	<h1 class="h3 sg-heading">
+		Media
+		<a class="a--subtle" href="#sg-component-1-4-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="media">
+    <div class="placeholder">
+        <img src="//placehold.it/1600x900" alt="Always specify alt text">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-30">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-30" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;media&#34;&gt;
+    &lt;div class=&#34;placeholder&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1600x900&#34; alt=&#34;Always specify alt text&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="media media--left">
+    <div class="placeholder">
+        <img src="//placehold.it/1600x900" alt="Always specify alt text">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-31">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-31" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;media media--left&#34;&gt;
+    &lt;div class=&#34;placeholder&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1600x900&#34; alt=&#34;Always specify alt text&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="media media--right">
+    <div class="placeholder">
+        <img src="//placehold.it/1600x900" alt="Always specify alt text">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-32">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-32" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;media media--right&#34;&gt;
+    &lt;div class=&#34;placeholder&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1600x900&#34; alt=&#34;Always specify alt text&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="media media--centre">
+    <div class="placeholder">
+        <img src="//placehold.it/1600x900" alt="Always specify alt text">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-33">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-33" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;media media--centre&#34;&gt;
+    &lt;div class=&#34;placeholder&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1600x900&#34; alt=&#34;Always specify alt text&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-5-0">
+
+	<h1 class="h3 sg-heading">
+		Pagination
+		<a class="a--subtle" href="#sg-component-1-5-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="pagination">
+    <ol>
+        <li class="jump jump--first jump--disabled">
+            <a href="#0">First</a>
+        </li><!--
+        --><li class="jump jump--prev jump--disabled">
+            <a href="#0">Prev</a>
+        </li><!--
+        --><li class="page page--current">
+            <a href="#0">1</a>
+        </li><!--
+        --><li class="page">
+            <a href="#0">2</a>
+        </li><!--
+        --><li class="page">
+            <a href="#0">3</a>
+        </li><!--
+        --><li class="gap">
+            <span>&hellip;</span>
+        </li><!--
+        --><li class="page page--end">
+            <a href="#0">32</a>
+        </li><!--
+        --><li class="page page--end">
+            <a href="#0">33</a>
+        </li><!--
+        --><li class="jump jump--next">
+            <a href="#0">Next</a>
+        </li><!--
+        --><li class="jump jump--last">
+            <a href="#0">Last</a>
+        </li>
+    </ol>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-34">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-34" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;pagination&#34;&gt;
+    &lt;ol&gt;
+        &lt;li class=&#34;jump jump--first jump--disabled&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;First&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;jump jump--prev jump--disabled&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;Prev&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;page page--current&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;1&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;page&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;2&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;page&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;3&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;gap&#34;&gt;
+            &lt;span&gt;&amp;hellip;&lt;/span&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;page page--end&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;32&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;page page--end&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;33&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;jump jump--next&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;Next&lt;/a&gt;
+        &lt;/li&gt;&lt;!--
+        --&gt;&lt;li class=&#34;jump jump--last&#34;&gt;
+            &lt;a href=&#34;#0&#34;&gt;Last&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-6-0">
+
+	<h1 class="h3 sg-heading">
+		Placeholder
+		<a class="a--subtle" href="#sg-component-1-6-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Placeholder is useful for reserving a set space/size on a page, so the content flow doesn&#39;t change as images load in.</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div style="max-width: 35em">
+    <div class="placeholder">
+        <img src="//placehold.it/1600x900" alt="">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-35">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-35" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div style=&#34;max-width: 35em&#34;&gt;
+    &lt;div class=&#34;placeholder&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1600x900&#34; alt=&#34;&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div style="max-width: 35em">
+    <div class="placeholder placeholder--square">
+        <img src="//placehold.it/1600x1600" alt="">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-36">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-36" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div style=&#34;max-width: 35em&#34;&gt;
+    &lt;div class=&#34;placeholder placeholder--square&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1600x1600&#34; alt=&#34;&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div style="max-width: 35em">
+    <div class="placeholder placeholder--landscape">
+        <img src="//placehold.it/1600x1200" alt="">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-37">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-37" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div style=&#34;max-width: 35em&#34;&gt;
+    &lt;div class=&#34;placeholder placeholder--landscape&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1600x1200&#34; alt=&#34;&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div style="max-width: 35em">
+    <div class="placeholder placeholder--portrait">
+        <img src="//placehold.it/1200x1600" alt="">
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-38">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-38" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div style=&#34;max-width: 35em&#34;&gt;
+    &lt;div class=&#34;placeholder placeholder--portrait&#34;&gt;
+        &lt;img src=&#34;//placehold.it/1200x1600&#34; alt=&#34;&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="media">
+    <div class="placeholder">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5wO91G9fBMc" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-39">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-39" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;media&#34;&gt;
+    &lt;div class=&#34;placeholder&#34;&gt;
+        &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/5wO91G9fBMc&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-1-7-0">
+
+	<h1 class="h3 sg-heading">
+		Reveal
+		<a class="a--subtle" href="#sg-component-1-7-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<h2 id="toggle">Toggle</h2>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="reveal">
+    <input class="vh reveal__toggle" type="checkbox" id="target-1" value="" tabindex="-1">
+    <label class="a reveal__label" for="target-1">Click to toggle</label>
+    <div class="reveal__wrapper">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-40">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-40" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;reveal&#34;&gt;
+    &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;checkbox&#34; id=&#34;target-1&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+    &lt;label class=&#34;a reveal__label&#34; for=&#34;target-1&#34;&gt;Click to toggle&lt;/label&gt;
+    &lt;div class=&#34;reveal__wrapper&#34;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<h2 id="show">Show</h2>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="reveal reveal--once">
+    <input class="vh reveal__toggle" type="checkbox" id="target-2" value="" tabindex="-1">
+    <label class="a reveal__label" for="target-2">Click to show</label>
+    <div class="reveal__wrapper">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-41">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-41" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;reveal reveal--once&#34;&gt;
+    &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;checkbox&#34; id=&#34;target-2&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+    &lt;label class=&#34;a reveal__label&#34; for=&#34;target-2&#34;&gt;Click to show&lt;/label&gt;
+    &lt;div class=&#34;reveal__wrapper&#34;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<h2 id="show-more">Show more</h2>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+    <span class="reveal reveal--inline">
+        <input class="vh reveal__toggle" type="checkbox" id="more" value="" tabindex="-1">
+        <span class="reveal__wrapper">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </span>
+        <label class="a reveal__label" for="more">Show more</label>
+    </span>
+</p>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-42">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-42" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+    &lt;span class=&#34;reveal reveal--inline&#34;&gt;
+        &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;checkbox&#34; id=&#34;more&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;span class=&#34;reveal__wrapper&#34;&gt;
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        &lt;/span&gt;
+        &lt;label class=&#34;a reveal__label&#34; for=&#34;more&#34;&gt;Show more&lt;/label&gt;
+    &lt;/span&gt;
+&lt;/p&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<h2 id="accordion">Accordion</h2>
+<h3 id="expand-any">Expand Any</h3>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<ul>
+    <li class="reveal">
+        <input class="vh reveal__toggle" type="checkbox" id="faq-2-1" value="" tabindex="-1">
+        <label class="a reveal__label" for="faq-2-1">Question 1</label>
+        <div class="reveal__wrapper">
+            <p>Answer 1</p>
+        </div>
+    </li>
+    <li class="reveal">
+        <input class="vh reveal__toggle" type="checkbox" id="faq-2-2" value="" tabindex="-1">
+        <label class="a reveal__label" for="faq-2-2">Question 2</label>
+        <div class="reveal__wrapper">
+            <p>Answer 2</p>
+        </div>
+    </li>
+    <li class="reveal">
+        <input class="vh reveal__toggle" type="checkbox" id="faq-2-3" value="" tabindex="-1">
+        <label class="a reveal__label" for="faq-2-3">Question 3</label>
+        <div class="reveal__wrapper">
+            <p>Answer 3</p>
+        </div>
+    </li>
+</ul>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-43">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-43" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;ul&gt;
+    &lt;li class=&#34;reveal&#34;&gt;
+        &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;checkbox&#34; id=&#34;faq-2-1&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;label class=&#34;a reveal__label&#34; for=&#34;faq-2-1&#34;&gt;Question 1&lt;/label&gt;
+        &lt;div class=&#34;reveal__wrapper&#34;&gt;
+            &lt;p&gt;Answer 1&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&#34;reveal&#34;&gt;
+        &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;checkbox&#34; id=&#34;faq-2-2&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;label class=&#34;a reveal__label&#34; for=&#34;faq-2-2&#34;&gt;Question 2&lt;/label&gt;
+        &lt;div class=&#34;reveal__wrapper&#34;&gt;
+            &lt;p&gt;Answer 2&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&#34;reveal&#34;&gt;
+        &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;checkbox&#34; id=&#34;faq-2-3&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;label class=&#34;a reveal__label&#34; for=&#34;faq-2-3&#34;&gt;Question 3&lt;/label&gt;
+        &lt;div class=&#34;reveal__wrapper&#34;&gt;
+            &lt;p&gt;Answer 3&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<h3 id="expand-single">Expand Single</h3>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<ul>
+    <li class="reveal">
+        <input class="vh reveal__toggle" type="radio" id="faq-1" name="faq" value="" tabindex="-1">
+        <label class="a reveal__label" for="faq-1">Question 1</label>
+        <div class="reveal__wrapper">
+            <p>Answer 1</p>
+        </div>
+    </li>
+    <li class="reveal">
+        <input class="vh reveal__toggle" type="radio" id="faq-2" name="faq" value="" tabindex="-1">
+        <label class="a reveal__label" for="faq-2">Question 2</label>
+        <div class="reveal__wrapper">
+            <p>Answer 2</p>
+        </div>
+    </li>
+    <li class="reveal">
+        <input class="vh reveal__toggle" type="radio" id="faq-3" name="faq" value="" tabindex="-1">
+        <label class="a reveal__label" for="faq-3">Question 3</label>
+        <div class="reveal__wrapper">
+            <p>Answer 3</p>
+        </div>
+    </li>
+</ul>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-44">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-44" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;ul&gt;
+    &lt;li class=&#34;reveal&#34;&gt;
+        &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;radio&#34; id=&#34;faq-1&#34; name=&#34;faq&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;label class=&#34;a reveal__label&#34; for=&#34;faq-1&#34;&gt;Question 1&lt;/label&gt;
+        &lt;div class=&#34;reveal__wrapper&#34;&gt;
+            &lt;p&gt;Answer 1&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&#34;reveal&#34;&gt;
+        &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;radio&#34; id=&#34;faq-2&#34; name=&#34;faq&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;label class=&#34;a reveal__label&#34; for=&#34;faq-2&#34;&gt;Question 2&lt;/label&gt;
+        &lt;div class=&#34;reveal__wrapper&#34;&gt;
+            &lt;p&gt;Answer 2&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&#34;reveal&#34;&gt;
+        &lt;input class=&#34;vh reveal__toggle&#34; type=&#34;radio&#34; id=&#34;faq-3&#34; name=&#34;faq&#34; value=&#34;&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;label class=&#34;a reveal__label&#34; for=&#34;faq-3&#34;&gt;Question 3&lt;/label&gt;
+        &lt;div class=&#34;reveal__wrapper&#34;&gt;
+            &lt;p&gt;Answer 3&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+
+		
+
+			</section>
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<section>
+
+				<h1 class="h2 sg-push">Utility</h1>
+
+		
+
+		
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-2-0-0">
+
+	<h1 class="h3 sg-heading">
+		Flush First
+		<a class="a--subtle" href="#sg-component-2-0-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Since we employ a top-left margin in most instances, the flush-first utility is a simple way of removing the <code>margin-top</code> property from the first N children at certain breakpoints.</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="example-grid">
+    <h2 class="h5">Flush first 2 (desktop)</h2>
+    <div class="sg-flush-test flush-first--desktop-2">
+        <div><span>Child 1</span></div>
+        <div><span>Child 2</span></div>
+        <div><span>Child 3</span></div>
+        <div><span>Child 4</span></div>
+    </div>
+    <h2 class="h5">Flush first 2 (phone), then 3 (tablet)</h2>
+    <div class="sg-flush-test flush-first--phone-2 flush-first--tablet-3">
+        <div><span>Child 1</span></div>
+        <div><span>Child 2</span></div>
+        <div><span>Child 3</span></div>
+        <div><span>Child 4</span></div>
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-45">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-45" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;example-grid&#34;&gt;
+    &lt;h2 class=&#34;h5&#34;&gt;Flush first 2 (desktop)&lt;/h2&gt;
+    &lt;div class=&#34;sg-flush-test flush-first--desktop-2&#34;&gt;
+        &lt;div&gt;&lt;span&gt;Child 1&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;span&gt;Child 2&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;span&gt;Child 3&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;span&gt;Child 4&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h2 class=&#34;h5&#34;&gt;Flush first 2 (phone), then 3 (tablet)&lt;/h2&gt;
+    &lt;div class=&#34;sg-flush-test flush-first--phone-2 flush-first--tablet-3&#34;&gt;
+        &lt;div&gt;&lt;span&gt;Child 1&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;span&gt;Child 2&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;span&gt;Child 3&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;span&gt;Child 4&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-2-1-0">
+
+	<h1 class="h3 sg-heading">
+		Visible
+		<a class="a--subtle" href="#sg-component-2-1-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>A div that&#39;s hidden on mobile, and appears at tablet</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="hidden visible--tablet sg-panel"><code>hidden--tablet visible--desktop</code></div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-46">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-46" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;hidden visible--tablet sg-panel&#34;&gt;&lt;code&gt;hidden--tablet visible--desktop&lt;/code&gt;&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>A div that&#39;s visible on mobile, hidden at tablet, and visible again at desktop</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="hidden--tablet visible--desktop sg-panel"><code>hidden--tablet visible--desktop</code></div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-47">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-47" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;hidden--tablet visible--desktop sg-panel&#34;&gt;&lt;code&gt;hidden--tablet visible--desktop&lt;/code&gt;&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+<p>Visible classes can also be inline and inline-block. Just use classes such as <code>visible-inline-block--tablet</code>.</p>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+		
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-2-2-0-0">
+
+	<h1 class="h3 sg-heading">
+		Block Grid
+		<a class="a--subtle" href="#sg-component-2-2-0-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Apply equal width to child elements.</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="sg-example-grid">
+    <div class="block-grid block-grid--4 block-grid--tablet-5 block-grid--tablet-wide-6 block-grid--desktop-7 block-grid--desktop-8">
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+        <div class="sg-panel"><span>Item</span></div>
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-48">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-48" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;sg-example-grid&#34;&gt;
+    &lt;div class=&#34;block-grid block-grid--4 block-grid--tablet-5 block-grid--tablet-wide-6 block-grid--desktop-7 block-grid--desktop-8&#34;&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;sg-panel&#34;&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+	
+
+		
+
+			<article class="sg-push" id="sg-component-2-2-1-0">
+
+	<h1 class="h3 sg-heading">
+		Columns
+		<a class="a--subtle" href="#sg-component-2-2-1-0">#</a>
+	</h1>
+
+	<div class="sg-component">
+
+		<p>Quickly build complex layouts.</p>
+<div class="sg-example">
+	<div class="sg-example__preview">
+		<div class="sg-example-grid">
+    <div class="row flush-first--1 flush-first--tablet-2">
+        <div class="column width--tablet-12"><span class="sg-panel">12 (tablet)</span></div>
+        <div class="column width--tablet-12"><span class="sg-panel">12 (tablet)</span></div>
+    </div>
+    <div class="row">
+        <div class="column width--8"><span class="sg-panel">8</span></div>
+        <div class="column width--8"><span class="sg-panel">8</span></div>
+        <div class="column width--8"><span class="sg-panel">8</span></div>
+    </div>
+    <div class="row">
+        <div class="column width--6"><span class="sg-panel">6</span></div>
+        <div class="column width--6"><span class="sg-panel">6</span></div>
+        <div class="column width--6"><span class="sg-panel">6</span></div>
+        <div class="column width--6"><span class="sg-panel">6</span></div>
+    </div>
+    <div class="row">
+        <div class="column width--4"><span class="sg-panel">4</span></div>
+        <div class="column width--4 push--4"><span class="sg-panel">4 (Push 4)</span></div>
+        <div class="column width--4 push--4"><span class="sg-panel">4 (Push 4)</span></div>
+        <div class="column width--4 push--8"><span class="sg-panel">4 (Push 8)</span></div>
+    </div>
+    <div class="row">
+        <div class="column width--10 push--13"><span class="sg-panel">10 (Push 13)</span></div>
+        <div class="column width--10 pull--9"><span class="sg-panel">10 (Pull 9)</span></div>
+    </div>
+    <div class="row">
+        <div class="column width--20 push--2 width--tablet-10 push--tablet-7"><span class="sg-panel">Responsive width, push and pull</span></div>
+    </div>
+</div>
+		<div class="sg-example__button">
+			<label class="button button--small reveal__label" for="example-49">View Source</label>
+		</div>
+	</div>
+	<input class="vh reveal__toggle" type="checkbox" id="example-49" value="" tabindex="-1">
+	<div class="reveal__wrapper">
+		<div class="sg-example__source">
+			<pre><code class="html">&lt;div class=&#34;sg-example-grid&#34;&gt;
+    &lt;div class=&#34;row flush-first--1 flush-first--tablet-2&#34;&gt;
+        &lt;div class=&#34;column width--tablet-12&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;12 (tablet)&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--tablet-12&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;12 (tablet)&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;row&#34;&gt;
+        &lt;div class=&#34;column width--8&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;8&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--8&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;8&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--8&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;8&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;row&#34;&gt;
+        &lt;div class=&#34;column width--6&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;6&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--6&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;6&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--6&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;6&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--6&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;6&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;row&#34;&gt;
+        &lt;div class=&#34;column width--4&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;4&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--4 push--4&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;4 (Push 4)&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--4 push--4&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;4 (Push 4)&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--4 push--8&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;4 (Push 8)&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;row&#34;&gt;
+        &lt;div class=&#34;column width--10 push--13&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;10 (Push 13)&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&#34;column width--10 pull--9&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;10 (Pull 9)&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;row&#34;&gt;
+        &lt;div class=&#34;column width--20 push--2 width--tablet-10 push--tablet-7&#34;&gt;&lt;span class=&#34;sg-panel&#34;&gt;Responsive width, push and pull&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+</article>
+
+
+		
+
+	
+
+
+
+
+		
+
+	
+
+
+
+
+		
+
+			</section>
+
+		
+
+	
+
+
+
+
+			</section>
+
+		</div>
+
+	</main>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/assets/static/js/jquery.min.js"><\/script>')</script>
+	<script src="/assets/js/site.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+
+</body>
+</html>
