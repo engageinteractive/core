@@ -3,8 +3,7 @@
 Simple classes for making the direct children of an element either `display: inline / inline-block;`
 
 ```
-<div class="row">
-
+<div class="row flush-first--1">
 	<div class="column">
 		<div class="inline-children">
 			<div>Child item</div>
@@ -22,7 +21,6 @@ Simple classes for making the direct children of an element either `display: inl
 			<div>Child item</div>
 		</div>
 	</div>
-
 </div>
 ```
 
