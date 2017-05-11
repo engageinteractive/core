@@ -44,7 +44,7 @@ Extended quotations, with support for citation:
 		font-size: $p--medium;
 		line-height: $lh--large;
 
-		@include mq('tablet-small') {
+		@include mq(tablet-small) {
 			font-size: $p--large;
 		}
 	}
@@ -54,7 +54,7 @@ Extended quotations, with support for citation:
 		font-size: $p--small;
 		margin-top: $rel-spacing-unit--small;
 
-		@include mq('tablet-small') {
+		@include mq(tablet-small) {
 			font-size: $p;
 		}
 	}

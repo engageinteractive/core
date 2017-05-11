@@ -1,47 +1,143 @@
 /*
 
-	Media Queries
+	Media Query mixin
 
-	used for outputting content either between media query tags
+	See https://github.com/sass-mq/sass-mq/ for original full version.
 
-	example: basic usage
+	@example scss
+	 .element {
+	   @include mq($from: mobile) {
+		 color: red;
+	   }
 
-	.element {
-		width: 50%;
+	   @include mq($to: tablet) {
+		 color: blue;
+	   }
 
-		@include mq('tablet-small') {
-			width: 20%;
-		}
-	}
+	   @include mq(mobile, tablet) {
+		 color: green;
+	   }
 
-	example: using max-width
+	   @include mq($from: tablet, $and: '(orientation: landscape)') {
+		 color: teal;
+	   }
 
-	.element {
-		width: 50%;
+	   @include mq(em(950px)) {
+		 color: hotpink;
+	   }
 
-		@include mq('tablet-small', 'max') {
-			width: 20%;
-		}
-	}
+	   @include mq(em(950px), $media-feature: height) {
+		 color: hotpink;
+	   }
+
+	   @include mq(tablet, $media-type: screen) {
+		 color: hotpink;
+	   }
+
+	   // Advanced use:
+	   $custom-breakpoints: (L: 900px, XL: 1200px);
+	   @include mq(L, $bp: $custom-breakpoints) {
+		 color: hotpink;
+	   }
+	 }
 
 */
 
-@mixin mq($size, $type: min, $property: width) {
+@mixin mq(
+	$from: false,
+	$to: false,
+	$and: false,
+	$media-feature: width,
+	$media-type: all,
+	$bp: $breakpoints
+) {
+	$min-width: 0;
+	$max-width: 0;
+	$media-query: '';
 
-	@if map_has_key($breakpoints, $size) {
-		$size: map_get($breakpoints, $size);
+	// From: this breakpoint (inclusive)
+	@if $from {
+		@if type-of($from) == number {
+			$min-width: $from;
+		} @else {
+			$min-width: map_get($bp, $from);
+		}
 	}
 
-	@if $type == max {
-		$negative: if($em-media-queries, 0.01em, 1px);
-		$size: $size - $negative;
+	// Until: that breakpoint (exclusive)
+	@if $to {
+		@if type-of($to) == number {
+			$max-width: $to;
+		} @else {
+			$negative: if($em-media-queries, 0.01em, 1px);
+			$max-width: map_get($bp, $to) - $negative;
+		}
 	}
 
-	@media only screen and (#{$type}-#{$property}: $size) {
+	@if $media-feature {
+		@if $min-width != 0 { $media-query: '#{$media-query} and (min-#{$media-feature}: #{$min-width})'; }
+		@if $max-width != 0 { $media-query: '#{$media-query} and (max-#{$media-feature}: #{$max-width})'; }
+	}
+
+	@if $and {
+		$media-query: '#{$media-query} and #{$and}';
+	}
+
+	// Remove unnecessary media query prefix 'all and '
+	@if ($media-type == 'all' and $media-query != '') {
+		$media-type: '';
+		$media-query: str-slice(unquote($media-query), 6);
+	}
+
+	@media #{$media-type + $media-query} {
 		@content;
 	}
-
 }
+
+// /*
+
+// 	Media Queries
+
+// 	used for outputting content either between media query tags
+
+// 	example: basic usage
+
+// 	.element {
+// 		width: 50%;
+
+// 		@include mq(tablet-small) {
+// 			width: 20%;
+// 		}
+// 	}
+
+// 	example: using max-width
+
+// 	.element {
+// 		width: 50%;
+
+// 		@include mq(tablet-small max) {
+// 			width: 20%;
+// 		}
+// 	}
+
+// */
+
+// @mixin mq($size, $type: min, $property: width) {
+
+// 	@if map_has_key($breakpoints, $size) {
+// 		$size: map_get($breakpoints, $size);
+// 	}
+
+// 	@if $type == max {
+// 		$negative: if($em-media-queries, 0.01em, 1px);
+// 		$size: $size - $negative;
+// 	}
+
+// 	@media only screen and (#{$type}-#{$property}: $size) {
+// 		@content;
+// 	}
+
+// }
 
 
 

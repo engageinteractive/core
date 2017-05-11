@@ -94,7 +94,7 @@
 		}
 	}
 
-	@include mq('tablet', 'max') {
+	@include mq($to: tablet) {
 		.jump--first,
 		.jump--last,
 		.page--end,

@@ -106,7 +106,7 @@ Other states:
 .button--large {
 	padding: rem(22px) rem(30px);
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		padding: rem(25px) rem(40px);
 		font-size: $p--medium;
 	}

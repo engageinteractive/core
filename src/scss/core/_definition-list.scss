@@ -22,14 +22,14 @@ A list of groups of terms and descriptions:
 */
 
 dl {
-	@include mq('tablet') {
+	@include mq(tablet) {
 		@include cf;
 	}
 }
 
 dt,
 dd {
-	@include mq('tablet') {
+	@include mq(tablet) {
 		float: left;
 	}
 }
@@ -43,13 +43,13 @@ dt {
 
 		+ dd {
 
-			@include mq('tablet') {
+			@include mq(tablet) {
 				margin-top: 0;
 			}
 		}
 	}
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		clear: left;
 		width: 25%;
 	}
@@ -58,7 +58,7 @@ dt {
 dd {
 	margin-top: $rel-spacing-unit--small;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		margin-top: $rel-spacing-unit;
 		padding-left: $spacing-unit--small;
 		width: 75%;
