@@ -3,15 +3,15 @@
 	position: relative;
 	max-width: $max-width;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		@include push--sides($page-gutter--tablet);
 	}
 
-	@include mq('desktop') {
+	@include mq(desktop) {
 		@include push--sides($page-gutter--desktop);
 	}
 
-	@include mq($max-width + ( em($page-gutter--desktop) * 2 )) {
+	@include mq(em($max-width + (2 * $page-gutter--desktop))) {
 		@include push--auto;
 	}
 }

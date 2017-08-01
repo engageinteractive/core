@@ -1,3 +1,44 @@
+/*---
+
+```
+<div class="pagination">
+	<ol>
+		<li class="jump jump--first jump--disabled">
+			<a href="#0">First</a>
+		</li><!--
+		--><li class="jump jump--prev jump--disabled">
+			<a href="#0">Prev</a>
+		</li><!--
+		--><li class="page page--current">
+			<a href="#0">1</a>
+		</li><!--
+		--><li class="page">
+			<a href="#0">2</a>
+		</li><!--
+		--><li class="page">
+			<a href="#0">3</a>
+		</li><!--
+		--><li class="gap">
+			<span>&hellip;</span>
+		</li><!--
+		--><li class="page page--end">
+			<a href="#0">32</a>
+		</li><!--
+		--><li class="page page--end">
+			<a href="#0">33</a>
+		</li><!--
+		--><li class="jump jump--next">
+			<a href="#0">Next</a>
+		</li><!--
+		--><li class="jump jump--last">
+			<a href="#0">Last</a>
+		</li>
+	</ol>
+</div>
+```
+
+*/
+
 .pagination {
 	line-height: 1;
 
@@ -53,7 +94,7 @@
 		}
 	}
 
-	@include mq('tablet', 'max') {
+	@include mq($to: tablet) {
 		.jump--first,
 		.jump--last,
 		.page--end,

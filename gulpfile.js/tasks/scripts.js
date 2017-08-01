@@ -1,4 +1,4 @@
-var
+const
 	config = require('../config'),
 	notification = require('../utils/notification'),
 	paths = require('../utils/paths')('scripts'),
@@ -7,6 +7,7 @@ var
 	eslint = require('gulp-eslint'),
 	filter = require('gulp-filter'),
 	gulp = require('gulp'),
+	gutil = require('gulp-util'),
 	named = require('vinyl-named'),
 	summary = require('engage-eslint-summary'),
 	webpack = require('webpack-stream'),
@@ -17,6 +18,28 @@ var
 			output: {
 				publicPath: paths.public,
 			},
+			module: {
+				loaders: [
+					{
+						loader: 'babel-loader',
+						exclude: /node_modules/,
+						query: {
+							presets: [
+								'es2015',
+							],
+						},
+					},
+					{
+						loader: 'json-loader',
+						test: /\.json$/,
+					},
+					{
+						loader: 'script-loader',
+						test: /libs/,
+						exclude: /node_modules/,
+					},
+				],
+			},
 			plugins: [
 				new webpack.webpack.optimize.UglifyJsPlugin({
 					compress: { warnings: false },
@@ -26,6 +49,7 @@ var
 					htmlWebpackPlugin: false,
 					minify: true,
 					options: [
+						'mq',
 						'setClasses',
 					],
 					'feature-detects': config.tasks.scripts.featureDetects,
@@ -43,36 +67,35 @@ var
 		},
 	},
 
-	task = function(done) {
-		var filters = {
-			custom: filter(['**/!(*.min.js)']),
-			entries: filter([paths.entries()]),
-		};
+	handler = (err, stats) => {
+		if (stats.hasErrors()) {
+			gutil.log(gutil.colors.red(stats.compilation.errors[0].error.toString()));
+		} else if (stats.hasWarnings()) {
+			gutil.log(gutil.colors.yellow(stats.compilation.warnings[0].error.toString()));
+		}
+	},
+
+	task = (done) => {
+		const filters = filter(paths.src('*'));
 
 		return gulp
-			.src(paths.src)
-			.pipe(filters.custom)
+			.src(paths.src())
 			.pipe(eslint())
-			.pipe(eslint.format(summary))
+			.pipe(eslint.format(summary({ hideErrors: true })))
 			.pipe(eslint.failOnError().on('error', notification(options.notification)))
-			.pipe(eslint.failOnError().on('error', function() { done(); }))
-			.pipe(filters.entries)
+			.pipe(eslint.failOnError().on('error', () => { done(); }))
+			.pipe(filters)
 			.pipe(named())
-			.pipe(webpack(options.webpack))
+			.pipe(webpack(options.webpack, null, handler).on('error', () => { done(); }))
 			.pipe(gulp.dest(paths.dest));
 	};
 
-gulp.task('scripts.lint', function() {
-	var filters = {
-		custom: filter(['**/!(*.min.js)']),
-	};
-
-	return gulp
-		.src(paths.src)
-		.pipe(filters.custom)
+gulp.task('scripts.lint', () => (
+	gulp
+		.src(paths.src())
 		.pipe(eslint())
-		.pipe(eslint.format());
-});
+		.pipe(eslint.format())
+));
 
 gulp.task('scripts', task);
 module.exports = task;

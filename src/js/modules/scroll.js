@@ -1,6 +1,7 @@
-var x = 0,
-	y = 0,
-	listeners = {},
+let x = 0,
+	y = 0;
+
+const listeners = {},
 	update = function(){
 
 		$.each(listeners, function(){
@@ -10,7 +11,7 @@ var x = 0,
 	},
 	onScroll = function(){
 
-		var left = document.documentElement.scrollLeft,
+		const left = document.documentElement.scrollLeft,
 			top = document.documentElement.scrollTop;
 
 		x = left === 0 ? document.body.scrollLeft : left;
@@ -42,19 +43,19 @@ $.extend($.easing, {
 /* eslint-enable */
 
 module.exports = {
-	x: function(){
+	get x(){
 		return x;
 	},
-	y: function(){
+	get y(){
 		return y;
 	},
-	addListener: function(name, listener){
+	addListener(name, listener){
 		listeners[name] = listener;
 	},
-	removeListener: function(name){
+	removeListener(name){
 		delete listeners[name];
 	},
-	animate: function(top){
+	animate(top){
 		$('body, html').animate({
 			scrollTop: top,
 		}, 500, 'easeInOutQuad');

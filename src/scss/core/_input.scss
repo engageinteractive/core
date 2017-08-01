@@ -1,3 +1,157 @@
+/*---
+
+Basic text field examples:
+
+```
+<form>
+	<fieldset class="row row--compact flush-first--1">
+
+		<div class="column">
+			<label class="label" for="form-example-text">Text</label>
+
+			<input type="text" name="form-example-text" id="form-example-text">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-text-value">Text (with value)</label>
+
+			<input type="text" name="form-example-text-value" id="form-example-text-value" value="A test value">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-text-required">Text (required)</label>
+
+			<input type="text" name="form-example-text-required" id="form-example-text-required" required>
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-text-placeholder">Text (with placeholder)</label>
+
+			<input type="text" name="form-example-text-placeholder" id="form-example-text-placeholder" placeholder="A placeholder value">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-text-disabled">Text (disabled)</label>
+
+			<input type="text" name="form-example-text-disabled" id="form-example-text-disabled" disabled>
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-text-disabled-2">Text (failed validation)</label>
+
+			<input type="text" name="form-example-text-disabled-2" id="form-example-text-disabled-2" class="is-invalid" required>
+
+			<span class="error-text">Name Required</span>
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-text-disabled-3">Text (passed validation)</label>
+
+			<input type="text" name="form-example-text-disabled-3" id="form-example-text-disabled-3" class="is-valid" required>
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-email">Email</label>
+
+			<input type="email" name="form-example-email" id="form-example-email">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-date">Date</label>
+
+			<input type="date" name="form-example-date" id="form-example-date">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-search">Search</label>
+
+			<input type="search" name="form-search" id="form-search">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-telephone">Telephone</label>
+
+			<input type="tel" name="form-example-telephone" id="form-example-telephone">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-number">Number</label>
+
+			<input type="number" name="form-example-number" id="form-example-number">
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-textarea">Textarea</label>
+
+			<textarea name="form-example-textarea" id="form-example-textarea" rows="10"></textarea>
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-select-unstyled">Select (unstyled)</label>
+
+			<select name="form-example-select-unstyled" id="form-example-select-unstyled">
+				<option>Option 1</option>
+				<option>Option 2</option>
+				<option>Option 3</option>
+				<option>Option 4</option>
+				<option>Option 5</option>
+				<optgroup label="Optgroup">
+					<option>Option A</option>
+					<option>Option B</option>
+				</optgroup>
+			</select>
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-select-styled">Select (styled, with custom arrow)</label>
+
+			<div class="select">
+				<select name="form-example-select-styled" id="form-example-select-styled">
+					<option>Option 1</option>
+					<option>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea tempore sint adipisci maiores explicabo obcaecati ipsa ex magnam, nostrum, quasi dolor nihil ipsam quaerat vitae saepe alias tempora, veritatis similique!</option>
+					<option>Option 3</option>
+					<option>Option 4</option>
+					<option>Option 5</option>
+					<optgroup label="Optgroup">
+						<option>Option A</option>
+						<option>Option B</option>
+					</optgroup>
+				</select>
+			</div>
+		</div>
+
+		<div class="column">
+			<label class="label" for="form-example-select-multiple">Select (multiple)</label>
+
+			<select name="form-example-select-multiple" id="form-example-select-multiple" multiple="multiple" size="5" class="valid">
+				<option>Option 1</option>
+				<option>Option 2</option>
+				<option>Option 3</option>
+				<option>Option 4</option>
+				<option>Option 5</option>
+				<option>Option 6</option>
+				<option>Option 7</option>
+				<option>Option 8</option>
+				<option>Option 9</option>
+				<option>Option 10</option>
+			</select>
+		</div>
+
+		<div class="column">
+			<input id="form-example-checkbox-1b" type="checkbox" class="checkbox" checked>
+			<label for="form-example-checkbox-1b">Checkbox</label>
+		</div>
+
+		<div class="column">
+			<input id="form-example-radio-1b" type="radio" class="radio" checked>
+			<label for="form-example-radio-1b">Checkbox</label>
+		</div>
+	</fieldset>
+</form>
+```
+
+*/
+
 $input-border-width: 1px;
 $input-line-height: 1.5;
 $input-padding: rem(12px);
@@ -16,9 +170,17 @@ select {
 	padding: $input-padding;
 	height: $input-height;
 
-	&.is-focused {
-		border-color: $c--blue;
-		box-shadow: 0 0 5px $c--blue;
+	&:focus {
+		border-color: $c--grey;
+
+		[data-whatinput='keyboard'] & {
+			border-color: $c--blue;
+			box-shadow: 0 0 5px $c--blue;
+		}
+	}
+
+	@include input-placeholder {
+		color: $c--grey-light;
 	}
 
 	&.is-invalid {
@@ -26,23 +188,11 @@ select {
 
 		&:focus {
 			border-color: $c--negative;
+
+			[data-whatinput='keyboard'] & {
+				box-shadow: 0 0 5px $c--negative;
+			}
 		}
-
-		&.is-focused {
-			box-shadow: 0 0 5px $c--negative;
-		}
-	}
-}
-
-input,
-textarea,
-select {
-	&:focus {
-		border-color: $c--grey;
-	}
-
-	@include input-placeholder {
-		color: $c--grey-light;
 	}
 }
 
@@ -98,9 +248,12 @@ $radio-inner-size: $checkbox-size / 2;
 		}
 	}
 
-	&.is-focused {
-		+ label::before {
-			box-shadow: 0 0 3px 1px $c--blue;
+	&:focus {
+		[data-whatinput='keyboard'] & {
+			+ label::before {
+				border-color: $c--blue;
+				box-shadow: 0 0 3px 1px $c--blue;
+			}
 		}
 	}
 

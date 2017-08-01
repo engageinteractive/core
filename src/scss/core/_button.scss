@@ -1,3 +1,59 @@
+/*---
+
+Clickable buttons:
+
+```
+<div class="button-wrapper">
+	<button class="button">Button</button>
+</div>
+
+<div class="button-wrapper">
+	<a href="#0" class="button">Button (link)</a>
+</div>
+```
+
+Alternate styles using `secondary`, `positive` and `negative` modifiers:
+
+```
+<div class="button-wrapper">
+	<button class="button button--secondary">Button: Secondary</button>
+</div>
+
+<div class="button-wrapper">
+	<button class="button button--positive">Button: Positive</button>
+</div>
+
+<div class="button-wrapper">
+	<button class="button button--negative">Button: Negative</button>
+</div>
+```
+
+And sized using `large` and `small`:
+
+```
+<div class="button-wrapper">
+	<button class="button button--large">Button: Large</button>
+</div>
+
+<div class="button-wrapper">
+	<button class="button button--small">Button: Small</button>
+</div>
+```
+
+Other states:
+
+```
+<div class="button-wrapper">
+	<button class="button" disabled>Button: Disabled</button>
+</div>
+
+<div class="button-wrapper">
+	<button>Unstyled button</button>
+</div>
+```
+
+*/
+
 // basic buttons
 
 .button {
@@ -10,8 +66,10 @@
 	position: relative;
 	text-decoration: none;
 
-	&.is-focused {
-		box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue;
+	&:focus {
+		[data-whatinput='keyboard'] & {
+			box-shadow: 0px 0px 3px $c--blue, 0px 0px 6px $c--blue, 0px 0px 9px $c--blue;
+		}
 	}
 
 	&:active {
@@ -36,18 +94,10 @@
 
 .button--positive {
 	background-color: $c--positive;
-
-	&:focus {
-		background-color: $c--positive;
-	}
 }
 
 .button--negative {
 	background-color: $c--negative;
-
-	&:focus {
-		background-color: $c--negative;
-	}
 }
 
 
@@ -56,8 +106,8 @@
 .button--large {
 	padding: rem(22px) rem(30px);
 
-	@include mq('tablet') {
-		padding: 25px 40px;
+	@include mq(tablet) {
+		padding: rem(25px) rem(40px);
 		font-size: $p--medium;
 	}
 }

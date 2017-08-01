@@ -1,8 +1,9 @@
 @import 'settings';
 @import 'utility/functions';
+@import '../variables.json';
 
 
-/*--------------------------------
+/*
 
 	Typography
 
@@ -57,7 +58,7 @@ $w--bold: 700;
 
 
 
-/*--------------------------------
+/*
 
 	Layout
 
@@ -93,16 +94,16 @@ $grid-column-gutter--desktop: $spacing-unit--large;
 // media queries and breakpoints
 // build mobile first 300+
 
-$breakpoints: (
-	'phone':        em(375px),
-	'phone-wide':   em(480px),
-	'phablet':      em(560px),
-	'tablet-small': em(640px),
-	'tablet':       em(768px),
-	'tablet-wide':  em(1024px),
-	'desktop':      em(1248px),
-	'desktop-wide': em(1440px)
-);
+$breakpoints--rem: $breakpoints;
+
+@each $name, $width in $breakpoints {
+	$breakpoints--rem: map-merge($breakpoints--rem, ($name: rem($width * 1px)));
+}
+
+@each $name, $width in $breakpoints {
+	$breakpoints: map-merge($breakpoints, ($name: em($width * 1px, $browser-default-font-size)));
+}
+
 
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
 // this is to keep unused code to a minimum
@@ -173,7 +174,7 @@ $grid-bp: (
 	)
 );
 
-$max-width: breakpoint('desktop');
+$max-width: breakpoint('desktop', true);
 
 
 // z-indexing
@@ -192,7 +193,7 @@ $z-indexes: (
 
 
 
-/*--------------------------------
+/*
 
 	Colours
 
@@ -210,7 +211,7 @@ $c--black: #1a1a1a;
 $c--grey-dark: #444;
 $c--grey: #888;
 $c--grey-light: #ddd;
-$c--grey-x-light: #F6F6F6;
+$c--grey-x-light: #fafafa;
 $c--white: #fff;
 
 
@@ -284,7 +285,7 @@ $colours: (
 
 
 
-/*--------------------------------
+/*
 
 	Easing/Timing
 

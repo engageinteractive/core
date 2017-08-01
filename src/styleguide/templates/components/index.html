@@ -1,0 +1,38 @@
+<% nodes.forEach(function(node, i) { %>
+
+	<% if (node.children.length) { %>
+
+		<% if (top) { %>
+
+			<section>
+
+				<h1 class="h2 sg-push"><%= node.filename %></h1>
+
+		<% } %>
+
+		<%- include('index.html', { nodes: node.children, parent: (parent + '-' + i), top: false }) %>
+
+		<% if (top) { %>
+
+			</section>
+
+		<% } %>
+
+	<% } else if (node.components.length) { %>
+
+		<% node.components.forEach(function(component, j) { %>
+
+			<%- include(
+				'component.html',
+				{
+					component,
+					name: component.attributes.title || node.filename,
+					slug: parent + '-' + i + '-' + j
+				}
+			) %>
+
+		<% }) %>
+
+	<% } %>
+
+<% }) %>

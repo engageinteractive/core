@@ -3,6 +3,7 @@ Homestead.yaml
 Homestead.json
 .env
 npm-debug.log
+.map
 
 # OSX
 *.DS_Store
@@ -22,3 +23,4 @@ config.rb
 # Remove these if you're working on a team project, or after development is complete
 /public/assets
 .tinypng
+yarn.lock

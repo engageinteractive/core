@@ -1,3 +1,25 @@
+/*---
+
+Basic link styles with support for other element types:
+
+```
+<a href="#0">Regular link</a>
+
+<span class="a">Faux link</span>
+
+<label class="a">Label link</label>
+```
+
+`subtle` to use inherited colour and `block` for block links:
+
+```
+<a href="#0" class="a--subtle">Subtle link</a>
+
+<a href="#0" class="a--block">Block link</a>
+```
+
+*/
+
 a,
 .a {
 	color: $c--brand-primary;

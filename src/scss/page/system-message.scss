@@ -3,7 +3,7 @@
 @import '../utility/functions';
 @import '../utility/mixins';
 @import '../utility/fonts';
-@import '../core';
+@import '../core/document';
 @import '../core/anchor';
 @import '../core/img';
 
@@ -53,7 +53,7 @@ body {
 		margin-top: $spacing-unit--small;
 		font-size: 24px;
 
-		@include mq('tablet-small') {
+		@include mq(tablet-small) {
 			margin-top: $spacing-unit;
 			font-size: 32px;
 		}
@@ -63,7 +63,7 @@ body {
 		margin-top: $spacing-unit--small;
 	}
 
-	@include mq('tablet-small') {
+	@include mq(tablet-small) {
 		position: absolute;
 		top: 50%;
 		left: 50%;

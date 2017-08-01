@@ -1,4 +1,4 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 require('require-dir')('./tasks', { recurse: true });
 

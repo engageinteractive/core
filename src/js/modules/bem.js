@@ -7,19 +7,19 @@ module.exports = {
 		loading: 'is-loading',
 	},
 
-	block: function(name){
+	block(name){
 		if( !name ){
 			throw new Error('Empty block name.');
 		}
 
 		return {
 
-			event: function(event){
-				return name + ':' + event;
+			event(event){
+				return `${name}:${event}`;
 			},
 
-			selector: function(element){
-				return '.js-' + name + (element ? ('__' + element) : '');
+			selector(element){
+				return `.js-${name}${element ? `__${element}` : ''}`;
 			},
 
 		};

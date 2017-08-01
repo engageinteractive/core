@@ -1,3 +1,25 @@
+/*---
+
+```
+<div class="breadcrumb">
+	<a href="#0">Home</a>
+
+	<svg class="icon">
+		<use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use>
+	</svg>
+
+	<a href="#0">Foo</a>
+
+	<svg class="icon">
+		<use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use>
+	</svg>
+
+	<span>Bar</span>
+</div>
+```
+
+*/
+
 .breadcrumb {
 	@include cf;
 	line-height: $lh--small;
