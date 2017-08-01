@@ -47,11 +47,11 @@ h6 {
 	font-size: $h--large;
 	line-height: 1;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		font-size: $h--x-large;
 	}
 
-	@include mq('desktop') {
+	@include mq(desktop) {
 		font-size: $h--xxx-large;
 	}
 }
@@ -59,11 +59,11 @@ h6 {
 .h2 {
 	font-size: $h--medium;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		font-size: $h--large;
 	}
 
-	@include mq('desktop') {
+	@include mq(desktop) {
 		font-size: $h--xx-large;
 	}
 }
@@ -71,11 +71,11 @@ h6 {
 .h3 {
 	font-size: $h--small;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		font-size: $h--medium;
 	}
 
-	@include mq('desktop') {
+	@include mq(desktop) {
 		font-size: $h--x-large;
 	}
 }
@@ -83,11 +83,11 @@ h6 {
 .h4 {
 	font-size: $h--x-small;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		font-size: $h--small;
 	}
 
-	@include mq('desktop') {
+	@include mq(desktop) {
 		font-size: $h--medium;
 	}
 }
@@ -95,7 +95,7 @@ h6 {
 .h5 {
 	font-size: $h--xx-small;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		font-size: $h--x-small;
 	}
 }
@@ -103,7 +103,7 @@ h6 {
 .h6 {
 	font-size: $h--xxx-small;
 
-	@include mq('tablet') {
+	@include mq(tablet) {
 		font-size: $h--xx-small;
 	}
 }
