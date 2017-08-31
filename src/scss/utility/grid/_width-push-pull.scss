@@ -5,9 +5,6 @@
 	@if $modifier != '' {
 		$modifierClass: '#{$modifier}-';
 	}
-	@else {
-		$modifier: 'base';
-	}
 
 	@for $i from 1 through $grid-column-count {
 
@@ -49,7 +46,7 @@
 
 	}
 
-	.push--#{$modifier}-0 {
+	.push--#{$modifierClass}0 {
 		left: 0;
 	}
 
