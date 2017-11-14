@@ -11,13 +11,10 @@
 
 // font stacks
 // for embedded custom fonts, list name below as normal. To generate code see example in utlity/core.scss
-
 $stack: Helvetica, Arial, sans-serif;
 $stack--heading: $stack;
 
-
 // font sizes
-
 $h--xxx-small: rem(16px);
 $h--xx-small: rem(18px);
 $h--x-small: rem(20px);
@@ -27,35 +24,28 @@ $h--large: rem(28px);
 $h--x-large: rem(36px);
 $h--xx-large: rem(48px);
 $h--xxx-large: rem(64px);
-
 $p: rem(16px);
 $p--small: rem(12px);
 $p--medium: rem(18px);
 $p--large: rem(24px);
 
 // line-height ratios
-
 $lh: 1.5;
 $lh--x-small: 1.1;
 $lh--small: 1.25;
 $lh--large: 1.75;
 
-
 // letter spacing
-
 $ls: (
 	base: -30
 );
 
-
 // weights
-
 // $w--light: 300;
 $w--normal: 400;
 // $w--semibold: 600;
 $w--bold: 700;
 // $w--heavy: 800;
-
 
 
 /*
@@ -65,35 +55,27 @@ $w--bold: 700;
 */
 
 // basic spacing units
-
 $spacing-unit: rem(30px);
 $spacing-unit--x-small: rem(10px);
 $spacing-unit--small: rem(20px);
 $spacing-unit--large: rem(40px);
 $spacing-unit--x-large: rem(60px);
-
 $rel-spacing-unit: 1em;
 $rel-spacing-unit--small: .5em;
 
-
 // page gutter
-
 $page-gutter: $spacing-unit--small;
 $page-gutter--tablet: $spacing-unit;
 $page-gutter--desktop: $spacing-unit--large;
 
-
 // grid
-
 $grid-column-count: 24;
 $grid-column-gutter: $spacing-unit--small;
 $grid-column-gutter--tablet: $spacing-unit;
 $grid-column-gutter--desktop: $spacing-unit--large;
 
-
 // media queries and breakpoints
 // build mobile first 300+
-
 $breakpoints--rem: $breakpoints;
 
 @each $name, $width in $breakpoints {
@@ -104,10 +86,8 @@ $breakpoints--rem: $breakpoints;
 	$breakpoints: map-merge($breakpoints, ($name: em($width * 1px, $browser-default-font-size)));
 }
 
-
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
 // this is to keep unused code to a minimum
-
 $grid-bp: (
 	'base': (
 		'width': (),
@@ -176,21 +156,15 @@ $grid-bp: (
 
 $max-width: breakpoint('desktop', true);
 
-
 // z-indexing
-
-/*
-ordered from high to low
-suggested naming convention would be the class/ID the z-index is going on
-*/
-
+// ordered from high to low
+// suggested naming convention would be the class/ID the z-index is going on
 $z-indexes: (
 	'outdated-browser',
 	'site-header',
 	'site-content',
 	'site-footer'
 );
-
 
 
 /*
@@ -200,13 +174,10 @@ $z-indexes: (
 */
 
 // brand colours
-
 $c--brand-primary: #fdbc00;
 $c--brand-secondary: #e74c3c;
 
-
 // greyscale
-
 $c--black: #1a1a1a;
 $c--grey-dark: #444;
 $c--grey: #888;
@@ -214,16 +185,12 @@ $c--grey-light: #ddd;
 $c--grey-x-light: #fafafa;
 $c--white: #fff;
 
-
 // other colours
-
 $c--red: #f50023;
 $c--green: #24b35d;
 $c--blue: #4D90FE;
 
-
 // social colours
-
 $c--twitter: #55acee;
 $c--facebook: #3b5998;
 $c--youtube: #bb0000;
@@ -232,22 +199,16 @@ $c--linkedin: #007bb5;
 $c--instagram: #8a3ab9; // new purple colour
 // $c--instagram: #125688; // old blue colour
 
-
 // form & message positive/negative colours
-
 $c--positive: $c--green;
 $c--negative: $c--red;
 
-
 // top level element colours
-
 $c--body-bg: $c--white;
 $c--body-colour: $c--black;
 
-
 // colour map (only use colours from the styleguide)
 // used for when looping through panel/theme styles
-
 $colours: (
 	// primary colours
 	'yellow': (
@@ -284,52 +245,51 @@ $colours: (
 );
 
 
-
 /*
 
 	Easing/Timing
 
 */
 
-//	Cubic
+// Cubic
 $ease--in-cubic: cubic-bezier(.55,.055,.675,.19);
 $ease--out-cubic: cubic-bezier(.215,.61,.355,1);
 $ease--in-out-cubic: cubic-bezier(.645,.045,.355,1);
 
-//	Circ
+// Circ
 $ease--in-circ: cubic-bezier(.6,.04,.98,.335);
 $ease--out-circ: cubic-bezier(.075,.82,.165,1);
 $ease--in-out-circ: cubic-bezier(.785,.135,.15,.86);
 
-//	Expo
+// Expo
 $ease--in-expo: cubic-bezier(.95,.05,.795,.035);
 $ease--out-expo: cubic-bezier(.19,1,.22,1);
 $ease--in-out-expo: cubic-bezier(1,0,0,1);
 
-//	Quad
+// Quad
 $ease--in-quad: cubic-bezier(.55,.085,.68,.53);
 $ease--out-quad: cubic-bezier(.25,.46,.450,.94);
 $ease--in-out-quad: cubic-bezier(.455,.03,.515,.955);
 
-//	Quart
+// Quart
 $ease--in-quart: cubic-bezier(.895,.03,.685,.22);
 $ease--out-quart: cubic-bezier(.165,.84,.44,1);
 $ease--in-out-quart: cubic-bezier(.77,0,.175,1);
 
-//	Quint
+// Quint
 $ease--in-quint: cubic-bezier(.755,.05,.855,.06);
 $ease--out-quint: cubic-bezier(.23,1,.320,1);
 $ease--in-out-quint: cubic-bezier(.86,0,.07,1);
 
-//	Sine
+// Sine
 $ease--in-sine: cubic-bezier(.47,0,.745,.715);
 $ease--out-sine: cubic-bezier(.39,.575,.565,1);
 $ease--in-out-sine: cubic-bezier(.445,.05,.55,.95);
 
-//	Back
+// Back
 $ease--in-back: cubic-bezier(.6,-.28,.735,.045);
 $ease--out-back: cubic-bezier(.175,.885,.32,1.275);
 $ease--in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
 
-//	Smooth fade
+// Smooth fade
 $ease--smooth-fade: cubic-bezier(.365,.005,.355,1);
