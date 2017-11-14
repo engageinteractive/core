@@ -9,6 +9,7 @@ const
 	importer = require('node-sass-json-importer'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
+	touch = require('gulp-touch-cmd'),
 
 	options = {
 		notification: {
@@ -27,7 +28,8 @@ const
 		.pipe(cleanCss(config.tasks.css.cleanCss))
 		.pipe(autoprefixer(config.tasks.css.autoprefixer))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.dest));
+		.pipe(gulp.dest(paths.dest))
+		.pipe(touch());
 
 gulp.task('css', task);
 module.exports = task;
