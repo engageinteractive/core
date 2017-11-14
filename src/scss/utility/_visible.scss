@@ -12,7 +12,7 @@ A div that's visible on mobile, hidden at tablet, and visible again at desktop
 <div class="hidden--tablet visible--desktop sg-panel"><code>hidden--tablet visible--desktop</code></div>
 ```
 
-Visible classes can also be inline and inline-block. Just use classes such as `visible-inline-block--tablet`.
+Visible classes can also be inline and inline-block. Just use classes such as `visible--tablet-inline-block`.
 
 */
 
@@ -22,24 +22,23 @@ Visible classes can also be inline and inline-block. Just use classes such as `v
 
 .visible {
 	@include visible;
-}
 
-.visible-inline {
-	@include visible('inline');
-}
+	&--inline {
+		@include visible('inline');
+	}
 
-.visible-inline-block {
-	@include visible('inline-block');
-}
+	&--inline-block {
+		@include visible('inline-block');
+	}
 
-.visible-td {
-	@include visible('table-cell');
+	&--td {
+		@include visible('table-cell');
+	}
 }
 
 @each $name, $min-width in $breakpoints {
 
 	@include mq($name) {
-
 		.hidden--#{$name} {
 			@include hidden;
 		}
@@ -48,18 +47,17 @@ Visible classes can also be inline and inline-block. Just use classes such as `v
 			@include visible;
 		}
 
-		.visible-inline--#{$name} {
+		.visible--#{$name}-inline {
 			@include visible('inline');
 		}
 
-		.visible-inline-block--#{$name} {
+		.visible--#{$name}-inline-block {
 			@include visible('inline-block');
 		}
 
-		.visible-td--#{$name} {
+		.visible--#{$name}-td {
 			@include visible('table-cell');
 		}
-
 	}
 
 }
