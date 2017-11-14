@@ -94,51 +94,6 @@
 	}
 }
 
-// /*
-
-// 	Media Queries
-
-// 	used for outputting content either between media query tags
-
-// 	example: basic usage
-
-// 	.element {
-// 		width: 50%;
-
-// 		@include mq(tablet-small) {
-// 			width: 20%;
-// 		}
-// 	}
-
-// 	example: using max-width
-
-// 	.element {
-// 		width: 50%;
-
-// 		@include mq(tablet-small max) {
-// 			width: 20%;
-// 		}
-// 	}
-
-// */
-
-// @mixin mq($size, $type: min, $property: width) {
-
-// 	@if map_has_key($breakpoints, $size) {
-// 		$size: map_get($breakpoints, $size);
-// 	}
-
-// 	@if $type == max {
-// 		$negative: if($em-media-queries, 0.01em, 1px);
-// 		$size: $size - $negative;
-// 	}
-
-// 	@media only screen and (#{$type}-#{$property}: $size) {
-// 		@content;
-// 	}
-
-// }
-
 
 
 /*
