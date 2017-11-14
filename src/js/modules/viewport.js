@@ -15,13 +15,13 @@ const breakpoints = {},
 		width = window.innerWidth;
 		height = window.innerHeight;
 
-		$.each(listeners, function(){
-			this(prevWidth !== width, prevHeight !== height);
+		Object.keys(listeners).forEach((name) => {
+			listeners[name](prevWidth !== width, prevHeight !== height);
 		});
 
 	};
 
-$(window).on('resize', () => {
+window.addEventListener('resize', () => {
 
 	clearTimeout(timer);
 	timer = setTimeout(update, 300);

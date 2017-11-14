@@ -2,14 +2,8 @@ let x = 0,
 	y = 0;
 
 const listeners = {},
-	update = function(){
-
-		$.each(listeners, function(){
-			this(x, y);
-		});
-
-	},
-	onScroll = function(){
+	update = () => Object.keys(listeners).forEach(name => listeners[name](x, y)),
+	onScroll = () => {
 
 		const left = document.documentElement.scrollLeft,
 			top = document.documentElement.scrollTop;
@@ -29,18 +23,9 @@ const listeners = {},
 
 	};
 
-$(window).on('scroll', onScroll);
+window.addEventListener('scroll', onScroll);
 
 onScroll();
-
-/* eslint-disable */
-$.extend($.easing, {
-	easeInOutQuad: function (x, t, b, c, d) {
-		if ((t/=d/2) < 1) return c/2*t*t + b;
-		return -c/2 * ((--t)*(t-2) - 1) + b;
-	},
-});
-/* eslint-enable */
 
 module.exports = {
 	get x(){
@@ -54,10 +39,5 @@ module.exports = {
 	},
 	removeListener(name){
 		delete listeners[name];
-	},
-	animate(top){
-		$('body, html').animate({
-			scrollTop: top,
-		}, 500, 'easeInOutQuad');
 	},
 };
