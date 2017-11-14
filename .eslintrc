@@ -11,6 +11,7 @@
     "consistent-return": "warn",
     "curly": "warn",
     "func-names": "off",
+    "global-require": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "indent": [

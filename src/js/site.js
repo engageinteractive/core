@@ -1,5 +1,9 @@
-// require('./plugins/loadImg');
+document.addEventListener('DOMContentLoaded', function(){
 
-require('what-input');
-require('./modules/links');
-require('./modules/polyfills');
+	// require('./plugins/loadImg');
+
+	require('what-input');
+	require('./modules/links');
+	require('./modules/polyfills');
+
+});
