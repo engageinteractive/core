@@ -119,7 +119,7 @@
         },
         "notify": false,
         "open": false,
-        "proxy": "front-end-baseplate.dev.com",
+        "proxy": "core.dev.com",
         "port": 5757,
         "files": [
           "public/**/*.{html,php}",
