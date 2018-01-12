@@ -1,10 +1,12 @@
-$(document.body).on('click', 'a.external, a[rel="external"], a[href$=".pdf"]', function(e){
+const selector = '.external, [rel="external"], [href$=".pdf"]';
 
-	if( e.which !== 2 ){
-
-		window.open($(this).attr('href'));
-		e.preventDefault();
-
+document.body.addEventListener('click', (e) => {
+	if (e.target.tagName !== 'A' || !e.target.matches(selector)) {
+		return;
 	}
 
+	// TODO: e.which !== 2 check
+
+	e.preventDefault();
+	window.open(e.target.href);
 });
