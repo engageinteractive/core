@@ -1,49 +1,28 @@
-// $('div.foo').loadImg();
-// <div data-img="http://placehold.it/100x100">
+import preload from './preload';
 
-require('./preload');
+const loadImg = (el) => {
+	const { insert, replace, img: src } = el.dataset;
 
-$.fn.loadImg = function(){
+	if (!insert) {
+		el.style.backgroundImage = `url(${src})`;
+		return;
+	}
 
-	this.each(function(){
+	preload({
+		src,
+		ready: () => {
+			const img = document.createElement('img');
 
-		let $img = null;
+			if (replace) {
+				while (el.firstChild) {
+					el.removeChild(el.firstChild);
+				}
+			}
 
-		const $this = $(this),
-			data = $this.data(),
-			src = data.img;
-
-		if( data.insert ){
-
-			$img = $('<img/>');
-
-			$img
-				.attr('src', src)
-				.preload({
-					src,
-					ready: () => {
-
-						if( data.replace ){
-							$this.empty();
-						}
-
-						$this.append($img);
-
-					},
-				});
-
-		}else{
-
-			$this.css({
-				backgroundImage: `url(${src})`,
-			});
-
-		}
-
+			img.src = src;
+			el.appendChild(img);
+		},
 	});
-
-	return this;
-
 };
 
-$('[data-img]').loadImg();
+[].slice.call(document.querySelectorAll('[data-img]')).forEach(el => loadImg(el));
