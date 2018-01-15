@@ -1,13 +1,5 @@
-/**
- *  Load images using the data-img attribute
- *
- *  All settings are provided using the data tag
- *  	- Insert: Insert the image inside of the object
- *  	- Replace: Replace the contents of the object (used with insert)
- *  	- Fade: Fade in the new image
- *
- *  @return {Object}	The originally targeted object
- */
+// $('div.foo').loadImg();
+// <div data-img="http://placehold.it/100x100">
 
 require('./preload');
 

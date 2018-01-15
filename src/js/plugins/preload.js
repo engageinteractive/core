@@ -1,3 +1,11 @@
+// $('img.foo').preload()
+// $('div.foo').preload({
+// 	src: false,
+// 	timeout: false,
+// 	ready(){},
+// 	error(){},
+// })
+
 $.fn.preload = function(settings){
 
 	const defaults = {
@@ -25,6 +33,14 @@ $.fn.preload = function(settings){
 	return this;
 
 };
+
+// $.preload({
+// 	src: null,
+// 	timeout: false,
+// 	arrayItemReady(){},
+// 	ready(){},
+// 	error(){},
+// })
 
 $.preload = function(settings){
 
