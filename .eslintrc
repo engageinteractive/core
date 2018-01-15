@@ -20,6 +20,12 @@
     ],
     "keyword-spacing": "off",
     "no-floating-decimal": "off",
+    "no-param-reassign": [
+      "warn",
+      {
+        "props": false
+      }
+    ],
     "no-plusplus": "off",
     "no-tabs": "off",
     "no-var": "warn",
