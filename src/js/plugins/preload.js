@@ -1,138 +1,63 @@
-// $('img.foo').preload()
-// $('div.foo').preload({
-// 	src: false,
+// preload({
+// 	src: 'http://placehold.it/100',
 // 	timeout: false,
-// 	ready(){},
-// 	error(){},
-// })
+// 	arrayItemReady: () => console.log('arrayItemReady'),
+// 	ready: (img, src) => console.log('ready', img, src),
+// 	error: () => console.log('error'),
+// });
 
-$.fn.preload = function(settings){
+const preload = (settings) => {
+	let complete = false;
+	let tooSlow = false;
 
-	const defaults = {
-		src: false,
-		timeout: false,
-		ready(){},
-		error(){},
-	};
+	const onArrayReady = settings.arrayItemReady || (() => {});
+	const onError = settings.error || (() => {});
+	const onReady = settings.ready || (() => {});
 
-	this.each(function(){
-
-		const $img = $(this),
-			option = $.extend(defaults, settings);
-
-		if( !option.src ){
-			option.src = $img.attr('src');
-		}
-
-		if( option.src ){
-			$.preload(option);
-		}
-
-	});
-
-	return this;
-
-};
-
-// $.preload({
-// 	src: null,
-// 	timeout: false,
-// 	arrayItemReady(){},
-// 	ready(){},
-// 	error(){},
-// })
-
-$.preload = function(settings){
-
-	let tooSlow = false,
-		complete = false,
-		total,
-		loaded,
-		ready,
-		i;
-
-	const defaults = {
-			src: null,
-			timeout: false,
-			arrayItemReady(){},
-			ready(){},
-			error(){},
-		},
-		option = $.extend(defaults, settings),
-		$img = $('<img/>');
-
-	if( typeof option.src === 'object' ){
-
-		total = option.src.length;
-		loaded = 0;
-		ready = function(img){
-
+	if (typeof settings.src === 'object') {
+		let loaded = 0;
+		const total = settings.src.length;
+		const ready = ($) => {
 			loaded += 1;
 
-			option.arrayItemReady(loaded);
+			onArrayReady(loaded);
 
-			if( total === loaded ){
-				option.ready(img, option.src);
+			if (loaded === total) {
+				onReady($, settings.src);
 			}
-
 		};
 
-		for( i = option.src.length - 1; i >= 0; i -= 1 ){
+		settings.src.forEach(src => preload({
+			src,
+			ready,
+		}));
+	} else if (typeof settings.src === 'string') {
+		const $ = document.createElement('img');
 
-			$.preload({
-				src: option.src[i],
-				ready,
-			});
-
-		}
-
-	}else if( option.src ){
-
-		$img.one('load', function(){
-
-			const img = this;
-
-			// Timeout for Webkit
-			// As the width/height of the image is 0 initially
+		$.addEventListener('load', () => {
 			setTimeout(() => {
-
 				complete = true;
 
-				if( !tooSlow ){
-					option.ready(img, option.src);
+				if (!tooSlow) {
+					onReady($, settings.src);
 				}
 
 			}, 0);
-
-		})
-		.one('error', () => {
-
-			option.error();
-
-		})
-		.attr('src', option.src)
-		.each(function(){
-
-			if( this.complete ){
-				$img.trigger('load');
-			}
-
 		});
 
-		if( option.timeout ){
+		$.addEventListener('error', onError);
+		$.src = settings.src;
 
+		if (settings.timeout) {
 			setTimeout(() => {
-
 				tooSlow = true;
 
-				if( !complete ){
-					option.ready(null, option.src);
+				if (!complete) {
+					onReady(null, settings.src);
 				}
-
-			}, option.imageTimeout);
-
+			}, settings.imageTimeout || 3000);
 		}
-
 	}
-
 };
+
+export default preload;
