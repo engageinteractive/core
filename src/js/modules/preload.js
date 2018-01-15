@@ -17,13 +17,13 @@ const preload = (settings) => {
 	if (typeof settings.src === 'object') {
 		let loaded = 0;
 		const total = settings.src.length;
-		const ready = ($) => {
+		const ready = (img) => {
 			loaded += 1;
 
 			onArrayReady(loaded);
 
 			if (loaded === total) {
-				onReady($, settings.src);
+				onReady(img, settings.src);
 			}
 		};
 
@@ -32,21 +32,21 @@ const preload = (settings) => {
 			ready,
 		}));
 	} else if (typeof settings.src === 'string') {
-		const $ = document.createElement('img');
+		const img = document.createElement('img');
 
-		$.addEventListener('load', () => {
+		img.addEventListener('load', () => {
 			setTimeout(() => {
 				complete = true;
 
 				if (!tooSlow) {
-					onReady($, settings.src);
+					onReady(img, settings.src);
 				}
 
 			}, 0);
 		});
 
-		$.addEventListener('error', onError);
-		$.src = settings.src;
+		img.addEventListener('error', onError);
+		img.src = settings.src;
 
 		if (settings.timeout) {
 			setTimeout(() => {
