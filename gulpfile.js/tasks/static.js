@@ -14,7 +14,11 @@ gulp.task('static.assets', () => (
 		.pipe(gulp.dest(paths.dest))
 ));
 
-gulp.task('static.npm', () => {
+gulp.task('static.npm', (done) => {
+	if (!config.tasks.static.npm.length) {
+		done();
+	}
+
 	config.tasks.static.npm.forEach((item) => {
 		const dest = path.join(paths.dest, item.dest);
 

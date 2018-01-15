@@ -95,14 +95,7 @@
       "extensions": [
         "*"
       ],
-      "npm": [
-        {
-          "dest": "js",
-          "src": [
-            "jquery/dist/jquery.min.js"
-          ]
-        }
-      ]
+      "npm": []
     },
     "watch": {
       "tasks": [
