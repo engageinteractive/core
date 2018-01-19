@@ -7,8 +7,9 @@
     "type": "git",
     "url": "https://github.com/engageinteractive/core"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "devDependencies": {
-  }
+    "laravel-mix": "^1.7.2"
+  },
+  "dependencies": {}
 }
