@@ -26,14 +26,14 @@ mix.webpackConfig({
 });
 
 mix.browserSync({
-	"files": [
-		"public/assets",
+	files: [
+		'public/assets',
 	],
-	"ghostMode": false,
-	"notify": false,
-	"open": false,
-	"port": 5757,
-	"proxy": "core.dev.com",
-})
+	ghostMode: false,
+	notify: false,
+	open: false,
+	port: 5757,
+	proxy: 'core.dev.com',
+});
 
 mix.sass('src/scss/main.scss', 'public/assets/css/');
