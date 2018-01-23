@@ -25,6 +25,22 @@ mix.webpackConfig({
 	},
 });
 
+mix.options({
+	autoprefixer: {
+		options: {
+			// browsers: [
+			// 	'last 2 versions',
+			// 	'IE 9',
+			// 	'Safari 8',
+			// ],
+			cascade: false,
+		},
+	},
+	cleanCss: {
+		// restructuring: false
+	},
+});
+
 mix.browserSync({
 	files: [
 		'public/assets',
