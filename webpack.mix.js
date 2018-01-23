@@ -43,7 +43,8 @@ mix
 				},
 			],
 		},
-	});
+	})
+	.sourceMaps(false);
 
 mix
 	.sass('src/scss/main.scss', 'public/assets/css/')
