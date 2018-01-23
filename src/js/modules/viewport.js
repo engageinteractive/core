@@ -54,6 +54,10 @@ module.exports = {
 		delete listeners[name];
 	},
 	mq(name, extremum = 'min', property = 'width'){
+		if (!window.matchMedia) {
+			return false;
+		}
+
 		let value = breakpoints[name];
 
 		if( !value ){
@@ -66,6 +70,6 @@ module.exports = {
 
 		const unit = variables['em-media-queries'] ? 'em' : 'px';
 
-		return Modernizr.mq(`only screen and (${extremum}-${property}: ${value}${unit})`);
+		return window.matchMedia(`only screen and (${extremum}-${property}: ${value}${unit})`).matches;
 	},
 };
