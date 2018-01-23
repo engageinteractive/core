@@ -15,6 +15,10 @@
   "devDependencies": {
     "browser-sync": "^2.23.5",
     "browser-sync-webpack-plugin": "^1.2.0",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
     "laravel-mix": "^1.7.2",
     "node-sass-json-importer": "^3.1.1",
     "normalize.css": "^7.0.0",

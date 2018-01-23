@@ -34,6 +34,13 @@ mix
 						},
 					],
 				},
+				{
+					enforce: 'pre',
+					exclude: /node_modules/,
+					loader: 'eslint-loader',
+					options: {},
+					test: /\.js$/,
+				},
 			],
 		},
 	});
