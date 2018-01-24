@@ -26,6 +26,7 @@ mix
 		clearConsole: false,
 		// cleanCss: {},
 	})
+	.setPublicPath('./public')
 	.webpackConfig({
 		module: {
 			rules: [
@@ -51,6 +52,10 @@ mix
 		},
 	})
 	.sourceMaps(false);
+
+if (mix.inProduction()) {
+	mix.version();
+}
 
 mix
 	.sass('src/scss/main.scss', 'public/assets/css/')
