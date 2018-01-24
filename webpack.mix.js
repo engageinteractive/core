@@ -25,6 +25,9 @@ mix
 		},
 		clearConsole: false,
 		// cleanCss: {},
+		fileLoaderDirs: {
+			images: 'assets/img',
+		},
 	})
 	.setPublicPath('./public')
 	.webpackConfig({
