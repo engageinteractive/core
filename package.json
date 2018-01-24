@@ -19,7 +19,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
-    "laravel-mix": "^1.7.2",
+    "laravel-mix": "^2.0.0",
     "node-sass-json-importer": "^3.1.1",
     "normalize.css": "^7.0.0",
     "svg4everybody": "^2.1.9",
