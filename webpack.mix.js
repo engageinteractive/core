@@ -63,3 +63,6 @@ mix
 		'svg4everybody',
 		'what-input',
 	]);
+
+mix
+	.copyDirectory('src/static', 'public/assets/static');
