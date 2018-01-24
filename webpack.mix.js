@@ -3,7 +3,13 @@ const importer = require('node-sass-json-importer');
 
 mix
 	.browserSync({
-		files: 'public/assets',
+		files: [
+			'app/**/*.php',
+			'public/**/*.{html,php}',
+			'public/assets',
+			'resources/views/**/*.php',
+			'!**/*.map',
+		],
 		ghostMode: false,
 		notify: false,
 		open: false,
