@@ -47,11 +47,8 @@ mix
 			],
 		},
 	})
-	.sourceMaps(false);
-
-if (mix.inProduction()) {
-	mix.version();
-}
+	.sourceMaps(false)
+	.version(['public/assets/static']);
 
 mix
 	.standaloneSass('src/scss/main.scss', 'public/assets/css/', pluginOptions)
