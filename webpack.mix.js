@@ -1,5 +1,9 @@
 const mix = require('laravel-mix');
-const importer = require('node-sass-json-importer');
+
+const pluginOptions = {
+	importer: 'node_modules/node-sass-json-importer/dist/node-sass-json-importer.js',
+	includePaths: ['node_modules'],
+};
 
 mix
 	.browserSync({
@@ -34,17 +38,6 @@ mix
 		module: {
 			rules: [
 				{
-					test: /\.scss$/,
-					use: [
-						{
-							loader: 'sass-loader',
-							options: {
-								importer,
-							},
-						},
-					],
-				},
-				{
 					enforce: 'pre',
 					exclude: /node_modules/,
 					loader: 'eslint-loader',
@@ -61,9 +54,9 @@ if (mix.inProduction()) {
 }
 
 mix
-	.sass('src/scss/main.scss', 'public/assets/css/')
-	.sass('src/scss/styleguide.scss', 'public/assets/css/')
-	.sass('src/scss/page/system-message.scss', 'public/assets/css/page/');
+	.standaloneSass('src/scss/main.scss', 'public/assets/css/', pluginOptions)
+	.standaloneSass('src/scss/styleguide.scss', 'public/assets/css/', pluginOptions)
+	.standaloneSass('src/scss/page/system-message.scss', 'public/assets/css/page/', pluginOptions);
 
 mix
 	.js('src/js/site.js', 'public/assets/js/')
