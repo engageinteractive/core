@@ -1,8 +1,17 @@
 {
-    "/assets/js/site.js": "/assets/js/site.js",
-    "/assets/css/main.css": "/assets/css/main.css",
-    "/assets/css/styleguide.css": "/assets/css/styleguide.css",
-    "/assets/css/page/system-message.css": "/assets/css/page/system-message.css",
-    "/assets/js/vendor.js": "/assets/js/vendor.js",
-    "/assets/js/manifest.js": "/assets/js/manifest.js"
+    "/assets/js/site.js": "/assets/js/site.js?id=20c0105e1bfb46c544b0",
+    "/assets/js/vendor.js": "/assets/js/vendor.js?id=6a9604dc29fdbe52fbed",
+    "/assets/js/manifest.js": "/assets/js/manifest.js?id=a9169d55b2d5ecff5be4",
+    "/assets/css/main.css": "/assets/css/main.css?id=3755ad396fb9367fe6b5",
+    "/assets/css/styleguide.css": "/assets/css/styleguide.css?id=d4b8813bb3687be38dd4",
+    "/assets/css/system-message.css": "/assets/css/system-message.css?id=88f16550c78f5a587273",
+    "/assets/static/img/branding/logo.svg": "/assets/static/img/branding/logo.svg?id=bcf80ba106473afa6f30",
+    "/assets/static/img/meta/favicon-180.png": "/assets/static/img/meta/favicon-180.png?id=f349a2b5a2826f64d579",
+    "/assets/static/img/meta/favicon-32.png": "/assets/static/img/meta/favicon-32.png?id=f5f02a801fd71716b319",
+    "/assets/static/img/meta/mask-icon.svg": "/assets/static/img/meta/mask-icon.svg?id=68f93de4c1e51384a658",
+    "/assets/static/img/meta/share.png": "/assets/static/img/meta/share.png?id=d264c3eaa73052470291",
+    "/assets/static/img/meta/tile-wide.png": "/assets/static/img/meta/tile-wide.png?id=6c6205f23b46e1f45bc9",
+    "/assets/static/img/meta/tile.png": "/assets/static/img/meta/tile.png?id=ffedfc984503d94973ea",
+    "/assets/static/img/sprite.svg": "/assets/static/img/sprite.svg?id=d41d8cd98f00b204e980",
+    "/assets/static/js/dev/grid.js": "/assets/static/js/dev/grid.js?id=cbe8e56fbf042f14b0f8"
 }
