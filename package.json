@@ -8,22 +8,26 @@
     "url": "https://github.com/engageinteractive/core"
   },
   "scripts": {
-    "webpack": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "webpack": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix"
   },
   "devDependencies": {
     "browser-sync": "^2.23.5",
     "browser-sync-webpack-plugin": "^1.2.0",
+    "directory-tree": "^2.0.0",
+    "ejs": "^2.5.7",
     "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
+    "front-matter": "^2.3.0",
     "laravel-mix": "^2.0.0",
+    "marked": "^0.3.12",
     "node-sass-json-importer": "^3.1.1",
     "normalize.css": "^7.0.0",
+    "postcss-scss": "^1.0.3",
     "svg4everybody": "^2.1.9",
     "what-input": "^5.0.4"
-  },
-  "dependencies": {}
+  }
 }
