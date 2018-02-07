@@ -32,9 +32,9 @@ mix
 		},
 	})
 	.sourceMaps(false)
-	.version([assets('static')])
 	.extract(js.extract)
 	.copyDirectory(src('static'), assets('static'))
+	.version([assets('static')])
 	.then(styleguide);
 
 css.files.forEach((filename) => {
