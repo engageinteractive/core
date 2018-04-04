@@ -11,6 +11,7 @@
     "consistent-return": "warn",
     "curly": "warn",
     "func-names": "off",
+    "global-require": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "indent": [
@@ -19,6 +20,12 @@
     ],
     "keyword-spacing": "off",
     "no-floating-decimal": "off",
+    "no-param-reassign": [
+      "warn",
+      {
+        "props": false
+      }
+    ],
     "no-plusplus": "off",
     "no-tabs": "off",
     "no-var": "warn",

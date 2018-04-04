@@ -2,14 +2,11 @@
 @import 'utility/mixins';
 
 // variables
-
 $c--bg: $c--grey-x-light;
 $c--border: $c--grey-light;
 
 .sg {
-
 	// layout
-
 	&-nav {
 		position: relative;
 		overflow: hidden;
@@ -70,7 +67,6 @@ $c--border: $c--grey-light;
 	}
 
 	// components
-
 	&-component {
 		margin-top: $rel-spacing-unit;
 
@@ -135,7 +131,6 @@ $c--border: $c--grey-light;
 	}
 
 	// foundation
-
 	&-colour {
 		padding: {
 			top: $grid-column-gutter;
@@ -171,7 +166,6 @@ $c--border: $c--grey-light;
 	}
 
 	// helpers
-
 	&-panel {
 		display: block;
 		padding: $rel-spacing-unit;
