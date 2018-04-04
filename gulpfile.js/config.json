@@ -43,7 +43,8 @@
       "src": "js",
       "dest": "js",
       "extensions": [
-        "js"
+        "js",
+        "vue"
       ],
       "featureDetects": [
         "canvas",

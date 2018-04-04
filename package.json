@@ -11,8 +11,10 @@
     "lint": "./node_modules/.bin/eslint gulpfile.js || true"
   },
   "devDependencies": {
+    "axios": "^0.17.1",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.16.0",
     "del": "^2.2.2",
@@ -23,6 +25,7 @@
     "eslint": "^3.5.0",
     "eslint-config-airbnb-base": "^7.1.0",
     "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-vue": "^2.1.0",
     "front-matter": "^2.1.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.1",
@@ -51,7 +54,11 @@
     "svg4everybody": "^2.1.0",
     "title-case": "^2.1.0",
     "vinyl-named": "^1.1.0",
-    "webpack-stream": "^3.2.0",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.1",
+    "vue-template-compiler": "^2.5.13",
+    "vuex": "^3.0.1",
+    "webpack-stream": "^4.0.0",
     "what-input": "^4.1.1"
   }
 }

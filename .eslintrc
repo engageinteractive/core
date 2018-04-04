@@ -1,5 +1,8 @@
 {
   "extends": "airbnb-base",
+  "plugins": [
+    "vue",
+  ],
   "globals": {
     "$": true,
     "Modernizr": true,
@@ -10,6 +13,7 @@
     "comma-dangle": "off",
     "consistent-return": "warn",
     "curly": "warn",
+    "dot-notation": "warn",
     "func-names": "off",
     "global-require": "off",
     "import/no-extraneous-dependencies": "off",
@@ -28,15 +32,18 @@
     ],
     "no-plusplus": "off",
     "no-tabs": "off",
+    "no-underscore-dangle": "off",
     "no-var": "warn",
     "object-shorthand": "warn",
     "one-var": "off",
     "padded-blocks": "off",
     "prefer-arrow-callback": "warn",
     "prefer-template": "warn",
+    "quote-props": "warn",
     "space-before-blocks": "off",
     "space-before-function-paren": "off",
     "space-in-parens": "off",
-    "vars-on-top": "off"
+    "vars-on-top": "off",
+    "no-debugger": "off"
   }
 }

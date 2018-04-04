@@ -48,7 +48,7 @@
 		</div>
 	<![endif]-->
 
-	<div id="site-wrapper" class="site-wrapper">
+	<div id="app" class="site-wrapper">
 		<header id="site-header" class="site-header" role="banner">
 			<div class="container">
 				<h1 class="h2"><a href="/">Core</a></h1>
@@ -56,13 +56,9 @@
 		</header>
 
 		<div id="site-content" class="site-content">
-			<article role="main">
-				<div class="container">
-					<p>Core framework by Engage</p>
-
-					<p><a href="/assets/styleguide.html">View styleguide</a></p>
-				</div>
-			</article>
+			<main>
+				<sample></sample>
+			</main>
 		</div>
 
 		<footer id="site-footer" class="site-footer">
@@ -70,6 +66,12 @@
 				<p>&copy; 2016 Engage</p>
 			</div>
 		</footer>
+
+		<store-loader
+			:value='{
+				"home-url": "/frontend/index",
+			}'
+		></store-loader>
 	</div>
 
 	<script src="/assets/js/site.js" async></script>

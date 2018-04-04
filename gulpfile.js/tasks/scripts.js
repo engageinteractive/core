@@ -12,6 +12,15 @@ const
 	summary = require('engage-eslint-summary'),
 	webpack = require('webpack-stream'),
 
+	bableLoaderOptions = {
+		plugins: [
+			'transform-object-rest-spread'
+		],
+		presets: [
+			'es2015'
+		],
+	},
+
 	options = {
 		webpack: {
 			devtool: 'source-map',
@@ -19,24 +28,29 @@ const
 				publicPath: paths.public,
 			},
 			module: {
-				loaders: [
+				rules: [
 					{
-						loader: 'babel-loader',
+						test: /\.vue$/,
 						exclude: /node_modules/,
-						query: {
-							presets: [
-								'es2015',
-							],
+						loader: 'vue-loader',
+						options: {
+							loaders: {
+								js: {
+									loader: 'babel-loader',
+									options: bableLoaderOptions,
+								},
+							},
 						},
 					},
 					{
-						loader: 'json-loader',
-						test: /\.json$/,
+						test: /\.js$/,
+						loader: 'babel-loader',
+						exclude: /node_modules/,
+						options: bableLoaderOptions,
 					},
 					{
-						loader: 'script-loader',
-						test: /libs/,
-						exclude: /node_modules/,
+						test: /\.json$/,
+						loader: 'json-loader',
 					},
 				],
 			},
@@ -55,6 +69,11 @@ const
 					'feature-detects': config.tasks.scripts.featureDetects,
 				}),
 			],
+			resolve: {
+				alias: {
+					'vue': 'vue/dist/vue.common.js',
+				},
+			},
 		},
 		notification: {
 			title: 'JavaScript Error',
@@ -69,9 +88,19 @@ const
 
 	handler = (err, stats) => {
 		if (stats.hasErrors()) {
-			gutil.log(gutil.colors.red(stats.compilation.errors[0].error.toString()));
+			if (!stats.compilation.errors[0].error) {
+				gutil.log('stats.compilation.errors[0]');
+				gutil.log(stats.compilation.errors[0]);
+			} else {
+				gutil.log(gutil.colors.red(stats.compilation.errors[0].error.toString()));
+			}
 		} else if (stats.hasWarnings()) {
-			gutil.log(gutil.colors.yellow(stats.compilation.warnings[0].error.toString()));
+			if (!stats.compilation.warnings[0].error) {
+				gutil.log('stats.compilation.warnings[0]');
+				gutil.log(stats.compilation.warnings[0]);
+			} else {
+				gutil.log(gutil.colors.yellow(stats.compilation.warnings[0].error.toString()));
+			}
 		}
 	},
 
@@ -81,12 +110,12 @@ const
 		return gulp
 			.src(paths.src())
 			.pipe(eslint())
-			.pipe(eslint.format(summary({ hideErrors: true })))
+			.pipe(eslint.format(summary({ hideErrors: false })))
 			.pipe(eslint.failOnError().on('error', notification(options.notification)))
 			.pipe(eslint.failOnError().on('error', () => { done(); }))
 			.pipe(filters)
 			.pipe(named())
-			.pipe(webpack(options.webpack, null, handler).on('error', () => { done(); }))
+			.pipe(webpack(options.webpack, null, handler).on('error', (a, b, c) => { gutil.log(a, b, c); done(); }))
 			.pipe(gulp.dest(paths.dest));
 	};
 
