@@ -46,76 +46,27 @@ h6 {
 }
 
 .h1 {
-	font-size: $h--large;
-	line-height: 1;
-
-	@include mq(tablet) {
-		font-size: $h--x-large;
-	}
-
-	@include mq(desktop) {
-		font-size: $h--2x-large;
-	}
+	@include font-size($h1);
 }
 
 .h2 {
-	font-size: $h--medium;
-
-	@include mq(tablet) {
-		font-size: $h--large;
-	}
-
-	@include mq(desktop) {
-		font-size: $h--x-large;
-	}
+	@include font-size($h2);
 }
 
 .h3 {
-	font-size: $h--small;
-
-	@include mq(tablet) {
-		font-size: $h--medium;
-	}
-
-	@include mq(desktop) {
-		font-size: $h--x-large;
-	}
+	@include font-size($h3);
 }
 
 .h4 {
-	font-size: $h--x-small;
-
-	@include mq(tablet) {
-		font-size: $h--small;
-	}
-
-	@include mq(desktop) {
-		font-size: $h--medium;
-	}
+	@include font-size($h4);
 }
 
 .h5 {
-	font-size: $h--2x-small;
-
-	@include mq(tablet) {
-		font-size: $h--x-small;
-	}
-
-	@include mq(desktop) {
-		font-size: $h--small;
-	}
+	@include font-size($h5);
 }
 
 .h6 {
-	font-size: $h--3x-small;
-
-	@include mq(tablet) {
-		font-size: $h--2x-small;
-	}
-
-	@include mq(desktop) {
-		font-size: $h--x-small;
-	}
+	@include font-size($h6);
 }
 
 

@@ -15,14 +15,36 @@ $stack: Helvetica, Arial, sans-serif;
 $stack--heading: $stack;
 
 // font sizes
-$h--3x-small: rem(16px);
-$h--2x-small: rem(18px);
-$h--x-small: rem(20px);
-$h--small: rem(22px);
-$h--medium: rem(24px);
-$h--large: rem(28px);
-$h--x-large: rem(36px);
-$h--2x-large: rem(48px);
+$h1: (
+	base: rem(30px),
+	tablet: rem(36px),
+	desktop: rem(44px),
+);
+$h2: (
+	base: rem(26px),
+	tablet: rem(30px),
+	desktop: rem(36px),
+);
+$h3: (
+	base: rem(22px),
+	tablet: rem(26px),
+	desktop: rem(30px),
+);
+$h4: (
+	base: rem(20px),
+	tablet: rem(22px),
+	desktop: rem(26px),
+);
+$h5: (
+	base: rem(18px),
+	tablet: rem(20px),
+	desktop: rem(22px),
+);
+$h6: (
+	base: rem(16px),
+	tablet: rem(18px),
+	desktop: rem(20px),
+);
 
 $p: rem(16px);
 $p--small: rem(12px);
