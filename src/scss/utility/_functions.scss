@@ -10,9 +10,7 @@ $rems-on: true !default;
 $rems-base-font-size: $browser-default-font-size / 100% * $html-font-size !default;
 
 @function rem($size, $reverse: false) {
-
 	$html-font-size-units: if(str-index(#{$html-font-size}, px), px, %);
-
 	$unitless: strip-unit($size);
 	$unitless-base: strip-unit(if($html-font-size-units == px, $html-font-size, $rems-base-font-size));
 
@@ -98,7 +96,6 @@ $em-media-queries: true !default;
 }
 
 
-
 /*
 
 	Z-indexing
@@ -136,7 +133,6 @@ $em-media-queries: true !default;
 }
 
 
-
 /*
 
 	Photoshop letter spacing
@@ -171,7 +167,6 @@ $em-media-queries: true !default;
 @function ls-basic($value) {
 	@return $value / 1000 * 1em;
 }
-
 
 
 /*
