@@ -65,6 +65,7 @@ Other states:
 	padding: rem(17px);
 	position: relative;
 	text-decoration: none;
+	-webkit-tap-highlight-color: rgba($c--white, 0);
 
 	&:focus {
 		[data-whatinput='keyboard'] & {
