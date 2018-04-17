@@ -130,23 +130,51 @@ $c--border: $c--grey-light;
 		}
 	}
 
+	&-icons {
+		font-size: $h--large;
+
+		> * {
+			display: inline-block;
+		}
+	}
+
 	// foundation
 	&-colour {
+		width: 50%;
 		padding: {
 			top: $grid-column-gutter;
 			left: $grid-column-gutter;
 		}
 		text-align: center;
 
+		@include mq(phone-wide) {
+			width: 100 / 3 * 1%;
+		}
+
+		@include mq(tablet-small) {
+			width: 100 / 4 * 1%;
+		}
+
+		@include mq(tablet-wide) {
+			width: 100 / 5 * 1%;
+		}
+
+		@include mq(desktop) {
+			width: 100 / 6 * 1%;
+		}
+
 		&-wrapper {
+			display: flex;
+			flex-wrap: wrap;
 			margin-left: n($grid-column-gutter);
 		}
 
 		&__value {
 			position: relative;
 			padding-top: 100%;
-			border-radius: 50%;
 			background-color: $c--bg;
+			border-radius: 50%;
+			box-shadow: inset 0 0 1px rgba($c--black, .2);
 
 			span {
 				position: absolute;
