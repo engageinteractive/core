@@ -3,22 +3,22 @@
 }
 
 .outdated-browser {
-	z-index: z(outdated-browser);
 	@include antialias;
+	z-index: z(outdated-browser);
 	position: absolute;
 	top: 0; right: 0; left: 0;
-	font-size: 16px;
 	padding: 30px;
-	color: $c--white;
-	text-align: center;
 	background-color: mix($c--negative, $c--white, 85%);
 	border-bottom: 4px solid mix($c--negative, $c--black, 85%);
+	color: $c--white;
+	font-size: 16px;
+	text-align: center;
 
 	a {
-		text-decoration: none;
-		font-weight: bold;
-		color: $c--white;
 		border-bottom: 2px solid $c--white;
+		color: $c--white;
+		font-weight: bold;
+		text-decoration: none;
 
 		&:hover,
 		&:focus {
