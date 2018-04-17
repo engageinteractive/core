@@ -14,7 +14,7 @@ body {
 	font: #{16px}/#{24px} $stack;
 }
 
-.system-message {
+.error-message {
 	@include push--auto;
 	max-width: 460px;
 	padding: $spacing-unit;
