@@ -83,36 +83,32 @@ Other states:
 			color: mix($c--grey-light, $c--black, 60%);
 		}
 	}
-}
 
-
-// colours
-
-.button--secondary {
-	background-color: $c--black;
-}
-
-.button--positive {
-	background-color: $c--positive;
-}
-
-.button--negative {
-	background-color: $c--negative;
-}
-
-
-// sizes
-
-.button--large {
-	padding: rem(22px) rem(30px);
-
-	@include mq(tablet) {
-		padding: rem(25px) rem(40px);
-		font-size: $p--medium;
+	// colours
+	&--secondary {
+		background-color: $c--black;
 	}
-}
 
-.button--small {
-	font-size: $p--small;
-	padding: rem(12px);
+	&--positive {
+		background-color: $c--positive;
+	}
+
+	&--negative {
+		background-color: $c--negative;
+	}
+
+	// sizes
+	&--large {
+		padding: rem(22px) rem(30px);
+
+		@include mq(tablet) {
+			padding: rem(25px) rem(40px);
+			font-size: $p--medium;
+		}
+	}
+
+	&--small {
+		font-size: $p--small;
+		padding: rem(12px);
+	}
 }
