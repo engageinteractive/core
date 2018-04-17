@@ -52,7 +52,7 @@ h6 {
 	}
 
 	@include mq(desktop) {
-		font-size: $h--xx-large;
+		font-size: $h--2x-large;
 	}
 }
 
@@ -93,7 +93,7 @@ h6 {
 }
 
 .h5 {
-	font-size: $h--xx-small;
+	font-size: $h--2x-small;
 
 	@include mq(tablet) {
 		font-size: $h--x-small;
@@ -105,10 +105,10 @@ h6 {
 }
 
 .h6 {
-	font-size: $h--xxx-small;
+	font-size: $h--3x-small;
 
 	@include mq(tablet) {
-		font-size: $h--xx-small;
+		font-size: $h--2x-small;
 	}
 
 	@include mq(desktop) {

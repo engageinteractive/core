@@ -15,14 +15,15 @@ $stack: Helvetica, Arial, sans-serif;
 $stack--heading: $stack;
 
 // font sizes
-$h--xxx-small: rem(16px);
-$h--xx-small: rem(18px);
+$h--3x-small: rem(16px);
+$h--2x-small: rem(18px);
 $h--x-small: rem(20px);
 $h--small: rem(22px);
 $h--medium: rem(24px);
 $h--large: rem(28px);
 $h--x-large: rem(36px);
-$h--xx-large: rem(48px);
+$h--2x-large: rem(48px);
+
 $p: rem(16px);
 $p--small: rem(12px);
 $p--medium: rem(18px);
@@ -36,7 +37,7 @@ $lh--large: 1.75;
 
 // letter spacing
 $ls: (
-	base: -30
+	// base: -30
 );
 
 // weights
