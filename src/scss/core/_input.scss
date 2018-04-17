@@ -154,7 +154,7 @@ input,
 textarea,
 select {
 	background: $c--white;
-	border: 1px solid $c--grey-light;
+	border: $input-border-width solid $c--grey-light;
 	border-radius: 0;
 	color: $c--black;
 	display: block;
@@ -199,11 +199,11 @@ textarea {
 	}
 
 	&.is-valid {
-		background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22415.582%22 height=%22415.582%22 viewBox=%220 0 415.582 415.582%22%3E%3Cpath style=%22fill:%2324B35D%22 d=%22M411.47 96.426l-46.32-46.32c-5.48-5.482-14.37-5.482-19.852 0l-192.95 192.952-82.066-82.064c-5.48-5.482-14.37-5.482-19.85 0l-46.32 46.32c-5.482 5.48-5.482 14.37 0 19.852l138.31 138.31a13.99 13.99 0 0 0 9.927 4.112c3.592 0 7.185-1.37 9.925-4.112l249.195-249.2a14.034 14.034 0 0 0 0-19.85z%22/%3E%3C/svg%3E');
+		background-image: svg-url('<svg viewBox="0 0 32 32"><path fill="#{$c--positive}" d="M1 14 L5 10 L13 18 L27 4 L31 8 L13 26 z"/></svg>');
 	}
 
 	&.is-invalid {
-		background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22%3E%3Cpath style=%22fill:%23F50023%22 d=%22M28.943 24l-8-8 8-8a.823.823 0 0 0 0-1.165l-3.78-3.778a.82.82 0 0 0-1.164 0l-8 8-7.998-8a.825.825 0 0 0-1.165 0l-3.78 3.778a.824.824 0 0 0 0 1.165l8 8-8 8a.823.823 0 0 0 0 1.165l3.78 3.778a.824.824 0 0 0 1.165 0l8-7.998 7.998 8a.823.823 0 0 0 1.165 0l3.78-3.78a.824.824 0 0 0 0-1.166z%22/%3E%3C/svg%3E');
+		background-image: svg-url('<svg viewBox="0 0 20 20"><path fill="#{$c--negative}" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0 c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697c0.469-0.469,1.228-0.469,1.697,0 L10,8.183l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0c0.469,0.469,0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15 C14.817,13.62,14.817,14.38,14.348,14.849z"/></svg>');
 	}
 }
 
