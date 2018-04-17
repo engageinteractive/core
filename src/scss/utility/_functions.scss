@@ -114,7 +114,7 @@ $em-media-queries: true !default;
 	example:
 
 		.box {
-			z-index: z('box');
+			z-index: z(box);
 		}
 
 */

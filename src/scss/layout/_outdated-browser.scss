@@ -1,9 +1,9 @@
 .outdated-browser-wrapper {
-	margin-top: 88px; 
+	margin-top: 88px;
 }
 
 .outdated-browser {
-	z-index: z('outdated-browser');
+	z-index: z(outdated-browser);
 	@include antialias;
 	position: absolute;
 	top: 0; right: 0; left: 0;
