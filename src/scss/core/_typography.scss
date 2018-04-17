@@ -16,7 +16,6 @@ $media-elems:
 	'.table-wrapper';
 
 // Headings
-
 h1,
 h2,
 h3,
@@ -118,7 +117,6 @@ h6 {
 
 
 // Basic typography styling
-
 #{$typography-elems},
 #{$media-elems} {
 	margin-top: $rel-spacing-unit;
@@ -135,7 +133,6 @@ ul {
 
 
 // Stylistic elements
-
 b,
 strong {
 	font-weight: $w--bold;

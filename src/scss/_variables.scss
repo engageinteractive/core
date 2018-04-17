@@ -55,23 +55,24 @@ $w--bold: 700;
 */
 
 // basic spacing units
-$spacing-unit: rem(30px);
+$spacing-unit: rem(20px);
 $spacing-unit--x-small: rem(10px);
-$spacing-unit--small: rem(20px);
+$spacing-unit--small: rem(15px);
+$spacing-unit--medium: rem(30px);
 $spacing-unit--large: rem(40px);
 $spacing-unit--x-large: rem(60px);
 $rel-spacing-unit: 1em;
 $rel-spacing-unit--small: .5em;
 
 // page gutter
-$page-gutter: $spacing-unit--small;
-$page-gutter--tablet: $spacing-unit;
+$page-gutter: $spacing-unit;
+$page-gutter--tablet: $spacing-unit--medium;
 $page-gutter--desktop: $spacing-unit--large;
 
 // grid
 $grid-column-count: 24;
-$grid-column-gutter: $spacing-unit--small;
-$grid-column-gutter--tablet: $spacing-unit;
+$grid-column-gutter: $spacing-unit;
+$grid-column-gutter--tablet: $spacing-unit--medium;
 $grid-column-gutter--desktop: $spacing-unit--large;
 
 // media queries and breakpoints
