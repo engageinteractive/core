@@ -45,7 +45,7 @@ Placeholder is useful for reserving a set space/size on a page, so the content f
 */
 
 .placeholder {
-	@include responsive-ratio(16, 9);
+	@include responsive-ratio(16, 9, true);
 	position: relative;
 	width: 100%;
 
@@ -57,14 +57,14 @@ Placeholder is useful for reserving a set space/size on a page, so the content f
 	}
 
 	&--square {
-		@include responsive-ratio(1, 1);
+		@include responsive-ratio(1, 1, true);
 	}
 
 	&--landscape {
-		@include responsive-ratio(4, 3);
+		@include responsive-ratio(4, 3, true);
 	}
 
 	&--portrait {
-		@include responsive-ratio(3, 4);
+		@include responsive-ratio(3, 4, true);
 	}
 }
