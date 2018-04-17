@@ -31,11 +31,14 @@ h6 {
 .h4,
 .h5,
 .h6 {
-	@include content-margins('&');
+	margin-top: $rel-spacing-unit;
 	font-family: $stack--heading;
 	font-weight: $w--bold;
 	line-height: 1;
-	margin-top: $rel-spacing-unit;
+
+	&:first-child {
+		margin-top: 0;
+	}
 
 	a {
 		font-weight: $w--bold;

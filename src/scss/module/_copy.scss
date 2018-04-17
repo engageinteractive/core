@@ -99,8 +99,11 @@ Used to scope generated content blocks, adding typography styles to elements wit
 */
 
 .copy {
-	@include content-margins('> *');
 	max-width: 35em;
+
+	> *:first-child {
+		margin-top: 0;
+	}
 
 	h1 {
 		@extend .h1;
