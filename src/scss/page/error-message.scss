@@ -20,18 +20,6 @@ body {
 	padding: $spacing-unit;
 	text-align: center;
 
-	a {
-		background-color: transparent;
-		color: $c--brand-primary;
-		font-weight: bold;
-		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			color: $c--black;
-		}
-	}
-
 	.logo {
 		@include push--auto;
 		display: block;
