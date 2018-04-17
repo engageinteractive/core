@@ -15,32 +15,32 @@ $stack: Helvetica, Arial, sans-serif;
 $stack--heading: $stack;
 
 // font sizes
-$h1: (
+$h--1: (
 	base: rem(30px),
 	tablet: rem(36px),
 	desktop: rem(44px),
 );
-$h2: (
+$h--2: (
 	base: rem(26px),
 	tablet: rem(30px),
 	desktop: rem(36px),
 );
-$h3: (
+$h--3: (
 	base: rem(22px),
 	tablet: rem(26px),
 	desktop: rem(30px),
 );
-$h4: (
+$h--4: (
 	base: rem(20px),
 	tablet: rem(22px),
 	desktop: rem(26px),
 );
-$h5: (
+$h--5: (
 	base: rem(18px),
 	tablet: rem(20px),
 	desktop: rem(22px),
 );
-$h6: (
+$h--6: (
 	base: rem(16px),
 	tablet: rem(18px),
 	desktop: rem(20px),

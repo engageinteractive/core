@@ -131,7 +131,7 @@ $c--border: $c--grey-light;
 	}
 
 	&-icons {
-		font-size: $h--large;
+		@include font-size($h--2);
 
 		> * {
 			display: inline-block;
@@ -205,8 +205,8 @@ $c--border: $c--grey-light;
 	&-push {
 		padding-top: $spacing-unit;
 
-		@include mq(rem(800px), $media-feature: height) {
-			padding-top: $spacing-unit--large;
-		}
+		// @include mq(rem(800px), $media-feature: height) {
+		// 	padding-top: $spacing-unit--large;
+		// }
 	}
 }

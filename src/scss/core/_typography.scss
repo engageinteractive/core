@@ -46,27 +46,27 @@ h6 {
 }
 
 .h1 {
-	@include font-size($h1);
+	@include font-size($h--1);
 }
 
 .h2 {
-	@include font-size($h2);
+	@include font-size($h--2);
 }
 
 .h3 {
-	@include font-size($h3);
+	@include font-size($h--3);
 }
 
 .h4 {
-	@include font-size($h4);
+	@include font-size($h--4);
 }
 
 .h5 {
-	@include font-size($h5);
+	@include font-size($h--5);
 }
 
 .h6 {
-	@include font-size($h6);
+	@include font-size($h--6);
 }
 
 
