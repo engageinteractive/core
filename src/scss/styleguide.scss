@@ -132,6 +132,7 @@ $c--border: $c--grey-light;
 
 	&-icons {
 		@include font-size($h--2);
+		line-height: 1;
 
 		> * {
 			display: inline-block;
