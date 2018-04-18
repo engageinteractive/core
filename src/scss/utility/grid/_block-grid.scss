@@ -32,15 +32,51 @@ Apply equal width to child elements.
 </div>
 ```
 
+Centred children
+
+```
+<div class="sg-example-grid">
+	<div class="block-grid block-grid--centred block-grid--4 block-grid--tablet-5 block-grid--tablet-wide-6 block-grid--desktop-7 block-grid--desktop-8">
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+
+		<div class="sg-panel"><span>Item</span></div>
+	</div>
+</div>
+```
+
 */
 
 @mixin block-grid {
-	@include cf;
+	display: flex;
+	flex-wrap: wrap;
 
 	> * {
-		display: block;
-		float: left;
+		flex-shrink: 0;
 		width: 100%;
+	}
+
+	&--centred {
+		justify-content: center;
 	}
 }
 
@@ -53,7 +89,6 @@ Apply equal width to child elements.
 }
 
 @mixin block-grid-items($modifier: '') {
-
 	$modifierClass: '';
 
 	@if $modifier != '' {
@@ -76,7 +111,6 @@ Apply equal width to child elements.
 		}
 
 	}
-
 }
 
 .block-grid {
