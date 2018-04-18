@@ -96,6 +96,7 @@ $c--border: $c--grey-light;
 	}
 
 	&-example {
+		$block: &;
 		@include push--sides(n($spacing-unit));
 		margin-top: $rel-spacing-unit;
 		background-color: $c--bg;
@@ -117,10 +118,10 @@ $c--border: $c--grey-light;
 			position: absolute;
 			bottom: 100%;
 			right: 0;
+			display: none;
 		}
 
 		&__source {
-
 			pre {
 				padding: 0;
 			}
@@ -130,6 +131,13 @@ $c--border: $c--grey-light;
 				@include soft--sides($spacing-unit);
 				font-size: rem(14px);
 				background-color: transparent;
+			}
+		}
+
+		&:hover,
+		.touchevents & {
+			#{$block}__button {
+				display: block;
 			}
 		}
 	}
