@@ -1,5 +1,3 @@
-$icon-size: 1em;
-
 /*---
 
 Available icons:
@@ -38,30 +36,28 @@ Use `inline` when used with text:
 Use `icon-text` for vertical alignment:
 
 ```
-<div style="max-width: 10em">
-	<span class="icon-text">
-		<span class="icon-text__t">Icon text, description or title</span>
+<span class="icon-text">
+	<span>Icon text, description or title</span>
 
-		<svg class="icon-text__i icon">
-			<use xlink:href="/assets/img/sprite.svg#plus"></use>
-		</svg>
-	</span>
-</div>
+	<svg class="icon">
+		<use xlink:href="/assets/img/sprite.svg#plus"></use>
+	</svg>
+</span>
 ```
 
 ```
-<div style="max-width: 10em">
-	<span class="icon-text">
-		<svg class="icon-text__i icon">
-			<use xlink:href="/assets/img/sprite.svg#plus"></use>
-		</svg>
+<span class="icon-text">
+	<svg class="icon">
+		<use xlink:href="/assets/img/sprite.svg#plus"></use>
+	</svg>
 
-		<span class="icon-text__t">Icon text, description or title</span>
-	</span>
-</div>
+	<span>Icon text, description or title</span>
+</span>
 ```
 
 */
+
+$icon-size: 1em;
 
 .icon {
 	display: inline-block;
@@ -73,37 +69,21 @@ Use `icon-text` for vertical alignment:
 	&--inline {
 		// y = line-height measurment was taken at
 		// x =  how far off centre the baseline is, at `y`
-		$x: 10;
-		$y: 90;
+		$x: 3;
+		$y: 24;
 		vertical-align: n($x/$y * 100%);
 	}
 }
 
 .icon-text {
-	display: inline-block;
-	position: relative;
+	display: flex;
+	align-items: center;
 
-	&__i {
-		width: $icon-size;
-		height: $icon-size;
-		position: absolute;
-		top: 50%; right: 0;
-		transform: translateY(-50%);
+	> * {
+		margin-left: $spacing-unit--x-small;
 
 		&:first-child {
-			right: auto; left: 0;
-		}
-	}
-
-	&__t {
-		display: inline-block;
-		padding-right: $icon-size + $rel-spacing-unit--small;
-
-		&:last-child {
-			padding: {
-				right: 0;
-				left: $icon-size + $rel-spacing-unit--small;
-			}
+			margin-left: 0;
 		}
 	}
 }
