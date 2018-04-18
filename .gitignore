@@ -2,7 +2,7 @@
 Homestead.yaml
 Homestead.json
 .env
-npm-debug.log
+*.log
 *.map
 
 # OSX
