@@ -22,7 +22,7 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "front-matter": "^2.3.0",
-    "laravel-mix": "^2.0.0",
+    "laravel-mix": "^2.1.0",
     "marked": "^0.3.12",
     "node-sass-json-importer": "^3.1.1",
     "normalize.css": "^7.0.0",
