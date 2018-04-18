@@ -106,7 +106,7 @@ $breakpoints--rem: $breakpoints;
 }
 
 @each $name, $width in $breakpoints {
-	$breakpoints: map-merge($breakpoints, ($name: em($width * 1px, $browser-default-font-size)));
+	$breakpoints: map-merge($breakpoints, ($name: em($width * 1px)));
 }
 
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
