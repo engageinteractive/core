@@ -109,9 +109,13 @@ $c--border: $c--grey-light;
 			border-bottom: 1px solid $c--border;
 		}
 
+		&__reveal {
+			position: relative;
+		}
+
 		&__button {
 			position: absolute;
-			bottom: 0;
+			bottom: 100%;
 			right: 0;
 		}
 

@@ -1,3 +1,4 @@
+require('details-element-polyfill');
 require('svg4everybody')();
 
 if (!window.Element.prototype.matches) {
