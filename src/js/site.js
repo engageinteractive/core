@@ -1,7 +1,7 @@
 const ready = () => {
 	require('what-input');
-	require('./modules/links');
-	require('./modules/polyfills');
+	require('./module/links');
+	require('./module/polyfills');
 };
 
 if (document.readyState === 'loading') {
