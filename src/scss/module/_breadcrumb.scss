@@ -42,7 +42,7 @@
 
 		&--link {
 			color: $c--grey;
-			font-weight: $w--semibold;
+			font-weight: $w--bold;
 
 			&:hover {
 				color: $c--blue;
@@ -53,6 +53,6 @@
 
 	&__icon {
 		color: $c--grey;
-		font-size: $p--x-small;
+		font-size: $p--small;
 	}
 }
