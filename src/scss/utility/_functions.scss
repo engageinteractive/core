@@ -10,9 +10,7 @@ $rems-on: true !default;
 $rems-base-font-size: $browser-default-font-size / 100% * $html-font-size !default;
 
 @function rem($size, $reverse: false) {
-
 	$html-font-size-units: if(str-index(#{$html-font-size}, px), px, %);
-
 	$unitless: strip-unit($size);
 	$unitless-base: strip-unit(if($html-font-size-units == px, $html-font-size, $rems-base-font-size));
 
@@ -62,7 +60,7 @@ $rems-base-font-size: $browser-default-font-size / 100% * $html-font-size !defau
 
 $em-media-queries: true !default;
 
-@function em($size, $base: $p) {
+@function em($size, $base: $browser-default-font-size) {
 
 	$size: if(str-index(#{$size}, 'rem'), rem($size, true), $size);
 	$base: if(unit($base) == rem, rem($base, true), $base);
@@ -98,7 +96,6 @@ $em-media-queries: true !default;
 }
 
 
-
 /*
 
 	Z-indexing
@@ -114,7 +111,7 @@ $em-media-queries: true !default;
 	example:
 
 		.box {
-			z-index: z('box');
+			z-index: z(box);
 		}
 
 */
@@ -134,7 +131,6 @@ $em-media-queries: true !default;
 	}
 
 }
-
 
 
 /*
@@ -171,7 +167,6 @@ $em-media-queries: true !default;
 @function ls-basic($value) {
 	@return $value / 1000 * 1em;
 }
-
 
 
 /*

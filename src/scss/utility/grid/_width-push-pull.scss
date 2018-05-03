@@ -1,5 +1,4 @@
 @mixin width-push-pull($modifier: '') {
-
 	$modifierClass: '';
 
 	@if $modifier != '' {
@@ -49,7 +48,6 @@
 	.push--#{$modifierClass}0 {
 		left: 0;
 	}
-
 }
 
 @include width-push-pull;

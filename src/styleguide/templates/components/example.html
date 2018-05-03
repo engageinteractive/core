@@ -1,14 +1,17 @@
 <div class="sg-example">
 	<div class="sg-example__preview">
 		<%- code %>
-		<div class="sg-example__button">
-			<label class="button button--small reveal__label" for="<%= id %>">View Source</label>
-		</div>
 	</div>
-	<input class="vh reveal__toggle" type="checkbox" id="<%= id %>" value="" tabindex="-1">
-	<div class="reveal__wrapper">
-		<div class="sg-example__source">
-			<pre><code class="<%= lang || 'html' %>"><%= code %></code></pre>
+
+	<details class="sg-example__reveal reveal">
+		<summary class="sg-example__button reveal__label">
+			<span class="button button--small">View Source</span>
+		</summary>
+
+		<div class="reveal__wrapper">
+			<div class="sg-example__source">
+				<pre><code class="<%= lang || 'html' %>"><%= code %></code></pre>
+			</div>
 		</div>
-	</div>
+	</details>
 </div>

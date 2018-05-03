@@ -2,43 +2,57 @@
 
 ```
 <div class="breadcrumb">
-	<a href="#0">Home</a>
+	<a class="breadcrumb__item breadcrumb__item--link" href="#0">Home</a>
 
-	<svg class="icon">
+	<svg class="breadcrumb__icon icon">
 		<use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use>
 	</svg>
 
-	<a href="#0">Foo</a>
+	<a class="breadcrumb__item breadcrumb__item--link" href="#0">Foo</a>
 
-	<svg class="icon">
+	<svg class="breadcrumb__icon icon">
 		<use xlink:href="/assets/img/sprite.svg#chevron-thin-right"></use>
 	</svg>
 
-	<span>Bar</span>
+	<span class="breadcrumb__item">Bar</span>
 </div>
 ```
 
 */
 
 .breadcrumb {
-	@include cf;
-	line-height: $lh--small;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: $p--small;
+	line-height: $lh;
 
-	a,
-	.icon,
-	span {
-		display: inline-block;
-		margin-right: rem(5px);
-		vertical-align: top;
+	&__item,
+	&__icon {
+		margin-right: $spacing-unit--x-small;
 
 		&:last-child {
 			margin-right: 0;
 		}
 	}
 
-	.icon {
-		$x: 3;
-		$y: 20;
-		vertical-align: n($x/$y * 100%);
+	&__item {
+		color: $c--grey;
+		font-weight: $w--normal;
+
+		&--link {
+			color: $c--grey;
+			font-weight: $w--bold;
+
+			&:hover {
+				color: $c--blue;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__icon {
+		color: $c--grey;
+		font-size: $p--small;
 	}
 }

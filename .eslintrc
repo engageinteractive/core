@@ -23,6 +23,7 @@
       "tab"
     ],
     "keyword-spacing": "off",
+    "no-debugger": "off",
     "no-floating-decimal": "off",
     "no-param-reassign": [
       "warn",

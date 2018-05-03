@@ -96,6 +96,7 @@ $c--border: $c--grey-light;
 	}
 
 	&-example {
+		$block: &;
 		@include push--sides(n($spacing-unit));
 		margin-top: $rel-spacing-unit;
 		background-color: $c--bg;
@@ -109,14 +110,18 @@ $c--border: $c--grey-light;
 			border-bottom: 1px solid $c--border;
 		}
 
+		&__reveal {
+			position: relative;
+		}
+
 		&__button {
 			position: absolute;
-			bottom: 0;
+			bottom: 100%;
 			right: 0;
+			display: none;
 		}
 
 		&__source {
-
 			pre {
 				padding: 0;
 			}
@@ -128,25 +133,61 @@ $c--border: $c--grey-light;
 				background-color: transparent;
 			}
 		}
+
+		&:hover,
+		.touchevents & {
+			#{$block}__button {
+				display: block;
+			}
+		}
+	}
+
+	&-icons {
+		@include font-size($h--2);
+		line-height: 1;
+
+		> * {
+			display: inline-block;
+		}
 	}
 
 	// foundation
 	&-colour {
+		width: 50%;
 		padding: {
 			top: $grid-column-gutter;
 			left: $grid-column-gutter;
 		}
 		text-align: center;
 
+		@include mq(phone-wide) {
+			width: 100 / 3 * 1%;
+		}
+
+		@include mq(tablet-small) {
+			width: 100 / 4 * 1%;
+		}
+
+		@include mq(tablet-wide) {
+			width: 100 / 5 * 1%;
+		}
+
+		@include mq(desktop) {
+			width: 100 / 6 * 1%;
+		}
+
 		&-wrapper {
+			display: flex;
+			flex-wrap: wrap;
 			margin-left: n($grid-column-gutter);
 		}
 
 		&__value {
 			position: relative;
 			padding-top: 100%;
-			border-radius: 50%;
 			background-color: $c--bg;
+			border-radius: 50%;
+			box-shadow: inset 0 0 1px rgba($c--black, .2);
 
 			span {
 				position: absolute;

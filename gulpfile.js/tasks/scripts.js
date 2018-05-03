@@ -57,6 +57,7 @@ const
 			plugins: [
 				new webpack.webpack.optimize.UglifyJsPlugin({
 					compress: { warnings: false },
+					sourceMap: true,
 				}),
 				new ModernizrPlugin({
 					filename: 'modernizr.js',

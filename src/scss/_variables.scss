@@ -15,15 +15,37 @@ $stack: Helvetica, Arial, sans-serif;
 $stack--heading: $stack;
 
 // font sizes
-$h--xxx-small: rem(16px);
-$h--xx-small: rem(18px);
-$h--x-small: rem(20px);
-$h--small: rem(22px);
-$h--medium: rem(24px);
-$h--large: rem(28px);
-$h--x-large: rem(36px);
-$h--xx-large: rem(48px);
-$h--xxx-large: rem(64px);
+$h--1: (
+	base: rem(30px),
+	tablet: rem(36px),
+	desktop: rem(44px),
+);
+$h--2: (
+	base: rem(26px),
+	tablet: rem(30px),
+	desktop: rem(36px),
+);
+$h--3: (
+	base: rem(22px),
+	tablet: rem(26px),
+	desktop: rem(30px),
+);
+$h--4: (
+	base: rem(20px),
+	tablet: rem(22px),
+	desktop: rem(26px),
+);
+$h--5: (
+	base: rem(18px),
+	tablet: rem(20px),
+	desktop: rem(22px),
+);
+$h--6: (
+	base: rem(16px),
+	tablet: rem(18px),
+	desktop: rem(20px),
+);
+
 $p: rem(16px);
 $p--small: rem(12px);
 $p--medium: rem(18px);
@@ -37,7 +59,7 @@ $lh--large: 1.75;
 
 // letter spacing
 $ls: (
-	base: -30
+	// base: -30
 );
 
 // weights
@@ -55,23 +77,24 @@ $w--bold: 700;
 */
 
 // basic spacing units
-$spacing-unit: rem(30px);
+$spacing-unit: rem(20px);
 $spacing-unit--x-small: rem(10px);
-$spacing-unit--small: rem(20px);
+$spacing-unit--small: rem(15px);
+$spacing-unit--medium: rem(30px);
 $spacing-unit--large: rem(40px);
 $spacing-unit--x-large: rem(60px);
 $rel-spacing-unit: 1em;
 $rel-spacing-unit--small: .5em;
 
 // page gutter
-$page-gutter: $spacing-unit--small;
-$page-gutter--tablet: $spacing-unit;
+$page-gutter: $spacing-unit;
+$page-gutter--tablet: $spacing-unit--medium;
 $page-gutter--desktop: $spacing-unit--large;
 
 // grid
 $grid-column-count: 24;
-$grid-column-gutter: $spacing-unit--small;
-$grid-column-gutter--tablet: $spacing-unit;
+$grid-column-gutter: $spacing-unit;
+$grid-column-gutter--tablet: $spacing-unit--medium;
 $grid-column-gutter--desktop: $spacing-unit--large;
 
 // media queries and breakpoints
@@ -83,7 +106,7 @@ $breakpoints--rem: $breakpoints;
 }
 
 @each $name, $width in $breakpoints {
-	$breakpoints: map-merge($breakpoints, ($name: em($width * 1px, $browser-default-font-size)));
+	$breakpoints: map-merge($breakpoints, ($name: em($width * 1px)));
 }
 
 // once dev mode is false, you must define any block grids, column grids and flush margins for each breakpoint
@@ -174,8 +197,8 @@ $z-indexes: (
 */
 
 // brand colours
-$c--brand-primary: #fdbc00;
-$c--brand-secondary: #e74c3c;
+$c--brand-primary: #ff585d;
+$c--brand-secondary: #fe0;
 
 // greyscale
 $c--black: #1a1a1a;
@@ -196,8 +219,7 @@ $c--facebook: #3b5998;
 $c--youtube: #bb0000;
 $c--pinterest: #cb2027;
 $c--linkedin: #007bb5;
-$c--instagram: #8a3ab9; // new purple colour
-// $c--instagram: #125688; // old blue colour
+$c--instagram: #8a3ab9;
 
 // form & message positive/negative colours
 $c--positive: $c--green;

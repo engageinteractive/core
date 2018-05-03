@@ -14,23 +14,11 @@ body {
 	font: #{16px}/#{24px} $stack;
 }
 
-.system-message {
+.error-message {
 	@include push--auto;
 	max-width: 460px;
 	padding: $spacing-unit;
 	text-align: center;
-
-	a {
-		background-color: transparent;
-		color: $c--brand-primary;
-		font-weight: bold;
-		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			color: $c--black;
-		}
-	}
 
 	.logo {
 		@include push--auto;

@@ -95,7 +95,6 @@
 }
 
 
-
 /*
 
 	Margin / Padding Quick Resets
@@ -113,25 +112,18 @@
 */
 
 // add/remove margins
-
 @mixin push--ends($spacing: $spacing-unit) { margin: { top: $spacing; bottom: $spacing; } }
 @mixin push--sides($spacing: $spacing-unit) { margin: { left: $spacing; right: $spacing; } }
-
 @mixin push--auto { margin: { left: auto; right: auto; } }
 @mixin offset--sides($spacing: $spacing-unit) { margin: { left: -$spacing; right: -$spacing; } }
-
 @mixin flush--ends { margin: { top: 0; bottom: 0; } }
 @mixin flush--sides { margin: { left: 0; right: 0; } }
 
-
 // add/remove paddings
-
 @mixin soft--ends($spacing: $spacing-unit) { padding: { top: $spacing; bottom: $spacing; } }
 @mixin soft--sides($spacing: $spacing-unit) { padding: { left: $spacing; right: $spacing; } }
-
 @mixin hard--ends { padding: { top: 0; bottom: 0; } }
 @mixin hard--sides { padding: { left: 0; right: 0; } }
-
 
 
 /*
@@ -141,7 +133,6 @@
 */
 
 // Contain floats / clearfix
-
 @mixin cf {
 
 	&::after {
@@ -151,9 +142,7 @@
 	}
 }
 
-
 // Hide from both screenreaders and browsers
-
 @mixin hidden {
 	display: none;
 	visibility: hidden;
@@ -164,9 +153,7 @@
 	visibility: visible;
 }
 
-
 // Hide only visually, but have it available for screenreaders
-
 @mixin vh($focusable: false) {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -191,11 +178,8 @@
 	width: auto;
 }
 
-
 // Allow the element to be focusable when navigated to via the keyboard
-
 @mixin vh-focusable {
-
 	&:active,
 	&:focus {
 		clip: auto;
@@ -207,13 +191,10 @@
 	}
 }
 
-
 // Hide visually and from screenreaders, but maintain layout
-
 @mixin invisible {
 	visibility: hidden;
 }
-
 
 
 /*
@@ -240,7 +221,6 @@
 }
 
 
-
 /*
 
 	Retina images
@@ -264,7 +244,6 @@
 		@content;
 	}
 }
-
 
 
 /*
@@ -301,7 +280,6 @@
 
 */
 
-
 @mixin content-margins($selector: '> *', $last-child: false) {
 	@if not $selector {
 		$selector: '&';
@@ -314,7 +292,6 @@
 		}
 	}
 }
-
 
 
 /*
@@ -366,7 +343,6 @@
 }
 
 
-
 /*
 
 	Hide text
@@ -397,7 +373,6 @@
 }
 
 
-
 /*
 
 	Responsive ratio
@@ -424,7 +399,6 @@
 		padding-top: $padding;
 	}
 }
-
 
 
 /*
@@ -460,7 +434,6 @@
 }
 
 
-
 /*
 
 	Icon
@@ -484,7 +457,6 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 
 
 /*
@@ -529,112 +501,6 @@
 
 	}
 
-}
-
-
-
-/*
-
-	Misc
-
-*/
-
-@mixin align($vertical: true, $horizontal: false, $position: relative) {
-	@if $position {
-		position: $position;
-	}
-	@if $vertical {
-		top: 50%;
-	}
-	@if $horizontal {
-		left: 50%;
-	}
-
-	@if $vertical and $horizontal {
-		transform: translateX(-50%) translateY(-50%);
-	} @else if $vertical {
-		transform: translateY(-50%);
-	} @else {
-		transform: translateX(-50%);
-	}
-}
-
-@mixin antialias {
-	font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-
-@mixin appearance($val: none) {
-	-webkit-appearance: $val;
-	-moz-appearance: $val;
-	appearance: $val;
-}
-
-
-@mixin hardware($backface: true, $perspective: 1000) {
-
-	@if $backface {
-		backface-visibility: hidden;
-	}
-
-	perspective: $perspective;
-}
-
-
-@mixin pos($pos, $t, $r, $b, $l, $z: false, $hardware: true) {
-	@if $pos == fixed and $hardware { @include hardware; }
-	@if $pos { position: $pos; }
-	@if $t { top: $t; }
-	@if $r { right: $r; }
-	@if $b { bottom: $b; }
-	@if $l { left: $l; }
-	@if $z { z-index: $z; }
-}
-
-
-@mixin pseudo($display: block, $pos: absolute, $content: ''){
-	content: $content;
-	display: $display;
-	position: $pos;
-}
-
-
-@mixin selection {
-	::-moz-selection { @content; }
-	::selection { @content; }
-}
-
-
-@mixin truncate($truncation-boundary) {
-	max-width: $truncation-boundary;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-
-@mixin unlist($margin: true, $padding: true) {
-	@if $margin {
-		@if $margin == 'vertical' {
-			@include flush--ends;
-		} @elseif $margin == 'horizontal' {
-			@include flush--sides;
-		} @else {
-			margin: 0;
-		}
-	}
-	@if $padding {
-		padding: 0;
-	}
-	list-style: none;
-}
-
-
-@mixin unselectable {
-	-webkit-touch-callout: none;
-	user-select: none;
 }
 
 
@@ -688,4 +554,114 @@
 		}
 	}
 	#{$property}: $formula;
+}
+
+
+/*
+
+	Misc
+
+*/
+
+@mixin align($vertical: true, $horizontal: false, $position: relative) {
+	@if $position {
+		position: $position;
+	}
+	@if $vertical {
+		top: 50%;
+	}
+	@if $horizontal {
+		left: 50%;
+	}
+
+	@if $vertical and $horizontal {
+		transform: translateX(-50%) translateY(-50%);
+	} @else if $vertical {
+		transform: translateY(-50%);
+	} @else {
+		transform: translateX(-50%);
+	}
+}
+
+@mixin antialias {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin appearance($val: none) {
+	-webkit-appearance: $val;
+	-moz-appearance: $val;
+	appearance: $val;
+}
+
+@mixin font-size($sizes) {
+	@each $breakpoint, $size in $sizes {
+		@if $breakpoint == base {
+			font-size: $size;
+		} @else {
+			@include mq($breakpoint) {
+				font-size: $size;
+			}
+		}
+	}
+}
+
+@mixin hardware($backface: true, $perspective: 1000) {
+
+	@if $backface {
+		backface-visibility: hidden;
+	}
+
+	perspective: $perspective;
+}
+
+@mixin pos($pos, $t, $r, $b, $l, $z: false, $hardware: true) {
+	@if $pos == fixed and $hardware { @include hardware; }
+	@if $pos { position: $pos; }
+	@if $t { top: $t; }
+	@if $r { right: $r; }
+	@if $b { bottom: $b; }
+	@if $l { left: $l; }
+	@if $z { z-index: $z; }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin selection {
+	::-moz-selection { @content; }
+	::selection { @content; }
+}
+
+@mixin truncate($truncation-boundary) {
+	max-width: $truncation-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin unlist($margin: true, $padding: true) {
+	@if $margin {
+		@if $margin == 'vertical' {
+			@include flush--ends;
+		} @elseif $margin == 'horizontal' {
+			@include flush--sides;
+		} @else {
+			margin: 0;
+		}
+	}
+	@if $padding {
+		padding: 0;
+	}
+	list-style: none;
+}
+
+
+@mixin unselectable {
+	-webkit-touch-callout: none;
+	user-select: none;
 }

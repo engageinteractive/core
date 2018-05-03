@@ -24,15 +24,15 @@ Visible classes can also be inline and inline-block. Just use classes such as `v
 	@include visible;
 
 	&--inline {
-		@include visible('inline');
+		@include visible(inline);
 	}
 
 	&--inline-block {
-		@include visible('inline-block');
+		@include visible(inline-block);
 	}
 
 	&--td {
-		@include visible('table-cell');
+		@include visible(table-cell);
 	}
 }
 
@@ -48,15 +48,15 @@ Visible classes can also be inline and inline-block. Just use classes such as `v
 		}
 
 		.visible--#{$name}-inline {
-			@include visible('inline');
+			@include visible(inline);
 		}
 
 		.visible--#{$name}-inline-block {
-			@include visible('inline-block');
+			@include visible(inline-block);
 		}
 
 		.visible--#{$name}-td {
-			@include visible('table-cell');
+			@include visible(table-cell);
 		}
 	}
 
