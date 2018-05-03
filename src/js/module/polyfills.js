@@ -1,3 +1,4 @@
+require('classlist-polyfill');
 require('details-element-polyfill');
 require('svg4everybody')();
 
