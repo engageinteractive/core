@@ -44,7 +44,6 @@
     "space-before-blocks": "off",
     "space-before-function-paren": "off",
     "space-in-parens": "off",
-    "vars-on-top": "off",
-    "no-debugger": "off"
+    "vars-on-top": "off"
   }
 }

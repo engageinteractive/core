@@ -27,6 +27,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-vue": "^2.1.0",
     "front-matter": "^2.1.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^5.0.0",
@@ -58,6 +59,7 @@
     "vue": "^2.5.13",
     "vue-loader": "^13.7.1",
     "vue-template-compiler": "^2.5.13",
+    "vuex": "^3.0.1",
     "webpack-stream": "^4.0.3",
     "what-input": "^5.0.5"
   }
