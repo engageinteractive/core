@@ -4,6 +4,7 @@ Homestead.json
 .env
 npm-debug.log
 .map
+.vscode
 
 # OSX
 *.DS_Store
