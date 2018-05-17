@@ -153,14 +153,14 @@ $input-height: ($input-padding * 2) + (rem($input-border-width) * 2) + ($p * $in
 input,
 textarea,
 select {
+	display: block;
+	padding: $input-padding;
+	height: $input-height;
 	background: $c--white;
 	border: $input-border-width solid $c--grey-light;
 	border-radius: 0;
 	color: $c--black;
-	display: block;
 	font: normal #{$p}/#{$input-line-height} $stack;
-	padding: $input-padding;
-	height: $input-height;
 
 	&:focus {
 		border-color: $c--grey;
@@ -192,10 +192,10 @@ input,
 textarea {
 	&.is-valid,
 	&.is-invalid {
+		padding-right: $input-validation-icon * 3;
 		background-size: $input-validation-icon;
 		background-repeat: no-repeat;
 		background-position: right $input-validation-icon center;
-		padding-right: $input-validation-icon * 3;
 	}
 
 	&.is-valid {
@@ -221,22 +221,20 @@ $radio-inner-size: h($checkbox-size);
 	@include vh;
 
 	+ label {
-		cursor: pointer;
-		padding-left: $checkbox-size + $spacing-unit--x-small;
 		position: relative;
+		padding-left: $checkbox-size+$spacing-unit--x-small;
+		cursor: pointer;
 
 		&::before {
-			background: center center no-repeat;
-			background-size: 80%;
-			border: 2px solid $c--grey;
-			content: '';
-			display: block;
-			width: $checkbox-size;
-			height: $checkbox-size;
-			position: absolute;
+			@include pseudo;
 			top: 50%;
 			left: 0;
 			transform: translateY(-50%);
+			width: $checkbox-size;
+			height: $checkbox-size;
+			background: center center no-repeat;
+			background-size: 80%;
+			border: 2px solid $c--grey;
 		}
 	}
 
@@ -268,7 +266,7 @@ $radio-inner-size: h($checkbox-size);
 .checkbox {
 	&:checked {
 		+ label::before {
-			background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22415.582%22 height=%22415.582%22 viewBox=%220 0 415.582 415.582%22 style=%22fill:%23444444;%22%3E%3Cpath d=%22M411.47 96.426l-46.32-46.32c-5.48-5.482-14.37-5.482-19.852 0l-192.95 192.952-82.066-82.064c-5.48-5.482-14.37-5.482-19.85 0l-46.32 46.32c-5.482 5.48-5.482 14.37 0 19.852l138.31 138.31a13.99 13.99 0 0 0 9.927 4.112c3.592 0 7.185-1.37 9.925-4.112l249.195-249.2a14.034 14.034 0 0 0 0-19.85z%22/%3E%3C/svg%3E');
+			background-image: svg-url('<svg viewBox="0 0 32 32"><path fill="#{$c--body-colour}" d="M1 14 L5 10 L13 18 L27 4 L31 8 L13 26 z"/></svg>');
 		}
 	}
 }
@@ -279,16 +277,15 @@ $radio-inner-size: h($checkbox-size);
 	}
 
 	&:checked {
-		+ label::after {
-			background: $c--grey-dark;
-			border-radius: 50%;
-			content: '';
-			display: block;
+		+label::after {
+			@include pseudo;
+			top: 50%;
+			left: h($checkbox-size - $radio-inner-size);
+			transform: translateY(-50%);
 			width: $radio-inner-size;
 			height: $radio-inner-size;
-			position: absolute;
-			top: 50%; left: h($checkbox-size - $radio-inner-size);
-			transform: translateY(-50%);
+			background: $c--grey-dark;
+			border-radius: 50%;
 		}
 	}
 }
@@ -304,9 +301,9 @@ select {
 
 select[size],
 select[multiple] {
-	background-image: none;
-	height: auto;
 	padding: ($input-padding / 2) $input-padding;
+	height: auto;
+	background-image: none;
 
 	option {
 		padding: ($input-padding / 2);
@@ -314,8 +311,8 @@ select[multiple] {
 }
 
 .select {
-	position: relative;
 	display: block;
+	position: relative;
 	height: $input-height;
 
 	select {
@@ -353,18 +350,19 @@ textarea[disabled] {
 
 // error labels for extra descriptive errors
 .error-text {
-	background-color: $c--negative;
-	color: $c--white;
 	display: inline-block;
-	font-size: $p--small;
-	line-height: $lh--small;
-	padding: $spacing-unit--x-small;
 	position: relative;
 	margin-top: $spacing-unit--x-small;
+	padding: $spacing-unit--x-small;
+	background-color: $c--negative;
+	color: $c--white;
+	font-size: $p--small;
+	line-height: $lh--small;
 
 	&::before {
 		@include css-triangle($c--negative, up, 10px);
-		bottom: 100%; left: 50%;
+		bottom: 100%;
+		left: 50%;
 		transform: translateX(-50%);
 	}
 

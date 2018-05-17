@@ -37,8 +37,8 @@ Extended quotations, with support for citation:
 */
 
 .blockquote {
-	max-width: 45em;
 	position: relative;
+	max-width: 45em;
 
 	p {
 		font-size: $p--medium;
@@ -51,8 +51,8 @@ Extended quotations, with support for citation:
 
 	cite {
 		display: inline-block;
-		font-size: $p--small;
 		margin-top: $rel-spacing-unit--small;
+		font-size: $p--small;
 
 		@include mq(tablet-small) {
 			font-size: $p;

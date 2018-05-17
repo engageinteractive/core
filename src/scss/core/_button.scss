@@ -57,13 +57,13 @@ Other states:
 // basic buttons
 
 .button {
+	position: relative;
+	padding: rem(17px);
 	background-color: $c--brand-primary;
 	color: $c--white;
 	font-family: $stack;
 	font-size: $p;
 	font-weight: $w--normal;
-	padding: rem(17px);
-	position: relative;
 	text-decoration: none;
 	-webkit-tap-highlight-color: rgba($c--white, 0);
 
@@ -109,7 +109,7 @@ Other states:
 	}
 
 	&--small {
-		font-size: $p--small;
 		padding: rem(12px);
+		font-size: $p--small;
 	}
 }

@@ -66,13 +66,13 @@
 }
 
 table {
+	width: 100%;
 	border: 1px solid $c--grey-light;
 	border-top: none;
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size: $p;
 	line-height: $lh--small;
-	width: 100%;
 
 	caption {
 		@include vh;
@@ -82,8 +82,8 @@ table {
 th,
 td {
 	@include soft--ends($spacing-unit--small);
-	border-top: 1px solid $c--grey-light;
 	padding-right: $spacing-unit--small;
+	border-top: 1px solid $c--grey-light;
 	vertical-align: top;
 
 	&:first-child {

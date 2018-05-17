@@ -1,14 +1,14 @@
 code,
 pre {
-	word-wrap: break-word;
-	white-space: pre-wrap;
+	background-color: $c--grey-x-light;
+	color: $c--grey-dark;
 	font-family: 'PT Mono', monospace;
 	font-size: $p;
 	font-style: normal;
 	font-weight: normal;
 	line-height: 1.5;
-	background-color: $c--grey-x-light;
-	color: $c--grey-dark;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 code {

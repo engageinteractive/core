@@ -23,8 +23,8 @@ Basic link styles with support for other element types:
 a,
 .a {
 	color: $c--brand-primary;
-	text-decoration: underline;
 	cursor: pointer;
+	text-decoration: underline;
 
 	&:hover {
 		text-decoration: none;

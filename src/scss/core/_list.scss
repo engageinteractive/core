@@ -34,8 +34,7 @@ Ordered list
 
 .ol,
 .ul {
-	margin-left: $spacing-unit;
-	margin-right: $spacing-unit;
+	@include push--sides($spacing-unit);
 
 	> li {
 		margin-top: $rel-spacing-unit--small;

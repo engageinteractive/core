@@ -61,10 +61,10 @@ $icon-size: 1em;
 
 .icon {
 	display: inline-block;
-	fill: currentColor;
-	vertical-align: top;
 	width: $icon-size;
 	height: $icon-size;
+	fill: currentColor;
+	vertical-align: top;
 
 	&--inline {
 		// y = line-height measurment was taken at
