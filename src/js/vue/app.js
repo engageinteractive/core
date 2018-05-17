@@ -1,14 +1,6 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 // require('./bootstrap');
 
-/* eslint-disable import/imports-first */
-import createStore from './stores/store';
-/* eslint-enable import/imports-first */
+const createStore = require('./stores/store').default;
 
 const Vue = require('vue');
 const Vuex = require('vuex');
