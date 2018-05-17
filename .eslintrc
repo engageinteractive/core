@@ -1,5 +1,8 @@
 {
   "extends": "airbnb-base",
+  "plugins": [
+    "vue",
+  ],
   "globals": {
     "$": true,
     "Modernizr": true,
@@ -32,7 +35,7 @@
     "no-tabs": "off",
     "no-underscore-dangle": "off",
     "no-var": "warn",
-    "object-shorthand": "warn",
+    "object-shorthand": "off",
     "one-var": "off",
     "padded-blocks": "off",
     "prefer-arrow-callback": "warn",

@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "3.7.0",
+  "version": "3.8.0",
   "description": "Framework for responsive websites.",
   "license": "MIT",
   "repository": {
@@ -11,8 +11,10 @@
     "lint": "./node_modules/.bin/eslint gulpfile.js || true"
   },
   "devDependencies": {
+    "axios": "^0.17.1",
     "babel-core": "^6.21.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.16.0",
     "classlist-polyfill": "^1.2.0",
@@ -25,6 +27,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-vue": "^2.1.0",
     "front-matter": "^2.1.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^5.0.0",
@@ -53,6 +56,10 @@
     "svg4everybody": "^2.1.0",
     "title-case": "^2.1.0",
     "vinyl-named": "^1.1.0",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.1",
+    "vue-template-compiler": "^2.5.13",
+    "vuex": "^3.0.1",
     "webpack-stream": "^4.0.3",
     "what-input": "^5.0.5"
   }
