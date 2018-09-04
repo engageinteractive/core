@@ -1,5 +1,9 @@
-Front-end Baseplate
+Core
 ===========================
+
+**This project has now been deprecated in favour of the [Engage Laravel Baseplate](https://github.com/engageinteractive/laravel)**
+
+---
 
 The [Engage Interactive](http://www.engageinteractive.co.uk/) website baseplate.
 
